@@ -447,6 +447,6 @@ else if($strheight =="37") { echo "7Ft "; }
 <script src="js/script.js"></script>
 <!-- Color Setting -->
 <script src="js/color-settings.js"></script>
-<script src="js/whatsapp-share.js"></script>
+<script src="js/whatsapp-share.js?v=2"></script>
 </body>
 </html>

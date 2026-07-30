@@ -673,11 +673,28 @@ filter: blur(8px);
 						</span>
                       </div>
 					  </a>
-				  <?php } ?>
-					  
-					  
-					  
-					  
+					  <?php } ?>
+					  <?php
+                $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
+                $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $waLA = [];
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = '';
+                $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
+                $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
+                if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
+                if (!empty($fetch['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$fetch['Maritalstatus']}";
+                if (!empty($fetch['Education'])) $waLA[] = "\u{1F393} Education: {$fetch['Education']}";
+                if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
+                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
+                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
+                $waLA[] = '';
+                $waLA[] = "\u{1F517} View Full Profile:";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
+                $waLA[] = '';
+                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
+              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block"><i class="fab fa-whatsapp"></i> Share</a>
 			 <div class="social-box">                            
 			 <ul class="social-links social-icon-colored">
 			<?php  if(isset($login)&& $regvar=='9') { ?>
@@ -716,30 +733,7 @@ filter: blur(8px);
              <div class="tooltip"> Connect</div>
 			</div>
 					   <?php } ?>
-                     <div class="wrapper">
-                     <li><?php
-                $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
-                $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
-                $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
-                $waLA[] = '';
-                $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
-                $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
-                if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
-                if (!empty($fetch['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$fetch['Maritalstatus']}";
-                if (!empty($fetch['Education'])) $waLA[] = "\u{1F393} Education: {$fetch['Education']}";
-                if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
-                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
-                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
-                $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
-                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
-                     <div class="tooltip"> Share</div>
-                     </div>
+
 				</ul>
 			 </div>
 		  </div>
@@ -774,7 +768,7 @@ filter: blur(8px);
     <!-- End Speakers Section -->
 
     <!-- Main Footer -->
-   	<script src="js/whatsapp-share.js"></script>
+   	<script src="js/whatsapp-share.js?v=2"></script>
 	<?php include('footer.php')?>
 
 </div>

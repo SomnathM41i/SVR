@@ -10,5 +10,5 @@
   <div class="container footer-bottom"><p>Copyright © <?= $year ?> by Shivraj Maratha. All rights reserved.</p><div><a href="#">Terms & Conditions</a><a href="#">FAQ's</a><a href="#">Privacy Policy</a><a href="#">Disclaimer</a></div></div>
 </footer>
 <a class="whatsapp" href="https://wa.me/919403550087" aria-label="Chat on WhatsApp">✆</a><button class="back-top" aria-label="Back to top">↑</button>
-<script src="../js/whatsapp-share.js"></script>
+<script src="../js/whatsapp-share.js?v=2"></script>
 </body></html>

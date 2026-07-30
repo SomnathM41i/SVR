@@ -555,27 +555,7 @@ filter: blur(8px);
 								
 							?>
 						</span>
-                      </div>
-                      <div class="social-box">                            
-					  <ul class="social-links social-icon-colored">
-							 <div class="wrapper">
-							 <li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-user fa-skype"></i></a></li>
-							 <div class="tooltip"> Profile </div>
-								</div>
-							<div class="wrapper">
-							 <li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-heart fa-google-plus"></i></a></li>
-							 <div class="tooltip"> Shortlist</div>
-							</div>
-							<div class="wrapper">
-							<li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-comment-dots fa-bitbucket"></i></a></li>
-							 <div class="tooltip"> Message</div>
-							</div>
-							 <div class="wrapper">
-							<li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-user-plus fa-bitcoin"></i></a></li>
-							 <div class="tooltip"> Connect</div>
-							</div>
-                     <div class="wrapper">
-                     <li><?php
+						<?php
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
                 $waLA = [];
@@ -595,9 +575,27 @@ filter: blur(8px);
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
-                     <div class="tooltip"> Share</div>
-                     </div>
+              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="margin-top:6px"><i class="fab fa-whatsapp"></i> Share</a>
+                       </div>
+                       <div class="social-box">                            
+					  <ul class="social-links social-icon-colored">
+							 <div class="wrapper">
+							 <li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-user fa-skype"></i></a></li>
+							 <div class="tooltip"> Profile </div>
+								</div>
+							<div class="wrapper">
+							 <li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-heart fa-google-plus"></i></a></li>
+							 <div class="tooltip"> Shortlist</div>
+							</div>
+							<div class="wrapper">
+							<li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-comment-dots fa-bitbucket"></i></a></li>
+							 <div class="tooltip"> Message</div>
+							</div>
+							 <div class="wrapper">
+							<li><a href="full_profile?id=<?php echo $encrypt?>" target="_blank"><i class="fas fa-user-plus fa-bitcoin"></i></a></li>
+							 <div class="tooltip"> Connect</div>
+							</div>
+
 						  </ul>
                      </div>
                   </div>
@@ -632,7 +630,7 @@ filter: blur(8px);
     <!-- End Speakers Section -->
 
     <!-- Main Footer -->
-   	<script src="js/whatsapp-share.js"></script>
+   	<script src="js/whatsapp-share.js?v=2"></script>
 	<?php include('footer.php')?>
 
 </div>

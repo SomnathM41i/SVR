@@ -441,6 +441,27 @@ while($profiles=mysqli_fetch_array($login_profile)){
                                <span class="designation"><?php echo substr($rec['Education'],0,20) ?>
 								<?php echo substr($rec['Occupation'],0,20) ?>
 								<?php echo $rec['Age'] ?> Yrs,<?php echo get_height($rec['Height']);?></span>
+                                <?php
+                $waHL = $rec['Height'] ? getHeightValue($rec['Height']) : '';
+                $waLL = implode(', ', array_filter([$rec['City'] ?? '', $rec['Dist'] ?? '']));
+                $waLA = [];
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = '';
+                $waLA[] = "\u{1F194} Profile ID: {$rec['MatriID']}";
+                $waLA[] = "\u{1F382} Age: {$rec['Age']} years";
+                if (!empty($rec['Religion'])) $waLA[] = "\u{1F54A} Religion: {$rec['Religion']}";
+                if (!empty($rec['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$rec['Maritalstatus']}";
+                if (!empty($rec['Education'])) $waLA[] = "\u{1F393} Education: {$rec['Education']}";
+                if (!empty($rec['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$rec['Occupation']}";
+                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
+                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
+                $waLA[] = '';
+                $waLA[] = "\u{1F517} View Full Profile:";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($rec['MatriID']));
+                $waLA[] = '';
+                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
+              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:6px"><i class="fab fa-whatsapp"></i> Share</a><br>
                                 <ul class="social-links social-icon-colored">
 						 <div class="row">
 							 <div class="wrapper">
@@ -464,30 +485,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
 							      <div class="tooltip spce"> Instagram </div>
 								 </div>
 							</div>
-							<div class="wrapper">
-								   <li class="spce"><?php
-                $waHL = $rec['Height'] ? getHeightValue($rec['Height']) : '';
-                $waLL = implode(', ', array_filter([$rec['City'] ?? '', $rec['Dist'] ?? '']));
-                $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
-                $waLA[] = '';
-                $waLA[] = "\u{1F194} Profile ID: {$rec['MatriID']}";
-                $waLA[] = "\u{1F382} Age: {$rec['Age']} years";
-                if (!empty($rec['Religion'])) $waLA[] = "\u{1F54A} Religion: {$rec['Religion']}";
-                if (!empty($rec['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$rec['Maritalstatus']}";
-                if (!empty($rec['Education'])) $waLA[] = "\u{1F393} Education: {$rec['Education']}";
-                if (!empty($rec['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$rec['Occupation']}";
-                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
-                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($rec['MatriID']));
-                $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
-                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
-							      <div class="tooltip spce"> Share </div>
-								 </div>
+
 								</ul>
                             </div>
 							</a>
