@@ -1,0 +1,20 @@
+.modal-dialog
+{
+ top:14%;
+}
+
+@media screen and (max-width: 568px) {
+
+.visiblec
+{
+	display:none;
+}
+}
+
+@media only screen and (max-width: 768px){
+
+.visiblec
+{
+	display:none;
+}
+ }

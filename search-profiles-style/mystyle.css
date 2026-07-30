@@ -1,0 +1,328 @@
+@media screen and (max-width: 768px)
+{
+	.skew-container
+	{
+		overflow-x: scroll !important;
+		margin-bottom: 40px !important;
+	}
+	.new-profiles
+	{
+		display: none;
+	}
+}
+.skew-container
+{
+	background: #ffffff;
+	height: 400px;
+	padding: 0.8rem 0 3rem 2rem;
+	margin: 0;
+    margin-left: -18px;
+    margin-right: 0px;
+	display: flex;
+	overflow-x: scroll;
+	overflow: hidden;
+	position: relative;
+}
+.skew
+{
+	min-width: 250px;
+    min-height: 300px;
+    box-shadow: -2rem 0 3rem -2rem #10102f;
+    flex-direction: column;
+    border-radius: 16px;
+    transition: .2s;
+    position: absolute;
+    --featured-img: linear-gradient(360deg,#fff,#262626);
+    background-image: radial-gradient(50% 50% at top center,rgba(0,0,0,.66),#262626),var(--featured-img);
+    background: linear-gradient(360deg,#211f28e3,#bdbdbd);
+
+}
+.skew:hover
+{
+	transition: 0.2s;
+	transform: rotate(6deg) translatex(-15px);
+}	
+.skew-container .skew:nth-child(1)
+{
+	z-index: 1;
+	box-shadow: 0rem 0 0rem 0rem;
+}
+.skew-container .skew:nth-child(2)
+{
+	left: 159px;
+	z-index: 2;
+}
+.skew-container .skew:nth-child(3)
+{
+	left: 286px;
+	z-index: 3;
+}
+.skew-container .skew:nth-child(4)
+{
+	left: 413px;
+	z-index: 4;
+}
+.skew-container .skew:nth-child(5)
+{
+	left: 540px;
+	z-index: 5;
+}
+.skew-container .skew:nth-child(6)
+{
+	left: 667px;
+	z-index: 6;
+}
+.skew-container .skew:nth-child(7)
+{
+	left: 794px;
+	z-index: 7;
+}
+.skew-container .skew:nth-child(8)
+{
+	left: 921px;
+	z-index: 8;
+}
+.skew-container .skew:nth-child(9)
+{
+	left: 1048px;
+	z-index: 9;
+}
+.left-animation
+{
+	margin-left: 120px;
+	transition: 0.5 all;
+	z-index: 999;
+}
+.return
+{
+	transition: 0.2s;
+}
+.skew-image
+{
+	/*background: #888888;*/
+	width: 160px;
+	height: 160px;
+	/*border: 4px solid #a1a1a1;*/
+	margin-left: 50px;
+	border-radius: 50%;
+	margin-top: -10px;
+	overflow: hidden;	
+
+}
+.skew-image > img{
+	width: 160px;
+	height: auto;
+}
+.skew .info 
+{
+	display: flex;
+	margin-top: 10px;
+}
+.skew .info .left-info
+{
+	width: 125px;
+	margin-left: 15px;	
+}
+.skew .info .right-info
+{
+	width: 125px;
+	margin-left: -15px;
+}
+.skew .info p
+{
+	color: #ffffff;
+    white-space: pre;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 12px;
+    -webkit-margin-end: 0.66rem;
+    margin-inline-end: 0.66rem;
+}
+.skew .info p:nth-child(2),.skew .info p:nth-child(3),.skew .info p:nth-child(4)
+{
+	margin-top: -25px;
+}
+.skew .bdate
+{
+	color: #ffffff;
+	margin-left: 37px;
+	font-size: 16px;
+    line-height: 2.7;
+    font-family: 'Ubuntu', sans-serif;
+	line-height: 2.7;
+	/*font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ff7a18;
+	font-size: .66rem;
+	-webkit-margin-end: 0.66rem;
+	margin-inline-end: 0.66rem;*/
+}
+.skew .bdate .mat-id
+{
+	color: #ffffff;
+}
+
+//Second skew start //
+
+@media screen and (max-width: 768px)
+{
+	.secondskew-container
+	{
+		overflow-x: scroll !important;
+		margin-bottom: 40px !important;
+	}
+}
+.secondskew-container
+{
+	background: #ffffff;
+	height: 400px;
+	padding: 0.8rem 0 3rem 2rem;
+	margin: 0;
+	margin-left: -18px;
+    margin-right: 0px;
+	margin-top: -50px;
+	display: flex;
+	overflow-x: scroll;
+	overflow: hidden;
+	position: relative;
+}
+.secondskew
+{
+	min-width: 250px;
+    min-height: 300px;
+    box-shadow: -2rem 0 3rem -2rem #10102f;
+    flex-direction: column;
+    border-radius: 16px;
+    transition: .2s;
+    position: absolute;
+    --featured-img: linear-gradient(360deg,#fff,#262626);
+    background-image: radial-gradient(50% 50% at top center,rgba(0,0,0,.66),#262626),var(--featured-img);
+    background: linear-gradient(360deg,#211f28e3,#bdbdbd);
+}
+.secondskew:hover
+{
+	transition: 0.2s;
+	transform: rotate(6deg) translatex(-15px);
+}	
+.secondskew-container .secondskew:nth-child(1)
+{
+	z-index: 1;
+	box-shadow: 0rem 0 0rem 0rem;
+}
+.secondskew-container .secondskew:nth-child(2)
+{
+	left: 159px;
+	z-index: 2;
+}
+.secondskew-container .secondskew:nth-child(3)
+{
+	left: 286px;
+	z-index: 3;
+}
+.secondskew-container .secondskew:nth-child(4)
+{
+	left: 413px;
+	z-index: 4;
+}
+.secondskew-container .secondskew:nth-child(5)
+{
+	left: 540px;
+	z-index: 5;
+}
+.secondskew-container .secondskew:nth-child(6)
+{
+	left: 667px;
+	z-index: 6;
+}
+.secondskew-container .secondskew:nth-child(7)
+{
+	left: 794px;
+	z-index: 7;
+}
+.secondskew-container .secondskew:nth-child(8)
+{
+	left: 921px;
+	z-index: 8;
+}
+.secondskew-container .secondskew:nth-child(9)
+{
+	left: 1048px;
+	z-index: 9;
+}
+.left-animation
+{
+	margin-left: 90px;
+	transition: 0.5 all;
+	z-index: 999;
+}
+.return
+{
+	transition: 0.2s;
+}
+.skew-image
+{
+	/*background: #888888;*/
+	width: 160px;
+	height: 160px;
+	/*border: 4px solid #a1a1a1;*/
+	margin-left: 50px;
+	border-radius: 50%;
+	margin-top: -10px;
+	overflow: hidden;	
+
+}
+.skew-image > img{
+	width: 160px;
+	height: auto;
+}
+.secondskew .info 
+{
+	display: flex;
+	margin-top: 10px;
+}
+.secondskew .info .left-info
+{
+	width: 125px;
+	margin-left: 15px;	
+}
+.secondskew .info .right-info
+{
+	width: 125px;
+	margin-left: -15px;
+}
+.secondskew .info p
+{
+	color: #ffffff;
+    white-space: pre;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 12px;
+    -webkit-margin-end: 0.66rem;
+    margin-inline-end: 0.66rem;
+}
+.secondskew .info p:nth-child(2),.secondskew .info p:nth-child(3),.secondskew .info p:nth-child(4)
+{
+	margin-top: -25px;
+}
+.secondskew .bdate
+{
+	color: #ffffff;
+	margin-left: 37px;
+	font-size: 16px;
+    line-height: 2.7;
+    font-family: 'Ubuntu', sans-serif;
+	line-height: 2.7;
+	/*font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ff7a18;
+	font-size: .66rem;
+	-webkit-margin-end: 0.66rem;
+	margin-inline-end: 0.66rem;*/
+}
+
+.secondskew .bdate .mat-id
+{
+	color: #ffffff;
+}

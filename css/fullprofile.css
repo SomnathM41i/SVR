@@ -1,0 +1,29 @@
+.page-title {
+    padding: 20px 0;
+}
+.pricing-block-three .inner-box {
+   
+max-width: 1000px;
+}
+.pricing-block-three .features {
+    position: relative;
+    max-width:1700px;
+    margin: 0 auto 20px;
+}
+.schedule-section {
+    position: relative;
+    padding: 39px 0 100px;
+}
+.gallery-item .image-box .image img {
+    display: block;
+     width:97%;
+    height: 151px;
+}
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    width: 89%;
+    height: 135px;
+}

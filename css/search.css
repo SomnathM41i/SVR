@@ -1,0 +1,73 @@
+.register-form form {
+    max-width: 850px;
+    padding: 2.5vw;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+	flex-wrap: wrap;	
+    justify-content: center;
+	box-shadow: 1px 0px 11px 0px rgba(0, 0, 0, 0.3);
+    background: #FFFFFF;
+    border-radius: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom: 5px solid #1c94d2;
+	background-image: url(../images/icons/speaker-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    content: "";
+	  
+}
+
+.contact-page-section1 {
+    position: relative;
+    padding: 41px 0 70px;
+}
+.sec-title1 {
+    position: relative;
+    margin-bottom: 17px;
+}
+.sec-title1 h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 48px;
+    line-height: 1.2em;
+    color: #1e1f36;
+    font-weight: 700;
+}
+.category2,.form-group1 {
+    font-size: 16px;
+    color: #5a5656;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    background: none;
+    outline: none;
+    box-sizing: border-box; 
+    border-radius: 0; 
+    background-color: #f1f1f1;
+	margin-top: 20px;
+
+	outline:none
+}
+.btn-style-one {
+	margin-top: 20px; 	
+}
+.register-form button {
+    cursor: pointer;
+    line-height: 25px;
+    font-size: 14px;
+    padding: 10px 170px;
+	margin:center;
+}
+.label {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    color: #ff719e;
+    font-family: Lucida Sans Unicode;
+    position: relative;
+    animation: animateright 0.7s;
+}
+

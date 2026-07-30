@@ -1,0 +1,92 @@
+#myInput
+{
+	font-weight: 600;
+}
+.card-header {
+    padding: 25px 25px;
+    padding-bottom: 10px;
+}
+.bg-franchise
+{
+	background: #f1f1f1;
+	font-weight: 600;
+}
+.personal-result
+{
+	font-weight: 600;
+}
+.hide-passbox
+{
+	border: none;
+}
+#hidepass
+{
+	display: none;
+}
+.hidepass
+{
+	text-decoration: overline;
+}
+.bi-eye::before {
+	font-size: 20px;
+	font-weight: 600 ;
+}
+.bi-eye::after
+{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.bi-eye-slash::before
+{
+	font-size: 20px;
+	font-weight: 600 ;
+}
+.bi-eye-slash::after
+{
+	font-size: 20px;
+	font-weight: 600 ;
+}
+.table-toppadding
+{
+	margin-top: -25px;
+}
+.card .card-header h5, .card .card-header .h5 {
+    
+    font-size: 16px;
+    font-weight:normal;
+}
+.form-switch {
+    padding-left: 2.5em;
+}
+.m-l-40 {
+     margin-left: 0px; 
+}
+
+@media screen and (max-width: 768px)
+{
+	.input-group-text {
+    margin-left: -3px;
+}
+	.radio-align
+	{
+    margin-left: 20px;
+    margin-top: -20px;
+    }
+
+    #showpass, #hidepass
+    {
+    	margin-left: -100px;
+    }
+    .adjest{
+	margin-left: 100px;
+}
+}
+@media (max-width: 1024px)
+{
+.pc-header .pc-mob-drp.mob-drp-active .pc-h-item .pc-head-link {
+    display: block;
+    margin: 5px 10px !important;
+    color: red;
+}
+}

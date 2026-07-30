@@ -1,0 +1,200 @@
+.select2-container .select2-selection--single .select2-selection__rendered {
+  
+   
+     max-width:150px;
+    padding :0.675em 1rem;
+    font-size :0.875rem;
+    font-weight :400;
+    line-height: 1.5;
+    color: #293240;
+    background-color :#ffffff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+	padding-right: 303px;	
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top:2px;	 
+	
+}
+.select2-container--default .select2-selection--single {
+   
+    border: 0px solid #ced4da;
+	
+  
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;	
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left:-9px;
+    position: absolute;
+    top :54%;
+    width: 0;
+	margin-top: 0px;
+	
+    
+    
+}
+@media only screen and (max-width: 568px){
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  
+   
+     max-width:150px;
+    padding :0.675em 1rem;
+    font-size :0.875rem;
+    font-weight :400;
+    line-height: 1.5;
+    color: #293240;
+    background-color :#ffffff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+	padding-right: 303px;	
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top:2px;	 
+	
+}
+.select2-container--default .select2-selection--single {
+   
+    border: 0px solid #ced4da;
+	
+  
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;	
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left:-9px;
+    position: absolute;
+    top :54%;
+    width: 0;
+	margin-top: 0px;
+	
+    
+    
+}
+@media only screen and (max-width: 768px){
+	.select2-container .select2-selection--single .select2-selection__rendered {
+  
+   
+     max-width:150px;
+    padding :0.675em 1rem;
+    font-size :0.875rem;
+    font-weight :400;
+    line-height: 1.5;
+    color: #293240;
+    background-color :#ffffff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+	padding-right: 303px;	
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top:2px;	 
+	
+}
+}
+
+.select2-container--default .select2-selection--single {
+   
+    border: 0px solid #ced4da;
+	
+  
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;	
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left:-9px;
+    position: absolute;
+    top :54%;
+    width: 0;
+	margin-top: 0px;
+	
+    
+    
+}
+
+@media screen and (max-width: 568px) {
+.select2-container .select2-selection--single .select2-selection__rendered {
+  
+   
+     max-width:150px;
+    padding :0.675em 1rem;
+    font-size :0.875rem;
+    font-weight :400;
+    line-height: 1.5;
+    color: #293240;
+    background-color :#ffffff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+	padding-right: 204px;	
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top:2px;	 
+	
+}
+}
+
+.select2-container--default .select2-selection--single {
+   
+    border: 0px solid #ced4da;
+	
+  
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;	
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left:-9px;
+    position: absolute;
+    top :54%;
+    width: 0;
+	margin-top: 0px;
+	
+    
+    
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    max-width:150px;
+    padding :0.675em 1rem;
+    font-size :0.875rem;
+    font-weight :400;
+    line-height: 1.5;
+    color: #293240;
+    background-color :#ffffff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+	padding-right: 181px;	
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top:2px;	 
+}
+.select2-container--default .select2-selection--multiple {
+   
+    border: 0px solid #ced4da;
+	
+  
+}
+.select2-container--default .select2-selection--multiple .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;	
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left:-9px;
+    position: absolute;
+    top :54%;
+    width: 0;
+	margin-top: 0px;
+ }

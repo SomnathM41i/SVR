@@ -1,0 +1,78 @@
+
+  .modal-content {
+   width: 145%;
+}
+
+.pricing-block-three{
+margin-top: 40px;
+}
+.pricing-block-three .inner-box{
+	
+	max-width: 600px;
+	
+}
+.show{
+	color: #ec167f;
+}
+.modal-dialog
+{
+
+ right:8%;
+}
+.mt-5, .my-5 {
+    margin-top: -3rem!important;
+}
+.fott
+{
+	padding: 1.5rem;
+}
+
+
+@media screen and (max-width: 568px) {
+.modal-content {
+   width: 127%;
+    left: -19px;
+}
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    left: 50px;
+}
+.fott
+{
+	padding: 13px 2.5rem;
+} 
+.vie {
+    margin-left: 119px;
+}
+}
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 127%;
+    left: -19px;
+}
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    left: 50px;
+}
+.fott
+{
+	padding: 13px 2.5rem;
+}
+.vie {
+    margin-left: 119px;
+}
+}
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+  

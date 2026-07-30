@@ -1,0 +1,1 @@
+<section class="page-hero"><div class="container"><span class="section-kicker">Shivraj Maratha Matrimony</span><h1><?= htmlspecialchars($heading) ?></h1><nav aria-label="Breadcrumb"><a href="index.php">Home</a><span>›</span><span><?= htmlspecialchars($heading) ?></span></nav></div></section>

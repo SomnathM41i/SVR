@@ -1,0 +1,107 @@
+.btnalign
+{ 
+
+margin-left:250px;
+}
+.btnalign1
+{ 
+
+margin-left:507px;
+}
+@media screen and (max-width: 568px) {
+.btnalign
+{ 
+
+margin-left:29px;
+}
+.btnalign1
+{ 
+
+margin-left:10px;
+}
+}
+
+@media only screen and (max-width: 768px){
+.btnalign
+{ 
+
+margin-left:29px;
+}
+.btnalign1
+{ 
+
+margin-left:10px;
+}
+	 }
+.footsec
+{
+	margin-left:48px;
+}
+@media screen and (max-width: 568px) {
+.footsec
+{ 
+
+margin-left:0px;
+}
+
+}
+
+@media only screen and (max-width: 768px){
+.footsec
+{ 
+
+margin-left:0px;
+}
+
+}
+.topbar1 {
+background: #1c232f;
+top: 70px;    
+height: 60px;
+position: relative;   
+display: flex;
+align-items: center;
+text-color:#fff;
+}
+
+
+.Paginations
+{
+	
+    display: flex;
+    padding-left: 401px;
+}
+
+@media screen and (max-width: 568px) {
+.Paginations
+{
+	
+    display: flex;
+    padding-left: 0px;
+}
+
+
+}
+
+@media only screen and (max-width: 768px){
+.Paginations
+{
+	
+    display: flex;
+    padding-left: 0px;
+}
+
+
+}
+ .Pagiadvance {
+    display: flex;
+    padding-left: 169px;
+}
+.modalb
+{
+	
+    position: relative;
+    flex: 1 1 auto;
+     margin: -0.25rem; 
+}
+

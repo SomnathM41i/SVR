@@ -1,0 +1,9 @@
+<html>
+<head>
+ <Title>Hide the URL from Address bar</title>
+</head>
+<body>
+ <a href="http://www.google.com">Normal Link</a>
+ <a href="javascript:void(0)" onclick="location.href='http://www.google.com'">Hide Link</a>
+</body>
+</html>

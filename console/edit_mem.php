@@ -1,0 +1,27 @@
+<?php //MEMBERSHIP EDIT ?>
+
+<title>Edit Membership</title>
+<?php require_once('../sys_dbconnection.php');    
+date_default_timezone_set('Asia/Kolkata');
+/*include('../dbconnectadmin.php');*/
+$strmid=$_POST['ID']; 
+$contacts =mysqli_real_escape_string($con, $_POST['txtName']);
+$date =mysqli_real_escape_string($con,$_POST['date']);
+echo $date.'<br>';
+echo $today = date("Y-m-d").'<br>';
+if($today <= $date )
+{
+	//echo "1";
+	$query = $con->query("update register set Status='Paid',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or die(mysqli_error($con));
+}
+else
+{
+	//echo "0";
+	$query = $con->query("update register set Status='Expired',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or die(mysqli_error($con));
+	
+}
+
+header('location:profile_view?flag=15&msg=success&ID='.$strmid);
+echo "<script>window.location.href='profile_view?flag=15&msg=success&ID=$strmid';</script>";
+exit;
+?>

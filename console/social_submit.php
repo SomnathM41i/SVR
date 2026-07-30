@@ -1,0 +1,14 @@
+<?php  
+/*include('../dbconnectadmin.php');*/
+require_once('../sys_dbconnection.php');
+$facebook=$_POST['facebook'];
+$twitter=$_POST['twitter'];
+//$linked_in=$_POST['linkedin'];
+//$google_plus=$_POST['googleplus'];
+$other_social=$_POST['others'];
+$youtube=$_POST['youtube'];
+
+$rec=mysqli_query($con,"update siteconfig set facebook='$facebook',twitter='$twitter',other_social='$other_social',youtube='$youtube'") or mysqli_error($con,$error());
+//echo "update siteconfig set facebook='$facebook',twitter='$twitter',other_social='$other_social',youtube='$youtube'";
+header('location:social?msg=Link');
+?>

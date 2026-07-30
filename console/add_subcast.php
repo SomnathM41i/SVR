@@ -1,0 +1,468 @@
+<?php require_once('../sys_dbconnection.php'); 
+/*include'../dbconnectadmin.php';*/
+$msg="";
+  if(isset($_POST['submit']))
+  {
+          
+    $subcaste=mysqli_real_escape_string($con,$_POST['Name']);
+    //echo $dist;
+    $caste=mysqli_real_escape_string($con,$_POST['caste']);
+    //echo $state;
+    $religion=mysqli_real_escape_string($con,$_POST['religion']);
+    //echo $country;
+    
+
+  
+    $q="select * from subcaste where subcast='$subcaste'";
+    //echo "select * from e_dist where dist='$dist'";
+    //exit;
+    $rs=mysqli_query($con,$q);
+    $num=mysqli_num_rows($rs);
+   
+    
+    if($num>0)
+    {
+      $msg="Subcaste already Exist!!";
+        
+    }
+    else
+    {   
+        //if($state==""){echo "State empty";}else{ echo $state;}
+        $q="insert into subcaste(subcast,caste,religion) values('$subcaste','$caste','$religion')";
+        //echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
+        //exit;
+        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        if($rs>0)
+        {
+                $msg="Subcaste added Successfully!!";
+
+        }
+    }
+    
+}
+
+if(isset($_POST['Update']))
+{
+  $subcaste=$_POST['Name'];
+  $id=$_POST['id'];
+   $id;
+   $subcaste;
+    
+  $q="select * from subcaste where subcast='$subcaste'";
+  $rs=mysqli_query($con,$q);
+   $num=mysqli_num_rows($rs);
+
+  if($num>0)
+  {
+     $msg="Subcaste already Exist!!";
+  }
+  else
+  {   
+     //if($state==""){echo "State empty";}else{ echo $state;}
+    $q="update subcaste set subcast='$subcaste' where id='$id'";
+    $rs=mysqli_query($con,$q) or die(mysqli_error());
+    if($rs>0)
+    {
+      $msg="Subcaste Updated Successfully!!";
+    }
+  }
+    
+}
+    
+    $q1="select * from religion";
+    $rs1=mysqli_query($con,$q1);
+    $num1=mysqli_num_rows($rs1);
+    
+    $q2="select * from caste ORDER BY Caste ASC";
+    $rs2=mysqli_query($con,$q2);
+    $num2=mysqli_num_rows($rs2);
+
+    
+    //echo "select * from religion";
+    //echo"select * from caste";
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from dashboardkit.io/bootstrap/demo-horizontal-1/hospital-doctor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Jan 2021 05:54:53 GMT -->
+<head>
+    <title>Add Subcast</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
+    <meta name="author" content="DashboardKit" />
+
+    <!-- Favicon icon -->
+    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
+    <!-- font css -->
+    <link rel="stylesheet" href="assets/fonts/feather.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="assets/fonts/material.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/customizer.css">
+	<style>
+	.row {
+    --bs-gutter-x: -0.5rem;
+	}
+	</style>
+	
+<script language="javascript">
+function fillcaste(str)
+{
+var xmlhttp;
+if (str=="")
+  {
+  document.getElementById("caste").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("caste").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","fillcaste.php?q="+str,true);
+xmlhttp.send();
+
+}
+
+
+function get_subcaste(id)
+{
+	
+var xmlhttp;
+if (id=="")
+  {
+  document.getElementById("content").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("content").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","get_subcaste.php?id="+id,true);
+xmlhttp.send();
+
+}
+</script>
+
+</head>
+<body class="pc-horizontal">
+	<div class="container">
+		<!-- [ Pre-loader ] start -->
+		<div class="loader-bg">
+			<div class="loader-track">
+				<div class="loader-fill"></div>
+			</div>
+		</div>
+		<!-- [ Pre-loader ] End -->
+		<!-- [ Mobile header ] start -->
+		<div class="pc-mob-header pc-header">
+			<div class="pcm-logo">
+				<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
+			</div>
+			<div class="pcm-toolbar">
+				<a href="#!" class="pc-head-link" id="mobile-collapse">
+					<div class="hamburger hamburger--arrowturn">
+						<div class="hamburger-box">
+							<div class="hamburger-inner"></div>
+						</div>
+					</div>
+				</a>
+				<a href="#!" class="pc-head-link" id="headerdrp-collapse">
+					<i data-feather="align-right"></i>
+				</a>
+				<a href="#!" class="pc-head-link" id="header-collapse">
+					<i data-feather="more-vertical"></i>
+				</a>
+			</div>
+		</div>
+			<!-- [ Mobile header ] End -->
+		<!-- [ Header ] start -->
+        
+		<!-- [ Header ] end -->
+		<!-- [ navigation menu ] start -->
+		  <?php include('topheader.php');?>
+		  <?php include('header.php');?>
+		<!-- [ navigation menu ] end -->
+		<!-- Modal -->
+		<?php include('notification.php');?>
+		
+		<!-- [ Header ] end -->
+
+<!-- [ Main Content ] start -->
+
+<!-- [ Main Content ] start -->
+<div class="pc-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- customar project  start -->
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center m-l-0">
+                            <div class="col-sm-6">
+							  <h3> Add Subcaste</h3>
+                            </div>
+                            <div class="col-sm-6 text-end">
+                                <button class="btn btn-success btn-sm mb-3 btn-round" data-bs-toggle="modal" data-bs-target="#modal-report" data-id="1"><i class="feather icon-plus"></i> Add District</button>
+                            </div>
+							<div class="col-sm-6 offset-sm-3">
+						    <form  name="Religion" id="Religion" method="post" action="add_subcast.php">
+							 <select  class="mb-3 form-control"  name="Religion" type="select" id="Religion"  required="required" onChange="fillstate(this.value);">
+                                    <div align="" class=""> <?php  echo $msg; 
+									     $_SESSION['Religion']=$_POST['Religion'];
+									     $_SESSION['Caste']=$_POST['Caste']; ?> </div>
+				              <?php   if($_POST['Religion']==""){ ?>
+						         <option value=""> Select Religion</option>
+                              <?php   } else { ?>
+                                <!--<label class="form-label" for="Name">Enter Country</label>-->
+									  <option value="<?php echo $_SESSION['Religion']; ?>"><?php echo $_SESSION['Religion']; ?></option>
+								<?php   } ?>
+								<?php  
+               
+													  $i=0;
+														while($data1=mysqli_fetch_assoc($rs1) and $i<$num1)
+													  {
+										 
+																		  
+														  ?>
+															  <option value="<?php  echo $data1['Religion']; ?>"><?php  echo $data1['Religion']; ?></option>
+															  <?php  
+														  $i++;
+													  }
+													  ?>
+                                  </select>
+								  <select  class="mb-3 form-control"  name="state" type="select" id="state"  required="required" onChange="get_dist(this.value);">
+                                    
+				                     <?php   if(isset($_POST['Religion'])) { ?>
+									 <option value="<?php   echo $_SESSION['Caste']; ?>"><?php   echo $_SESSION['Caste']; ?></option>
+						                 <div ><?php echo $msg; $_SESSION['Religion']=$_POST['Religion'];
+									       $_SESSION['Caste']=$_POST['Caste']; ?> </div>
+										   <?php    $ry=mysqli_query($con,"select * from caste where Religion='".$_SESSION['Religion']."'");
+											//echo "select * from e_state where cid='".$_SESSION['country']."'";
+											//exit;
+               
+										$i=0;
+										while($data2=mysqli_fetch_assoc($ry) and $i<$num2)
+													  {
+										 
+																		  
+														  ?>
+															  <option value="<?php  echo $data2['Caste']; ?>"><?php  echo $data2['Caste']; ?></option>
+															  <?php  
+														  $i++;
+													  }
+													 ?>
+                                           <?php  } else { ?>
+										    <option value=""> Select  Caste</option>
+                               <?php
+               
+										$i=0;
+										while($data2=mysqli_fetch_assoc($rs2) and $i<$num2)
+													  {
+										 
+																		  
+														  ?>
+															  <option value="<?php  echo $data2['Caste']; ?>"><?php  echo $data2['Caste']; ?></option>
+															  <?php  
+														  $i++;
+													  }
+													 ?>
+													 <?php }?>
+                                  </select>
+								 </form>
+                            </div>
+                        </div>
+						<div class="table-responsive"  id="content"> </div>
+                                            </div>
+                </div>
+            </div>
+            <!-- customar project  end -->
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</div>
+
+
+    <!-- Warning Section Ends -->
+    <!-- Required Js -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/feather.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
+    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
+    <!-- <script src="assets/js/uikit.min.js"></script> -->
+
+<script src="assets/js/plugins/jquery.dataTables.min.js"></script>
+<script src="assets/js/plugins/dataTables.bootstrap4.min.js"></script>
+<!-- Apex Chart -->
+<script src="assets/js/plugins/apexcharts.min.js"></script>
+<script>
+    // DataTable start
+    $('#report-table').DataTable();
+    // DataTable end
+</script>
+</script>
+<?php include('footersection.php');?>
+</script>
+<div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#modal-report').on('show.bs.modal', function (e) {
+        var rowid = $(e.relatedTarget).data('id');
+        $.ajax({
+            type : 'post',
+            url : 'adddist_pop.php', //Here you will fetch records 
+            data :  'rowid='+ rowid, //Pass $id
+            success : function(data){
+            $('.modal-content').html(data);//Show fetched data from database
+            }
+        });
+     });
+});
+</script>
+<div class="modal fade" id="modal-report2" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#modal-report2').on('show.bs.modal', function (e) {
+        var rowid = $(e.relatedTarget).data('id');
+        $.ajax({
+            type : 'post',
+            url : 'editdistrict_pop.php', //Here you will fetch records 
+            data :  'rowid='+ rowid, //Pass $id
+            success : function(data){
+            $('.modal-content').html(data);//Show fetched data from database
+            }
+        });
+     });
+});
+</script>
+<script>
+    $('#pct-toggler').on('click', function() {
+        $('.pct-customizer').toggleClass('active');
+    });
+    $('#cust-sidebrand').change(function() {
+        if ($(this).is(":checked")) {
+            $('.theme-color.brand-color').removeClass('d-none');
+            $('.m-header').addClass('bg-dark');
+        } else {
+            $('.m-header').removeClassPrefix('bg-');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.theme-color.brand-color').addClass('d-none');
+        }
+    });
+    $('.brand-color > a').on('click', function() {
+        var temp = $(this).attr('data-value');
+        if (temp == "bg-default") {
+            $('.m-header').removeClassPrefix('bg-');
+        } else {
+            $('.m-header').removeClassPrefix('bg-');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header').addClass(temp);
+        }
+    });
+    $('.header-color > a').on('click', function() {
+        var temp = $(this).attr('data-value');
+        if (temp == "bg-default") {
+            $('.pc-header').removeClassPrefix('bg-');
+        } else {
+            $('.pc-header').removeClassPrefix('bg-');
+            $('.pc-header').addClass(temp);
+        }
+    });
+    $('#cust-sidebar').change(function() {
+        if ($(this).is(":checked")) {
+            $('.pc-sidebar').addClass('light-sidebar');
+            $('.pc-horizontal .topbar').addClass('light-sidebar');
+        } else {
+            $('.pc-sidebar').removeClass('light-sidebar');
+            $('.pc-horizontal .topbar').removeClass('light-sidebar');
+        }
+    });
+    $('#cust-darklayout').change(function() {
+        if ($(this).is(":checked")) {
+            $("#main-style-link").attr("href", "assets/css/style-dark.css");
+        } else {
+            $("#main-style-link").attr("href", "assets/css/style.css");
+        }
+    });
+    $.fn.removeClassPrefix = function(prefix) {
+        this.each(function(i, it) {
+            var classes = it.className.split(" ").map(function(item) {
+                return item.indexOf(prefix) === 0 ? "" : item;
+            });
+            it.className = classes.join(" ");
+        });
+        return this;
+    };
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8H86P6FK7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q8H86P6FK7');
+</script>
+<script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
+
+</body>
+
+
+<!-- Mirrored from dashboardkit.io/bootstrap/demo-horizontal-1/hospital-doctor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Jan 2021 05:54:53 GMT -->
+</html>

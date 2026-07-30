@@ -1,0 +1,960 @@
+@media screen and (max-width: 768px)
+{
+	.tabsMenu
+	{
+		right: 0px;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+.txtFormat
+	{
+		margin-left: 30px;
+		margin-top: -30px;
+	}
+	
+	.radio-box .radiocite
+	{
+	    white-space:pre;
+	    
+	}
+	
+	.contact-page-section
+	{
+	    padding-top:0px;
+	    padding-bottom:0px;
+	}
+
+	.feedback_Title
+	{
+		margin-top: -40px;
+	}
+
+	.Page_title .title
+	{
+		margin-top: -200px;	
+	}	
+
+	.page-title .bread-crumb li
+	{
+		padding-top: 0px;
+	}
+}
+
+
+
+about_section_Policy
+
+/*Privacy-Policy */
+.about_section_Policy
+{
+    padding-top:30px;
+}
+
+
+/*End Privacy-Policy */
+
+.error-section
+{
+   padding-top:40px;
+   padding-bottom:40px;
+}
+
+
+	.schedule-block .date img
+{
+    transition:transform 2s;
+}
+
+.schedule-block .date img:hover
+{
+    transform:rotate(360deg);
+}
+.myproimg
+{
+    animation:profile 4s infinite ease;
+}
+
+.myDropdown
+{
+	z-index: 9;
+}
+
+@keyframes profile
+{
+    0%
+    {
+        transform:rotate(10deg);   
+    }
+    
+
+    50%
+    {
+        transform:rotate(-10deg);
+    }
+    
+    100%
+    {
+        transform:rotate(10deg);
+    }
+}
+
+.InterestedInText
+{
+	color: #e83e8c;
+}
+/* Legacy dropdown-menu style - applied only to full_profile old-theme content */
+/* Header dropdowns use the new header.php styles instead */
+.full-profile-dropdown .dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 9999;
+	display: none;
+	float: left;
+	min-width: 10rem;
+	padding: .5rem 0;
+	margin: 0;
+	font-size: 1rem;
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #28a745;
+	border-radius: .25rem;
+	margin-top:0px;
+}
+
+.schedule-block{
+	position: relative;
+	margin-bottom: -354px;
+}
+
+.send_Message_Text
+	{
+		margin-top: -45px;
+		margin-bottom: 0px;
+	}
+/*imgsm*/
+
+.prime_Infoalign
+{
+	margin-top: -20px;
+	margin-bottom:-50px ;
+}
+
+.prime_Information a
+{
+	color: white;
+	text-decoration: underline;
+}
+
+.prime_Infoalign a
+{
+	color: white;
+	text-decoration: underline;
+}
+
+.blocked_Alert
+{
+	margin-top: -30px;
+}
+.RenewMemb > a
+	{
+		text-decoration: underline;
+		color: white;
+	}
+
+.sidebar1-widget
+{
+	margin-top: -20px;
+}
+
+.sidebar2-widget
+{
+	margin-top: -20px;
+}
+
+.sidebar4-widget
+{
+	margin-top: -20px;
+}
+
+.sidebar5-widget
+{
+	margin-top: -20px;
+}
+
+.schedule-block .inner-box .innerBasic
+{
+	border: 1px solid #edcc5d;
+}
+
+.schedule-block .innerBasic:after
+{
+   border-right: 20px solid #edcc5d;
+}
+
+.schedule-block .inner-box .innerEducation
+{
+	border: 1px solid #46ccb6;
+}
+
+.schedule-block.even .innerEducation:after
+{
+   border-left: 20px solid #46ccb6;
+}
+
+.schedule-block .inner-box .innerFamily
+{
+	border: 1px solid #e6275a;
+}
+
+.schedule-block .innerFamily:after
+{
+   border-right: 20px solid #e6275a;
+}
+
+.schedule-block .inner-box .innerHoroscope
+{
+	border: 1px solid #05a7dc;
+	margin-top: -45px;
+}
+
+.schedule-block.even .innerHoroscope:after
+{
+   border-left: 20px solid #05a7dc;
+}
+
+
+.schedule-block
+{
+   margin-bottom: -325px;
+}
+
+.schedule-block .speaker-info .name
+{
+    line-height: 2.0em;
+}
+
+.InterestedInText .txt
+{
+    font-size:16px;
+}
+
+.discaimer-section
+{
+    width:100%;
+    text-align:right;
+}
+
+.discaimer-section a
+{
+    color:#888888;
+    font-size:12px;
+    text-align:right;
+    text-decoration:underline;
+}
+
+.discaimer-section a:hover
+{
+    color:#e6275a;
+}
+
+
+@media screen and (max-width: 768px)
+{
+	.discaimer-section
+	{
+		position: relative;
+		margin-top: -200px;
+		visibility: hidden;
+		padding-top: 100px;
+	}
+
+	.schedule-block .inner-box .match_Partner {
+	    margin-bottom: 100px;
+	}
+}
+
+.schedule-block .innerFamily #familyIcon
+{
+    border: 2px dashed #f20487;
+}
+
+.schedule-block .innerHoroscope .date
+{
+    border: 2px dashed #05a7dc;
+}
+
+.schedule-block .inner:before
+{
+    bottom: -38px
+}
+
+/*#familyIcon
+{
+    border: 2px dashed #f20487;
+}*/
+@media screen and (max-width: 768px)
+{
+    
+.imgsm 
+{
+    top:400px;
+    position:absolute;
+}
+    
+.schedule-block .innerFamily #familyIcon
+{
+    border: none;
+}
+
+.schedule-block .innerHoroscope .date
+{
+    border: none;
+}
+.imgmiddle
+{
+	color: #ec167f;
+	margin-top:-576px;
+}
+    
+    /* Mobile: header dropdowns handled by header.php styles */
+    
+	.RenewMemb
+	{
+		margin-left: 0px;
+	}
+	.schedule-timeline-two
+	{
+		position: relative;
+		top: -50px;
+	}
+	.schedule-timeline-two1
+	{
+		position: relative;
+		top: 0px;
+
+	}
+
+	.schedule-timeline-two2
+	{
+		position: relative;
+		top: -110px;
+	}
+
+	.schedule-timeline-two3
+	{
+		position: relative;
+		top: -82px;
+		margin-bottom: 0px;
+
+	}
+	.prime_Information
+	{
+		left: -25px;
+		position: relative;
+		top: -30px;
+		margin-bottom: 0px;
+	}
+
+	.contct_prime_info
+	{
+		left:0px;
+	}
+	
+	.profile_info_sec
+	{
+		top: -15px;
+		position: absolute;
+		z-index: -1;
+	}
+
+	.profile_info_sec1
+	{
+		top: 20px;
+		margin-bottom: 50px;
+		/*bottom: -30px; */
+	}
+
+	.partner_matches_main
+	{
+		margin-bottom: -50px;
+	}
+
+	.prime_Infoalign
+	{
+		margin-top: -60px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.send_Message_Text
+	{
+		margin-top: -35px;
+	}
+
+	.send_Message_Text1
+	{
+		margin-top: -20px;
+	}
+
+
+	.profile_alerts
+	{
+		margin-top: -30px;
+		margin-bottom: 40px;
+		margin-right: 50px;
+	}
+	
+	.interested_Alert
+	{
+	   margin-right: 50px;
+	}
+
+	.profile_footer
+	{
+		margin-top: 0px;
+	}
+
+	.gallery-item
+	{
+		margin-top: -253px;
+		position: absolute;
+	}
+
+	.dropdownimg
+	{
+		margin-top: -300px;
+		//left: 200px;
+		position: absolute;
+	}
+	
+	.block_Alert
+	{
+	    margin-right:50px;
+	    //margin-left:0px;
+	}
+	.shorlist_Alert
+	{
+	    margin-right:50px;
+	}
+	
+	.prime_Msg
+	{
+	    margin-right:50px;
+	}
+	
+}
+
+
+@media screen and (max-width: 568px)
+{	
+	.RenewMemb
+	{
+		margin-left: 0px;
+	}
+
+
+
+	.schedule-timeline-two
+	{
+		position: relative;
+		top: -67px;
+	}
+
+	.schedule-timeline-two1
+	{
+		position: relative;
+		top: -55px;
+		margin-bottom: 40px;
+	}
+	.prime_Information
+	{
+		left: -25px;
+		position: relative;
+		top: -30px;
+		margin-bottom: 0px;
+		/*top: 0px;*/
+	}
+
+	.contct_prime_info
+	{
+		left: 0px;
+	}
+	.profile_info_sec
+	{
+		margin-top: -15px;
+		position: absolute;
+		z-index: -1;
+	}
+
+	
+
+	.profile_info_sec1
+	{
+		top: 20px;
+		margin-bottom: 50px;
+		/*bottom: -30px;*/
+	}
+
+	.partner_matches_main
+	{
+		margin-bottom: -50px;
+	}
+
+	.prime_Infoalign
+	{
+		margin-top: -60px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.send_Message_Text
+	{
+		margin-top: -35px;
+	}
+
+	.send_Message_Text1
+	{
+		margin-top: -20px;
+	}
+
+	.send_message_sec
+	{
+		margin-bottom: -70px;
+	}
+}
+
+
+
+/*full profile*/
+
+@media screen and (max-width: 360px)
+{
+	#full_Profile
+	{
+		left: -15px;
+	}
+
+	#send_Message
+	{
+		left: -15px;
+	}
+
+	#contact_Details
+	{
+		left: -15px;
+	}
+
+	#profile_Match
+	{
+		left: 3px;
+		padding-right: 5px;
+	}
+}
+
+@media screen and (max-width: 375px)
+{
+	.schedule-tabs .tab-buttons li .day
+	{
+		padding: 0px;
+	}
+
+	#profile_Match
+	{
+		margin-left: 3px;
+		position: absolute;
+	}
+}
+
+@media screen and (max-width: 414px)
+{
+	.schedule-tabs .tab-buttons
+	{
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		padding-top: 65px;
+		margin-bottom: -40px;
+	}
+	
+
+}
+
+
+
+.dropdownimg
+{
+	position: absolute;
+	margin-left: 100px;
+}
+
+.tab_Box
+{
+	margin-top: 0px;
+	position: relative;
+}
+
+.profile_alerts
+	{
+		margin-top: 0px;
+		margin-bottom: 20px;
+		margin-right: 50px;
+	}
+
+ @media screen and (max-width: 568px){
+	.schedule-tabs .btns-box{
+		margin-top:70px;
+	}
+	.dropdown-menu.show.dropdownimg {
+    margin: -34.875rem 148px 0;
+	}
+  .image1{
+		display:none;
+	}
+	.schedule-tabs .tab-buttons li {
+    position: relative;
+    top: 0px;
+    z-index: 33;
+    display: inline-block;
+    margin-left: 0px;
+    height: 18px;
+    width: 72px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    font-weight: 600;
+    text-align: center;
+    padding: 0px 0px;
+    padding: 0px 0px;
+    padding-top: 0px;
+    
+    /*cursor: pointer;
+    margin: 0 0px 19px;
+    border: 1px solid #dddddd;*/
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+	}
+	.schedule-tabs .tab-buttons li .day {
+		position: absolute;
+		left: 0px;
+		top: -1px;
+		white-space: pre;
+		padding: 0px 0px;
+		padding-right: 10px;
+		padding-left: 10px;
+		text-align: center;
+		background-color: #222222;
+		line-height: 20px;
+		font-size: 12px;
+   		font-weight: 300;
+		color: #ffffff;
+		border-radius: 0 3px 3px 0;
+	} 
+
+	#full_Profile .day
+	{
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	#contact_Details
+	{
+		border: none;
+		margin-left: 5px;
+	}
+	#profile_Match 
+	{
+		padding-left: 5px;
+		border: none;
+		margin-left: 3px;
+	}
+
+	#compatibilityTab
+	{
+		/* padding:14px 10px; */
+		display: none;		
+		/*padding:15px 13px;*/
+	}
+
+	#send_Message
+	{
+		padding-left: 15px;
+		margin-left: 0px;
+		border: none;
+	}
+
+ 	.event-info-tabs .tab-btn{
+	position: relative;
+	float: left;
+	padding: 0px 0px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #ffffff;
+	background-color: #1d95d2;
+	font-weight: 600;
+	cursor: pointer;
+	margin-right: 5px;
+	/*border: 1px solid #dddddd;*/
+	border-bottom: 0;
+	margin-bottom: -2px;
+	z-index: 3;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.InterestedInText
+{
+	top: -250;
+	//top: 30px;
+	//position: absolute;
+}
+
+.myDropdown
+{
+	top: -200px;
+}
+
+.theme-btn
+{
+	margin-bottom: 30px;
+}
+.viewBtn
+{
+	margin-top: -100px;
+	margin-bottom: -200px;
+}
+
+ }
+ @media screen and (max-width: 768px) {
+	.schedule-tabs .btns-box {
+		margin-top:10px;
+	}
+	.dropdown-menu.show.dropdownimg {
+    margin: -36.111rem 194px 0;
+	}
+   .image1{
+		display:none;
+	}
+	.schedule-tabs .tab-buttons li {
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    z-index: 33;
+    margin-left: 0px;
+    height: 18px;
+    width: 72px; 
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    font-weight: 600;
+    text-align: center;
+    padding: 0px 0px;
+    padding: 0px 0px;
+    padding-top: 0px;
+    
+    /*cursor: pointer;
+    margin: 0 0px 19px;
+    border: 1px solid #dddddd;*/
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+	}
+
+	.schedule-tabs .tab-buttons li .day {
+    position: absolute;
+    left: 0px;
+    top: -1px;
+    white-space: pre;
+    padding: 0px 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: center;
+    background-color: #222222;
+    line-height: 20px;
+    font-size: 12px;
+   	font-weight: 300;
+    color: #ffffff;
+   /* border-radius: 0 3px 3px 0;*/
+	} 
+	
+
+	#full_Profile
+	{
+		border: none;
+	}
+
+	#full_Profile .day
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	#contact_Details .day
+	{
+		margin-right: 15px;
+	}
+
+	#contact_Details
+	{
+		border: none;
+	}
+	#profile_Match 
+	{
+		padding-left: 5px;
+		border: none;
+	}
+
+	#compatibilityTab
+	{
+		/* padding:14px 10px; */
+		display: none;		
+		/*padding:15px 13px;*/
+	}
+
+	#send_Message
+	{
+		padding-left: 15px;
+		margin-left: -15px;
+		border: none;
+	}
+
+	.event-info-tabs .tab-btn{
+	position: relative;
+	float: left;
+	padding: 0px 0px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #ffffff;
+	background-color: #1d95d2;
+	font-weight: 600;
+	cursor: pointer;
+	/*border: 1px solid #dddddd;*/
+	border-bottom: 0;
+	margin-bottom: -2px;
+	z-index: 3;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.InterestedInTxt
+{
+	top: 30px;
+	//left:200px;
+	//position: absolute;
+}
+
+.theme-btn
+{
+	margin-bottom: 30px;
+}
+
+ }
+/* full profile css prakash 6-4-22*/
+ /*.interestedInSection
+ {
+ 	padding-top: 0px;
+ 	top: -210px;
+ 	left: 0px;
+ 	position: relative;
+ 	z-index: 2;
+ }*/
+
+ .dropdownDiv
+ {
+ 	margin-left:0px;
+ }
+
+.InterestedText .txt
+{
+	position: absolute;
+	z-index: 4;
+	margin-left: 0px;
+}
+@media screen and (max-width: 768px)
+{
+	.interestedInSection
+	 {
+	 	top: -100px;
+	 	z-index: 2;
+	 }
+
+
+	 /*.interestedInSectionPic
+	 {
+	 	z-index: 11;
+	 	position: absolute;
+	 }*/
+}
+
+.educationalBlock
+{
+	margin-top: -200px;
+}
+
+.educationalBlock1
+{
+	margin-top: -340px;
+	margin-bottom: 20px;
+}
+
+/*.educationalBlock2
+{
+	margin-top: -400px;
+	padding-top: 0px;
+}
+
+.educationalBlock3
+{
+	border-color: #40cbb4;
+}*/
+
+@media screen and (max-width: 768px)
+{	
+	.educationalBlock
+	{
+		margin-top:-12px;
+
+	}
+
+	.schedule-block.even .inner-box
+	{
+	float: left;
+	text-align: left;
+	}
+
+	.educationalBlock3
+	{
+		top: -25px;
+	}
+}
+.schedule-block:nth-child(4n + 4) .date,
+.schedule-block:nth-child(4n + 4) .inner:before{
+	border-color:#f20487;
+	bottom: 313px;
+}
+
+.profileFooter
+{
+	margin-top: -50px;
+}

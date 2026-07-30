@@ -1,0 +1,130 @@
+.mvv-searchable-multi {
+  position: relative;
+  width: 100%;
+}
+
+.mvv-searchable-multi > select {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.mvv-searchable-multi__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 46px;
+  padding: 9px 13px;
+  border: 1px solid #decfc4;
+  border-radius: 7px;
+  background: #fff;
+  color: #3d302b;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mvv-searchable-multi__toggle::after {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.mvv-searchable-multi.is-open .mvv-searchable-multi__toggle {
+  border-color: #c9973a;
+  box-shadow: 0 0 0 3px rgba(201, 151, 58, .15);
+}
+
+.mvv-searchable-multi__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mvv-searchable-multi__menu {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 5px);
+  right: 0;
+  left: 0;
+  max-height: 270px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid #decfc4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(58, 42, 34, .16);
+}
+
+.mvv-searchable-multi.is-open .mvv-searchable-multi__menu {
+  display: block;
+}
+
+.mvv-searchable-multi__search-wrap {
+  position: sticky;
+  top: -6px;
+  z-index: 2;
+  margin: -6px -6px 4px;
+  padding: 7px;
+  border-bottom: 1px solid #decfc4;
+  background: #fff;
+}
+
+.mvv-searchable-multi__search {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 10px;
+  border: 1px solid #decfc4;
+  border-radius: 6px;
+  background: #fff;
+  color: #3d302b;
+  font: inherit;
+}
+
+.mvv-searchable-multi__search:focus {
+  outline: none;
+  border-color: #c9973a;
+  box-shadow: 0 0 0 3px rgba(201, 151, 58, .15);
+}
+
+.mvv-searchable-multi__option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #3d302b;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.mvv-searchable-multi__option:hover,
+.mvv-searchable-multi__option.is-selected {
+  background: #fff5e8;
+}
+
+.mvv-searchable-multi__option input {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #8b1f1f;
+}
+
+.mvv-searchable-multi__empty {
+  display: none;
+  padding: 11px 10px;
+  color: #76675f;
+  font-size: .88rem;
+}
