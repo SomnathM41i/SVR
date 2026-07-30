@@ -87,6 +87,8 @@ $heightMap = [
     37=>'7Ft'
 ];
 
+$baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+
 $groupTitle = $isNri ? 'NRI' : ($maritalStatus === 'Divorced' ? 'Divorcee' : 'Unmarried');
 $groupTitle .= $gender === 'Male' ? ' Grooms' : ' Brides';
 $page_title = $groupTitle.' - Shivraj Maratha';
@@ -194,6 +196,22 @@ include('header3.php');
                 $profile['Dist'] ?? ''
             ]));
             $profileLink = 'public_profile?id='.urlencode(base64_encode($profile['MatriID']));
+            $waLines = [];
+            $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+            $waLines[] = '';
+            $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
+            $waLines[] = "\u{1F382} Age: " . (int)$profile['Age'] . ' years';
+            if (!empty($profile['Education']) && $profile['Education'] !== 'Education not specified') $waLines[] = "\u{1F393} Education: {$profile['Education']}";
+            if (!empty($profile['Occupation']) && $profile['Occupation'] !== 'Occupation not specified') $waLines[] = "\u{1F4BC} Occupation: {$profile['Occupation']}";
+            if (!empty($heightMap[(int)$profile['Height']])) $waLines[] = "\u{1F4CF} Height: {$heightMap[(int)$profile['Height']]}";
+            if (!empty($location)) $waLines[] = "\u{1F4CD} Location: $location";
+            $waLines[] = "\u{1F48D} Marital Status: $maritalStatus";
+            $waLines[] = '';
+            $waLines[] = "\u{1F517} View Full Profile:";
+            $waLines[] = $baseUrl . $profileLink;
+            $waLines[] = '';
+            $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+            $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
         ?>
         <article class="public-match-card">
           <a href="<?php echo htmlspecialchars($profileLink); ?>">
@@ -208,10 +226,13 @@ include('header3.php');
               <div><i class="fas fa-briefcase"></i><?php echo htmlspecialchars($profile['Occupation'] ?: 'Occupation not specified'); ?></div>
               <div><i class="fas fa-location-dot"></i><?php echo htmlspecialchars($location ?: 'Location not specified'); ?></div>
             </div>
-            <a class="public-match-action" href="<?php echo htmlspecialchars($profileLink); ?>">
-              <i class="fas fa-user"></i>
-              View Public Profile
-            </a>
+            <div style="display:flex;gap:8px;margin-top:auto">
+              <a class="wa-share-btn" href="<?php echo htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Share</a>
+              <a class="public-match-action" href="<?php echo htmlspecialchars($profileLink); ?>" style="flex:1;justify-content:center">
+                <i class="fas fa-user"></i>
+                View Profile
+              </a>
+            </div>
           </div>
         </article>
         <?php } ?>

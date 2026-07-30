@@ -155,6 +155,28 @@ include('header3.php');
     ) {
         $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
     }
+    $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+    $profileUrl = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($profile['MatriID']));
+    $profileHeight = $heightMap[(int)$profile['Height']] ?? '';
+    $profileLocation = implode(', ', array_filter([$profile['City'] ?? '', $profile['Taluka'] ?? '', $profile['Dist'] ?? '']));
+    $waLines = [];
+    $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+    $waLines[] = '';
+    $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
+    $waLines[] = "\u{1F3C3} Name: $maskedName";
+    $waLines[] = "\u{1F382} Age: " . ($profile['Age'] ?? '') . ' years';
+    if (!empty($profileHeight)) $waLines[] = "\u{1F4CF} Height: $profileHeight";
+    if (!empty($profile['Education'])) $waLines[] = "\u{1F393} Education: {$profile['Education']}";
+    if (!empty($profile['Occupation'])) $waLines[] = "\u{1F4BC} Occupation: {$profile['Occupation']}";
+    if (!empty($profile['Religion'])) $waLines[] = "\u{1F54A} Religion: {$profile['Religion']}";
+    if (!empty($profileLocation)) $waLines[] = "\u{1F4CD} Location: $profileLocation";
+    if (!empty($profile['Maritalstatus'])) $waLines[] = "\u{1F48D} Marital Status: {$profile['Maritalstatus']}";
+    $waLines[] = '';
+    $waLines[] = "\u{1F517} View Full Profile:";
+    $waLines[] = $profileUrl;
+    $waLines[] = '';
+    $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+    $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
 ?>
   <section class="public-profile-hero">
     <div class="container public-profile-hero-inner">
@@ -175,6 +197,7 @@ include('header3.php');
           <div class="public-profile-photo-copy">
             <h2><?php echo publicProfileValue($maskedName); ?></h2>
             <p><?php echo publicProfileValue($profile['MatriID']); ?></p>
+            <a class="wa-share-btn" href="<?php echo htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:10px"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
           </div>
         </article>
 

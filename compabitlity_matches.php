@@ -4,6 +4,13 @@ require_once('includes/partner_match.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 
+$baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+
+function getHeightValue($h) {
+    $map = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4 inch',6=>'4Ft 5 inch',7=>'4Ft 6 inch',8=>'4Ft 7 inch',9=>'4Ft 8 inch',10=>'4Ft 9 inch',11=>'4Ft 10 inch',12=>'4Ft 11 inch',13=>'5Ft',14=>'5Ft 1 inch',15=>'5Ft 2 inch',16=>'5Ft 3 inch',17=>'5Ft 4 inch',18=>'5Ft 5 inch',19=>'5Ft 6 inch',20=>'5Ft 7 inch',21=>'5Ft 8 inch',22=>'5Ft 9 inch',23=>'5Ft 10 inch',24=>'5Ft 11 inch',25=>'6Ft',26=>'6Ft 1 inch',27=>'6Ft 2 inch',28=>'6Ft 3 inch',29=>'6Ft 4 inch',30=>'6Ft 5 inch',31=>'6Ft 6 inch',32=>'6Ft 7 inch',33=>'6Ft 8 inch',34=>'6Ft 9 inch',35=>'6Ft 10 inch',36=>'6Ft 11 inch',37=>'7Ft'];
+    return $map[(int)$h] ?? '';
+}
+
 $matriid=$_SESSION['MatriID'];
 $login=mysqli_query($con,"select * from compatibility where MatriID ='$matriid'");
 $me=mysqli_fetch_array($login);
@@ -457,6 +464,30 @@ while($profiles=mysqli_fetch_array($login_profile)){
 							      <div class="tooltip spce"> Instagram </div>
 								 </div>
 							</div>
+							<div class="wrapper">
+								   <li class="spce"><?php
+                $waHL = $rec['Height'] ? getHeightValue($rec['Height']) : '';
+                $waLL = implode(', ', array_filter([$rec['City'] ?? '', $rec['Dist'] ?? '']));
+                $waLA = [];
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = '';
+                $waLA[] = "\u{1F194} Profile ID: {$rec['MatriID']}";
+                $waLA[] = "\u{1F382} Age: {$rec['Age']} years";
+                if (!empty($rec['Religion'])) $waLA[] = "\u{1F54A} Religion: {$rec['Religion']}";
+                if (!empty($rec['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$rec['Maritalstatus']}";
+                if (!empty($rec['Education'])) $waLA[] = "\u{1F393} Education: {$rec['Education']}";
+                if (!empty($rec['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$rec['Occupation']}";
+                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
+                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
+                $waLA[] = '';
+                $waLA[] = "\u{1F517} View Full Profile:";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($rec['MatriID']));
+                $waLA[] = '';
+                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
+              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
+							      <div class="tooltip spce"> Share </div>
+								 </div>
 								</ul>
                             </div>
 							</a>

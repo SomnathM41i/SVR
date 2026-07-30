@@ -526,5 +526,6 @@
 </script>
 <link rel="stylesheet" href="css3/searchable-multiselect.css">
 <script src="css3/searchable-multiselect.js"></script>
+<script src="js/whatsapp-share.js"></script>
 </body>
 </html>

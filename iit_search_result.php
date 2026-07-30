@@ -3,6 +3,13 @@
 error_reporting(0);
 /*session_start();*/
 include('memprotect.php');
+$baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+
+function getHeightValue($h) {
+    $map = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4 inch',6=>'4Ft 5 inch',7=>'4Ft 6 inch',8=>'4Ft 7 inch',9=>'4Ft 8 inch',10=>'4Ft 9 inch',11=>'4Ft 10 inch',12=>'4Ft 11 inch',13=>'5Ft',14=>'5Ft 1 inch',15=>'5Ft 2 inch',16=>'5Ft 3 inch',17=>'5Ft 4 inch',18=>'5Ft 5 inch',19=>'5Ft 6 inch',20=>'5Ft 7 inch',21=>'5Ft 8 inch',22=>'5Ft 9 inch',23=>'5Ft 10 inch',24=>'5Ft 11 inch',25=>'6Ft',26=>'6Ft 1 inch',27=>'6Ft 2 inch',28=>'6Ft 3 inch',29=>'6Ft 4 inch',30=>'6Ft 5 inch',31=>'6Ft 6 inch',32=>'6Ft 7 inch',33=>'6Ft 8 inch',34=>'6Ft 9 inch',35=>'6Ft 10 inch',36=>'6Ft 11 inch',37=>'7Ft'];
+    return $map[(int)$h] ?? '';
+}
+
 $looking=$_POST['looking'] ? $_POST['looking'] : $_GET['looking'];
 $txtgender=$_POST['gender'] ? $_POST['gender'] : $_GET['gender'];
 $from_age=$_POST['txtSAge'] ? $_POST['txtSAge'] : $_GET['txtSAge'];
@@ -430,6 +437,27 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
               <a href="full_profile?id=<?php echo $encrypt ?>" target="_blank" title="Shortlist"><i class="fas fa-heart"></i></a>
               <a href="full_profile?id=<?php echo $encrypt ?>" target="_blank" title="Message"><i class="fas fa-comment-dots"></i></a>
               <a href="full_profile?id=<?php echo $encrypt ?>" target="_blank" title="Connect"><i class="fas fa-user-plus"></i></a>
+              <?php
+                $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
+                $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $waLA = [];
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = '';
+                $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
+                $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
+                if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
+                if (!empty($fetch['Maritalstatus'])) $waLA[] = "\u{1F48D} Marital Status: {$fetch['Maritalstatus']}";
+                if (!empty($fetch['Education'])) $waLA[] = "\u{1F393} Education: {$fetch['Education']}";
+                if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
+                if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
+                if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
+                $waLA[] = '';
+                $waLA[] = "\u{1F517} View Full Profile:";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
+                $waLA[] = '';
+                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
+              ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
