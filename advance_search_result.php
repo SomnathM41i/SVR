@@ -640,9 +640,11 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
             <?php
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $waImg = ($imgSrc !== 'images/nophoto.jpg') ? $baseUrl . $imgSrc : '';
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -651,9 +653,6 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));

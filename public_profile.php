@@ -84,6 +84,23 @@ if (($profile['profile_location_type'] ?? '') === 'NRI') {
 }
 $backUrl = 'public_profiles?'.http_build_query($backQuery);
 
+$photoOG = 'images/nophoto.jpg';
+if ($profile) {
+    $ogPv = $profile['photo_visibility'] ?? '';
+    $ogPa = ($profile['Photo1Approve'] ?? '') === 'Yes';
+    $ogP1 = !empty($profile['Photo1']) && $profile['Photo1'] !== 'nophoto.jpg';
+    if ($ogP1 && $ogPa) {
+        if ($ogPv === 'allphoto') {
+            $photoOG = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
+        } elseif ($ogPv === 'paidphoto' && ($_SESSION['Status'] ?? '') === 'Paid') {
+            $photoOG = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
+        }
+    }
+    $ogBaseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+    $page_og_image = ($photoOG !== 'images/nophoto.jpg') ? $ogBaseUrl . $photoOG : '';
+    $page_og_title = $maskedName . ' - Shivraj Maratha';
+    $page_og_description = 'View ' . $maskedName . '\'s matrimony profile on Shivraj Maratha.';
+}
 include('header3.php');
 ?>
 
@@ -147,21 +164,25 @@ include('header3.php');
   </section>
 <?php } else {
     $photo = 'images/nophoto.jpg';
-    if (
-        ($profile['photo_visibility'] ?? '') === 'allphoto' &&
-        ($profile['Photo1Approve'] ?? '') === 'Yes' &&
-        !empty($profile['Photo1']) &&
-        $profile['Photo1'] !== 'nophoto.jpg'
-    ) {
-        $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
+    $pv = $profile['photo_visibility'] ?? '';
+    $pa = ($profile['Photo1Approve'] ?? '') === 'Yes';
+    $p1 = !empty($profile['Photo1']) && $profile['Photo1'] !== 'nophoto.jpg';
+    if ($p1 && $pa) {
+        if ($pv === 'allphoto') {
+            $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
+        } elseif ($pv === 'paidphoto' && ($_SESSION['Status'] ?? '') === 'Paid') {
+            $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=600';
+        }
     }
     $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
     $profileUrl = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($profile['MatriID']));
     $profileHeight = $heightMap[(int)$profile['Height']] ?? '';
     $profileLocation = implode(', ', array_filter([$profile['City'] ?? '', $profile['Taluka'] ?? '', $profile['Dist'] ?? '']));
+    $waImg = ($photo !== 'images/nophoto.jpg') ? $baseUrl . $photo : '';
     $waLines = [];
-    $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+    $waLines[] = $profileUrl;
     $waLines[] = '';
+    $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
     $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
     $waLines[] = "\u{1F3C3} Name: $maskedName";
     $waLines[] = "\u{1F382} Age: " . ($profile['Age'] ?? '') . ' years';
@@ -171,9 +192,6 @@ include('header3.php');
     if (!empty($profile['Religion'])) $waLines[] = "\u{1F54A} Religion: {$profile['Religion']}";
     if (!empty($profileLocation)) $waLines[] = "\u{1F4CD} Location: $profileLocation";
     if (!empty($profile['Maritalstatus'])) $waLines[] = "\u{1F48D} Marital Status: {$profile['Maritalstatus']}";
-    $waLines[] = '';
-    $waLines[] = "\u{1F517} View Full Profile:";
-    $waLines[] = $profileUrl;
     $waLines[] = '';
     $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
     $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));

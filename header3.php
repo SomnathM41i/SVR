@@ -712,6 +712,11 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
         }
       }
       </style>
+      <?php if (!empty($page_og_image)): ?><meta property="og:image" content="<?php echo htmlspecialchars($page_og_image, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (!empty($page_og_title)): ?><meta property="og:title" content="<?php echo htmlspecialchars($page_og_title, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (!empty($page_og_description)): ?><meta property="og:description" content="<?php echo htmlspecialchars($page_og_description, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="<?php echo htmlspecialchars((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'?'https':'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">
    </head>
    <body>
       <!-- TOP BAR -->

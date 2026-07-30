@@ -182,13 +182,15 @@ include('header3.php');
       <div class="public-match-grid">
         <?php foreach ($profiles as $profile) {
             $photo = 'images/nophoto.jpg';
-            if (
-                ($profile['photo_visibility'] ?? '') === 'allphoto' &&
-                ($profile['Photo1Approve'] ?? '') === 'Yes' &&
-                !empty($profile['Photo1']) &&
-                $profile['Photo1'] !== 'nophoto.jpg'
-            ) {
-                $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=500';
+            $pv = $profile['photo_visibility'] ?? '';
+            $pa = ($profile['Photo1Approve'] ?? '') === 'Yes';
+            $p1 = !empty($profile['Photo1']) && $profile['Photo1'] !== 'nophoto.jpg';
+            if ($p1 && $pa) {
+                if ($pv === 'allphoto') {
+                    $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=500';
+                } elseif ($pv === 'paidphoto' && ($_SESSION['Status'] ?? '') === 'Paid') {
+                    $photo = 'photoprocess.php?image='.rawurlencode('gallary/'.$profile['Photo1']).'&square=500';
+                }
             }
             $location = implode(', ', array_filter([
                 $profile['City'] ?? '',
@@ -196,9 +198,11 @@ include('header3.php');
                 $profile['Dist'] ?? ''
             ]));
             $profileLink = 'public_profile?id='.urlencode(base64_encode($profile['MatriID']));
+            $waImg = ($photo !== 'images/nophoto.jpg') ? $baseUrl . $photo : '';
             $waLines = [];
-            $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+            $waLines[] = $baseUrl . $profileLink;
             $waLines[] = '';
+            $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
             $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
             $waLines[] = "\u{1F382} Age: " . (int)$profile['Age'] . ' years';
             if (!empty($profile['Education']) && $profile['Education'] !== 'Education not specified') $waLines[] = "\u{1F393} Education: {$profile['Education']}";
@@ -206,9 +210,6 @@ include('header3.php');
             if (!empty($heightMap[(int)$profile['Height']])) $waLines[] = "\u{1F4CF} Height: {$heightMap[(int)$profile['Height']]}";
             if (!empty($location)) $waLines[] = "\u{1F4CD} Location: $location";
             $waLines[] = "\u{1F48D} Marital Status: $maritalStatus";
-            $waLines[] = '';
-            $waLines[] = "\u{1F517} View Full Profile:";
-            $waLines[] = $baseUrl . $profileLink;
             $waLines[] = '';
             $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
             $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));

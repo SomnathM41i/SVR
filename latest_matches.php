@@ -218,10 +218,9 @@ function displayPaginationBelow($con, $per_page, $page) {
           $encrypt = urlencode(base64_encode($fetch['MatriID']));
           $imgSrc = 'images/nophoto.jpg';
           if($fetch['photo_visibility']=='paidphoto' && $fetch['Photo1Approve']=='Yes' && $me['Status']=='Paid' && $fetch['Photo1']!='nophoto.jpg')
-            $imgSrc='gallary/'.$fetch['Photo1'];
+            $imgSrc='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
           elseif($fetch['photo_visibility']=='allphoto' && $fetch['Photo1Approve']=='Yes' && $fetch['Photo1']!='nophoto.jpg')
-            $imgSrc='gallary/'.$fetch['Photo1'];
-          else $imgSrc='images/nophoto.jpg';
+            $imgSrc='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
         ?>
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
           <div class="mvv-match-card">
@@ -246,9 +245,11 @@ function displayPaginationBelow($con, $per_page, $page) {
             <?php
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $waImg = ($imgSrc !== 'images/nophoto.jpg') ? $baseUrl . $imgSrc : '';
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -257,9 +258,6 @@ function displayPaginationBelow($con, $per_page, $page) {
                 if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));

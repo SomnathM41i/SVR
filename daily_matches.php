@@ -715,16 +715,12 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
                             <figure class="image">
                        
                                <a href="full_profile?id=<?php echo $fetch['MatriID']?>" target="_blank">							
-							<?php if($fetch['Photo1Approve']=='Yes')
-							{
-							if($fetch['Photo1']!='no-photo.gif') {
-								 ?>		
-							<img src="gallary/<?php echo $fetch['Photo1'];?>"> 
-							<?php  } else   {   ?>
-							<img src="gallary/nophoto.jpg"> 
-							<?php } } else { ?>
-							<img src="gallary/nophoto.jpg"> 
-							<?php  } ?>
+							<?php
+							$dailyImg='images/nophoto.jpg';
+							if($fetch['photo_visibility']=='paidphoto' && $fetch['Photo1Approve']=='Yes' && $me['Status']=='Paid' && $fetch['Photo1']!='nophoto.jpg') $dailyImg='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
+							elseif($fetch['photo_visibility']=='allphoto' && $fetch['Photo1Approve']=='Yes' && $fetch['Photo1']!='nophoto.jpg') $dailyImg='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
+							?>
+							<img src="<?php echo $dailyImg; ?>">
 							</a>
 							</figure> 
 					   </div>
@@ -737,9 +733,11 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
                                 <?php
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $dailyImgFull = ($dailyImg !== 'images/nophoto.jpg') ? $baseUrl . $dailyImg : '';
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -748,9 +746,6 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
                 if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));

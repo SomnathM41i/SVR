@@ -455,52 +455,15 @@ filter: blur(8px);
                                 $encrypt = urlencode( base64_encode( $fetch['MatriID'] ) );
                             ?>
 					 <a href="full_profile?id=<?php echo $encrypt?>" target="_blank">
-                            <figure class="image">
-						  
+                             <figure class="image">
                             <?php
-							//paid member photo 
-							
-							 if($fetch['photo_visibility']=="paidphoto")
-								   { ?>
-									   
-								   <?php if($fetch['Photo1Approve']=='Yes'&& $me['Status']=='Paid')
-													 {
-								   if($fetch['Photo1']!='nophoto.jpg' ) {
-														 ?>			
-								<img src="photoprocess.php?image=gallary/<?php echo $fetch['Photo1'];?>&square=500" > 
-								 
-
-												  <?php  } else   {   ?>
-								<img src="blur.php?image=gallary/<?php echo $fetch['Photo1'];?>">  
-										  <?php } } else { ?>
-								<img src="blur.php?image=gallary/<?php echo $fetch['Photo1'];?>">  
-										 
-										 <?php  } } 
-		 
-							    elseif($fetch['photo_visibility']=='allphoto' && $fetch['Photo1Approve']=='Yes' ) 
-							    	{ 
-							    		if($fetch['Photo1']!='nophoto.jpg' )
-							    		{
-
-							    ?>
-										
-								<img src="photoprocess.php?image=gallary/<?php echo  $fetch['Photo1'];?>&square=500"> 
-								
-
-								<?php 
-										}
-										else
-										{
-								?>
-								<img src="gallary/<?php echo  $fetch['Photo1'];?>"> 
-								<?php
-										}
-									} 
-									else {
-								?>
-										<img src="images/nophoto.jpg" > 
-										   <?php }?>
-															
+                            $regImg='images/nophoto.jpg';
+                            if($fetch['photo_visibility']=='paidphoto' && $fetch['Photo1Approve']=='Yes' && $qry1['Status']=='Paid' && $fetch['Photo1']!='nophoto.jpg')
+                                $regImg='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
+                            elseif($fetch['photo_visibility']=='allphoto' && $fetch['Photo1Approve']=='Yes' && $fetch['Photo1']!='nophoto.jpg')
+                                $regImg='photoprocess.php?image=gallary/'.$fetch['Photo1'].'&square=500';
+                            ?>
+                            <img src="<?php echo $regImg; ?>">
 							</figure>  
 							</a>
                       </div>
@@ -558,9 +521,11 @@ filter: blur(8px);
 						<?php
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
+                $waImg = ($regImg !== 'images/nophoto.jpg') ? $baseUrl . $regImg : '';
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
+                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -569,9 +534,6 @@ filter: blur(8px);
                 if (!empty($fetch['Occupation'])) $waLA[] = "\u{1F4BC} Occupation: {$fetch['Occupation']}";
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
-                $waLA[] = '';
-                $waLA[] = "\u{1F517} View Full Profile:";
-                $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));

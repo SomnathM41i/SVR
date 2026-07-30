@@ -1,111 +1,89 @@
 <?php
-ob_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
+$image = $_GET['image'] ?? '';
+if (!$image) exit;
 
-if($_GET['image']){  
-$image = $_GET['image'];  
+$filePath = $image;
+if (!file_exists($filePath)) {
+    header('HTTP/1.0 404 Not Found');
+    exit;
+}
 
-$fileextension = pathinfo($image, PATHINFO_EXTENSION);
-$contenttype = mime_content_type($image);
+$ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+$mimeMap = ['jpg'=>'image/jpeg','jpeg'=>'image/jpeg','gif'=>'image/gif','png'=>'image/png','webp'=>'image/webp'];
+$contentType = $mimeMap[$ext] ?? mime_content_type($image);
 
-if($fileextension=="jpg" || $fileextension=="JPG"){$im = imagecreatefromjpeg($image);}  
-if($fileextension=="jpeg" || $fileextension=="JPEG"){$im = imagecreatefromjpeg($image);}
-elseif($fileextension=="gif" || $fileextension=="GIF"){$im = imagecreatefromgif($image);}  
-elseif($fileextension=="png" ||$fileextension=="PNG"){$im = imagecreatefrompng($image);}  
+if (!extension_loaded('gd')) {
+    header("Content-Type: $contentType");
+    header('Content-Length: ' . filesize($filePath));
+    header('Cache-Control: public, max-age=86400');
+    readfile($filePath);
+    exit;
+}
 
-if(isset($_GET['percent']) && !empty($_GET['percent'])){  
-        $x = round((imagesx($im)*$_GET['percent'])/100);  
-        $y = round((imagesy($im)*$_GET['percent'])/100);  
-        $yyy=0;  
-        $xxx=0;  
-        $imw = imagecreatetruecolor($x,$y);  
-}elseif(isset($_GET['w']) && isset( $_GET['h'])){  
-        $x = $_GET['w'];  
-        $y = $_GET['h'];  
-        $yyy=0;  
-        $xxx=0;  
-        $imw = imagecreatetruecolor($x,$y);  
-}elseif(isset($_GET['maxim_size'])){  
-		if(imagesy($im)>=$_GET['maxim_size'] || imagesx($im)>=$_GET['maxim_size']){  
-			if(imagesy($im)>=imagesx($im)){  
-				$y = $_GET['maxim_size'];  
-				$x = ($y*imagesx($im))/imagesy($im);  
-			}else{  
-				$x = $_GET['maxim_size'];  
-				$y = ($x*imagesy($im))/imagesx($im);  
-			}  
-		}else{  
-				$x = imagesx($im);  
-				$y = imagesy($im);  
-		}  
-		$yyy=0;  
-		$xxx=0;  
-		$imw = imagecreatetruecolor($x,$y);  
-}elseif(isset($_GET['square']) && !empty($_GET['square'])){  
-			if(imagesy($im)>=$_GET['square'] || imagesx($im)>=$_GET['square']){  
-			if(imagesy($im)>=imagesx($im)){  
-			$x = $_GET['square'];  
-			$y = ($x*imagesy($im))/imagesx($im);  
-			$yyy=-($y-$x)/12;  
-			$xxx=0;  
-			}else{  
-			$y = $_GET['square'];  
-			$x = ($y*imagesx($im))/imagesy($im);  
-			$xxx=-($x-$y)/2;  
-			$yyy=0;  
-			}  
-			}else{  
-			$x = imagesx($im);  
-			$y = imagesy($im);  
-			$yyy=0;  
-			$xxx=0;  
-			}  
-			$imw = imagecreatetruecolor($_GET['square'],$_GET['square']);  
-}else{  
-			$x = imagesx($im);  
-			$y = imagesy($im);  
-			$yyy=0;  
-			$xxx=0;  
-			$imw = imagecreatetruecolor($x,$y);  
-}  
+$funcMap = ['jpg'=>'imagecreatefromjpeg','jpeg'=>'imagecreatefromjpeg','gif'=>'imagecreatefromgif','png'=>'imagecreatefrompng','webp'=>'imagecreatefromwebp'];
+$createFunc = $funcMap[$ext] ?? null;
+if (!$createFunc) {
+    header("Content-Type: $contentType");
+    readfile($filePath);
+    exit;
+}
 
-imagecopyresampled($imw, $im, $xxx,$yyy,0,0,$x,$y,imagesx($im), imagesy($im));  
+$src = $createFunc($filePath);
+if (!$src) {
+    header("Content-Type: $contentType");
+    readfile($filePath);
+    exit;
+}
 
-if(isset($_GET['watermark_text']) && !empty($_GET['watermark_text'])){  
-		if($_GET['watermark_color']){$watermark_color=$_GET['watermark_color'];  
-		}else{  
-		$watermark_color="FFFFFF";  
-		}  
-		$red=hexdec(substr($watermark_color,0,2));  
-		$green=hexdec(substr($watermark_color,2,2));  
-		$blue=hexdec(substr($watermark_color,4,2));  
+$sw = imagesx($src);
+$sh = imagesy($src);
 
-		$text_col = imagecolorallocate($imw, $red,$green,$blue);  
-		$font = "SFOldRepublicSCBold.ttf"; //this font(georgia.ttf) heave to be in the same directory as this script  
-		$font_size = 18;  
-		$angle = -90;  
-		$box = imagettfbbox($font_size, $angle, $font, $_GET['watermark_text']);  
-		$x = 5;  
-		$y = 17;  
-		imagettftext($imw, $font_size, $angle, $x, $y, $text_col, $font, $_GET['watermark_text']);  
+if (isset($_GET['square']) && $_GET['square'] > 0) {
+    $size = (int)$_GET['square'];
+    if ($sw >= $size || $sh >= $size) {
+        $ratio = max($sw, $sh) / $size;
+        $dw = (int)($sw / $ratio);
+        $dh = (int)($sh / $ratio);
+        $dst = imagecreatetruecolor($size, $size);
+        $ox = (int)(($size - $dw) / 2);
+        $oy = (int)(($size - $dh) / 2);
+    } else {
+        $dst = imagecreatetruecolor($size, $size);
+        $ox = (int)(($size - $sw) / 2);
+        $oy = (int)(($size - $sh) / 2);
+        $dw = $sw; $dh = $sh;
+    }
+    imagecopyresampled($dst, $src, $ox, $oy, 0, 0, $dw, $dh, $sw, $sh);
+} elseif (isset($_GET['w']) && isset($_GET['h'])) {
+    $w = (int)$_GET['w']; $h = (int)$_GET['h'];
+    $dst = imagecreatetruecolor($w, $h);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $sw, $sh);
+} elseif (isset($_GET['percent']) && $_GET['percent'] > 0) {
+    $pct = (int)$_GET['percent'];
+    $w = (int)($sw * $pct / 100);
+    $h = (int)($sh * $pct / 100);
+    $dst = imagecreatetruecolor($w, $h);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $sw, $sh);
+} elseif (isset($_GET['maxim_size']) && $_GET['maxim_size'] > 0) {
+    $max = (int)$_GET['maxim_size'];
+    if ($sw > $max || $sh > $max) {
+        $ratio = max($sw, $sh) / $max;
+        $w = (int)($sw / $ratio);
+        $h = (int)($sh / $ratio);
+    } else {
+        $w = $sw; $h = $sh;
+    }
+    $dst = imagecreatetruecolor($w, $h);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $sw, $sh);
+} else {
+    $dst = imagecreatetruecolor($sw, $sh);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $sw, $sh, $sw, $sh);
+}
 
-}  
-
-if($fileextension=="jpg"){imagejpeg($imw);}  
-elseif($fileextension=="jpeg"){imagegif($imw);} 
-elseif($fileextension=="gif"){imagegif($imw);}  
-elseif($fileextension=="png"){imagepng($imw);}  
-else{  
-if($fileextension=="jpg" || $fileextension=="JPG"){imagejpeg($imw);}  
-elseif($fileextension=="jpg" || $fileextension=="JPEG"){imagegif($imw);} 
-elseif($fileextension=="gif" || $fileextension=="GIF"){imagegif($imw);}  
-elseif($fileextension=="png" || $fileextension=="PNG"){imagepng($imw);}  
-}  
-header("Content-Type: $contenttype");
-
-
-imagedestroy($imw);  
-}  
-?>
+header("Content-Type: $contentType");
+header('Cache-Control: public, max-age=86400');
+$outMap = ['jpg'=>'imagejpeg','jpeg'=>'imagejpeg','gif'=>'imagegif','png'=>'imagepng','webp'=>'imagewebp'];
+$outFunc = $outMap[$ext] ?? 'imagejpeg';
+$outFunc($dst);
+imagedestroy($src);
+imagedestroy($dst);
