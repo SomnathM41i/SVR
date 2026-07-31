@@ -20,7 +20,7 @@ $message1 = "
 <body>
 <table width='467'>
 <tr>
-<td><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168'></td>
+<td><img src='http://localhost/SVR/css3/assets/manpasand-logo.png' width='168'></td>
 <td>Date: $dates</td>
 </tr>
 

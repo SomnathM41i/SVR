@@ -453,7 +453,7 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
             <td bgcolor="#DFDFDF">Education</td>
             <td bgcolor="#DFDFDF"><?php echo $fetch['PE_Education'] ?></td>
             <td>&nbsp;</td>
-            <td colspan="2" rowspan="3" align="center"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="Shivraj Maratha Logo"/></td>
+            <td colspan="2" rowspan="3" align="center"><img src="http://localhost/SVR/css3/assets/manpasand-logo.png" alt="Manpasand Jodidar Logo"/></td>
     </tr>
     <tr>
             <td>Country</td>

@@ -1,5 +1,5 @@
 <?php
-$pageTitle = $pageTitle ?? 'Shivraj Maratha - Vadhu Var Suchak Kendra';
+$pageTitle = $pageTitle ?? 'Manpasand Jodidar - Vadhu Var Suchak Kendra';
 $activePage = $activePage ?? '';
 require_once __DIR__ . '/data.php';
 function active(string $name, string $current): string { return $name === $current ? ' active' : ''; }
@@ -9,7 +9,7 @@ function active(string $name, string $current): string { return $name === $curre
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shivraj Maratha Vadhu Var Suchak Kendra - trusted Maratha matrimonial service in Satara, Maharashtra.">
+  <meta name="description" content="Manpasand Jodidar Vadhu Var Suchak Kendra - trusted Maratha matrimonial service in Satara, Maharashtra.">
   <title><?= htmlspecialchars($pageTitle) ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +20,12 @@ function active(string $name, string $current): string { return $name === $curre
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<div class="topbar"><div class="container topbar-inner"><span>📍 Satara, Maharashtra, India</span><div><a href="tel:+919403550087">☎ +91 94035 50087</a><a href="mailto:info@shivrajmaratha.com">✉ info@shivrajmaratha.com</a></div></div></div>
+<div class="topbar"><div class="container topbar-inner"><span>📍 Satara, Maharashtra, India</span><div><a href="tel:+919403550087">☎ +91 94035 50087</a><a href="mailto:info@manpasandjodidar.com">✉ info@manpasandjodidar.com</a></div></div></div>
 <header class="site-header" id="siteHeader">
   <div class="container nav-wrap">
-    <a class="brand" href="index.php" aria-label="Shivraj Maratha Home">
-      <img src="../css3/assets/shivraj-logo.png" alt="Shivraj Maratha logo" width="76" height="76">
-      <span><b>शिवराज मराठा</b><small>वधू वर सूचक केंद्र ®</small></span>
+    <a class="brand" href="index.php" aria-label="Manpasand Jodidar Home">
+      <img src="../css3/assets/manpasand-logo.png" alt="Manpasand Jodidar logo" width="76" height="76">
+      <span><b>Manpasand Jodidar</b><small>मनपसंद जोडीदार · वधू वर सूचक केंद्र</small></span>
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="mainNav" aria-label="Main navigation">

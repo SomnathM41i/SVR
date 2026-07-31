@@ -55,7 +55,7 @@ while ($row = $result->fetch_assoc()) {
             'notification' => [
                 'title' => $title,
                 'body' => $personalMessage,
-                'image' => 'http://localhost/SVR/css3/assets/shivraj-logo.png'
+                'image' => 'http://localhost/SVR/css3/assets/manpasand-logo.png'
             ]
         ]
     ];

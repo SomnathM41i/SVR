@@ -15,7 +15,7 @@ $matriid = htmlspecialchars($_SESSION['MatriID'] ?? '');
 <link href="css/stylenew.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/manpasand-logo.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

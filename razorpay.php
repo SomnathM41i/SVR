@@ -58,9 +58,9 @@ var options = {
     "key": "rzp_live_UCmasONfYX891y", 
     "amount": amt * 100, 
     "currency": "INR",
-    "name": "Shivraj Maratha",
+    "name": "Manpasand Jodidar",
     "description": "",
-    "image": "http://localhost/SVR/css3/assets/shivraj-logo.png",
+    "image": "http://localhost/SVR/css3/assets/manpasand-logo.png",
     "handler": function (response){
        /* console.log(response);
         response.razorpay_payment_id*/

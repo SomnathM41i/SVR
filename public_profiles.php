@@ -91,7 +91,7 @@ $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : '
 
 $groupTitle = $isNri ? 'NRI' : ($maritalStatus === 'Divorced' ? 'Divorcee' : 'Unmarried');
 $groupTitle .= $gender === 'Male' ? ' Grooms' : ' Brides';
-$page_title = $groupTitle.' - Shivraj Maratha';
+$page_title = $groupTitle.' - Manpasand Jodidar';
 
 function publicProfilesUrl(string $gender, string $status = 'Unmarried', int $page = 1, string $profileType = ''): string {
     $query = ['gender' => $gender];
@@ -149,7 +149,7 @@ include('header3.php');
     <div class="container">
       <span class="eyebrow">Discover Profiles</span>
       <h1><?php echo htmlspecialchars($groupTitle); ?></h1>
-      <p>Browse matching Shivraj Maratha profiles. Log in or register to view complete profile details and connect.</p>
+      <p>Browse matching Manpasand Jodidar profiles. Log in or register to view complete profile details and connect.</p>
     </div>
   </section>
 

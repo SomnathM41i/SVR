@@ -36,7 +36,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Full Profile — Shivraj Maratha</title>
+<title>Full Profile — Manpasand Jodidar</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css?v=352421.2" rel="stylesheet">
@@ -48,8 +48,8 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/manpasand-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/manpasand-logo.png" type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -279,7 +279,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 		<body>
 		<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 		  <tr>
-			<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='250' height='64'  alt=''/></td>
+			<td width='222'><img src='http://localhost/SVR/css3/assets/manpasand-logo.png' width='250' height='64'  alt=''/></td>
 			<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 		  </tr>
 		  <tr>

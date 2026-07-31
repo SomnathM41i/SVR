@@ -3,7 +3,7 @@ ob_start();
 require_once('sys_dbconnection.php');
 include('register_submit.php');
 ?>
-<?php $page_title = 'Free Register - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'Free Register - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 function checkdiv(str) {

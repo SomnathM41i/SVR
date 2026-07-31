@@ -71,7 +71,7 @@ $seof = $seo ? mysqli_fetch_array($seo) : [];
           <h2 class="mvv-title">आमच्या office ला भेट द्या किंवा team ला लिहा</h2>
           <ul class="mvv-feature-list">
             <li><i class="bi bi-geo-alt-fill"></i>Sky Heights, Office No 202, Kalyan West, Thane, Maharashtra</li>
-            <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@shivrajmaratha.com">info@shivrajmaratha.com</a></li>
+            <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@manpasandjodidar.com">info@manpasandjodidar.com</a></li>
             <li><i class="bi bi-clock-fill"></i>सोमवार - शनिवार, 10:00 AM - 7:00 PM</li>
           </ul>
           <a href="https://www.google.com/maps/place/Weddings+Parampara+Matrimony/@19.2360078,73.1254566,17z" class="mvv-btn primary" target="_blank"><i class="bi bi-map-fill"></i> Directions पहा</a>

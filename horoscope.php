@@ -14,7 +14,7 @@ if (!$me) {
   exit;
 }
 $regvar = $me['reg_step'] ?? '';
-$page_title = 'Horoscope - Shivraj Maratha';
+$page_title = 'Horoscope - Manpasand Jodidar';
 include('header3.php');
 ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

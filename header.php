@@ -6,9 +6,9 @@ session_start();*/
 //error_reporting(0);
 $data_config = $db->get_siteconfig();
 $translator_on_off = $data_config-> translator_on_off;
-$mvvLogo = 'css3/assets/shivraj-logo.png';
-$smLogo = 'css3/assets/shivraj-logo.png';
-$smLogoLocal = 'css3/assets/shivraj-logo.png';
+$mvvLogo = 'css3/assets/manpasand-logo.png';
+$smLogo = 'css3/assets/manpasand-logo.png';
+$smLogoLocal = 'css3/assets/manpasand-logo.png';
 ?><style>
 /* ══════════════════════════════════════════
    CRITICAL RESET — applied first to prevent any gap above header
@@ -96,8 +96,10 @@ if ($id === '' && $login && $regvar != '9') {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="css3/manpasand-design-system.css">
 
 <style>
 /* =============================================
@@ -105,41 +107,41 @@ if ($id === '' && $login && $regvar != '9') {
    Inspired by both legacy & template
 ============================================= */
 :root {
-  --mvv-saffron:      #E8612A;
-  --mvv-saffron-dark: #C94D1A;
-  --mvv-maroon:       #6B1A1A;
-  --mvv-maroon-dark:  #4A0E0E;
-  --mvv-gold:         #C9921A;
-  --mvv-gold-light:   #F0C04A;
-  --mvv-cream:        #FFF8F0;
-  --mvv-cream-2:      #F7ECDD;
-  --mvv-ink:          #271A1B;
-  --mvv-muted:        #7A5C4A;
+  --mvv-saffron:      #E94E77;
+  --mvv-saffron-dark: #C43A60;
+  --mvv-maroon:       #6A1037;
+  --mvv-maroon-dark:  #4A0A25;
+  --mvv-gold:         #C89B3C;
+  --mvv-gold-light:   #E0BD6A;
+  --mvv-cream:        #FFF9F6;
+  --mvv-cream-2:      #FFF0EA;
+  --mvv-ink:          #222222;
+  --mvv-muted:        #666666;
   --mvv-white:        #FFFFFF;
-  --mvv-line:         rgba(107,26,26,0.12);
-  --mvv-shadow:       0 20px 60px rgba(79,35,25,0.12);
+  --mvv-line:         rgba(106,16,55,0.08);
+  --mvv-shadow:       0 20px 60px rgba(106,16,55,0.12);
   --mvv-radius:       22px;
   --mvv-radius-sm:    12px;
-  --mvv-font:         'DM Sans', 'Noto Sans Devanagari', sans-serif;
+  --mvv-font:         'Poppins', 'Inter', 'Noto Sans Devanagari', sans-serif;
   --mvv-display:      'Playfair Display', Georgia, serif;
   --mvv-deva:         'Noto Sans Devanagari', sans-serif;
 
-  --saffron:        #E8612A;
-  --saffron-light:  #F4834A;
-  --saffron-glow:   #FFB347;
-  --deep-maroon:    #6B1A1A;
-  --maroon:         #8B2230;
-  --cream:          #FFF8F0;
-  --gold:           #C9921A;
-  --gold-light:     #F0C04A;
+  --saffron:        #E94E77;
+  --saffron-light:  #F47B9A;
+  --saffron-glow:   #F47B9A;
+  --deep-maroon:    #6A1037;
+  --maroon:         #8B1A4A;
+  --cream:          #FFF9F6;
+  --gold:           #C89B3C;
+  --gold-light:     #E0BD6A;
   --dark:           #1A0A00;
-  --text-main:      #2C1810;
-  --text-muted:     #7A5C4A;
-  --border-warm:    rgba(200,130,50,0.25);
-  --gradient-hero:  linear-gradient(135deg, #6B1A1A 0%, #8B2230 40%, #E8612A 100%);
-  --gradient-card:  linear-gradient(145deg, #FFF8F0 0%, #FDEBD0 100%);
-  --shadow-warm:    0 8px 40px rgba(107,26,26,0.18);
-  --shadow-card:    0 4px 24px rgba(200,100,30,0.12);
+  --text-main:      #222222;
+  --text-muted:     #666666;
+  --border-warm:    rgba(200,155,60,0.25);
+  --gradient-hero:  linear-gradient(135deg, #6A1037 0%, #8B1A4A 40%, #E94E77 100%);
+  --gradient-card:  linear-gradient(145deg, #FFF9F6 0%, #FFF0EA 100%);
+  --shadow-warm:    0 8px 40px rgba(106,16,55,0.18);
+  --shadow-card:    0 4px 24px rgba(200,155,60,0.12);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -1401,7 +1403,7 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <span><i class="bi bi-geo-alt"></i> Satara, Maharashtra, India</span>
     <div>
       <a href="tel:+919422524060"><i class="bi bi-telephone"></i> +91-9422524060</a>
-      <a href="mailto:info@shivrajmaratha.com"><i class="bi bi-envelope"></i> info@shivrajmaratha.com</a>
+      <a href="mailto:info@manpasandjodidar.com"><i class="bi bi-envelope"></i> info@manpasandjodidar.com</a>
     </div>
   </div>
 </div>
@@ -1414,10 +1416,10 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index_dashboard" aria-label="Dashboard">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
-          <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
+          <span class="mvv-brand-title">Manpasand Jodidar</span>
+          <span class="mvv-brand-subtitle">मनपसंद जोडीदार · वधू वर सूचक केंद्र</span>
         </span>
       </a>
 
@@ -1595,10 +1597,10 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="#">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
-          <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
+          <span class="mvv-brand-title">Manpasand Jodidar</span>
+          <span class="mvv-brand-subtitle">मनपसंद जोडीदार · वधू वर सूचक केंद्र</span>
         </span>
       </a>
 
@@ -1629,10 +1631,10 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index" aria-label="Home">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
-          <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
+          <span class="mvv-brand-title">Manpasand Jodidar</span>
+          <span class="mvv-brand-subtitle">मनपसंद जोडीदार · वधू वर सूचक केंद्र</span>
         </span>
       </a>
 

@@ -1,4 +1,4 @@
-﻿<?php require_once('sys_dbconnection.php');
+<?php require_once('sys_dbconnection.php');
 /*include('dbconnectadmin.php');
 session_start();*/
 //error_reporting(0); 
@@ -19,7 +19,7 @@ $row = mysqli_fetch_array($res);
     <!--    <div class="auto-container">-->
             <!-- Footer Content -->
     <!--        <div class="footer-content" style="padding: 25px 0 10px;">-->
-    <!--            <div class="footer-logo ftr-dsk-lg"><a href="#"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="Site Logo"></a></div>-->
+    <!--            <div class="footer-logo ftr-dsk-lg"><a href="#"><img src="http://localhost/SVR/css3/assets/manpasand-logo.png" alt="Site Logo"></a></div>-->
     <!--            <ul class="footer-nav ftr-dsk-mn">-->
 				<!--<?php if(!(isset($login)==0)){ ?>-->
     <!--                <li><a href="index_dashboard">Home</a></li>-->
@@ -39,7 +39,7 @@ $row = mysqli_fetch_array($res);
     <!--                <li>|</li>-->
     <!--                <li><a href="contactus">Contact Us</a></li>-->
     <!--            </ul>-->
-    <!--             <div class="copyright-text"> &copy; Copyright <?php echo date('Y');?> All Rights Reserved. BY: <a href="#" target="_blank">Shivraj Maratha</a></div>-->
+    <!--             <div class="copyright-text"> &copy; Copyright <?php echo date('Y');?> All Rights Reserved. BY: <a href="#" target="_blank">Manpasand Jodidar</a></div>-->
     <!--            <ul class="social-icon-one">-->
     <!--                <li><a href="<?php echo $row['facebook']; ?> " target="_blank"><span class="fab fa-facebook-f"></span></a></li>-->
     <!--                <li><a href="<?php echo $row['twitter']; ?> " target="_blank"><span class="fab fa-twitter"></span></a></li>-->
@@ -52,7 +52,7 @@ $row = mysqli_fetch_array($res);
     <style>
 /* ─── FOOTER ─── */
 .mvv-footer {
-  background: linear-gradient(160deg, #1A0A00 0%, #3D0E0E 50%, #6B1A1A 100%);
+  background: linear-gradient(160deg, #1A0510 0%, #2D0A1F 50%, #3D1028 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -194,14 +194,14 @@ $row = mysqli_fetch_array($res);
 
       <!-- Brand Col -->
       <div class="col-lg-4 col-md-6">
-        <a class="footer-brand-logo" href="index" aria-label="Shivraj Maratha home">
-          <img src="css3/assets/shivraj-logo.png" alt="Shivraj Maratha Logo" width="86" height="86">
+        <a class="footer-brand-logo" href="index" aria-label="Manpasand Jodidar home">
+          <img src="css3/assets/manpasand-logo.png" alt="Manpasand Jodidar Logo" width="86" height="86">
         </a>
-        <div class="footer-brand-name">Shivraj Maratha</div>
-        <div class="footer-brand-sub">शुभ विवाह • सुयोग्य जीवनसाथी</div>
+        <div class="footer-brand-name">Manpasand Jodidar</div>
+        <div class="footer-brand-sub">मनपसंद जोडीदार • वधू वर सूचक केंद्र</div>
         <p class="footer-desc">
-          Shivraj Maratha is Maharashtra's most trusted matrimonial platform — 
-          connecting verified Shivraj Maratha families with dignity, tradition, and modern convenience.
+          Manpasand Jodidar is Maharashtra's most trusted matrimonial platform — 
+          connecting verified families with dignity, tradition, and modern convenience.
         </p>
         <div class="footer-social">
           <a class="social-btn" href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -263,7 +263,7 @@ $row = mysqli_fetch_array($res);
         <div class="footer-contact-item">
           <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
           <div class="footer-contact-text">
-            <a href="mailto:info@shivrajmaratha.com">info@shivrajmaratha.com</a>
+            <a href="mailto:info@manpasandjodidar.com">info@manpasandjodidar.com</a>
           </div>
         </div>
         <div class="footer-contact-item">
@@ -281,7 +281,7 @@ $row = mysqli_fetch_array($res);
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
           <span class="footer-bottom-text">
-            Copyright © 2025 <strong style="color:rgba(255,255,255,0.75)">Shivraj Maratha</strong> · All Rights Reserved
+            Copyright © 2025 <strong style="color:rgba(255,255,255,0.75)">Manpasand Jodidar</strong> · All Rights Reserved
           </span>
         </div>
         <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">

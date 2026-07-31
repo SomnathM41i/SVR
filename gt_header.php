@@ -92,7 +92,7 @@
             
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" title=""></a>
+                <div class="nav-logo"><a href="index"><img src="http://localhost/SVR/css3/assets/manpasand-logo.png" alt="" title=""></a>
 				</div>
                 
                 <ul class="navigation clearfix">

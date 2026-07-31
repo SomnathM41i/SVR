@@ -109,7 +109,7 @@ $_SESSION['MatriID']=$mid;
 	}
 }
 ?>
-<?php $page_title = 'OTP Verification - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'OTP Verification - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <style>
 .digit-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}

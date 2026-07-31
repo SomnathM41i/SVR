@@ -97,8 +97,8 @@ function id_search_h($value)
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile Search Result - Shivraj Maratha</title>
-  <link rel="icon" href="css3/assets/shivraj-logo.png" type="image/png">
+  <title>Profile Search Result - Manpasand Jodidar</title>
+  <link rel="icon" href="css3/assets/manpasand-logo.png" type="image/png">
   <link rel="stylesheet" href="css3/Style.css">
   <link rel="stylesheet" href="css3/mvv-premium.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

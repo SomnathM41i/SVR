@@ -1,6 +1,6 @@
-﻿/* =====================================================
+/* =====================================================
    WEDDINGS PARAMPARA MATRIMONY — Style.css
-   Shivraj Maratha — Rich Traditional Aesthetic
+   Manpasand Jodidar — Premium Matrimony Design
    ===================================================== */
 
 /* ── Google Fonts ── */
@@ -8,25 +8,25 @@
 
 /* ── CSS Variables ── */
 :root {
-  --maroon:        #7B1C2E;
-  --maroon-dark:   #5A1220;
-  --maroon-light:  #A8274A;
-  --gold:          #C9973A;
-  --gold-light:    #E8C07A;
+  --maroon:        #6A1037;
+  --maroon-dark:   #4A0A25;
+  --maroon-light:  #8B1A4A;
+  --gold:          #C89B3C;
+  --gold-light:    #E0BD6A;
   --gold-pale:     #FDF3DC;
-  --saffron:       #E8751A;
-  --cream:         #FBF6EE;
+  --saffron:       #E94E77;
+  --cream:         #FFF9F6;
   --white:         #FFFFFF;
-  --text-dark:     #1A0A0F;
+  --text-dark:     #222222;
   --text-mid:      #4A2535;
-  --text-muted:    #7A6070;
-  --border:        #E8D5C4;
-  --shadow:        rgba(123,28,46,0.12);
-  --shadow-gold:   rgba(201,151,58,0.25);
+  --text-muted:    #666666;
+  --border:        #F0E0D8;
+  --shadow:        rgba(106,16,55,0.12);
+  --shadow-gold:   rgba(200,155,60,0.25);
 
   --font-display:  'Playfair Display', Georgia, serif;
   --font-devanagari:'Noto Sans Devanagari', sans-serif;
-  --font-body:     'Raleway', sans-serif;
+  --font-body:     'Poppins', 'Inter', sans-serif;
 
   --radius:        14px;
   --radius-lg:     24px;

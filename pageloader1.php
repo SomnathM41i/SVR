@@ -95,7 +95,7 @@ html, body {
 	height: 34px;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
-	background: url("css3/assets/shivraj-logo.png") center / contain no-repeat;
+	background: url("css3/assets/manpasand-logo.png") center / contain no-repeat;
 }
 .spinner-layer,
 .circle-clipper,

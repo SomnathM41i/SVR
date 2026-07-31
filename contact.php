@@ -72,7 +72,7 @@ $profileLocationType = $row['profile_location_type']
   ?? ($me['profile_location_type'] ?? ($_SESSION['registration_profile_type'] ?? 'Indian Resident'));
 $isNriProfile = $profileLocationType === 'NRI';
 ?>
-<?php $page_title = 'Contact Details - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'Contact Details - Manpasand Jodidar'; include('header3.php'); ?>
 <style>
 .mvv-form .mvv-checkbox-label {
   width: 100%;

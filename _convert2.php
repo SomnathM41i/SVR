@@ -9,28 +9,28 @@
  */
 
 $files = [
-    'full_profile.php'               => ['title'=>'Full Profile – Shivraj Maratha',              'banner'=>'Profile',          'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile']],
-    'full_profile_photo_issue.php'   => ['title'=>'Profile Photo – Shivraj Maratha',             'banner'=>'Profile Photo',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile']],
-    'message.php'                    => ['title'=>'Messages – Shivraj Maratha',                   'banner'=>'Messages',         'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
-    'message_received.php'           => ['title'=>'Received Messages – Shivraj Maratha',          'banner'=>'Received Messages','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
-    'message_send.php'               => ['title'=>'Sent Messages – Shivraj Maratha',              'banner'=>'Sent Messages',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
-    'send_message.php'               => ['title'=>'Send Message – Shivraj Maratha',               'banner'=>'Send Message',     'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
-    'interest_received.php'          => ['title'=>'Interest Received – Shivraj Maratha',          'banner'=>'Interest Received','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Interest Received']],
-    'interest_send.php'              => ['title'=>'Interest Sent – Shivraj Maratha',              'banner'=>'Interest Sent',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Interest Sent']],
-    'block_profile.php'              => ['title'=>'Blocked Profiles – Shivraj Maratha',           'banner'=>'Blocked Profiles', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Blocked Profiles']],
-    'profile_ignore.php'             => ['title'=>'Ignored Profiles – Shivraj Maratha',           'banner'=>'Ignored Profiles', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Ignored Profiles']],
-    'Profile_shortlisted.php'        => ['title'=>'Shortlisted Profiles – Shivraj Maratha',       'banner'=>'Shortlisted Profiles','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Shortlisted Profiles']],
-    'who_connected_me.php'           => ['title'=>'Who Connected With Me – Shivraj Maratha',      'banner'=>'Who Connected With Me','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Who Connected With Me']],
-    'who_shortlisted_me.php'         => ['title'=>'Who Shortlisted Me – Shivraj Maratha',         'banner'=>'Who Shortlisted Me','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Who Shortlisted Me']],
-    'who_viewed_my_profile.php'      => ['title'=>'Profile Views – Shivraj Maratha',              'banner'=>'Profile Views',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile Views']],
-    'who_viewed_addreess_list.php'   => ['title'=>'Address Views – Shivraj Maratha',              'banner'=>'Address Views',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Address Views']],
-    'my_viewed_profile.php'          => ['title'=>'Viewed Profiles – Shivraj Maratha',            'banner'=>'Viewed Profiles',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Profiles']],
-    'my_viewed_contactlist.php'      => ['title'=>'Viewed Contacts – Shivraj Maratha',            'banner'=>'Viewed Contacts',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Contacts']],
-    'my_connected_members.php'       => ['title'=>'Connected Members – Shivraj Maratha',          'banner'=>'Connected Members','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Connected Members']],
-    'viewed_address.php'             => ['title'=>'Viewed Address – Shivraj Maratha',             'banner'=>'Viewed Address',   'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Address']],
-    'Vcontactdetail.php'             => ['title'=>'Contact Details – Shivraj Maratha',            'banner'=>'Contact Details',  'crumbs'=>['index'=>'Home',''=>'Contact Details']],
-    'premium_members.php'            => ['title'=>'Premium Members – Shivraj Maratha',            'banner'=>'Premium Members',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Premium Members']],
-    'membership_choose.php'          => ['title'=>'Choose Membership – Shivraj Maratha',          'banner'=>'Membership Plans', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Membership Plans']],
+    'full_profile.php'               => ['title'=>'Full Profile – Manpasand Jodidar',              'banner'=>'Profile',          'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile']],
+    'full_profile_photo_issue.php'   => ['title'=>'Profile Photo – Manpasand Jodidar',             'banner'=>'Profile Photo',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile']],
+    'message.php'                    => ['title'=>'Messages – Manpasand Jodidar',                   'banner'=>'Messages',         'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
+    'message_received.php'           => ['title'=>'Received Messages – Manpasand Jodidar',          'banner'=>'Received Messages','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
+    'message_send.php'               => ['title'=>'Sent Messages – Manpasand Jodidar',              'banner'=>'Sent Messages',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
+    'send_message.php'               => ['title'=>'Send Message – Manpasand Jodidar',               'banner'=>'Send Message',     'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Messages']],
+    'interest_received.php'          => ['title'=>'Interest Received – Manpasand Jodidar',          'banner'=>'Interest Received','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Interest Received']],
+    'interest_send.php'              => ['title'=>'Interest Sent – Manpasand Jodidar',              'banner'=>'Interest Sent',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Interest Sent']],
+    'block_profile.php'              => ['title'=>'Blocked Profiles – Manpasand Jodidar',           'banner'=>'Blocked Profiles', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Blocked Profiles']],
+    'profile_ignore.php'             => ['title'=>'Ignored Profiles – Manpasand Jodidar',           'banner'=>'Ignored Profiles', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Ignored Profiles']],
+    'Profile_shortlisted.php'        => ['title'=>'Shortlisted Profiles – Manpasand Jodidar',       'banner'=>'Shortlisted Profiles','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Shortlisted Profiles']],
+    'who_connected_me.php'           => ['title'=>'Who Connected With Me – Manpasand Jodidar',      'banner'=>'Who Connected With Me','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Who Connected With Me']],
+    'who_shortlisted_me.php'         => ['title'=>'Who Shortlisted Me – Manpasand Jodidar',         'banner'=>'Who Shortlisted Me','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Who Shortlisted Me']],
+    'who_viewed_my_profile.php'      => ['title'=>'Profile Views – Manpasand Jodidar',              'banner'=>'Profile Views',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Profile Views']],
+    'who_viewed_addreess_list.php'   => ['title'=>'Address Views – Manpasand Jodidar',              'banner'=>'Address Views',    'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Address Views']],
+    'my_viewed_profile.php'          => ['title'=>'Viewed Profiles – Manpasand Jodidar',            'banner'=>'Viewed Profiles',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Profiles']],
+    'my_viewed_contactlist.php'      => ['title'=>'Viewed Contacts – Manpasand Jodidar',            'banner'=>'Viewed Contacts',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Contacts']],
+    'my_connected_members.php'       => ['title'=>'Connected Members – Manpasand Jodidar',          'banner'=>'Connected Members','crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Connected Members']],
+    'viewed_address.php'             => ['title'=>'Viewed Address – Manpasand Jodidar',             'banner'=>'Viewed Address',   'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Viewed Address']],
+    'Vcontactdetail.php'             => ['title'=>'Contact Details – Manpasand Jodidar',            'banner'=>'Contact Details',  'crumbs'=>['index'=>'Home',''=>'Contact Details']],
+    'premium_members.php'            => ['title'=>'Premium Members – Manpasand Jodidar',            'banner'=>'Premium Members',  'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Premium Members']],
+    'membership_choose.php'          => ['title'=>'Choose Membership – Manpasand Jodidar',          'banner'=>'Membership Plans', 'crumbs'=>['index'=>'Home','index_dashboard'=>'Dashboard',''=>'Membership Plans']],
 ];
 
 // ── helpers ──────────────────────────────────────────────────────────────────
@@ -54,7 +54,7 @@ function build_banner(string $banner, array $crumbs): string {
 }
 
 function build_head(string $title): string {
-    $pt = $title . ' | Shivraj Maratha';
+    $pt = $title . ' | Manpasand Jodidar';
     return "<?php\n\$page_title = '$pt';\ninclude('header3.php');\n?>"
          . "\n<style>\n"
          . ".page-section { padding:60px 0; background:#faf7f2; min-height:calc(100vh - 180px); }\n"

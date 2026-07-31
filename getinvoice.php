@@ -22,7 +22,7 @@ $rowdata=mysqli_fetch_array($sqldata); ?>
 							<div class="col-md-12">
                             <div class="row">
                             <div class="col-md-7">
-						  <img class="img-responsive thumbnail img1" src="http://localhost/SVR/css3/assets/shivraj-logo.png" style="margin-top:-8px;">
+						  <img class="img-responsive thumbnail img1" src="http://localhost/SVR/css3/assets/manpasand-logo.png" style="margin-top:-8px;">
                          <br>
                                   <?php echo $siteinfo1['address'];?>
                                   

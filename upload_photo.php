@@ -54,7 +54,7 @@ if ($uploadOk == 0) {
 
 $siteconfig = $db->get_siteconfig();
 ?>
-<?php $page_title = 'Upload Photo - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'Upload Photo - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 function showMyImage(fileInput) {
@@ -109,7 +109,7 @@ window.onunload = function() { null };
 
         <div style="background:var(--mvv-cream);border:1px solid var(--mvv-border);border-radius:8px;padding:16px;margin-bottom:20px;font-size:0.9rem;color:var(--mvv-muted);">
           <p style="margin:0 0 6px;"><i class="bi bi-check-square-fill" style="color:var(--mvv-gold);margin-right:6px;"></i> All photos uploaded are screened as per Photo Guidelines and 98% of those get activated within an hour.</p>
-          <p style="margin:0;"><i class="bi bi-check-square-fill" style="color:var(--mvv-gold);margin-right:6px;"></i> Other ways to upload your photos. E-mail your photos to <?php echo $siteconfig->FeedbackEmail ?? 'info@shivrajmaratha.com'; ?> Mention your Profile ID and Name in the mail.</p>
+          <p style="margin:0;"><i class="bi bi-check-square-fill" style="color:var(--mvv-gold);margin-right:6px;"></i> Other ways to upload your photos. E-mail your photos to <?php echo $siteconfig->FeedbackEmail ?? 'info@manpasandjodidar.com'; ?> Mention your Profile ID and Name in the mail.</p>
         </div>
 
         <?php if ($upload_msg) { ?>

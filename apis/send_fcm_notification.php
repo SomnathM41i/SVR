@@ -112,7 +112,7 @@ try {
                     'body'  => $body,
                     'image' => !empty($image)
                         ? $image
-                        : 'http://localhost/SVR/css3/assets/shivraj-logo.png'
+                        : 'http://localhost/SVR/css3/assets/manpasand-logo.png'
                 ],
                 'data' => [
                     'type'          => 'PERSONALIZED_NOTIFICATION',

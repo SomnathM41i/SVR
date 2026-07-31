@@ -1,34 +1,34 @@
 ﻿/* =============================================
-   Shivraj Maratha Design System
+   Manpasand Jodidar Design System
    Premium Indian Matrimony UI Framework
 ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
 
 :root {
-  --primary-maroon: #7A0E1A;
-  --primary-maroon-dark: #5A0A14;
-  --primary-maroon-light: #A61E2D;
-  --royal-gold: #D4A437;
-  --royal-gold-light: #E8C46A;
-  --royal-gold-dark: #B8892A;
-  --ivory: #FFF8F0;
+  --primary-maroon: #6A1037;
+  --primary-maroon-dark: #4A0A25;
+  --primary-maroon-light: #8B1A4A;
+  --royal-gold: #C89B3C;
+  --royal-gold-light: #E0BD6A;
+  --royal-gold-dark: #A6822A;
+  --ivory: #FFF9F6;
   --ivory-dark: #F5EDE0;
-  --soft-pink: #E8A8B8;
-  --soft-pink-light: #F0C8D4;
+  --soft-pink: #E94E77;
+  --soft-pink-light: #FDE8EE;
   --warm-beige: #F4E7DA;
-  --dark-brown: #3A2A22;
-  --dark-brown-light: #5C4A42;
-  --gradient-primary: linear-gradient(135deg, #7A0E1A, #A61E2D);
-  --gradient-gold: linear-gradient(135deg, #D4A437, #E8C46A);
-  --gradient-dark: linear-gradient(135deg, #3A2A22, #5C4A42);
-  --gradient-hero: linear-gradient(160deg, #7A0E1A 0%, #A61E2D 40%, #D4A437 100%);
-  --gradient-warm: linear-gradient(145deg, #FFF8F0, #F4E7DA);
-  --shadow-sm: 0 2px 8px rgba(122, 14, 26, 0.08);
-  --shadow-md: 0 4px 20px rgba(122, 14, 26, 0.12);
-  --shadow-lg: 0 8px 40px rgba(122, 14, 26, 0.18);
-  --shadow-gold: 0 4px 24px rgba(212, 164, 55, 0.35);
-  --shadow-gold-lg: 0 8px 40px rgba(212, 164, 55, 0.45);
+  --dark-brown: #222222;
+  --dark-brown-light: #666666;
+  --gradient-primary: linear-gradient(135deg, #6A1037, #8B1A4A);
+  --gradient-gold: linear-gradient(135deg, #C89B3C, #E0BD6A);
+  --gradient-dark: linear-gradient(135deg, #222222, #666666);
+  --gradient-hero: linear-gradient(160deg, #6A1037 0%, #8B1A4A 40%, #E94E77 100%);
+  --gradient-warm: linear-gradient(145deg, #FFF9F6, #FFF0EA);
+  --shadow-sm: 0 2px 8px rgba(106, 16, 55, 0.08);
+  --shadow-md: 0 4px 20px rgba(106, 16, 55, 0.12);
+  --shadow-lg: 0 8px 40px rgba(106, 16, 55, 0.18);
+  --shadow-gold: 0 4px 24px rgba(200, 155, 60, 0.35);
+  --shadow-gold-lg: 0 8px 40px rgba(200, 155, 60, 0.45);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -238,7 +238,7 @@ a { text-decoration: none; color: inherit; }
 /* ─── CARDS ─── */
 .card-lagnam {
   background: #fff;
-  border: 1px solid rgba(212, 164, 55, 0.15);
+  border: 1px solid rgba(200, 155, 60, 0.15);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -250,7 +250,7 @@ a { text-decoration: none; color: inherit; }
 }
 .card-lagnam-glow {
   background: linear-gradient(145deg, #fff, var(--warm-beige));
-  border: 1px solid rgba(212, 164, 55, 0.2);
+  border: 1px solid rgba(200, 155, 60, 0.2);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -286,8 +286,8 @@ a { text-decoration: none; color: inherit; }
   50% { transform: translateY(-12px); }
 }
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(212, 164, 55, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(212, 164, 55, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(200, 155, 60, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(200, 155, 60, 0.6); }
 }
 @keyframes ring-expand {
   0% { transform: scale(0.95); opacity: 1; }
@@ -312,7 +312,7 @@ a { text-decoration: none; color: inherit; }
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: rgba(212, 164, 55, 0.3);
+  background: rgba(200, 155, 60, 0.3);
   opacity: 1;
 }
 .swiper-pagination-bullet-active {
@@ -360,7 +360,7 @@ a { text-decoration: none; color: inherit; }
 /* ─── FORM ELEMENTS ─── */
 .form-lagnam .form-control,
 .form-lagnam .form-select {
-  border: 1.5px solid rgba(212, 164, 55, 0.2);
+  border: 1.5px solid rgba(200, 155, 60, 0.2);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   font-family: var(--font-body);
@@ -372,7 +372,7 @@ a { text-decoration: none; color: inherit; }
 .form-lagnam .form-control:focus,
 .form-lagnam .form-select:focus {
   border-color: var(--royal-gold);
-  box-shadow: 0 0 0 3px rgba(212, 164, 55, 0.15);
+  box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.15);
 }
 .form-lagnam .form-label {
   font-weight: 600;
@@ -385,7 +385,7 @@ a { text-decoration: none; color: inherit; }
 }
 .form-lagnam .floating-label-group input,
 .form-lagnam .floating-label-group textarea {
-  border: 1.5px solid rgba(212, 164, 55, 0.2);
+  border: 1.5px solid rgba(200, 155, 60, 0.2);
   border-radius: var(--radius-md);
   padding: 18px 16px 6px;
   width: 100%;
