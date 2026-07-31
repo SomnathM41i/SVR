@@ -61,7 +61,8 @@ document.body.innerHTML = oldPage;
 </head>
 
 <body bgcolor="#FFFFFF" onload="Export()">
-<div id="print">
+<div id="print" style="position:relative;background:#FFFDFB;">
+<img src="../branding/images/watermark.png" alt="" style="position:absolute;left:50%;top:40%;width:430px;margin-left:-215px;z-index:0;pointer-events:none;"/>
     <h1><a href="profile_view?ID=<?php echo $id; ?>">Back</a></h1>
   <table width="1000" height="398" border="0" class="maincontent1" cellpadding="3"  bgcolor="#FFFFFF" cellspacing="1" id="tblCustomers">
     <tr>
@@ -74,6 +75,7 @@ document.body.innerHTML = oldPage;
                   <strong>Contact: </strong>+91-<?php echo $config['contactusmobile1']?>, +91-<?php echo $config['smsmobile'] ?></span><br>
                   <strong> Web: </strong>www.<?php echo $config['Webname'] ?> | <strong> Email: </strong><?php echo $config['ContactEmail'] ?></span></td>
               </tr>
+              <tr><td colspan="6" style="border-bottom:3px double #BA9350;line-height:0;font-size:0;">&nbsp;</td></tr>
               <tr>
                 <td colspan="4" class="maincontent"><strong>BASIC INFORMATION</strong>
 				<?php ?></td>

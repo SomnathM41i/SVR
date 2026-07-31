@@ -17,10 +17,11 @@ $rowdata=mysqli_fetch_array($sqldata); ?>
 		   <div class="container py-xl-2 py-lg-2">
 			 <div class="col-lg-12 agile-course-main text-left">
 					
-					<div class="w3ls-cource-first" id="print">
+					<div class="w3ls-cource-first" id="print" style="position:relative;background:#FFFDFB;">
+					<img src="branding/images/watermark.png" alt="" style="position:absolute;left:50%;top:40%;width:430px;margin-left:-215px;z-index:0;pointer-events:none;"/>
 						<div class="col-md-12 col-sm-12 col-lg-12 design">
 							<div class="col-md-12">
-                            <div class="row">
+                            <div class="row" style="position:relative;z-index:1;border-bottom:3px double #BA9350;padding-bottom:10px;">
                             <div class="col-md-7">
 						  <img class="img-responsive thumbnail img1" src="branding/logos/logo-horizontal.png" style="margin-top:-8px;">
                          <br>

@@ -50,7 +50,9 @@ function print_report()
 </head>
 
 <body bgcolor="#000000">
-<div id="print">
+<div id="print" style="position:relative;background:#FFFDFB;">
+<img src="branding/images/watermark.png" alt="" style="position:absolute;left:50%;top:40%;width:430px;margin-left:-215px;z-index:0;pointer-events:none;"/>
+<table width="1000" border="0" cellpadding="0" cellspacing="0" style="position:relative;z-index:1;"><tr><td align="center" style="padding:14px 0 10px;border-bottom:3px double #BA9350;"><img src="branding/images/print-logo.png" alt="Manpasand Jodidar" style="width:170px;"/><div style="font-family:Georgia,serif;font-size:12px;letter-spacing:2px;color:#A63E52;margin-top:6px;">RISHTA DIL SE, SAATH ZINDAGI BHAR</div></td></tr></table>
 <table width="1000" height="398" border="0" class="maincontent1" cellpadding="4"  bgcolor="#FFFFFF">
   <tr>
     <td colspan="5"><table width="989" border="0">
