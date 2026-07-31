@@ -42,7 +42,7 @@ require_once(dirname(__FILE__).'/protect.php');
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
-	<link rel="stylesheet" href="assets/css/stylnew.css" id="main-style-link">
+	<!-- MPJ: removed 404 link 'assets/css/stylnew.css' (typo of stylenew.css; file never existed, page loads style.css below as before) -->
 	<link rel="stylesheet" href="assets/css/advance.css" id="main-style-link">
 
 	<!-- vendor css -->
