@@ -20,7 +20,7 @@ $message1 = "
 <body>
 <table width='467'>
 <tr>
-<td><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png' width='168'></td>
+<td><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168'></td>
 <td>Date: $dates</td>
 </tr>
 

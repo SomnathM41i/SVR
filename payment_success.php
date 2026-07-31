@@ -214,7 +214,7 @@ $message1 = "<!DOCTYPE html>
 <div style='float:left;width:570px;background:#f7f7f7;margin:10px;border-radius:5px;'>
 
 <div style='margin:7% 0 0 25%;float:left;'>
-  <a href='#' target='_blank'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png' alt='" . htmlspecialchars($Webname) . "'></a>
+  <a href='#' target='_blank'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' alt='" . htmlspecialchars($Webname) . "'></a>
 </div>
 <br><br>
 

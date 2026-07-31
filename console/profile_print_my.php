@@ -69,7 +69,7 @@ document.body.innerHTML = oldPage;
           <tr>
             <td align="left" valign="top"><table width="991" height="309" border="0" align="left">
               <tr>
-                <td colspan="6" align="center"><img src="../branding/images/logo-horizontal.png" alt=""/><br>
+                <td colspan="6" align="center"><img src="../branding/logos/logo-horizontal.png" alt=""/><br>
                   <span style="font-size:14px; color:#000 "><strong>Address:</strong> <?php echo $config['address'] ?> <br>
                   <strong>Contact: </strong>+91-<?php echo $config['contactusmobile1']?>, +91-<?php echo $config['smsmobile'] ?></span><br>
                   <strong> Web: </strong>www.<?php echo $config['Webname'] ?> | <strong> Email: </strong><?php echo $config['ContactEmail'] ?></span></td>

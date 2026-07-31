@@ -207,7 +207,7 @@ $me=mysqli_fetch_array($fetchphoto);
 		<body>
 		<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 		  <tr>
-			<td width='222'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png' width='168' height='50'  alt=''/></td>
+			<td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
 			<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 		  </tr>
 		  <tr>

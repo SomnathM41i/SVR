@@ -60,7 +60,7 @@ while($row=mysqli_fetch_array($sql))
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
-	text-decoration: none;'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png'></a></div>
+	text-decoration: none;'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png'></a></div>
 <div class='cont-wrapper' style='margin:-128px 10px 15px 10px;; background:none;float: left;width: 549px;margin: -128px 10px 15px 10px;'>
 <p class='content' style='font-family: 'AvantGardeBkBTBook';font-weight: bold;font-size: 14px;color: #000;text-align: left;line-height: 23px;text-align: left;'><br><br><br><br><br><br><br><br>
 Dear User,<br><br>

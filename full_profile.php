@@ -283,7 +283,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 		<body>
 		<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 		  <tr>
-			<td width='222'><img src='branding/images/logo-horizontal.png' width='250' height='74'  alt=''/></td>
+			<td width='222'><img src='branding/logos/logo-horizontal.png' width='250' height='74'  alt=''/></td>
 			<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 		  </tr>
 		  <tr>

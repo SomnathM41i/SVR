@@ -113,7 +113,7 @@ try {
                     'body'  => $body,
                     'image' => !empty($image)
                         ? $image
-                        : 'https://weddingsparampara.com/branding/images/logo-horizontal.png'
+                        : 'https://weddingsparampara.com/branding/logos/logo-horizontal.png'
                 ],
                 'data' => [
                     'type'          => 'PERSONALIZED_NOTIFICATION',
