@@ -19,6 +19,11 @@ RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
   Require all denied
 </FilesMatch>
 
+# Never serve server-side config / credential files
+<FilesMatch "(firebase-service-account\.json|composer\.(json|lock)|config\.(sample\.)?local\.php)$">
+  Require all denied
+</FilesMatch>
+
 # Block access to VCS internals
 <IfModule mod_rewrite.c>
   RewriteRule ^\.git - [F,L]
