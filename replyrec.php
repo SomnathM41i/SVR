@@ -1,5 +1,5 @@
-<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+<?php require_once('includes/bootstrap.php');
+
 error_reporting(0);
 $id = $_POST['rowid'];
 $page = $_REQUEST['flag'];

@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $isLoggedIn = !empty($_SESSION['MatriID']);
 
@@ -41,7 +41,7 @@ include('header3.php');
       <div class="hero-content">
         <span class="eyebrow">फक्त मराठा समाजासाठी · Since 2012</span>
         <h1>योग्य नात्यांची<br><em>विश्वासार्ह सुरुवात</em></h1>
-        <p>शिवराज मराठा वधू वर सूचक केंद्र® — मराठा समाजातील वधू-वरांसाठी सन्माननीय, सुरक्षित आणि विश्वासार्ह विवाह माध्यम.</p>
+        <p>मनपसंद जोडीदार वधू वर सूचक केंद्र® — मराठा समाजातील वधू-वरांसाठी सन्माननीय, सुरक्षित आणि विश्वासार्ह विवाह माध्यम.</p>
         <div class="hero-actions">
           <?php if ($isLoggedIn) { ?>
             <a class="btn" href="index_dashboard">My Dashboard <span>→</span></a>
@@ -94,12 +94,13 @@ include('header3.php');
     <div class="container about-grid reveal">
       <div class="about-art about-photo-card">
         <div class="about-emblem">
-          <img src="img/_DSC3901%20copy.jpeg" alt="Shivraj Maratha representative portrait">
+          <img src="img/_DSC3901%20copy.jpeg" alt="Manpasand Jodidar representative portrait">
         </div>
       </div>
       <div class="about-copy">
-        <span class="section-kicker">Welcome to Shivraj Maratha</span>
-        <h2 class="section-title">शिवराज मराठा वधू वर सूचक केंद्र®</h2>
+        <span class="section-kicker">Welcome to Manpasand Jodidar</span>
+        <h2 class="section-title">मनपसंद जोडीदार वधू वर सूचक केंद्र®</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         <p>छत्रपती शिवाजी महाराजांच्या पदस्पर्शाने पावन झालेल्या व मराठ्यांची राजधानी असलेल्या सातारा जिल्ह्यामधे हेड ऑफिस असून गेल्या अनेक वर्षांपासून मराठा समाजातील वधु - वरांचे विवाह जमवणारी देशातील एक विश्वसनीय विवाह माध्यम म्हणून आम्ही काम करत आलेलो आहे.</p>
         <p>आपल्या विवाह केंद्रामध्ये फक्त मराठा समाजातील मुला व मुलींचीच नावे नोंद केली जातात. त्यामध्ये प्रथम वधु व वर, तसेच घटस्फोटित, विधवा, विधुर व अपंग स्थळांची नोंदणी केली जाते.</p>
         <div class="feature-row">
@@ -130,6 +131,7 @@ include('header3.php');
         <div>
           <span class="section-kicker">Simple & transparent</span>
           <h2 class="section-title">Our Process</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         </div>
         <p class="section-intro">Your journey from registration to finding the right match—made simple in four clear steps.</p>
       </div>
@@ -149,6 +151,7 @@ include('header3.php');
         <div>
           <span class="section-kicker">Words from our families</span>
           <h2 class="section-title">Testimonials</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         </div>
       </div>
       <div class="testimonial-grid reveal">
@@ -186,6 +189,7 @@ include('header3.php');
       <div>
         <span class="section-kicker">We're here to help</span>
         <h2 class="section-title">Get a Call Back</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         <p class="section-intro">If you need to speak to us about a general query, fill in the form and we will call you back within the same working day.</p>
         <div class="contact-points">
           <div class="contact-point"><b>Call us</b><span>+91 94035 50087</span></div>

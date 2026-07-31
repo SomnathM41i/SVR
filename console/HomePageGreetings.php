@@ -1,5 +1,5 @@
 <?php
-require_once('../sys_dbconnection.php');
+require_once('../includes/bootstrap.php');
 include('protect.php');
 
 /* ============================================================
@@ -167,7 +167,11 @@ while ($r = $result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 
     <!-- Font CSS -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -176,6 +180,7 @@ while ($r = $result->fetch_assoc()) {
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/stylenew.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css">
     <link rel="stylesheet" href="assets/css/customizer.css">

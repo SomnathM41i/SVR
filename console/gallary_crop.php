@@ -1,13 +1,13 @@
-<?php  require_once('../sys_dbconnection.php'); 
+<?php  require_once('../includes/bootstrap.php'); 
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 $photoid=$_GET['photoid']; 
-//echo $photoid;	
+
  $strid=$_GET['matid']; 
-// echo $strid;
+
 if (isset($_FILES['croppedImage']['tmp_name']) && !empty($_FILES['croppedImage']['tmp_name'])){
  $strid1=$_POST['matid'];
- //echo $strid1;
+ 
  
  
  $stroldphoto1 = $_POST['op'];
@@ -19,7 +19,7 @@ $strimg = $_POST['op'];
 $rand=rand(111111,999999);
 $save_path = $rand.$strimg;
 $targetfile="../gallary/$save_path";
-//imagejpeg($save_path ,$targetfile) ; 
+
 
 
 
@@ -41,7 +41,11 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path
 <script src="assets/crop/cropper.js"></script>
 
 <link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- font css -->
 <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -50,6 +54,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path
 
 <!-- vendor css -->
 <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+<link rel="stylesheet" href="assets/css/mpj-brand.css">
 <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/customizer.css">
@@ -112,7 +117,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path
     <strong class="bigtext">Hit the Mouse Pointer on the image then <span class="style1">Drag the Position </span>. Click Save now Button.</strong> </div>
  <?php  
 $photoidgal=$_GET['photoid'];
-//echo $photoidgal;
+
  $photochk = mysqli_query($con,"SELECT * FROM gallary where photo_id=$photoidgal");
  
 ?>

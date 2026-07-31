@@ -1,8 +1,8 @@
 <?php
-    require_once('sys_dbconnection.php');
+    require_once('includes/bootstrap.php');
     include('memprotect.php');
-    /*include ('dbconnectadmin.php');*/
-    //session_start();
+    
+    
 
     $id = $_SESSION['matriid'];
     //FOR CHNAGINF STATUS
@@ -18,17 +18,17 @@
     if(isset($_POST['submit']))
     {
 		$id1=$_POST['postId'];
-		//echo $_POST['postId'];
-        $reply=mysqli_real_escape_string($con,addslashes($_POST['reply']));
-		//echo $reply;
 		
-        //$q="select * from recommendation where id='$id1'";
+        $reply=mysqli_real_escape_string($con,addslashes($_POST['reply']));
+		
+		
+        
        
        
 	   $q="update recommendation set reply='$reply' where id='$id1'";
-	   //echo "update set reply='$reply' where id='$id1'";
-	   //exit;
-            $rs=mysqli_query($con,$q) or die(mysqli_error());  
+	   
+	   
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);  
            
         
     }
@@ -46,8 +46,12 @@
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="css/stylenew.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,34 +178,7 @@ window.location='upload_document_proof?flag=9';}
 
 
 
-/*function dp(id)
-{   
-    var xmlhttp;
-if (id=="")
-  {
-  
-  return;
-  }
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-   document.getElementById("dpchange"+id).innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","setdp.php?id="+id,true);
-xmlhttp.send();
-window.location='gallary.php';
- 
-}*/
+
 </script>
 <style>
 /* Add a right margin to each icon */
@@ -319,18 +296,9 @@ svg.feather:not([class*='wid-']) {
             });
 
         }
-        //if (checkBox.checked == true){
+        
             
-        /*} else {
-            jQuery.ajax({
-                url:'update_status',
-                type:'post',
-                data:data,
-                success: function(result){
-
-                } 
-            });
-        }*/
+        
     }
 </script>
 <script type="text/javascript">
@@ -514,10 +482,7 @@ $sql1 =  "select count(*) from recommendation where MatriID='$id'";
 													
 														<div class="col-lg-12 col-md-12 col-sm-12 mt-3 mb-2 row ">
 														<span><label>Do You Like This?</label></span>
-                            <?php /*if( ($row['status'] == NULL ) ){?>
-                              <button class="yesbt btn  ml-2" onclick="check('<?php echo $row['id']; ?>')" id="Yes"> Yes </button>
-                              <button class=" nobt ml-2" onclick="check('<?php echo $row['id']; ?>',1)" id="No"> No </button>
-                            <?php }*/ ?> 
+                            <?php  ?> 
                             <span>
                             <?php if( ($row['status'] == "disliked") || ($row['status'] == NULL )  ){?>
 														<button class="yesbt btn  ml-2" onclick="check('<?php echo $row['id']; ?>')" id="Yes"> Yes </button> 
@@ -587,7 +552,7 @@ $sql1 =  "select count(*) from recommendation where MatriID='$id'";
 							 </div>
 							 </div>
 							 <?php } ?> 
-                                <?php //echo displayPaginationBelow($con,$setLimit,$page);?>
+                                <?php 
                             </div>
                     </section>
 				 <?php } else { ?>

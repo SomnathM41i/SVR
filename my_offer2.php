@@ -1,7 +1,7 @@
-<?php //include('dbconnectadmin.php');
-require_once('sys_dbconnection.php');
+<?php 
+require_once('includes/bootstrap.php');
 $strid = $_SESSION['MatriID'];
-$result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or die(mysqli_error($con));
+$result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or svr_db_fail($con);
 $record = mysqli_fetch_array($result); 
  
 function orderid() {
@@ -19,9 +19,9 @@ function orderid() {
 }
 $strinv     = "MP";
 $strorderid = $strinv . orderid();
-//echo $strorderid;
+
 $strplanid =  "1";
-$plan = mysqli_query($con,"SELECT * from membershipplan where planid = '$strplanid' ")or die(mysqli_error($con));
+$plan = mysqli_query($con,"SELECT * from membershipplan where planid = '$strplanid' ")or svr_db_fail($con);
 
 $plan_row = mysqli_fetch_array($plan);
 $seo=mysqli_query($con,"Select * from seo where catagory='membership'");
@@ -39,8 +39,12 @@ $seof=mysqli_fetch_array($seo);
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -128,8 +132,8 @@ button, input, optgroup, select, textarea
                 <div class="row">
 				
 				  <?php 
-				$qry_plan = mysqli_query($con,"select * from membershipplan where plan_status='Active' ORDER BY planid ASC") or die(mysqli_error($con));
-				//echo "select * from membershipplan where plan_status='Active' ORDER BY planid ASC";
+				$qry_plan = mysqli_query($con,"select * from membershipplan where plan_status='Active' ORDER BY planid ASC") or svr_db_fail($con);
+				
 				while($plan = mysqli_fetch_array($qry_plan))
 					
 				{?> 
@@ -251,7 +255,7 @@ button, input, optgroup, select, textarea
 			    <div class="pricing-block col-lg-12 col-md-12 col-sm-12 wow fadeInUp">
 				<?php $qry="select * from cms where cms_id='22'";
 						$result=mysqli_query($con,$qry);
-						//echo $qry;
+						
 					$res=mysqli_fetch_array($result);?>
 					<div class="col-sm-12 ">
 					<div class="contact-grid1 text-center">

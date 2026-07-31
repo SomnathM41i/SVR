@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('includes/partner_match.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
@@ -189,7 +189,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
 				<?php }
 			   // echo "-----";		
 				$totcount=$tot1+$tot2+$tot3+$tot4+$tot5+$tot6+$tot7+$tot8+$tot9+$tot10;				
-			  //  echo $totcount;
+			  
                  
 				if($totcount>=5)
 				{
@@ -213,13 +213,13 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $item=implode("','",$items);
 				}
 }
-//print_r($matid);
+
 				
 				$limit = 8; 
 				 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 				$start_from = ($page-1) * $limit;
 				
-//echo $item;
+
 				
 				
                 $matriid=$_SESSION['MatriID'];
@@ -331,9 +331,9 @@ while($profiles=mysqli_fetch_array($login_profile)){
      
 		
 	 $total = $row['totalCount'];
-	//echo  $total;
-//echo $final;
-//echo $count;	
+	
+
+
 ?>
 
 <!doctype html>
@@ -342,7 +342,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Compatibility Matches</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -353,7 +353,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
     .match-card .info { padding:16px; }
     .match-card .info h4 { margin:0 0 4px; font-size:1.05rem; }
     .match-card .info .meta { color:#888; font-size:0.85rem; }
-    .partner-match-badge{display:inline-flex;margin:0 0 8px;padding:5px 9px;border-radius:999px;background:#fff0e0;color:#6b1a1a;font-size:.75rem;font-weight:800}.partner-match-badge.perfect{background:#e8f7ed;color:#24653a}
+    .partner-match-badge{display:inline-flex;margin:0 0 8px;padding:5px 9px;border-radius:999px;background:#fff0e0;color:#5E1426;font-size:.75rem;font-weight:800}.partner-match-badge.perfect{background:#e8f7ed;color:#24653a}
   </style>
 </head>
 <body>
@@ -445,7 +445,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $waHL = $rec['Height'] ? getHeightValue($rec['Height']) : '';
                 $waLL = implode(', ', array_filter([$rec['City'] ?? '', $rec['Dist'] ?? '']));
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = '';
                 $waLA[] = "\u{1F194} Profile ID: {$rec['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$rec['Age']} years";
@@ -459,7 +459,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $waLA[] = "\u{1F517} View Full Profile:";
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($rec['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
               ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:6px"><i class="fab fa-whatsapp"></i> Share</a><br>
                                 <ul class="social-links social-icon-colored">

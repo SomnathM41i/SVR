@@ -1,9 +1,9 @@
-<?php /*include('dbconnectadmin.php');*/
-require_once('sys_dbconnection.php');
+<?php 
+require_once('includes/bootstrap.php');
 require_once('includes/partner_match.php');
 require_once('includes/annual_income.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -57,8 +57,8 @@ $working_taluka_sql = mysqli_real_escape_string($con, $working_taluka);
 $working_city_sql = mysqli_real_escape_string($con, $working_city);
 $native_taluka_sql = mysqli_real_escape_string($con, $native_taluka);
 $native_city_sql = mysqli_real_escape_string($con, $native_city);
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))
@@ -472,13 +472,17 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 <title>Smart Search Result</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-page{min-height:60vh;padding-top:0;padding-bottom:60px;}
 .mvv-container{max-width:1200px;margin:0 auto;padding:0 16px;}
 .mvv-section{padding:48px 0 40px;}
@@ -501,7 +505,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 .mvv-pagination .mvv-dot{border:none;font-size:1.1rem;color:#999;padding:0 4px;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 </style>
 </head>
 <body>
@@ -560,7 +564,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 $waLA = [];
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -570,9 +574,9 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
           </div>
         </div>
         <?php } ?>

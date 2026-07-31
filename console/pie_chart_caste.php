@@ -1,12 +1,13 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
 	
-	/*include '../dbconnectadmin.php';*/
+	
 	
     
 	//FOR HINDU
 	$query = "SELECT * FROM caste where Religion='Hindu' "; 
 	$result = mysqli_query($con,$query);
-	// = mysqli_fetch_array($result);
+	
     
      
 ?>
@@ -30,7 +31,7 @@
                     $res = mysqli_query($con,$que);
                     while($row1= mysqli_fetch_array($res))
                     {
-                        //echo $row1['Count(Name)']; 
+                        
                         echo "['".$val."',".$row1['Count(Name)']."],";
                     }
                 }

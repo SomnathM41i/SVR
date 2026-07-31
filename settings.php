@@ -1,6 +1,6 @@
 <?php 
-	require_once('sys_dbconnection.php');
-	/*include('dbconnectadmin.php');*/
+	require_once('includes/bootstrap.php');
+	
 	include('memprotect.php');
 ?>
 <!doctype html>
@@ -9,7 +9,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Settings</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -166,30 +166,7 @@
   </div>
 <?php } ?>
 <?php
-  /*
-  if( $me['facebook_id'] == '')
-  {
-?>
-<div class="text mt-3">
-  <label>Connect Your Account With Facebook </label>
-</div>
-<div class="form-group option-box">
-  <div class="product-form">
-    <?php
-      include ('log_in.php');
-    ?>
-  </div>
-</div>
-<?php
-  }
-  else
-  {
-?>
-<div class="text mt-3">
-  <label>Successfully connected to Facebook</label>
-</div>
-<?php
-  }*/
+  
 ?>
 
       </div>

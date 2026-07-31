@@ -1,7 +1,7 @@
-<?php /*include('dbconnectadmin.php');*/
- require_once('sys_dbconnection.php');
+<?php 
+ require_once('includes/bootstrap.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
@@ -19,9 +19,9 @@ $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $hadnicap_status = $_POST['handicap'] ? $_POST['handicap'] : $_GET['handicap'];
 
 
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))
@@ -59,23 +59,7 @@ if(isset($_GET["page"]))
 	 $looking=$looking1 ? $looking1 : $rtrim_looking;
 	 $looking123=array($looking);
 	 
-	/*if(isset($_POST['edu']))
-	 $stredu1 =implode("','",$_POST['edu']);
-	 $explode_edu=explode("a:1:{i:0;s:",$_GET['edu']);
-	 $explode_edu1=explode(":",$explode_edu[1]);
-	 $trim_edu=trim($explode_edu1[1],'"');
-	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
-	 $stredu123=array($stredu);	 
 	
-	 if(isset($_POST['occu']))
-	 $stroccu1 = implode("','",$_POST['occu']);
-	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occu']);
-	 $explode_occu1=explode(":",$explode_occu[1]);
-	 $trim_occu=trim($explode_occu1[1],'"');
-	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
-	 $stroccu123=array($stroccu);*/
 	
 $check=mysqli_query($con,"select matriid from block_member where profile_id='".$_SESSION['matriid']."'"); 
 $data1=array();
@@ -116,15 +100,7 @@ if($hadnicap_status!="Any" and $hadnicap_status!="")
 $sql1 = $sql." and spe_cases NOT IN('None','')";
 
 
-/*if($stredu!="Any" and $stredu!="")
-{
-$sql=$sql." and Education IN('".$stredu."')";
-}
 
-if($stroccu!="Any" and $stroccu!="")
-{
-$sql=$sql." and Occupation IN('".$stroccu."')";
-}*/
 
 if($looking!="Any" and $looking!="")
 {
@@ -132,12 +108,7 @@ if($looking!="Any" and $looking!="")
 $sql=$sql." and Maritalstatus IN('".$looking."')";
 }
 
-/*if($with_photo!='withoutphoto')
-{
-$sql=$sql." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-}else{
-$sql=$sql." and Photo1  LIKE 'nophoto.jpg' ";
-}*/
+
 $sql=$sql." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive'  AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 $rs_result = mysqli_query($con,$sql);
@@ -152,9 +123,9 @@ $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $hadnicap_status=$_POST['handicap'] ? $_POST['handicap'] : $_GET['handicap'];
 
 
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 
 if(isset($_POST['religion']))
 	 $religion1=implode("','",$_POST['religion']);
@@ -249,27 +220,14 @@ $profile=implode("','", $data);
 
 		
 		
-		/*if($stredu!="Any" and $stredu!="")
-		{
-		$sql1=$sql1." and Education IN('".$stredu."')";
-		}
 		
-		if($stroccu!="Any" and $stroccu!="")
-		{
-		$sql1=$sql1." and Occupation IN('".$stroccu."')";
-		}*/
 		
 		if($looking!="Any" and $looking!="")
 		{
 		$sql1=$sql1." and Maritalstatus IN('".$looking."')";
 		}
 
-		/*if($with_photo!='withoutphoto')
-		{
-		$sql1=$sql1." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-		}else{
-		$sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
-		}*/		 
+				 
 		$sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 		$sql1.=" ORDER BY ID DESC ";
 		$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
@@ -371,8 +329,12 @@ $profile=implode("','", $data);
 <link href="css/responsive.css" rel="stylesheet">
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 
 <!-- Responsive -->
@@ -678,7 +640,7 @@ filter: blur(8px);
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = '';
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
@@ -692,7 +654,7 @@ filter: blur(8px);
                 $waLA[] = "\u{1F517} View Full Profile:";
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
               ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block"><i class="fab fa-whatsapp"></i> Share</a>
 			 <div class="social-box">                            

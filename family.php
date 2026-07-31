@@ -1,7 +1,6 @@
-<?php /*include('dbconnectadmin.php');
-session_start();*/
+<?php 
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect1.php');
 ?>
 <?php
@@ -12,7 +11,7 @@ if($login) {
 }
 $regvar = $me['reg_step'] ?? '';
 $row = $me;
-$page_title = 'Family Details - Shivraj Maratha';
+$page_title = 'Family Details - Manpasand Jodidar';
 include('header3.php'); ?>
 <script>
 function ValidateAlpha(evt) {
@@ -181,7 +180,7 @@ if(isset($_POST['submit']))
 $fvalues = $db->setfilter($_POST['fvalues']);   
 $ftype = $db->setfilter($_POST['ftype']);
 $fstatus = $db->setfilter($_POST['fstatus']);
-//$forigin=mysqli_real_escape_string($con,$_POST['forigin']);
+
 $relative = $db->setfilter($_POST['relative']);
 $mother_tongue = $db->setfilter($_POST['mother_tounge']);
 $brothers = $db->setfilter($_POST['brothers']);
@@ -263,8 +262,8 @@ if($sisters=='5+')
 
 if(isset($login) && $regvar=='9')
 {
-//echo $bmarried;
-//echo $smarried;
+
+
 
 
   if( ( $me['Familyvalues'] == $fvalues ) && ($me['FamilyType'] == $ftype) && ($me['FamilyStatus'] == $fstatus) && ($me['noofbrothers'] == $brothers) && ($me['noofsisters']==$sisters) && ( $me['nbm'] == $bmarried ) && ($me['nsm']==$smarried) && ($me['Fathername']==$father) && ( $me['Fathersoccupation'] == $fatherOccupation ) && ($me['Mothersname']==$mother) && ($me['Mothersoccupation'] == $motheroccupation) && ($me['mother_tounge'] == $mother_tongue) && ($me['relatives'] == $relative) && ($me['parents_stay']==$living_status) && ($me['FamilyDetails'] == $aboufamily) && (($me['property_types'] ?? '') == $property_types) && (($me['property_details'] ?? '') == $property_details) && (($me['investment_types'] ?? '') == $investment_types) && (($me['investment_details'] ?? '') == $investment_details) && (($me['monthly_rental_income'] ?? '') == $monthly_rental_income))
@@ -1150,8 +1149,8 @@ header('Location: upload_photo?id='.$ID);
   font-weight:400; letter-spacing:normal; text-transform:none;
   transition:background 0.15s;
 }
-.mvv-multi-opt:hover { background:var(--mvv-cream,#FFF8F0); }
-.mvv-field .mvv-multi-opt input[type="checkbox"] { width:18px; min-width:18px; min-height:18px; height:18px; padding:0; margin:0; accent-color:var(--mvv-gold,#C9921A); }
+.mvv-multi-opt:hover { background:var(--mvv-cream,#FFFDFB); }
+.mvv-field .mvv-multi-opt input[type="checkbox"] { width:18px; min-width:18px; min-height:18px; height:18px; padding:0; margin:0; accent-color:var(--mvv-gold,#BA9350); }
 </style>
 
 <script>

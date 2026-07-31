@@ -1,6 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 include('protect.php');
-/*include('../dbconnectadmin.php');*/	?>
+	?>
 	<header class="pc-header bg-dark ">
 			<div class="container">
 				<div class="header-wrapper">
@@ -8,7 +8,7 @@ include('protect.php');
 						<a href="index" class="b-brand">
 							<!-- ========   change your logo hear   ============ -->
 
-							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" style="width: 50px; " alt="" class="logo logo-lg">
+							<img src="../branding/logos/emblem.png" style="width: 50px; " alt="" class="logo logo-lg">
 						</a>
 					</div>
 					<div class="me-auto pc-mob-drp">
@@ -199,7 +199,7 @@ include('protect.php');
 		<!-- [ Mobile header ] start -->
 		<div class="pc-mob-header pc-header">
 			<div class="pcm-logo">
-				<a href="index"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg"></a>
+				<a href="index"><img src="../branding/logos/emblem.png" alt="" class="logo logo-lg"></a>
 			</div>
 			<div class="pcm-toolbar">
 				<a href="#!" class="pc-head-link" id="mobile-collapse">

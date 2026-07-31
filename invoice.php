@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 
 
@@ -11,15 +11,19 @@ include('memprotect.php');
 <title>Invoice</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 .mvv-table-wrap{overflow-x:auto;}
 .mvv-table{width:100%;border-collapse:collapse;border:1px solid var(--mvv-border);border-radius:10px;overflow:hidden;}
 .mvv-table th{background:var(--mvv-maroon);color:#fff;padding:12px 16px;text-align:left;font-weight:600;}
@@ -71,7 +75,7 @@ function hideURLbar() {
   </section>
 
   <?php $matriid=$_SESSION['MatriID'];
-  $sqlmatri=mysqli_query($con,"select * from paiddetails where Pmatriid='$matriid'") or die(mysqli_error($con));?>
+  $sqlmatri=mysqli_query($con,"select * from paiddetails where Pmatriid='$matriid'") or svr_db_fail($con);?>
 
   <section class="mvv-section">
     <div class="mvv-container">

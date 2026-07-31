@@ -1,9 +1,9 @@
 <?php
 
     error_reporting(0);
-    include('protect.php'); 
-    require_once('sys_dbconnection.php');
-    /*include'../dbconnectadmin.php';*/
+        require_once('includes/bootstrap.php');
+    include('memprotect.php'); /* member-only: success stories are submitted by logged-in members */
+    
     if(isset($_POST['upload']))
     {
         
@@ -49,7 +49,7 @@
                 }
                 $newname1 =$filename;
                 $newname ='../success/'.$filename;
-                //$_SESSION['adhar']=$newname;
+                
                 //Check if the file with the same name is already exists on the server
                 if (!file_exists($newname)) 
                 { 
@@ -76,7 +76,7 @@
             }
         }  
     }
-    //echo $error;
+    
 
 ?>
 
@@ -99,26 +99,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Share your success story. Rishta Dil Se, Saath Zindagi Bhar."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 	<link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
 	 
     <!-- font css -->
-    <link rel="stylesheet" href="assets/fonts/feather.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-    <link rel="stylesheet" href="assets/fonts/material.css">
+    <link rel="stylesheet" href="console/assets/fonts/feather.css">
+    <link rel="stylesheet" href="console/assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="console/assets/fonts/material.css">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/customizer.css">
-	 <link rel="stylesheet" href="assets/css/popup.css">
+    <link rel="stylesheet" href="console/assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/stylenew.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/layout-horizontal.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/customizer.css">
+	 <link rel="stylesheet" href="console/assets/css/popup.css">
 <script>
 
     function ValidateAlpha(evt)
@@ -200,7 +204,7 @@
         <!-- [ Mobile header ] start -->
         <div class="pc-mob-header pc-header">
             <div class="pcm-logo">
-                <img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
+                <img src="branding/logos/emblem.png" alt="" class="logo logo-lg">
             </div>
             <div class="pcm-toolbar">
                 <a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -268,7 +272,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
-                                                    <?php include('heart1.php'); ?>
+                                                    <?php ?>
                                                 </div>
                                                 <div class="col-md-5 pt-3">
                                                     <div class="box-body">
@@ -305,17 +309,17 @@
 
     <!-- Warning Section Ends -->
     <!-- Required Js -->
-    <script src="assets/js/vendor-all.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/feather.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
+    <script src="console/assets/js/vendor-all.min.js"></script>
+    <script src="console/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="console/assets/js/plugins/feather.min.js"></script>
+    <script src="console/assets/js/pcoded.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
-    <!-- <script src="assets/js/uikit.min.js"></script> -->
+    <!-- <script src="console/assets/js/plugins/clipboard.min.js"></script> -->
+    <!-- <script src="console/assets/js/uikit.min.js"></script> -->
 
 <!-- Apex Chart -->
 <!-- trumbowyg editor -->
-<script src="assets/js/plugins/trumbowyg.min.js"></script>
+<script src="console/assets/js/plugins/trumbowyg.min.js"></script>
 
 <script type="text/javascript">
     // tinymce editor
@@ -341,29 +345,29 @@
     
 
     <!-- Required Js -->
-    <script src="assets/js/vendor-all.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/feather.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
+    <script src="console/assets/js/vendor-all.min.js"></script>
+    <script src="console/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="console/assets/js/plugins/feather.min.js"></script>
+    <script src="console/assets/js/pcoded.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
-    <!-- <script src="assets/js/uikit.min.js"></script> -->
+    <!-- <script src="console/assets/js/plugins/clipboard.min.js"></script> -->
+    <!-- <script src="console/assets/js/uikit.min.js"></script> -->
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
 <script src="ckeditor/sample.js" type="text/javascript"></script>
 <!-- Apex Chart -->
-<script src="assets/js/plugins/apexcharts.min.js"></script>
+<script src="console/assets/js/plugins/apexcharts.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8H86P6FK7"></script>
 
-<script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
+<script src="console/assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
 
 <!-- custom-chart js -->
-<script src="assets/js/pages/dashboard-sale.js"></script>
+<script src="console/assets/js/pages/dashboard-sale.js"></script>
 
-<script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
+<script src="console/assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
     
-<?php include('footersection.php');?>
+<?php?>
 <?php include('footer.php');?>
 </body>
 

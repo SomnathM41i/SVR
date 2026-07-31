@@ -1,9 +1,9 @@
-<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+<?php require_once('includes/bootstrap.php');
+
 $login=$_SESSION['MatriID']; //or sender id						
 $searchid=$_POST['rowid'];
-//echo $searchid;
-//echo $login;
+
+
 
 ?>
 
@@ -51,7 +51,7 @@ $searchid=$_POST['rowid'];
 					
 							<?php
 							$viewedmem=  mysqli_query($con,"select * from register where MatriID ='$searchid'");
-                           //echo "select * from register where MatriID ='$searchid'";							
+                           
 							$viewedmem_rec=mysqli_fetch_array($viewedmem);
 							$email2=mysqli_query($con,"select * from emailverify where MatriID ='$searchid' ");
 							$emailver=mysqli_fetch_array($email2);

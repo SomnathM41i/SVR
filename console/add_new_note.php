@@ -1,4 +1,5 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
 $MatriID = $_REQUEST['id'];
 $notes = $_REQUEST['note'];
 mysqli_query($con,"INSERT INTO `notes`(`MatriID`, `note`) VALUES ('$MatriID','$notes')");

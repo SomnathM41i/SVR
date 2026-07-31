@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <div class="pct-customizer">
     <div class="pct-c-btn">
         <button class="btn btn-light-danger" id="pct-toggler">

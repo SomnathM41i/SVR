@@ -48,22 +48,22 @@ $(document).ready(function() {
         // [ Data-Attributes Charts ] start
         $(".data-attributes span").peity("donut");
         $("span.pie_1").peity("pie", {
-            fill: ["#EA4D4D", "#7267EF"]
+            fill: ["#EA4D4D", "#7A1F39"]
         });
         $("span.pie_2").peity("pie", {
             fill: ["#ffa21d", "#17C666"]
         });
         $("span.pie_3").peity("pie", {
-            fill: ["#7267EF", "#7759de"]
+            fill: ["#7A1F39", "#A63E52"]
         });
         $("span.pie_4").peity("pie", {
             fill: ["#17C666", "#EA4D4D"]
         });
         $("span.pie_5").peity("pie", {
-            fill: ["#ffa21d", "#7267EF"]
+            fill: ["#ffa21d", "#7A1F39"]
         });
         $("span.pie_6").peity("pie", {
-            fill: ["#EA4D4D", "#7759de"]
+            fill: ["#EA4D4D", "#A63E52"]
         });
         $("span.pie_7").peity("pie", {
             fill: ["#17C666", "#ffa21d"]
@@ -71,22 +71,22 @@ $(document).ready(function() {
 
         // [ Pie Charts ] start
         $("span.pie_1").peity("pie", {
-            fill: ["#EA4D4D", "#7267EF"]
+            fill: ["#EA4D4D", "#7A1F39"]
         });
         $("span.pie_2").peity("pie", {
             fill: ["#ffa21d", "#17C666"]
         });
         $("span.pie_3").peity("pie", {
-            fill: ["#7267EF", "#7759de"]
+            fill: ["#7A1F39", "#A63E52"]
         });
         $("span.pie_4").peity("pie", {
             fill: ["#17C666", "#EA4D4D"]
         });
         $("span.pie_5").peity("pie", {
-            fill: ["#ffa21d", "#7267EF"]
+            fill: ["#ffa21d", "#7A1F39"]
         });
         $("span.pie_6").peity("pie", {
-            fill: ["#EA4D4D", "#7759de"]
+            fill: ["#EA4D4D", "#A63E52"]
         });
         $("span.pie_7").peity("pie", {
             fill: ["#17C666", "#ffa21d"]

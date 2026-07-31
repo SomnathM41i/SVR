@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 require_once('includes/partner_match.php');
 require_once('includes/annual_income.php');
 include_once('memprotect.php');
@@ -36,7 +36,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Full Profile — Shivraj Maratha</title>
+<title>Full Profile — Manpasand Jodidar</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css?v=352421.2" rel="stylesheet">
@@ -48,24 +48,28 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/myfullprofile.css" rel="stylesheet" >
 <style>
   :root {
-    --mvv-maroon: #7A0E1A;
-    --mvv-maroon-2: #4E0710;
-    --mvv-gold: #D4A437;
-    --mvv-cream: #FFF8F0;
-    --mvv-accent: #F4E7DA;
-    --mvv-text: #3A2A22;
-    --mvv-muted: #7B6256;
-    --mvv-green: #2E7D32;
+    --mvv-maroon: #5E1426;
+    --mvv-maroon-2: #3D0C19;
+    --mvv-gold: #BA9350;
+    --mvv-cream: #FFFDFB;
+    --mvv-accent: #F9E7DC;
+    --mvv-text: #3A2530;
+    --mvv-muted: #7A6570;
+    --mvv-green: #2F7D5B;
     --mvv-white: #FFFFFF;
-    --mvv-border: rgba(122, 14, 26, 0.14);
+    --mvv-border: rgba(94, 20, 38, 0.14);
     --mvv-shadow: 0 18px 44px rgba(58, 42, 34, 0.12);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Raleway', sans-serif;
@@ -76,12 +80,12 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
   .schedule-tabs .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; padding:0; text-align:left; }
   .schedule-tabs .tab-buttons li.tab-btn { height:auto !important; width:auto !important; padding:10px 24px !important; background:var(--mvv-white) !important; border:1px solid var(--mvv-border) !important; color:var(--mvv-muted) !important; font-family:var(--font-body); font-weight:600; font-size:0.85rem; cursor:pointer; transition:all 0.25s ease; border-radius:999px !important; display:inline-block; margin:0 !important; text-align:center; line-height:1.4; box-shadow:none !important; letter-spacing:0.3px; }
   .schedule-tabs .tab-buttons li.tab-btn:hover { border-color:var(--mvv-gold) !important; color:var(--mvv-maroon) !important; background:var(--mvv-white) !important; transform:translateY(-1px); }
-  .schedule-tabs .tab-buttons li.tab-btn.active-btn { background:linear-gradient(135deg, var(--mvv-maroon), var(--mvv-maroon-2)) !important; color:var(--mvv-white) !important; border-color:var(--mvv-maroon) !important; box-shadow:0 6px 20px rgba(122,14,26,0.22) !important; }
+  .schedule-tabs .tab-buttons li.tab-btn.active-btn { background:linear-gradient(135deg, var(--mvv-maroon), var(--mvv-maroon-2)) !important; color:var(--mvv-white) !important; border-color:var(--mvv-maroon) !important; box-shadow:0 6px 20px rgba(94,20,38,0.22) !important; }
   
   /* ── Photo Card ── */
   .mvv-photo-card { background:var(--mvv-white); border:1px solid var(--mvv-border); box-shadow:var(--mvv-shadow); padding:28px; text-align:center; position:relative; }
   .mvv-photo-card .photo-wrap { position:relative; display:inline-block; }
-  .mvv-photo-card .photo-wrap img { width:200px; height:200px; object-fit:cover; border-radius:50%; border:4px solid var(--mvv-accent); box-shadow:0 8px 28px rgba(212,164,55,0.2); }
+  .mvv-photo-card .photo-wrap img { width:200px; height:200px; object-fit:cover; border-radius:50%; border:4px solid var(--mvv-accent); box-shadow:0 8px 28px rgba(186, 147, 80,0.2); }
   .mvv-photo-card .photo-wrap .online-dot { position:absolute; bottom:12px; right:12px; width:18px; height:18px; border-radius:50%; background:#2ecc71; border:3px solid var(--mvv-white); box-shadow:0 2px 8px rgba(0,0,0,0.15); }
   .mvv-photo-card .member-id { display:inline-block; margin-top:14px; padding:5px 18px; border-radius:999px; font-size:0.8rem; font-weight:700; background:var(--mvv-accent); color:var(--mvv-maroon); letter-spacing:0.5px; }
   .mvv-photo-card .member-name { font-family:var(--font-display); color:var(--mvv-maroon-2); font-size:1.4rem; margin:8px 0 2px; }
@@ -109,7 +113,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
   
   /* ── Gallery ── */
   .mvv-gallery-img { width:100%; height:170px; object-fit:cover; border:2px solid var(--mvv-accent); transition:all 0.3s ease; }
-  .mvv-gallery-img:hover { transform:scale(1.04); border-color:var(--mvv-gold); box-shadow:0 8px 24px rgba(212,164,55,0.2); }
+  .mvv-gallery-img:hover { transform:scale(1.04); border-color:var(--mvv-gold); box-shadow:0 8px 24px rgba(186, 147, 80,0.2); }
   
   /* ── Alert ── */
   .mvv-alert { padding:14px 20px; font-size:0.9rem; font-weight:600; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; border-left:4px solid var(--mvv-gold); background:var(--mvv-accent); color:var(--mvv-maroon-2); }
@@ -202,7 +206,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 	        } 
 	// check already viewed
 		
-	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or die(mysql_error());
+	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or svr_db_fail($con);
 		
 
 	if(mysqli_num_rows($profile_views)==0)
@@ -276,10 +280,12 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 
 		</head>
 
-		<body>
+		<body><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 		<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 		  <tr>
-			<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='250' height='64'  alt=''/></td>
+			<td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='250' height='74'  alt=''/></td>
 			<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 		  </tr>
 		  <tr>
@@ -311,7 +317,9 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 			<td>&nbsp;</td>
 		  </tr>
 		</table>
-		</body>
+		<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
+</body>
 		</html>
 		";
 
@@ -407,8 +415,8 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 									$is_yes=mysqli_query($con,$is_already_send);
 									$expressinterestfetch=mysqli_fetch_array($is_yes);
 									
-									$mvvPrimary = "background:linear-gradient(135deg,var(--mvv-gold),#F1D17A);color:var(--mvv-maroon-2);box-shadow:0 8px 24px rgba(212,164,55,0.3)";
-									$mvvMaroon = "background:linear-gradient(135deg,var(--mvv-maroon),var(--mvv-maroon-2));color:#fff;box-shadow:0 8px 24px rgba(122,14,26,0.2)";
+									$mvvPrimary = "background:linear-gradient(135deg,var(--mvv-gold),#F1D17A);color:var(--mvv-maroon-2);box-shadow:0 8px 24px rgba(186, 147, 80,0.3)";
+									$mvvMaroon = "background:linear-gradient(135deg,var(--mvv-maroon),var(--mvv-maroon-2));color:#fff;box-shadow:0 8px 24px rgba(94,20,38,0.2)";
 									$mvvGhost = "background:var(--mvv-white);color:var(--mvv-muted);border-color:var(--mvv-border)";
 									
 									if($expressinterestfetch['status']=='Pending') { ?>

@@ -1,14 +1,14 @@
 :root {
-  --mvv-maroon: #7A0E1A;
-  --mvv-maroon-2: #4E0710;
-  --mvv-gold: #D4A437;
-  --mvv-cream: #FFF8F0;
-  --mvv-accent: #F4E7DA;
-  --mvv-text: #3A2A22;
-  --mvv-muted: #7B6256;
-  --mvv-green: #2E7D32;
+  --mvv-maroon: #5E1426;
+  --mvv-maroon-2: #3D0C19;
+  --mvv-gold: #BA9350;
+  --mvv-cream: #FFFDFB;
+  --mvv-accent: #F9E7DC;
+  --mvv-text: #3A2530;
+  --mvv-muted: #7A6570;
+  --mvv-green: #2F7D5B;
   --mvv-white: #FFFFFF;
-  --mvv-border: rgba(122, 14, 26, 0.14);
+  --mvv-border: rgba(94, 20, 38, 0.14);
   --mvv-shadow: 0 18px 44px rgba(58, 42, 34, 0.12);
 }
 
@@ -114,7 +114,7 @@ body {
 .mvv-btn.primary {
   background: linear-gradient(135deg, var(--mvv-gold), #F1D17A);
   color: var(--mvv-maroon-2);
-  box-shadow: 0 14px 30px rgba(212,164,55,0.28);
+  box-shadow: 0 14px 30px rgba(186, 147, 80,0.28);
 }
 
 .mvv-btn.secondary {
@@ -126,7 +126,7 @@ body {
 .mvv-btn.maroon {
   background: linear-gradient(135deg, var(--mvv-maroon), var(--mvv-maroon-2));
   color: #fff;
-  box-shadow: 0 14px 30px rgba(122,14,26,0.24);
+  box-shadow: 0 14px 30px rgba(94,20,38,0.24);
 }
 
 .mvv-hero {
@@ -138,7 +138,7 @@ body {
   isolation: isolate;
   color: #fff;
   background:
-    linear-gradient(90deg, rgba(78,7,16,0.92), rgba(122,14,26,0.72) 48%, rgba(58,42,34,0.12)),
+    linear-gradient(90deg, rgba(78,7,16,0.92), rgba(94,20,38,0.72) 48%, rgba(58,42,34,0.12)),
     url("../images/main-slider/1.jpg") center / cover no-repeat;
 }
 
@@ -146,7 +146,7 @@ body {
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(212,164,55,0.42);
+  border: 1px solid rgba(186, 147, 80,0.42);
   pointer-events: none;
   z-index: -1;
 }
@@ -212,7 +212,7 @@ body {
   position: relative;
   z-index: 3;
   background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(212,164,55,0.32);
+  border: 1px solid rgba(186, 147, 80,0.32);
   box-shadow: var(--mvv-shadow);
   padding: clamp(18px, 3vw, 30px);
   backdrop-filter: blur(18px);
@@ -250,7 +250,7 @@ body {
 .mvv-field input:focus,
 .mvv-field textarea:focus {
   border-color: var(--mvv-gold);
-  box-shadow: 0 0 0 4px rgba(212,164,55,0.14);
+  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.14);
 }
 
 .mvv-card-grid {
@@ -348,7 +348,7 @@ body {
   align-items: center;
   gap: 6px;
   color: var(--mvv-green);
-  background: rgba(46,125,50,0.1);
+  background: rgba(47, 125, 91,0.1);
   font-weight: 800;
   font-size: 0.76rem;
   padding: 6px 10px;
@@ -407,7 +407,7 @@ body {
 
 .mvv-band {
   background:
-    linear-gradient(135deg, rgba(122,14,26,0.96), rgba(78,7,16,0.94)),
+    linear-gradient(135deg, rgba(94,20,38,0.96), rgba(78,7,16,0.94)),
     url("../images/background/6.jpg") center / cover no-repeat;
   color: #fff;
 }
@@ -426,7 +426,7 @@ body {
 
 .mvv-image-frame {
   position: relative;
-  border: 1px solid rgba(212,164,55,0.42);
+  border: 1px solid rgba(186, 147, 80,0.42);
   padding: 12px;
   background: #fff;
   box-shadow: var(--mvv-shadow);
@@ -469,8 +469,8 @@ body {
   padding: clamp(62px, 8vw, 104px) 0;
   color: #fff;
   background:
-    radial-gradient(circle at 14% 26%, rgba(212,164,55,0.18), transparent 28%),
-    linear-gradient(90deg, rgba(78,7,16,0.96) 0%, rgba(122,14,26,0.9) 46%, rgba(122,14,26,0.42) 72%, rgba(58,42,34,0.18) 100%),
+    radial-gradient(circle at 14% 26%, rgba(186, 147, 80,0.18), transparent 28%),
+    linear-gradient(90deg, rgba(78,7,16,0.96) 0%, rgba(94,20,38,0.9) 46%, rgba(94,20,38,0.42) 72%, rgba(58,42,34,0.18) 100%),
     url("../images/main-slider/2.jpg") right center / cover no-repeat;
 }
 
@@ -478,7 +478,7 @@ body {
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(212,164,55,0.36);
+  border: 1px solid rgba(186, 147, 80,0.36);
   pointer-events: none;
   z-index: 1;
 }
@@ -491,7 +491,7 @@ body {
   width: clamp(220px, 28vw, 430px);
   aspect-ratio: 4 / 3;
   background:
-    linear-gradient(180deg, rgba(212,164,55,0.08), rgba(122,14,26,0.14)),
+    linear-gradient(180deg, rgba(186, 147, 80,0.08), rgba(94,20,38,0.14)),
     url("../images/resource/about-img-1.jpg") center / cover no-repeat;
   border: 1px solid rgba(244,231,218,0.72);
   box-shadow: 0 28px 70px rgba(0,0,0,0.26);
@@ -616,7 +616,7 @@ body {
   padding: clamp(50px, 6vw, 72px) 0;
   color: var(--mvv-text);
   background:
-    radial-gradient(circle at 80% 30%, rgba(213,107,36,0.14), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(201,85,106,0.14), transparent 30%),
     var(--mvv-cream);
   border-bottom: 1px solid var(--mvv-border);
 }
@@ -678,7 +678,7 @@ body {
 
 .mvv-match-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212,164,55,0.42);
+  border-color: rgba(186, 147, 80,0.42);
   box-shadow: var(--mvv-shadow);
 }
 
@@ -865,7 +865,7 @@ body {
 .mvv-map {
   min-height: 360px;
   background:
-    linear-gradient(135deg, rgba(122,14,26,0.86), rgba(212,164,55,0.56)),
+    linear-gradient(135deg, rgba(94,20,38,0.86), rgba(186, 147, 80,0.56)),
     url("../img/contact.jpg") center / cover no-repeat;
   display: grid;
   place-items: center;
@@ -897,7 +897,7 @@ body {
     min-height: auto;
     align-items: start;
     background:
-      linear-gradient(180deg, rgba(78,7,16,0.93) 0%, rgba(122,14,26,0.78) 54%, rgba(122,14,26,0.62) 100%),
+      linear-gradient(180deg, rgba(78,7,16,0.93) 0%, rgba(94,20,38,0.78) 54%, rgba(94,20,38,0.62) 100%),
       url("../images/main-slider/1.jpg") 68% top / auto 100% no-repeat;
     background-color: var(--mvv-maroon-2);
   }
@@ -925,7 +925,7 @@ body {
   }
   .mvv-stat {
     padding: 16px;
-    background: rgba(122,14,26,0.48);
+    background: rgba(94,20,38,0.48);
     border-color: rgba(255,255,255,0.18);
     backdrop-filter: blur(8px);
   }
@@ -978,7 +978,7 @@ body {
   .mvv-actions .mvv-btn { width: 100%; }
   .mvv-hero {
     background:
-      linear-gradient(180deg, rgba(78,7,16,0.95) 0%, rgba(122,14,26,0.78) 55%, rgba(122,14,26,0.66) 100%),
+      linear-gradient(180deg, rgba(78,7,16,0.95) 0%, rgba(94,20,38,0.78) 55%, rgba(94,20,38,0.66) 100%),
       url("../images/main-slider/1.jpg") 72% top / auto 100% no-repeat;
     background-color: var(--mvv-maroon-2);
   }

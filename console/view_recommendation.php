@@ -1,7 +1,7 @@
-<?php  require_once('../sys_dbconnection.php');
+<?php  require_once('../includes/bootstrap.php');
     include('protect.php');
     $matriid = $_REQUEST['id'];
-    /*echo $_REQUEST['id'];*/
+    
     $sql = mysqli_query($con,"select * from recommendation where MatriID='$matriid'"); 
     $count = mysqli_num_rows($sql);
     if( $count == 0)
@@ -16,7 +16,7 @@
         $setLimit =6;
         $pageLimit = ($page * $setLimit) - $setLimit;
         $sql = mysqli_query($con,"select * from recommendation where MatriID='$matriid' order by id desc LIMIT ".$pageLimit." , ".$setLimit); 
-        //echo "select * from recommendation where MatriID='$matriid' order by id desc LIMIT ".$pageLimit." , ".$setLimit;
+        
     function displayPaginationBelow($con,$per_page,$page){
         $matriid = $_REQUEST['id'];
         $page_url="?id=$matriid&";
@@ -127,13 +127,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -144,6 +148,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -244,7 +249,7 @@
                                 $expdt1=$expdt[2]."-".$expdt[1]."-".$expdt[0];
                                echo $expdt1;?></span>  
 							     <span style="float:right">
-                                            <!--<input type='textbox' id='sr_no' value='<?php echo $row['id'];?>' hidden>-->
+                                            
 											<?php if($row['status']=="liked"){ ?>
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#EA4D4D" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart prod-likes-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>						
 											<?php } else if($row['status']=="disliked") { ?>
@@ -270,7 +275,7 @@
                              </div>
                             <div class="col-xl-12 col-md-12 col-sm-12 card-body mt-0">
                        
-                                <!--<a href="profile_view?ID=<?php echo $row['MatriID']?>" class="text-primary h5"><?php  echo $row['MatriID']?></a> -->
+                                
                             
                                 <?php 
                                     if( $row['biodata1'] != '')
@@ -282,9 +287,9 @@
                                 </div>                 
                                     <div class="col-xl-3 col-md-3 col-sm-3 ml-2">     
                                         <span class="" style="float:left">
-                                            <!--<img src="../gallary/<?php  echo $row['biodata1']; ?>" height="50px" width="50px">-->
+                                            
                                             <a href="../recommendation/<?php  echo $row['biodata1']; ?>" data-sub-html="Demo Description" style="color:green" target="_blank"><i class="far fa-check-circle"></i> View </a> 
-                                            <!--<a href="delete_document.php?id=<?php echo $row['biodata1'] ?>" class="ml-3" style="color:red" <?PHP /*onClick="deletephoto(<?php echo $type1['doc_id'] ?>)" */ ?>><i class="far fa-times-circle"></i> Delete </a>-->
+                                            
                                         </span> 
                                     </div>                                                          
                                 </div>                  
@@ -302,9 +307,9 @@
                                 </div>                 
                                 <div class="col-xl-3 col-md-3 col-sm-3 ml-2 ">
                                     <span class="" style="float:left">
-                                        <!--<img src="../recommendation/<?php  echo $row['photo']; ?>" height="50px" width="50px">-->
+                                        
                                         <a href="../recommendation/<?php  echo $row['photo']; ?>" data-sub-html="Demo Description" style="color:green" target="_blank"><i class="far fa-check-circle"></i> View </a>
-                                        <!--<a href="delete_document.php?id=<?php echo $row['photo'] ?>" class="ml-3" style="color:red" <?PHP /*onClick="deletephoto(<?php echo $type1['doc_id'] ?>)" */ ?>><i class="far fa-times-circle"></i> Delete </a>-->
+                                        
                                     </span>
                                 </div>
                             </div>                  
@@ -525,7 +530,7 @@
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -535,7 +540,7 @@
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

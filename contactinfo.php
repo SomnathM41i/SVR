@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 
 $result=mysqli_query($con,"SELECT * FROM cms where cms_id='9'");
@@ -11,7 +11,7 @@ $rowdata=mysqli_fetch_array($result);?>
     </h5>
     <ul style="list-style:none;padding:0;margin:0;">
       <li style="display:flex;gap:12px;margin-bottom:14px;">
-        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(232,97,42,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
+        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(201, 85, 106,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
           <i class="bi bi-telephone-fill"></i>
         </span>
         <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.55;">
@@ -20,7 +20,7 @@ $rowdata=mysqli_fetch_array($result);?>
         </div>
       </li>
       <li style="display:flex;gap:12px;margin-bottom:14px;">
-        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(232,97,42,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
+        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(201, 85, 106,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
           <i class="bi bi-envelope-fill"></i>
         </span>
         <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.55;">
@@ -29,7 +29,7 @@ $rowdata=mysqli_fetch_array($result);?>
         </div>
       </li>
       <li style="display:flex;gap:12px;margin-bottom:14px;">
-        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(232,97,42,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
+        <span style="width:34px;height:34px;flex-shrink:0;background:rgba(201, 85, 106,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:0.85rem;">
           <i class="bi bi-clock-fill"></i>
         </span>
         <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.55;">

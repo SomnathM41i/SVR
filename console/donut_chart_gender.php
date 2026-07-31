@@ -1,8 +1,8 @@
-<?php require_once('../sys_dbconnection.php');
-	/*include '../dbconnectadmin.php';
-	*/
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+	
   //MALE MEMBER
-  $relsql=$con->query("select * from caste")or die(mysqli_error($con)  );
+  $relsql=$con->query("select * from caste")or svr_db_fail($con);
   
      
 
@@ -22,8 +22,8 @@
             while($relrow = $relsql->fetch_assoc())
             {
               $caste=$relrow['Caste'];
-              $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste'") or die(mysqli_error($con) );
-              //$groom=0;
+              $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste'") or svr_db_fail($con);
+              
               if($groomrow=$groomsql->fetch_assoc())
               {
                 $groom= $groomrow['num'];

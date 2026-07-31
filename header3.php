@@ -1,6 +1,6 @@
-<?php require_once('sys_dbconnection.php');
-$smLogo = 'css3/assets/shivraj-logo.png';
-$smLogoLocal = 'css3/assets/shivraj-logo.png';
+<?php require_once('includes/bootstrap.php');
+$smLogo = 'branding/logos/emblem.png';
+$smLogoLocal = 'branding/favicons/icon-32.png';
 $currentHeaderPage = pathinfo($_SERVER['SCRIPT_NAME'] ?? '', PATHINFO_FILENAME);
 $registrationHeaderPages = [
   'signup', 'signup1', 'nri_registration', 'step2', 'horoscope',
@@ -8,7 +8,7 @@ $registrationHeaderPages = [
   'upload_idproof', 'verify_otp', 'register_success', 'partner_prefrence'
 ];
 $hideDashboardButton = in_array($currentHeaderPage, $registrationHeaderPages, true);
-if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सूचक केंद्र';
+if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर सूचक केंद्र';
 ?><!doctype html>
 <html lang="mr">
    <head>
@@ -20,7 +20,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
       <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
       <!-- Bootstrap 5 -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <!-- Bootstrap Icons -->
@@ -29,30 +29,38 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $smLogoLocal; ?>">
+      <!-- MPJ: brand icons & identity -->
+      <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+      <link rel="manifest" href="branding/site.webmanifest">
+      <meta name="theme-color" content="#5E1426">
+      <meta name="description" content="<?php echo htmlspecialchars(isset($page_description) ? $page_description : 'Manpasand Jodidar - trusted Maratha matrimonial service in Satara, Maharashtra. Rishta Dil Se, Saath Zindagi Bhar.', ENT_QUOTES, 'UTF-8'); ?>">
       <!-- Template Styles -->
       <link rel="stylesheet" href="template/assets/css/style.css" />
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css3/Style.css" />
       <link rel="stylesheet" href="css3/mvv-premium.css" />
+      <!-- MPJ Brand Tokens & Utilities -->
+      <link rel="stylesheet" href="branding/branding.css" />
 
       <style>
       /* ══════════════════════════════════════════
-         SHIVRAJ MARATHA DESIGN SYSTEM — Header & Footer
+         MANPASAND JODIDAR DESIGN SYSTEM — Header & Footer
          Inspired by template's modern aesthetic
       ══════════════════════════════════════════ */
       :root {
-        --mvv-saffron:      #E8612A;
-        --mvv-saffron-dark: #C94D1A;
-        --mvv-maroon:       #6B1A1A;
-        --mvv-maroon-dark:  #4A0E0E;
-        --mvv-gold:         #C9921A;
-        --mvv-gold-light:   #F0C04A;
-        --mvv-cream:        #FFF8F0;
-        --mvv-cream-2:      #F7ECDD;
-        --mvv-ink:          #271A1B;
-        --mvv-muted:        #7A5C4A;
+        --mvv-saffron:      #C9556A;
+        --mvv-saffron-dark: #A63E52;
+        --mvv-maroon:       #5E1426;
+        --mvv-maroon-dark:  #3D0C19;
+        --mvv-gold:         #BA9350;
+        --mvv-gold-light:   #DDB15F;
+        --mvv-cream:        #FFFDFB;
+        --mvv-cream-2:      #F9E7DC;
+        --mvv-ink:          #3A2530;
+        --mvv-muted:        #7A6570;
         --mvv-white:        #FFFFFF;
-        --mvv-line:         rgba(107,26,26,0.12);
+        --mvv-line:         rgba(94,20,38,0.12);
         --mvv-shadow:       0 20px 60px rgba(79,35,25,0.12);
         --mvv-radius:       22px;
         --mvv-radius-sm:    12px;
@@ -95,7 +103,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       /* ─── TOP BAR ─── */
       .mvv-topbar {
         background: var(--mvv-maroon-dark);
-        color: #f8e8d0;
+        color: #E3CBB2;
         font-size: 13px;
       }
       .mvv-topbar-inner {
@@ -109,7 +117,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
         gap: 24px;
       }
       .mvv-topbar a {
-        color: #f8e8d0;
+        color: #E3CBB2;
         transition: color 0.2s;
         display: inline-flex;
         align-items: center;
@@ -308,10 +316,10 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       .mvv-nav-btn-outline {
         background: transparent;
         color: var(--mvv-maroon) !important;
-        border: 1.5px solid rgba(107,26,26,0.3);
+        border: 1.5px solid rgba(94,20,38,0.3);
       }
       .mvv-nav-btn-outline:hover {
-        background: rgba(107,26,26,0.06);
+        background: rgba(94,20,38,0.06);
         border-color: var(--mvv-maroon);
       }
 
@@ -342,7 +350,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
         width: 44px;
         height: 44px;
         border: none;
-        background: rgba(107,26,26,0.08);
+        background: rgba(94,20,38,0.08);
         border-radius: 8px;
         padding: 8px;
         cursor: pointer;
@@ -374,7 +382,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
         font-weight: 600;
         color: var(--mvv-maroon);
         padding: 4px 12px;
-        background: rgba(107,26,26,0.06);
+        background: rgba(94,20,38,0.06);
         border-radius: 999px;
       }
 
@@ -499,7 +507,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
         .mvv-nav > a:not(.mvv-nav-btn)::after,
         .mvv-nav-dropdown > button::after { display: none; }
         .mvv-nav > a:not(.mvv-nav-btn).active {
-          background: rgba(232,97,42,0.08);
+          background: rgba(201, 85, 106,0.08);
           border-radius: 8px;
           color: var(--mvv-saffron);
         }
@@ -599,14 +607,14 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       .hero:after {
         content: '';
         position: absolute;
-        border: 1px solid rgba(200,154,75,.27);
+        border: 1px solid rgba(186,147,80,.27);
         border-radius: 50%;
       }
       .hero:before { width:360px; height:360px; left:-210px; top:30px; }
       .hero:after  { width:510px; height:510px; left:-300px; top:-40px; }
 
       /* ─── ABOUT EMBLEM LOGO ─── */
-      .about-art { background: none !important; border: 2px solid rgba(200,154,75,0.4); box-shadow: 0 15px 50px rgba(79,35,25,0.15); }
+      .about-art { background: none !important; border: 2px solid rgba(186,147,80,0.4); box-shadow: 0 15px 50px rgba(79,35,25,0.15); }
       .about-art::before { display: none !important; }
       .about-emblem img { width: 200px; height: 200px; border-radius: 50%; object-fit: contain; background: #fff; padding: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
       .about-photo-card .about-emblem { inset: 0; border: 0; border-radius: inherit; overflow: hidden; }
@@ -632,7 +640,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
               rgba(255,249,240,.9) 56%,
               rgba(255,249,240,.25) 100%),
             url('template/assets/images/maratha-wedding-hero.jpg') 72% bottom / auto 52% no-repeat,
-            #fff9f0;
+            #FFFDFB;
         }
         .hero-content { width: 100%; padding: 65px 0 280px; }
         .hero h1 { font-size: 42px; }
@@ -717,6 +725,13 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       <?php if (!empty($page_og_description)): ?><meta property="og:description" content="<?php echo htmlspecialchars($page_og_description, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
       <meta property="og:type" content="website">
       <meta property="og:url" content="<?php echo htmlspecialchars((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'?'https':'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">
+      <!-- MPJ: social defaults (page-level $page_og_* always wins; no duplicate tags) -->
+      <meta property="og:site_name" content="Manpasand Jodidar">
+      <?php if (empty($page_og_image)): ?><meta property="og:image" content="<?php echo htmlspecialchars((defined('MPJ_BRAND_URL') ? MPJ_BRAND_URL : 'https://weddingsparampara.com') . '/branding/images/og-image.jpg', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (empty($page_og_title) && !empty($page_title)): ?><meta property="og:title" content="<?php echo htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (empty($page_og_description)): ?><meta property="og:description" content="<?php echo htmlspecialchars(isset($page_description) ? $page_description : 'Manpasand Jodidar - trusted Maratha matrimonial service in Satara, Maharashtra. Rishta Dil Se, Saath Zindagi Bhar.', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <meta name="twitter:card" content="summary_large_image">
+      <?php if (empty($page_og_image)): ?><meta name="twitter:image" content="<?php echo htmlspecialchars((defined('MPJ_BRAND_URL') ? MPJ_BRAND_URL : 'https://weddingsparampara.com') . '/branding/images/og-image.jpg', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
    </head>
    <body>
       <!-- TOP BAR -->
@@ -733,10 +748,10 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       <!-- SITE HEADER -->
       <header class="mvv-header" id="mvvHeader">
          <div class="container mvv-header-wrap">
-            <a class="mvv-brand" href="index" aria-label="Shivraj Maratha Home">
-               <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha Logo">
+            <a class="mvv-brand" href="index" aria-label="Manpasand Jodidar Home">
+               <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar Logo">
                <span class="mvv-brand-text">
-                  <span class="mvv-brand-title">शिवराज मराठा</span>
+                  <span class="mvv-brand-title">मनपसंद जोडीदार</span>
                   <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
                </span>
             </a>

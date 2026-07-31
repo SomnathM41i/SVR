@@ -1,5 +1,6 @@
-<?php require_once('../sys_dbconnection.php');  
- /*include'../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php');  
+require_once(dirname(__FILE__).'/protect.php');
+ 
  		$country=$_GET['q'];
 		
 		$q="select * from e_state where cid='$country' ORDER BY state ASC";

@@ -1,5 +1,5 @@
 <?php 
-	require_once('sys_dbconnection.php');
+	require_once('includes/bootstrap.php');
 	$id = $_REQUEST['id'];
 	$flag = $_REQUEST['flag'];
 	$status_query = mysqli_query($con,"SELECT * FROM recommendation WHERE id='$id'");
@@ -9,11 +9,7 @@
 	}else{
 		mysqli_query($con,"UPDATE recommendation SET status = 'liked' WHERE id = '$id' ");
 	}
-	/*if( $row['status'] == "NULL"){
-		mysqli_query($con,"UPDATE recommendation SET status = 'liked' WHERE id = '$id' ");
-	}else{
-		mysqli_query($con,"UPDATE recommendation SET status = 'disliked' WHERE id = '$id' ");
-	}*/
+	
 	
 	
 	

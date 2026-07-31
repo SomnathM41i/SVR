@@ -1,32 +1,33 @@
-<?php require_once('../sys_dbconnection.php'); 
-/*include'../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php'); 
+require_once(dirname(__FILE__).'/protect.php');
+
 $msg="";
 if(isset($_POST['submit']))
 {
     $employed=mysqli_real_escape_string($con,$_POST['Name']);
-    //echo $caste;
     
-    //$Religion=mysqli_real_escape_string($con,$_POST['religion']);
-    //echo $Religion;
+    
+    
+    
     
     $q="select * from employed_in where employed='$employed'";
-    //echo "select * from caste where Caste='$caste'";
+    
     
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
     if($num>0)
     {
         $msg="Emplyoed In Field already Exist!!";
-        //$msg=0;
+        
         
     }
     else
     {
         $q="insert into employed_in(employed,status) values('$employed','enable')";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
-            //$msg=1;
+            
             $msg="New Employed Field field added Successfully!!";
         }
     }
@@ -35,33 +36,33 @@ if(isset($_POST['submit']))
 if(isset($_POST['Update']))
 {
     $id=$_POST['id'];
-    //echo $id;
+    
     $employed=$_POST['Name'];
-    //echo $education;
-    //echo $caste;
-        //exit;
+    
+    
+        
     $q="select * from employed_in where employed='$employed' ";
-    //echo "select * from caste where Caste='$caste'";
+    
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
-    //echo $num;
+    
     if($num>0)
     {
-        //$msg=0;
+        
         $msg="Employed In Field already Exist!!";
-        //echo $msg;
+        
     }
     else
     {
         $msg=1;
-        //echo "ERROR.";
+        
         $q="update employed_in set employed='$employed' where id='$id'";
-        //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
              $msg=" Employed In Field Updated Successfully!!";
-           //echo $msg;
+           
         }
     }
 }
@@ -89,13 +90,17 @@ if(isset($_POST['Update']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon"> ?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon"> ?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -105,6 +110,7 @@ if(isset($_POST['Update']))
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -171,31 +177,7 @@ if(isset($_POST['Update']))
                                 <button class="btn btn-success btn-sm mb-3 btn-round" data-bs-toggle="modal" data-bs-target="#modal-report" data-id="1"><i class="feather icon-plus"></i> Add New Employed in </button>
                             </div>
                             <div class="col-sm-6 offset-sm-3">
-                           <?php /* <form  name="Religion" id="Religion" method="post" action="add_caste.php">
-                              ?><select  class="mb-3 form-control"  name="Religion" type="select" id="Religion"  required="required" onChange="get_state(this.value);">
-                                    <div align="center" class="smalltextgrey"> <?php  echo $msg; 
-                                    $_SESSION['Religion']=$_POST['Religion']; ?> </div>
-                              <?php   if($_POST['Religion']==""){ ?>
-                                 <option value=""> Select  Religion</option>
-                              <?php   } else { ?>
-                                <!--<label class="form-label" for="Name">Enter Religion</label>-->
-                                      <option value="<?php echo $_SESSION['Religion']; ?>"><?php echo $_SESSION['Religion']; ?></option>
-                                <?php   } ?>
-                                <?php  
-               
-                               $i=0;
-                                                        while($data=mysqli_fetch_assoc($rs) and $i< $num)
-                                                      {
-                                         
-                                                                          
-                                                          ?>
-                                                              <option value="<?php  echo $data['Religion']; ?>"><?php  echo $data['Religion']; ?></option>
-                                                              <?php  
-                                                          $i++;
-                                                      }
-                                                      ?>
-                                  </select>
-                                 </form><?php */ ?>
+                           <?php  ?>
                             </div>
                         </div>
                         <div class="table-responsive"  id="content">
@@ -215,17 +197,17 @@ if(isset($_POST['Update']))
                                            $id=$_GET['id'];
                                            
 
-                                           //echo $id;
-                                          //$coun1=$_POST['country1'];
+                                           
+                                          
                                           $allrec=mysqli_query($con,"select * from employed_in ORDER BY employed ASC");
-                                          //echo "select * from caste where Religion='$id' ORDER BY Caste ASC";
+                                          
                                           $total=mysqli_num_rows($allrec);
                                           $i=0;
                                           while($data=mysqli_fetch_assoc($allrec) and $i<$total)
                                           {
                                            ?>
                                             <tr>
-                                              <!--<td ><?php  echo $i+1;?></td>-->
+                                              
                                               <td><?php  echo $data['employed'];?></td>
                                               <td ><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-report2" data-id="<?php echo $data['id'];?>">Edit </a>
                                                 <?php 
@@ -302,7 +284,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_employedin_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -325,7 +307,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'edit_employedin_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -343,7 +325,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -353,7 +335,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

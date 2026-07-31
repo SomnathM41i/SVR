@@ -1,9 +1,9 @@
 <?php include_once('siteconfig.php');?>
-<?php require_once('sys_dbconnection.php');?>
+<?php require_once('includes/bootstrap.php');?>
 <?php include_once('memprotect.php');
-/*include('dbconnectadmin.php');*/
+
 error_reporting(0);
-/*session_start();*/
+
 $login=$_SESSION['MatriID'];
 if(isset($_POST['basicsaveandsearch']))
 {
@@ -11,8 +11,8 @@ $up=mysqli_query($con,"update advance_saveandsearch set nameofsearch='".$_POST['
 }
 $id=$_GET['id'];
 $edu_search=mysqli_query($con,"select * from  advance_saveandsearch where id=".$_GET['id']." and MatriID='$login'");
-//echo "select * from  advance_saveandsearch where id=".$_GET['id']." and MatriID='$login'";
-//exit;
+
+
 $edu_search_fetch=mysqli_fetch_array($edu_search);
 
 $from_age=$edu_search_fetch['fromage'] ? $edu_search_fetch['fromage'] : $_GET['from'];
@@ -310,7 +310,7 @@ $PE_city_re=implode(',',$PE_city_term);
 $sql.=" and City IN ($PE_city_re)";
 }
 
-//echo $with_photo;
+
 if($with_photo != 'withoutphoto')
 {
 	$sql=$sql." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
@@ -323,7 +323,7 @@ $sql=$sql." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 $rs_result = mysqli_query($con,$sql);
 
-//echo $sql;
+
 function displayPaginationBelow($con,$per_page,$page){
 $id=$_GET['id'];
 $edu_search=mysqli_query($con,"select * from  advance_saveandsearch where id=".$_GET['id']." and MatriID='".$_SESSION['matri_login']."'");
@@ -600,7 +600,7 @@ $PE_city_re=implode(',',$PE_city_term);
 $sql1.=" and City IN ($PE_city_re)";
 }
 
-//echo $with_photo;
+
 if($with_photo != 'withoutphoto')
 {
 	$sql1=$sql1." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
@@ -613,7 +613,7 @@ $sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status N
 
 
 		$sql1.=" ORDER BY Regdate DESC ";
-		//echo $sql1;
+		
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
 
     	$total = $rec['totalCount'];
@@ -703,7 +703,7 @@ $sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status N
         return $setPaginate;
     } 
 
-//echo $sql;
+
 ?>
 <!DOCTYPE html>
  <html lang="en">
@@ -718,8 +718,12 @@ $sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status N
 
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

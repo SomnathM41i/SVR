@@ -1,7 +1,8 @@
-<?php  require_once('../sys_dbconnection.php');
-/*include'../dbconnectadmin.php';*/
+<?php  require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+
 $id = $_POST['rowid'];
-//echo $id;
+
 ?>
  <style>
  .btcs
@@ -19,17 +20,7 @@ $id = $_POST['rowid'];
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <?php /* ?>
-							<select class="mb-3 form-control" name="religion">
-						<?php  $q="select * from education";
-						     $rs=mysqli_query($con,$q); ?>
-                                <!--<label class="form-label" for="Name">Enter Country</label>-->
-								<option value="" selected>Select Education </option>
-									  <?php  while($data=mysqli_fetch_array($rs)){ ?>
-									  <option value="<?php echo $data['edu'];?>" required> <?php echo $data['edu']; ?> </option>
-										<?php }  ?>
-                                  </select>
-								  <?php */?>
+                                <?php ?>
                                 <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter Occupation" required>
 								
                             </div>

@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 //include_once('siteconfig.php');
 //include_once('dbconnectadmin.php');
@@ -16,7 +16,7 @@ $mem_info=mysqli_fetch_array($mem_sql);
 
 $strid = $_SESSION['matriid'];
 $chat = mysqli_query($con,"SELECT * FROM receivemessage WHERE ToID IN('$strid','$sender') order by rid DESC LIMIT $from, $max_results ");
-$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or die(mysqli_error($con));	
+$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or svr_db_fail($con);	
 date_default_timezone_set("Asia/Kolkata");
 $dt=date('Y-m-d');
 $hr=date('h');
@@ -33,15 +33,19 @@ $am=date('a');
 <title>Send Messages</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 .comments-area .comment-box{padding:12px 0;border-bottom:1px solid var(--mvv-border);}
 .comments-area .comment-box:last-child{border-bottom:none;}
 .comment{display:flex;flex-wrap:wrap;gap:12px;}
@@ -52,21 +56,21 @@ $am=date('a');
 .comment-info .name a{color:var(--mvv-maroon);text-decoration:none;}
 .comment-info .date{display:inline;color:var(--mvv-muted);font-size:.85rem;}
 .text{width:100%;margin-top:6px;color:#555;}
-.message{margin-right:5px;color:#1d95d2;font-size:18px;}
+.message{margin-right:5px;color:#773C47;font-size:18px;}
 @media screen and (max-width:768px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 @media screen and (max-width:568px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 /* ── Message Card Styles ── */
 .mvv-message-list{display:flex;flex-direction:column;gap:16px;}
 .mvv-msg-card{background:var(--mvv-cream);border:1px solid var(--mvv-border);border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s;}
-.mvv-msg-card:hover{box-shadow:0 8px 28px rgba(107,26,26,0.1);transform:translateY(-2px);}
+.mvv-msg-card:hover{box-shadow:0 8px 28px rgba(94,20,38,0.1);transform:translateY(-2px);}
 .mvv-msg-card-inner{display:flex;gap:16px;padding:20px 24px;align-items:flex-start;}
-.mvv-msg-avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid #fff;box-shadow:0 3px 12px rgba(107,26,26,0.15);transition:transform .25s;}
+.mvv-msg-avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid #fff;box-shadow:0 3px 12px rgba(94,20,38,0.15);transition:transform .25s;}
 .mvv-msg-avatar:hover{transform:scale(1.05);}
 .mvv-msg-avatar img{width:100%;height:100%;object-fit:cover;}
 .mvv-msg-body{flex:1;min-width:0;}
 .mvv-msg-header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:6px;}
 .mvv-msg-name{font-weight:700;font-size:1.05rem;color:var(--mvv-maroon);text-decoration:none;}
-.mvv-msg-name:hover{color:#8B1A1A;text-decoration:none;}
+.mvv-msg-name:hover{color:#7A1F39;text-decoration:none;}
 .mvv-msg-date{color:var(--mvv-muted);font-size:.82rem;}
 .mvv-msg-text{color:#555;font-size:.93rem;line-height:1.6;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .mvv-msg-reply{padding:7px 18px!important;font-size:.84rem!important;border-radius:999px!important;}
@@ -113,10 +117,10 @@ $am=date('a');
       <?php
       foreach($idu as $idd)
       {			
-        $sender=mysqli_query($con,"select * from register where MatriID='$idd' ")or die(mysqli_error());
+        $sender=mysqli_query($con,"select * from register where MatriID='$idd' ")or svr_db_fail($con);
         $sender_rec=mysqli_fetch_array($sender);
         $count=mysqli_query($con,"select * from receivemessage where (ToID='$idd' and FromID='".$_SESSION['matri_login']."')");
-        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or die(mysqli_error());
+        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or svr_db_fail($con);
         $recivems=mysqli_query($con,"select * from receivemessage where ToID='$idd' and FromID='$strid' and banstatus!='1' ORDER BY rid DESC");
         $receie=mysqli_fetch_array($recivems);
         ?>

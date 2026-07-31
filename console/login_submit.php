@@ -1,42 +1,58 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'security.php');
 
+/* SECURITY hardening of the admin login:
+   - POST only (credentials must never arrive via GET)
+   - per-username+IP throttling against brute force (H5)
+   - prepared statement (H1). NOTE: password storage/comparison semantics are
+     intentionally unchanged (project constraint: no password migration).
+   - session id regenerated on successful login (H11). */
 
-/*session_start();
-include('../dbconnectadmin.php');*/
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'
+    || !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    header('location:login');
+    exit;
+}
 
-$uid=$db->setfilter($_POST['userid']);
-//echo $uid;
-$pwd=$db->setfilter($_POST['password']);
-//echo $pwd;
-$rs=$con->query("select * from adminlogin where adminusername='$uid' and adminpassword='$pwd'");
-//echo "select * from adminlogin where adminusername='$uid' and adminpassword='$pwd'";
-//exit;
-if(mysqli_num_rows($rs)==1)
+$uid = isset($_POST['userid']) ? trim($_POST['userid']) : '';
+$pwd = isset($_POST['password']) ? $_POST['password'] : '';
+
+if (!svr_throttle('adminlogin:' . strtolower($uid) . ':' . svr_client_ip(), 5, 600)) {
+    header('location:login?err=Too+many+attempts.+Try+again+later');
+    exit;
+}
+
+$row = null;
+$stmt = mysqli_prepare($con, "SELECT * FROM adminlogin WHERE adminusername=? AND adminpassword=? LIMIT 1");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "ss", $uid, $pwd);
+    mysqli_stmt_execute($stmt);
+    $rs = mysqli_stmt_get_result($stmt);
+    $row = $rs ? mysqli_fetch_array($rs) : null;
+    mysqli_stmt_close($stmt);
+}
+
+if ($row)
 {
-	$row=$rs->fetch_array();
-	if($row['adminpassword']==$pwd)
+	if($row['adminpassword'] === $pwd)
 	{
-		$_SESSION['admin_id']=$row['adminusername'];
-		
-		$_SESSION['id']=$row['id'];	
+		session_regenerate_id(true);
+		$_SESSION['admin_id'] = $row['adminusername'];
+		$_SESSION['id'] = $row['id'];
+		svr_throttle_reset('adminlogin:' . strtolower($uid) . ':' . svr_client_ip());
+		$last = mysqli_query($con, "update siteconfig set lastlogin=now()");
 		header("location:index");
-		
-		$last=mysqli_query($con,"update  siteconfig set lastlogin=now()");
-		
-		
+		exit;
 	}
 	else
 	{
 		header("location:login?err=Invalid Password");
+		exit;
 	}
 }
 else
 {
 	header("location:login?err=No Such User");
+	exit;
 }
-$_SESSION['uid']=$uid;
 ?>
-
-
-
-

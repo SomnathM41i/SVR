@@ -1,6 +1,5 @@
-<?php /*include('dbconnectadmin.php');
-error_reporting(0) ;*/
-require_once('sys_dbconnection.php');
+<?php 
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 ///include_once('siteconfig.php');
 //error_reporting(0);
@@ -69,7 +68,7 @@ if (isset($_POST['submit'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Upload Photo</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -93,14 +92,14 @@ if (isset($_POST['submit'])) {
     .mvv-preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin:18px 0;text-align:left;}
     .mvv-preview-grid img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:1px solid var(--mvv-border);}
     .mvv-preview-item{position:relative;}
-    .mvv-preview-item button{position:absolute;right:6px;bottom:6px;padding:6px 9px;border:0;border-radius:7px;background:rgba(107,26,26,.92);color:#fff;font-size:.74rem;font-weight:700;cursor:pointer;}
+    .mvv-preview-item button{position:absolute;right:6px;bottom:6px;padding:6px 9px;border:0;border-radius:7px;background:rgba(94,20,38,.92);color:#fff;font-size:.74rem;font-weight:700;cursor:pointer;}
     .mvv-upload-submit{min-width:190px;}
     .mvv-upload-submit:disabled{opacity:.55;cursor:not-allowed;}
     .mvv-gallery-actions{display:flex;gap:8px;margin-top:10px;}
     .mvv-gallery-actions a,.mvv-selected-photo{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:7px;font-size:.82rem;text-decoration:none;}
     .mvv-gallery-actions a:first-child{background:var(--mvv-maroon);color:#fff;}
     .mvv-gallery-actions a:last-child{border:1px solid #c0392b;color:#c0392b;}
-    .mvv-selected-photo{background:rgba(201,146,26,.12);color:#805a00;font-weight:700;}
+    .mvv-selected-photo{background:rgba(186,147,80,.12);color:#805a00;font-weight:700;}
     .gallery-item{margin-bottom:24px;}
     .gallery-item .image{margin:0;overflow:hidden;border-radius:12px;border:1px solid var(--mvv-border);background:#fff;}
     .gallery-item .image img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:0!important;}

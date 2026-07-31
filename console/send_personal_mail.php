@@ -1,9 +1,10 @@
-<?php  require_once('../sys_dbconnection.php'); 
-/*session_start();*/
-/*include('../dbconnectadmin.php');*/
+<?php  require_once('../includes/bootstrap.php'); 
+require_once(dirname(__FILE__).'/protect.php');
+
+
 include('../smtp.php');
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or die(mysqli_error()); 
+$configdata=mysqli_query($con,$query) or svr_db_fail($con); 
 $info=mysqli_fetch_array($configdata);
 $qry="select * from cms where cms_id='9'";
 $qry1=mysqli_query($con,$qry);
@@ -11,7 +12,7 @@ $row3=mysqli_fetch_array($qry1);
 
 $mememail=$_POST['emailto'];			
 $query1="SELECT * FROM register where ConfirmEmail='$mememail'";
-$forpass=mysqli_query($con,$query1) or die(mysqli_error()); 
+$forpass=mysqli_query($con,$query1) or svr_db_fail($con); 
 $forpass1=mysqli_fetch_array($forpass);
 $matriid=$forpass1['MatriID'];
 
@@ -21,7 +22,7 @@ if($forpass1>0)
 		
 		$id=$forpass1['MatriID'];
 		$name=$forpass1['Name'];
-		//$strmem= $_POST['emailto'];
+		
 		$subject =$_POST['subject'];
 		$strbody =$_POST['Message'];
 		$strbody=str_replace("\"","'",$strbody);
@@ -39,11 +40,13 @@ if($forpass1>0)
 
 </head>
 
-<body>
+<body><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 <table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
   <tr>
   
-    <td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
+    <td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
     <td colspan='2' align='center' valign='middle'>Date:$dates </td>
   </tr>
   <tr>
@@ -74,6 +77,8 @@ if($forpass1>0)
     <td>&nbsp;</td>
   </tr>
 </table>
+<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
 </body>
 </html>
 ";
@@ -91,7 +96,7 @@ if($forpass1>0)
 			$msg="Your E-mail is Send Successfuly!";
         echo $msg;
 		$insert=mysqli_query($con,"insert into group_mail(MatriID,name,email,memtype,gender,marital_status,subject,mail_send,mail_type,date) values('$id','$name','$mememail','NULL','NULL','NULL','$subject','$strbody','Personal',NOW())");
-	 //   echo "insert into group_mail(MatriID,name,email,memtype,gender,marital_status,subject,mail_send,mail_type,date) values('$id','$name','$mememail','NULL','NULL','NULL','$subject','$strbody','Personal',NOW())"; 
+	 
 		
         
 
@@ -112,7 +117,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

@@ -9,10 +9,10 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
-require_once('../sys_dbconnection.php');   
+require_once('../includes/bootstrap.php');   
 include('protect.php');
 include_once('agent_common.php');
-/*include('../dbconnectadmin.php');*/
+
 
 $matriid = $_POST['matriid'];
 $sqlrenew=$con->query("select * from register where MatriID='$matriid'");
@@ -79,7 +79,7 @@ $strstatus = "Clear";
 
 // insert the data
 $insert = $con->query("insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus,discountcode) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$amount','$bank_details','$strstatus','$discountcode')") or die("Could not insert data because ".mysqli_error());
-//echo "insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$discount','$bank_details','$strstatus')" ;
+
 
 if ($agent_id > 0) {
 	agent_create_commission_for_sale_shared($con, $stroid, $matriid, $name, $mobile, $email, $agent_id, $plan, $amount, $activation_date, array(
@@ -98,7 +98,7 @@ if ($agent_id > 0) {
 }
 
 
-/*echo "insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$amount','$bank_details','$strstatus')";*/
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $followers = $con->query("select *from followers where follower_id = '$matriid'");
 if(mysqli_num_rows($followers)>0)
@@ -112,8 +112,8 @@ if(mysqli_num_rows($followers)>0)
 
 ////////////////// UPDATE INTO REGISTER TABLE ////////////////////////
 $strmid = $_POST['matriid'];
-//$stractivedate = $_POST['txtp6'];
-//echo $str82;
+
+
 $strexpdate = date('Y-m-d', strtotime("+$duration days")); 
 
 $update=$con->query("Update register set Status='Paid',memtype='$memtyp1',MemshipExpiryDate='$strexpdate',Noofcontacts='$contacts' where MatriID = '$strmid' ")
@@ -122,33 +122,33 @@ or die("Could not update data because ".mysqli_error());?>
 <?php  
 
 //echo
-//"Update register set Status='Paid',memtype='$memtyp1',MemshipExpiryDate='$strexpdate',Noofcontacts='$contacts' where MatriID = '$strmid' ";
+
 
 //exit();
 ?>
 
 <?php  
 
-//             $query1="SELECT * FROM register WHERE MatriID='$matriid'";
-//             $data1=mysqli_query($con,$query1);
-//             $result1=mysqli_fetch_array($data1);
-//             $Name1=$result1['Name'];
-//             $date1=date("d/m/Y");
+
+
+
+
+
              
-//         //	include('../smtp2.php');
-//         	$mail->Subject="Your ".$plan." membership plan is activated.";
-//         	$mail->Body="<!doctype html>
+
+
+
 // 			<html>
 // 			<head>
 // 			<meta charset='utf-8'>
-// 			<title>Your ".$plan." membership plan is activated.</title>
+
 // 			</head>
 
 // 			<body>
 // 			<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 //                 <tr>
-//                 <td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='149' height='66'  alt=''/></td>
-//                 <td colspan='2' align='center' valign='middle'>Date: $date1 </td>
+//                 <td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='149' height='66'  alt=''/></td>
+
 //                 </tr>
 //                 <tr>
                 
@@ -156,8 +156,8 @@ or die("Could not update data because ".mysqli_error());?>
                 
 //                 <tr>
 //                 <td colspan='3'>
-//                 Hello, <strong> ".$Name1." </strong><br>
-//                 Your ".$plan." membership plan is activated.  </td>
+
+
 //                 </tr>
                 
 //                 <br>
@@ -175,15 +175,15 @@ or die("Could not update data because ".mysqli_error());?>
 // 			</html>
 // 			";
 
-//             $mail->AddAddress($result1['ConfirmEmail'], $result1['Name']);
+
             
-//             if(!$mail->Send()) 
+
 //             {
-//               echo "Mailer Error: " . $mail->ErrorInfo;
-//               echo "Message Not sent!";
-//             } else
+
+
+
 //             {
-//               echo "Message sent!";
+
 //             }
 
 ?>
@@ -200,7 +200,7 @@ Your Plan Has Been Successfully Activated
 
 Thank You
 Team-  ".$siteinfo['Webname']."";
-// sendsms($mobile,$smsMessage); ?>
+
 
 
 
@@ -209,7 +209,7 @@ Team-  ".$siteinfo['Webname']."";
 
 $row=mysqli_fetch_array($qry);
 
-//include('../Mailer/smtp1.php');
+
 
 
 $query=$con->query("SELECT * FROM siteconfig where ID='1'");
@@ -235,13 +235,15 @@ $info=$query->fetch_array();
 				<meta name='robots' content='index,follow' />
 				<link rel='stylesheet' href='http://readymatrimonial.in/6.0/console/email-send/css/style.css' type='text/css'>
 				</head>
-				<body style='margin: 0 auto;width: 100%; background: #ccc; text-align:justify;'>
+				<body style='margin: 0 auto;width: 100%; background: #ccc; text-align:justify;'><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 				
 				<div class='wrapper' style='margin: 0 auto;	width: 590px;background: #333;'>
 				<div class='wrapper-float' style='float:left;margin: 0;width: 590px;background: #c5191f;'>
 				<div class='sub-wrapper' style='float: left;width: 570px; background: #f7f7f7;margin: 10px;border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;'>
 					
-						<div class='logo' style='margin:25px 0 0 10px;float: left;	margin: 7% 0 0 25%;'><a href='http://readymatrimonial.in/6.0/index.php' target='_blank' style='transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;text-decoration: none;'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png'></a></div>
+						<div class='logo' style='margin:25px 0 0 10px;float: left;	margin: 7% 0 0 25%;'><a href='http://readymatrimonial.in/6.0/index.php' target='_blank' style='transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;text-decoration: none;'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png'></a></div>
 				<img src='http://readymatrimonial.in/6.0/console/email-send/images/registration-confirmation-icon.png' style='margin:20px 30px 0 0; float:right;'>
 					<br><br>
 				
@@ -284,20 +286,22 @@ $info=$query->fetch_array();
 				</div>
 				</div>
 				</div>
-				</body>
+				<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
+</body>
 				</html>";
 	
 	$subject="Payment Details";
-//	$email=$mememail;
-	////$mail->Subject=$subject;
-//	$mail->MsgHTML($message1);
+
+	
+
 	$msg="";
 	if($email!="")
 	{
 			set_time_limit(30);
-		//	$mail->ClearAddresses();
-		//	$mail->AddAddress($email);
-		//	$mail->Send();
+		
+		
+		
 		
 			$msg="Your E-mail is Send Successfuly!";
 	}
@@ -316,7 +320,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

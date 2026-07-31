@@ -1,8 +1,8 @@
 <?php
 // Enable PHP errors
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+/* SECURITY: verbose error reporting disabled in production. */
+/* SECURITY: PHP error display disabled in production. */
+/* SECURITY: PHP startup error display disabled in production. */
 
 // Database connection
 require_once('../sys_dbconnection.php'); 

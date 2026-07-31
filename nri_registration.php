@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 if (empty($_SESSION['querystr'])) {
     header('Location: signup');
@@ -105,17 +105,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     }
 }
 
-$page_title = 'NRI Details - Shivraj Maratha';
+$page_title = 'NRI Details - Manpasand Jodidar';
 include('header3.php');
 ?>
 
 <style>
-.mvv-nri-page{min-height:70vh;padding:54px 0 72px;background:radial-gradient(circle at 90% 5%,rgba(201,146,26,.13),transparent 28%),#fff8f0;}
+.mvv-nri-page{min-height:70vh;padding:54px 0 72px;background:radial-gradient(circle at 90% 5%,rgba(186,147,80,.13),transparent 28%),#FFFDFB;}
 .mvv-nri-container{width:min(980px,calc(100% - 32px));margin:0 auto;}
-.mvv-nri-card{padding:34px;border:1px solid rgba(107,26,26,.14);border-radius:22px;background:#fff;box-shadow:0 20px 55px rgba(79,35,25,.11);}
+.mvv-nri-card{padding:34px;border:1px solid rgba(94,20,38,.14);border-radius:22px;background:#fff;box-shadow:0 20px 55px rgba(79,35,25,.11);}
 .mvv-nri-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid #eadfd6;}
-.mvv-nri-icon{display:flex;align-items:center;justify-content:center;flex:0 0 48px;width:48px;height:48px;border-radius:14px;background:#fff0e6;color:#e8612a;font-size:1.3rem;}
-.mvv-nri-head h1{margin:0 0 5px;color:#6b1a1a;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;}
+.mvv-nri-icon{display:flex;align-items:center;justify-content:center;flex:0 0 48px;width:48px;height:48px;border-radius:14px;background:#fff0e6;color:#C9556A;font-size:1.3rem;}
+.mvv-nri-head h1{margin:0 0 5px;color:#5E1426;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;}
 .mvv-nri-head p{margin:0;color:#7a6860;font-size:.92rem;}
 .mvv-nri-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
 .mvv-nri-field{min-width:0;}
@@ -123,13 +123,13 @@ include('header3.php');
 .mvv-nri-field label{display:block;margin-bottom:7px;color:#4c3431;font-size:.87rem;font-weight:700;}
 .mvv-nri-field label span{color:#b3261e;}
 .mvv-nri-field input,.mvv-nri-field select{display:block;width:100%;height:48px;padding:0 13px;border:1px solid #d9cec5;border-radius:10px;background:#fff;color:#382a27;font-size:.92rem;outline:none;}
-.mvv-nri-field input:focus,.mvv-nri-field select:focus{border-color:#c9921a;box-shadow:0 0 0 4px rgba(201,146,26,.13);}
+.mvv-nri-field input:focus,.mvv-nri-field select:focus{border-color:#BA9350;box-shadow:0 0 0 4px rgba(186,147,80,.13);}
 .mvv-nri-help{margin-top:5px;color:#8b7a73;font-size:.76rem;}
 .mvv-nri-errors{margin-bottom:22px;padding:14px 18px;border:1px solid #f0b8b3;border-radius:10px;background:#fff1f0;color:#9c2119;}
 .mvv-nri-errors ul{margin:6px 0 0;padding-left:20px;}
 .mvv-nri-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid #eadfd6;}
-.mvv-nri-back{color:#6b1a1a;font-weight:700;text-decoration:none;}
-.mvv-nri-submit{min-height:48px;padding:0 28px;border:0;border-radius:11px;background:linear-gradient(135deg,#c9921a,#e8612a);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(232,97,42,.23);}
+.mvv-nri-back{color:#5E1426;font-weight:700;text-decoration:none;}
+.mvv-nri-submit{min-height:48px;padding:0 28px;border:0;border-radius:11px;background:linear-gradient(135deg,#BA9350,#C9556A);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(201, 85, 106,.23);}
 @media(max-width:700px){.mvv-nri-page{padding:28px 0 46px}.mvv-nri-card{padding:22px 18px;border-radius:16px}.mvv-nri-grid{grid-template-columns:1fr}.mvv-nri-field.full{grid-column:auto}.mvv-nri-actions{align-items:stretch;flex-direction:column-reverse}.mvv-nri-submit{width:100%}.mvv-nri-back{text-align:center;padding:10px}}
 </style>
 

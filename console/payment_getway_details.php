@@ -1,9 +1,10 @@
-<?php require_once('../sys_dbconnection.php');
-  /*include '../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+  
     $result=mysqli_query($con,"select * from siteconfig where ID='1'");
     $fetch1=mysqli_fetch_array($result);
     $domain_name = $fetch1['domain_name'];
-    /*echo $domain_name;*/
+    
     $sms=mysqli_query($con,"select * from smsgetway where id='1'");
     $sms_fetch1=mysqli_fetch_array($sms);
     $pay=mysqli_query($con,"select * from payment_getway where id='1'");
@@ -11,14 +12,14 @@
     $email=mysqli_query($con,"select * from email_sending where id='1'");
     $email_fetch1=mysqli_fetch_array($email);
     $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
     $on_off = $data_config-> is_smtp_set;
     $auto_on_off = $data_config-> auto_approve;
     $sms_on_off = $data_config-> is_sms_set;
     $pay_on_off = $data_config-> is_pay_gateway_set;
     $otp_on_off = $data_config-> otp_on_off;
 	$translator_on_off = $data_config-> translator_on_off;
-    /*echo $auto_on_off;*/
+    
   //error_reporting(0);<img src ="otpsystem/OTP-step-remove.jpg">
  ?>
 <!DOCTYPE html>
@@ -31,14 +32,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit"/>
 
     <!-- Favicon icon -->
       <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
     <!-- font css -->
@@ -48,6 +53,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css"> 
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -409,7 +415,7 @@
                             </div> -->
                             <div class="col-md-4" >
                                 <div class="form-group">
-                                    <!-- <h3 class="">Email/SMTP Gateway - <a href="<?php echo $domain_name ?>webmail/" target=_blank >Live Access</a></h3> -->
+                                    
                                 </div>
                             </div>
                             <div class="col-md-4" >

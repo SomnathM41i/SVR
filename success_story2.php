@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/ 
+<?php require_once('includes/bootstrap.php'); 
 $limit = 6; 
  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;
@@ -18,8 +18,12 @@ $seo=mysqli_query($con,"Select * from seo where catagory='happy_story'");
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
  <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -80,7 +84,7 @@ $seo=mysqli_query($con,"Select * from seo where catagory='happy_story'");
     <!-- Pricing Section -->
 	<?php $sql12="select * from successstory where approve='Yes' order by id DESC LIMIT $start_from, $limit"; 
 	  $sql1="select COUNT(*) from successstory where approve='Yes'";
-	  //echo "select COUNT(*) from successstory where approve='Yes'";
+	  
 	  $rs_result1 = mysqli_query($con,$sql1);  
 		$row = mysqli_fetch_row($rs_result1);  
 		$total_records = $row[0];  
@@ -101,7 +105,7 @@ $seo=mysqli_query($con,"Select * from seo where catagory='happy_story'");
         	<?php
 				while($aboutfetch = mysqli_fetch_array($result1)) { ?>
         	
-			<?php //$sql=mysqli_query($con,"select * from successstory where approve='Yes' order by id DESC");?> 
+			<?php 
 			
 				           <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight">
 				    <div class="inner-box"> 

@@ -1,5 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
-/*include'../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+
 $from=$_POST['from']; 
 $to=$_POST['to']; 
 $country = $_POST['country'];
@@ -77,7 +78,7 @@ if($city!="")
 	}
 	$sql=$sql."City ='".$city."' or Address LIKE '$city%'";
 }
-//echo $sql;
+
 $result = mysqli_query($con,$sql);
 
 ?>
@@ -99,12 +100,16 @@ $result = mysqli_query($con,$sql);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -114,6 +119,7 @@ $result = mysqli_query($con,$sql);
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<style>
@@ -141,7 +147,7 @@ $result = mysqli_query($con,$sql);
 		<!-- [ Mobile header ] start -->
 		<div class="pc-mob-header pc-header">
 			<div class="pcm-logo">
-				<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
+				<img src="../branding/logos/emblem.png" alt="" class="logo logo-lg">
 			</div>
 			<div class="pcm-toolbar">
 				<a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -255,7 +261,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -278,7 +284,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -296,7 +302,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -306,7 +312,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

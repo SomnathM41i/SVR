@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('agent_commission_lib.php');
 $sql = mysqli_query($con,"SELECT ConfirmEmail FROM register where ConfirmEmail='".$_SESSION['emailtemp']."'");
 
@@ -13,7 +13,7 @@ if(mysqli_num_rows($sql)==0)
 			$lastid=mysqli_insert_id($con);
 			mysqli_query($con,$_SESSION['querystr2']);
 			$sql = "SELECT MAX(id) AS max from register";
-			$result = mysqli_query($con,$sql) or die(mysqli_error());
+			$result = mysqli_query($con,$sql) or svr_db_fail($con);
 			$row = mysqli_fetch_assoc($result);
 			$RID = $lastid;
 			$respre=mysqli_query($con,'select * from siteconfig');
@@ -58,11 +58,11 @@ if(mysqli_num_rows($sql)==0)
 		{
     		$rand2=rand(11111,99999);
 			$mid=$rowpre['prefix'].$rand2; 
-			mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
+			mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
     	}
     	else
       	{
-      		mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
+      		mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
 		}
 		if(isset($_POST['otp'])!="555777")
 		{ 
@@ -81,8 +81,8 @@ $_SESSION['MatriID']=$mid;
 		agent_link_registered_customer($con, $lastid, $mid, $_SESSION['mobile'] ?? '', $_SESSION['emailtemp'] ?? '');
 		include('registrationconfirmation.php');
 		print "<script>";
-		//print " self.location='register_success?id=$mid';"; // Comment this line if you don't want to redirect
-		//print " self.location='admin_mail?id=$mid&flag=mail';";
+		
+		
 		print "</script>";
 		exit;  
 	}

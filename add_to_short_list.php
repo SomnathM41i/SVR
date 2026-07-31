@@ -1,7 +1,7 @@
 <?php  
  include_once('siteconfig.php');
- /*include('dbconnectadmin.php');*/
- require_once('sys_dbconnection.php');?>
+ 
+ require_once('includes/bootstrap.php');?>
 <?php  include_once('memprotect.php');
 
 $strid=$_SESSION['matri_login']; //or sender id
@@ -10,7 +10,7 @@ $qry1=mysqli_query($con,"select * from notification where noti_sender='$strid' A
 $row2=mysqli_fetch_array($qry1);
 $type=$row2['notification_type']; 
 $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
 $on_off = $data_config-> is_smtp_set;
 if(mysqli_num_rows($qry1)==0)
 {
@@ -18,12 +18,12 @@ mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notificati
 
 }
 
-$shortview=mysqli_query($con,"select * from shortlist_profile where mat_id='$strid' AND profile_id='$searchid'")or die(mysqli_error());
+$shortview=mysqli_query($con,"select * from shortlist_profile where mat_id='$strid' AND profile_id='$searchid'")or svr_db_fail($con);
 
 if(mysqli_num_rows($shortview)==0)
 {
 	$now=date('d-m-Y');
-$shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,when1) VALUE('$strid','$searchid','$now')")or die(mysqli_error());
+$shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,when1) VALUE('$strid','$searchid','$now')")or svr_db_fail($con);
 	
 }
 
@@ -40,15 +40,15 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
 	 $sendernm=explode(" ",$row1['Name']);
 	$photo1=$row1['Photo1'];
 	$age=$row1['Age'];
-	//$height=$row1['Height'];
+	
 	$city=$row1['City'];
-	//$reli=$row1['Religion'];
+	
 	$mother_tongue=$row1['mother_tounge'];
 	$edu=$row1['Education'];
 	$occu=$row1['Occupation'];
 	$send=$row1['ConfirmEmail'];
-	//$encrypt_sender=$searchid;
-	//$encrypt_sender=base64_encode($strid);	
+	
+	
     $age=$row1['Age'];
 	$emailsql=mysqli_query($con,"select * from  email_sending WHERE id='1' ");
 	$mailinfo =mysqli_fetch_array($emailsql);
@@ -104,8 +104,7 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
 									else if($strheight =="36") { $height= "6Ft 11 inch"; }
 									else if($strheight =="37") { $height= "7Ft"; }
 	$check_email = mysqli_query($con,"SELECT * FROM emailverify where MatriID='$searchid'");	
-		/*echo "SELECT * FROM emailverify where MatriID='$searchid";
-		exit;*/
+		
 		$fetch_email = mysqli_fetch_array($check_email);
 	if( (int)$on_off === 1 && $fetch_email['verification'] == 'Yes' )
 	{
@@ -119,10 +118,12 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
 
 </head>
 
-<body>
+<body><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 <table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
   <tr>
-    <td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
+    <td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
     <td colspan='2' align='center' valign='middle'>Date: $dates</td>
   </tr>
   <tr>
@@ -153,6 +154,8 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
     <td>&nbsp;</td>
   </tr>
 </table>
+<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
 </body>
 </html>
 ";
@@ -164,12 +167,12 @@ if(!$mail->Send())
   echo "Mailer Error: " . $mail->ErrorInfo;
 } else
 {
-//  echo "Message sent!";
+
 }
 }
 
 					
-//	$encrypt=base64_encode($searchid);
+
 $encrypt = urlencode( base64_encode( $searchid ) );
 
 header("location:full_profile?msg=success&id=$encrypt");  ?>

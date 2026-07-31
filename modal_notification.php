@@ -1,8 +1,8 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+<?php require_once('includes/bootstrap.php');
 error_reporting(0);
 $id = $_POST['rowid'];
-//$sqldata=mysqli_query($con,"select * from successstory where ID='$id' ");
-//$rowdata=mysqli_fetch_array($sqldata);?>
+
+
 
     <div class="modal-header">
           <h4 class="modal-title">Notification</h4>
@@ -10,7 +10,7 @@ $id = $_POST['rowid'];
         </div>
 		<div class="modal-body">
 				 <?php 
-				           //$message =$rowdata['successmessage'];
+				           
 							echo $message; 
           ?>
 		</div>

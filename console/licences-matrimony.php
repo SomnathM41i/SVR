@@ -1,5 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
-/*include '../dbconnectadmin.php';*/  error_reporting(0);
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+  error_reporting(0);
 $data_config = $db->get_siteconfig();
 $domain_name = $data_config -> WebFriendlyname;
 
@@ -14,20 +15,25 @@ $domain_name = $data_config -> WebFriendlyname;
     <meta name="description" content="php matrimony script purchase licences"/>
     <meta name="keywords" content="licences matrimony, purcahse matrimony script "/>
     <meta name="author" content="DashboardKit" />
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 	<link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
 	<link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
 	<style>
 		body {
-			background: #FDFAF5;
+			background: #FFFDFB;
 		}
 		.license-page-container {
 			padding-top: 36px;
@@ -38,16 +44,16 @@ $domain_name = $data_config -> WebFriendlyname;
 			padding-top: 0 !important;
 		}
 		.license-page-container .card {
-			border: 1px solid rgba(201,168,76,0.25);
+			border: 1px solid rgba(186,147,80,0.25);
 			border-radius: 14px;
-			box-shadow: 0 2px 20px rgba(45,31,61,0.08);
+			box-shadow: 0 2px 20px rgba(67,48,58,0.08);
 			overflow: hidden;
 		}
 		.license-page-container .card-body {
 			padding: 22px;
 		}
 		.license-page-container .license-copy {
-			color: #2D1F3D;
+			color: #43303A;
 			font-size: 14px;
 			line-height: 1.75;
 		}
@@ -100,7 +106,7 @@ $domain_name = $data_config -> WebFriendlyname;
                             <div class="form-group">
 							<?php  $qry="select * from cms where cms_id='22'";
 	                              $result=mysqli_query($con,$qry);
-	                                  //echo $qry;
+	                                  
                                    $res=mysqli_fetch_array($result);
                                       ?>
                                

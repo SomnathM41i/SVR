@@ -1,7 +1,16 @@
-<?php require_once('../sys_dbconnection.php'); 
-$id = $_REQUEST['id'];
-$reg_data = mysqli_query($con,"SELECT * FROM register WHERE MatriID='$id' ");
-$fetch_data = mysqli_fetch_array($reg_data);
+<?php require_once('../includes/bootstrap.php'); 
+require_once(dirname(__FILE__).'/protect.php');
+$id = isset($_REQUEST['id']) ? trim($_REQUEST['id']) : '';
+/* SECURITY (H1): prepared statement instead of raw interpolation. */
+$stmt = mysqli_prepare($con, "SELECT * FROM register WHERE MatriID=? LIMIT 1");
+$fetch_data = null;
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $id);
+    mysqli_stmt_execute($stmt);
+    $reg_data = mysqli_stmt_get_result($stmt);
+    $fetch_data = $reg_data ? mysqli_fetch_array($reg_data) : null;
+    mysqli_stmt_close($stmt);
+}
 $new_reg_Date = date("d-m-Y", strtotime($fetch_data['Regdate']));
 $new_memdate = date( "d-m-Y", strtotime($fetch_data['MemshipExpiryDate'])) ;
 if($fetch_data['Lastlogin'] == NULL)
@@ -25,7 +34,7 @@ else{
     <script>
         $(document).ready(function(){
             var count = 5; 
-            /*var id= <?php echo $id?>;*/
+            
             $("button").click(function(){
 
                 count  = count + 5;
@@ -84,12 +93,16 @@ else{
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -97,6 +110,7 @@ else{
     <link rel="stylesheet" href="assets/fonts/material.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">

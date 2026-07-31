@@ -1,13 +1,24 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 include_once('memprotect.php'); 
-//include('dbconnectadmin.php');
+
 //error_reporting(0);
-//session_start();
+
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
 function getHeightValue($h) {
     $map = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4 inch',6=>'4Ft 5 inch',7=>'4Ft 6 inch',8=>'4Ft 7 inch',9=>'4Ft 8 inch',10=>'4Ft 9 inch',11=>'4Ft 10 inch',12=>'4Ft 11 inch',13=>'5Ft',14=>'5Ft 1 inch',15=>'5Ft 2 inch',16=>'5Ft 3 inch',17=>'5Ft 4 inch',18=>'5Ft 5 inch',19=>'5Ft 6 inch',20=>'5Ft 7 inch',21=>'5Ft 8 inch',22=>'5Ft 9 inch',23=>'5Ft 10 inch',24=>'5Ft 11 inch',25=>'6Ft',26=>'6Ft 1 inch',27=>'6Ft 2 inch',28=>'6Ft 3 inch',29=>'6Ft 4 inch',30=>'6Ft 5 inch',31=>'6Ft 6 inch',32=>'6Ft 7 inch',33=>'6Ft 8 inch',34=>'6Ft 9 inch',35=>'6Ft 10 inch',36=>'6Ft 11 inch',37=>'7Ft'];
     return $map[(int)$h] ?? '';
+}
+
+/* SECURITY (H1): escape helper for IN-list values used in the dynamic SQL
+   below. Prevents SQL injection via search filter arrays while preserving
+   the legacy "a','b" list construction. */
+function escFilterList($con, $arr) {
+    $out = array();
+    foreach ((array)$arr as $v) {
+        $out[] = mysqli_real_escape_string($con, trim($v));
+    }
+    return $out;
 }
 
 $login=$_SESSION['MatriID'];
@@ -25,7 +36,7 @@ $with_photo=$_POST['with_photo']?$_POST['with_photo']:$_GET['with_photo'];
 if(is_array($_POST['ms']))	
 {
 foreach($_POST['ms'] as $value)
-	$strms .="'". $value."',";
+	$strms .="'". mysqli_real_escape_string($con,$value)."',"; /* SECURITY (H1): escaped */
 	 $strms= rtrim($strms,',');
 	 	 
 }
@@ -48,85 +59,85 @@ $_SESSION['ms']=$strms;
 	$height2= $_POST['height2'] ? $_POST['height2'] : $_GET['height2'];
 
 if(isset($_POST['religion']))
-	 $religion1=implode("','",$_POST['religion']);
+	 $religion1=implode("','",escFilterList($con,$_POST['religion']));
 	 $explode_religion=explode("a:1:{i:0;s:",$_GET['religion']);
 	 $explode_religion1=explode(":",$explode_religion[1]);
 	 $trim_religion=trim($explode_religion1[1],'"');
 	 $rtrim_religion=rtrim($trim_religion,'";}');
-	 $religion=$religion1 ? $religion1 : $rtrim_religion;
+	 $religion=$religion1 ? $religion1 : mysqli_real_escape_string($con,$rtrim_religion);
 	 $religion123=array($religion);
 	 
 if(isset($_POST['caste']))
-	 $cast1=implode("','",$_POST['caste']);
+	 $cast1=implode("','",escFilterList($con,$_POST['caste']));
 	 $explode_caste=explode("a:1:{i:0;s:",$_GET['caste']);
 	 $explode_caste1=explode(":",$explode_caste[1]);
 	 $trim_caste=trim($explode_caste1[1],'"');
 	 $rtrim_caste=rtrim($trim_caste,'";}');
-	 $cast=$cast1 ? $cast1 : $rtrim_caste;
+	 $cast=$cast1 ? $cast1 : mysqli_real_escape_string($con,$rtrim_caste);
 	 $cast123=array($cast);
 	 
 if(isset($_POST['education']))
-	 $stredu1 =implode("','",$_POST['education']);
+	 $stredu1 =implode("','",escFilterList($con,$_POST['education']));
 	 $explode_edu=explode("a:1:{i:0;s:",$_GET['education']);
 	 $explode_edu1=explode(":",$explode_edu[1]);
 	 $trim_edu=trim($explode_edu1[1],'"');
 	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
+     $stredu=$stredu1 ?$stredu1 : mysqli_real_escape_string($con,$rtrim_edu);
 	 $stredu123=array($stredu);
 
 	 
 if(isset($_POST['occupation']))
-	 $stroccu1 = implode("','",$_POST['occupation']);
+	 $stroccu1 = implode("','",escFilterList($con,$_POST['occupation']));
 	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occupation']);
 	 $explode_occu1=explode(":",$explode_occu[1]);
 	 $trim_occu=trim($explode_occu1[1],'"');
 	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
+	 $stroccu=$stroccu1 ? $stroccu1 : mysqli_real_escape_string($con,$rtrim_occu);
 	 $stroccu123=array($stroccu);
  
 	 
 if(isset($_POST['Country1']))
-	 $country1 = implode("','",$_POST['Country1']);
+	 $country1 = implode("','",escFilterList($con,$_POST['Country1']));
 	 $explode_country=explode("a:1:{i:0;s:",$_GET['country']);
 	 $explode_country1=explode(":",$explode_country[1]);
 	 $trim_country=trim($explode_country1[1],'"');
 	 $rtrim_country=rtrim($trim_country,'";}');
-	 $country=$country1 ? $country1 : $rtrim_country;
+	 $country=$country1 ? $country1 : mysqli_real_escape_string($con,$rtrim_country);
 	 $country123=array($country);
 	 	
 		
 if(isset($_POST['cbostate']))
-	 $state1=implode("','",$_POST['cbostate']);
+	 $state1=implode("','",escFilterList($con,$_POST['cbostate']));
 	 $explode_state=explode("a:1:{i:0;s:",$_GET['state']);
 	 $explode_state1=explode(":",$explode_state[1]);
 	 $trim_state=trim($explode_state1[1],'"');
 	 $rtrim_state=rtrim($trim_state,'";}');
-	 $state=$state1 ? $state1 : $rtrim_state;
+	 $state=$state1 ? $state1 : mysqli_real_escape_string($con,$rtrim_state);
 	 $state123=array($state);
 	 
 if(isset($_POST['dist']))
-	 $dist1=implode("','",$_POST['dist']);
+	 $dist1=implode("','",escFilterList($con,$_POST['dist']));
 	 $explode_dist=explode("a:1:{i:0;s:",$_GET['dist']);
 	 $explode_dist1=explode(":",$explode_dist[1]);
 	 $trim_dist=trim($explode_dist1[1],'"');
 	 $rtrim_dist=rtrim($trim_dist,'";}');
-	 $dist=$dist1 ? $dist1 : $rtrim_dist;
+	 $dist=$dist1 ? $dist1 : mysqli_real_escape_string($con,$rtrim_dist);
 	 $dist123=array($dist);
 
 if(isset($_POST['taluka'])) {
-	 $taluka=implode("','",$_POST['taluka']);
+	 $taluka=implode("','",escFilterList($con,$_POST['taluka']));
 } else {
 	 $talukaData=@unserialize($_GET['taluka'] ?? '');
 	 $taluka=is_array($talukaData) ? (string)reset($talukaData) : '';
 }
 
 	 if(isset($_POST['city']) || isset($_POST['city2']))
-	 $city1=implode("','",$_POST['city'] ?? $_POST['city2']);
+	 $city1=implode("','",escFilterList($con,$_POST['city'] ?? $_POST['city2']));
 	 $explode_city=explode("a:1:{i:0;s:",$_GET['city']);
 	 $explode_city1=explode(":",$explode_city[1]);
 	 $trim_city=trim($explode_city1[1],'"');
 	 $rtrim_city=rtrim($trim_city,'";}');
-     $city=$city1 ? $city1 : $rtrim_city;
+     $city=$city1 ? $city1 : mysqli_real_escape_string($con,$rtrim_city);
 	 $city123=array($city);
 
 
@@ -157,16 +168,16 @@ while($check3=mysqli_fetch_array($check2))
 $profile=implode("','", $data);
 $sql = "SELECT * FROM register where ";
 
-$sql=$sql ." Gender ="."'".$txtgender."'"." AND Maritalstatus IN ($strms)";
+$sql=$sql ." Gender ="."'".mysqli_real_escape_string($con,$txtgender)."'"." AND Maritalstatus IN ($strms)";
 
 if($from_age!="Any" and $to_age!="Any")
 {
-$sql=$sql." and Age BETWEEN '".$from_age."' AND '".$to_age."' ";
+$sql=$sql." and Age BETWEEN '".mysqli_real_escape_string($con,$from_age)."' AND '".mysqli_real_escape_string($con,$to_age)."' ";
 } 
 
 if($height1!="" and $height2!="")
 {
-$sql=$sql." and Height BETWEEN '".$height1."' AND '".$height2."' ";
+$sql=$sql." and Height BETWEEN '".mysqli_real_escape_string($con,$height1)."' AND '".mysqli_real_escape_string($con,$height2)."' ";
 }
  
 if($profile!="")
@@ -212,7 +223,7 @@ $sql=$sql." and Dist IN('".$dist."')";
 } 
 if($taluka!="Any" and $taluka!="")
 {
-$sql=$sql." and Taluka IN('".$taluka."')";
+$sql=$sql." and Taluka IN('".mysqli_real_escape_string($con,$taluka)."')";
 }
 if($city!="Any" and $city!="")
 {
@@ -238,7 +249,7 @@ $with_photo=$_POST['with_photo']?$_POST['with_photo']:$_GET['with_photo'];
 if(is_array($_POST['ms']))	
 {
 foreach($_POST['ms'] as $value)
-	$strms .="'". $value."',";
+	$strms .="'". mysqli_real_escape_string($con,$value)."',"; /* SECURITY (H1): escaped */
 	 $strms= rtrim($strms,',');
 	 	 
 }
@@ -261,81 +272,81 @@ $_SESSION['ms']=$strms;
 	$height2= $_POST['height2'] ? $_POST['height2'] : $_GET['height2'];
 
 if(isset($_POST['religion']))
-	 $religion1=implode("','",$_POST['religion']);
+	 $religion1=implode("','",escFilterList($con,$_POST['religion']));
 	 $explode_religion=explode("a:1:{i:0;s:",$_GET['religion']);
 	 $explode_religion1=explode(":",$explode_religion[1]);
 	 $trim_religion=trim($explode_religion1[1],'"');
 	 $rtrim_religion=rtrim($trim_religion,'";}');
-	 $religion=$religion1 ? $religion1 : $rtrim_religion;
+	 $religion=$religion1 ? $religion1 : mysqli_real_escape_string($con,$rtrim_religion);
 	 $religion123=array($religion);	 
 if(isset($_POST['caste']))
-	 $cast1=implode("','",$_POST['caste']);
+	 $cast1=implode("','",escFilterList($con,$_POST['caste']));
 	 $explode_caste=explode("a:1:{i:0;s:",$_GET['caste']);
 	 $explode_caste1=explode(":",$explode_caste[1]);
 	 $trim_caste=trim($explode_caste1[1],'"');
 	 $rtrim_caste=rtrim($trim_caste,'";}');
-	 $cast=$cast1 ? $cast1 : $rtrim_caste;
+	 $cast=$cast1 ? $cast1 : mysqli_real_escape_string($con,$rtrim_caste);
 	 $cast123=array($cast);
 	 $casturl=urlencode(serialize($cast123));
 	  
 	
 	 
 if(isset($_POST['education']))
-	 $stredu1 =implode("','",$_POST['education']);
+	 $stredu1 =implode("','",escFilterList($con,$_POST['education']));
 	 $explode_edu=explode("a:1:{i:0;s:",$_GET['education']);
 	 $explode_edu1=explode(":",$explode_edu[1]);
 	 $trim_edu=trim($explode_edu1[1],'"');
 	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
+     $stredu=$stredu1 ?$stredu1 : mysqli_real_escape_string($con,$rtrim_edu);
 	 $stredu123=array($stredu);
 	 $streduurl=urlencode(serialize($stredu123));
 
 	  
 if(isset($_POST['occupation']))
-	 $stroccu1 = implode("','",$_POST['occupation']);
+	 $stroccu1 = implode("','",escFilterList($con,$_POST['occupation']));
 	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occupation']);
 	 $explode_occu1=explode(":",$explode_occu[1]);
 	 $trim_occu=trim($explode_occu1[1],'"');
 	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
+	 $stroccu=$stroccu1 ? $stroccu1 : mysqli_real_escape_string($con,$rtrim_occu);
 	 $stroccu123=array($stroccu);
 	 $stroccuurl=urlencode(serialize($stroccu123));
  
 	 
 if(isset($_POST['Country1']))
-	 $country1 = implode("','",$_POST['Country1']);
+	 $country1 = implode("','",escFilterList($con,$_POST['Country1']));
 	 $explode_country=explode("a:1:{i:0;s:",$_GET['country']);
 	 $explode_country1=explode(":",$explode_country[1]);
 	 $trim_country=trim($explode_country1[1],'"');
 	 $rtrim_country=rtrim($trim_country,'";}');
-	 $country=$country1 ? $country1 : $rtrim_country;
+	 $country=$country1 ? $country1 : mysqli_real_escape_string($con,$rtrim_country);
 	 $country123=array($country);
 	 $countryurl=urlencode(serialize($country123));
 
 	 	
 		
 if(isset($_POST['cbostate']))
-	 $state1=implode("','",$_POST['cbostate']);
+	 $state1=implode("','",escFilterList($con,$_POST['cbostate']));
 	 $explode_state=explode("a:1:{i:0;s:",$_GET['state']);
 	 $explode_state1=explode(":",$explode_state[1]);
 	 $trim_state=trim($explode_state1[1],'"');
 	 $rtrim_state=rtrim($trim_state,'";}');
-	 $state=$state1 ? $state1 : $rtrim_state;
+	 $state=$state1 ? $state1 : mysqli_real_escape_string($con,$rtrim_state);
 	 $state123=array($state);
 	 $stateurl=urlencode(serialize($state123));
 	 
 if(isset($_POST['dist']))
-	 $dist1=implode("','",$_POST['dist']);
+	 $dist1=implode("','",escFilterList($con,$_POST['dist']));
 	 $explode_dist=explode("a:1:{i:0;s:",$_GET['dist']);
 	 $explode_dist1=explode(":",$explode_dist[1]);
 	 $trim_dist=trim($explode_dist1[1],'"');
 	 $rtrim_dist=rtrim($trim_dist,'";}');
-	 $dist=$dist1 ? $dist1 : $rtrim_dist;
+	 $dist=$dist1 ? $dist1 : mysqli_real_escape_string($con,$rtrim_dist);
 	 $dist123=array($dist);
      $disturl=urlencode(serialize($dist123));
 	 
 if(isset($_POST['taluka'])) {
-	 $taluka=implode("','",$_POST['taluka']);
+	 $taluka=implode("','",escFilterList($con,$_POST['taluka']));
 } else {
 	 $talukaData=@unserialize($_GET['taluka'] ?? '');
 	 $taluka=is_array($talukaData) ? (string)reset($talukaData) : '';
@@ -344,12 +355,12 @@ $taluka123=array($taluka);
 $talukaurl=urlencode(serialize($taluka123));
 
 	 if(isset($_POST['city']) || isset($_POST['city2']))
-	 $city1=implode("','",$_POST['city'] ?? $_POST['city2']);
+	 $city1=implode("','",escFilterList($con,$_POST['city'] ?? $_POST['city2']));
 	 $explode_city=explode("a:1:{i:0;s:",$_GET['city']);
 	 $explode_city1=explode(":",$explode_city[1]);
 	 $trim_city=trim($explode_city1[1],'"');
 	 $rtrim_city=rtrim($trim_city,'";}');
-     $city=$city1 ? $city1 : $rtrim_city;
+     $city=$city1 ? $city1 : mysqli_real_escape_string($con,$rtrim_city);
 	 $city123=array($city);
 	 $cityurl=urlencode(serialize($city123)); 
 
@@ -385,16 +396,16 @@ $profile=implode("','", $data);
 	   $page_url="?";
 	   $sql1 = "SELECT COUNT(*) as totalCount from register where ";
 
-		$sql1=$sql1 ." Gender ="."'".$txtgender."'"." AND Maritalstatus IN ($strms)";
+		$sql1=$sql1 ." Gender ="."'".mysqli_real_escape_string($con,$txtgender)."'"." AND Maritalstatus IN ($strms)";
 
 if($from_age!="Any" and $to_age!="Any")
 {
-$sql1=$sql1." and Age BETWEEN '".$from_age."' AND '".$to_age."' ";
+$sql1=$sql1." and Age BETWEEN '".mysqli_real_escape_string($con,$from_age)."' AND '".mysqli_real_escape_string($con,$to_age)."' ";
 } 
 
 if($height1!="" and $height2!="")
 {
-$sql1=$sql1." and Height BETWEEN '".$height1."' AND '".$height2."' ";
+$sql1=$sql1." and Height BETWEEN '".mysqli_real_escape_string($con,$height1)."' AND '".mysqli_real_escape_string($con,$height2)."' ";
 }
  
 if($profile!="")
@@ -439,7 +450,7 @@ $sql1=$sql1." and Dist IN('".$dist."')";
 } 
 if($taluka!="Any" and $taluka!="")
 {
-$sql1=$sql1." and Taluka IN('".$taluka."')";
+$sql1=$sql1." and Taluka IN('".mysqli_real_escape_string($con,$taluka)."')";
 }
 if($city!="Any" and $city!="")
 {
@@ -552,16 +563,20 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 <title>Advance Search Result</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-page{min-height:60vh;padding-top:30px;padding-bottom:60px;}
 .mvv-container{max-width:1200px;margin:0 auto;padding:0 16px;}
-.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#8B1A1A);padding:40px 0 30px;margin-bottom:32px;}
+.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#7A1F39);padding:40px 0 30px;margin-bottom:32px;}
 .mvv-page-hero h1{color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin:4px 0;text-align:center;}
 .mvv-page-hero .mvv-eyebrow{text-align:center;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:600;}
 .mvv-page-hero p{text-align:center;color:rgba(255,255,255,.7);margin:0 0 8px;}
@@ -588,7 +603,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 .mvv-pagination .mvv-dot{border:none;font-size:1.1rem;color:#999;padding:0 4px;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 </style>
 </head>
 <body>
@@ -644,7 +659,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 $waLA = [];
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -654,9 +669,9 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
           </div>
         </div>
         <?php } ?>

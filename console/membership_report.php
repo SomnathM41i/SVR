@@ -1,7 +1,7 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 error_reporting(0);
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 
 ?>
 <?php
@@ -27,7 +27,7 @@ include('protect.php');
           </tr>
         </thead>
                 <?php 
-			$relsql=$con->query("select * from register")or die(mysqli_error($con));
+			$relsql=$con->query("select * from register")or svr_db_fail($con);
 			while($relrow = $relsql->fetch_assoc())
 			{
 			$matriid=$relrow['MatriID'];

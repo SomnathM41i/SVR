@@ -1,5 +1,5 @@
-<?php /*include('dbconnectadmin.php');*/
-	require_once('sys_dbconnection.php');
+<?php 
+	require_once('includes/bootstrap.php');
 	error_reporting(0) ;
 	include_once('memprotect.php');	
 	include_once('siteconfig.php');
@@ -17,7 +17,7 @@
 	$target_dir = "adhar/";
 	$target_file = $target_dir .date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['fileToUpload']["name"][$i]));
 	$sav=date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['fileToUpload']["name"][$i]));
-	//$target_file = $target_dir.time()."-".rand(1000, 9999)."-".$_FILES["fileToUpload"]["name"];
+	
 	$UploadedImageName = time()."-".rand(1000, 9999)."-".$_FILES["fileToUpload"]["name"][$i];
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -28,7 +28,7 @@
 			
 	$check = getimagesize($_FILES["fileToUpload"]["tmp_name"][$i]);
 	if($check !== false) {
-	//print_r($_FILES["fileToUpload"]);	
+	
 	define("success","File is an image - " . $check["mime"] . ".");
 
 	$uploadOk = 1;
@@ -58,9 +58,9 @@
 
 	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {
 
-	mysqli_query($con,"UPDATE register SET adhar='$sav',idproof_approve='No' WHERE MatriID='$id'")or die(mysqli_error());
-	//echo "insert into gallary(photo_name,matri_id,photo_approve) values('$sav','$id','Pending')";
-	//exit;
+	mysqli_query($con,"UPDATE register SET adhar='$sav',idproof_approve='No' WHERE MatriID='$id'")or svr_db_fail($con);
+	
+	
 	header('location:upload_id_proof?msg=success');
 	} 
 	else {
@@ -79,7 +79,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Upload ID Proof</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>

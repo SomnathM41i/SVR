@@ -1,5 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
-	/*include '../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+	
 	
 	//FOR HINDU
 	$query = "SELECT Religion,COUNT(Name) FROM register where Religion='Hindu' ";
@@ -45,13 +46,7 @@
  		$val5 = ( $row4 ['COUNT(Name)' ] );
  		$val6 = ( $row5 ['COUNT(Name)' ] );
  		$val7 = ( $row6 ['COUNT(Name)' ] );
- 		/*echo $val1;
- 		echo $val2;
- 		echo $val3;
- 		echo $val4;
- 		echo $val5;
- 		echo $val6;
- 		echo $val7;*/
+ 		
 
 	}
  	else

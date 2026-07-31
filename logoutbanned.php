@@ -1,4 +1,4 @@
- <?php  require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+ <?php  require_once('includes/bootstrap.php');
 error_reporting(0);
 $MatriID = $_SESSION['MatriID'];
 $checkquery="SELECT * FROM register WHERE MatriID='$MatriID'";
@@ -6,8 +6,8 @@ $checkdata=mysqli_query($con,$checkquery);
 $checkresult=mysqli_fetch_array($checkdata);
 $Status=$checkresult['Status'];
 $deletestatus=$checkresult['deletestatus'];
-//unset($_SESSION['MatriID']);
-//unset($_SESSION['matri_login']);
+
+
 $data_config = $db->get_siteconfig();
 $contact_email = $data_config-> ContactEmail;
 ?>
@@ -24,8 +24,12 @@ $contact_email = $data_config-> ContactEmail;
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

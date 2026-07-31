@@ -1,6 +1,6 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 $strmid=$_POST['ID']; 
 
 $str_fage= mysqli_real_escape_string($con,strip_tags($_POST['fromage']));  
@@ -13,7 +13,7 @@ $str_com=ltrim(implode(",",$_POST['txtPComplexion']));
 }else{
 $str_com="";
 } 
-//$str_com=implode(" , ",$_POST['txtPComplexion']);
+
 if(isset($_POST['religion'])){
 $str_rel=ltrim(implode(",",$_POST['religion']));
 }else{
@@ -25,52 +25,52 @@ $str_cas=ltrim(implode(",",$_POST['caste']));
 $str_cas="";
 } 
 
-//$str_subcas= mysqli_real_escape_string($con,strip_tags($_POST['PE_subcaste']));
+
 if(isset($_POST['txtPEdu'])){
 $str_edu=ltrim(implode(",",$_POST['txtPEdu']));
 }else{
 $str_edu="";
 }
-//$str_edu =implode(" , ",$_POST['txtPEdu']); 
+
 if(isset($_POST['txtPcountry'])){
 $str_cou=ltrim(implode(",",$_POST['txtPcountry']));
 }else{
 $str_cou="";
 }
-//$str_cou= implode(" , ",$_POST['txtPcountry']); 
+
 if(isset($_POST['cbostate123'])){
 $str_state=ltrim(implode(",",$_POST['cbostate123']));
 }else{
 $str_state="";
 }
-//$str_state=implode(" , ",$_POST['cbostate123']);
+
 if(isset($_POST['txtPReS'])){
 $str_res=ltrim(implode(",",$_POST['txtPReS']));
 }else{
 $str_res="";
 }
-//$str_res= implode(" , ",$_POST['txtPReS']); 
+
 if(isset($_POST['txtLooking'])){
 $txtLooking=ltrim(implode(",",$_POST['txtLooking']));
 }else{
 $txtLooking="";
 }
-//$txtLooking =implode(" , ", $_POST['txtLooking']);
+
 if(isset($_POST['pe_occu'])){
 $pe_occu=ltrim(implode(",",$_POST['pe_occu']));
 }else{
 $pe_occu="";
 }
 
-//$pe_occu=implode(" , ",$_POST['pe_occu']);
+
 $str_patEXp = ltrim(mysqli_real_escape_string($con,$_POST['txtPartnerExpectations']));
 
-//$cbocity=implode(" , ",$_POST['cbocity']);
+
 
 $reg=mysqli_query($con,"Select * from register where MatriID='$strmid'");
 $regfet=mysqli_fetch_array($reg);
 $reg_step=$regfet['reg_step'];
-//echo $reg_step;
+
 
 if($reg_step<9)
 {
@@ -90,7 +90,7 @@ PE_income_from = '$str_incomefrom',
 PE_income_to = '$str_incomeTO',
 pe_subcaste_marry ='$str_marry',
 PartnerExpectations ='$str_patEXp',PE_subcaste='$str_subcas',PE_MotherTongue='$mother_tongue', PE_Occupation='$pe_occu',PE_State='$str_state',PE_City='$cbocity'
-,reg_step='9' WHERE  MatriID='$strmid' ") or die(mysqli_error($con));
+,reg_step='9' WHERE  MatriID='$strmid' ") or svr_db_fail($con);
 }else {
 $con->query("update register set  
 PE_FromAge ='$str_fage',             
@@ -108,7 +108,7 @@ PE_income_from = '$str_incomefrom',
 PE_income_to = '$str_incomeTO',
 pe_subcaste_marry ='$str_marry',
 PartnerExpectations ='$str_patEXp',PE_subcaste='$str_subcas',PE_MotherTongue='$mother_tongue', PE_Occupation='$pe_occu',PE_State='$str_state',PE_City='$cbocity'
-WHERE  MatriID='$strmid' ") or die(mysqli_error($con));
+WHERE  MatriID='$strmid' ") or svr_db_fail($con);
 }	
 
 header('location:profile_view?flag=3&msg=success&ID='.$strmid);

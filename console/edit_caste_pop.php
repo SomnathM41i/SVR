@@ -1,12 +1,13 @@
-<?php require_once('../sys_dbconnection.php');  
-/*include'../dbconnectadmin.php';*/
+<?php require_once('../includes/bootstrap.php');  
+require_once(dirname(__FILE__).'/protect.php');
+
 $id = $_POST['rowid'];
-//echo $id;
-//exit;
+
+
 $sqldata=mysqli_query($con,"select * from caste where id='$id'");
-//echo "select * from caste where id ='$id'";
+
 $rowdata=mysqli_fetch_array($sqldata);
-//echo $rowdata['Caste'];?>
+
 <style>
  .btcs
  {
@@ -30,7 +31,7 @@ $rowdata=mysqli_fetch_array($sqldata);
                         $mes=$rowdata['Caste']; 
                     ?>
                     <input type="text" class="form-control" id="Name" name="Name" value="<?php echo $mes ;?>" placeholder="Enter Caste" required>
-                    <input type="hidden" name="id" value="<?php echo $rowdata['ID']; ?>"><?php //echo $rowdata['ID']; ?>
+                    <input type="hidden" name="id" value="<?php echo $rowdata['ID']; ?>"><?php 
                 </div>
             </div>
             <div class="col-sm-12">

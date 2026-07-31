@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 include('protect.php'); 
 ?>
 
@@ -15,13 +15,17 @@ include('protect.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -32,6 +36,7 @@ include('protect.php');
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link href="../css/style.css?v=505020.0" rel="stylesheet">
@@ -130,7 +135,7 @@ a {
 }
 
 a {
-    color: #007bff;
+    color: #7A1F39;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -238,20 +243,7 @@ a {
 </div>
 
 <script>
-    /*function submit_id()
-    {
-        var id = jQuery('#search').val();
-        //alert(id);
-        jQuery.ajax({
-            url:'show_matches.php',
-            type: 'POST',
-            data: 'ID='+id,
-            success:
-                window.location.href = "show_matches.php?ID="+id;
-
-        })
-
-    }*/
+    
     
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

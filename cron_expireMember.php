@@ -1,5 +1,7 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
+require_once(dirname(__FILE__).'/includes/security.php');
+svr_cron_guard(); /* SECURITY (H6): cron endpoint now guarded (CLI always allowed; web requires SVR_CRON_KEY when configured). */
 /*include 'dbconnectadmin.php';*/
 //
 date_default_timezone_set('Asia/Kolkata');

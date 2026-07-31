@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+<?php require_once('includes/bootstrap.php');
 include('memprotect.php');
 $ry=mysqli_query($con,"select * from basic_saveandsearch where id='".$_GET['id']."'");             
 $fethc=mysqli_fetch_array($ry);
@@ -34,8 +34,12 @@ mysqli_query($con,"update basic_saveandsearch set search_name='$txt' where id='"
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="_so/js?//stackoverflow.com/questions/23729750/dont-allow-invalid-characters-to-be-pasted-on-textbox" id="so"></script>
 <!-- Responsive -->

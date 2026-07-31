@@ -1,8 +1,8 @@
-<?php  require_once('../sys_dbconnection.php');
+<?php  require_once('../includes/bootstrap.php');
 include('protect.php');
-//include('protect.php');
-//include('../dbconnectadmin.php');
-//$sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and b.photo_approve='Pending' order by id desc"); 
+
+
+
 
 $profile_approve = mysqli_query($con,"SELECT * FROM register where HorosApprove='No' and  horoscope!='' order by id DESC");
 
@@ -18,7 +18,7 @@ $profile_approve = mysqli_query($con,"SELECT * FROM register where HorosApprove=
 function displayPaginationBelow($con,$per_page,$page){
 $page_url="?";
 $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where HorosApprove='No' and  horoscope!='' order by id DESC");
-    //  echo "SELECT COUNT(*) as totalCount FROM register where idproof_approve='No' and  adhar!=''order by id desc";
+    
         
         $rec = mysqli_fetch_array($sql1);
         $total = $rec['totalCount'];
@@ -131,13 +131,17 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -146,6 +150,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -171,58 +176,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
 
 
     <script type="text/javascript">
-        /*function approve(id,matri)
-        {
-                //alert(id);
-            var xmlhttp;    
-            if (window.XMLHttpRequest) 
-            {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-            } 
-            else 
-            {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    document.getElementById("data").innerHTML = xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","dp_approve.php?id="+id+"&matri="+matri,true);
-            xmlhttp.send();
-        }
-        function unapprove(id,matri,gend)
-        {
-            var xmlhttp;    
-            if (window.XMLHttpRequest) 
-            {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } 
-            else 
-            {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    document.getElementById("data").innerHTML = xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","dp_unapprove.php?id="+id+"&matri="+matri+"&gend="+gend,true);
-            xmlhttp.send();
-        }
-        function MM_openBrWindow(theURL,winName,features) 
-        { //v2.0
-            window.open(theURL,winName,features);
-        }   
-        */
+        
         function MM_openBrWindow(theURL,winName,features) 
             { //v2.0
                 window.open(theURL,winName,features);
@@ -284,9 +238,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
 
                                 <a href="approve_horoscope?matriid=<?php  echo $profile_approve_row['MatriID'];?>" class="btn btn-icon btn-outline-success"><i class="fa fa-check" aria-hidden="true"></i></a> &nbsp;&nbsp;
                                 
-                               <?php /* ?>
-                                <a class="btn btn-icon btn-outline-secondary" onClick="MM_openBrWindow('view_id.php?matid=<?php   echo $profile_approve_row['MatriID']?>&Choice=1&op=<?php  echo $profile_approve_row['adhar'] ?>&photoid=<?php  echo $profile_approve_row['adhar'] ?>','editphotosize','scrollbars=yes,resizable=yes,width=550,height=600')"><i class="fa fa-crop" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                <?php */ ?>
+                               <?php  ?>
                                     
                                 <a href="delete_horoscope?matriid=<?php  echo $profile_approve_row['MatriID'];?>" onclick="return confirm('Are You Really Want To Delete This Horoscope..?  Click OK To Confirm...?')"  class="btn btn-icon btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                   <br>
@@ -627,7 +579,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -637,7 +589,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where Hor
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

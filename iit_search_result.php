@@ -1,7 +1,7 @@
-<?php /*include('dbconnectadmin.php');*/
- require_once('sys_dbconnection.php');
+<?php 
+ require_once('includes/bootstrap.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -16,9 +16,9 @@ $from_age=$_POST['txtSAge'] ? $_POST['txtSAge'] : $_GET['txtSAge'];
 $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $iit=$_POST['iit'] ? $_POST['iit'] : $_GET['iit'];
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))
@@ -54,23 +54,7 @@ if(isset($_GET["page"]))
 	 $looking=$looking1 ? $looking1 : $rtrim_looking;
 	 $looking123=array($looking);
 	 
-	/*if(isset($_POST['edu']))
-	 $stredu1 =implode("','",$_POST['edu']);
-	 $explode_edu=explode("a:1:{i:0;s:",$_GET['edu']);
-	 $explode_edu1=explode(":",$explode_edu[1]);
-	 $trim_edu=trim($explode_edu1[1],'"');
-	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
-	 $stredu123=array($stredu);	 
 	
-	 if(isset($_POST['occu']))
-	 $stroccu1 = implode("','",$_POST['occu']);
-	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occu']);
-	 $explode_occu1=explode(":",$explode_occu[1]);
-	 $trim_occu=trim($explode_occu1[1],'"');
-	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
-	 $stroccu123=array($stroccu);*/
 	
 $check=mysqli_query($con,"select matriid from block_member where profile_id='".$_SESSION['matriid']."'"); 
 $data1=array();
@@ -126,12 +110,7 @@ if($looking!="Any" and $looking!="")
 $sql=$sql." and Maritalstatus IN('".$looking."')";
 }
 
-/*if($with_photo!='withoutphoto')
-{
-$sql=$sql." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-}else{
-$sql=$sql." and Photo1  LIKE 'nophoto.jpg' ";
-}*/
+
 $sql=$sql." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive'  AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 $rs_result = mysqli_query($con,$sql);
@@ -144,8 +123,8 @@ $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $iit=$_POST['iit'] ? $_POST['iit'] : $_GET['iit'];
 $with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 
 if(isset($_POST['religion']))
 	 $religion1=implode("','",$_POST['religion']);
@@ -256,15 +235,10 @@ $profile=implode("','", $data);
 			$sql1=$sql1." and Maritalstatus IN('".$looking."')";
 		}
 
-		/*if($with_photo!='withoutphoto')
-		{
-		$sql1=$sql1." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-		}else{
-		$sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
-		}	*/	 
+			 
 		$sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 		$sql1.=" ORDER BY ID DESC ";
-		/*echo $sql1.'<br>';*/
+		
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
     	$total = $rec['totalCount'];
         $adjacents = "2"; 
@@ -349,7 +323,7 @@ $profile=implode("','", $data);
        return $setPaginate;
     }
 	
-/*echo $sql.'<br>';*/
+
 $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4 inch',6=>'4Ft 5 inch',7=>'4Ft 6 inch',8=>'4Ft 7 inch',9=>'4Ft 8 inch',10=>'4Ft 9 inch',11=>'4Ft 10 inch',12=>'4Ft 11 inch',13=>'5Ft',14=>'5Ft 1 inch',15=>'5Ft 2 inch',16=>'5Ft 3 inch',17=>'5Ft 4 inch',18=>'5Ft 5 inch',19=>'5Ft 6 inch',20=>'5Ft 7 inch',21=>'5Ft 8 inch',22=>'5Ft 9 inch',23=>'5Ft 10 inch',24=>'5Ft 11 inch',25=>'6Ft',26=>'6Ft 1 inch',27=>'6Ft 2 inch',28=>'6Ft 3 inch',29=>'6Ft 4 inch',30=>'6Ft 5 inch',31=>'6Ft 6 inch',32=>'6Ft 7 inch',33=>'6Ft 8 inch',34=>'6Ft 9 inch',35=>'6Ft 10 inch',36=>'6Ft 11 inch',37=>'7Ft'];
 ?>
 <!DOCTYPE html>
@@ -359,16 +333,20 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 <title>IIT/IIM/NIT Search Result</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-page{min-height:60vh;padding-top:30px;padding-bottom:60px;}
 .mvv-container{max-width:1200px;margin:0 auto;padding:0 16px;}
-.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#8B1A1A);padding:40px 0 30px;margin-bottom:32px;}
+.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#7A1F39);padding:40px 0 30px;margin-bottom:32px;}
 .mvv-page-hero h1{color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin:4px 0;text-align:center;}
 .mvv-page-hero .mvv-eyebrow{text-align:center;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:600;}
 .mvv-section{padding:0 0 40px;}
@@ -390,7 +368,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 .mvv-pagination .mvv-dot{border:none;font-size:1.1rem;color:#999;padding:0 4px;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 </style>
 </head>
 <body>
@@ -442,7 +420,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 $waHL = $fetch['Height'] ? getHeightValue($fetch['Height']) : '';
                 $waLL = implode(', ', array_filter([$fetch['City'] ?? '', $fetch['Dist'] ?? '']));
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = '';
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
@@ -456,9 +434,9 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
                 $waLA[] = "\u{1F517} View Full Profile:";
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
           </div>
         </div>
         <?php } ?>

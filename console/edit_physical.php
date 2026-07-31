@@ -1,6 +1,6 @@
-<?php require_once('../sys_dbconnection.php');  
+<?php require_once('../includes/bootstrap.php');  
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 $strmid=$_POST['ID']; 
 
 $txtHeight = mysqli_real_escape_string($con,$_POST['txtHeight']);
@@ -24,9 +24,9 @@ echo $reg_step;
 
 if($reg_step<6)
 {
-$con->query("update register set Height='$txtHeight',Weight='$txtWeight',BloodGroup='$txtBlood',Bodytype='$txtBody',Complexion='$txtComplexion',Diet='$txtDiet',Smoke='$txtSmoke',Drink='$txtDrink',spe_cases='$txtspecialcase',spe_reason='$txtspecialReson',reg_step='6' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set Height='$txtHeight',Weight='$txtWeight',BloodGroup='$txtBlood',Bodytype='$txtBody',Complexion='$txtComplexion',Diet='$txtDiet',Smoke='$txtSmoke',Drink='$txtDrink',spe_cases='$txtspecialcase',spe_reason='$txtspecialReson',reg_step='6' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }else { 
-$con->query("update register set Height='$txtHeight',Weight='$txtWeight',BloodGroup='$txtBlood',Bodytype='$txtBody',Complexion='$txtComplexion',Diet='$txtDiet',Smoke='$txtSmoke',Drink='$txtDrink',spe_cases='$txtspecialcase',spe_reason='$txtspecialReson' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set Height='$txtHeight',Weight='$txtWeight',BloodGroup='$txtBlood',Bodytype='$txtBody',Complexion='$txtComplexion',Diet='$txtDiet',Smoke='$txtSmoke',Drink='$txtDrink',spe_cases='$txtspecialcase',spe_reason='$txtspecialReson' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }
 header('location:profile_view.php?flag=6&msg=success&ID='.$strmid);
 exit;

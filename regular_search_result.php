@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');?>
 <?php include_once('siteconfig.php');?>
 
@@ -10,8 +10,7 @@ function getHeightValue($h) {
     return $map[(int)$h] ?? '';
 }
 
-/*include('dbconnectadmin.php'); 
-session_start();*/
+
 $login=$_SESSION['matriid'];
 //error_reporting(0);
 if(isset($_POST['basicsaveandsearch']))
@@ -125,7 +124,7 @@ $PE_occu_re=implode(',',$PE_occu_term);
 $sql.=" and Occupation IN ($PE_occu_re)";
 }
 //Looking
-//echo $edu_search_fetch['Maritial_status'];
+
 if($edu_search_fetch['Maritial_status']!="" && $edu_search_fetch['Maritial_status']!="Any")
 {
 $PE_Maritial_status_exp=explode(",",$edu_search_fetch['Maritial_status']);
@@ -264,7 +263,7 @@ $PE_occu_re=implode(',',$PE_occu_term);
 $sql1.=" and Occupation IN ($PE_occu_re)";
 }
 //Looking
-//echo $edu_search_fetch['Maritial_status'];
+
 if($edu_search_fetch['Maritial_status']!="" && $edu_search_fetch['Maritial_status']!="Any")
 {
 $PE_Maritial_status_exp=explode(",",$edu_search_fetch['Maritial_status']);
@@ -285,7 +284,7 @@ $sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
 $sql1=$sql1." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql1.=" ORDER BY Regdate DESC ";
 
-//echo $sql1;
+
 
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
     	$total = $rec['totalCount'];
@@ -360,18 +359,17 @@ $sql1.=" ORDER BY Regdate DESC ";
     		}
     		
     		if ($page < $counter - 1){ 
-    			/*$setPaginate.= "<li><a href='{$page_url}page=$next&id=$id'>Next</a></li>";*/
+    			
                 $setPaginate.= "<li><a href='{$page_url}page=$next&id=$id'><b>></b></a></li>";
     		}else{
-    			/*$setPaginate.= "<li><a class='active'>Next</a></li>";
-                */$setPaginate.= "<li><a class='active'><b>></b></a></li>";
+    			$setPaginate.= "<li><a class='active'><b>></b></a></li>";
             }
 
     		$setPaginate.= "</ul>\n";		
     	}
         return $setPaginate;
     }
-//echo $sql;
+
 ?>
 <!DOCTYPE html>
  <html lang="en">
@@ -388,8 +386,12 @@ $sql1.=" ORDER BY Regdate DESC ";
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
            
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -525,7 +527,7 @@ filter: blur(8px);
                 $waLA = [];
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -535,7 +537,7 @@ filter: blur(8px);
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
               ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="margin-top:6px"><i class="fab fa-whatsapp"></i> Share</a>
                        </div>

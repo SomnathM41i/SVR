@@ -1,13 +1,13 @@
-<?php require_once('../sys_dbconnection.php');   
+<?php require_once('../includes/bootstrap.php');   
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 $strmid=$_POST['id']; 
 
 $txtFD = mysqli_real_escape_string($con,$_POST['txtFD']);
 $txtFV = mysqli_real_escape_string($con,$_POST['txtFV']);
 $txtFT= mysqli_real_escape_string($con,$_POST['txtFT']);
 $txtFS = mysqli_real_escape_string($con,$_POST['txtFS']);
-//$txtFO = $_POST['txtFO'];
+
 $txtFANAME=mysqli_real_escape_string($con,$_POST['txtFANAME']);
 $txtFFO = mysqli_real_escape_string($con,$_POST['txtFFO']);
 $txtMONAME=mysqli_real_escape_string($con,$_POST['txtMONAME']);
@@ -83,15 +83,15 @@ if($txtFS2=='5+')
 $reg=mysqli_query($con,"Select * from register where MatriID='$strmid'");
 $regfet=mysqli_fetch_array($reg);
 $reg_step=$regfet['reg_step'];
-//echo $reg_step;
+
 
 if($reg_step<6)
 {
-$con->query("update register set FamilyDetails='$txtFD',Familyvalues='$txtFV',FamilyType='$txtFT',FamilyStatus	='$txtFS',noofbrothers='$txtFS1',noofsisters='$txtFS2',Fathername='$txtFANAME',Mothersname='$txtMONAME', Fathersoccupation='$txtFFO', Mothersoccupation='$txtFMO',mother_tounge='$txtmotnertoung',relatives='$relatives',nbm='$txtnoBrotherMarr',nsm='$txtNoSisterMarr',FamilyDetails='$txtAbout',parents_stay='$txtlivingstatus',family_wealth='$family_wealth',reg_step='6' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set FamilyDetails='$txtFD',Familyvalues='$txtFV',FamilyType='$txtFT',FamilyStatus	='$txtFS',noofbrothers='$txtFS1',noofsisters='$txtFS2',Fathername='$txtFANAME',Mothersname='$txtMONAME', Fathersoccupation='$txtFFO', Mothersoccupation='$txtFMO',mother_tounge='$txtmotnertoung',relatives='$relatives',nbm='$txtnoBrotherMarr',nsm='$txtNoSisterMarr',FamilyDetails='$txtAbout',parents_stay='$txtlivingstatus',family_wealth='$family_wealth',reg_step='6' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }else {
-$con->query("update register set FamilyDetails='$txtFD',Familyvalues='$txtFV',FamilyType='$txtFT',FamilyStatus	='$txtFS',noofbrothers='$txtFS1',noofsisters='$txtFS2',Fathername='$txtFANAME',Mothersname='$txtMONAME', Fathersoccupation='$txtFFO', Mothersoccupation='$txtFMO',mother_tounge='$txtmotnertoung',relatives='$relatives',nbm='$txtnoBrotherMarr',nsm='$txtNoSisterMarr',FamilyDetails='$txtAbout',parents_stay='$txtlivingstatus',family_wealth='$family_wealth' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set FamilyDetails='$txtFD',Familyvalues='$txtFV',FamilyType='$txtFT',FamilyStatus	='$txtFS',noofbrothers='$txtFS1',noofsisters='$txtFS2',Fathername='$txtFANAME',Mothersname='$txtMONAME', Fathersoccupation='$txtFFO', Mothersoccupation='$txtFMO',mother_tounge='$txtmotnertoung',relatives='$relatives',nbm='$txtnoBrotherMarr',nsm='$txtNoSisterMarr',FamilyDetails='$txtAbout',parents_stay='$txtlivingstatus',family_wealth='$family_wealth' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }	
-//echo  "update register set FamilyDetails='$txtFD',Familyvalues='$txtFV',FamilyType='$txtFT',FamilyStatus	='$txtFS',noofbrothers='$txtFS1',noofsisters='$txtFS2',Fathername='$txtFANAME',Mothersname='$txtMONAME', Fathersoccupation='$txtFFO', Mothersoccupation='$txtFMO',mother_tounge='$txtmotnertoung',relatives='$relatives',nbm='$txtnoBrotherMarr',nsm='$txtNoSisterMarr',FamilyDetails='$txtAbout',parents_stay='$txtlivingstatus',family_wealth='$family_wealth' WHERE MatriID= '$strmid' ";
+
 header('location:profile_view?flag=4&msg=success&ID='.$strmid);
 exit;
 ?>

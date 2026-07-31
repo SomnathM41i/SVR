@@ -1,6 +1,7 @@
-<?php require_once('../sys_dbconnection.php');  
-include('protect1.php');
-/*include('../dbconnectadmin.php');*/
+<?php require_once('../includes/bootstrap.php');  
+require_once(dirname(__FILE__).'/protect.php');
+/* removed dead include: include('protect1.php'); - include target never existed in this tree */
+
 
 $id=$_GET['ID'];
 $result =mysqli_query($con,"SELECT * FROM register where MatriID='$id' ");
@@ -13,8 +14,8 @@ error_reporting(0);
     <head>	
         <meta charset="UTF-8"> 
         <title>print my profile</title>
-        <?php //include('../newadmin/meta.php')?>
-        <?php //include('../newadmin/main_style.php'); ?>  
+        <?php 
+        <?php 
       
   <script type="text/javascript">
 function print_report()
@@ -38,20 +39,20 @@ function print_report()
         <!-- header logo: style can be found in header.less -->
         <header class="header">
                         <!-- Header Navbar: style can be found in header.less -->
-            <?php //include('topheader.php');?>
+            <?php 
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">                
                 <!-- sidebar: style can be found in sidebar.less -->
-                <?php //include('leftmenu.php');?>
+                <?php 
                 <!-- /.sidebar -->
             </aside>
  
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">                
-                <!-- Content Header (Page header) -->
+                
                 <section class="content-header">
                     
                 </section>

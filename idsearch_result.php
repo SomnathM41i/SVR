@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -97,8 +97,8 @@ function id_search_h($value)
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile Search Result - Shivraj Maratha</title>
-  <link rel="icon" href="css3/assets/shivraj-logo.png" type="image/png">
+  <title>Profile Search Result - Manpasand Jodidar</title>
+  <link rel="icon" href="branding/favicons/icon-32.png" type="image/png">
   <link rel="stylesheet" href="css3/Style.css">
   <link rel="stylesheet" href="css3/mvv-premium.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -107,7 +107,7 @@ function id_search_h($value)
       min-height: 62vh;
       padding-bottom: 72px;
       background:
-        radial-gradient(circle at 8% 15%, rgba(232,97,42,.07), transparent 26%),
+        radial-gradient(circle at 8% 15%, rgba(201, 85, 106,.07), transparent 26%),
         linear-gradient(180deg, #fffaf5 0%, #fff 42%);
     }
     .mvv-id-results .mvv-page-hero { margin-bottom: 40px; }
@@ -152,7 +152,7 @@ function id_search_h($value)
     }
     .mvv-match-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(201,146,26,.45);
+      border-color: rgba(186,147,80,.45);
       box-shadow: 0 18px 42px rgba(56,32,25,.13);
     }
     .mvv-card-photo { position: relative; display: block; overflow: hidden; background: var(--mvv-cream); }
@@ -324,7 +324,7 @@ function id_search_h($value)
                 $waHL = $profile['Height'] ? getHeightValue($profile['Height']) : '';
                 $waLL = implode(', ', array_filter([$profile['City'] ?? '', $profile['Dist'] ?? '']));
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = '';
                 $waLA[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$profile['Age']} years";
@@ -338,9 +338,9 @@ function id_search_h($value)
                 $waLA[] = "\u{1F517} View Full Profile:";
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($profile['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:4px 16px 12px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:4px 16px 12px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
               </div>
             </article>
           <?php } ?>

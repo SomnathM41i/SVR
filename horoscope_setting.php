@@ -1,13 +1,12 @@
-<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');
-session_start();*/
+<?php require_once('includes/bootstrap.php');
+
 error_reporting(0);
  ?>
 	<!-- //header -->
     <!-- navigation -->
     <?php if(isset($login))
        {
-		include('menu.php');
+/* removed dead include: include('menu.php'); - include target never existed in this tree */
 	   } 
 	   else
 	   {

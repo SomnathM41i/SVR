@@ -1,6 +1,6 @@
 <?php include('dbconnectadmin.php');
-include('sys_dbconnection.php');
-//include('memprotect.php');
+include('includes/bootstrap.php');
+
 ?>
 <!DOCTYPE html>
  <html lang="en">
@@ -17,8 +17,12 @@ include('sys_dbconnection.php');
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="css/stylenew.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <link href="css/regcss.css" rel="stylesheet">
 
 <!-- Responsive -->
@@ -168,14 +172,14 @@ if(isset($login)&& $regvar=='9') {
 if($scases=="None")
 {
 mysqli_query($con,"update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',OtherHobbies='$ohobbies',Spectacles='$spec' where MatriID='$login'");
-//echo "update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',Hobbies='$hobbies',OtherHobbies='$ohobbies',Interests='$interest',OtherInterests='$ointerest' where MatriID='$login'";
-//exit;
+
+
 }
 else
 {
 mysqli_query($con,"update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',spe_reason='$sreason',OtherHobbies='$ohobbies',Spectacles='$spec' where MatriID='$login'");
 //echo "update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',spe_reason='$sreason',Hobbies='$hobbies',OtherHobbies='$ohobbies',Interests='$interest',OtherInterests='$ointerest' where MatriID='$login'";
-//exit;	
+
 
 }
 header('Location: index_dashboard');
@@ -186,14 +190,14 @@ else
 if($scases=="None")
 {
 mysqli_query($con,"update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',OtherHobbies='$ohobbies',Spectacles='$spec',reg_step='6' where MatriID='$ID'");
-//echo "update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',Hobbies='$hobbies',OtherHobbies='$ohobbies',Interests='$interest',OtherInterests='$ointerest',Spectacles='$spec',reg_step='6' where MatriID='$ID'";
-//exit;
+
+
 }
 else
 {
 mysqli_query($con,"update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',spe_reason='$sreason',OtherHobbies='$ohobbies',Spectacles='$spec',reg_step='6' where MatriID='$ID'");
 //echo "update register set Height='$height',Weight='$weight',BloodGroup='$bgroup',Complexion='$complexion',Bodytype='$btype',spe_cases='$scases',Diet='$diet',Smoke='$smoke',Drink='$drink',spe_reason='$sreason',Hobbies='$hobbies',OtherHobbies='$ohobbies',Interests='$interest',OtherInterests='$ointerest',Spectacles='$spec',reg_step='6' where MatriID='$ID'";
-//exit;
+
 }
 
 header('location:family?id='.$ID);
@@ -511,44 +515,7 @@ else if($strheight =="37") { $height= "7Ft"; }
 					<?php }?>
 					        
 
-						<!--<div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                          <label>Hobbies</label>
-<select class="category2 selectpicker" name="hobbies[]" multiple rows="5" required data-live-search="true" style="height:140px;">
-						 
-							<option value="<?php //echo $me['Hobbies']?>" selected><?php //echo $me['Hobbies']?></option>
-						   <?php //$Hobbies=mysqli_query($con,"select * from hobbies ");
-						//while($hobbies=mysqli_fetch_array($Hobbies))
-						//{ ?>
-                          <option value="<?php //echo $hobbies['hobbies'];?>" ><?php //echo $hobbies['hobbies'];?></option>
-						   <?php //}  ?>
-						</select>
-						<span style="font-size: 14px">Please use Ctrl+ for multiple selection</span>
-						<span></span>
-                      </div>
-
-							       <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                         <!--<label>Interests</label>
-<select class="category2 selectpicker" name="interest[]" multiple data-live-search="true" style="height:140px;">
-							<option value="<?php //echo $me['Interests']?>" selected><?php //echo $me['Interests']?></option>
-						   <?php //$Interests=mysqli_query($con,"select * from interest");
-						//while($interest=mysqli_fetch_array($Interests))
-						//{ ?>
-                          <option value="<?php //echo $interest['interest'];?>" ><?php //echo $interest['interest'];?></option>
-						   <?php //}  ?>
-						</select>
-						<span style="font-size: 14px">Please use Ctrl+ for multiple selection</span>
-						<span></span>
-                         </div>
-						 
-						 <div class="styled-input form-group col-md-6">
-					  <!--<label>Other Hobbies </label>
-                        <textarea type="text"  rows="2" name="ohobbies" class="form-control"  placeholder="Enter Here" value="<?php //echo $me['OtherHobbies']?>"><?php //echo $me['OtherHobbies']?></textarea>
-					</div>
-                    
-                    <div class="styled-input form-group col-md-6">
-					  <!--<label> Other Interests</label>
-                        <textarea type="text"  rows="2" name="ointerest" class="form-control"  placeholder="Enter Here" value="<?php //echo $me['OtherInterests']?>"><?php// echo $me['OtherInterests']?></textarea>
-					</div>-->
+						
 
 							      <div class="col-lg-10 col-md-10 col-sm-12">
                            
@@ -749,39 +716,7 @@ else if($strheight =="37") { $height= "7Ft"; }
                          <textarea type="text"  cols="1" name="otherdist" class="form-control"  MAXLENGTH="150" onKeyPress="return ValidateAlpha(event); return blockSpecialChar(event);" placeholder="Please Specify" style="height:60px;" tabindex="12"></textarea>
                      </div>
 
-						<!--<div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Hobbies</label>
-<select class="category2 selectpicker" name="hobbies[]" multiple required tabindex="11" data-live-search="true" style="height:140px;">
-                        <?php //$Hobbies=mysqli_query($con,"select * from hobbies");
-                        //while($hobbies=mysqli_fetch_array($Hobbies))
-                        //{ ?>
-                        <option value="<?php //echo $hobbies['hobbies'];?>" ><?php //echo $hobbies['hobbies'];?></option>
-                      <?php //}  ?>
-                     </select>
-                      <span style="font-size: 14px">Please use Ctrl+ for multiple selection</span>
-                         </div>
-
-                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                         <label>Interests</label>
-<select class="category2 selectpicker" name="interest[]" multiple tabindex="12" data-live-search="true" style="height:140px;">
-                         <?php //$Interests=mysqli_query($con,"select * from interest");
-                         //while($interest=mysqli_fetch_array($Interests))
-                         //{ ?>
-                          <option value="<?php //echo $interest['interest'];?>"><?php //echo $interest['interest'];?></option>
-                         <?php //}  ?>
-                        </select>
-                        <span style="font-size: 14px">Please use Ctrl+ for multiple selection</span>
-                         </div>
-
-                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Other Hobbies </label>
-                        <textarea type="text"  rows="2" name="ohobbies" class="form-control"  placeholder="Enter Here" maxlength="100"  tabindex="13"></textarea>
-                         </div>
-
-                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                         <label> Other Interests</label>
-                        <textarea type="text"  rows="2" name="ointerest" class="form-control"  placeholder="Enter Here" maxlength="100"  tabindex="14"></textarea>
-                         </div>-->
+						
 
                         <div class="col-lg-10 col-md-10 col-sm-12">
                            

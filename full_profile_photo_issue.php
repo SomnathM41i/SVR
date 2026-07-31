@@ -1,4 +1,4 @@
-<?php include_once('sys_dbconnection.php');?>
+<?php include_once('includes/bootstrap.php');?>
 <?php include_once('memprotect.php');
 require_once('includes/annual_income.php');
 //include_once('siteconfig.php');
@@ -43,8 +43,12 @@ $me=mysqli_fetch_array($fetchphoto);
 
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,7 +106,7 @@ $me=mysqli_fetch_array($fetchphoto);
 	        } 
 	// check already viewed
 		
-	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or die(mysql_error());
+	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or svr_db_fail($con);
 		
 
 	if(mysqli_num_rows($profile_views)==0)
@@ -200,10 +204,12 @@ $me=mysqli_fetch_array($fetchphoto);
 
 		</head>
 
-		<body>
+		<body><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 		<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 		  <tr>
-			<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
+			<td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
 			<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 		  </tr>
 		  <tr>
@@ -235,7 +241,9 @@ $me=mysqli_fetch_array($fetchphoto);
 			<td>&nbsp;</td>
 		  </tr>
 		</table>
-		</body>
+		<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
+</body>
 		</html>
 		";
 
@@ -617,7 +625,7 @@ $me=mysqli_fetch_array($fetchphoto);
 						<button type="button" class="btnss btn-info imgsm " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  ><i class="fa fa-chevron-down " style="content:#f078;color: #ffa600;" aria-hidden="true"></i>
 						</button> 
 		          <div class="dropdown-menu dropdownimg ">
-					<?php  $short=mysqli_query($con,"select * from shortlist_profile where mat_id='$login' AND profile_id='$search_id'")or die(mysqli_error());
+					<?php  $short=mysqli_query($con,"select * from shortlist_profile where mat_id='$login' AND profile_id='$search_id'")or svr_db_fail($con);
 					if(mysqli_num_rows($short)>0) { ?>				  
                     <a class="dropdown-item" href="#"> Profile Shortlisted</a>	
 				    <?php } else  { ?>

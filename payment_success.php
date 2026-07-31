@@ -6,11 +6,13 @@
   mirroring the logic in the legacy manual-payment handler.
 */
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('agent_commission_lib.php');
 include('memprotect.php');
 
-define('RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'); // ← Same secret as order_review.php
+/* Secret now resolves from env/config with the previous value kept only as a
+   legacy fallback (see config.php) — SECURITY: removes hard-coded secret. */
+define('RZP_KEY_SECRET', svr_config('SVR_RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'));
 
 // ── Guard ─────────────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -123,7 +125,7 @@ $bank_safe        = mysqli_real_escape_string($con, $bank_details);
 $discountcode     = '';
 $strstatus        = 'Clear';
 
-// ── Insert into paiddetails ───────────────────────────────────────────────────
+
 $insert = mysqli_query($con, "
     INSERT INTO paiddetails 
         (Poid, Pmatriid, Pname, Pemail, Paddress, Ppaymode, Pactivedate,
@@ -199,20 +201,22 @@ $webfriendly = $siteinfo['WebFriendlyname'] ?? '';
 
 // ── SMS (uncomment sendsms() when ready) ─────────────────────────────────────
 $smsMessage = "Hello $nm,\nYou Have Selected '$plan'\nYour Plan Has Been Successfully Activated\n\nThank You\nTeam- $Webname";
-// sendsms($mobile, $smsMessage);
+
 
 // ── Email (uncomment mailer when ready) ──────────────────────────────────────
 $date1    = date('d/m/Y');
 $message1 = "<!DOCTYPE html>
 <html lang='en'>
 <head><meta charset='utf-8'><title>Payment Successful</title></head>
-<body style='margin:0 auto;width:100%;background:#ccc;text-align:justify;'>
+<body style='margin:0 auto;width:100%;background:#ccc;text-align:justify;'><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 <div style='margin:0 auto;width:590px;background:#333;'>
 <div style='float:left;margin:0;width:590px;background:#c5191f;'>
 <div style='float:left;width:570px;background:#f7f7f7;margin:10px;border-radius:5px;'>
 
 <div style='margin:7% 0 0 25%;float:left;'>
-  <a href='#' target='_blank'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' alt='" . htmlspecialchars($Webname) . "'></a>
+  <a href='#' target='_blank'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' alt='" . htmlspecialchars($Webname) . "'></a>
 </div>
 <br><br>
 
@@ -238,18 +242,12 @@ $message1 = "<!DOCTYPE html>
 </div>
 
 </div></div></div>
+<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
 </body></html>";
 
 $subject = "Payment Details — $plan Plan Activated";
-/*
-// Uncomment and configure your mailer:
-include('Mailer/smtp1.php');
-$mail->Subject  = $subject;
-$mail->MsgHTML($message1);
-$mail->ClearAddresses();
-$mail->AddAddress($email, $nm);
-$mail->Send();
-*/
+
 
 // ── Set session data for thank-you page ───────────────────────────────────────
 $_SESSION['payment_success'] = [

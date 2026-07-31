@@ -1,4 +1,5 @@
-<?php require_once('../sys_dbconnection.php');   
+<?php require_once('../includes/bootstrap.php');   
+require_once(dirname(__FILE__).'/protect.php');
 /*include'../dbconnectadmin.php';*/
 $id = $_POST['rowid'];
 $table="register";
@@ -319,7 +320,7 @@ for ($i = 0; $i < $num_fields; $i++)
   }
 }
 $return.="\n\n";
-$con->query($return) or die(mysqli_error());*/
+$con->query($return) or svr_db_fail($con);*/
 // delete from register
 
 $con->query("delete from register where MatriID='$id' ");

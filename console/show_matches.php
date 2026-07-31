@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 include('protect.php'); 
 //CHECKING PROFILE ID
 if($_REQUEST['flag'] == 1)
@@ -24,7 +24,7 @@ $my_profile = mysqli_query($con, "SELECT * from register where matriid='$id'");
 
 $me = mysqli_fetch_array($my_profile);
 $hobbies = explode(",", $me['Looking']);
-//$mother=implode(",",$me['PE_MotherTongue']);
+
 $pe_from_height = $me['PE_from_Height'];
 $pe_to_height = $me['PE_to_Height'];
 $pe_toage = $me['PE_ToAge'];
@@ -36,7 +36,7 @@ $Residencystatus = $me['Residencystatus'];
 $pe_religion = $me['PE_Religion'];
 $Country = $me['Country'];
 $pe_caste = $me['PE_Caste'];
-//echo $me['PE_Caste'];
+
 if ($me['Gender'] == 'Male') $match_sex = "Female";
 if ($me['Gender'] == 'Female') $match_sex = "Male";
 
@@ -451,13 +451,17 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -468,6 +472,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
 
 	<!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link href="../css/style.css?v=505020.0" rel="stylesheet">
@@ -571,7 +576,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
         }
 
         a {
-            color: #007bff;
+            color: #7A1F39;
             text-decoration: none;
             background-color: transparent;
             -webkit-text-decoration-skip: objects;
@@ -719,7 +724,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
                         <div class="row row-cols-lg-3 row-cols-sm-6">
                            <?php 
                             
-                               	$sqlmatch = mysqli_query($con, $match_qry) or die(mysqli_error($con));
+                               	$sqlmatch = mysqli_query($con, $match_qry) or svr_db_fail($con);
             					$cnt = 0;
             					if (mysqli_num_rows($sqlmatch) > 0)
             					{
@@ -751,7 +756,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
                                         <?php 
                                             $encrypt = urlencode( base64_encode( $rowC['MatriID'] ) );
                                         ?>
-                                        <!-- <a href="User_Profile.php?id=<?php echo $encrypt ?>"> -->
+                                        
                                             <div class="text-truncate w-100 h5"><?php echo $rowC['Name']; ?></div>
                                         <!-- </a> -->
                                         <div>
@@ -810,28 +815,13 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
   
 </div>
 <script>  
-//user-defined function to open and share web content on WhatsApp  
-/*function openWhatsApp() {  
-    window.open('whatsapp://send?text= https://www.youtube.com/watch?v=ohpCMpderow');  
-    }  */
+
+
 </script>  
 
 
 <script>
-    /*function submit_id()
-    {
-        var id = jQuery('#search').val();
-        //alert(id);
-        jQuery.ajax({
-            url:'show_matches.php',
-            type: 'POST',
-            data: 'ID='+id,
-            success:
-                window.location.href = "show_matches.php?ID="+id;
-
-        })
-
-    }*/
+    
     
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -903,7 +893,7 @@ else if($strheight =="37") { echo "7Ft "; }
 
 
 
-<!-- Include Twitter Bootstrap and jQuery: -->
+
 <!-- Latest compiled and minified CSS -->
 
 <script src="../js/jquery.fancybox.js"></script>
@@ -920,7 +910,7 @@ else if($strheight =="37") { echo "7Ft "; }
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -930,7 +920,7 @@ else if($strheight =="37") { echo "7Ft "; }
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

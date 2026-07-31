@@ -1,9 +1,9 @@
-<?php require_once('sys_dbconnection.php');
-/*session_start();*/
-//include('siteconfig.php');
+<?php require_once('includes/bootstrap.php');
 
-/*include('dbconnectadmin.php');*/
-//include('smtp2.php');
+
+
+
+
 $strid=$_SESSION['matriid'] ?? ($_SESSION['MatriID'] ?? '');
 $login=$_SESSION['MatriID'] ?? $strid;
 if($strid == '') {
@@ -15,7 +15,7 @@ $_SESSION['MatriID'] = $login;
 $matriid=$_SESSION['tempid'] ?? $strid;
 $mobile=$_SESSION['mobile'] ?? '';
 $password=isset($_SESSION['pwd']) ? base64_decode($_SESSION['pwd']) : '';
-//echo $_SESSION['tempid'];
+
 
 	$sql=mysqli_query($con,"select * from  register WHERE MatriID='$matriid' ");
 	$row=mysqli_fetch_array($sql);
@@ -42,7 +42,7 @@ $password=isset($_SESSION['pwd']) ? base64_decode($_SESSION['pwd']) : '';
 	?>
 
 <?php
-//mysql_query("update register set welcome_mail='yes'");
+
 
 ?>
 <!doctype html>
@@ -56,7 +56,7 @@ html, body {
 	margin: 0;
 	min-height: 100%;
 	font-family: Arial, sans-serif;
-	background: #fff8f0;
+	background: #FFFDFB;
 }
 .page-loader-wrapper {
 	position: fixed;
@@ -72,7 +72,7 @@ html, body {
 	flex-direction: column;
 	align-items: center;
 	gap: 18px;
-	color: #6b1a1a;
+	color: #5E1426;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -80,9 +80,9 @@ html, body {
 	position: relative;
 	width: 74px;
 	height: 74px;
-	border: 5px solid rgba(232, 97, 42, 0.18);
-	border-top-color: #e8612a;
-	border-right-color: #6b1a1a;
+	border: 5px solid rgba(201, 85, 106, 0.18);
+	border-top-color: #C9556A;
+	border-right-color: #5E1426;
 	border-radius: 50%;
 	animation: loader-spin 0.8s linear infinite;
 }
@@ -95,7 +95,7 @@ html, body {
 	height: 34px;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
-	background: url("css3/assets/shivraj-logo.png") center / contain no-repeat;
+	background: url("branding/images/splash-logo.jpg") center / contain no-repeat;
 }
 .spinner-layer,
 .circle-clipper,
@@ -141,7 +141,7 @@ $update1 = mysqli_query($con,"update register set LastLogin=NOW() WHERE MatriID=
 
 $Insert1 = mysqli_query($con,"UPDATE register SET Thislogin = NOW() WHERE MatriID='".$safeMatriID."'");
 
-$authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatriID."'") or die(mysqli_error($con));
+$authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatriID."'") or svr_db_fail($con);
 
 
           
@@ -173,8 +173,7 @@ $authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatri
 					print "<script>";
 					print " setTimeout(function(){ self.location='approval_wait?id=$login '; }, 700);"; // Comment this line if you don't want to redirect
 					print "</script>";
-					/*echo "1";
-					EXIT;*/
+					
 				}
 				else{
 					print "<script>";

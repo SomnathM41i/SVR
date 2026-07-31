@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 error_reporting(0);
 include('protect.php');
 
@@ -26,8 +26,8 @@ include('protect.php');
         </thead>
         <tbody>
         <?php 
-											$relsql=$con->query("select * from register where iit='yes' and instu!='' ")or die(mysqli_error($con)	);
-											//echo "select * from register where iit=='yes' and instu!=''";
+											$relsql=$con->query("select * from register where iit='yes' and instu!='' ")or svr_db_fail($con);
+											
 											while($relrow = $relsql->fetch_assoc())
 											{
 											$matriid=$relrow['MatriID'];

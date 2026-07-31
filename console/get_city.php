@@ -1,5 +1,6 @@
-<?php  require_once('../sys_dbconnection.php');
-//include'../dbconnectadmin.php';
+<?php  require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+
 
 ?>
 
@@ -19,17 +20,17 @@
 								           $id=$_GET['id'];
 								           
 
-										   //echo $id;
-								          //$coun1=$_POST['country1'];
+										   
+								          
 										  $allrec=mysqli_query($con,"select * from e_city where dist_ref='$id'");
-										  //echo "select * from caste where Religion='$id' ORDER BY Caste ASC";
+										  
 										  $total=mysqli_num_rows($allrec);
 										  $i=0;
 										  while($data=mysqli_fetch_assoc($allrec) and $i<$total)
 										  {
 										   ?>
 											<tr>
-											  <!--<td ><?php  echo $i+1;?></td>-->
+											  
 											  <td><?php  echo $data['city'];?></td>
 											  <td><?php echo htmlspecialchars($data['taluka_ref'] ?? '', ENT_QUOTES, 'UTF-8'); ?></td>
 											  <td >

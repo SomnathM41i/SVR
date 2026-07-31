@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $matriid = $_SESSION['MatriID'] ?? $_SESSION['matriid'] ?? $_SESSION['matri_login'] ?? '';
 

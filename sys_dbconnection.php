@@ -4,16 +4,31 @@
 */
 error_reporting(E_ERROR);
 /*ob_start();*/
-if (!isset($_SESSION)) { session_start(); }
+/* SECURITY (H11): harden the session cookie before starting the session. */
+if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+	$_svrSecure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+	if (PHP_VERSION_ID >= 70300) {
+		session_set_cookie_params(array('lifetime' => 0, 'path' => '/', 'secure' => $_svrSecure, 'httponly' => true, 'samesite' => 'Lax'));
+	} else {
+		session_set_cookie_params(0, '/; samesite=Lax', '', $_svrSecure, true);
+	}
+	ini_set('session.use_strict_mode', '1');
+	session_start();
+} else if (!isset($_SESSION)) { session_start(); }
 date_default_timezone_set("Asia/Kolkata");
+
+require_once(__DIR__ . DIRECTORY_SEPARATOR . 'config.php');
 
 class Database{
 	private $_connection;
 	private static $_instance; //The single instance
-	private $_host = "82.25.121.160";
-	private $_database = "u320743426_SVR";
-	private $_username = "u320743426_SVR";
-	private $_password = "ez?Zcc4X9$";
+	/* Credentials now resolve from env var -> config.local.php -> legacy fallback (see config.php).
+	   OPS NOTE: once env vars are configured on the server, the in-code fallback
+	   defaults should be removed (tracked in SECURITY_CHANGELOG.md deployment section). */
+	private $_host;
+	private $_database;
+	private $_username;
+	private $_password;
 	
 	//this function is called everytime this class is instantiated		
 	/*
@@ -29,12 +44,16 @@ class Database{
 
 	// Constructor
 	private function __construct() {
-		$this->_connection = new mysqli($this->_host, $this->_username, 
+		$this->_host     = svr_config('SVR_DB_HOST', '82.25.121.160');
+		$this->_database = svr_config('SVR_DB_NAME', 'u320743426_SVR');
+		$this->_username = svr_config('SVR_DB_USER', 'u320743426_SVR');
+		$this->_password = svr_config('SVR_DB_PASS', 'ez?Zcc4X9$');
+		$this->_connection = new mysqli($this->_host, $this->_username,
 			$this->_password, $this->_database);
 	
 		// Error handling
 		if(mysqli_connect_error()) {
-			trigger_error("Failed to conencto to MySQL: " . mysql_connect_error(),
+			trigger_error("Failed to conencto to MySQL: " . mysqli_connect_error(),
 				 E_USER_ERROR);
 		}
 	}

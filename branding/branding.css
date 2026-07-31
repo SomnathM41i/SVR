@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Manpasand Jodidar — Brand Design Tokens & Foundation Utilities
+   --------------------------------------------------------------------------
+   Phase R1 (Brand Foundation). This file is INERT by design:
+   it only defines CSS custom properties and `.mpj-*` namespaced utilities.
+   It changes nothing on any page until Phase R3/R4 wire it into templates.
+
+   Palette sampled from the official logo (branding/logos/manpasand-jodidar-logo.png).
+   See COLOR_GUIDE.md and TYPOGRAPHY_GUIDE.md for usage rules.
+   ========================================================================== */
+
+:root {
+  /* --- Core palette (sampled from brand artwork) ------------------------ */
+  --mpj-cream:        #F9E7DC;  /* soft cream — primary surface/background  */
+  --mpj-cream-50:     #FFFDFB;  /* warm near-white — cards, email body      */
+  --mpj-cream-200:    #F3D9C7;  /* deeper cream — subtle fills              */
+  --mpj-maroon:       #5E1426;  /* deep maroon — primary brand color        */
+  --mpj-burgundy:     #3D0C19;  /* burgundy — darkest shade, footer/text    */
+  --mpj-maroon-700:   #773C47;  /* maroon mid — borders, secondary text     */
+  --mpj-rose:         #C9556A;  /* rose pink — accent, links on cream       */
+  --mpj-rose-dark:    #A63E52;  /* text-safe rose on white (AA)             */
+  --mpj-rose-light:   #ECBDC0;  /* soft pink — chips, highlight fills       */
+  --mpj-gold:         #BA9350;  /* antique gold — ornaments, dividers       */
+  --mpj-gold-dark:    #8F6E2E;  /* text-safe gold on light (AA large)       */
+  --mpj-gold-light:   #E3CBB2;  /* light gold — hairline fills              */
+  --mpj-bronze:       #A25C3B;  /* bronze accent (sampled)                  */
+
+  /* --- R3 bridge tones (used by the palette remap of legacy screens) ------ */
+  --mpj-maroon-600:   #7A1F39;  /* hover mid-maroon (gradients)             */
+  --mpj-rose-400:     #DB7F94;  /* light rose gradient stop                 */
+  --mpj-gold-bright:  #DDB15F;  /* gold text/accents on dark surfaces       */
+  --mpj-plum:         #43303A;  /* deep plum neutral (ex-slate sections)    */
+
+  /* --- Text ------------------------------------------------------------- */
+  --mpj-ink:          #3A2530;  /* primary text (warm plum-charcoal)        */
+  --mpj-ink-muted:    #7A6570;  /* secondary text                           */
+  --mpj-ink-on-maroon:#F9E7DC;  /* text on maroon/burgundy surfaces         */
+
+  /* --- Semantic roles ---------------------------------------------------- */
+  --mpj-primary:      var(--mpj-maroon);
+  --mpj-accent:       var(--mpj-rose);
+  --mpj-surface:      var(--mpj-cream-50);
+  --mpj-surface-tint: var(--mpj-cream);
+  --mpj-border:       rgba(94, 20, 38, .14);   /* maroon hairline   */
+  --mpj-border-gold:  rgba(186, 147, 80, .45); /* gold hairline     */
+  --mpj-success:      #2F7D5B;  /* muted green — approved/verified  */
+  --mpj-warning:      #B07A2A;  /* warm amber — pending             */
+  --mpj-danger:       #B03A4E;  /* brand-family red — errors        */
+  --mpj-info:         #6C5A78;  /* desaturated plum — neutral info  */
+
+  /* --- Typography (see TYPOGRAPHY_GUIDE.md) ----------------------------- */
+  --mpj-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --mpj-font-body:    "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mpj-font-accent:  "Cormorant Garamond", Georgia, serif;
+
+  --mpj-fs-12: .75rem;
+  --mpj-fs-14: .875rem;
+  --mpj-fs-16: 1rem;
+  --mpj-fs-18: 1.125rem;
+  --mpj-fs-20: 1.25rem;
+  --mpj-fs-24: 1.5rem;
+  --mpj-fs-30: 1.875rem;
+  --mpj-fs-38: 2.375rem;
+  --mpj-fs-48: 3rem;
+
+  /* --- Shape & elevation ------------------------------------------------- */
+  --mpj-radius-sm: 8px;
+  --mpj-radius:    14px;
+  --mpj-radius-lg: 20px;
+  --mpj-radius-pill: 999px;
+  --mpj-shadow-sm: 0 1px 3px rgba(61, 12, 25, .08);
+  --mpj-shadow:    0 6px 24px rgba(61, 12, 25, .10);
+  --mpj-shadow-lg: 0 18px 48px rgba(61, 12, 25, .16);
+  --mpj-ring:      0 0 0 3px rgba(201, 85, 106, .35); /* focus ring (rose)  */
+  --mpj-transition: .18s ease;
+}
+
+/* ==========================================================================
+   Namespaced foundation utilities (opt-in only; used from Phase R3 onward)
+   ========================================================================== */
+
+.mpj-font-display { font-family: var(--mpj-font-display); }
+.mpj-font-body    { font-family: var(--mpj-font-body); }
+.mpj-font-accent  { font-family: var(--mpj-font-accent); }
+
+/* Buttons ----------------------------------------------------------------- */
+.mpj-btn {
+  display: inline-block;
+  font-family: var(--mpj-font-body);
+  font-weight: 500;
+  font-size: var(--mpj-fs-16);
+  line-height: 1.4;
+  padding: .65rem 1.5rem;
+  border-radius: var(--mpj-radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--mpj-transition);
+  text-decoration: none;
+  box-shadow: var(--mpj-shadow-sm);
+}
+.mpj-btn:focus-visible { outline: none; box-shadow: var(--mpj-ring); }
+.mpj-btn--primary {
+  background: linear-gradient(135deg, var(--mpj-maroon) 0%, #7A1F39 100%);
+  color: var(--mpj-ink-on-maroon);
+  border-color: var(--mpj-maroon);
+}
+.mpj-btn--primary:hover { background: linear-gradient(135deg, var(--mpj-burgundy) 0%, var(--mpj-maroon) 100%); color: var(--mpj-ink-on-maroon); }
+.mpj-btn--rose {
+  background: linear-gradient(135deg, var(--mpj-rose) 0%, var(--mpj-rose-dark) 100%);
+  color: #fff;
+  border-color: var(--mpj-rose-dark);
+}
+.mpj-btn--rose:hover { filter: brightness(.96); color: #fff; }
+.mpj-btn--gold {
+  background: linear-gradient(135deg, #C9A45E 0%, var(--mpj-gold) 100%);
+  color: var(--mpj-burgundy);
+  border-color: var(--mpj-gold-dark);
+}
+.mpj-btn--outline {
+  background: transparent;
+  color: var(--mpj-maroon);
+  border-color: var(--mpj-maroon);
+  box-shadow: none;
+}
+.mpj-btn--outline:hover { background: var(--mpj-maroon); color: var(--mpj-ink-on-maroon); }
+
+/* Cards / panels / badges ------------------------------------------------- */
+.mpj-card {
+  background: var(--mpj-surface);
+  border: 1px solid var(--mpj-border);
+  border-radius: var(--mpj-radius-lg);
+  box-shadow: var(--mpj-shadow);
+}
+.mpj-card--creamtop { border-top: 3px solid var(--mpj-gold); }
+.mpj-badge {
+  display: inline-block;
+  font-family: var(--mpj-font-body);
+  font-size: var(--mpj-fs-12);
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .28em .85em;
+  border-radius: var(--mpj-radius-pill);
+  background: var(--mpj-rose-light);
+  color: var(--mpj-burgundy);
+}
+.mpj-badge--gold   { background: #EFE0C8; color: #6E5316; }
+.mpj-badge--maroon { background: var(--mpj-maroon); color: var(--mpj-ink-on-maroon); }
+.mpj-badge--soft   { background: var(--mpj-rose-light); color: var(--mpj-rose-dark); }
+
+/* Headings & prose helpers ------------------------------------------------- */
+.mpj-display {
+  font-family: var(--mpj-font-display);
+  font-weight: 700;
+  color: var(--mpj-maroon);
+  line-height: 1.15;
+}
+.mpj-eyebrow {
+  font-family: var(--mpj-font-body);
+  font-size: var(--mpj-fs-12);
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--mpj-gold-dark);
+}
+.mpj-lead {
+  font-family: var(--mpj-font-body);
+  font-size: var(--mpj-fs-18);
+  color: var(--mpj-ink-muted);
+}
+
+/* Ornamental divider (uses branding/icons/divider.png) -------------------- */
+.mpj-divider {
+  display: block;
+  width: 168px;
+  height: 24px;
+  margin: .75rem auto;
+  background: center / contain no-repeat url("icons/divider.png");
+  border: 0;
+}
+.mpj-divider--left { margin-left: 0; }
+
+/* Forms -------------------------------------------------------------------- */
+.mpj-input {
+  font-family: var(--mpj-font-body);
+  font-size: var(--mpj-fs-16);
+  color: var(--mpj-ink);
+  background: #fff;
+  border: 1px solid var(--mpj-border);
+  border-radius: var(--mpj-radius);
+  padding: .6rem .9rem;
+  transition: border-color var(--mpj-transition), box-shadow var(--mpj-transition);
+}
+.mpj-input:focus {
+  outline: none;
+  border-color: var(--mpj-rose);
+  box-shadow: var(--mpj-ring);
+}
+.mpj-label {
+  font-family: var(--mpj-font-body);
+  font-size: var(--mpj-fs-14);
+  font-weight: 500;
+  color: var(--mpj-maroon);
+  margin-bottom: .35rem;
+}
+
+/* Surfaces ----------------------------------------------------------------- */
+.mpj-surface-cream   { background: var(--mpj-cream); }
+.mpj-surface-maroon  { background: linear-gradient(160deg, var(--mpj-maroon) 0%, var(--mpj-burgundy) 100%); color: var(--mpj-ink-on-maroon); }
+.mpj-text-maroon { color: var(--mpj-maroon); }
+.mpj-text-rose   { color: var(--mpj-rose-dark); }
+.mpj-text-gold   { color: var(--mpj-gold-dark); }
+.mpj-text-muted  { color: var(--mpj-ink-muted); }
+
+/* Footer brand tagline (R3) */
+.mvv-footer-tagline {
+  font-family: var(--mpj-font-accent);
+  font-style: italic;
+  font-size: var(--mpj-fs-16);
+  color: var(--mpj-gold-bright);
+  letter-spacing: .04em;
+  margin-top: 4px;
+}

@@ -1,9 +1,10 @@
-<?php  require_once('../sys_dbconnection.php');
-//include'../dbconnectadmin.php';
+<?php  require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+
 $id = $_POST['rowid'];
-//echo $id;
+
 $sqldata=mysqli_query($con,"select * from e_city where id ='$id'");
-//echo "select * from e_dist where id ='$id'";
+
 $rowdata=mysqli_fetch_array($sqldata);
 
 ?>
@@ -43,7 +44,7 @@ $rowdata=mysqli_fetch_array($sqldata);
 									}
 									?>
 								</select>
-								<input type="hidden" name="id" value="<?php echo $rowdata['id']; ?>"><?php //echo $id ?>
+								<input type="hidden" name="id" value="<?php echo $rowdata['id']; ?>"><?php 
                             </div>
 					   </div>
                        

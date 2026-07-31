@@ -1,5 +1,5 @@
 <?php
-require_once 'sys_dbconnection.php';
+require_once'includes/bootstrap.php';
 
 mysqli_set_charset($con, 'utf8mb4');
 

@@ -1,6 +1,5 @@
-<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');
-session_start();*/
+<?php require_once('includes/bootstrap.php');
+
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -16,8 +15,12 @@ error_reporting(0);
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

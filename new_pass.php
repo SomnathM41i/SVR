@@ -1,30 +1,65 @@
-<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
-session_start();
+<?php require_once('includes/bootstrap.php');
+
+require_once('includes/security.php');
 $msg="";
 $message="";
+
+/* Security fix (C3): the reset page now requires the expiring, single-use,
+   HMAC-signed token issued by forgot_password_submit.php. Previously anyone
+   could reset any account knowing only the MatriID. */
+$id    = isset($_GET['ID']) ? trim($_GET['ID']) : '';
+$token = isset($_GET['token']) ? trim($_GET['token']) : '';
+
+$forpass1 = null;
+if ($id !== '') {
+    $stmt = mysqli_prepare($con, "SELECT * FROM register WHERE MatriID=? LIMIT 1");
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $id);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+        $forpass1 = $res ? mysqli_fetch_array($res) : null;
+        mysqli_stmt_close($stmt);
+    }
+}
+
+$linkValid = ($forpass1 && $token !== '' && svr_reset_token_verify($token, $forpass1['MatriID'], $forpass1['ConfirmPassword']));
+
+if (!$linkValid) {
+    header('location:forgot_password?action=invalidlink');
+    exit;
+}
+
 if(isset($_POST['submit']))
 {
 
+/* Security fix (H3): CSRF token check. */
+if (!svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    $msg='Your session has expired. Please retry from the email link.';
+}
+else if (!svr_throttle('new_pass:'.svr_client_ip(), 10, 600)) {
+    $msg='Too many attempts. Please try again later.';
+}
+else
+{
 $new=$_POST['new'];
 $confirm=$_POST['confirm'];
-$mail=$_SESSION['email'];
-$id=$_GET['ID'];
-  
-$query1="SELECT * FROM register where MatriID='$id'";
- 		$forpass=mysqli_query($con,$query1) or die(mysqli_error()); 
-		$forpass1=mysqli_fetch_array($forpass);
-		$matri=$forpass1['MatriID']; 
+$matri=$forpass1['MatriID'];
 		if($_POST['new'] === $_POST['confirm'])
-		{ 
-			$update_pass="update register set ConfirmPassword='$confirm' where MatriID='$matri'";
-			$new_update_password=mysqli_query($con,$update_pass);
-			echo $update_pass; 
-			header('location:login?action1=Success'); 
+		{
+			/* NOTE: password storage intentionally unchanged (per project constraint). */
+			$stmtU = mysqli_prepare($con, "UPDATE register SET ConfirmPassword=? WHERE MatriID=?");
+			if ($stmtU) {
+			    mysqli_stmt_bind_param($stmtU, "ss", $confirm, $matri);
+			    mysqli_stmt_execute($stmtU);
+			    mysqli_stmt_close($stmtU);
+			}
+			header('location:login?action1=Success');
+			exit;
 		}else{
-		$msg='Password not Match';	
+		$msg='Password not Match';
 		}
-		 
+}
+
 }
  ?> 
 
@@ -44,8 +79,12 @@ $query1="SELECT * FROM register where MatriID='$id'";
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -201,7 +240,8 @@ xmlhttp.send();
                         </div>
                     </div>
                   
-             <form method="post" action="#" id="contact-form">			  
+             <form method="post" action="#" id="contact-form">
+               <?php echo svr_csrf_field(); ?>
 			   <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000"><?php echo $msg;?></font></h5>
 					     <div class="row clearfix">
 						 <div class="col-lg-2 col-md-4 col-sm-4">

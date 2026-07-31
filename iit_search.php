@@ -1,5 +1,5 @@
-<?php /*include('dbconnectadmin.php');*/
-require_once('sys_dbconnection.php');
+<?php 
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 error_reporting(0); 
 $login=$_SESSION['MatriID'];
@@ -12,7 +12,7 @@ $seof=mysqli_fetch_array($seo);
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IIT/NIT/IIM Search</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>.mvv-page-hero h1 { text-transform:none; }</style>
@@ -52,7 +52,7 @@ $seof=mysqli_fetch_array($seo);
       <div class="contact-form">
         <div class="w3ls-title1 mb-4">
           <?php  if(!(isset($login)&& $regvar=='9')) { ?>
-          <span style="font-size:20px;color:#1d95d2;">Advance Search, Id Search, Save Search Will Enable After Login</span><br>
+          <span style="font-size:20px;color:#773C47;">Advance Search, Id Search, Save Search Will Enable After Login</span><br>
           <?php } ?>
         </div>
         <div class="col-lg-12 mt-3">

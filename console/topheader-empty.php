@@ -4,13 +4,13 @@
 				<div class="header-wrapper">
 					<div class="m-header">
 						<a href="index.php" class="b-brand">
-							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
+							<img src="../branding/logos/emblem.png" alt="" class="logo logo-lg">
 						</a>
 					</div>
 					
 					<div class="ms-auto">
 						<ul class="list-unstyled">
-							<?php  require_once('../sys_dbconnection.php'); /*include('../dbconnectadmin.php');*/
+							<?php  require_once('../includes/bootstrap.php'); 
 									$query=mysqli_query($con,"select * from siteconfig  where ID='1'");
 									$fetch=mysqli_fetch_array($query);
 									$name=$fetch['owner'];

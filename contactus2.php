@@ -1,5 +1,5 @@
-<?php require_once('sys_dbconnection.php');
-/*include 'dbconnectadmin.php';*/
+<?php require_once('includes/bootstrap.php');
+
   //error_reporting(0);
   $seo=mysqli_query($con,"Select * from seo where catagory='contact'");
   $seof=mysqli_fetch_array($seo);
@@ -18,8 +18,12 @@
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -277,7 +281,7 @@ iframe
         <div class="auto-container mb-4">
 		 <?php   $result1=mysqli_query($con,"SELECT * FROM cms where cms_id='18'");
 				 $rowdata1=mysqli_fetch_array($result1);
-			//echo $rowdata1['content'];?> 
+			
 			<iframe src=<?php echo $rowdata1['content'];?>> </iframe>
 			
         </div>

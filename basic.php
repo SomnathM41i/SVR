@@ -1,19 +1,19 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 $login=$_SESSION['MatriID'];
 $my_profile=mysqli_query($con,"SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid='$login'");
 $me=mysqli_fetch_array($my_profile);
 $regvar=$me['reg_step'];
 ?>
-<?php $page_title = 'Basic Details - Shivraj Maratha'; ?>
+<?php $page_title = 'Basic Details - Manpasand Jodidar'; ?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title><?php echo htmlspecialchars($page_title); ?></title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -49,7 +49,7 @@ function nospaces(t){if(t.value.match(/\s/g)){alert('Sorry, you are not allowed 
       $sql=mysqli_query($con,"SELECT * FROM cms WHERE link='contact us'");
       while($row=mysqli_fetch_array($sql)) {
       ?>
-      <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px;color:var(--mvv-maroon);font-size:0.9rem;max-width:800px;">
+      <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px;color:var(--mvv-maroon);font-size:0.9rem;max-width:800px;">
         <i class="bi bi-info-circle-fill"></i> Note: If you want any changes please contact <?php echo $row['email']; ?>
       </div>
       <?php } ?>

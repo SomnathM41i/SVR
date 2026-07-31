@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 $login=$_SESSION['MatriID'];
 $my_profile=mysqli_query($con,"SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid='$login'");
@@ -12,7 +12,7 @@ $regvar=$me['reg_step'];
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Change Password</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -112,23 +112,24 @@ function check_exist123(str)
   <section class="mvv-section">
     <div class="mvv-container">
       <form method="post" action="change_password_submit" style="max-width:500px;">
+        <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
         <?php if($_GET['message']=="success") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Your Password Changed Sucessfully.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="invalid") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           You must Enter the Same Password Twice in Order to Confirm it.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="invalid1") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Your Old Password Is Incorrect.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="error") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Password Must Differ From Old Password.
         </div>
         <?php } ?>

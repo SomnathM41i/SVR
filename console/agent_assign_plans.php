@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/protect.php');
 require_once('agent_common.php');
 $agents = agent_active_options($con);
 $plans = agent_plan_options($con);

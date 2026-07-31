@@ -1,19 +1,18 @@
 <?php  
-/*session_start();
-include("dbconnectadmin.php");*/
-require_once('sys_dbconnection.php');
+
+require_once('includes/bootstrap.php');
 $login=$_SESSION['MatriID']; //or sender id
 $searchid=$_GET['id'];
-//$idurl=base64_decode($_GET['id']);
-//$searchid = $idurl;
 
-$expressinterestquery=mysqli_query($con,"select * from  expressinterest  where eisender='$login' and eireceiver='$searchid'")or die(mysqli_error());
+
+
+$expressinterestquery=mysqli_query($con,"select * from  expressinterest  where eisender='$login' and eireceiver='$searchid'")or svr_db_fail($con);
 $fetch=mysqli_query($con,"Select * from register");
 if(mysqli_num_rows($expressinterestquery)==0)
 {
 $eisentdt=date('d-m-Y');
-$shortview=mysqli_query($con,"insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')")or die(mysqli_error());
-//echo "insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')";
+$shortview=mysqli_query($con,"insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')")or svr_db_fail($con);
+
 
 }
 
@@ -25,11 +24,10 @@ mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notificati
 }
 // for checking on/off of SMTP
 $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
 $on_off = $data_config-> is_smtp_set;
 $check_email = mysqli_query($con,"SELECT * FROM emailverify where MatriID='$searchid'");	
-		/*echo "SELECT * FROM emailverify where MatriID='$searchid";
-		exit;*/
+		
 $fetch_email = mysqli_fetch_array($check_email);
 //END
 
@@ -50,16 +48,16 @@ $fetch_email = mysqli_fetch_array($check_email);
 	$sql2=mysqli_query($con,"select * from  register WHERE MatriID='$login'");
 	$row1=mysqli_fetch_array($sql2);
 	$photo=$row1['photo1'];
-	//$sendernm=$row1['Name'];
+	
 	$photo1=$row1['Photo1'];
 	$age=$row1['Age'];
-	//$height=$row1['Height'];
+	
 	$reli=$row1['Religion'];
 	$mother_tongue=$row1['mother_tounge'];
 	$edu=$row1['Education'];
 	$occu=$row1['Occupation'];
 	$send=$row1['ConfirmEmail'];
-	//$encrypt_sender=$login;
+	
 	$encrypt_sender=base64_encode($login);	
 
 	$age=$row1['Age'];
@@ -131,10 +129,12 @@ $fetch_email = mysqli_fetch_array($check_email);
 
 			</head>
 
-			<body>
+			<body><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 			<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 			  <tr>
-				<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
+				<td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
 				<td colspan='2' align='center' valign='middle'>Date: 20-2-2021</td>
 			  </tr>
 			  <tr>
@@ -166,7 +166,9 @@ $fetch_email = mysqli_fetch_array($check_email);
 				<td>&nbsp;</td>
 			  </tr>
 			</table>
-			</body>
+			<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
+</body>
 			</html>
 			";
 
@@ -177,7 +179,7 @@ if(!$mail->Send())
   echo "Mailer Error: " . $mail->ErrorInfo;
 } else
 {
-//  echo "Message sent!";
+
 }
 }
 

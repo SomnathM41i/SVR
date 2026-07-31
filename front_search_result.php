@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+<?php require_once('includes/bootstrap.php');
 error_reporting(0);
 
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
@@ -13,8 +13,8 @@ $txtgender=$_POST['gender'] ? $_POST['gender'] : $_GET['gender'];
 $from_age=$_POST['txtSAge'] ? $_POST['txtSAge'] : $_GET['txtSAge'];
 $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
@@ -162,7 +162,7 @@ $occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
            
     		}else{
     			$setPaginate.= "<li><a class='active'><b> > </b></a></li>";
-                //$setPaginate.= "<li><a class='current_page'>Last</a></li>";
+                
             }
 
     		$setPaginate.= "</ul>\n";		
@@ -184,8 +184,12 @@ $occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
 <link href="css/responsive.css" rel="stylesheet">
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -288,7 +292,7 @@ padding: 36px 0 90px
 						<?php echo $fetch['MatriID']?></h4>
 						<span class="designation"><?php echo substr($fetch['Maritalstatus'],0,20) ?></span>
 						<span class="designation"><?php echo substr($fetch['Religion'],0,20) ?></span>
-						<span class="designation"><?php echo $fetch['Age'] ?> Yrs<?php //echo get_height($fetch['Height']);?></span>
+						<span class="designation"><?php echo $fetch['Age'] ?> Yrs<?php 
                       </div>
 					  </a>
                       <div class="social-box">                            
@@ -317,7 +321,7 @@ padding: 36px 0 90px
                 $waLA = [];
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -327,7 +331,7 @@ padding: 36px 0 90px
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
 			    $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
 			?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
              <div class="tooltip"> Share</div>

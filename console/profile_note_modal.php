@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 
 <div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
     <div class="modal-dialog">
@@ -15,7 +16,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'note_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

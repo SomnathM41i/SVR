@@ -1,6 +1,6 @@
-<?php require_once('sys_dbconnection.php');?>
+<?php require_once('includes/bootstrap.php');?>
 <?php include_once('memprotect.php');
-/*include('dbconnectadmin.php');*/ ?>
+ ?>
 <?php
 $nm1=$_GET['id']; 
 $id=$_SESSION['matriid'];
@@ -23,7 +23,7 @@ mysqli_query($con,"delete from gallary where photo_name='$nm'");
 mysqli_query($con,"update register set Photo1='$default' where MatriId='$id'");
 $myFile = "gallary/".$nm;
 unlink("gallary/".$nm);
-//header('location:gallary');
+
 }
 else
 {

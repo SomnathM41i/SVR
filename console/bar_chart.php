@@ -1,5 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
- /* INCLUDE "../dbconnectadmin.php";*/
+<?php require_once('../includes/bootstrap.php');
+require_once(dirname(__FILE__).'/protect.php');
+ 
 ?>
 <html>
 <head>

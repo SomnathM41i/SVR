@@ -1,8 +1,8 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 include_once('memprotect.php');?>
 <?php //include_once('siteconfig.php');?>
-<?php //include('dbconnectadmin.php'); 
-//session_start();
+<?php 
+
 $ms=implode(",",$_POST['ms']);
 $from_age=$_POST['txtSAge'];
 $to_age=$_POST['txtEAge'];
@@ -52,8 +52,8 @@ mysqli_query($con,"insert into advance_saveandsearch (MatriID,maritialstatus,fro
 '$cbostate','$dist','$taluka','$city2','$with_photo')");
 
 $last_id =mysqli_insert_id($con);
-//echo $last_id;
-//echo "insert into advance_saveandsearch (MatriID,maritialstatus,fromage,toage,fromheight,toheight,religion,caste,subcaste,education,occupation,country,state,district,city,withphoto)values
-//('".$_SESSION['matri_login']."','$ms','$from_age','$to_age','$height1','$height2','$religion','$caste','$subcaste','$education','$occupation','$Country1','$cbostate','$dist','$city2','$with_photo')";
+
+
+
 
 header('location:select_advancesearch?id='.$last_id);?>

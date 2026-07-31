@@ -1,6 +1,6 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 $strid=$_GET['id']; 
 $row=mysqli_query($con,"select * from register where MatriID='$strid'");
 $fetch=mysqli_fetch_array($row);
@@ -12,7 +12,11 @@ $img=$fetch['Photo1'];
 <script src="assets/crop/cropper.js"></script>
 
 <link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- font css -->
 <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -21,6 +25,7 @@ $img=$fetch['Photo1'];
 
 <!-- vendor css -->
 <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+<link rel="stylesheet" href="assets/css/mpj-brand.css">
 <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/customizer.css">
@@ -38,11 +43,7 @@ $img=$fetch['Photo1'];
   
 
 <SCRIPT language=JavaScript>
-<!-- 
-function win(){
-window.opener.location.href="photo_approve?success=yes";
-self.close();	
-//-->
+
 }
 </SCRIPT>
   <br />

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 
@@ -98,8 +98,8 @@ foreach ($questions as $question) if (!empty($formValues[$question['column']])) 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Compatibility - Shivraj Maratha</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
+  <title>My Compatibility - Manpasand Jodidar</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
   <link rel="stylesheet" href="css3/Style.css">
   <link rel="stylesheet" href="css3/mvv-premium.css">
   <style>

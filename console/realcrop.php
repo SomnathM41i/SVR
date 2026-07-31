@@ -1,9 +1,9 @@
-<?php  require_once('../sys_dbconnection.php'); 
+<?php  require_once('../includes/bootstrap.php'); 
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 
  $strid=$_GET['matid']; 
-// echo $strid;
+
 
 
 if (isset($_FILES['croppedImage']['tmp_name']) && !empty($_FILES['croppedImage']['tmp_name'])){
@@ -22,12 +22,12 @@ $targetfile="../gallary/$save_path";
  move_uploaded_file($_FILES["croppedImage"]["tmp_name"], $targetfile);
 
 $photoid=$_GET['photoid']; 
-//echo $photoid;	
+
 
 mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path' where photo_id='$photoid1'");
-//echo "update gallary set photo_approve='Yes',photo_name='$sav' where photo_id='$photoid1'";
+
 $update1 = mysqli_query($con,"update register set Photo1 ='$save_path' ,Photo1Approve= 'Yes' where MatriID='$strid1'") or die("Could not update data because ".mysqli_error());
-//  echo "update register set Photo1 ='$sav' ,Photo1Approve= 'Yes' where MatriID='$strid1'";	
+
 
 }
 ?>
@@ -42,7 +42,11 @@ $update1 = mysqli_query($con,"update register set Photo1 ='$save_path' ,Photo1Ap
 <script src="assets/crop/cropper.js"></script>
 
 <link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- font css -->
 <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -51,6 +55,7 @@ $update1 = mysqli_query($con,"update register set Photo1 ='$save_path' ,Photo1Ap
 
 <!-- vendor css -->
 <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+<link rel="stylesheet" href="assets/css/mpj-brand.css">
 <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/customizer.css">

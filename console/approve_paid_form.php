@@ -1,7 +1,7 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 include('protect.php');
 include_once('agent_common.php');
-/*include('../dbconnectadmin.php');*/
+
 
 $matriid=$_GET['matriid']; 
 $presult = $con->query("SELECT * FROM register where MatriID='$matriid'");
@@ -57,13 +57,17 @@ $strorderid = $strinv.orderid();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
 	<link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
 	 
@@ -74,6 +78,7 @@ $strorderid = $strinv.orderid();
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
 	  <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
@@ -102,7 +107,7 @@ $strorderid = $strinv.orderid();
 		}
 		
 		
-// 		 function updateInput(){
+
 //     //get the current amount from the 'discount' field
 //     var discountcode = document.getElementsByName("discountcode")[0].value;
 //     //get the current amount from the 'price' field

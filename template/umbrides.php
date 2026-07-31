@@ -1,1 +1,1 @@
-<?php $pageTitle='Unmarried Brides - Shivraj Maratha';$activePage='profiles';$listingTitle='Unmarried Brides';$listingGender='bride';$listingStatus='unmarried';require 'includes/listing-page.php'; ?>
+<?php $pageTitle='Unmarried Brides - Manpasand Jodidar';$activePage='profiles';$listingTitle='Unmarried Brides';$listingGender='bride';$listingStatus='unmarried';require 'includes/listing-page.php'; ?>

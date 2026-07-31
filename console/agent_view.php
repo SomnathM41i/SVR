@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/protect.php');
 require_once('agent_common.php');
 $id = (int)($_GET['id'] ?? 0);
 $agent = $con->query("SELECT * FROM agents WHERE agent_id=$id")->fetch_assoc();

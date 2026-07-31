@@ -1,6 +1,6 @@
  <?php 
-	//include('dbconnectadmin.php');//974400316633433
-	require_once('sys_dbconnection.php');
+	
+	require_once('includes/bootstrap.php');
 ?>
  
 <!DOCTYPE html>
@@ -15,110 +15,19 @@
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 <script>
-/*
-  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
-    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
-    } else {                                 // Not logged into your webpage or we are unable to tell.
-      /*document.getElementById('status').innerHTML = 'Please log ' +
-        'into this webpage.';
-    }
-  }
 
-
-  function checkLoginState() {               // Called when a person is finished with the Login Button.
-    FB.getLoginStatus(function(response) {   // See the onlogin handler
-      statusChangeCallback(response);
-    });
-  }
-
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '974400316633433',
-      cookie     : true,                     // Enable cookies to allow the server to access the session.
-      xfbml      : true,                     // Parse social plugins on this webpage.
-      version    : 'v10.0'           // Use this Graph API version for this call.
-    });
-
-
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-      statusChangeCallback(response);        // Returns the login status.
-    });
-
-  };
-  
-  function fblogin()
-  {
-    FB.login(function(response)
-    {
-      if(response.authResponse)
-      {
-		  $id=response.id;
-		   data:'id='+response.id+'&email='+response.email+'&name='+response.name;
-        window.top.location = 'abc.php?data=+data';
-      }
-    });
-  }
-  //FOR CHECK
-  function fbafterlogin()
-  {
-    FB.getLoginStatus(function(response) 
-    {   // Called after the JS SDK has been initialized.
-      if (response.status === 'connected') 
-      {
-        FB.api('/me','GET',{"fields":"id,name,email,birthday,first_name,last_name"}, function(response) 
-        {
-          console.log(response);
-          jQuery.ajax
-          ({
-              url:'fblogin_submit.php',
-              type:'post',
-              data:'id='+response.id+'&email='+response.email+'&name='+response.name,
-
-
-          });
-        
-        });
-        statusChangeCallback(response);        // Returns the login status.
-      }
-    });
-    
-  }
-  
-  //MAIN
-  function testAPI() {                   // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
-
-    FB.api('/me','GET',
-  {"fields":"id,name,email,birthday,first_name,last_name"}, function(response) 
-  {
-      console.log(response);
-     
-      jQuery.ajax
-          ({
-              url:'fblogin_submit.php',
-              type:'post',
-              data:'id='+response.id+'&fname='+response.first_name+'&lname='+response.last_name+'&email='+response.email+'&name='+response.name,
-              
-
-          });
-
-  });
-    
-
-  }
-  */
  
 </script>
 
@@ -289,6 +198,7 @@ xmlhttp.send();
                     ?><h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Your Password Change Successfully</font></h5>
                     <?php } ?>
                             <form method="post" action="login_submit.php" class="form" id="contact-form">
+                              <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
                                 <div class="row clearfix">
 															
 							   <div class="col-lg-12 col-md-12 col-sm-12 form-group" id="emailerror">
@@ -297,7 +207,7 @@ xmlhttp.send();
                                     </div>
                                     
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-									 <input type="password" name="txtpassword" placeholder="Enter Password" maxlength="35"  id="pass" tabindex="2" required value="<?php if(isset($_COOKIE["userpassword"])) { echo $_COOKIE["userpassword"]; } ?>" >
+									 <input type="password" name="txtpassword" placeholder="Enter Password" maxlength="35"  id="pass" tabindex="2" required autocomplete="current-password">
 
 											</div>
 							<div class="col-lg-9 col-md-9 col-sm-9 mb-2">   

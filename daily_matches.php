@@ -1,6 +1,6 @@
 <?php //include_once('siteconfig.php');
 error_reporting(0);
-require_once('sys_dbconnection.php');?>
+require_once('includes/bootstrap.php');?>
 <?php
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -10,8 +10,7 @@ function getHeightValue($h) {
 }
 ?>
 <?php// include_once('memprotect.php');
-/*include_once('dbconnectadmin.php');
-session_start();*/
+
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
 	else
@@ -78,13 +77,13 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $match_qry.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$match_qry.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $match_qry.=" Gender='$match_sex' AND ";
 $match_qry.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $match_qry.="
 Age BETWEEN '$pe_fromage' AND '$pe_toage'";
 
-//$match_qry.= " and '$mother_a[0]' FIND_IN_SET ('$mother','$mother[1]','$mother[2]','$mother[3]','$mother[4]')";
+
 if($me['PE_MotherTongue']!="" && $me['PE_MotherTongue']!="Any")
 {
 $PE_mother=explode(",", $me['PE_MotherTongue']);
@@ -266,7 +265,7 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $count.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$count.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $count.=" Gender='$match_sex' AND ";
 $count.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $count.="
@@ -484,8 +483,12 @@ $count.=" and Education IN($PE_Education_re)";
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -558,7 +561,7 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $count.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$count.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $count.=" Gender='$match_sex' AND ";
 $count.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $count.="
@@ -678,7 +681,7 @@ $count.=" and Education IN($PE_Education_re)";
     	$rec = mysqli_fetch_array(mysqli_query($con,$count));
     	$total = $rec['totalCount'];?>	
 	<?php
-$sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
+$sqlmatch=mysqli_query($con,$match_qry)or svr_db_fail($con);
 			$cnt=0;
 
 	if(mysqli_num_rows($sqlmatch)>0)
@@ -737,7 +740,7 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
                 $waLA = [];
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($fetch['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = "\u{1F194} Profile ID: {$fetch['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$fetch['Age']} years";
                 if (!empty($fetch['Religion'])) $waLA[] = "\u{1F54A} Religion: {$fetch['Religion']}";
@@ -747,7 +750,7 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
                 if (!empty($waHL)) $waLA[] = "\u{1F4CF} Height: $waHL";
                 if (!empty($waLL)) $waLA[] = "\u{1F4CD} Location: $waLL";
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
               ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="display:inline-block;margin-top:5px"><i class="fab fa-whatsapp"></i> Share</a><br>
                                 <ul class="social-links social-icon-colored">
@@ -776,7 +779,7 @@ $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
     <div class="alert alert-info" align="center" role="alert">
   
     <?php 
-      // echo "You have not any Daily Matches.";?> <a href="smart_search">Search Here</a>
+      
      </div>
       </div></div>
 	  </div>

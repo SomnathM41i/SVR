@@ -1,5 +1,5 @@
 <?php ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect1.php');
 $profile_id=$_GET['id'] ?? '';
 $hiddenregstep=mysqli_query($con,"select * from register where MatriID='$profile_id'");
@@ -51,7 +51,7 @@ if ($uploadOk == 0) {
 }
 }
 ?>
-<?php $page_title = 'Upload ID Proof - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'Upload ID Proof - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 function showMyImage12(fileInput) {
