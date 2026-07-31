@@ -1,4 +1,5 @@
-<?php require_once('sys_dbconnection.php'); 
+<?php require_once('sys_dbconnection.php');
+require_once('includes/security.php');
 
 $message="";
 $flag="";
@@ -6,6 +7,14 @@ $matriid=$_SESSION['matriid'];
 $otp=array($_POST['otp'],$_POST['otp1'],$_POST['otp2'],$_POST['otp3'],$_POST['otp4'],$_POST['otp5']);
 
 $ot=implode($otp);
+
+/* SECURITY (H3): CSRF token check - a forged cross-site POST is rejected
+   without touching the normal OTP verification flow. */
+if($ot!=NULL && !empty($ot) && !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : ''))
+{
+	$message="Your session has expired. Please try again";
+	$ot=NULL;
+}
 
 if($ot!=NULL && !empty($ot))
 {
@@ -161,6 +170,7 @@ function isNumber(evt){evt=evt||window.event;var c=evt.which||evt.keyCode;return
           </p>
 
           <form method="post" action="#" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+              <?php echo svr_csrf_field(); ?>
             <div class="digit-group">
               <input type="password" id="digit-1" name="otp" autofocus data-next="digit-2" class="otp" onkeypress="return isNumber(event)" maxlength="1" required>
               <input type="password" id="digit-2" name="otp1" data-next="digit-3" data-previous="digit-1" class="otp" onkeypress="return isNumber(event)" maxlength="1" required>

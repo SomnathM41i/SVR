@@ -1,4 +1,4 @@
-﻿<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../sys_dbconnection.php'); 
 //include('../dbconnectadmin.php');
 $query=mysqli_query($con,"select * from siteconfig  where ID='1'");
 $fetch=mysqli_fetch_array($query);
@@ -85,6 +85,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 	<div class="auth-content">
 		<div class="card">
 		<form action="login_submit.php" method="post">
+			<?php require_once('../includes/security.php'); echo svr_csrf_field(); ?>
 			<div class="row align-items-stretch text-center">
 				<div class="col-md-6 img-card-side">
 				</div>

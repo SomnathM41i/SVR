@@ -4,6 +4,13 @@
 require_once('includes/security.php');
 include('smtp2.php');
 
+/* Security fix (H3): CSRF token check. */
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'
+    || !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    header('location:forgot_password?action=invalidlink');
+    exit;
+}
+
 /* Security fix: limit password-reset requests (H5) - 5 per hour per IP+email. */
 $mememail= isset($_POST['user']) ? trim($_POST['user']) : '';
 if (!svr_throttle('forgot:'.strtolower($mememail).':'.svr_client_ip(), 5, 3600)) {

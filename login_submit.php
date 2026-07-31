@@ -1,8 +1,15 @@
-<?php require_once('sys_dbconnection.php'); 
+<?php require_once('sys_dbconnection.php');
+require_once('includes/security.php');
 /*session_start();
 include'dbconnectadmin.php';
 //error_reporting(0);
 */
+/* SECURITY (H3): CSRF token check - forged cross-site logins are rejected. */
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'
+    || !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    header('Location:login?action=wrong');
+    exit;
+}
 //print_r($_POST); exit;
 /*$myusername = $db->setfilter( $_POST['txtusername'] );
 $mypassword = $db->setfilter( $_POST['txtpassword'] );*/

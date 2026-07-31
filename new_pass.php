@@ -32,8 +32,11 @@ if (!$linkValid) {
 if(isset($_POST['submit']))
 {
 
-/* Security fix (H5): throttle password-reset submissions per IP. */
-if (!svr_throttle('new_pass:'.svr_client_ip(), 10, 600)) {
+/* Security fix (H3): CSRF token check. */
+if (!svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    $msg='Your session has expired. Please retry from the email link.';
+}
+else if (!svr_throttle('new_pass:'.svr_client_ip(), 10, 600)) {
     $msg='Too many attempts. Please try again later.';
 }
 else
@@ -233,7 +236,8 @@ xmlhttp.send();
                         </div>
                     </div>
                   
-             <form method="post" action="#" id="contact-form">			  
+             <form method="post" action="#" id="contact-form">
+               <?php echo svr_csrf_field(); ?>
 			   <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000"><?php echo $msg;?></font></h5>
 					     <div class="row clearfix">
 						 <div class="col-lg-2 col-md-4 col-sm-4">

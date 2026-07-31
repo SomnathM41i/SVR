@@ -289,6 +289,7 @@ xmlhttp.send();
                     ?><h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Your Password Change Successfully</font></h5>
                     <?php } ?>
                             <form method="post" action="login_submit.php" class="form" id="contact-form">
+                              <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
                                 <div class="row clearfix">
 															
 							   <div class="col-lg-12 col-md-12 col-sm-12 form-group" id="emailerror">

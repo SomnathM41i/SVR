@@ -179,6 +179,7 @@ xmlhttp.send();
               
             				  
              <form method="post" action="forgot_password_submit" id="contact-form">
+               <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
 					     <div class="row clearfix">
 						 <div class="col-lg-2 col-md-4 col-sm-4">
 			         </div>

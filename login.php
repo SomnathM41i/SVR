@@ -77,6 +77,7 @@ $page_title = 'Member Login - Shivraj Maratha';
         <?php } ?>
 
         <form method="post" action="login_submit.php">
+          <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
           <div class="login-field">
             <label>Email ID / Username / Mobile No.</label>
             <div class="input-icon-wrap">

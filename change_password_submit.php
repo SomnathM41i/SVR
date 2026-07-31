@@ -1,6 +1,13 @@
-<?php 
+<?php
 /*include 'dbconnectadmin.php';*/
 require_once('sys_dbconnection.php');
+require_once('includes/security.php');
+/* SECURITY (H3): CSRF token check. */
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'
+    || !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
+    header('location:change_pswd?message=error');
+    exit;
+}
 $op = $_POST['txtop'];
 $strop=$op;
 $strid = $_SESSION['MatriID'];

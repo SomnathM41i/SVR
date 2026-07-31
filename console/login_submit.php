@@ -8,7 +8,8 @@ require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEP
      intentionally unchanged (project constraint: no password migration).
    - session id regenerated on successful login (H11). */
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'
+    || !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : '')) {
     header('location:login');
     exit;
 }
