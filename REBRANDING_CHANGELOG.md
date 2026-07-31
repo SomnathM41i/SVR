@@ -101,9 +101,28 @@ e-mail/push URLs (21) · `5abfeb1` brand strings (172) · `8842b9f` head wiring 
   documented; 0 PHP-logic/logic-path changes; toggle behavior untouched.
 - Demo SVG logos/favicons now have **0 references** → R5 retirement list.
 
-## Phase R5 — Emails · PDF/Biodata · API strings · final sweep (planned)
+## Phase R5 — Emails · Print/Biodata · Share text · Final sweep ✅ (awaiting approval)
 
-E-mail template redesign, print/biodata letterhead + watermark, SMS/WhatsApp
-text, API brand strings only, residual old-brand sweep report, optional
-owner-run DB-brand SQL script, old-asset retirement after zero-reference proof,
-final validation + deployment notes.
+**Report:** `REBRAND_PHASE5_FINAL.md` · **Commits:** `481190f..0950a50` (6).
+
+- All **18 transactional email templates** now carry the brand letterhead
+  (cream wrapper, gold divider, burgundy+gold footer with tagline) via anchored
+  string-safe insertions; 18th template (full_profile.php) caught in corrective
+  commit with its page-body collision avoided; one relative letterhead URL
+  absolute-ized.
+- Print/biodata + invoice prints: brand letterhead (print-logo) + faint
+  watermark emblem; styling inline because print_report() rebuilds the DOM
+  without head styles.
+- WhatsApp share text branded on all 16 call sites (32 swaps).
+- Residual sweep: old-name css comments + mock title fixed; neon/old-logo
+  scans = 0; 6 zero-reference DashboardKit demo SVGs retired (git rm, proofs
+  logged); pre-existing 404 stylnew.css typo link removed.
+- `database/rebranding-r5-owner.sql`: optional owner-run DB brand pack
+  (siteconfig/cms/seo only; user content excluded) + open owner decisions.
+- Deliberately untouched (documented): SMS DLT-locked bodies, ops mailbox,
+  webhook token, API JSON contract, DB user content, shivraj-logo.png file.
+- Final state greps: 0 old-brand code references outside the SQL pack's own
+  patterns; quote parity identical on every edited file.
+
+**Rebrand program complete: R1→R5. PR #1 holds everything; merge gate =
+staging checklist in REBRAND_PHASE5_FINAL.md §8.**
