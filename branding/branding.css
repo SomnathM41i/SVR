@@ -210,3 +210,13 @@
 .mpj-text-rose   { color: var(--mpj-rose-dark); }
 .mpj-text-gold   { color: var(--mpj-gold-dark); }
 .mpj-text-muted  { color: var(--mpj-ink-muted); }
+
+/* Footer brand tagline (R3) */
+.mvv-footer-tagline {
+  font-family: var(--mpj-font-accent);
+  font-style: italic;
+  font-size: var(--mpj-fs-16);
+  color: var(--mpj-gold-bright);
+  letter-spacing: .04em;
+  margin-top: 4px;
+}

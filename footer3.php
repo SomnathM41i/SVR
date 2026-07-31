@@ -172,7 +172,7 @@
   width: 34px;
   height: 34px;
   flex-shrink: 0;
-  background: rgba(232,97,42,0.15);
+  background: rgba(201, 85, 106,0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -364,6 +364,7 @@
         <p class="mvv-footer-desc">
           मराठा समाजासाठी एक विश्वसनीय विवाह माध्यम. योग्य नात्यांची सन्मानपूर्वक सुरुवात.
         </p>
+        <p class="mvv-footer-tagline">Rishta Dil Se, Saath Zindagi Bhar</p>
         <span class="mvv-footer-note"><i class="bi bi-shield-check"></i> THIS IS NOT A DATING WEBSITE</span>
         <div class="mvv-footer-social">
           <a class="mvv-social-btn" href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>

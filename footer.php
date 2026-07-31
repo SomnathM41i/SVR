@@ -134,7 +134,7 @@ $row = mysqli_fetch_array($res);
 }
 .footer-contact-icon {
   width: 34px; height: 34px; flex-shrink: 0;
-  background: rgba(232,97,42,0.18);
+  background: rgba(201, 85, 106,0.18);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--saffron-light);
@@ -197,7 +197,7 @@ $row = mysqli_fetch_array($res);
           <img src="branding/logos/emblem.png" alt="Manpasand Jodidar Logo" width="86" height="86">
         </a>
         <div class="footer-brand-name">Manpasand Jodidar</div>
-        <div class="footer-brand-sub">शुभ विवाह • सुयोग्य जीवनसाथी</div>
+        <div class="footer-brand-sub">Rishta Dil Se, Saath Zindagi Bhar</div>
         <p class="footer-desc">
           Manpasand Jodidar is Maharashtra's most trusted matrimonial platform — 
           connecting verified Manpasand Jodidar families with dignity, tradition, and modern convenience.

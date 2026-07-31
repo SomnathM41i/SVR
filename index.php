@@ -100,6 +100,7 @@ include('header3.php');
       <div class="about-copy">
         <span class="section-kicker">Welcome to Manpasand Jodidar</span>
         <h2 class="section-title">मनपसंद जोडीदार वधू वर सूचक केंद्र®</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         <p>छत्रपती शिवाजी महाराजांच्या पदस्पर्शाने पावन झालेल्या व मराठ्यांची राजधानी असलेल्या सातारा जिल्ह्यामधे हेड ऑफिस असून गेल्या अनेक वर्षांपासून मराठा समाजातील वधु - वरांचे विवाह जमवणारी देशातील एक विश्वसनीय विवाह माध्यम म्हणून आम्ही काम करत आलेलो आहे.</p>
         <p>आपल्या विवाह केंद्रामध्ये फक्त मराठा समाजातील मुला व मुलींचीच नावे नोंद केली जातात. त्यामध्ये प्रथम वधु व वर, तसेच घटस्फोटित, विधवा, विधुर व अपंग स्थळांची नोंदणी केली जाते.</p>
         <div class="feature-row">
@@ -130,6 +131,7 @@ include('header3.php');
         <div>
           <span class="section-kicker">Simple & transparent</span>
           <h2 class="section-title">Our Process</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         </div>
         <p class="section-intro">Your journey from registration to finding the right match—made simple in four clear steps.</p>
       </div>
@@ -149,6 +151,7 @@ include('header3.php');
         <div>
           <span class="section-kicker">Words from our families</span>
           <h2 class="section-title">Testimonials</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         </div>
       </div>
       <div class="testimonial-grid reveal">
@@ -186,6 +189,7 @@ include('header3.php');
       <div>
         <span class="section-kicker">We're here to help</span>
         <h2 class="section-title">Get a Call Back</h2>
+          <span class="mpj-divider mpj-divider--left" role="presentation"></span>
         <p class="section-intro">If you need to speak to us about a general query, fill in the form and we will call you back within the same working day.</p>
         <div class="contact-points">
           <div class="contact-point"><b>Call us</b><span>+91 94035 50087</span></div>

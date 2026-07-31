@@ -95,8 +95,10 @@ if ($id === '' && $login && $regvar != '9') {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- MPJ Brand Tokens & Utilities -->
+<link rel="stylesheet" href="branding/branding.css">
 
 <style>
 /* =============================================
@@ -624,7 +626,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
 .contact-form .form-group select:focus {
   border-color: var(--mvv-gold, #BA9350);
   outline: none;
-  box-shadow: 0 0 0 4px rgba(212,164,55,0.13);
+  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.13);
 }
 
 /* ─── RESPONSIVE ─── */
@@ -701,7 +703,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   .mvv-nav > a:not(.mvv-nav-btn)::after,
   .mvv-nav-dropdown > button::after { display: none; }
   .mvv-nav > a:not(.mvv-nav-btn).active {
-    background: rgba(232,97,42,0.08);
+    background: rgba(201, 85, 106,0.08);
     border-radius: 8px;
     color: var(--mvv-saffron);
   }
@@ -853,7 +855,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
     border-bottom-color: var(--mvv-line) !important;
   }
   .mvv-navbar-outer .mvv-nav > a:not(.mvv-nav-btn).active {
-    background: rgba(232, 97, 42, 0.08) !important;
+    background: rgba(201, 85, 106, 0.08) !important;
     color: var(--mvv-saffron) !important;
   }
   .mvv-navbar-outer .mvv-nav-actions { border-top-color: var(--mvv-line) !important; }
@@ -968,7 +970,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   overflow: hidden;
   color: var(--mvv-ink) !important;
   background:
-    radial-gradient(circle at 80% 30%, rgba(232, 97, 42, 0.14), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(201, 85, 106, 0.14), transparent 30%),
     var(--mvv-cream) !important;
   border-bottom: 1px solid var(--mvv-line);
 }
