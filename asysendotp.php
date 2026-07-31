@@ -4,7 +4,7 @@
 // ini_set('display_startup_errors', 1);
 
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('includes/security.php');
 $siteinfo = $db->get_siteconfig();
 

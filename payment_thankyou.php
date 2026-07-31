@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 
 // Grab success data set in payment_success.php

@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');   
+<?php require_once('../includes/bootstrap.php');   
 $id=$_GET['matriid'];
 
 include('protect.php');

@@ -1,6 +1,6 @@
 <?php
 if (!isset($con)) {
-    require_once('../sys_dbconnection.php');
+    require_once('../includes/bootstrap.php');
 }
 include_once('protect.php');
 require_once(__DIR__ . '/../agent_commission_lib.php');

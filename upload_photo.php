@@ -1,5 +1,5 @@
 <?php ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect1.php');
 
 $profile_id=$_GET['id'];

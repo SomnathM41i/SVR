@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 error_reporting(0);
 $id = $_POST['rowid'];
 $configdata1 = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or svr_db_fail($con); 

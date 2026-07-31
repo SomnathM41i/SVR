@@ -1,5 +1,5 @@
 <?php 
-require_once('../sys_dbconnection.php');
+require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
 //AFTER ONCLICK OF SUBMIT BTN
 if( isset( $_POST['submit'] ) )

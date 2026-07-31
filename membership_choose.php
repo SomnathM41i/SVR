@@ -3,7 +3,7 @@
 // ini_set('display_errors', 1);
 // error_reporting(-1);
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 
 $matriid = $_SESSION['MatriID'];

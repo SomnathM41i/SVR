@@ -1,6 +1,6 @@
 <?php  include("protect.php"); 
 
-require_once('sys_dbconnection.php'); 
+require_once('includes/bootstrap.php'); 
 $photoid=$_GET['photoid']; 
  $strid=$_GET['matid']; 
 

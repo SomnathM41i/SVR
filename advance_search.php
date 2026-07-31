@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 $strid = $_SESSION['matriid'];
 $check=mysqli_query($con,"select * from register where MatriID='$strid'");

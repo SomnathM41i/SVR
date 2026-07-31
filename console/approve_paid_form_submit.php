@@ -9,7 +9,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
-require_once('../sys_dbconnection.php');   
+require_once('../includes/bootstrap.php');   
 include('protect.php');
 include_once('agent_common.php');
 

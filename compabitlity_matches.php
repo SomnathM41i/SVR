@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('includes/partner_match.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');

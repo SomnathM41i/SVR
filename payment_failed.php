@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 
 $error   = htmlspecialchars($_GET['error'] ?? 'Your payment could not be processed.');

@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $allowedGenders = ['Male', 'Female'];
 $allowedStatuses = ['Unmarried', 'Divorced'];

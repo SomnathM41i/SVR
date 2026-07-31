@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 
 $strid=$_SESSION['matriid'];
 $matriid=$_SESSION['tempid'];

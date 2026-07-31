@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 
 include('memprotect.php');
 mysqli_query($con,"delete from basic_saveandsearch where id='".$_GET['id']."'");

@@ -1,4 +1,4 @@
- <?php require_once('sys_dbconnection.php');
+ <?php require_once('includes/bootstrap.php');
  
  		$day=$_GET['q'];
 		if($day=='1'||$day=='3'||$day=='5'||$day=='7'||$day=='8'||$day=='10'||$day=='12')

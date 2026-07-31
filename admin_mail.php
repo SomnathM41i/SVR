@@ -4,7 +4,7 @@
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $strid   = $_SESSION['matriid'];
 $matriid = $_SESSION['tempid'];

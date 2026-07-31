@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 //include_once('siteconfig');
 //include_once('dbconnectadmin.php');
 include_once('memprotect.php');

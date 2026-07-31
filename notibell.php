@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 $matri=$_SESSION['MatriID'];
 
 $s1=mysqli_query($con,"select * from usernote where MatriID='$matri'");

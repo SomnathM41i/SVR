@@ -1,4 +1,4 @@
-<?php include('sys_dbconnection.php');
+<?php include('includes/bootstrap.php');
 include_once('memprotect.php');?>
 <?php include_once('siteconfig.php');
 /* Legacy Razorpay "buy contact details" checkout page.

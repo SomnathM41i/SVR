@@ -1,5 +1,5 @@
                     
-<?php require_once('sys_dbconnection.php'); 
+<?php require_once('includes/bootstrap.php'); 
 
 $matriid=$_POST['matid'];
 

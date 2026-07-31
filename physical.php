@@ -1,5 +1,5 @@
 <?php include('dbconnectadmin.php');
-include('sys_dbconnection.php');
+include('includes/bootstrap.php');
 
 ?>
 <!DOCTYPE html>

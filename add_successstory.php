@@ -2,7 +2,7 @@
 
     error_reporting(0);
     include('protect.php'); 
-    require_once('sys_dbconnection.php');
+    require_once('includes/bootstrap.php');
     
     if(isset($_POST['upload']))
     {

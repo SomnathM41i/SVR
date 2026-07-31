@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('includes/partner_match.php');
 require_once('includes/annual_income.php');
 error_reporting(0);

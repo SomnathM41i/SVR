@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 
 /* SECURITY: member login required (memprotect); a member may only delete

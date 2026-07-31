@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
   
   $result=mysqli_query($con,"select * from siteconfig where ID='1'");

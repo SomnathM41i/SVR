@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect1.php');
 $login=$_SESSION['MatriID'] ?? null;
 $mid=$_GET['id'] ?? null;

@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 require_once('includes/security.php');
 
 /* SECURITY (H3): CSRF token check - forged cross-site logins are rejected. */

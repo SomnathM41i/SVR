@@ -1,5 +1,5 @@
 <?php 
-    require_once('../sys_dbconnection.php');
+    require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
     $id = base64_decode(urldecode(isset($_REQUEST['id']) ? $_REQUEST['id'] : '') );
     /* SECURITY (H1): prepared statement instead of raw interpolation. */

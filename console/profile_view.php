@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 require_once('../includes/annual_income.php');
 include('protect.php');
 /*include('../dbconnectadmin.php');*/

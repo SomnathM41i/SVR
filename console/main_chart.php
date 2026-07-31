@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
   
   $que = "SELECT COUNT(Name) FROM register where MONTH(Regdate) = 1 && YEAR(Regdate) = 2021 ";

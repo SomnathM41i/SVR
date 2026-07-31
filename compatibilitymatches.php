@@ -1,5 +1,5 @@
 <?php include_once('siteconfig.php');
-require_once('sys_dbconnection.php');?>
+require_once('includes/bootstrap.php');?>
 <?php include_once('memprotect.php');
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 

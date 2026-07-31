@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 
 $query=mysqli_query($con,"select * from siteconfig  where ID='1'");
 $fetch=mysqli_fetch_array($query);

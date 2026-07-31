@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $qry="select * from cms where cms_id='21'";
 $result=mysqli_query($con,$qry);
 $res=mysqli_fetch_array($result);

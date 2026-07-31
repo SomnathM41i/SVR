@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 
 $result=mysqli_query($con,"SELECT * FROM cms where cms_id='9'");

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $data_config = $db->get_siteconfig();
 $domain_name = $data_config -> WebFriendlyname;
 $siteinfo = $data_config -> Webname;

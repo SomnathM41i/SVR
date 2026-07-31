@@ -1,4 +1,4 @@
-<?php  require_once('../sys_dbconnection.php');
+<?php  require_once('../includes/bootstrap.php');
 include('protect.php');
     
     $sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and a.Photo1Approve='No'  order by id desc"); 

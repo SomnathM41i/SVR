@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('memprotect.php');
 $id = $_SESSION['matriid'];
 $res12 = mysqli_query($con, "SELECT * FROM usernote where MatriID='$id' order by id DESC");

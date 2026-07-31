@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('agent_commission_lib.php');
 $sql = mysqli_query($con,"SELECT ConfirmEmail FROM register where ConfirmEmail='".$_SESSION['emailtemp']."'");
 

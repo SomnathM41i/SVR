@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 // Do not render a login form with authenticated navigation. This can also
 // recover members who reached login?action=wrong through an old completion URL.

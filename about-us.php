@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $page_title = 'About Us - Shivraj Maratha';
 $qry1 = "SELECT * FROM cms WHERE link ='aboutus'";
 $result = mysqli_query($con, $qry1);

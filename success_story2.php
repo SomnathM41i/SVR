@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php'); 
+<?php require_once('includes/bootstrap.php'); 
 $limit = 6; 
  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;

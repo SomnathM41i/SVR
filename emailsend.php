@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $contact=mysqli_query($con,"select * from cms where cms_id='9'");
 $contactfetch=mysqli_fetch_array($contact);

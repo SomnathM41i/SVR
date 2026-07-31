@@ -1,5 +1,5 @@
 <?php 
-    require_once('sys_dbconnection.php');
+    require_once('includes/bootstrap.php');
 	
 	$qry1 = "SELECT * FROM cms WHERE link ='terms and conditions'";
 	$result=mysqli_query($con,$qry1)or svr_db_fail($con);

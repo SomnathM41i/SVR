@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 //fetch_second_level_category.php
 
 if(isset($_POST["selected"]))

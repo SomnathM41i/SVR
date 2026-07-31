@@ -1,6 +1,6 @@
 <?php
 require_once 'fcm_functions.php';
-require_once '../sys_dbconnection.php'; // adjust path if needed
+require_once'../includes/bootstrap.php'; // adjust path if needed
 
 $deviceToken = "DEVICE_FCM_TOKEN"; // fetch from DB
 $accessToken = getAccessToken('firebase/firebase-service-account.json');

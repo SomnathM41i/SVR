@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 $smLogo = 'css3/assets/shivraj-logo.png';
 $smLogoLocal = 'css3/assets/shivraj-logo.png';
 $currentHeaderPage = pathinfo($_SERVER['SCRIPT_NAME'] ?? '', PATHINFO_FILENAME);

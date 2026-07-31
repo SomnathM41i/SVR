@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php'); 
+<?php require_once('../includes/bootstrap.php'); 
 require_once(dirname(__FILE__).'/protect.php');
 error_reporting(0);
 $result=mysqli_query($con,"select * from register where Gender='Male' and TIMESTAMPDIFF(minute,LastLogin,NOW())<5  order by ID desc");

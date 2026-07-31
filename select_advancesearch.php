@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 
 $ry=mysqli_query($con,"select * from advance_saveandsearch where id='".$_GET['id']."'");     
 

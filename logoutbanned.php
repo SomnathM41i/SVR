@@ -1,4 +1,4 @@
- <?php  require_once('sys_dbconnection.php');
+ <?php  require_once('includes/bootstrap.php');
 error_reporting(0);
 $MatriID = $_SESSION['MatriID'];
 $checkquery="SELECT * FROM register WHERE MatriID='$MatriID'";

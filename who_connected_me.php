@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');
+<?php require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 $limit = 8;
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };

@@ -1,6 +1,6 @@
 <?php  
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $configdata = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or svr_db_fail($con); 
 $siteinfo= mysqli_fetch_array($configdata); 
 if(isset($_SESSION['matri_login']))

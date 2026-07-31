@@ -1,6 +1,6 @@
 <?php  
 
-require_once('../sys_dbconnection.php');
+require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
 $facebook=$_POST['facebook'];
 $twitter=$_POST['twitter'];

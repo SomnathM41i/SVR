@@ -1,6 +1,6 @@
 <?php  
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $login=$_SESSION['MatriID']; //or sender id
 $searchid=$_GET['id'];
 

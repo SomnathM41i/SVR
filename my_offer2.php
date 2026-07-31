@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $strid = $_SESSION['MatriID'];
 $result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or svr_db_fail($con);
 $record = mysqli_fetch_array($result); 

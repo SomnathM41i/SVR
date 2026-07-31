@@ -1,5 +1,5 @@
 <?php 
-	require_once('sys_dbconnection.php');
+	require_once('includes/bootstrap.php');
 	$id = $_REQUEST['id'];
 	$flag = $_REQUEST['flag'];
 	$status_query = mysqli_query($con,"SELECT * FROM recommendation WHERE id='$id'");

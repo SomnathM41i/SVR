@@ -1,5 +1,5 @@
 <?php include_once('siteconfig.php');?>
-<?php require_once('sys_dbconnection.php');?>
+<?php require_once('includes/bootstrap.php');?>
 <?php include_once('memprotect.php');
 
 error_reporting(0);

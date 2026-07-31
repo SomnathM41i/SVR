@@ -1,4 +1,4 @@
-<?php include('sys_dbconnection.php');
+<?php include('includes/bootstrap.php');
 require_once('includes/security.php');
 
 /* contact_paid_success.php — AJAX completion handler for the legacy

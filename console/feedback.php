@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
 
 $result=$con->query("select *,date_format(Date,'%d-%m-%Y') as Date from feedback  ORDER BY Date DESC");

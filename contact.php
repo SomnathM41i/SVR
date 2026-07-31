@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $ID=$_GET['id'] ?? '';
 $register=mysqli_query($con,"select * from register where MatriID='$ID'");

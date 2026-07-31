@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'security.php');
 
 /* SECURITY hardening of the admin login:

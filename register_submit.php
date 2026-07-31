@@ -2,7 +2,7 @@
 
 
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('auto_approve.php');
 
 

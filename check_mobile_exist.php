@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 
 $strcm = trim(strip_tags($_GET['q']));
 

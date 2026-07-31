@@ -1,4 +1,4 @@
-<?php  require_once('../sys_dbconnection.php'); 
+<?php  require_once('../includes/bootstrap.php'); 
 /*include_once('../dbconnectadmin.php');*/
 include('protect.php');
 $ID=$_POST['ID'];

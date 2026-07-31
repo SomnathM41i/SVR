@@ -1,5 +1,5 @@
 <?php 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('agent_commission_lib.php');
 
 $login=$_SESSION['MatriID'] ?? null;

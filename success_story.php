@@ -1,5 +1,5 @@
 <?php
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $limit = 6;
 $page = isset($_GET["page"]) ? max(1, (int)$_GET["page"]) : 1;
 $start_from = ($page - 1) * $limit;

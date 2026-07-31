@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 require_once(dirname(__FILE__).'/protect.php');
 /* SECURITY: admin-only now (C4) and uses a prepared statement (H1).
    Previously any unauthenticated visitor could run an UPDATE with raw

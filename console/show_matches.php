@@ -1,4 +1,4 @@
-<?php require_once('../sys_dbconnection.php');
+<?php require_once('../includes/bootstrap.php');
 include('protect.php'); 
 //CHECKING PROFILE ID
 if($_REQUEST['flag'] == 1)

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 

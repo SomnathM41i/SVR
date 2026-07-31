@@ -3,7 +3,7 @@ svr_cron_guard(); /* SECURITY (H6): cron endpoint now guarded (CLI always allowe
 <title>Birthday wish</title>
 <?php 
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('smtp2.php'); 
 
 date_default_timezone_set('Asia/Kolkata');

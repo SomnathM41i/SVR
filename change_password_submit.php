@@ -1,6 +1,6 @@
 <?php
 
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 require_once('includes/security.php');
 /* SECURITY (H3): CSRF token check. */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST'

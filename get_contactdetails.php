@@ -21,7 +21,7 @@ a{
 <div class="tab" id="tab-3">
 	      <?php   
 				        
-                        require_once('sys_dbconnection.php'); 
+                        require_once('includes/bootstrap.php'); 
 					    $login=$_SESSION['MatriID']; //or sender id	
 						$searchid=base64_decode( urldecode($_GET['id']) );
 						$searchid=base64_decode( urldecode($_GET['id']) );

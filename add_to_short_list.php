@@ -1,7 +1,7 @@
 <?php  
  include_once('siteconfig.php');
  
- require_once('sys_dbconnection.php');?>
+ require_once('includes/bootstrap.php');?>
 <?php  include_once('memprotect.php');
 
 $strid=$_SESSION['matri_login']; //or sender id

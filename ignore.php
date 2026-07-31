@@ -1,7 +1,7 @@
 <?php 
 /*session_start();
 include("dbconnectadmin.php");*/
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 $strid=$_SESSION['matri_login']; //or sender id
 $searchid=$_GET['id'];
 $idurl=base64_decode($_GET['id']);

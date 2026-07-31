@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-require_once('sys_dbconnection.php');
+require_once('includes/bootstrap.php');
 include('register_submit.php');
 ?>
 <?php $page_title = 'Free Register - Shivraj Maratha'; include('header3.php'); ?>
