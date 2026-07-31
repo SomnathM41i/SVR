@@ -1,5 +1,5 @@
 <?php
-$pageTitle = $pageTitle ?? 'Manpasand Jodidar - Vadhu Var Suchak Kendra';
+$pageTitle = $pageTitle ?? 'Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar';
 $activePage = $activePage ?? '';
 require_once __DIR__ . '/data.php';
 function active(string $name, string $current): string { return $name === $current ? ' active' : ''; }
