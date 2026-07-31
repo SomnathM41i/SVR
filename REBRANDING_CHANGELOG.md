@@ -79,9 +79,27 @@ e-mail/push URLs (21) · `5abfeb1` brand strings (172) · `8842b9f` head wiring 
 
 ---
 
-## Phase R4 — Admin console + agent panel skin (planned)
+## Phase R4 — Admin console + agent panel skin ✅ (awaiting approval)
 
-Console login/sidebar/topbar/tables/forms + agent panel; CSS + brand assets only.
+**Report:** `REBRAND_PHASE4_ADMIN.md` · **Commits:** `c48c413..481190f` (6).
+
+- DashboardKit theme converted to brand: indigo `#7267EF` → maroon `#7A1F39`,
+  slate chrome `#1c232f`/`#293240` → burgundy `#3D0C19`/plum `#43303A`
+  (981 exact swaps; mechanism: theme's own `.bg-dark`/`.topbar` rules flip the
+  global chrome). Tints, rgba alphas, data-URI checkbox marks, dark-theme css,
+  unused demo layouts all included; neon stragglers eliminated console-wide.
+- New additive `console/assets/css/mpj-brand.css` (gold chrome hairlines,
+  emblem medallion ring, auth gold strip) wired into **134/134** theme pages,
+  one `<link>` each, all proven outside PHP regions.
+- 11 console pages' inline "premium" palettes + `#007bff` buttons → brand
+  tokens; agent panel fully skinned (gradient chrome, serif titles, Poppins);
+  both login screens polished (burgundy veil, gold strip, serif welcome).
+- Customizer logo-swap JS (47 pages) can no longer drop in the old vendor
+  logo; dashboard **chart palettes** (8 js configs + 3 pages) indigo/blue →
+  maroon/rose/gold; icons8 URL color params follow.
+- Held: semantic status colors, vendor lib internals, 404-typo stylesheet
+  documented; 0 PHP-logic/logic-path changes; toggle behavior untouched.
+- Demo SVG logos/favicons now have **0 references** → R5 retirement list.
 
 ## Phase R5 — Emails · PDF/Biodata · API strings · final sweep (planned)
 
