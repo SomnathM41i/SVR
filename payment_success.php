@@ -10,7 +10,9 @@ require_once('sys_dbconnection.php');
 require_once('agent_commission_lib.php');
 include('memprotect.php');
 
-define('RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'); // ← Same secret as order_review.php
+/* Secret now resolves from env/config with the previous value kept only as a
+   legacy fallback (see config.php) — SECURITY: removes hard-coded secret. */
+define('RZP_KEY_SECRET', svr_config('SVR_RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'));
 
 // ── Guard ─────────────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

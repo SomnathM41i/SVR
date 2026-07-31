@@ -24,9 +24,9 @@ $plan_row = mysqli_fetch_array($plan);
 $data_config = $db->get_siteconfig();
 //$pay_on_off  = $data_config->is_pay_gateway_set;
 $pay_on_off = 1;
-// Razorpay Keys
-define('RZP_KEY_ID',     'rzp_live_SjeGNwfy1DxQuC');  // ← Your Razorpay Key ID
-define('RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1');    // ← Your Razorpay Key Secret
+// Razorpay Keys — now resolve from env/config with legacy fallbacks (SECURITY)
+define('RZP_KEY_ID',     svr_config('SVR_RZP_KEY_ID', 'rzp_live_SjeGNwfy1DxQuC'));
+define('RZP_KEY_SECRET', svr_config('SVR_RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'));
 
 // Generate unique order/transaction ID
 $strinv     = "MAT";
