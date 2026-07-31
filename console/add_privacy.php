@@ -2,14 +2,13 @@
 require_once(dirname(__FILE__).'/protect.php');
   
   
+require_once(dirname(__FILE__).'/inc/console_lib.php');
   error_reporting(0);
 ?>
 <?php if(isset($_POST['submit']))
                                     {
                                        
-                                       $content = $db->setfilter($_POST["Message"]);
-                                        $upd_about ="update cms set content = '$content' where cms_id='3'";
-                                        mysqli_query($con,$upd_about);
+                                       svr_console_cms_save_content($con, $db, '3');
                                         
                     
              } ?>
