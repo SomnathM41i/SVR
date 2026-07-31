@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
     else
     {
         $q="insert into residency_status(residency_status,status) values('$residency_status','enable')";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
              $msg="New Residency Status Field added Successfully!!";
@@ -53,7 +53,7 @@ if(isset($_POST['Update']))
         //echo "ERROR.";
         $q="update residency_status set residency_status='$residency_status' where id='$id'";
         //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
              $msg="Residency Status Field Updated Successfully!!";

@@ -11,13 +11,13 @@ $matriid = $_SESSION['MatriID'];
 // Fetch member info
 $matriid_safe = mysqli_real_escape_string($con, $matriid);
 $result = mysqli_query($con, "SELECT * FROM register WHERE MatriID = '$matriid_safe'")
-    or die(mysqli_error($con));
+    or svr_db_fail($con);
 $record = mysqli_fetch_array($result);
 
 // Fetch plan info
 $strplanid = mysqli_real_escape_string($con, $_POST['choose'] ?? '');
 $plan = mysqli_query($con, "SELECT * FROM membershipplan WHERE planid = '$strplanid'")
-    or die(mysqli_error($con));
+    or svr_db_fail($con);
 $plan_row = mysqli_fetch_array($plan);
 
 // Check payment gateway status

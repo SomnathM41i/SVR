@@ -1,7 +1,7 @@
 <?php require_once('sys_dbconnection.php');
 	
 	$qry1 = "SELECT * FROM cms WHERE link ='aboutus'";
-	$result=mysqli_query($con,$qry1)or die(mysqli_error());
+	$result=mysqli_query($con,$qry1)or svr_db_fail($con);
 	$row = mysqli_fetch_array($result);
 	$txt = $row['content'];
 	$sqldata=mysqli_query($con,"select * from siteconfig");

@@ -3,7 +3,7 @@ require_once(dirname(__FILE__).'/protect.php');
 	/*include '../dbconnectadmin.php';
 	*/
   //MALE MEMBER
-  $relsql=$con->query("select * from caste")or die(mysqli_error($con)  );
+  $relsql=$con->query("select * from caste")or svr_db_fail($con);
   
      
 
@@ -23,7 +23,7 @@ require_once(dirname(__FILE__).'/protect.php');
             while($relrow = $relsql->fetch_assoc())
             {
               $caste=$relrow['Caste'];
-              $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste'") or die(mysqli_error($con) );
+              $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste'") or svr_db_fail($con);
               //$groom=0;
               if($groomrow=$groomsql->fetch_assoc())
               {

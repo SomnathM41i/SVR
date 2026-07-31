@@ -7,7 +7,7 @@
 //$sender = $_GET['id2'];
 $sender = $_GET['id'];//other person
 $login=$_SESSION['MatriID'];//receiver
-$res = mysqli_query($con,"update expressinterest set status='Accept' where eireceiver='$login' AND eisender='$sender'")or die(mysqli_error());
+$res = mysqli_query($con,"update expressinterest set status='Accept' where eireceiver='$login' AND eisender='$sender'")or svr_db_fail($con);
 
 /* accept interest email sending */
  $sql=mysqli_query($con,"select * from  register WHERE MatriID='$sender' ");//receiver

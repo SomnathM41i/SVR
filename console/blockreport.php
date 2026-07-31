@@ -29,14 +29,14 @@ include('protect.php');
         </thead>
         <tbody>
          <?php 
-			$blocksql2=$con->query("select * from block_member")or die(mysqli_error($con)	);
+			$blocksql2=$con->query("select * from block_member")or svr_db_fail($con);
  
 										
 				while($blockrow2 = $blocksql2->fetch_assoc())
 				{
 					$profile_id=$blockrow2['profile_id'];
 				  // $_SESSION['id']=$blockrow2['profile_id'];
-				$blocksql3=$con->query("select * from register where MatriID='$profile_id'")or die(mysqli_error($con)	);
+				$blocksql3=$con->query("select * from register where MatriID='$profile_id'")or svr_db_fail($con);
                    $block3=0;
 							if($blockrow3=$blocksql3->fetch_assoc())
 							{

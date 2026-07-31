@@ -62,7 +62,7 @@ if ($size > $max_size) {
 if (move_uploaded_file($tmp, $target_file)) {
     
     mysqli_query($con, "UPDATE register SET Photo1='$sav' WHERE MatriID='$matriId'");
-    mysqli_query($con, "INSERT INTO gallary(photo_name, matri_id) VALUES('$sav', '$matriId')") or die(mysqli_error($con));
+    mysqli_query($con, "INSERT INTO gallary(photo_name, matri_id) VALUES('$sav', '$matriId')") or svr_db_fail($con);
 
     echo json_encode([
         "status" => "success",

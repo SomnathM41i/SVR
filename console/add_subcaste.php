@@ -32,7 +32,7 @@ $msg="";
         $q="insert into subcaste(subcast,caste,religion,status) values('$subcaste','$caste','$religion','enable')";
         //echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
         //exit;
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
                 $msg="Subcaste added Successfully!!";
@@ -61,7 +61,7 @@ if(isset($_POST['Update']))
   {   
      //if($state==""){echo "State empty";}else{ echo $state;}
     $q="update subcaste set subcast='$subcaste' where id='$id'";
-    $rs=mysqli_query($con,$q) or die(mysqli_error());
+    $rs=mysqli_query($con,$q) or svr_db_fail($con);
     if($rs>0)
     {
       $msg="Subcaste Updated Successfully!!";

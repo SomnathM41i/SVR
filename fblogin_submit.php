@@ -20,7 +20,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		$sql=" select * from register where facebook_id='$id' ";
 		echo " select * from register where facebook_id='$id' ";
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where facebook_id='$id'");
 		$fetchotp1=mysqli_fetch_array($sql1);

@@ -8,7 +8,7 @@ $id = $_SESSION['matriid'];
 $reason = mysqli_real_escape_string($con,$_POST['reason']);
 $type = $_POST['type'];
 
-$qry= mysqli_query($con,"insert into delete_request(matriid,reason,reason_type) values('$id','$reason','$type')")or die(mysqli_error($con));
+$qry= mysqli_query($con,"insert into delete_request(matriid,reason,reason_type) values('$id','$reason','$type')")or svr_db_fail($con);
 //echo "insert into delete_request(matriid,reason,reason_type) values('$id','$reason','$type')";
 //exit;
 

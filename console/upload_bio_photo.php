@@ -131,9 +131,9 @@ $photo = ' ';
                                 {
 
                                     echo "insert into recommendation(MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')";
-                                    mysqli_query($con,"insert into recommendation(MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or die(mysqli_error());
+                                    mysqli_query($con,"insert into recommendation(MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
                                      header("location: view_recommendation?id=".$MatriID);
-                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or die(mysqli_error());
+                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
                                     define("success3","Your Photo Uploaded Successfully.");
                                     header("location: view_recommendation?id=".$MatriID);*/
                                 }
@@ -236,7 +236,7 @@ $photo = ' ';
                                     echo "insert into recommendation(  MatriID,description,photo,date) values('$MatriID','$desc','$sav','$date')";
                                     mysqli_query($con,"insert into recommendation(MatriID,description,photo,date) values('$MatriID','$desc','$sav','$date')");
                                      header("location: view_recommendation?id=".$MatriID);
-                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or die(mysqli_error());
+                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
                                     define("success3","Your Photo Uploaded Successfully.");
                                     header("location: view_recommendation?id=".$MatriID);*/
                                 }

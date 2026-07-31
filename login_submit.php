@@ -57,7 +57,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		/*echo "1".'<BR>';*/
 		$sql="select * from register where MatriID='$myusername' and ConfirmPassword='$var'";
-		$rs = mysqli_query($con,$sql) or die(mysqli_error());
+		$rs = mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp = mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where MatriID='$myusername' and ConfirmPassword='$var'");
 		$fetchotp1=mysqli_fetch_array($sql1);
@@ -68,7 +68,7 @@ while($row=mysqli_fetch_array($sql1))
 		/*echo "2".'<BR>';*/
 		$sql="select * from register where ConfirmEmail='$myusername' and ConfirmPassword='$var'";
 		/*echo "select * from register where ConfirmEmail='$myusername' and ConfirmPassword='$var'"."<BR>";*/
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where ConfirmEmail='$myusername' and ConfirmPassword='$var'");
 		$fetchotp1=mysqli_fetch_array($sql1);
@@ -78,7 +78,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		/*echo "3".'<BR>';*/
 		$sql="select * from register where ConfirmEmail='$myusername' and ConfirmPassword='$mypassword'";
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where ConfirmEmail='$myusername' and ConfirmPassword='$mypassword'");
 		$fetchotp1=mysqli_fetch_array($sql1);
@@ -88,7 +88,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		/*echo "4".'<BR>';*/
 		$sql="select * from register where MatriID='$myusername' and ConfirmPassword='$mypassword'";
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where  MatriID='$myusername' and ConfirmPassword='$mypassword' ");
 		$fetchotp1=mysqli_fetch_array($sql1);
@@ -98,7 +98,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		/*echo "5".'<BR>';*/
 		$sql="select * from register where Mobile='$myusername' and ConfirmPassword='$var'";
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where  Mobile='$myusername' and ConfirmPassword='$var'");
 		$fetchotp1=mysqli_fetch_array($sql1);
@@ -108,7 +108,7 @@ while($row=mysqli_fetch_array($sql1))
 	{
 		/*echo "6".'<BR>';*/
 		$sql="select * from register where Mobile='$myusername' and ConfirmPassword='$mypassword'";
-		$rs=mysqli_query($con,$sql) or die(mysqli_error());
+		$rs=mysqli_query($con,$sql) or svr_db_fail($con);
 		$fetchotp=mysqli_fetch_assoc($rs);
 		$sql1=mysqli_query($con,"select  COUNT(*) from register where Mobile='$myusername' and ConfirmPassword='$mypassword'");
 		$fetchotp1 = mysqli_fetch_array($sql1);

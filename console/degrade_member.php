@@ -4,7 +4,7 @@ require_once(dirname(__FILE__).'/protect.php');
 $id=$_GET['matriid'];
 
 $con->query("update register set Status='Active' , memtype='Free', Noofcontacts='0',  MemshipExpiryDate='' where MatriID='$id' ")
-or die(mysqli_error($con));
+or svr_db_fail($con);
 echo "update register set Status='Active' , memtype='Free', Noofcontacts='0',  MemshipExpiryDate='' where MatriID='$id' ";
 $sql=$con->query("SELECT * FROM  paiddetails WHERE Pmatriid ='$id' ORDER BY Paidid DESC");
 

@@ -34,7 +34,7 @@ if($ot!=NULL && !empty($ot))
 					$lastid=mysqli_insert_id($con);
 					mysqli_query($con,$_SESSION['querystr2']);
 				    $sql = "SELECT MAX(id) AS max from register";
-					$result = mysqli_query($con,$sql) or die(mysqli_error());
+					$result = mysqli_query($con,$sql) or svr_db_fail($con);
 					$row = mysqli_fetch_assoc($result);
 
 					$RID = $lastid;
@@ -85,11 +85,11 @@ if($ot!=NULL && !empty($ot))
 			    {
 				    $rand2=rand(11111,99999);
 				    $mid=$rowpre['prefix'].$rand2; 
-				    mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
+				    mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
 				}
 				else
 				{
-   					mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
+   					mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
 	  			}
 				
 				$_SESSION['tempid']=$mid;

@@ -2,7 +2,7 @@
 require_once('sys_dbconnection.php');
 error_reporting(0);
 $id = $_POST['rowid'];
-$configdata1 = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or die(mysql_error()); 
+$configdata1 = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or svr_db_fail($con); 
 $siteinfo1= mysqli_fetch_array($configdata1); 
 $mid=$_SESSION['matriid'];
 $sqldata=mysqli_query($con,"select * from paiddetails where Pmatriid='$mid' and Paidid='$id'");

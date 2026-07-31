@@ -102,7 +102,7 @@ $me=mysqli_fetch_array($fetchphoto);
 	        } 
 	// check already viewed
 		
-	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or die(mysql_error());
+	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or svr_db_fail($con);
 		
 
 	if(mysqli_num_rows($profile_views)==0)
@@ -617,7 +617,7 @@ $me=mysqli_fetch_array($fetchphoto);
 						<button type="button" class="btnss btn-info imgsm " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  ><i class="fa fa-chevron-down " style="content:#f078;color: #ffa600;" aria-hidden="true"></i>
 						</button> 
 		          <div class="dropdown-menu dropdownimg ">
-					<?php  $short=mysqli_query($con,"select * from shortlist_profile where mat_id='$login' AND profile_id='$search_id'")or die(mysqli_error());
+					<?php  $short=mysqli_query($con,"select * from shortlist_profile where mat_id='$login' AND profile_id='$search_id'")or svr_db_fail($con);
 					if(mysqli_num_rows($short)>0) { ?>				  
                     <a class="dropdown-item" href="#"> Profile Shortlisted</a>	
 				    <?php } else  { ?>

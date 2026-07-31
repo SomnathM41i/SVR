@@ -442,8 +442,8 @@ header('location:education?id='.$ID);
                                <option value="">District</option>
                             <?php if($row['State']!=""){ ?>
                     <?php 
-			  $rrs=mysql_query("select * from e_dist where sid2='".$row['State']."'");
-						while($rrow=mysql_fetch_array($rrs))
+			  $rrs=mysqli_query($con,"select * from e_dist where sid2='".$db->setfilter($row['State'])."'"); /* SECURITY: legacy mysql_* -> mysqli + escaping */
+						while($rrow=mysqli_fetch_array($rrs))
 						{
 							$_SESSION['dis']=$rrow['dist'];
 							if($rrow['dist']==$row['dist'])

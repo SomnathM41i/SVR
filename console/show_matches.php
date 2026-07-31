@@ -719,7 +719,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
                         <div class="row row-cols-lg-3 row-cols-sm-6">
                            <?php 
                             
-                               	$sqlmatch = mysqli_query($con, $match_qry) or die(mysqli_error($con));
+                               	$sqlmatch = mysqli_query($con, $match_qry) or svr_db_fail($con);
             					$cnt = 0;
             					if (mysqli_num_rows($sqlmatch) > 0)
             					{

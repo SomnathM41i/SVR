@@ -7,12 +7,12 @@ $searchid=$_GET['id'];
 //$idurl=base64_decode($_GET['id']);
 //$searchid = $idurl;
 
-$expressinterestquery=mysqli_query($con,"select * from  expressinterest  where eisender='$login' and eireceiver='$searchid'")or die(mysqli_error());
+$expressinterestquery=mysqli_query($con,"select * from  expressinterest  where eisender='$login' and eireceiver='$searchid'")or svr_db_fail($con);
 $fetch=mysqli_query($con,"Select * from register");
 if(mysqli_num_rows($expressinterestquery)==0)
 {
 $eisentdt=date('d-m-Y');
-$shortview=mysqli_query($con,"insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')")or die(mysqli_error());
+$shortview=mysqli_query($con,"insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')")or svr_db_fail($con);
 //echo "insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')";
 
 }

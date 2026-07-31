@@ -7,7 +7,7 @@
 //$sender = $_GET['id2'];
 $sender = $_GET['id'];//other person
 $login=$_SESSION['MatriID'];//receiver
-$res = mysqli_query($con,"update  viewcontact_details set status='Accept' where whom='$login' AND who='$sender'")or die(mysqli_error($con));
+$res = mysqli_query($con,"update  viewcontact_details set status='Accept' where whom='$login' AND who='$sender'")or svr_db_fail($con);
 
 //$encrypt=base64_encode($sender);	
 $encrypt = urlencode( base64_encode( $sender ) );

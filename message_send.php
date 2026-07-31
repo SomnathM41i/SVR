@@ -16,7 +16,7 @@ $mem_info=mysqli_fetch_array($mem_sql);
 
 $strid = $_SESSION['matriid'];
 $chat = mysqli_query($con,"SELECT * FROM receivemessage WHERE ToID IN('$strid','$sender') order by rid DESC LIMIT $from, $max_results ");
-$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or die(mysqli_error($con));	
+$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or svr_db_fail($con);	
 date_default_timezone_set("Asia/Kolkata");
 $dt=date('Y-m-d');
 $hr=date('h');
@@ -113,10 +113,10 @@ $am=date('a');
       <?php
       foreach($idu as $idd)
       {			
-        $sender=mysqli_query($con,"select * from register where MatriID='$idd' ")or die(mysqli_error());
+        $sender=mysqli_query($con,"select * from register where MatriID='$idd' ")or svr_db_fail($con);
         $sender_rec=mysqli_fetch_array($sender);
         $count=mysqli_query($con,"select * from receivemessage where (ToID='$idd' and FromID='".$_SESSION['matri_login']."')");
-        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or die(mysqli_error());
+        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or svr_db_fail($con);
         $recivems=mysqli_query($con,"select * from receivemessage where ToID='$idd' and FromID='$strid' and banstatus!='1' ORDER BY rid DESC");
         $receie=mysqli_fetch_array($recivems);
         ?>

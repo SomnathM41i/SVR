@@ -4,7 +4,7 @@ require_once(dirname(__FILE__).'/protect.php');
   /*include '../dbconnectadmin.php';*/
   
   
-  $relsql=$con->query("select * from caste")or die(mysqli_error($con)  );
+  $relsql=$con->query("select * from caste")or svr_db_fail($con);
   
 
 ?>
@@ -23,19 +23,19 @@ require_once(dirname(__FILE__).'/protect.php');
           ['Caste ', 'Groom', 'Bride' ],
 
           <?php  
-                    $relsql=$con->query("select * from caste")or die(mysqli_error($con) );
+                    $relsql=$con->query("select * from caste")or svr_db_fail($con);
  
                     
                       while($relrow = $relsql->fetch_assoc())
                       {
                         $caste=$relrow['Caste'];
-                      $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste' And Gender='Male' ")or die(mysqli_error($con) );
+                      $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste' And Gender='Male' ")or svr_db_fail($con);
               $groom=0;
               if($groomrow=$groomsql->fetch_assoc())
               {
               $groom= $groomrow['num'];
               }
-                      $bridesql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste' And Gender='Female' ")or die(mysqli_error($con) );
+                      $bridesql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste' And Gender='Female' ")or svr_db_fail($con);
   
               $bride=0;
               if($briderow=$bridesql->fetch_assoc())

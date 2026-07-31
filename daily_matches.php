@@ -678,7 +678,7 @@ $count.=" and Education IN($PE_Education_re)";
     	$rec = mysqli_fetch_array(mysqli_query($con,$count));
     	$total = $rec['totalCount'];?>	
 	<?php
-$sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error());
+$sqlmatch=mysqli_query($con,$match_qry)or svr_db_fail($con);
 			$cnt=0;
 
 	if(mysqli_num_rows($sqlmatch)>0)

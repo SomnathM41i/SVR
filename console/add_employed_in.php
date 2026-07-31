@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
     else
     {
         $q="insert into employed_in(employed,status) values('$employed','enable')";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
             //$msg=1;
@@ -58,7 +58,7 @@ if(isset($_POST['Update']))
         //echo "ERROR.";
         $q="update employed_in set employed='$employed' where id='$id'";
         //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
              $msg=" Employed In Field Updated Successfully!!";

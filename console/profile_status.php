@@ -3,7 +3,7 @@ require_once(dirname(__FILE__).'/protect.php');
   /*include '../dbconnectadmin.php';*/
   
   //MALE MEMBER
-  $relsql=$con->query("select * from caste")or die(mysqli_error($con)  );
+  $relsql=$con->query("select * from caste")or svr_db_fail($con);
   
      
 

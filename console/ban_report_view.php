@@ -112,7 +112,7 @@ require_once(dirname(__FILE__).'/protect.php');
                                 <tbody>
 										
 										  <?php  
-										$blocksql2=mysqli_query($con,"select * from block_member")or die(mysqli_error($con));
+										$blocksql2=mysqli_query($con,"select * from block_member")or svr_db_fail($con);
  
 										
 											while($blockrow2 = mysqli_fetch_array($blocksql2))
@@ -120,8 +120,8 @@ require_once(dirname(__FILE__).'/protect.php');
 												$profile_id=$blockrow2['profile_id'];
 												$matriid=$blockrow2['matriid'];
 								              // $_SESSION['id']=$blockrow2['profile_id'];
-											$blocksql3=mysqli_query($con,"select * from register where MatriID='$profile_id'")or die(mysqli_error($con)	);
-											$who_blocksql3=mysqli_query($con,"select * from register where MatriID='$matriid'")or die(mysqli_error($con)	);
+											$blocksql3=mysqli_query($con,"select * from register where MatriID='$profile_id'")or svr_db_fail($con);
+											$who_blocksql3=mysqli_query($con,"select * from register where MatriID='$matriid'")or svr_db_fail($con);
 							$block3=0;
 							if($blockrow3=mysqli_fetch_assoc($blocksql3) )
 							{

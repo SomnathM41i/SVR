@@ -30,7 +30,7 @@ $msg="";
 				$q="insert into e_dist(dist,sid2,status) values('$dist','$state','enable')";
 				//echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
 				//exit;
-				$rs=mysqli_query($con,$q) or die(mysqli_error());
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="District added Successfully!!";
@@ -63,7 +63,7 @@ if(isset($_POST['Update']))
 				//if($state==""){echo "State empty";}else{ echo $state;}
 				$q="update  e_dist set dist='$dist' where id='$id'";
 				//echo "update  e_dist set dist='$dist' where id='$id'";
-				$rs=mysqli_query($con,$q) or die(mysqli_error());
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="District Updated Successfully!!";

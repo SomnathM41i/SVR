@@ -28,9 +28,9 @@ $reg_step=$regfet['reg_step'];
 
 if($reg_step<3)
 {
-$con->query("update register set Star='$txtStar',Gan='$gan',nadi='$nadi',devak='$devak',Moonsign='$txtMoon',Horosmatch='$txtHorosMatch',Manglik='$txtManglik',Gothram='$txtGothra',shani='$txt_shani',POB='$bplace',POC='$cplace',TOB='$btime', reg_step='3' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set Star='$txtStar',Gan='$gan',nadi='$nadi',devak='$devak',Moonsign='$txtMoon',Horosmatch='$txtHorosMatch',Manglik='$txtManglik',Gothram='$txtGothra',shani='$txt_shani',POB='$bplace',POC='$cplace',TOB='$btime', reg_step='3' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }else{
-$con->query("update register set Star='$txtStar',Gan='$gan',nadi='$nadi',devak='$devak',Moonsign='$txtMoon',Horosmatch='$txtHorosMatch',Manglik='$txtManglik',Gothram='$txtGothra',shani='$txt_shani',POB='$bplace',POC='$cplace',TOB='$btime' WHERE MatriID= '$strmid' ") or die(mysqli_error($con));
+$con->query("update register set Star='$txtStar',Gan='$gan',nadi='$nadi',devak='$devak',Moonsign='$txtMoon',Horosmatch='$txtHorosMatch',Manglik='$txtManglik',Gothram='$txtGothra',shani='$txt_shani',POB='$bplace',POC='$cplace',TOB='$btime' WHERE MatriID= '$strmid' ") or svr_db_fail($con);
 }	
 header('location:profile_view?flag=7&msg=success&ID='.$strmid);
 exit;

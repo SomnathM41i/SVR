@@ -166,7 +166,7 @@ function print_report()
                                 </thead>
                                 <tbody>
 								
-                                    <?php  	$relsql=$con->query("select * from paiddetails")or die(mysqli_error($con));
+                                    <?php  	$relsql=$con->query("select * from paiddetails")or svr_db_fail($con);
 											while($relrow = $relsql->fetch_assoc())  
 												{  ?>
                 

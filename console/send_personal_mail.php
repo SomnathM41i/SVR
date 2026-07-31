@@ -4,7 +4,7 @@ require_once(dirname(__FILE__).'/protect.php');
 /*include('../dbconnectadmin.php');*/
 include('../smtp.php');
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or die(mysqli_error()); 
+$configdata=mysqli_query($con,$query) or svr_db_fail($con); 
 $info=mysqli_fetch_array($configdata);
 $qry="select * from cms where cms_id='9'";
 $qry1=mysqli_query($con,$qry);
@@ -12,7 +12,7 @@ $row3=mysqli_fetch_array($qry1);
 
 $mememail=$_POST['emailto'];			
 $query1="SELECT * FROM register where ConfirmEmail='$mememail'";
-$forpass=mysqli_query($con,$query1) or die(mysqli_error()); 
+$forpass=mysqli_query($con,$query1) or svr_db_fail($con); 
 $forpass1=mysqli_fetch_array($forpass);
 $matriid=$forpass1['MatriID'];
 

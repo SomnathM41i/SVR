@@ -28,7 +28,7 @@
 	   $q="update recommendation set reply='$reply' where id='$id1'";
 	   //echo "update set reply='$reply' where id='$id1'";
 	   //exit;
-            $rs=mysqli_query($con,$q) or die(mysqli_error());  
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);  
            
         
     }

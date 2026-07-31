@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
     else
     {
         $q="insert into nakshatra(Nakshatra,status) values('$nakshatra','enable')";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
             $msg="New Star Field added Successfully!!";
@@ -53,7 +53,7 @@ if(isset($_POST['Update']))
         //echo "ERROR.";
         $q="update nakshatra set Nakshatra='$nakshatra' where id='$id'";
         //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
             $msg="Star Field Updated Successfully!!";

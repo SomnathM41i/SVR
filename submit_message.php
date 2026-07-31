@@ -21,7 +21,7 @@ if(mysqli_num_rows($qry1)==0)
 mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notification_type,notification_desc,seen,date_time)values('$sender','$receiver','Message','Send Message','unseen',NOW())");
 }
 $date = date('d-m-Y');
-$status=mysqli_query($con,"insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())")or die(mysqli_error($con));
+$status=mysqli_query($con,"insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())")or svr_db_fail($con);
 
 //echo "insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())";
 

@@ -58,7 +58,7 @@
 
 	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {
 
-	mysqli_query($con,"UPDATE register SET adhar='$sav',idproof_approve='No' WHERE MatriID='$id'")or die(mysqli_error());
+	mysqli_query($con,"UPDATE register SET adhar='$sav',idproof_approve='No' WHERE MatriID='$id'")or svr_db_fail($con);
 	//echo "insert into gallary(photo_name,matri_id,photo_approve) values('$sav','$id','Pending')";
 	//exit;
 	header('location:upload_id_proof?msg=success');

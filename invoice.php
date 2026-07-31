@@ -71,7 +71,7 @@ function hideURLbar() {
   </section>
 
   <?php $matriid=$_SESSION['MatriID'];
-  $sqlmatri=mysqli_query($con,"select * from paiddetails where Pmatriid='$matriid'") or die(mysqli_error($con));?>
+  $sqlmatri=mysqli_query($con,"select * from paiddetails where Pmatriid='$matriid'") or svr_db_fail($con);?>
 
   <section class="mvv-section">
     <div class="mvv-container">

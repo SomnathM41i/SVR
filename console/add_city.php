@@ -28,7 +28,7 @@ $msg="";
 				//if($state==""){echo "State empty";}else{ echo $state;}
 				$q="insert into e_city(city,dist_ref,taluka_ref,status) values('$city','$dist','$taluka','enable')";
 				//echo "insert into e_city(city,dist_ref,status) values('$city','$dist','1')";
-				$rs=mysqli_query($con,$q) or die(mysqli_error());
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="City added Successfully!!";
@@ -61,7 +61,7 @@ if(isset($_POST['Update']))
 				//if($state==""){echo "State empty";}else{ echo $state;}
 				$q="update e_city set city='$city',dist_ref='$dist',taluka_ref='$taluka' where id='$id'";
 				//echo "update  e_city set city='$city' where id='$id'";
-				$rs=mysqli_query($con,$q) or die(mysqli_error());
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="City Updated Successfully!!";

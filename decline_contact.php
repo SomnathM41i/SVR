@@ -4,7 +4,7 @@
 <?php  
  $sender = $_GET['id'];
  $me=$_SESSION['MatriID'];
-$res = mysqli_query($con,"update  viewcontact_details set status='Decline' where whom='$me' AND who='$sender'")or die(mysqli_error());
+$res = mysqli_query($con,"update  viewcontact_details set status='Decline' where whom='$me' AND who='$sender'")or svr_db_fail($con);
 $encrypt=base64_encode($sender);
 header("location:full_profile?id=$sender");  
 

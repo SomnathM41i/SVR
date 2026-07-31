@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
     else
     {
         $q="insert into moon_sign(Moon_Sign,status) values('$moon_sign',enable)";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
              $msg="New Moonsign field added Successfully!!";
@@ -54,7 +54,7 @@ if(isset($_POST['Update']))
         //echo "ERROR.";
         $q="update moon_sign set Moon_Sign='$moon_sign' where id='$id'";
         //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
             $msg="Moonsign Field Updated Successfully!!";

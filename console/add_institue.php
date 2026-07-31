@@ -16,7 +16,7 @@ require_once(dirname(__FILE__).'/protect.php');
         else
         {
             $q="insert into iit(Inst_nm,status) values('$education','enable')";
-            $rs=mysqli_query($con,$q) or die(mysqli_error());  
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);  
             if($rs>0)
             {
                 $msg="New Institute Name added Successfully!!";
@@ -41,7 +41,7 @@ require_once(dirname(__FILE__).'/protect.php');
         else
         {
             $q="update iit set Inst_nm='$education' where Iid='$id'";
-            $rs=mysqli_query($con,$q) or die(mysqli_error());
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);
             if($rs>0)
             {
                 $msg="Institute Name field Updated Successfully!!";

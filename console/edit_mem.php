@@ -13,12 +13,12 @@ echo $today = date("Y-m-d").'<br>';
 if($today <= $date )
 {
 	//echo "1";
-	$query = $con->query("update register set Status='Paid',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or die(mysqli_error($con));
+	$query = $con->query("update register set Status='Paid',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or svr_db_fail($con);
 }
 else
 {
 	//echo "0";
-	$query = $con->query("update register set Status='Expired',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or die(mysqli_error($con));
+	$query = $con->query("update register set Status='Expired',Noofcontacts='$contacts',MemshipExpiryDate='$date' where MatriID='$strmid' ") or svr_db_fail($con);
 	
 }
 

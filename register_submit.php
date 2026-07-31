@@ -171,7 +171,7 @@ if($error==0)
 
 
 $sql = "SELECT MAX(id) AS max from register";
-$result = mysqli_query($con,$sql) or die(mysqli_error());
+$result = mysqli_query($con,$sql) or svr_db_fail($con);
 $row = mysqli_fetch_assoc($result);
 $RID = $row['max'] + 1;
 

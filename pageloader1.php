@@ -141,7 +141,7 @@ $update1 = mysqli_query($con,"update register set LastLogin=NOW() WHERE MatriID=
 
 $Insert1 = mysqli_query($con,"UPDATE register SET Thislogin = NOW() WHERE MatriID='".$safeMatriID."'");
 
-$authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatriID."'") or die(mysqli_error($con));
+$authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatriID."'") or svr_db_fail($con);
 
 
           

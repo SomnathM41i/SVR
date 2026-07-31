@@ -26,7 +26,7 @@ $verifymail=mysqli_query($con,"insert into  emailverify(MatriID,code,verificatio
 include('smtp2.php');
 
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or die(mysqli_error()); 
+$configdata=mysqli_query($con,$query) or svr_db_fail($con); 
 $info=mysqli_fetch_array($configdata);
 
 		$mememail=$rowfe['ConfirmEmail'];

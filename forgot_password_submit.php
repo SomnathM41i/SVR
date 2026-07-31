@@ -24,7 +24,7 @@ $email = $mememail;
 if ($mememail !== '' && filter_var($email, FILTER_VALIDATE_EMAIL)){
 
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or die(mysqli_error());
+$configdata=mysqli_query($con,$query) or svr_db_fail($con);
 $info=mysqli_fetch_array($configdata);
 
 	$forpass1 = null;

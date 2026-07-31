@@ -11,6 +11,23 @@
  * Reason for change: production credentials were hard-coded in source (critical finding C1).
  * This file centralizes them so they can be moved out of version control without breaking production.
  */
+/**
+ * svr_db_fail() — safe uniform failure for DB errors.
+ * Logs the real error server-side and emits a generic message, replacing the
+ * legacy `or svr_db_fail($con)` pattern that disclosed SQL errors to users
+ * (finding H7). Only invoked on query failure paths.
+ */
+if (!function_exists('svr_db_fail')) {
+    function svr_db_fail($con = null) {
+        $err = ($con instanceof mysqli) ? mysqli_error($con) : 'database error';
+        error_log('SVR DB failure: ' . $err . ' in ' . (isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : 'cli'));
+        if (!headers_sent()) {
+            http_response_code(500);
+        }
+        exit('A database error occurred. Please try again later.');
+    }
+}
+
 if (!function_exists('svr_config')) {
     function svr_config($key, $default = null) {
         static $local = null;

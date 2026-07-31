@@ -22,7 +22,7 @@ $msg="";
 		else
 		{
 				$q="insert into e_state(state,cid,status) values('$state','$country','enable')";
-				$rs=mysqli_query($con,$q) or die(mysqli_error());  
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);  
 				if($rs>0)
 				{
 								$msg="State added Successfully!!";
@@ -50,7 +50,7 @@ $msg="";
 		{
 				$q="update  e_state set state='$state' where id='$id'";
 			    //echo "update  e_state set state='$state' where id='$id'";
-				$rs=mysqli_query($con,$q) or die(mysqli_error());
+				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="State Updated Successfully!!";

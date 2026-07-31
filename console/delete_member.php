@@ -15,7 +15,7 @@ $info=mysqli_fetch_array($configdata);
 	   	
 		//$mememail=$_POST['user'];
 		$query1="SELECT * FROM register where MatriID='$mail_delete'";
-		$forpass=mysqli_query($con,$query1) or die(mysqli_error()); 
+		$forpass=mysqli_query($con,$query1) or svr_db_fail($con); 
 		$forpass1=mysqli_fetch_array($forpass);
 		
 

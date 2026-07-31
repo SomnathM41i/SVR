@@ -4,7 +4,7 @@
 <?php  
  $sender = $_GET['id'];
  $me=$_SESSION['MatriID'];
-$res = mysqli_query($con,"update expressinterest set status='Decline' where eireceiver='$me' AND eisender='$sender'")or die(mysqli_error());
+$res = mysqli_query($con,"update expressinterest set status='Decline' where eireceiver='$me' AND eisender='$sender'")or svr_db_fail($con);
 
 $encrypt = urlencode( base64_encode( $sender ) );
 header("location:full_profile?id=$encrypt");  

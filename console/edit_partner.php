@@ -90,7 +90,7 @@ PE_income_from = '$str_incomefrom',
 PE_income_to = '$str_incomeTO',
 pe_subcaste_marry ='$str_marry',
 PartnerExpectations ='$str_patEXp',PE_subcaste='$str_subcas',PE_MotherTongue='$mother_tongue', PE_Occupation='$pe_occu',PE_State='$str_state',PE_City='$cbocity'
-,reg_step='9' WHERE  MatriID='$strmid' ") or die(mysqli_error($con));
+,reg_step='9' WHERE  MatriID='$strmid' ") or svr_db_fail($con);
 }else {
 $con->query("update register set  
 PE_FromAge ='$str_fage',             
@@ -108,7 +108,7 @@ PE_income_from = '$str_incomefrom',
 PE_income_to = '$str_incomeTO',
 pe_subcaste_marry ='$str_marry',
 PartnerExpectations ='$str_patEXp',PE_subcaste='$str_subcas',PE_MotherTongue='$mother_tongue', PE_Occupation='$pe_occu',PE_State='$str_state',PE_City='$cbocity'
-WHERE  MatriID='$strmid' ") or die(mysqli_error($con));
+WHERE  MatriID='$strmid' ") or svr_db_fail($con);
 }	
 
 header('location:profile_view?flag=3&msg=success&ID='.$strmid);

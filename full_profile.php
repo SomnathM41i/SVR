@@ -202,7 +202,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 	        } 
 	// check already viewed
 		
-	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or die(mysql_error());
+	$profile_views=mysqli_query($con,"select * from profile_views where who='$login' AND whom='$idurl' ") or svr_db_fail($con);
 		
 
 	if(mysqli_num_rows($profile_views)==0)

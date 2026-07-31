@@ -320,7 +320,7 @@ for ($i = 0; $i < $num_fields; $i++)
   }
 }
 $return.="\n\n";
-$con->query($return) or die(mysqli_error());*/
+$con->query($return) or svr_db_fail($con);*/
 // delete from register
 
 $con->query("delete from register where MatriID='$id' ");

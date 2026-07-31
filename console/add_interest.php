@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
     else
     {
         $q="insert into interest(interest,status) values('$interest','enable')";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());  
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);  
         if($rs>0)
         {
             $msg="New Interest Field added Successfully!!";
@@ -55,7 +55,7 @@ if(isset($_POST['Update']))
         //echo "ERROR.";
         $q="update interest set interest='$interest' where id='$id'";
         //echo "update  caste set caste='$caste' where id='$id'";
-        $rs=mysqli_query($con,$q) or die(mysqli_error());
+        $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
             $msg="Interest Field Updated Successfully!!";

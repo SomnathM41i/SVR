@@ -16,7 +16,7 @@ require_once(dirname(__FILE__).'/protect.php');
         else
         {
             $q="insert into occupation(occu,status) values('$occu','enable')";
-            $rs=mysqli_query($con,$q) or die(mysqli_error());  
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);  
             if($rs>0)
             {
                 $msg="New Occupation field added Successfully!!";
@@ -41,7 +41,7 @@ require_once(dirname(__FILE__).'/protect.php');
         else
         {
             $q="update occupation set occu='$occu' where id='$id'";
-            $rs=mysqli_query($con,$q) or die(mysqli_error());
+            $rs=mysqli_query($con,$q) or svr_db_fail($con);
             if($rs>0)
             {
                 $msg="Occupation field Updated Successfully!!";

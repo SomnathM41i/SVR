@@ -528,7 +528,7 @@ padding: 36px 0 90px
 <?php include('header.php')?>
 
 		
-<?php $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error($con));
+<?php $sqlmatch=mysqli_query($con,$match_qry)or svr_db_fail($con);
 	  $cnt=0;
 					
 		if(mysqli_num_rows($sqlmatch)>0)
@@ -548,7 +548,7 @@ padding: 36px 0 90px
         <div class="row">
                 
 			 <?php
-			    $sqlmatch=mysqli_query($con,$match_qry)or die(mysqli_error($con));
+			    $sqlmatch=mysqli_query($con,$match_qry)or svr_db_fail($con);
 				$cnt=0;
 				while($fetch=mysqli_fetch_array($sqlmatch))
 				{

@@ -1,7 +1,7 @@
 <?php //include('dbconnectadmin.php');
 require_once('sys_dbconnection.php');
 $strid = $_SESSION['MatriID'];
-$result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or die(mysqli_error($con));
+$result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or svr_db_fail($con);
 $record = mysqli_fetch_array($result); 
  
 function orderid() {
@@ -21,7 +21,7 @@ $strinv     = "MP";
 $strorderid = $strinv . orderid();
 //echo $strorderid;
 $strplanid =  "1";
-$plan = mysqli_query($con,"SELECT * from membershipplan where planid = '$strplanid' ")or die(mysqli_error($con));
+$plan = mysqli_query($con,"SELECT * from membershipplan where planid = '$strplanid' ")or svr_db_fail($con);
 
 $plan_row = mysqli_fetch_array($plan);
 $seo=mysqli_query($con,"Select * from seo where catagory='membership'");
@@ -128,7 +128,7 @@ button, input, optgroup, select, textarea
                 <div class="row">
 				
 				  <?php 
-				$qry_plan = mysqli_query($con,"select * from membershipplan where plan_status='Active' ORDER BY planid ASC") or die(mysqli_error($con));
+				$qry_plan = mysqli_query($con,"select * from membershipplan where plan_status='Active' ORDER BY planid ASC") or svr_db_fail($con);
 				//echo "select * from membershipplan where plan_status='Active' ORDER BY planid ASC";
 				while($plan = mysqli_fetch_array($qry_plan))
 					

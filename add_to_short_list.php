@@ -18,12 +18,12 @@ mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notificati
 
 }
 
-$shortview=mysqli_query($con,"select * from shortlist_profile where mat_id='$strid' AND profile_id='$searchid'")or die(mysqli_error());
+$shortview=mysqli_query($con,"select * from shortlist_profile where mat_id='$strid' AND profile_id='$searchid'")or svr_db_fail($con);
 
 if(mysqli_num_rows($shortview)==0)
 {
 	$now=date('d-m-Y');
-$shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,when1) VALUE('$strid','$searchid','$now')")or die(mysqli_error());
+$shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,when1) VALUE('$strid','$searchid','$now')")or svr_db_fail($con);
 	
 }
 

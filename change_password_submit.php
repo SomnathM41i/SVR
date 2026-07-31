@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'
 $op = $_POST['txtop'];
 $strop=$op;
 $strid = $_SESSION['MatriID'];
-$cpwd = mysqli_query($con,"select ConfirmPassword from register WHERE MatriID='$strid'") or die("Could not update data because ".mysql_error());
+$cpwd = mysqli_query($con,"select ConfirmPassword from register WHERE MatriID='$strid'") or svr_db_fail($con);
 $row=mysqli_fetch_assoc($cpwd);
 
 $pwd= $row['ConfirmPassword'];
@@ -33,7 +33,7 @@ if(isset($_POST['submit']))
                 $nb=$confirm_pass;
                     //echo $nb;
                 $query="UPDATE register set ConfirmPassword='$nb' WHERE MatriID='$strid'";
-                $update1 = mysqli_query($con,$query) or die("Could not update data because ".mysql_error());
+                $update1 = mysqli_query($con,$query) or svr_db_fail($con);
                   //  echo "SUCCESS";
                 header('location:change_pswd?message=success');
             }

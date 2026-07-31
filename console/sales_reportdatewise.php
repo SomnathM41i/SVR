@@ -226,7 +226,7 @@ function print_report()
 			$queryString=$queryString." Pplan='$memtype'";
 			}
 			
-		  $relsql=$con->query($queryString)or die(mysqli_error($con));
+		  $relsql=$con->query($queryString)or svr_db_fail($con);
 				while($relrow = $relsql->fetch_assoc())
 				{  ?>
                 

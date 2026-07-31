@@ -231,7 +231,7 @@ function displayPaginationBelow($con,$per_page,$page){
       }
       $rec=mysqli_fetch_array(mysqli_query($con,$count));
       $total=$rec['totalCount'];
-      $sqlmatch=mysqli_query($con,$match_qry) or die(mysqli_error($con));
+      $sqlmatch=mysqli_query($con,$match_qry) or svr_db_fail($con);
       if(mysqli_num_rows($sqlmatch)>0){ ?>
       <div class="row g-4">
         <?php while($fetch=mysqli_fetch_array($sqlmatch)){

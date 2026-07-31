@@ -1,7 +1,7 @@
 <?php 
 	require_once('sys_dbconnection.php');
 	$qry1 = "SELECT * FROM cms WHERE link ='privacy'";
-	$result=mysqli_query($con,$qry1)or die(mysql_error());
+	$result=mysqli_query($con,$qry1)or svr_db_fail($con);
 	$row = mysqli_fetch_array($result);
 	$txt = $row['content'];
     $seo=mysqli_query($con,"Select * from seo where catagory='privacy_policy'");

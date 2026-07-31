@@ -29,7 +29,7 @@ $created_by=mysqli_real_escape_string($con,$_POST['created_by']);
 
 
 $query = $con->query("update register set Name='$str_name',DOB='$str_DOB',Gender='$gender',ConfirmEmail='$str_email',ConfirmPassword='$str_password',Age='$age',Religion='$str_rel',Caste='$str_cas',Subcaste='$str_subcas',aboutus='$str_about',
-childrenlivingstatus='$child_status',PE_HaveChildren='$noc',Maritalstatus='$mstatus',childrenlivingstatus='$childstatus',child_acceptance='$child_acceptance',Profilecreatedby='$created_by',regno='$regno' where MatriID='$strmid' ") or die(mysqli_error($con));   
+childrenlivingstatus='$child_status',PE_HaveChildren='$noc',Maritalstatus='$mstatus',childrenlivingstatus='$childstatus',child_acceptance='$child_acceptance',Profilecreatedby='$created_by',regno='$regno' where MatriID='$strmid' ") or svr_db_fail($con);   
 //echo "update register set Name='$str_name',DOB='$str_DOB',Gender='$gender',ConfirmEmail='$str_email',ConfirmPassword='$str_password',Age='$age',Religion='$str_rel',Caste='$str_cas',Subcaste='$str_subcas',aboutus='$str_about',
 //childrenlivingstatus='$child_status',PE_HaveChildren='$noc',Maritalstatus='$mstatus',childrenlivingstatus='$childstatus',Profilecreatedby='$created_by' where MatriID='$strmid' ";
 header('location:profile_view?flag=1&msg=success&action&ID='.$strmid);

@@ -140,7 +140,7 @@ function print_report()
                                 <tbody>
 								
                                 <?php 
-											$relsql=$con->query("select * from register where iit='yes' and instu!='' ")or die(mysqli_error($con)	);
+											$relsql=$con->query("select * from register where iit='yes' and instu!='' ")or svr_db_fail($con);
 											//echo "select * from register where iit=='yes' and instu!=''";
 											while($relrow = $relsql->fetch_assoc())
 											{

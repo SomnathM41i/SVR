@@ -3431,7 +3431,7 @@ function checkworkstate(str)
 										 mysqli_query($con,"update register set Photo1='$sav3',Photo1Approve='Yes' where MatriID='$strmid'");
 										 
 										}
-                                         mysqli_query($con,"insert into gallary(photo_name,matri_id,photo_approve) values('$sav3','$strmid','Yes')")or die(mysqli_error());
+                                         mysqli_query($con,"insert into gallary(photo_name,matri_id,photo_approve) values('$sav3','$strmid','Yes')")or svr_db_fail($con);
 										
 										
 										define("success3","Your Photo Uploaded Successfully.");
