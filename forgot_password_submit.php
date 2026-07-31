@@ -1,35 +1,50 @@
 <?php require_once('sys_dbconnection.php');
 /*include('dbconnectadmin.php');*/
 //error_reporting(0);
+require_once('includes/security.php');
 include('smtp2.php');
-$email = addslashes($_POST['user']);
 
-	$mememail=$_POST['user'];
+/* Security fix: limit password-reset requests (H5) - 5 per hour per IP+email. */
+$mememail= isset($_POST['user']) ? trim($_POST['user']) : '';
+if (!svr_throttle('forgot:'.strtolower($mememail).':'.svr_client_ip(), 5, 3600)) {
+    header('location:forgot_password?action=throttled');
+    exit;
+}
 
-  
-if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+/* Security fix (H1): prepared statements instead of raw interpolation. */
+$email = $mememail;
 
-			
+if ($mememail !== '' && filter_var($email, FILTER_VALIDATE_EMAIL)){
+
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or die(mysqli_error()); 
+$configdata=mysqli_query($con,$query) or die(mysqli_error());
 $info=mysqli_fetch_array($configdata);
 
-	$mememail=$_POST['user'];
-	$query1="SELECT * FROM register where ConfirmEmail='$mememail'";
-	$forpass=mysqli_query($con,$query1) or die(mysqli_error()); 
-	$forpass1=mysqli_fetch_array($forpass);
+	$forpass1 = null;
+	$stmt = mysqli_prepare($con, "SELECT * FROM register WHERE ConfirmEmail=? LIMIT 1");
+	if ($stmt) {
+	    mysqli_stmt_bind_param($stmt, "s", $mememail);
+	    mysqli_stmt_execute($stmt);
+	    $res = mysqli_stmt_get_result($stmt);
+	    $forpass1 = $res ? mysqli_fetch_array($res) : null;
+	    mysqli_stmt_close($stmt);
+	}
 	$qry="select * from cms where link='contact us'";
 	$qry1=mysqli_query($con,$qry);
 	$row=mysqli_fetch_array($qry1);
-  $query11="SELECT * FROM register where ConfirmEmail='$mememail' and Status='Banned'";
-     //echo" SELECT * FROM register where ConfirmEmail='$mememail' and Status='Banned'";
-	$forpass2=mysqli_query($con,$query11) or die(mysqli_error()); 
-	$count=mysqli_num_rows($forpass2);
-	//echo $count;
+	$count = 0;
+	$stmt2 = mysqli_prepare($con, "SELECT COUNT(*) AS c FROM register WHERE ConfirmEmail=? AND Status='Banned'");
+	if ($stmt2) {
+	    mysqli_stmt_bind_param($stmt2, "s", $mememail);
+	    mysqli_stmt_execute($stmt2);
+	    $res2 = mysqli_stmt_get_result($stmt2);
+	    if ($res2 && ($r = mysqli_fetch_assoc($res2))) { $count = (int)$r['c']; }
+	    mysqli_stmt_close($stmt2);
+	}
 	if($count==0)
 	{
-		
-if($forpass1>0)
+
+if($forpass1)
 {
 		$address=$row['content'];
 		$Name=$forpass1['Name'];
@@ -38,6 +53,10 @@ if($forpass1>0)
 		$Mobile=$forpass1['Mobile'];
 		$ConfirmPassword=$forpass1['ConfirmPassword'];
 		$MatriID=$forpass1['MatriID'];
+		/* Security fix (C3): expiring, single-use, HMAC-signed reset token.
+		   The token is bound to the currently stored password, so it becomes
+		   invalid as soon as the password is changed. No storage change. */
+		$resettoken = svr_reset_token_make($MatriID, $forpass1['ConfirmPassword'], 3600);
 		$webfriendlyname=$info['WebFriendlyname'];
 
 		$logo =$info['Weblogopath'];
@@ -71,7 +90,7 @@ if($forpass1>0)
   
   <tr>
     <td colspan='2' valign='top'>Use the link to recover password: <br>
-      <a href='#'><a href='https://weddingsparampara.com/new_pass.php?ID=$MatriID'>Click Here</a><br></td>
+      <a href='#'><a href='https://weddingsparampara.com/new_pass.php?ID=$MatriID&token=$resettoken'>Click Here</a><br></td>
     <td width='24'>&nbsp;</td>
   </tr>
   <tr>
