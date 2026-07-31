@@ -1,6 +1,7 @@
     <?php
   /*include '../dbconnectadmin.php';*/
   require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
   error_reporting(0);
 ?>
 <?php  

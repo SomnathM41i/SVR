@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');/*include'../dbconnectadmin.php';*/
+require_once(dirname(__FILE__).'/protect.php');
 $id = $_POST['rowid'];
 /*echo $id;*/
 $note = mysqli_query($con,"SELECT * FROM notes where MatriID='$id' ");

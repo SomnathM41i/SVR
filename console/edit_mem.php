@@ -2,6 +2,7 @@
 
 <title>Edit Membership</title>
 <?php require_once('../sys_dbconnection.php');    
+require_once(dirname(__FILE__).'/protect.php');
 date_default_timezone_set('Asia/Kolkata');
 /*include('../dbconnectadmin.php');*/
 $strmid=$_POST['ID']; 

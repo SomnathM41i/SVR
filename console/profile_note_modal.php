@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 
 <div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
     <div class="modal-dialog">

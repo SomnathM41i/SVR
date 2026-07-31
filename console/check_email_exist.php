@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');  
+require_once(dirname(__FILE__).'/protect.php');
 /*include('../dbconnectadmin.php');*/
 // check if the username is taken
 $strcm = strip_tags($_GET['q']);

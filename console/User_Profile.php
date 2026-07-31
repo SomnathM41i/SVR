@@ -1,8 +1,17 @@
 <?php 
     require_once('../sys_dbconnection.php');
-    $id = base64_decode(urldecode($_REQUEST['id']) );
-    $my_profile = mysqli_query($con,"SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid='$id'");
-    $me = mysqli_fetch_array($my_profile);
+require_once(dirname(__FILE__).'/protect.php');
+    $id = base64_decode(urldecode(isset($_REQUEST['id']) ? $_REQUEST['id'] : '') );
+    /* SECURITY (H1): prepared statement instead of raw interpolation. */
+    $me = null;
+    $stmt = mysqli_prepare($con, "SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid=? LIMIT 1");
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $id);
+        mysqli_stmt_execute($stmt);
+        $my_profile = mysqli_stmt_get_result($stmt);
+        $me = $my_profile ? mysqli_fetch_array($my_profile) : null;
+        mysqli_stmt_close($stmt);
+    }
 	$my_profile1 = mysqli_query($con,"SELECT * from siteconfig");
     $mydat = mysqli_fetch_array($my_profile1);
 ?>

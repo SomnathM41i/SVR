@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');  
+require_once(dirname(__FILE__).'/protect.php');
 include('protect1.php');
 /*include('../dbconnectadmin.php');*/
 

@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
     $data_config = $db->get_siteconfig();
     //print_r($data_config); 
     $on_off = $data_config-> is_smtp_set;

@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/protect.php');
 	$id_temp=$rowC['MatriID'];
 	$login=$id;
 	$compl = mysqli_query($con,"select* from register where MatriID='$login'");

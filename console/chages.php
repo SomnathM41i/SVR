@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 /*
 	signup:- DONE
 		ADD PHONE NUMBER

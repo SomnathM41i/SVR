@@ -1,7 +1,16 @@
 <?php require_once('../sys_dbconnection.php'); 
-$id = $_REQUEST['id'];
-$reg_data = mysqli_query($con,"SELECT * FROM register WHERE MatriID='$id' ");
-$fetch_data = mysqli_fetch_array($reg_data);
+require_once(dirname(__FILE__).'/protect.php');
+$id = isset($_REQUEST['id']) ? trim($_REQUEST['id']) : '';
+/* SECURITY (H1): prepared statement instead of raw interpolation. */
+$stmt = mysqli_prepare($con, "SELECT * FROM register WHERE MatriID=? LIMIT 1");
+$fetch_data = null;
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $id);
+    mysqli_stmt_execute($stmt);
+    $reg_data = mysqli_stmt_get_result($stmt);
+    $fetch_data = $reg_data ? mysqli_fetch_array($reg_data) : null;
+    mysqli_stmt_close($stmt);
+}
 $new_reg_Date = date("d-m-Y", strtotime($fetch_data['Regdate']));
 $new_memdate = date( "d-m-Y", strtotime($fetch_data['MemshipExpiryDate'])) ;
 if($fetch_data['Lastlogin'] == NULL)

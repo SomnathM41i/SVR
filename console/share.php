@@ -1,5 +1,6 @@
 <?php 
 require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
 
 /**/
 $id = base64_decode( urldecode($_REQUEST['id']) );

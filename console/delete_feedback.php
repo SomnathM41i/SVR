@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php'); 
+require_once(dirname(__FILE__).'/protect.php');
     /*include'../dbconnectadmin.php';*/
     $id=$_GET['ID'];
     $rs=mysqli_query($con,"DELETE FROM feedback WHERE id=$id");

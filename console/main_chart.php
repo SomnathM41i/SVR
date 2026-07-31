@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
   /*include '../dbconnectadmin.php';*/
   $que = "SELECT COUNT(Name) FROM register where MONTH(Regdate) = 1 && YEAR(Regdate) = 2021 ";
   $res = mysqli_query($con,$que);

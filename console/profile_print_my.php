@@ -1,4 +1,5 @@
 <?php require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
 require_once('../includes/annual_income.php');
 include('siteconfig.php');
  $id=$_GET['ID'];

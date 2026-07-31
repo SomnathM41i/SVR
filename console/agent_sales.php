@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/protect.php');
 require_once('agent_common.php');
 $agentId = (int)($_GET['agent_id'] ?? 0);
 $planId = (int)($_GET['plan_id'] ?? 0);

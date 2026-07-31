@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <table id="report-table_view_contact" class="table  table-striped mb-0" >
     <thead>
         <tr>

@@ -1,4 +1,5 @@
 <?php 
+require_once(dirname(__FILE__).'/protect.php');
 $hobbies=explode(",",$me['Looking']);
 //$mother=implode(",",$me['PE_MotherTongue']);
 $pe_from_height = $me['PE_from_Height'];

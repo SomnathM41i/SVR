@@ -1,5 +1,6 @@
 <title>Edit contact</title>
 <?php require_once('../sys_dbconnection.php');   
+require_once(dirname(__FILE__).'/protect.php');
 /*include('../dbconnectadmin.php');*/
 $strmid=$_POST['ID']; 
 $str_add =mysqli_real_escape_string($con,$_POST['txtAddress']);

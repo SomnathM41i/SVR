@@ -1,4 +1,5 @@
 <?php 
+require_once(dirname(__FILE__).'/protect.php');
 	$data = mysqli_query($con,"SELECT * FROM register WHERE MatriID='$matriid'");
 	$fetch_data = mysqli_fetch_array($data);
 	$date = $fetch_data['Lastlogin'];

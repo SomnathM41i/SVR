@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <!--<div class="pc-container">
 		
             <div class="mt-3" id="user-set-passwort" role="tabpanel" aria-labelledby="user-set-passwort-tab">

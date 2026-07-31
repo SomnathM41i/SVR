@@ -1,4 +1,5 @@
 <?php  require_once('../sys_dbconnection.php');
+require_once(dirname(__FILE__).'/protect.php');
 //session_start();
 unset($_SESSION['admin_id']);
      print "<script>";
