@@ -1,6 +1,6 @@
 # Final Quality Assurance Review — Phase A Security Remediation
 
-**Scope:** Pull Request #1 (`arena/019fb6b6-svr` → `main`), 23 commits, base `efaf8e1`.
+**Scope:** Pull Request #1 (`arena/019fb6b6-svr` → `main`), 22 commits, base `efaf8e1`.
 **Rule set:** user's 12-point QA directive. **No functional changes were made during this pass.**
 **Sandbox limitation (unchanged):** no PHP runtime here — verification is structural/static;
 staging `php -l` + smoke test remains a mandatory pre-merge step (see §10.6).
