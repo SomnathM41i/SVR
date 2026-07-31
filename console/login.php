@@ -32,6 +32,10 @@ $name=$fetch['Webname'];
 	<link rel="stylesheet" href="assets/css/mpj-brand.css">
 	<link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 	<link rel="stylesheet" href="assets/css/customizer.css">
+	<!-- MPJ: brand typography -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html, body { height:100%; margin:0; }
 body { background:url('../images/main-slider/2.jpg') no-repeat center center fixed !important; background-size:cover !important; }
@@ -51,7 +55,8 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 .auth-wrapper.auth-v3 .auth-content .card .input-group-text { background:#F9E7DC; border-color:#E3CBB2; color:#5E1426; border-radius:6px 0 0 6px; }
 .auth-wrapper.auth-v3 .auth-content .card .form-control { border-color:#E3CBB2; border-radius:0 6px 6px 0; padding:10px 16px; font-size:14px; }
 .auth-wrapper.auth-v3 .auth-content .card .form-control:focus { border-color:#BA9350; box-shadow:0 0 0 0.2rem rgba(186,147,80,0.25); }
-.auth-wrapper.auth-v3 .auth-content .card h4 { font-size:1.15rem; color:#333; }
+.auth-wrapper.auth-v3 .auth-content .card h4 { font-size:1.25rem; color:#3D0C19; font-family:'Playfair Display',Georgia,serif; }
+.auth-wrapper.auth-v3 .auth-content .card h4 .text-primary { font-style:italic; }
 .auth-wrapper.auth-v3 .auth-content .card .row { justify-content:flex-end; }
 .auth-wrapper.auth-v3 .auth-content .card .col-md-6.img-card-side { display:none; }
 .auth-wrapper.auth-v3 .auth-content .card .col-md-6 { flex:0 0 100%; max-width:100%; }
