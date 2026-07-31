@@ -51,7 +51,7 @@ $row = mysqli_fetch_array($res);
     <style>
 /* ─── FOOTER ─── */
 .mvv-footer {
-  background: linear-gradient(160deg, #1A0A00 0%, #3D0E0E 50%, #6B1A1A 100%);
+  background: linear-gradient(160deg, #1A0A00 0%, #3D0E0E 50%, #5E1426 100%);
   color: #fff;
   position: relative;
   overflow: hidden;

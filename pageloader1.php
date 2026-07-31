@@ -56,7 +56,7 @@ html, body {
 	margin: 0;
 	min-height: 100%;
 	font-family: Arial, sans-serif;
-	background: #fff8f0;
+	background: #FFFDFB;
 }
 .page-loader-wrapper {
 	position: fixed;
@@ -72,7 +72,7 @@ html, body {
 	flex-direction: column;
 	align-items: center;
 	gap: 18px;
-	color: #6b1a1a;
+	color: #5E1426;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -81,8 +81,8 @@ html, body {
 	width: 74px;
 	height: 74px;
 	border: 5px solid rgba(232, 97, 42, 0.18);
-	border-top-color: #e8612a;
-	border-right-color: #6b1a1a;
+	border-top-color: #C9556A;
+	border-right-color: #5E1426;
 	border-radius: 50%;
 	animation: loader-spin 0.8s linear infinite;
 }

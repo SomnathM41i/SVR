@@ -151,7 +151,7 @@ function displayPaginationBelow($con,$per_page,$page){
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-page{min-height:60vh;padding-top:0;padding-bottom:60px;}
 .mvv-container{max-width:1200px;margin:0 auto;padding:0 16px;}
 .mvv-section{padding:48px 0 40px;}
@@ -174,7 +174,7 @@ function displayPaginationBelow($con,$per_page,$page){
 .mvv-pagination .mvv-dot { border:none; font-size:1.1rem; color:#999; padding:0 4px; }
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 @media (max-width:767.98px){
   .mvv-page{padding-bottom:36px;}
   .mvv-container{padding-left:12px;padding-right:12px;}
@@ -284,7 +284,7 @@ function displayPaginationBelow($con,$per_page,$page){
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:8px 16px 14px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
           </div>
         </div>
         <?php } ?>

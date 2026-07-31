@@ -60,16 +60,16 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <link href="css/myfullprofile.css" rel="stylesheet" >
 <style>
   :root {
-    --mvv-maroon: #7A0E1A;
-    --mvv-maroon-2: #4E0710;
-    --mvv-gold: #D4A437;
-    --mvv-cream: #FFF8F0;
-    --mvv-accent: #F4E7DA;
-    --mvv-text: #3A2A22;
-    --mvv-muted: #7B6256;
-    --mvv-green: #2E7D32;
+    --mvv-maroon: #5E1426;
+    --mvv-maroon-2: #3D0C19;
+    --mvv-gold: #BA9350;
+    --mvv-cream: #FFFDFB;
+    --mvv-accent: #F9E7DC;
+    --mvv-text: #3A2530;
+    --mvv-muted: #7A6570;
+    --mvv-green: #2F7D5B;
     --mvv-white: #FFFFFF;
-    --mvv-border: rgba(122, 14, 26, 0.14);
+    --mvv-border: rgba(94, 20, 38, 0.14);
     --mvv-shadow: 0 18px 44px rgba(58, 42, 34, 0.12);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Raleway', sans-serif;
@@ -80,7 +80,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
   .schedule-tabs .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; padding:0; text-align:left; }
   .schedule-tabs .tab-buttons li.tab-btn { height:auto !important; width:auto !important; padding:10px 24px !important; background:var(--mvv-white) !important; border:1px solid var(--mvv-border) !important; color:var(--mvv-muted) !important; font-family:var(--font-body); font-weight:600; font-size:0.85rem; cursor:pointer; transition:all 0.25s ease; border-radius:999px !important; display:inline-block; margin:0 !important; text-align:center; line-height:1.4; box-shadow:none !important; letter-spacing:0.3px; }
   .schedule-tabs .tab-buttons li.tab-btn:hover { border-color:var(--mvv-gold) !important; color:var(--mvv-maroon) !important; background:var(--mvv-white) !important; transform:translateY(-1px); }
-  .schedule-tabs .tab-buttons li.tab-btn.active-btn { background:linear-gradient(135deg, var(--mvv-maroon), var(--mvv-maroon-2)) !important; color:var(--mvv-white) !important; border-color:var(--mvv-maroon) !important; box-shadow:0 6px 20px rgba(122,14,26,0.22) !important; }
+  .schedule-tabs .tab-buttons li.tab-btn.active-btn { background:linear-gradient(135deg, var(--mvv-maroon), var(--mvv-maroon-2)) !important; color:var(--mvv-white) !important; border-color:var(--mvv-maroon) !important; box-shadow:0 6px 20px rgba(94,20,38,0.22) !important; }
   
   /* ── Photo Card ── */
   .mvv-photo-card { background:var(--mvv-white); border:1px solid var(--mvv-border); box-shadow:var(--mvv-shadow); padding:28px; text-align:center; position:relative; }
@@ -412,7 +412,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 									$expressinterestfetch=mysqli_fetch_array($is_yes);
 									
 									$mvvPrimary = "background:linear-gradient(135deg,var(--mvv-gold),#F1D17A);color:var(--mvv-maroon-2);box-shadow:0 8px 24px rgba(212,164,55,0.3)";
-									$mvvMaroon = "background:linear-gradient(135deg,var(--mvv-maroon),var(--mvv-maroon-2));color:#fff;box-shadow:0 8px 24px rgba(122,14,26,0.2)";
+									$mvvMaroon = "background:linear-gradient(135deg,var(--mvv-maroon),var(--mvv-maroon-2));color:#fff;box-shadow:0 8px 24px rgba(94,20,38,0.2)";
 									$mvvGhost = "background:var(--mvv-white);color:var(--mvv-muted);border-color:var(--mvv-border)";
 									
 									if($expressinterestfetch['status']=='Pending') { ?>

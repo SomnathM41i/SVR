@@ -47,7 +47,7 @@ a, a:visited {
 	transition: all 0.3s ease-in-out;
 }
 a:hover, a:focus {
-	color: #c25d02;
+	color: #C9556A;
 }
 
 /** 
@@ -259,7 +259,7 @@ ul.disc li::before {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: #c25d02;
+	background: #C9556A;
 	position: absolute;
 	left: -17px;
 	top: 11px;
@@ -267,7 +267,7 @@ ul.disc li::before {
 }
 dt {
 	margin: 0;
-	color: #c25d02;
+	color: #C9556A;
 }
 dd {
 	margin: 0 0 0 2rem;
@@ -916,7 +916,7 @@ header .logo a {
 .main-content h1::before {
 	content: "";
 	display: block;
-	background: #c25d02;
+	background: #C9556A;
 	width: 120px;
 	height: 3px;
 	position: absolute;

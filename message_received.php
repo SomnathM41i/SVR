@@ -43,10 +43,10 @@ $am=date('a');
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <style>
-:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#8B1A1A;}
+.mvv-btn.primary:hover{background:#7A1F39;}
 .comments-area .comment-box{padding:12px 0;border-bottom:1px solid var(--mvv-border);}
 .comments-area .comment-box:last-child{border-bottom:none;}
 .comment{display:flex;flex-wrap:wrap;gap:12px;}
@@ -57,7 +57,7 @@ $am=date('a');
 .comment-info .name a{color:var(--mvv-maroon);text-decoration:none;}
 .comment-info .date{display:inline;color:var(--mvv-muted);font-size:.85rem;}
 .text{width:100%;margin-top:6px;color:#555;}
-.message{margin-right:5px;color:#1d95d2;font-size:18px;}
+.message{margin-right:5px;color:#773C47;font-size:18px;}
 @media screen and (max-width:768px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 @media screen and (max-width:568px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 </style>

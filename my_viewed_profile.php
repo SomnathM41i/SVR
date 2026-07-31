@@ -259,7 +259,7 @@ $total_pages = ceil($total_records / $limit);
 			<section class="mvv-section">
 					<div class="mvv-container">
 						<div style="text-align:center;padding:60px 20px;">
-							<div style="font-size:3rem;font-weight:800;color:#6B1A1A;">OOP'S</div>
+							<div style="font-size:3rem;font-weight:800;color:#5E1426;">OOP'S</div>
 							<h4>Sorry Result Not Found</h4>
 							<div style="color:#888;margin:10px 0;">Not yet viewed any profiles.</div>
 							<a href="smart_search" class="mvv-btn primary">Search</a>

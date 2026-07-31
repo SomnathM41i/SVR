@@ -48,7 +48,7 @@ $matriid = htmlspecialchars($_SESSION['MatriID'] ?? '');
 
   /* ── Red error banner ── */
   .failed-banner {
-    background: linear-gradient(135deg, #8b1a1a 0%, #c0392b 100%);
+    background: linear-gradient(135deg, #7A1F39 0%, #c0392b 100%);
     padding: 44px 30px 36px;
     text-align: center;
     position: relative;

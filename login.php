@@ -30,27 +30,27 @@ $page_title = 'Member Login - Manpasand Jodidar';
         linear-gradient(90deg, rgba(255,249,240,.99) 0%, rgba(255,249,240,.96) 38%, rgba(255,249,240,.48) 58%, rgba(255,249,240,.06) 100%),
         url('template/assets/images/maratha-wedding-hero.jpg') 68% center / cover no-repeat;
     }
-    .login-card { background:rgba(255,255,255,.96); border-radius:var(--radius,22px); border:1px solid rgba(109,23,38,.14); padding:40px 36px; max-width:480px; margin:0; box-shadow:0 24px 70px rgba(79,35,25,.16); backdrop-filter:blur(10px); }
-    .login-card h2 { font-size:1.5rem; font-weight:700; color:var(--maroon,#6B1A1A); text-align:center; margin:0 0 4px; }
+    .login-card { background:rgba(255,255,255,.96); border-radius:var(--radius,22px); border:1px solid rgba(94,20,38,.14); padding:40px 36px; max-width:480px; margin:0; box-shadow:0 24px 70px rgba(79,35,25,.16); backdrop-filter:blur(10px); }
+    .login-card h2 { font-size:1.5rem; font-weight:700; color:var(--maroon,#5E1426); text-align:center; margin:0 0 4px; }
     .login-card .login-sub { text-align:center; color:var(--muted,#888); font-size:.9rem; margin-bottom:24px; }
     .login-field { margin-bottom:16px; }
     .login-field label { display:block; font-size:.85rem; font-weight:600; color:#555; margin-bottom:4px; }
     .login-field input { width:100%; padding:12px 14px; border:1.5px solid #e0dbd5; border-radius:10px; font-size:.92rem; color:#444; transition:border-color .2s,box-shadow .2s; }
-    .login-field input:focus { border-color:var(--mvv-gold,#C9921A); box-shadow:0 0 0 3px rgba(201,146,26,0.12); outline:none; }
+    .login-field input:focus { border-color:var(--mvv-gold,#BA9350); box-shadow:0 0 0 3px rgba(186,147,80,0.12); outline:none; }
     .login-field .input-icon-wrap { position:relative; }
     .login-field .input-icon-wrap input { padding-left:40px; }
     .login-field .input-icon-wrap i { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:#bbb; font-size:1rem; }
     .login-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:16px; font-size:.85rem; }
     .login-row label { display:flex; align-items:center; gap:6px; color:#555; cursor:pointer; }
-    .login-row a { color:var(--maroon,#6B1A1A); text-decoration:none; }
+    .login-row a { color:var(--maroon,#5E1426); text-decoration:none; }
     .login-row a:hover { text-decoration:underline; }
-    .login-btn { display:inline-block; padding:12px 32px; border-radius:10px; font-weight:600; font-size:.95rem; border:none; cursor:pointer; text-decoration:none; transition:.2s; width:100%; text-align:center; background:var(--maroon,#6B1A1A); color:#fff; }
-    .login-btn:hover { background:#8B1A1A; box-shadow:0 4px 14px rgba(107,26,26,0.3); }
+    .login-btn { display:inline-block; padding:12px 32px; border-radius:10px; font-weight:600; font-size:.95rem; border:none; cursor:pointer; text-decoration:none; transition:.2s; width:100%; text-align:center; background:var(--maroon,#5E1426); color:#fff; }
+    .login-btn:hover { background:#7A1F39; box-shadow:0 4px 14px rgba(94,20,38,0.3); }
     .login-footer { text-align:center; margin-top:16px; font-size:.88rem; color:#666; }
-    .login-footer a { color:var(--maroon,#6B1A1A); font-weight:600; text-decoration:none; }
+    .login-footer a { color:var(--maroon,#5E1426); font-weight:600; text-decoration:none; }
     .login-footer a:hover { text-decoration:underline; }
     .login-error { text-align:center; color:#d32f2f; font-size:.88rem; margin-bottom:12px; }
-    .login-success { text-align:center; color:#2e7d32; font-size:.88rem; margin-bottom:12px; }
+    .login-success { text-align:center; color:#2F7D5B; font-size:.88rem; margin-bottom:12px; }
     @media (max-width: 760px) {
       .login-section {
         min-height:auto;

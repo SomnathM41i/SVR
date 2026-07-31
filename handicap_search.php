@@ -62,7 +62,7 @@
       <div class="contact-form">
         <div class="w3ls-title1 mb-4">
           <?php  if(!(isset($login)&& $regvar=='9')) { ?>
-          <span style="font-size:20px;color:#1d95d2;">Advance Search, Id Search, Save Search Will Enable After Login</span><br>
+          <span style="font-size:20px;color:#773C47;">Advance Search, Id Search, Save Search Will Enable After Login</span><br>
           <?php } ?>
         </div>
         <div class="col-lg-12 mt-3">

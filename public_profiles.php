@@ -111,8 +111,8 @@ include('header3.php');
 
 <style>
 .public-profiles-page{min-height:65vh;padding-bottom:70px;background:linear-gradient(180deg,#fffaf5 0,#fff 46%)}
-.public-profiles-hero{padding:62px 0 48px;background:linear-gradient(135deg,#6b1a1a,#8b2520);color:#fff}
-.public-profiles-hero .eyebrow{display:block;margin-bottom:10px;color:#f0c04a;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.public-profiles-hero{padding:62px 0 48px;background:linear-gradient(135deg,#5E1426,#8b2520);color:#fff}
+.public-profiles-hero .eyebrow{display:block;margin-bottom:10px;color:#DDB15F;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .public-profiles-hero h1{margin:0 0 10px;color:#fff;font-family:var(--mvv-display);font-size:clamp(2rem,5vw,3.6rem)}
 .public-profiles-hero p{max-width:620px;margin:0;color:rgba(255,255,255,.78)}
 .public-profiles-section{padding:42px 0}

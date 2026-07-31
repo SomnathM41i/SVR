@@ -152,7 +152,7 @@ function id_search_h($value)
     }
     .mvv-match-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(201,146,26,.45);
+      border-color: rgba(186,147,80,.45);
       box-shadow: 0 18px 42px rgba(56,32,25,.13);
     }
     .mvv-card-photo { position: relative; display: block; overflow: hidden; background: var(--mvv-cream); }
@@ -340,7 +340,7 @@ function id_search_h($value)
                 $waLA[] = '';
                 $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
-              ?><div style="padding:4px 16px 12px;background:var(--mvv-cream,#FFF8F0)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
+              ?><div style="padding:4px 16px 12px;background:var(--mvv-cream,#FFFDFB)"><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Share</a></div>
               </div>
             </article>
           <?php } ?>

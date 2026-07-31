@@ -19,7 +19,7 @@ if($s2 > 0){ ?>
 	@keyframes blink{
 0%{opacity: 0;}
 50%{opacity: .5;
-color: #ec167f;}
+color: #C9556A;}
 100%{opacity: 1;}
 }
 </style>

@@ -47,18 +47,18 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
          Inspired by template's modern aesthetic
       ══════════════════════════════════════════ */
       :root {
-        --mvv-saffron:      #E8612A;
-        --mvv-saffron-dark: #C94D1A;
-        --mvv-maroon:       #6B1A1A;
-        --mvv-maroon-dark:  #4A0E0E;
-        --mvv-gold:         #C9921A;
-        --mvv-gold-light:   #F0C04A;
-        --mvv-cream:        #FFF8F0;
-        --mvv-cream-2:      #F7ECDD;
-        --mvv-ink:          #271A1B;
-        --mvv-muted:        #7A5C4A;
+        --mvv-saffron:      #C9556A;
+        --mvv-saffron-dark: #A63E52;
+        --mvv-maroon:       #5E1426;
+        --mvv-maroon-dark:  #3D0C19;
+        --mvv-gold:         #BA9350;
+        --mvv-gold-light:   #DDB15F;
+        --mvv-cream:        #FFFDFB;
+        --mvv-cream-2:      #F9E7DC;
+        --mvv-ink:          #3A2530;
+        --mvv-muted:        #7A6570;
         --mvv-white:        #FFFFFF;
-        --mvv-line:         rgba(107,26,26,0.12);
+        --mvv-line:         rgba(94,20,38,0.12);
         --mvv-shadow:       0 20px 60px rgba(79,35,25,0.12);
         --mvv-radius:       22px;
         --mvv-radius-sm:    12px;
@@ -101,7 +101,7 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
       /* ─── TOP BAR ─── */
       .mvv-topbar {
         background: var(--mvv-maroon-dark);
-        color: #f8e8d0;
+        color: #E3CBB2;
         font-size: 13px;
       }
       .mvv-topbar-inner {
@@ -115,7 +115,7 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
         gap: 24px;
       }
       .mvv-topbar a {
-        color: #f8e8d0;
+        color: #E3CBB2;
         transition: color 0.2s;
         display: inline-flex;
         align-items: center;
@@ -314,10 +314,10 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
       .mvv-nav-btn-outline {
         background: transparent;
         color: var(--mvv-maroon) !important;
-        border: 1.5px solid rgba(107,26,26,0.3);
+        border: 1.5px solid rgba(94,20,38,0.3);
       }
       .mvv-nav-btn-outline:hover {
-        background: rgba(107,26,26,0.06);
+        background: rgba(94,20,38,0.06);
         border-color: var(--mvv-maroon);
       }
 
@@ -348,7 +348,7 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
         width: 44px;
         height: 44px;
         border: none;
-        background: rgba(107,26,26,0.08);
+        background: rgba(94,20,38,0.08);
         border-radius: 8px;
         padding: 8px;
         cursor: pointer;
@@ -380,7 +380,7 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
         font-weight: 600;
         color: var(--mvv-maroon);
         padding: 4px 12px;
-        background: rgba(107,26,26,0.06);
+        background: rgba(94,20,38,0.06);
         border-radius: 999px;
       }
 
@@ -605,14 +605,14 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
       .hero:after {
         content: '';
         position: absolute;
-        border: 1px solid rgba(200,154,75,.27);
+        border: 1px solid rgba(186,147,80,.27);
         border-radius: 50%;
       }
       .hero:before { width:360px; height:360px; left:-210px; top:30px; }
       .hero:after  { width:510px; height:510px; left:-300px; top:-40px; }
 
       /* ─── ABOUT EMBLEM LOGO ─── */
-      .about-art { background: none !important; border: 2px solid rgba(200,154,75,0.4); box-shadow: 0 15px 50px rgba(79,35,25,0.15); }
+      .about-art { background: none !important; border: 2px solid rgba(186,147,80,0.4); box-shadow: 0 15px 50px rgba(79,35,25,0.15); }
       .about-art::before { display: none !important; }
       .about-emblem img { width: 200px; height: 200px; border-radius: 50%; object-fit: contain; background: #fff; padding: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
       .about-photo-card .about-emblem { inset: 0; border: 0; border-radius: inherit; overflow: hidden; }
@@ -638,7 +638,7 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
               rgba(255,249,240,.9) 56%,
               rgba(255,249,240,.25) 100%),
             url('template/assets/images/maratha-wedding-hero.jpg') 72% bottom / auto 52% no-repeat,
-            #fff9f0;
+            #FFFDFB;
         }
         .hero-content { width: 100%; padding: 65px 0 280px; }
         .hero h1 { font-size: 42px; }

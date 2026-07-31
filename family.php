@@ -1149,8 +1149,8 @@ header('Location: upload_photo?id='.$ID);
   font-weight:400; letter-spacing:normal; text-transform:none;
   transition:background 0.15s;
 }
-.mvv-multi-opt:hover { background:var(--mvv-cream,#FFF8F0); }
-.mvv-field .mvv-multi-opt input[type="checkbox"] { width:18px; min-width:18px; min-height:18px; height:18px; padding:0; margin:0; accent-color:var(--mvv-gold,#C9921A); }
+.mvv-multi-opt:hover { background:var(--mvv-cream,#FFFDFB); }
+.mvv-field .mvv-multi-opt input[type="checkbox"] { width:18px; min-width:18px; min-height:18px; height:18px; padding:0; margin:0; accent-color:var(--mvv-gold,#BA9350); }
 </style>
 
 <script>

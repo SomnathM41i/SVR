@@ -353,7 +353,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
     .match-card .info { padding:16px; }
     .match-card .info h4 { margin:0 0 4px; font-size:1.05rem; }
     .match-card .info .meta { color:#888; font-size:0.85rem; }
-    .partner-match-badge{display:inline-flex;margin:0 0 8px;padding:5px 9px;border-radius:999px;background:#fff0e0;color:#6b1a1a;font-size:.75rem;font-weight:800}.partner-match-badge.perfect{background:#e8f7ed;color:#24653a}
+    .partner-match-badge{display:inline-flex;margin:0 0 8px;padding:5px 9px;border-radius:999px;background:#fff0e0;color:#5E1426;font-size:.75rem;font-weight:800}.partner-match-badge.perfect{background:#e8f7ed;color:#24653a}
   </style>
 </head>
 <body>

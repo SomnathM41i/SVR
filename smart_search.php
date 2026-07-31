@@ -114,13 +114,13 @@ while ($talukaRow = mysqli_fetch_assoc($talukaResult)) {
     }
     .mvv-id-search-form input:focus {
       outline:none;border-color:var(--mvv-gold);
-      box-shadow:0 0 0 4px rgba(201,146,26,.13);
+      box-shadow:0 0 0 4px rgba(186,147,80,.13);
     }
     .mvv-id-search-form button {
       flex:0 0 auto;min-height:46px;padding:0 18px;border:0;border-radius:9px;
       background:var(--mvv-maroon);color:#fff;font-weight:700;cursor:pointer;
     }
-    .mvv-id-search-form button:hover { background:#8B1A1A; }
+    .mvv-id-search-form button:hover { background:#7A1F39; }
 
     /* Native single selects (Gender, With Photo) */
     .mvv-smart-form select.mvv-sel {
@@ -143,7 +143,7 @@ while ($talukaRow = mysqli_fetch_assoc($talukaResult)) {
     .mvv-smart-form select.mvv-sel:focus {
       border-color: var(--mvv-gold);
       outline: none;
-      box-shadow: 0 0 0 4px rgba(201,146,26,.13);
+      box-shadow: 0 0 0 4px rgba(186,147,80,.13);
     }
 
     /* Age selects — native look + SVG caret */
@@ -187,7 +187,7 @@ while ($talukaRow = mysqli_fetch_assoc($talukaResult)) {
     .mvv-msel-btn:focus,
     .mvv-msel-btn.active {
       border-color: var(--mvv-gold);
-      box-shadow: 0 0 0 4px rgba(201,146,26,.13);
+      box-shadow: 0 0 0 4px rgba(186,147,80,.13);
       outline: none;
     }
     .mvv-msel-arrow {
@@ -243,7 +243,7 @@ while ($talukaRow = mysqli_fetch_assoc($talukaResult)) {
     .mvv-msel-search:focus {
       outline: none;
       border-color: var(--mvv-gold);
-      box-shadow: 0 0 0 3px rgba(201,146,26,.13);
+      box-shadow: 0 0 0 3px rgba(186,147,80,.13);
     }
     .mvv-msel-empty {
       display: none;
@@ -293,7 +293,7 @@ while ($talukaRow = mysqli_fetch_assoc($talukaResult)) {
       padding: 12px 22px; font-weight: 700;
       transition: background .2s;
     }
-    .mvv-btn.mvv-btn-primary:hover { background: #8B1A1A; }
+    .mvv-btn.mvv-btn-primary:hover { background: #7A1F39; }
     .mvv-search-actions .mvv-btn { margin: 0 !important; }
 
     @media screen and (max-width:768px) {

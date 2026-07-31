@@ -25,6 +25,12 @@
   --mpj-gold-light:   #E3CBB2;  /* light gold — hairline fills              */
   --mpj-bronze:       #A25C3B;  /* bronze accent (sampled)                  */
 
+  /* --- R3 bridge tones (used by the palette remap of legacy screens) ------ */
+  --mpj-maroon-600:   #7A1F39;  /* hover mid-maroon (gradients)             */
+  --mpj-rose-400:     #DB7F94;  /* light rose gradient stop                 */
+  --mpj-gold-bright:  #DDB15F;  /* gold text/accents on dark surfaces       */
+  --mpj-plum:         #43303A;  /* deep plum neutral (ex-slate sections)    */
+
   /* --- Text ------------------------------------------------------------- */
   --mpj-ink:          #3A2530;  /* primary text (warm plum-charcoal)        */
   --mpj-ink-muted:    #7A6570;  /* secondary text                           */

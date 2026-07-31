@@ -106,9 +106,9 @@ include('header3.php');
 
 <style>
 .public-profile-page{min-height:65vh;padding-bottom:72px;background:linear-gradient(180deg,#fff9f2,#fff 420px)}
-.public-profile-hero{padding:54px 0;background:linear-gradient(135deg,#6b1a1a,#8b2520);color:#fff}
+.public-profile-hero{padding:54px 0;background:linear-gradient(135deg,#5E1426,#8b2520);color:#fff}
 .public-profile-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.public-profile-hero .eyebrow{display:block;margin-bottom:8px;color:#f0c04a;font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.public-profile-hero .eyebrow{display:block;margin-bottom:8px;color:#DDB15F;font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
 .public-profile-hero h1{margin:0 0 7px;color:#fff;font-family:var(--mvv-display);font-size:clamp(2rem,5vw,3.3rem)}
 .public-profile-hero p{margin:0;color:rgba(255,255,255,.75)}
 .public-profile-back{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-size:.85rem;font-weight:700;text-decoration:none}
