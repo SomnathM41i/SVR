@@ -56,7 +56,7 @@ while ($row = $result->fetch_assoc()) {
             'notification' => [
                 'title' => $title,
                 'body' => $personalMessage,
-                'image' => 'http://localhost/SVR/css3/assets/shivraj-logo.png'
+                'image' => 'https://weddingsparampara.com/branding/images/logo-horizontal.png'
             ]
         ]
     ];

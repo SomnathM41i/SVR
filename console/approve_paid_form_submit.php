@@ -147,7 +147,7 @@ or die("Could not update data because ".mysqli_error());?>
 // 			<body>
 // 			<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 //                 <tr>
-//                 <td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='149' height='66'  alt=''/></td>
+//                 <td width='222'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png' width='149' height='66'  alt=''/></td>
 
 //                 </tr>
 //                 <tr>
@@ -241,7 +241,7 @@ $info=$query->fetch_array();
 				<div class='wrapper-float' style='float:left;margin: 0;width: 590px;background: #c5191f;'>
 				<div class='sub-wrapper' style='float: left;width: 570px; background: #f7f7f7;margin: 10px;border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;'>
 					
-						<div class='logo' style='margin:25px 0 0 10px;float: left;	margin: 7% 0 0 25%;'><a href='http://readymatrimonial.in/6.0/index.php' target='_blank' style='transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;text-decoration: none;'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png'></a></div>
+						<div class='logo' style='margin:25px 0 0 10px;float: left;	margin: 7% 0 0 25%;'><a href='http://readymatrimonial.in/6.0/index.php' target='_blank' style='transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;text-decoration: none;'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png'></a></div>
 				<img src='http://readymatrimonial.in/6.0/console/email-send/images/registration-confirmation-icon.png' style='margin:20px 30px 0 0; float:right;'>
 					<br><br>
 				

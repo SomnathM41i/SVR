@@ -109,7 +109,7 @@ $res = mysqli_query($con,"update expressinterest set status='Accept' where eirec
 					<body>
 					<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 					  <tr>
-						<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
+						<td width='222'><img src='https://weddingsparampara.com/branding/images/logo-horizontal.png' width='168' height='50'  alt=''/></td>
 						<td colspan='2' align='center' valign='middle'>Date: 20-2-2021</td>
 					  </tr>
 					  <tr>

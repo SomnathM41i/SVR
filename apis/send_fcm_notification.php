@@ -113,7 +113,7 @@ try {
                     'body'  => $body,
                     'image' => !empty($image)
                         ? $image
-                        : 'http://localhost/SVR/css3/assets/shivraj-logo.png'
+                        : 'https://weddingsparampara.com/branding/images/logo-horizontal.png'
                 ],
                 'data' => [
                     'type'          => 'PERSONALIZED_NOTIFICATION',
