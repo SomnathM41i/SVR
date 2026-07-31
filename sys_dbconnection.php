@@ -4,7 +4,17 @@
 */
 error_reporting(E_ERROR);
 /*ob_start();*/
-if (!isset($_SESSION)) { session_start(); }
+/* SECURITY (H11): harden the session cookie before starting the session. */
+if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+	$_svrSecure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+	if (PHP_VERSION_ID >= 70300) {
+		session_set_cookie_params(array('lifetime' => 0, 'path' => '/', 'secure' => $_svrSecure, 'httponly' => true, 'samesite' => 'Lax'));
+	} else {
+		session_set_cookie_params(0, '/; samesite=Lax', '', $_svrSecure, true);
+	}
+	ini_set('session.use_strict_mode', '1');
+	session_start();
+} else if (!isset($_SESSION)) { session_start(); }
 date_default_timezone_set("Asia/Kolkata");
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'config.php');

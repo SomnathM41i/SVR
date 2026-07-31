@@ -89,7 +89,7 @@ $page_title = 'Member Login - Shivraj Maratha';
             <label>Password</label>
             <div class="input-icon-wrap">
               <i class="fas fa-lock"></i>
-              <input type="password" name="txtpassword" placeholder="Enter your password" maxlength="35" id="pass" required value="<?php if(isset($_COOKIE["userpassword"])) echo $_COOKIE["userpassword"]; ?>">
+              <input type="password" name="txtpassword" placeholder="Enter your password" maxlength="35" id="pass" required autocomplete="current-password">
             </div>
           </div>
 

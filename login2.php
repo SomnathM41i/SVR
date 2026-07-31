@@ -298,7 +298,7 @@ xmlhttp.send();
                                     </div>
                                     
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-									 <input type="password" name="txtpassword" placeholder="Enter Password" maxlength="35"  id="pass" tabindex="2" required value="<?php if(isset($_COOKIE["userpassword"])) { echo $_COOKIE["userpassword"]; } ?>" >
+									 <input type="password" name="txtpassword" placeholder="Enter Password" maxlength="35"  id="pass" tabindex="2" required autocomplete="current-password">
 
 											</div>
 							<div class="col-lg-9 col-md-9 col-sm-9 mb-2">   

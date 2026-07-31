@@ -24,23 +24,29 @@ echo $mypassword;*/
 $mypassword =  $_POST['txtpassword'] ;*/
 $remember= $_POST['remember_me'];
 
-if(!empty( $_POST["remember_me"] ) ) 
+/* SECURITY (H4): the remember-me cookie no longer stores the PASSWORD.
+   Only the username is remembered; the legacy userpassword cookie is always
+   expired. Cookies are HttpOnly/SameSite=Lax (Secure on HTTPS). */
+if(!empty( $_POST["remember_me"] ) )
 {
-	//COOKIES for username
-	setcookie ("user_login",$_POST["txtusername"],time()+ (10 * 365 * 24 * 60 * 60));
-	//COOKIES for password
-	setcookie ("userpassword",$_POST["txtpassword"],time()+ (10 * 365 * 24 * 60 * 60));
-} 
-else 	
+	svr_set_cookie("user_login", $_POST["txtusername"], time()+ (10 * 365 * 24 * 60 * 60));
+	svr_set_cookie("userpassword", "", time() - 3600);
+}
+else
 {
-	if( isset( $_COOKIE["user_login"] ) ) 
+	if( isset( $_COOKIE["user_login"] ) )
 	{
-		setcookie ("user_login","");
-	if( isset( $_COOKIE["userpassword"] ) ) 
+		svr_set_cookie("user_login", "", time() - 3600);
+	if( isset( $_COOKIE["userpassword"] ) )
 	{
-		setcookie ("userpassword","");
+		svr_set_cookie("userpassword", "", time() - 3600);
 	}
 	}
+}
+/* SECURITY (H5): throttle member logins - 5 attempts / 10 min per username+IP. */
+if (!svr_throttle('login:' . strtolower($myusername) . ':' . svr_client_ip(), 5, 600)) {
+	header('Location:login?action=wrong');
+	exit;
 }
 
 $var=base64_encode($mypassword);
@@ -127,6 +133,10 @@ if($count == 1)
 					//echo $_COOKIE["MatriID"];
 			}
 			/*echo "11".'<BR>';*/
+			/* SECURITY (H11): regenerate the session id at privilege change and
+			   clear the login throttle bucket on success. */
+			session_regenerate_id(true);
+			svr_throttle_reset('login:' . strtolower($myusername) . ':' . svr_client_ip());
 			$_SESSION['matri_login']=$fetchotp['MatriID'];
 			// $_SESSION['profile']=mysql_result($rs,0);
 			$_SESSION['matriid']=$fetchotp['MatriID'];
@@ -147,8 +157,8 @@ if($count == 1)
 			//$_SESSION['EmailID']=mysql_result($rs,0,'ConfirmEmail');
 			$_SESSION['EmailID']=$fetchotp['ConfirmEmail'];
 			$_SESSION['welcome']='txtt';
-			//$_SESSION['password'] = mysql_result($rs,0,'ConfirmPassword');
-			$_SESSION['password'] = $fetchotp['ConfirmPassword'];
+			/* SECURITY (H4): the plaintext password is no longer copied into the
+			   session (nothing in the codebase reads $_SESSION['password']). */
 				  //$_SESSION['login_user_name']=mysql_result($rs,0,'Name');
 			$_SESSION['login_user_name'] = $fetchotp['Name'];
 			//$_SESSION['login_user_status']=mysql_result($rs,0,'Status');
