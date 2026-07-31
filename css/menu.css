@@ -4553,12 +4553,12 @@ img{
 }
 
 .schedule-tabs .tab-buttons li:nth-child(4n + 2).active-btn{
-	box-shadow: 0 0px 30px rgba(64,203,180,.30);
+	box-shadow: 0 0px 30px rgba(186, 147, 80,.30);
 	border: 1px solid #BA9350;
 }
 
 .schedule-tabs .tab-buttons li:nth-child(4n + 3).active-btn{
-	box-shadow: 0 0px 30px rgba(76,53,169,.30);
+	box-shadow: 0 0px 30px rgba(108, 90, 120,.30);
 	border: 1px solid #6C5A78;
 }
 

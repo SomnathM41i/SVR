@@ -107,7 +107,7 @@ function id_search_h($value)
       min-height: 62vh;
       padding-bottom: 72px;
       background:
-        radial-gradient(circle at 8% 15%, rgba(232,97,42,.07), transparent 26%),
+        radial-gradient(circle at 8% 15%, rgba(201, 85, 106,.07), transparent 26%),
         linear-gradient(180deg, #fffaf5 0%, #fff 42%);
     }
     .mvv-id-results .mvv-page-hero { margin-bottom: 40px; }

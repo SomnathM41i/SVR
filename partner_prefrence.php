@@ -130,7 +130,7 @@ if(isset($_POST['submit'])) {
 .mvv-multi-drop.open { display:block; }
 .mvv-multi-search-wrap { position:sticky; top:0; z-index:2; padding:8px; background:#fff; border-bottom:1px solid var(--mvv-border); }
 .mvv-multi-search { width:100%; min-height:38px; padding:7px 10px; border:1px solid var(--mvv-border); border-radius:6px; font:inherit; color:#333; }
-.mvv-multi-search:focus { outline:none; border-color:var(--mvv-gold); box-shadow:0 0 0 3px rgba(212,164,55,.14); }
+.mvv-multi-search:focus { outline:none; border-color:var(--mvv-gold); box-shadow:0 0 0 3px rgba(186, 147, 80,.14); }
 .mvv-multi-empty { display:none; padding:12px 14px; color:var(--mvv-muted); font-size:.88rem; }
 .mvv-multi-drop label { display:flex; align-items:center; gap:8px; padding:7px 14px; cursor:pointer; margin:0; font-size:0.9rem; color:#333; }
 .mvv-multi-drop label:hover { background:var(--mvv-cream); }

@@ -124,7 +124,7 @@ $_SESSION['MatriID']=$mid;
 <style>
 .digit-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .otp{width:52px;height:56px;text-align:center;font-size:24px;font-weight:700;border:2px solid var(--mvv-border);border-radius:10px;background:#fff;color:var(--mvv-text);transition:all 0.22s;}
-.otp:focus{border-color:var(--mvv-gold);box-shadow:0 0 0 4px rgba(212,164,55,0.14);outline:none;}
+.otp:focus{border-color:var(--mvv-gold);box-shadow:0 0 0 4px rgba(186, 147, 80,0.14);outline:none;}
 @media (max-width:480px){
   .digit-group{gap:6px;flex-wrap:nowrap;}
   .otp{width:clamp(36px,12vw,46px);min-width:0;height:52px;flex:0 1 46px;}

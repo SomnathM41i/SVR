@@ -80,7 +80,7 @@ html, body {
 	position: relative;
 	width: 74px;
 	height: 74px;
-	border: 5px solid rgba(232, 97, 42, 0.18);
+	border: 5px solid rgba(201, 85, 106, 0.18);
 	border-top-color: #C9556A;
 	border-right-color: #5E1426;
 	border-radius: 50%;

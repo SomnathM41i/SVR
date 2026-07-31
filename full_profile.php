@@ -85,7 +85,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
   /* ── Photo Card ── */
   .mvv-photo-card { background:var(--mvv-white); border:1px solid var(--mvv-border); box-shadow:var(--mvv-shadow); padding:28px; text-align:center; position:relative; }
   .mvv-photo-card .photo-wrap { position:relative; display:inline-block; }
-  .mvv-photo-card .photo-wrap img { width:200px; height:200px; object-fit:cover; border-radius:50%; border:4px solid var(--mvv-accent); box-shadow:0 8px 28px rgba(212,164,55,0.2); }
+  .mvv-photo-card .photo-wrap img { width:200px; height:200px; object-fit:cover; border-radius:50%; border:4px solid var(--mvv-accent); box-shadow:0 8px 28px rgba(186, 147, 80,0.2); }
   .mvv-photo-card .photo-wrap .online-dot { position:absolute; bottom:12px; right:12px; width:18px; height:18px; border-radius:50%; background:#2ecc71; border:3px solid var(--mvv-white); box-shadow:0 2px 8px rgba(0,0,0,0.15); }
   .mvv-photo-card .member-id { display:inline-block; margin-top:14px; padding:5px 18px; border-radius:999px; font-size:0.8rem; font-weight:700; background:var(--mvv-accent); color:var(--mvv-maroon); letter-spacing:0.5px; }
   .mvv-photo-card .member-name { font-family:var(--font-display); color:var(--mvv-maroon-2); font-size:1.4rem; margin:8px 0 2px; }
@@ -113,7 +113,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
   
   /* ── Gallery ── */
   .mvv-gallery-img { width:100%; height:170px; object-fit:cover; border:2px solid var(--mvv-accent); transition:all 0.3s ease; }
-  .mvv-gallery-img:hover { transform:scale(1.04); border-color:var(--mvv-gold); box-shadow:0 8px 24px rgba(212,164,55,0.2); }
+  .mvv-gallery-img:hover { transform:scale(1.04); border-color:var(--mvv-gold); box-shadow:0 8px 24px rgba(186, 147, 80,0.2); }
   
   /* ── Alert ── */
   .mvv-alert { padding:14px 20px; font-size:0.9rem; font-weight:600; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; border-left:4px solid var(--mvv-gold); background:var(--mvv-accent); color:var(--mvv-maroon-2); }
@@ -411,7 +411,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 									$is_yes=mysqli_query($con,$is_already_send);
 									$expressinterestfetch=mysqli_fetch_array($is_yes);
 									
-									$mvvPrimary = "background:linear-gradient(135deg,var(--mvv-gold),#F1D17A);color:var(--mvv-maroon-2);box-shadow:0 8px 24px rgba(212,164,55,0.3)";
+									$mvvPrimary = "background:linear-gradient(135deg,var(--mvv-gold),#F1D17A);color:var(--mvv-maroon-2);box-shadow:0 8px 24px rgba(186, 147, 80,0.3)";
 									$mvvMaroon = "background:linear-gradient(135deg,var(--mvv-maroon),var(--mvv-maroon-2));color:#fff;box-shadow:0 8px 24px rgba(94,20,38,0.2)";
 									$mvvGhost = "background:var(--mvv-white);color:var(--mvv-muted);border-color:var(--mvv-border)";
 									

@@ -114,22 +114,22 @@ function check_exist123(str)
       <form method="post" action="change_password_submit" style="max-width:500px;">
         <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
         <?php if($_GET['message']=="success") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Your Password Changed Sucessfully.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="invalid") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           You must Enter the Same Password Twice in Order to Confirm it.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="invalid1") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Your Old Password Is Incorrect.
         </div>
         <?php } ?>
         <?php if($_GET['message']=="error") { ?>
-        <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
+        <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:16px;color:var(--mvv-maroon);font-size:0.9rem;">
           Password Must Differ From Old Password.
         </div>
         <?php } ?>

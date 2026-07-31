@@ -27,8 +27,8 @@
   --shadow-sm: 0 2px 8px rgba(94, 20, 38, 0.08);
   --shadow-md: 0 4px 20px rgba(94, 20, 38, 0.12);
   --shadow-lg: 0 8px 40px rgba(94, 20, 38, 0.18);
-  --shadow-gold: 0 4px 24px rgba(212, 164, 55, 0.35);
-  --shadow-gold-lg: 0 8px 40px rgba(212, 164, 55, 0.45);
+  --shadow-gold: 0 4px 24px rgba(186, 147, 80, 0.35);
+  --shadow-gold-lg: 0 8px 40px rgba(186, 147, 80, 0.45);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -238,7 +238,7 @@ a { text-decoration: none; color: inherit; }
 /* ─── CARDS ─── */
 .card-lagnam {
   background: #fff;
-  border: 1px solid rgba(212, 164, 55, 0.15);
+  border: 1px solid rgba(186, 147, 80, 0.15);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -250,7 +250,7 @@ a { text-decoration: none; color: inherit; }
 }
 .card-lagnam-glow {
   background: linear-gradient(145deg, #fff, var(--warm-beige));
-  border: 1px solid rgba(212, 164, 55, 0.2);
+  border: 1px solid rgba(186, 147, 80, 0.2);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -286,8 +286,8 @@ a { text-decoration: none; color: inherit; }
   50% { transform: translateY(-12px); }
 }
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(212, 164, 55, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(212, 164, 55, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(186, 147, 80, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(186, 147, 80, 0.6); }
 }
 @keyframes ring-expand {
   0% { transform: scale(0.95); opacity: 1; }
@@ -312,7 +312,7 @@ a { text-decoration: none; color: inherit; }
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: rgba(212, 164, 55, 0.3);
+  background: rgba(186, 147, 80, 0.3);
   opacity: 1;
 }
 .swiper-pagination-bullet-active {
@@ -360,7 +360,7 @@ a { text-decoration: none; color: inherit; }
 /* ─── FORM ELEMENTS ─── */
 .form-lagnam .form-control,
 .form-lagnam .form-select {
-  border: 1.5px solid rgba(212, 164, 55, 0.2);
+  border: 1.5px solid rgba(186, 147, 80, 0.2);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   font-family: var(--font-body);
@@ -372,7 +372,7 @@ a { text-decoration: none; color: inherit; }
 .form-lagnam .form-control:focus,
 .form-lagnam .form-select:focus {
   border-color: var(--royal-gold);
-  box-shadow: 0 0 0 3px rgba(212, 164, 55, 0.15);
+  box-shadow: 0 0 0 3px rgba(186, 147, 80, 0.15);
 }
 .form-lagnam .form-label {
   font-weight: 600;
@@ -385,7 +385,7 @@ a { text-decoration: none; color: inherit; }
 }
 .form-lagnam .floating-label-group input,
 .form-lagnam .floating-label-group textarea {
-  border: 1.5px solid rgba(212, 164, 55, 0.2);
+  border: 1.5px solid rgba(186, 147, 80, 0.2);
   border-radius: var(--radius-md);
   padding: 18px 16px 6px;
   width: 100%;

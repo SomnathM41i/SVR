@@ -132,7 +132,7 @@ main.mvv-signup-page .mvv-page-hero {
   padding: 58px 0 42px !important;
   min-height: auto !important;
   background:
-    linear-gradient(135deg, rgba(94,20,38,0.92), rgba(139,34,48,0.88), rgba(232,97,42,0.86)),
+    linear-gradient(135deg, rgba(94,20,38,0.92), rgba(139,34,48,0.88), rgba(201, 85, 106,0.86)),
     radial-gradient(circle at top right, rgba(240,192,74,0.35), transparent 30%);
   color: #fff;
   position: relative;
@@ -297,11 +297,11 @@ main.mvv-signup-page .mvv-btn.primary {
   color: #fff;
   font-weight: 800;
   font-size: 1rem;
-  box-shadow: 0 12px 30px rgba(232,97,42,0.25);
+  box-shadow: 0 12px 30px rgba(201, 85, 106,0.25);
 }
 main.mvv-signup-page .mvv-btn.primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 36px rgba(232,97,42,0.32);
+  box-shadow: 0 16px 36px rgba(201, 85, 106,0.32);
 }
 @media (max-width: 767px) {
   main.mvv-signup-page .mvv-page-hero {

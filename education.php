@@ -114,7 +114,7 @@ include('header3.php'); ?>
 }
 .mvv-multiselect.open .mvv-multiselect-toggle {
   border-color: var(--mvv-gold);
-  box-shadow: 0 0 0 4px rgba(212,164,55,0.14);
+  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.14);
 }
 .mvv-multiselect.open .mvv-multiselect-toggle::after {
   transform: rotate(225deg) translate(-2px, -2px);
@@ -156,7 +156,7 @@ include('header3.php'); ?>
 .mvv-multiselect-search:focus {
   outline: none;
   border-color: var(--mvv-gold) !important;
-  box-shadow: 0 0 0 3px rgba(212,164,55,0.14);
+  box-shadow: 0 0 0 3px rgba(186, 147, 80,0.14);
 }
 .mvv-multiselect-empty {
   display: none;

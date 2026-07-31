@@ -49,7 +49,7 @@ function nospaces(t){if(t.value.match(/\s/g)){alert('Sorry, you are not allowed 
       $sql=mysqli_query($con,"SELECT * FROM cms WHERE link='contact us'");
       while($row=mysqli_fetch_array($sql)) {
       ?>
-      <div style="background:rgba(232,97,42,0.1);border:1px solid rgba(232,97,42,0.25);border-radius:8px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px;color:var(--mvv-maroon);font-size:0.9rem;max-width:800px;">
+      <div style="background:rgba(201, 85, 106,0.1);border:1px solid rgba(201, 85, 106,0.25);border-radius:8px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px;color:var(--mvv-maroon);font-size:0.9rem;max-width:800px;">
         <i class="bi bi-info-circle-fill"></i> Note: If you want any changes please contact <?php echo $row['email']; ?>
       </div>
       <?php } ?>

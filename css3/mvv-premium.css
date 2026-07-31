@@ -114,7 +114,7 @@ body {
 .mvv-btn.primary {
   background: linear-gradient(135deg, var(--mvv-gold), #F1D17A);
   color: var(--mvv-maroon-2);
-  box-shadow: 0 14px 30px rgba(212,164,55,0.28);
+  box-shadow: 0 14px 30px rgba(186, 147, 80,0.28);
 }
 
 .mvv-btn.secondary {
@@ -146,7 +146,7 @@ body {
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(212,164,55,0.42);
+  border: 1px solid rgba(186, 147, 80,0.42);
   pointer-events: none;
   z-index: -1;
 }
@@ -212,7 +212,7 @@ body {
   position: relative;
   z-index: 3;
   background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(212,164,55,0.32);
+  border: 1px solid rgba(186, 147, 80,0.32);
   box-shadow: var(--mvv-shadow);
   padding: clamp(18px, 3vw, 30px);
   backdrop-filter: blur(18px);
@@ -250,7 +250,7 @@ body {
 .mvv-field input:focus,
 .mvv-field textarea:focus {
   border-color: var(--mvv-gold);
-  box-shadow: 0 0 0 4px rgba(212,164,55,0.14);
+  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.14);
 }
 
 .mvv-card-grid {
@@ -348,7 +348,7 @@ body {
   align-items: center;
   gap: 6px;
   color: var(--mvv-green);
-  background: rgba(46,125,50,0.1);
+  background: rgba(47, 125, 91,0.1);
   font-weight: 800;
   font-size: 0.76rem;
   padding: 6px 10px;
@@ -426,7 +426,7 @@ body {
 
 .mvv-image-frame {
   position: relative;
-  border: 1px solid rgba(212,164,55,0.42);
+  border: 1px solid rgba(186, 147, 80,0.42);
   padding: 12px;
   background: #fff;
   box-shadow: var(--mvv-shadow);
@@ -469,7 +469,7 @@ body {
   padding: clamp(62px, 8vw, 104px) 0;
   color: #fff;
   background:
-    radial-gradient(circle at 14% 26%, rgba(212,164,55,0.18), transparent 28%),
+    radial-gradient(circle at 14% 26%, rgba(186, 147, 80,0.18), transparent 28%),
     linear-gradient(90deg, rgba(78,7,16,0.96) 0%, rgba(94,20,38,0.9) 46%, rgba(94,20,38,0.42) 72%, rgba(58,42,34,0.18) 100%),
     url("../images/main-slider/2.jpg") right center / cover no-repeat;
 }
@@ -478,7 +478,7 @@ body {
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(212,164,55,0.36);
+  border: 1px solid rgba(186, 147, 80,0.36);
   pointer-events: none;
   z-index: 1;
 }
@@ -491,7 +491,7 @@ body {
   width: clamp(220px, 28vw, 430px);
   aspect-ratio: 4 / 3;
   background:
-    linear-gradient(180deg, rgba(212,164,55,0.08), rgba(94,20,38,0.14)),
+    linear-gradient(180deg, rgba(186, 147, 80,0.08), rgba(94,20,38,0.14)),
     url("../images/resource/about-img-1.jpg") center / cover no-repeat;
   border: 1px solid rgba(244,231,218,0.72);
   box-shadow: 0 28px 70px rgba(0,0,0,0.26);
@@ -678,7 +678,7 @@ body {
 
 .mvv-match-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212,164,55,0.42);
+  border-color: rgba(186, 147, 80,0.42);
   box-shadow: var(--mvv-shadow);
 }
 
@@ -865,7 +865,7 @@ body {
 .mvv-map {
   min-height: 360px;
   background:
-    linear-gradient(135deg, rgba(94,20,38,0.86), rgba(212,164,55,0.56)),
+    linear-gradient(135deg, rgba(94,20,38,0.86), rgba(186, 147, 80,0.56)),
     url("../img/contact.jpg") center / cover no-repeat;
   display: grid;
   place-items: center;

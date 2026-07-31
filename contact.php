@@ -93,7 +93,7 @@ $isNriProfile = $profileLocationType === 'NRI';
 }
 
 .mvv-form .mvv-checkbox-label:hover {
-  border-color: rgba(212,164,55,0.58);
+  border-color: rgba(186, 147, 80,0.58);
   background: rgba(244,231,218,0.62);
   box-shadow: 0 8px 22px rgba(58,42,34,0.07);
 }

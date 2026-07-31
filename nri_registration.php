@@ -129,7 +129,7 @@ include('header3.php');
 .mvv-nri-errors ul{margin:6px 0 0;padding-left:20px;}
 .mvv-nri-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid #eadfd6;}
 .mvv-nri-back{color:#5E1426;font-weight:700;text-decoration:none;}
-.mvv-nri-submit{min-height:48px;padding:0 28px;border:0;border-radius:11px;background:linear-gradient(135deg,#BA9350,#C9556A);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(232,97,42,.23);}
+.mvv-nri-submit{min-height:48px;padding:0 28px;border:0;border-radius:11px;background:linear-gradient(135deg,#BA9350,#C9556A);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(201, 85, 106,.23);}
 @media(max-width:700px){.mvv-nri-page{padding:28px 0 46px}.mvv-nri-card{padding:22px 18px;border-radius:16px}.mvv-nri-grid{grid-template-columns:1fr}.mvv-nri-field.full{grid-column:auto}.mvv-nri-actions{align-items:stretch;flex-direction:column-reverse}.mvv-nri-submit{width:100%}.mvv-nri-back{text-align:center;padding:10px}}
 </style>
 

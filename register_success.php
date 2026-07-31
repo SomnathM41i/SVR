@@ -57,14 +57,14 @@ window.onunload = function() { null };
       <div class="mvv-two-col">
         <div>
           <?php if(empty($_GET['msg'])){ ?>
-          <!-- <div style="background:rgba(46,125,50,0.1);color:var(--mvv-green);border-radius:8px;padding:10px 16px;margin-bottom:20px;display:flex;align-items:center;gap:8px;">
+          <!-- <div style="background:rgba(47, 125, 91,0.1);color:var(--mvv-green);border-radius:8px;padding:10px 16px;margin-bottom:20px;display:flex;align-items:center;gap:8px;">
             <i class="bi bi-check-circle-fill"></i> OTP Step Verified
           </div> -->
           <?php } ?>
           <div class="mvv-eyebrow">Welcome</div>
           <h2 class="mvv-title"><?php echo $fetrow['MatriID'];?>, <?php echo $fetrow['Name'];?></h2>
           <p class="mvv-subtitle">तुमची प्रोफाइल आता आमच्या टीमद्वारे व्हेरिफाय केली जाईल. कृपया पुढील स्टेप्स पूर्ण करा.</p>
-          <div style="background:rgba(212,164,55,0.1);border:1px solid var(--mvv-gold);border-radius:12px;padding:16px;margin:20px 0;">
+          <div style="background:rgba(186, 147, 80,0.1);border:1px solid var(--mvv-gold);border-radius:12px;padding:16px;margin:20px 0;">
             <p style="margin:0;"><b>Important:</b> None of the uploaded documents will be visible to your prospects, except for your salary slip that is visible only to Paid members.</p>
           </div>
         </div>

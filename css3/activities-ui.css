@@ -24,7 +24,7 @@
 
 .mvv-match-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212,164,55,0.42) !important;
+  border-color: rgba(186, 147, 80,0.42) !important;
   box-shadow: var(--mvv-shadow, 0 18px 44px rgba(58,42,34,0.12)) !important;
 }
 
