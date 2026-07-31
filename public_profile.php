@@ -182,7 +182,7 @@ include('header3.php');
     $waLines = [];
     $waLines[] = $profileUrl;
     $waLines[] = '';
-    $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+    $waLines[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
     $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
     $waLines[] = "\u{1F3C3} Name: $maskedName";
     $waLines[] = "\u{1F382} Age: " . ($profile['Age'] ?? '') . ' years';
@@ -193,7 +193,7 @@ include('header3.php');
     if (!empty($profileLocation)) $waLines[] = "\u{1F4CD} Location: $profileLocation";
     if (!empty($profile['Maritalstatus'])) $waLines[] = "\u{1F48D} Marital Status: {$profile['Maritalstatus']}";
     $waLines[] = '';
-    $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+    $waLines[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
     $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
 ?>
   <section class="public-profile-hero">

@@ -10,7 +10,7 @@ if (!empty($profile['dob'])) {
 }
 $waLoc = implode(', ', array_filter([$profile['city'] ?? '', $profile['taluka'] ?? '', $profile['district'] ?? '']));
 $waLines = [];
-$waLines[] = "\u{1F496} Check out this Matrimony Profile!";
+$waLines[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
 $waLines[] = '';
 $waLines[] = "\u{1F194} Profile ID: {$profile['id']}";
 if (!empty($profile['name'])) $waLines[] = "\u{1F3C3} Name: {$profile['name']}";
@@ -25,7 +25,7 @@ $waLines[] = '';
 $waLines[] = "\u{1F517} View Full Profile:";
 $waLines[] = 'public_profile?id=' . urlencode(base64_encode($profile['id'] ?? ''));
 $waLines[] = '';
-$waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+$waLines[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
 $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
 ?>
 <article class="profile-card" data-city="<?= strtolower($profile['city']) ?>" data-caste="<?= strtolower($profile['caste']) ?>">

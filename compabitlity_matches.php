@@ -445,7 +445,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $waHL = $rec['Height'] ? getHeightValue($rec['Height']) : '';
                 $waLL = implode(', ', array_filter([$rec['City'] ?? '', $rec['Dist'] ?? '']));
                 $waLA = [];
-                $waLA[] = "\u{1F496} Check out this Matrimony Profile!";
+                $waLA[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
                 $waLA[] = '';
                 $waLA[] = "\u{1F194} Profile ID: {$rec['MatriID']}";
                 $waLA[] = "\u{1F382} Age: {$rec['Age']} years";
@@ -459,7 +459,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $waLA[] = "\u{1F517} View Full Profile:";
                 $waLA[] = $baseUrl . 'public_profile?id=' . urlencode(base64_encode($rec['MatriID']));
                 $waLA[] = '';
-                $waLA[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
+                $waLA[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
                 $waUR = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLA));
               ?><a class="wa-share-btn wa-share-btn-sm" href="<?php echo htmlspecialchars($waUR, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:6px"><i class="fab fa-whatsapp"></i> Share</a><br>
                                 <ul class="social-links social-icon-colored">
