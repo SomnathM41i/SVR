@@ -57,7 +57,7 @@ $row = mysqli_fetch_assoc($result);
     
 
 <style>
-:root { --gold: #C9A84C; --crimson: #8B1A2B; --surface: #FDFAF5; }
+:root { --gold: #BA9350; --crimson: #5E1426; --surface: #FFFDFB; }
 body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .admin-profile-container { padding-top:36px; }
 .admin-profile-container .pc-container { max-width:100%; width:100%; margin-left:auto !important; margin-right:auto !important; padding-left:0; padding-right:0; }
@@ -70,7 +70,7 @@ body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .card-header h5 { font-size:15px; font-weight:600; color:#333; margin:0; }
 .card-body { padding:16px 22px; }
 .form-control { border-radius:6px; border:1px solid #ddd; padding:8px 14px; font-size:13px; }
-.form-control:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,168,76,0.15); }
+.form-control:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(186,147,80,0.15); }
 .form-label { font-size:12px; font-weight:600; color:#555; margin-bottom:4px; }
 .table-borderless td { padding:6px 8px; font-size:13px; border:none; }
 .table-borderless td:first-child { font-weight:600; color:#555; min-width:120px; }
@@ -86,15 +86,15 @@ body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .btn-secondary { background:linear-gradient(135deg,#6c757d,#545b62); border:none; color:#fff; }
 .btn-success { background:linear-gradient(135deg,#28a745,#1e7e34); border:none; color:#fff; }
 .btn-danger { background:linear-gradient(135deg,#dc3545,#b02a37); border:none; color:#fff; }
-.btn-primary { background:linear-gradient(135deg,var(--crimson),#6e1422); border:none; }
+.btn-primary { background:linear-gradient(135deg,var(--crimson),#3D0C19); border:none; }
 .dropdown-menu { border:none; box-shadow:0 4px 16px rgba(0,0,0,0.12); border-radius:8px; }
 .dropdown-item { font-size:13px; padding:8px 18px; }
-.dropdown-menu-dark { background:#2D1F3D; }
+.dropdown-menu-dark { background:#43303A; }
 .dropdown-menu-dark .dropdown-item { color:rgba(255,255,255,0.85); }
-.dropdown-menu-dark .dropdown-item:hover { background:rgba(201,168,76,0.15); color:#fff; }
+.dropdown-menu-dark .dropdown-item:hover { background:rgba(186,147,80,0.15); color:#fff; }
 .list-pills .nav-link { border-radius:0; padding:12px 18px; font-size:13px; border-left:3px solid transparent; transition:all 0.2s; }
-.list-pills .nav-link.active { background:#f5efe6; border-left-color:var(--gold); color:var(--crimson); font-weight:600; }
-.list-pills .nav-link:hover { background:#faf5ee; }
+.list-pills .nav-link.active { background:#F9E7DC; border-left-color:var(--gold); color:var(--crimson); font-weight:600; }
+.list-pills .nav-link:hover { background:#FFFDFB; }
 .personal-result { font-weight:500; }
 .alert { border:none; border-radius:8px; padding:14px 18px; }
 .alert h5 { font-size:13px; }
@@ -3472,7 +3472,7 @@ function checkworkstate(str)
 											<br><br>
 											
 										 <br>
-											<h4 align="center"><label for="upload_photo" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
+											<h4 align="center"><label for="upload_photo" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">  
               			                <input name="fileToUpload3" style="visibility:hidden;" id="upload_photo" type="file" onchange="showMyImage2(this);" />
 									<?php } ?>
@@ -3652,7 +3652,7 @@ function checkworkstate(str)
 												<option value="Driving License">Driving License</option>
 												<option value="Passport" >Passport</option>
 											</select>--> <br>
-											<h4 align="center"><label for="upload1" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
+											<h4 align="center"><label for="upload1" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php echo $_GET['ID'];?>">  
               			                <input name="fileToUpload1" style="visibility:hidden;" id="upload1" type="file" onchange="showMyImage(this);" />
 									<?php } ?>
@@ -3791,7 +3791,7 @@ function checkworkstate(str)
 											<br><br>
 											
 										 <br>
-											<h4 align="center"><label for="horoscope" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
+											<h4 align="center"><label for="horoscope" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">  
               			                <input name="fileToUpload4" style="visibility:hidden;" id="horoscope" type="file" onchange="showMyImage3(this);" />
 									<?php } ?>

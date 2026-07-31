@@ -146,7 +146,7 @@ require_once(dirname(__FILE__).'/protect.php');
         }
 
         a {
-            color: #007bff;
+            color: #7A1F39;
             text-decoration: none;
             background-color: transparent;
             -webkit-text-decoration-skip: objects;

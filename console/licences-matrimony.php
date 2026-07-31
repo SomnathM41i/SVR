@@ -33,7 +33,7 @@ $domain_name = $data_config -> WebFriendlyname;
 	<link rel="stylesheet" href="assets/css/popup.css">
 	<style>
 		body {
-			background: #FDFAF5;
+			background: #FFFDFB;
 		}
 		.license-page-container {
 			padding-top: 36px;
@@ -44,16 +44,16 @@ $domain_name = $data_config -> WebFriendlyname;
 			padding-top: 0 !important;
 		}
 		.license-page-container .card {
-			border: 1px solid rgba(201,168,76,0.25);
+			border: 1px solid rgba(186,147,80,0.25);
 			border-radius: 14px;
-			box-shadow: 0 2px 20px rgba(45,31,61,0.08);
+			box-shadow: 0 2px 20px rgba(67,48,58,0.08);
 			overflow: hidden;
 		}
 		.license-page-container .card-body {
 			padding: 22px;
 		}
 		.license-page-container .license-copy {
-			color: #2D1F3D;
+			color: #43303A;
 			font-size: 14px;
 			line-height: 1.75;
 		}

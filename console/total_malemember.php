@@ -43,7 +43,7 @@ require_once(dirname(__FILE__).'/protect.php');
 	<link rel="stylesheet" href="assets/css/customizer.css">
 	<style>
 	body {
-		background: #FDFAF5;
+		background: #FFFDFB;
 	}
 	.row {
 		--bs-gutter-x: 1.5rem;
@@ -57,14 +57,14 @@ require_once(dirname(__FILE__).'/protect.php');
 		padding-top: 0 !important;
 	}
 	.member-list-container .card {
-		border: 1px solid rgba(201,168,76,0.25);
+		border: 1px solid rgba(186,147,80,0.25);
 		border-radius: 14px;
-		box-shadow: 0 2px 20px rgba(45,31,61,0.08);
+		box-shadow: 0 2px 20px rgba(67,48,58,0.08);
 		overflow: hidden;
 	}
 	.member-list-container .card-header {
 		background: #fff;
-		border-bottom: 1px solid rgba(201,168,76,0.25);
+		border-bottom: 1px solid rgba(186,147,80,0.25);
 		padding: 18px 22px;
 	}
 	.member-list-container .card-body {

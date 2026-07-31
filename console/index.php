@@ -47,30 +47,30 @@ include('protect.php');
            ============================================= */
 
         :root {
-            --gold:        #C9A84C;
-            --gold-light:  #E8D5A3;
-            --gold-dark:   #9A7230;
-            --crimson:     #8B1A2F;
-            --crimson-soft:#F5EAE9;
-            --deep:        #1A1025;
-            --deep-mid:    #2D1F3D;
-            --surface:     #FDFAF5;
-            --surface-2:   #F5EFE6;
-            --text-main:   #2D1F3D;
-            --text-muted:  #7A6E82;
-            --border:      rgba(201,168,76,0.25);
-            --shadow-gold: 0 4px 24px rgba(201,168,76,0.15);
-            --shadow-card: 0 2px 20px rgba(45,31,61,0.08);
+            --gold:        #BA9350;
+            --gold-light:  #E3CBB2;
+            --gold-dark:   #94753F;
+            --crimson:     #5E1426;
+            --crimson-soft:#F7E7EB;
+            --deep:        #3D0C19;
+            --deep-mid:    #43303A;
+            --surface:     #FFFDFB;
+            --surface-2:   #F9E7DC;
+            --text-main:   #43303A;
+            --text-muted:  #8A7380;
+            --border:      rgba(186,147,80,0.25);
+            --shadow-gold: 0 4px 24px rgba(186,147,80,0.15);
+            --shadow-card: 0 2px 20px rgba(67,48,58,0.08);
             --radius:      14px;
             --radius-sm:   8px;
 
             /* status colours */
             --c-free:    #6C63FF;
-            --c-paid:    #C9A84C;
+            --c-paid:    #BA9350;
             --c-expired: #E05C6A;
             --c-banned:  #4AABB8;
             --c-online:  #3CB87A;
-            --c-total:   #8B1A2F;
+            --c-total:   #5E1426;
         }
 
         * { box-sizing: border-box; }
@@ -117,7 +117,7 @@ include('protect.php');
             top: 10%;
             transform: translateY(-50%);
             font-size: 80px;
-            color: rgba(201,168,76,0.07);
+            color: rgba(186,147,80,0.07);
             pointer-events: none;
         }
         .premium-search-wrap .search-title {
@@ -129,7 +129,7 @@ include('protect.php');
             letter-spacing: 0.03em;
         }
         .premium-search-wrap .input-group .input-group-text {
-            background: rgba(201,168,76,0.15);
+            background: rgba(186,147,80,0.15);
             border: 1px solid var(--gold-dark);
             color: var(--gold-light);
             font-size: 12px;
@@ -185,8 +185,8 @@ include('protect.php');
             font-weight: 600;
             letter-spacing: 0.04em;
         }
-        .gender-badge.male   { background: rgba(139,26,47,0.1);  color: var(--crimson); }
-        .gender-badge.female { background: rgba(201,168,76,0.12); color: var(--gold-dark); }
+        .gender-badge.male   { background: rgba(94,20,38,0.1);  color: var(--crimson); }
+        .gender-badge.female { background: rgba(186,147,80,0.12); color: var(--gold-dark); }
         .gender-badge i { font-size: 13px; }
 
         /* ---- Stat Cards ---- */
@@ -344,7 +344,7 @@ include('protect.php');
             align-items: flex-start;
             gap: 12px;
             padding: 12px 20px;
-            border-bottom: 1px solid #F5EFE6;
+            border-bottom: 1px solid #F9E7DC;
             text-decoration: none;
             transition: background 0.15s;
         }
@@ -357,13 +357,13 @@ include('protect.php');
             font-size: 14px;
             flex-shrink: 0;
         }
-        .task-icon.ti--photo   { background: rgba(139,26,47,0.1);  color: var(--crimson); }
+        .task-icon.ti--photo   { background: rgba(94,20,38,0.1);  color: var(--crimson); }
         .task-icon.ti--gallery { background: rgba(224,92,106,0.1);  color: #E05C6A; }
         .task-icon.ti--id      { background: rgba(60,184,122,0.1);  color: var(--c-online); }
         .task-icon.ti--doc     { background: rgba(60,184,122,0.12); color: #2E9E6A; }
         .task-icon.ti--horo    { background: rgba(108,99,255,0.1);  color: var(--c-free); }
-        .task-icon.ti--profile { background: rgba(201,168,76,0.12); color: var(--gold-dark); }
-        .task-icon.ti--family  { background: rgba(139,26,47,0.08);  color: var(--crimson); }
+        .task-icon.ti--profile { background: rgba(186,147,80,0.12); color: var(--gold-dark); }
+        .task-icon.ti--family  { background: rgba(94,20,38,0.08);  color: var(--crimson); }
         .task-icon.ti--partner { background: rgba(224,92,106,0.1);  color: #E05C6A; }
 
         .task-text {
