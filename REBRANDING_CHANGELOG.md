@@ -59,11 +59,25 @@ e-mail/push URLs (21) · `5abfeb1` brand strings (172) · `8842b9f` head wiring 
 
 ---
 
-## Phase R3 — Public UI skin (planned)
+## Phase R3 — Public UI skin ✅ (awaiting approval)
 
-Landing/hero, header/footer, login, register, search, profile, dashboard,
-membership, payment, contact, success/error pages; token-driven component
-standardization via `branding.css`; fonts wire-up; responsive verification.
+**Report:** `REBRAND_PHASE3_UI.md` · **Commits:** `95ef3e5` palette+hero ·
+`2c73ccf` typography/ornaments/tagline · `9438132` rgba sweep + preloader.
+
+- 913 palette value swaps / 72 files: MVV tokens, template css, premium css,
+  and the legacy neon theme (hot-pink/teal/purple/bright-blue) all remapped to
+  sampled brand hexes; rgba focus/glow forms included; neon fully eliminated
+  from the public layer (0 leftovers).
+- **Fixed broken landing hero + login background** with commissioned on-brand
+  `maratha-wedding-hero.jpg` (was 404 in production).
+- Poppins + Cormorant Garamond wired into all header families next to Playfair
+  Display; `branding/branding.css` linked (tokens + utilities now live).
+- Landing dividers, footer taglines, preloader bars maroon/rose/gold; legacy
+  sub-brand line removed.
+- Guardrails held: value-only diffs proven, 0 tokenizer flips, console/agent
+  deferred to R4 by scope.
+
+---
 
 ## Phase R4 — Admin console + agent panel skin (planned)
 
