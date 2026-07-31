@@ -1,5 +1,23 @@
 # Credentials / secrets (never commit)
 firebase/firebase-service-account.json
+config.local.php
+
+# PHP error logs (may contain paths / sensitive data)
+error_log
+*.log
+
+# Backup / archive artifacts (source-disclosure risk)
+*.bak
+*.bak2
+*.zip
+
+# User-uploaded content & runtime session files (PII — must not be versioned)
+/adhar/
+/kundli/
+/gallary/
+/success/
+/uploads/
+/sessions/
 
 # OS files
 Thumbs.db
