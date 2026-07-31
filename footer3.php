@@ -355,7 +355,7 @@
       <!-- Brand -->
       <div class="mvv-footer-col">
         <a class="mvv-footer-brand" href="index">
-          <img src="<?php echo htmlspecialchars($smLogo ?? 'css3/assets/shivraj-logo.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Shivraj Maratha Logo" width="86" height="86">
+          <img src="<?php echo htmlspecialchars($smLogo ?? 'branding/logos/emblem.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Shivraj Maratha Logo" width="86" height="86">
           <span>
             <b>शिवराज मराठा</b>
             <small>वधू वर सूचक केंद्र ®</small>

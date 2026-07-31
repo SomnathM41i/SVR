@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($result);
     <meta name="author" content="DashboardKit"/>
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
     <link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<!--<link rel="stylesheet" href="assets/css/plugins/select2.min.css">-->
     <!-- font css -->
@@ -4417,7 +4417,7 @@ function isNumber(evt)
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

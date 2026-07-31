@@ -5,9 +5,9 @@ require_once('includes/partner_match.php');
 //error_reporting(0);
 $data_config = $db->get_siteconfig();
 $translator_on_off = $data_config-> translator_on_off;
-$mvvLogo = 'css3/assets/shivraj-logo.png';
-$smLogo = 'css3/assets/shivraj-logo.png';
-$smLogoLocal = 'css3/assets/shivraj-logo.png';
+$mvvLogo = 'branding/logos/emblem.png';
+$smLogo = 'branding/logos/emblem.png';
+$smLogoLocal = 'branding/favicons/icon-32.png';
 ?><style>
 /* ══════════════════════════════════════════
    CRITICAL RESET — applied first to prevent any gap above header

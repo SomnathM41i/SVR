@@ -57,7 +57,7 @@ $rzpKeyId = svr_config('SVR_RZP_KEY_ID', 'rzp_live_UCmasONfYX891y');
     "currency": "INR",
     "name": "Shivraj Maratha",
     "description": "",
-    "image": "http://localhost/SVR/css3/assets/shivraj-logo.png",
+    "image": "branding/logos/emblem.png",
     "handler": function (response){
         jQuery.ajax({
             type:'post',

@@ -95,7 +95,7 @@ html, body {
 	height: 34px;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
-	background: url("css3/assets/shivraj-logo.png") center / contain no-repeat;
+	background: url("branding/images/splash-logo.jpg") center / contain no-repeat;
 }
 .spinner-layer,
 .circle-clipper,

@@ -177,7 +177,7 @@ function ap_start($title) {
     <title><?php echo ap_h($title); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../console/assets/fonts/feather.css">
     <link rel="stylesheet" href="../console/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="../console/assets/css/style.css">
@@ -212,7 +212,7 @@ function ap_start($title) {
 <body>
 <div class="ap-top">
     <div class="ap-top-inner">
-        <div class="ap-brand"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt=""> <span>Agent Panel</span></div>
+        <div class="ap-brand"><img src="../branding/logos/emblem.png" alt=""> <span>Agent Panel</span></div>
         <div><?php echo ap_h($agent['full_name'] ?? 'Agent'); ?></div>
     </div>
 </div>

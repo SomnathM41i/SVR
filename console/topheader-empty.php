@@ -4,7 +4,7 @@
 				<div class="header-wrapper">
 					<div class="m-header">
 						<a href="index.php" class="b-brand">
-							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
+							<img src="../branding/logos/emblem.png" alt="" class="logo logo-lg">
 						</a>
 					</div>
 					

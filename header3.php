@@ -1,6 +1,6 @@
 <?php require_once('includes/bootstrap.php');
-$smLogo = 'css3/assets/shivraj-logo.png';
-$smLogoLocal = 'css3/assets/shivraj-logo.png';
+$smLogo = 'branding/logos/emblem.png';
+$smLogoLocal = 'branding/favicons/icon-32.png';
 $currentHeaderPage = pathinfo($_SERVER['SCRIPT_NAME'] ?? '', PATHINFO_FILENAME);
 $registrationHeaderPages = [
   'signup', 'signup1', 'nri_registration', 'step2', 'horoscope',

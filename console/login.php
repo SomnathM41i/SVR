@@ -15,8 +15,8 @@ $name=$fetch['Webname'];
 	<meta name="author" content="Shivraj Maratha" />
 
 	<!-- Favicon icon -->
-	<?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+	<?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 
 	<!-- font css -->
 	<link rel="stylesheet" href="assets/fonts/feather.css">
@@ -93,7 +93,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 				<div class="col-md-6">
 					<div class="card-body">
 						<div class="">
-							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" style="max-width:100px;border-radius:50%;margin-bottom:10px;">
+							<img src="../branding/logos/emblem.png" alt="" style="max-width:100px;border-radius:50%;margin-bottom:10px;">
 							<h4 class="mb-3 f-w-600">Welcome to <span class="text-primary"><br><?php echo  $name;?></span></h4>
 							<p class="text-muted mb-3">Welcome Back, Please Login <br>Into a Secure Console.</p>
 							<font color="#EA4D4D"> <?php echo $_GET['err'];?>
@@ -218,7 +218,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
             $('.m-header').addClass(temp);
         }
     });

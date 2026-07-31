@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Agent Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../console/assets/css/style.css">
     <style>
         html, body { min-height:100%; margin:0; }
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <div class="login-wrap">
     <form class="login-card" method="post">
-        <img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="">
+        <img src="../branding/logos/emblem.png" alt="">
         <h4 class="text-center mb-2">Agent Login</h4>
         <p class="text-muted text-center">Login with email or mobile number</p>
         <?php if ($error) { ?><div class="alert alert-danger"><?php echo ap_h($error); ?></div><?php } ?>

@@ -18,7 +18,7 @@ $row = mysqli_fetch_array($res);
     <!--    <div class="auto-container">-->
             <!-- Footer Content -->
     <!--        <div class="footer-content" style="padding: 25px 0 10px;">-->
-    <!--            <div class="footer-logo ftr-dsk-lg"><a href="#"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="Site Logo"></a></div>-->
+    <!--            <div class="footer-logo ftr-dsk-lg"><a href="#"><img src="branding/logos/emblem.png" alt="Site Logo"></a></div>-->
     <!--            <ul class="footer-nav ftr-dsk-mn">-->
 				
     <!--                <li><a href="index_dashboard">Home</a></li>-->
@@ -194,7 +194,7 @@ $row = mysqli_fetch_array($res);
       <!-- Brand Col -->
       <div class="col-lg-4 col-md-6">
         <a class="footer-brand-logo" href="index" aria-label="Shivraj Maratha home">
-          <img src="css3/assets/shivraj-logo.png" alt="Shivraj Maratha Logo" width="86" height="86">
+          <img src="branding/logos/emblem.png" alt="Shivraj Maratha Logo" width="86" height="86">
         </a>
         <div class="footer-brand-name">Shivraj Maratha</div>
         <div class="footer-brand-sub">शुभ विवाह • सुयोग्य जीवनसाथी</div>

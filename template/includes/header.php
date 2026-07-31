@@ -24,7 +24,7 @@ function active(string $name, string $current): string { return $name === $curre
 <header class="site-header" id="siteHeader">
   <div class="container nav-wrap">
     <a class="brand" href="index.php" aria-label="Shivraj Maratha Home">
-      <img src="../css3/assets/shivraj-logo.png" alt="Shivraj Maratha logo" width="76" height="76">
+      <img src="../../branding/logos/emblem.png" alt="Shivraj Maratha logo" width="76" height="76">
       <span><b>शिवराज मराठा</b><small>वधू वर सूचक केंद्र ®</small></span>
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><span></span><span></span><span></span></button>
