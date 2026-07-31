@@ -126,3 +126,29 @@ e-mail/push URLs (21) · `5abfeb1` brand strings (172) · `8842b9f` head wiring 
 
 **Rebrand program complete: R1→R5. PR #1 holds everything; merge gate =
 staging checklist in REBRAND_PHASE5_FINAL.md §8.**
+
+---
+
+## Final Validation — end-to-end brand audit ✅ (`09c2627` + docs)
+
+**Reports:** `REBRANDING_VALIDATION_REPORT.md` · `REBRANDING_ASSET_MAP.md` ·
+`REBRANDING_DATABASE_MAP.md` (read-only audit + remediation of 3 live refs).
+
+- Whole-repo scans across every old-brand category: **0 open defects** —
+  company/project names, logos, favicons, titles, meta, OG/Twitter, watermark,
+  email/print/biodata/invoice/WhatsApp branding, splash, error pages, admin.
+- Audit remediation (`09c2627`): Razorpay checkout was still loading old-brand
+  `images/logo-2.png` → emblem; two email templates carried
+  `<title>weddingsparampara.com</title>` → fixed. (2 live defects found+closed.)
+- Discovery: `apis/` layer still carries upstream "Dishavadhuvar" identity
+  (FCM project id, FROM identity, email URLs, JSON watermark value; 18 files)
+  — NOT edited (external service identities + mobile contract); full
+  owner change-set documented in the validation report §1+§7.
+- SQL pack coverage re-verified end-to-end and extended: added
+  `siteconfig.app_name` (cron sender) and `email_sending.from_name` (SMTP
+  display name) with preview/verify queries.
+- Manual task list (logo swap, SQL run, DLT, mailbox, social, gateway, caches)
+  + full repo health stats (968 files program-wide; 377 rebrand; ~3,150
+  replacements) in the validation report §7–§8.
+
+**Still open, owner-decision only; PR #1 NOT merged, awaiting final approval.**

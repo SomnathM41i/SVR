@@ -41,6 +41,15 @@ SELECT 'seo.meta' AS where_found, catagory, LEFT(CONCAT_WS(' | ', title, descrip
  WHERE title LIKE '%Shivraj%' OR title LIKE '%शिवराज%' OR title LIKE '%Parampara%'
     OR description LIKE '%Shivraj%' OR description LIKE '%शिवराज%' OR description LIKE '%Parampara%';
 
+SELECT 'email_sending.sender' AS where_found, id, username, from_name
+  FROM email_sending
+ WHERE from_name LIKE '%Shivraj%' OR from_name LIKE '%शिवराज%' OR from_name LIKE '%Parampara%'
+    OR username LIKE '%shivrajmaratha.com%';
+
+SELECT 'siteconfig.app_name' AS where_found, ID, app_name AS current_value
+  FROM siteconfig
+ WHERE app_name LIKE '%Shivraj%' OR app_name LIKE '%शिवराज%' OR app_name LIKE '%Parampara%';
+
 -- ----------------------------------------------------------------------------
 -- STEP 1 — siteconfig (site identity row)
 -- ----------------------------------------------------------------------------
@@ -59,6 +68,30 @@ UPDATE siteconfig
         'Weddings Parampara',     'Manpasand Jodidar'),
         'Vadhu Var Suchak Kendra','Manpasand Jodidar')
  WHERE ID = 1;
+
+-- siteconfig.app_name is used as sender/team name in cron emails
+-- (both cron files read $siteinfo['app_name']):
+UPDATE siteconfig
+   SET app_name = REPLACE(REPLACE(REPLACE(app_name,
+        'Shivraj Maratha',  'Manpasand Jodidar'),
+        'शिवराज मराठा',    'मनपसंद जोडीदार'),
+        'Weddings Parampara', 'Manpasand Jodidar')
+ WHERE ID = 1;
+
+-- ----------------------------------------------------------------------------
+-- STEP 1b — email_sending (SMTP identity row used by smtp2.php / PHPMailer)
+-- ----------------------------------------------------------------------------
+-- NOTE: only from_name (display name) is rebranded here. 'username' is the
+-- SMTP LOGIN mailbox (e.g. info@shivrajmaratha.com) — do NOT change it until
+-- the new mailbox exists on the mail server, or all outgoing mail breaks.
+-- See the owner-decisions footer.
+
+UPDATE email_sending
+   SET from_name = REPLACE(REPLACE(REPLACE(from_name,
+        'Shivraj Maratha',  'Manpasand Jodidar'),
+        'शिवराज मराठा',    'मनपसंद जोडीदार'),
+        'Weddings Parampara', 'Manpasand Jodidar')
+ WHERE id = 1;
 
 -- ----------------------------------------------------------------------------
 -- STEP 2 — CMS pages (site-authored boilerplate, e.g. link='aboutus')
@@ -101,7 +134,8 @@ UPDATE seo
 -- STEP 4 — VERIFY (expect 0 rows):
 -- ----------------------------------------------------------------------------
 
-SELECT ID, Webname, copyright_footer FROM siteconfig WHERE ID = 1;
+SELECT ID, Webname, copyright_footer, app_name FROM siteconfig WHERE ID = 1;
+SELECT id, username, from_name FROM email_sending WHERE id = 1;
 SELECT link FROM cms
  WHERE content LIKE '%Shivraj%' OR content LIKE '%शिवराज%' OR content LIKE '%Parampara%';
 SELECT catagory FROM seo
