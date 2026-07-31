@@ -1,5 +1,5 @@
 <?php
-  //include '../dbconnectadmin.php';
+  
   require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
   error_reporting(0);
@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
     $content =$db->setfilter($_POST["Message"]);
     $upd_about ="update cms set content = '$content' where cms_id='4'";
     mysqli_query($con,$upd_about);
-    //header('location:add_terms.php?msg=term');
+    
 } 
 
 ?>
@@ -105,7 +105,7 @@ if(isset($_POST['submit']))
                             
                             <?php  $qry="select * from cms where cms_id='4'";
                                   $result=mysqli_query($con,$qry);
-                                      //echo $qry;
+                                      
                                    $res=mysqli_fetch_array($result);
                                       ?>
                             <nav aria-label="breadcrumb">
@@ -156,12 +156,7 @@ config.toolbarGroups = [
 </script>
 <!--<script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
 	<script type="text/javascript" src="ckfinder/ckfinder.js"></script>-->
-	<!--<script src="ckeditor/samples/js/sample.js" type="text/javascript"></script>
-	<script>
-		$(window).on('load', function (){
-		$( '#editor2' ).ckeditor();
-	});
-	</script>-->
+	
 
   <!--<script>
         CKEDITOR.replace('editor2', {

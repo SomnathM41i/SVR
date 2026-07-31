@@ -1,8 +1,7 @@
 <?Php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
 
-/*echo $_POST['uploaded_file1'];
-*/
+
 $check_upload = 0;
 $flag=0;
 $cnt=0;
@@ -20,8 +19,8 @@ $photo = ' ';
             header("location:add_recommendation?flag=none&id=".$MatriID);
             exit;
         }
-        //echo '<pre>';
-        //print_r($_FILES);
+        
+        
         if( $_FILES['uploaded_file1']['name'] == '' && $_FILES['uploaded_photo']['name'] == '' )
         {
 
@@ -43,8 +42,8 @@ $photo = ' ';
         
         echo $check_upload.'<br>'; 
         
-        /*exit;*/
-      /*  echo '<br>'.$date.'<br>';*/
+        
+      
         if( $check_upload != 0 )
         {
             echo "1".'<br>';
@@ -52,20 +51,14 @@ $photo = ' ';
             {
                 if (isset($_FILES['uploaded_file1']['name']) && !empty($_FILES['uploaded_file1']['name']))
                 {
-                    //$old='../'.$_POST['old'];
+                    
                     $filename =date('Y_m_d_h_i_s').basename($_FILES['uploaded_file1']['name']);
                     $ext= substr($filename, strrpos($filename, '.') + 1);
                     if (($ext == "jpg"||"jpeg") && ($_FILES["uploaded_file1"]["name"] == "image/jpeg") && ($_FILES["uploaded_file1"]["size"] <  450000)) 
                     {
                         //Determine the path to which we want to save this file
                         $targetPath = "../recommendation/".$filename3;
-                        /*if(file_exists($targetPath))
-                        {
-                            unlink($targetPath);
-                        }else if(file_exists($old))
-                        {
-                            unlink($old);
-                        } */
+                        
                     }
                     $target_dir = "../recommendation/";
                     $watermarkImagePath = '../images/watermark.png';
@@ -113,7 +106,7 @@ $photo = ' ';
                             header("location:add_recommendation?flag=2&id=".$MatriID);
                             exit;
                         }
-                        // Check if $uploadOk is set to 0 by an error
+                        
                         if ($uploadOk == 0) 
                         {
                             define("success3","Sorry, your photo was not uploaded.");
@@ -133,9 +126,7 @@ $photo = ' ';
                                     echo "insert into recommendation(MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')";
                                     mysqli_query($con,"insert into recommendation(MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
                                      header("location: view_recommendation?id=".$MatriID);
-                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
-                                    define("success3","Your Photo Uploaded Successfully.");
-                                    header("location: view_recommendation?id=".$MatriID);*/
+                                    
                                 }
                                 
                             } 
@@ -155,20 +146,14 @@ $photo = ' ';
                 echo "2".'<br>';
                 if ( isset($_FILES['uploaded_photo']['name']) && !empty($_FILES['uploaded_photo']['name']) ) 
                 {
-                    //$old='../'.$_POST['old'];
+                    
                     $filename =date('Y_m_d_h_i_s').basename($_FILES['uploaded_photo']['name']);
                     $ext= substr($filename, strrpos($filename, '.') + 1);
                     if (($ext == "jpg"||"jpeg") && ($_FILES["uploaded_photo"]["name"] == "image/jpeg") && ($_FILES["uploaded_photo"]["size"] <  450000)) 
                     {
                         //Determine the path to which we want to save this file
                         $targetPath = "../recommendation/".$filename3;
-                        /*if(file_exists($targetPath))
-                        {
-                            unlink($targetPath);
-                        }else if(file_exists($old))
-                        {
-                            unlink($old);
-                        } */
+                        
                     }
                     $target_dir = "../recommendation/";
                     $watermarkImagePath = '../images/watermark.png';
@@ -216,7 +201,7 @@ $photo = ' ';
                             header("location:add_recommendation?flag=2&id=".$MatriID);
                             exit;
                         }
-                        // Check if $uploadOk is set to 0 by an error
+                        
                         if ($uploadOk == 0) 
                         {
                             define("success3","Sorry, your photo was not uploaded.");
@@ -236,9 +221,7 @@ $photo = ' ';
                                     echo "insert into recommendation(  MatriID,description,photo,date) values('$MatriID','$desc','$sav','$date')";
                                     mysqli_query($con,"insert into recommendation(MatriID,description,photo,date) values('$MatriID','$desc','$sav','$date')");
                                      header("location: view_recommendation?id=".$MatriID);
-                                    /*mysqli_query($con,"insert into recommendation(  MatriID,description,biodata1,date) values('$MatriID','$desc','$sav','$date')")or svr_db_fail($con);
-                                    define("success3","Your Photo Uploaded Successfully.");
-                                    header("location: view_recommendation?id=".$MatriID);*/
+                                    
                                 }
                                 
                             } 

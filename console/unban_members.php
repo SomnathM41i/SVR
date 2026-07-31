@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-	//session_start();
-  	//include '../dbconnectadmin.php';
+	
+  	
   	error_reporting(0);
  
 ?>
@@ -120,7 +120,7 @@ require_once(dirname(__FILE__).'/protect.php');
 													$Gender=$row['Gender'];
 													$Mobile=$row['Mobile'];
 													$Address=$row['ConfirmEmail'];
-													//$date=$row['delete_date'];?>
+													
 													
 												 <tr>
 													<td><a href="profile_view?ID=<?php echo $MatriID; ?>"><?php  echo $MatriID;?></a></td>

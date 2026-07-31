@@ -1,9 +1,9 @@
 <?php  require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
 $id = $_POST['rowid'];
 $sqldata=mysqli_query($con,"select * from e_state where id ='$id'");
-//echo "select * from e_country where id ='$id'";
+
 $rowdata=mysqli_fetch_array($sqldata);?>
 <style>
  .btcs
@@ -28,7 +28,7 @@ $rowdata=mysqli_fetch_array($sqldata);?>
 								<?php $mes=$rowdata['state']; 
 								   ?>
                                 <input type="text" class="form-control" id="Name" name="Name" value="<?php echo $mes ;?>" placeholder="Enter State" required>
-								<input type="hidden" name="id" value="<?php echo $rowdata['id']; ?>"><?php //echo $id ?>
+								<input type="hidden" name="id" value="<?php echo $rowdata['id']; ?>"><?php 
                             </div>
 					   </div>
                        

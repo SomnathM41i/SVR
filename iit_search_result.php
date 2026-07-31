@@ -1,7 +1,7 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
  require_once('sys_dbconnection.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -16,9 +16,9 @@ $from_age=$_POST['txtSAge'] ? $_POST['txtSAge'] : $_GET['txtSAge'];
 $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $iit=$_POST['iit'] ? $_POST['iit'] : $_GET['iit'];
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))
@@ -54,23 +54,7 @@ if(isset($_GET["page"]))
 	 $looking=$looking1 ? $looking1 : $rtrim_looking;
 	 $looking123=array($looking);
 	 
-	/*if(isset($_POST['edu']))
-	 $stredu1 =implode("','",$_POST['edu']);
-	 $explode_edu=explode("a:1:{i:0;s:",$_GET['edu']);
-	 $explode_edu1=explode(":",$explode_edu[1]);
-	 $trim_edu=trim($explode_edu1[1],'"');
-	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
-	 $stredu123=array($stredu);	 
 	
-	 if(isset($_POST['occu']))
-	 $stroccu1 = implode("','",$_POST['occu']);
-	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occu']);
-	 $explode_occu1=explode(":",$explode_occu[1]);
-	 $trim_occu=trim($explode_occu1[1],'"');
-	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
-	 $stroccu123=array($stroccu);*/
 	
 $check=mysqli_query($con,"select matriid from block_member where profile_id='".$_SESSION['matriid']."'"); 
 $data1=array();
@@ -126,12 +110,7 @@ if($looking!="Any" and $looking!="")
 $sql=$sql." and Maritalstatus IN('".$looking."')";
 }
 
-/*if($with_photo!='withoutphoto')
-{
-$sql=$sql." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-}else{
-$sql=$sql." and Photo1  LIKE 'nophoto.jpg' ";
-}*/
+
 $sql=$sql." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive'  AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 $rs_result = mysqli_query($con,$sql);
@@ -144,8 +123,8 @@ $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $iit=$_POST['iit'] ? $_POST['iit'] : $_GET['iit'];
 $with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 
 if(isset($_POST['religion']))
 	 $religion1=implode("','",$_POST['religion']);
@@ -256,15 +235,10 @@ $profile=implode("','", $data);
 			$sql1=$sql1." and Maritalstatus IN('".$looking."')";
 		}
 
-		/*if($with_photo!='withoutphoto')
-		{
-		$sql1=$sql1." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-		}else{
-		$sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
-		}	*/	 
+			 
 		$sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 		$sql1.=" ORDER BY ID DESC ";
-		/*echo $sql1.'<br>';*/
+		
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
     	$total = $rec['totalCount'];
         $adjacents = "2"; 
@@ -349,7 +323,7 @@ $profile=implode("','", $data);
        return $setPaginate;
     }
 	
-/*echo $sql.'<br>';*/
+
 $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4 inch',6=>'4Ft 5 inch',7=>'4Ft 6 inch',8=>'4Ft 7 inch',9=>'4Ft 8 inch',10=>'4Ft 9 inch',11=>'4Ft 10 inch',12=>'4Ft 11 inch',13=>'5Ft',14=>'5Ft 1 inch',15=>'5Ft 2 inch',16=>'5Ft 3 inch',17=>'5Ft 4 inch',18=>'5Ft 5 inch',19=>'5Ft 6 inch',20=>'5Ft 7 inch',21=>'5Ft 8 inch',22=>'5Ft 9 inch',23=>'5Ft 10 inch',24=>'5Ft 11 inch',25=>'6Ft',26=>'6Ft 1 inch',27=>'6Ft 2 inch',28=>'6Ft 3 inch',29=>'6Ft 4 inch',30=>'6Ft 5 inch',31=>'6Ft 6 inch',32=>'6Ft 7 inch',33=>'6Ft 8 inch',34=>'6Ft 9 inch',35=>'6Ft 10 inch',36=>'6Ft 11 inch',37=>'7Ft'];
 ?>
 <!DOCTYPE html>

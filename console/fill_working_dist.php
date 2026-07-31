@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');  
 require_once(dirname(__FILE__).'/protect.php');
- /*include'../dbconnectadmin.php';*/
+ 
  		$sid=$_GET['q'];
 		
 		$q="select * from e_dist where sid2='$sid' ORDER BY dist ASC";

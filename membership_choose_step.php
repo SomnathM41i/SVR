@@ -5,8 +5,7 @@ $pay_details = mysqli_query($con,"SELECT * FROM payment_getway WHERE id = 1 ");
 $row = mysqli_fetch_array($pay_details );
 $key =  $row['merchant_key'];
 $auth =  $row['merchent_id'];
-/*echo $key.'<br>';
-echo $auth.'<br>';*/
+
 
 
 function split_name($nm1)

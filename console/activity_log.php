@@ -34,7 +34,7 @@ else{
     <script>
         $(document).ready(function(){
             var count = 5; 
-            /*var id= <?php echo $id?>;*/
+            
             $("button").click(function(){
 
                 count  = count + 5;

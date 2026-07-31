@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php'); 
 error_reporting(0);
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 
 ?>
 <?php
@@ -35,7 +35,7 @@ include('protect.php');
 				while($blockrow2 = $blocksql2->fetch_assoc())
 				{
 					$profile_id=$blockrow2['profile_id'];
-				  // $_SESSION['id']=$blockrow2['profile_id'];
+				  
 				$blocksql3=$con->query("select * from register where MatriID='$profile_id'")or svr_db_fail($con);
                    $block3=0;
 							if($blockrow3=$blocksql3->fetch_assoc())

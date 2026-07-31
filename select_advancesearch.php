@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 $ry=mysqli_query($con,"select * from advance_saveandsearch where id='".$_GET['id']."'");     
 
 $fethc=mysqli_fetch_array($ry);
@@ -194,7 +194,7 @@ function isNumber(evt) {
                              	  </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 form-group offset-sm-2" style="margin-left:120px;">
                                <button class="theme-btn btn btn-style-one" type="submit" name="basicsaveandsearch" ><span class="btn-title">Save Search</span></button>
-							<?php //echo "update advance_saveandsearch set nameofsearch='$txt' where id='".$_GET['id']."'"; ?>
+							<?php 
                            </div>
                              </div>
                             </form>

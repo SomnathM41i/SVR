@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/ 
+<?php require_once('sys_dbconnection.php'); 
 $limit = 6; 
  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;
@@ -80,7 +80,7 @@ $seo=mysqli_query($con,"Select * from seo where catagory='happy_story'");
     <!-- Pricing Section -->
 	<?php $sql12="select * from successstory where approve='Yes' order by id DESC LIMIT $start_from, $limit"; 
 	  $sql1="select COUNT(*) from successstory where approve='Yes'";
-	  //echo "select COUNT(*) from successstory where approve='Yes'";
+	  
 	  $rs_result1 = mysqli_query($con,$sql1);  
 		$row = mysqli_fetch_row($rs_result1);  
 		$total_records = $row[0];  
@@ -101,7 +101,7 @@ $seo=mysqli_query($con,"Select * from seo where catagory='happy_story'");
         	<?php
 				while($aboutfetch = mysqli_fetch_array($result1)) { ?>
         	
-			<?php //$sql=mysqli_query($con,"select * from successstory where approve='Yes' order by id DESC");?> 
+			<?php 
 			
 				           <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight">
 				    <div class="inner-box"> 

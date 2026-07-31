@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 require_once('includes/security.php');
 $msg="";
 $message="";

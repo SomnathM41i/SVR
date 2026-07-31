@@ -81,8 +81,8 @@ $_SESSION['MatriID']=$mid;
 		agent_link_registered_customer($con, $lastid, $mid, $_SESSION['mobile'] ?? '', $_SESSION['emailtemp'] ?? '');
 		include('registrationconfirmation.php');
 		print "<script>";
-		//print " self.location='register_success?id=$mid';"; // Comment this line if you don't want to redirect
-		//print " self.location='admin_mail?id=$mid&flag=mail';";
+		
+		
 		print "</script>";
 		exit;  
 	}

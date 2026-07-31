@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');  
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 $strmid=$_POST['ID']; 
 
 $txtHeight = mysqli_real_escape_string($con,$_POST['txtHeight']);

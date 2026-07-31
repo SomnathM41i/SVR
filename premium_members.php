@@ -2,7 +2,7 @@
 <?php include('memprotect.php');
 /*include_once('dbconnectadmin.php');*/
 error_reporting(0);
-/*session_start();*/
+
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
 	else
@@ -56,7 +56,7 @@ if($caste!="")
 	$match_qry.=" Caste='$caste'";  
 }
 $match_qry.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
-//echo $match_qry;
+
  function displayPaginationBelow($con,$per_page,$page){
 $login=$_SESSION['MatriID']; 
 $page_url="?";
@@ -119,7 +119,7 @@ if($caste!="")
 		
     	$rec = mysqli_fetch_array(mysqli_query($con,$count));
     	$total = $rec['totalCount'];
-		//echo $total;
+		
         $adjacents = "2"; 
 
     	$page = ($page == 0 ? 1 : $page);  
@@ -193,12 +193,12 @@ if($caste!="")
     		
     		if ($page < $counter - 1){ 
 			$setPaginate.= "<li><a href='{$page_url}page=$next'><b>></b></a></li>";
-    			//$setPaginate.= "<li><a href='{$page_url}page=$next'>Next</a></li>";
-                //$setPaginate.= "<li><a href='{$page_url}page=$setLastpage'>Last</a></li>";
+    			
+                
     		}else{
 				$setPaginate.= "<li><a class='active'><b>></b></a></li>";
-    			//$setPaginate.= "<li><a class='current_page'>Next</a></li>";
-                //$setPaginate.= "<li><a class='current_page'>Last</a></li>";
+    			
+                
             }
 
     		$setPaginate.= "</ul>\n";		
@@ -335,7 +335,7 @@ if($caste!="")
         <div class="row">
                 
 		<?php
-		//echo $match_qry;
+		
 			
 			while($fetch=mysqli_fetch_array($sqlmatch))
 			{

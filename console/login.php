@@ -1,5 +1,5 @@
 <?php require_once('../sys_dbconnection.php'); 
-//include('../dbconnectadmin.php');
+
 $query=mysqli_query($con,"select * from siteconfig  where ID='1'");
 $fetch=mysqli_fetch_array($query);
 $name=$fetch['Webname'];

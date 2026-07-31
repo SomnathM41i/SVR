@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-/*include('../dbconnectadmin.php');*/	?>
+	?>
 	<header class="pc-header bg-dark ">
 			<div class="container">
 				<div class="header-wrapper">

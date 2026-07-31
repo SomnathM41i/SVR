@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
 	require_once('change_date_format.php');
-	//include '../dbconnectadmin.php';
+	
   error_reporting(0);
   date_default_timezone_set('Asia/Kolkata');
   $date = date('Y-m-d');

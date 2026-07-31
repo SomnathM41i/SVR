@@ -1,4 +1,4 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
 	require_once('sys_dbconnection.php');
 	error_reporting(0) ;
 	include_once('memprotect.php');	
@@ -17,7 +17,7 @@
 	$target_dir = "adhar/";
 	$target_file = $target_dir .date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['fileToUpload']["name"][$i]));
 	$sav=date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['fileToUpload']["name"][$i]));
-	//$target_file = $target_dir.time()."-".rand(1000, 9999)."-".$_FILES["fileToUpload"]["name"];
+	
 	$UploadedImageName = time()."-".rand(1000, 9999)."-".$_FILES["fileToUpload"]["name"][$i];
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -28,7 +28,7 @@
 			
 	$check = getimagesize($_FILES["fileToUpload"]["tmp_name"][$i]);
 	if($check !== false) {
-	//print_r($_FILES["fileToUpload"]);	
+	
 	define("success","File is an image - " . $check["mime"] . ".");
 
 	$uploadOk = 1;
@@ -59,8 +59,8 @@
 	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {
 
 	mysqli_query($con,"UPDATE register SET adhar='$sav',idproof_approve='No' WHERE MatriID='$id'")or svr_db_fail($con);
-	//echo "insert into gallary(photo_name,matri_id,photo_approve) values('$sav','$id','Pending')";
-	//exit;
+	
+	
 	header('location:upload_id_proof?msg=success');
 	} 
 	else {

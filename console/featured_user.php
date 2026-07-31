@@ -1,14 +1,14 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 
 $msg="";
 	if(isset($_POST['submit']))
 	{
 		$id=mysqli_real_escape_string($con,$_POST['Name']);
-        //echo $id;
+        
 		$upate=mysqli_query($con,"update register set featured_user='yes' where MatriID='$id'");
-        //echo "update register set featured_user='yes' where MatriID='$id'";
+        
 	if($upate>0)
 	{
 		$msg="Featured User Set Successfully";
@@ -198,7 +198,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addfeatureduser_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -221,7 +221,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editreligion_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -293,9 +293,7 @@ $(document).ready(function(){
     {
         $ID=$_POST['Name'];
 
-        /*$allrec=mysqli_query($con,"select * from register ");
-        $data = mysqli_fetch_assoc($allrec);
-     */
+        
      ?>
 
 <div id="myModal" class="modal " role="dialog" style="margin-top: 100px;">
@@ -340,7 +338,7 @@ $(document).ready(function(){
     <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
     <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
   </div><?php  $id=$_GET['ID'];
-          //echo $id; ?>
+          
 
   <h2 class="swal2-title" id="swal2-title" style="display: flex;"> <?php echo $id ?> Demoted From Featured User to User.</h2>
   </div>

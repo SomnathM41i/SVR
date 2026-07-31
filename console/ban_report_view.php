@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-    //session_start();
-  //include '../dbconnectadmin.php';
+    
+  
   error_reporting(0);
  
 ?>
@@ -119,7 +119,7 @@ require_once(dirname(__FILE__).'/protect.php');
 											{
 												$profile_id=$blockrow2['profile_id'];
 												$matriid=$blockrow2['matriid'];
-								              // $_SESSION['id']=$blockrow2['profile_id'];
+								              
 											$blocksql3=mysqli_query($con,"select * from register where MatriID='$profile_id'")or svr_db_fail($con);
 											$who_blocksql3=mysqli_query($con,"select * from register where MatriID='$matriid'")or svr_db_fail($con);
 							$block3=0;
@@ -154,7 +154,7 @@ require_once(dirname(__FILE__).'/protect.php');
 															echo $blockrow2['when1'];
 														?>
 													</td>
-													<?php /*<td><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-report2" data-id="<?php echo $blockrow2['profile_id'];?>">Delete</a></td>*/ ?>
+													<?php  ?>
 													
 												  </tr>
 												  <?php  }?>
@@ -198,7 +198,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'delete_ban_new.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

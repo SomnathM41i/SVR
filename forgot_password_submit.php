@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 //error_reporting(0);
 require_once('includes/security.php');
 include('smtp2.php');
@@ -150,7 +150,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

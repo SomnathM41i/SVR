@@ -1,6 +1,5 @@
 ﻿<?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');
-session_start();*/
+
 //error_reporting(0); 
 $login=$_SESSION['MatriID'];
 $res=mysqli_query($con,"SELECT * FROM siteconfig");
@@ -21,10 +20,10 @@ $row = mysqli_fetch_array($res);
     <!--        <div class="footer-content" style="padding: 25px 0 10px;">-->
     <!--            <div class="footer-logo ftr-dsk-lg"><a href="#"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="Site Logo"></a></div>-->
     <!--            <ul class="footer-nav ftr-dsk-mn">-->
-				<!--<?php if(!(isset($login)==0)){ ?>-->
+				
     <!--                <li><a href="index_dashboard">Home</a></li>-->
     <!--                <li>|</li>-->
-				<!--<?php }else{ ?>-->
+				
 				<!--   <li><a href="index">Home</a></li>-->
     <!--              <li>|</li>-->
     <!--              <li><a href="signup">SignUp</a></li>-->
@@ -41,10 +40,10 @@ $row = mysqli_fetch_array($res);
     <!--            </ul>-->
     <!--             <div class="copyright-text"> &copy; Copyright <?php echo date('Y');?> All Rights Reserved. BY: <a href="#" target="_blank">Shivraj Maratha</a></div>-->
     <!--            <ul class="social-icon-one">-->
-    <!--                <li><a href="<?php echo $row['facebook']; ?> " target="_blank"><span class="fab fa-facebook-f"></span></a></li>-->
-    <!--                <li><a href="<?php echo $row['twitter']; ?> " target="_blank"><span class="fab fa-twitter"></span></a></li>-->
-    <!--                <li><a href="<?php echo $row['youtube']; ?>" target="_blank"><span class="fab fa-youtube"></span></a></li>-->
-    <!--                <li><a href="<?php echo $row['other_social']; ?>" target="_blank"><span class="fab fa-instagram"></span></a></li>-->
+    
+    
+    
+    
     <!--            </ul>-->
     <!--        </div>-->
     <!--    </div>-->

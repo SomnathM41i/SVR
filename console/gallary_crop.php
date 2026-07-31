@@ -1,13 +1,13 @@
 <?php  require_once('../sys_dbconnection.php'); 
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 $photoid=$_GET['photoid']; 
-//echo $photoid;	
+
  $strid=$_GET['matid']; 
-// echo $strid;
+
 if (isset($_FILES['croppedImage']['tmp_name']) && !empty($_FILES['croppedImage']['tmp_name'])){
  $strid1=$_POST['matid'];
- //echo $strid1;
+ 
  
  
  $stroldphoto1 = $_POST['op'];
@@ -19,7 +19,7 @@ $strimg = $_POST['op'];
 $rand=rand(111111,999999);
 $save_path = $rand.$strimg;
 $targetfile="../gallary/$save_path";
-//imagejpeg($save_path ,$targetfile) ; 
+
 
 
 
@@ -112,7 +112,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path
     <strong class="bigtext">Hit the Mouse Pointer on the image then <span class="style1">Drag the Position </span>. Click Save now Button.</strong> </div>
  <?php  
 $photoidgal=$_GET['photoid'];
-//echo $photoidgal;
+
  $photochk = mysqli_query($con,"SELECT * FROM gallary where photo_id=$photoidgal");
  
 ?>

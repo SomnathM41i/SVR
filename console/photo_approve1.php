@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php'); 
     include('protect.php');
-    /*include('../dbconnectadmin.php');*/
+    
     $sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and b.photo_approve='Pending' order by id desc"); 
 ?>
 

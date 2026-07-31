@@ -3,7 +3,7 @@
     error_reporting(0);
     include('protect.php'); 
     require_once('sys_dbconnection.php');
-    /*include'../dbconnectadmin.php';*/
+    
     if(isset($_POST['upload']))
     {
         
@@ -49,7 +49,7 @@
                 }
                 $newname1 =$filename;
                 $newname ='../success/'.$filename;
-                //$_SESSION['adhar']=$newname;
+                
                 //Check if the file with the same name is already exists on the server
                 if (!file_exists($newname)) 
                 { 
@@ -76,7 +76,7 @@
             }
         }  
     }
-    //echo $error;
+    
 
 ?>
 

@@ -1,35 +1,35 @@
 <?php  require_once('../sys_dbconnection.php');
 include('protect.php');
-//include'../dbconnectadmin.php';
+
 $msg="";
 	if(isset($_POST['submit']))
 	{
 	        
 		$dist=mysqli_real_escape_string($con,$_POST['Name']);
-		//echo $dist;
+		
 		$state=mysqli_real_escape_string($con,$_POST['state']);
-		//echo $state;
+		
 		$country=mysqli_real_escape_string($con,$_POST['country']);
-		//echo $country;
+		
 	
 		$q="select * from e_dist where dist='$dist'";
-		//echo "select * from e_dist where dist='$dist'";
-		//exit;
+		
+		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
-		//echo $num;
+		
 		
 		if($num>0)
 		{
 			$msg="District already Exist!!";
-			// echo $msg;
+			
 		}
 		else
 		{		
-				//if($state==""){echo "State empty";}else{ echo $state;}
+				
 				$q="insert into e_dist(dist,sid2,status) values('$dist','$state','enable')";
-				//echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
-				//exit;
+				
+				
 				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
@@ -45,24 +45,24 @@ if(isset($_POST['Update']))
 		
 		
 		$dist=$_POST['Name'];
-		//echo $dist;
+		
 		$id=$_POST['id'];
-		//echo $id;
+		
 		$q="select * from e_dist where dist='$dist'";
-		// echo "select * from e_dist where dist='$dist'";
+		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
-		//echo $num;
+		
 		if($num>0)
 		{
 			$msg="District already Exist!!";
-			//echo $msg;
+			
 		}
 		else
 		{		
-				//if($state==""){echo "State empty";}else{ echo $state;}
+				
 				$q="update  e_dist set dist='$dist' where id='$id'";
-				//echo "update  e_dist set dist='$dist' where id='$id'";
+				
 				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
@@ -215,7 +215,7 @@ xmlhttp.send();
 		  <?php include('header.php');?>
 		<!-- [ navigation menu ] end -->
 		<!-- Modal -->
-		<?php //include('notification.php');?>
+		<?php 
 		
 		<!-- [ Header ] end -->
 
@@ -274,8 +274,8 @@ xmlhttp.send();
 						                 <div ><?php echo $msg; $_SESSION['country']=$_POST['country'];
 									       $_SESSION['state']=$_POST['state']; ?> </div>
 										   <?php    $ry=mysqli_query($con,"select * from e_state where cid='".$_SESSION['country']."'");
-											//echo "select * from e_state where cid='".$_SESSION['country']."'";
-											//exit;
+											
+											
                
 										$i=0;
 										while($data2=mysqli_fetch_assoc($ry) and $i<$num2)
@@ -354,7 +354,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'adddist_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -377,7 +377,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editdistrict_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

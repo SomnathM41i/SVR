@@ -1,5 +1,5 @@
 <?php
-  /*include '../dbconnectadmin.php';*/
+  
   require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
   error_reporting(0);
@@ -11,11 +11,11 @@ require_once(dirname(__FILE__).'/protect.php');
 		$title = $db->setfilter(trim($_POST["title"]));
 		$descript = $db->setfilter(trim($_POST["descript"]));
 		$keyword = $db->setfilter(trim($_POST["keyword"]));
-		//$catagory=mysqli_real_escape_string($con,$_POST["catagory"]);
+		
 		$upd_about ="update seo set title = '$title',description='$descript',keyword='$keyword' where catagory='$catagory'";
-		//echo "update seo set title = '$title',description='$descript',keyword='$keyword' where catagory='$catagory'";;
+		
 		mysqli_query($con,$upd_about);
-		//header('location:searchseo.php?catagory=search&msg=success3');
+		
 					
 	} 
 ?>
@@ -151,9 +151,9 @@ t.value=t.value.replace(/^,/g,'');
 								<div class="form-group">
 							<?php 
 									$catagory=$_GET['catagory'];
-									//echo $catagory;
+									
 							      $qry="select * from seo where catagory='$catagory'";
-								  //echo "select * from seo where catagory='$catagory'";
+								  
 	                              $result=mysqli_query($con,$qry);
 	                                 
                                    $res=mysqli_fetch_array($result);

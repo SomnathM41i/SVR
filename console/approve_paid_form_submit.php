@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 require_once('../sys_dbconnection.php');   
 include('protect.php');
 include_once('agent_common.php');
-/*include('../dbconnectadmin.php');*/
+
 
 $matriid = $_POST['matriid'];
 $sqlrenew=$con->query("select * from register where MatriID='$matriid'");
@@ -79,7 +79,7 @@ $strstatus = "Clear";
 
 // insert the data
 $insert = $con->query("insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus,discountcode) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$amount','$bank_details','$strstatus','$discountcode')") or die("Could not insert data because ".mysqli_error());
-//echo "insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$discount','$bank_details','$strstatus')" ;
+
 
 if ($agent_id > 0) {
 	agent_create_commission_for_sale_shared($con, $stroid, $matriid, $name, $mobile, $email, $agent_id, $plan, $amount, $activation_date, array(
@@ -98,7 +98,7 @@ if ($agent_id > 0) {
 }
 
 
-/*echo "insert into paiddetails (Poid,Pmatriid,Pname,Pemail,Paddress,Ppaymode,Pactivedate,Pplan,memtype,Pplanduration,Pnocontct,Pamount,Pbankdet,Pstatus) values ('$stroid','$matriid','$name','$email','$address','$mode','$activation_date','$plan','$memtype','$duration','$contacts','$amount','$bank_details','$strstatus')";*/
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $followers = $con->query("select *from followers where follower_id = '$matriid'");
 if(mysqli_num_rows($followers)>0)
@@ -112,8 +112,8 @@ if(mysqli_num_rows($followers)>0)
 
 ////////////////// UPDATE INTO REGISTER TABLE ////////////////////////
 $strmid = $_POST['matriid'];
-//$stractivedate = $_POST['txtp6'];
-//echo $str82;
+
+
 $strexpdate = date('Y-m-d', strtotime("+$duration days")); 
 
 $update=$con->query("Update register set Status='Paid',memtype='$memtyp1',MemshipExpiryDate='$strexpdate',Noofcontacts='$contacts' where MatriID = '$strmid' ")
@@ -122,33 +122,33 @@ or die("Could not update data because ".mysqli_error());?>
 <?php  
 
 //echo
-//"Update register set Status='Paid',memtype='$memtyp1',MemshipExpiryDate='$strexpdate',Noofcontacts='$contacts' where MatriID = '$strmid' ";
+
 
 //exit();
 ?>
 
 <?php  
 
-//             $query1="SELECT * FROM register WHERE MatriID='$matriid'";
-//             $data1=mysqli_query($con,$query1);
-//             $result1=mysqli_fetch_array($data1);
-//             $Name1=$result1['Name'];
-//             $date1=date("d/m/Y");
+
+
+
+
+
              
-//         //	include('../smtp2.php');
-//         	$mail->Subject="Your ".$plan." membership plan is activated.";
-//         	$mail->Body="<!doctype html>
+
+
+
 // 			<html>
 // 			<head>
 // 			<meta charset='utf-8'>
-// 			<title>Your ".$plan." membership plan is activated.</title>
+
 // 			</head>
 
 // 			<body>
 // 			<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 //                 <tr>
 //                 <td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='149' height='66'  alt=''/></td>
-//                 <td colspan='2' align='center' valign='middle'>Date: $date1 </td>
+
 //                 </tr>
 //                 <tr>
                 
@@ -156,8 +156,8 @@ or die("Could not update data because ".mysqli_error());?>
                 
 //                 <tr>
 //                 <td colspan='3'>
-//                 Hello, <strong> ".$Name1." </strong><br>
-//                 Your ".$plan." membership plan is activated.  </td>
+
+
 //                 </tr>
                 
 //                 <br>
@@ -175,15 +175,15 @@ or die("Could not update data because ".mysqli_error());?>
 // 			</html>
 // 			";
 
-//             $mail->AddAddress($result1['ConfirmEmail'], $result1['Name']);
+
             
-//             if(!$mail->Send()) 
+
 //             {
-//               echo "Mailer Error: " . $mail->ErrorInfo;
-//               echo "Message Not sent!";
-//             } else
+
+
+
 //             {
-//               echo "Message sent!";
+
 //             }
 
 ?>
@@ -200,7 +200,7 @@ Your Plan Has Been Successfully Activated
 
 Thank You
 Team-  ".$siteinfo['Webname']."";
-// sendsms($mobile,$smsMessage); ?>
+
 
 
 
@@ -209,7 +209,7 @@ Team-  ".$siteinfo['Webname']."";
 
 $row=mysqli_fetch_array($qry);
 
-//include('../Mailer/smtp1.php');
+
 
 
 $query=$con->query("SELECT * FROM siteconfig where ID='1'");
@@ -288,16 +288,16 @@ $info=$query->fetch_array();
 				</html>";
 	
 	$subject="Payment Details";
-//	$email=$mememail;
-	////$mail->Subject=$subject;
-//	$mail->MsgHTML($message1);
+
+	
+
 	$msg="";
 	if($email!="")
 	{
 			set_time_limit(30);
-		//	$mail->ClearAddresses();
-		//	$mail->AddAddress($email);
-		//	$mail->Send();
+		
+		
+		
 		
 			$msg="Your E-mail is Send Successfuly!";
 	}
@@ -316,7 +316,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

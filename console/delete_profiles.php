@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -224,7 +224,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

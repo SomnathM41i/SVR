@@ -1,5 +1,5 @@
 <?php require_once('../sys_dbconnection.php');   
-/*include'../dbconnectadmin.php';*/
+
 include('memprotect.php');
 $id=$_GET['id'];
 $check=$_GET['flag'];
@@ -19,5 +19,5 @@ else
     header("location:add_interest?flag=0&ID='$id'&msg=delete");
     
 }
-//exit;
+
 ?>

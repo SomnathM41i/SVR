@@ -1,7 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php'); 
-/*include '../dbconnectadmin.php';  
-session_start();*/
+
 
 
 
@@ -25,8 +24,8 @@ $heightfrom=$_REQUEST['heightfrom'] ? $_REQUEST['heightfrom'] : $_REQUEST['heigh
 $heightto=$_REQUEST['heightto'] ? $_REQUEST['heightto'] : $_REQUEST['heightto'];
 $with_photo=$_REQUEST['with_photo'] ? $_REQUEST['with_photo'] : $_REQUEST['with_photo'];
 $institute=$_REQUEST['institute'] ? $_REQUEST['institute'] : $_REQUEST['institute'];
-//echo $institute;
-//echo $with_photo;
+
+
 
 if(isset($_POST['ms']) && $_POST['postfield'])
 	 $ms1=implode("','",$_POST['ms']);
@@ -189,7 +188,7 @@ $sql=$sql." and instu IN('".$institute."') ";
 $sql=$sql." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' ";
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 
-//echo $sql;
+
 function displayPaginationBelow($con,$per_page,$page){
 	   
 $from_age=$_REQUEST['txtSAge'] ? $_REQUEST['txtSAge'] : $_REQUEST['from_age'];
@@ -376,7 +375,7 @@ $sql1=$sql1." and instu IN ('".$institute."')";
 $sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' ";
 $sql1.=" ORDER BY Regdate DESC ";
 
-//echo $sql1;
+
 
 		
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
@@ -464,7 +463,7 @@ $sql1.=" ORDER BY Regdate DESC ";
     }
 	
 	
-//echo $sql;	
+
 	
 	?>
 
@@ -723,34 +722,7 @@ xmlhttp.send();
 										<option value="Any">Any</option>
 					  </select>
 					 </div>
-                      <?php /*<a data-bs-toggle="collapse" href="#" data-bs-target="#Marital" class="link-dark" aria-expanded="false" aria-controls="Marital">
-                            <div class="h6 mb-0">Marital Status	 <i data-feather="chevron-down" class="float-end me-1 wid-15 hei-15"></i></div>
-                        </a>
-						<?php 
-					$arrlooking=explode(",",isset($_POST['ms']));
-
-					?>
-					
-                        <div class="collapse border-top show pt-3 mt-3" id="Marital">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" value="Unmarried" name="ms[]"  id="Unmarried">
-                                <label class="form-check-label" for="Unmarried">Unmarried </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input " type="checkbox" value="Divorced"  name="ms[]" id="Divorced">
-                                <label class="form-check-label" for="Divorced">Divorced </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input " type="checkbox" value="Widowed"  name="ms[]" id="Widowed">
-                                <label class="form-check-label" for="Widowed">Widowed </label>
-                            </div>
-							 <div class="form-check mb-2">
-                                <input class="form-check-input " type="checkbox" value="Widower"  name="ms[]"   id="Widower">
-                                <label class="form-check-label" for="Widower">Widower </label>
-                            </div>
-							
-                           
-                        </div>  */?>
+                      <?php ?>
                     </div>
 					 <div class="card-body py-3 border-bottom">
                        <!-- <a data-bs-toggle="collapse" href="#" data-bs-target="#Membership" class="link-dark" aria-expanded="false" aria-controls="Membership">-->
@@ -917,24 +889,7 @@ xmlhttp.send();
 							?>
 								 </select>
 				 
-				 <?php /*
-                        <a data-bs-toggle="collapse" href="#" data-bs-target="#Religion" class="link-dark" aria-expanded="false" aria-controls="Religion">
-                            <div class="h6 mb-0">Religion<i data-feather="chevron-down" class="float-end me-1 wid-15 hei-15"></i></div>
-                        </a>
-						<?php $rrs=mysqli_query($con,"select * from religion where status='enable'order by id desc");
-							 ?>   
-                              <div class="collapse border-top show pt-3 mt-3 checkform" id="Religion">
-                              <?php  
-                                       while($rrow=mysqli_fetch_array($rrs))							  {
-								   ?>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="religion" name="religion[]" value="<?php  echo $rrow['Religion'] ?>"   onChange="fillcaste(this.value)" >
-                                <label class="form-check-label" for="<?php  echo $rrow['Religion'] ?>"><?php  echo $rrow['Religion'] ?></label>
-                            </div>
-							  <?php } ?>  
-               
-                     
-                    </div>  */?>
+				 <?php ?>
                   </div> 
 				  </div>
 				    
@@ -948,22 +903,7 @@ xmlhttp.send();
 					 </select>
 				   
 				   
-                        <?php /* <a data-bs-toggle="collapse" href="#" data-bs-target="#Caste" class="link-dark" aria-expanded="false" aria-controls="Caste">
-                            <div class="h6 mb-0">Caste <i data-feather="chevron-down" class="float-end me-1 wid-15 hei-15"></i></div>
-                        </a>
-						<?php $rrs=mysqli_query($con,"select * from caste where status='enable'");
-							 ?>   
-                  <div class="collapse border-top show pt-3 mt-3 checkform" id="Caste">
-                              	<?php  
-                                       while($rrow=mysqli_fetch_array($rrs))							  {
-								   ?>                         
-                                   
-							  <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  name="caste[]" value="<?php  echo $rrow['Caste'] ?>" id="caste">
-                                <label class="form-check-label" for="<?php  echo $rrow['Caste'] ?>"><?php  echo $rrow['Caste'] ?></label>
-                            </div>			
-									   <?php }?>
-                     </div> */?>
+                        <?php ?>
                     </div>
 					</div>
 				  <div class="card-body py-3 border-bottom">
@@ -982,16 +922,7 @@ xmlhttp.send();
 									<?php } ?>
 							 </select>
 							 
-                               <?php /* 
-                                       while($rrow=mysqli_fetch_array($rrs))							  {
-								   ?>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="education" name="education[]"  value="<?php  echo $rrow['edu'] ?>"  >
-                                <label class="form-check-label" for="<?php  echo $rrow['edu'] ?>"><?php  echo $rrow['edu'] ?></label>
-                            </div>
-							  <?php } ?>
-               
-								</div> */ ?>
+                               <?php  ?>
 					
 					</div>
                   </div> 
@@ -1010,11 +941,7 @@ xmlhttp.send();
 									
 									<?php } ?>
 								   </select>
-                           <?php /* <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="occupation" name="occupation[]"  value="<?php  echo $rrow['occu'] ?>"  >
-                                <label class="form-check-label" for="<?php  echo $rrow['occu'] ?>"><?php  echo $rrow['occu'] ?></label>
-                            </div>
-							  <?php } ?> */?>
+                           <?php ?>
                
                     
                     </div>
@@ -1026,7 +953,7 @@ xmlhttp.send();
                         <!--</a>-->
 						<?php $q="select * from e_country where status='enable'";
 						  	  $country_rec=mysqli_query($con,$q);
-							  //$country_count=mysqli_num_rows($country_rec); ?>
+							  
 						<div class="collapse border-top show pt-3 mt-3" id="Country" >
                             <select id="country" name="country[]" multiple>
                                <?php while($rrow=mysqli_fetch_array($country_rec)) { ?>
@@ -1035,11 +962,7 @@ xmlhttp.send();
 								     
 								<?php }  ?>
 								   </select>
-						   <?php /* <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="country" name="country[]"  value="<?php  echo $rrow['country'] ?>" onChange="fillstate(this.value);"  >
-                                <label class="form-check-label" for="<?php  echo $rrow['country'] ?>"><?php  echo $rrow['country'] ?></label>
-                            </div>
-							  <?php } ?>  */?>
+						   <?php ?>
               
                     </div>
 				
@@ -1050,17 +973,13 @@ xmlhttp.send();
                         <!--</a>-->
 						<?php $state="select * from e_state where status='enable'";
 							  $state_rec=mysqli_query($con,$state);
-							  //$state_count=mysqli_num_rows($state_rec);?>
+							  
 
 				   <div class="collapse border-top show pt-3 mt-3 " id="State">
                           <select name="state[]" id="cbostate" multiple>
                                
 							</select>    
-                           <?php /* <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="state" name="state[]"  value="<?php  echo $rrow['state'] ?>" onChange="filldist(this.value);"  >
-                                <label class="form-check-label" for="<?php  echo $rrow['state'] ?>"><?php  echo $rrow['state'] ?></label>
-                            </div>
-							  <?php } ?> */?>
+                           <?php ?>
               
                     </div>
 				  </div>
@@ -1071,7 +990,7 @@ xmlhttp.send();
 						 
 				 <?php $dist="select * from e_dist where status='enable'";
 									$dist_rec=mysqli_query($con,$dist);
-									//$dist_count=mysqli_num_rows($dist_rec);  ?>  
+									
 			
 			        <div class="collapse border-top show pt-3 mt-3" id="Distict">
                           <select id="dist" name="dist[]" multiple>
@@ -1081,15 +1000,7 @@ xmlhttp.send();
                         
 						
 						
-						<?php /*       <?php  
-                                       while($rrow=mysqli_fetch_array($dist_rec))
-							           {
-								   ?>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox"  id="dist" name="dist[]"  value="<?php  echo $rrow['dist'] ?>"  >
-                                <label class="form-check-label" for="<?php  echo $rrow['dist'] ?>"><?php  echo $rrow['dist'] ?></label>
-                            </div>
-							  <?php } ?> */?>
+						<?php ?>
               
                     </div>
 				  </div>
@@ -1145,11 +1056,11 @@ xmlhttp.send();
                 <div class="tab-content filter-data" id="myTabContent">
                     <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                         <div class="row row-cols-lg-3 row-cols-sm-6">
-                   <?php // if(isset($_POST['submit']))
+                   <?php 
 					// //{
 					$rs_result = mysqli_query($con,$sql); 
-					// }else { 
-					//$rs_result=mysqli_query($con,"select * from register");
+					
+					
 					// }?>
 					<?php while($rowC=mysqli_fetch_array($rs_result)){ ?>
                             
@@ -1287,13 +1198,13 @@ else if($strheight =="37") { echo "7Ft "; }
 
 <script src="../css/bootstrap.css"></script>
 
-<!-- Include Twitter Bootstrap and jQuery: -->
+
 <!-- Latest compiled and minified CSS -->
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<!-- Include the plugin's CSS and JS: -->
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/js/bootstrap-multiselect.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/css/bootstrap-multiselect.css" type="text/css"/>
 

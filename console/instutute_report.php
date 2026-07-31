@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  //include '../dbconnectadmin.php';
+  
   //error_reporting(0);
   
 ?>
@@ -141,7 +141,7 @@ function print_report()
 								
                                 <?php 
 											$relsql=$con->query("select * from register where iit='yes' and instu!='' ")or svr_db_fail($con);
-											//echo "select * from register where iit=='yes' and instu!=''";
+											
 											while($relrow = $relsql->fetch_assoc())
 											{
 											$matriid=$relrow['MatriID'];

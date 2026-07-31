@@ -1,10 +1,10 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
     $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
     $on_off = $data_config-> is_smtp_set;
     $auto_on_off = $data_config-> auto_approve;
-    /*echo $auto_on_off;*/
+    
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@ require_once(dirname(__FILE__).'/protect.php');
 		  <?php include('header.php');?>
 		<!-- [ navigation menu ] end -->
 		<!-- Modal -->
-		<?php //include('notification.php');?>
+		<?php 
 		
 		<!-- [ Header ] end -->
 
@@ -209,7 +209,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -232,7 +232,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

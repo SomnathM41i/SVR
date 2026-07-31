@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php');
 require_once('../includes/annual_income.php');
 require_once(dirname(__FILE__).'/protect.php'); /* SECURITY: was commented out - admin guard restored */
-/*include('../dbconnectadmin.php');*/
+
 $strmid=$_POST['id']; 
 $str_edu = $_POST['txtEdu'];
 $str_edudet =addslashes( $_POST['txtEdudetails']);

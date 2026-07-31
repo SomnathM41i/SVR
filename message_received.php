@@ -6,7 +6,7 @@ include_once('memprotect.php');
 $from = 0;
 $max_results = 10; 
 $sender=$_SESSION['matriid'];
-//print_r($_SESSION);
+
 $receiver=$_GET['id'];
 
 $sender_sql=mysqli_query($con,"select * from  register where MatriID='$receiver'");
@@ -119,7 +119,7 @@ $am=date('a');
               </div>
               <div class="text" style="margin-top:8px;"><?php echo $receie['Msg'];?></div>
               <a href="send_message?id=<?php echo $idd?>" class="mvv-btn primary" style="margin-top:10px;">Reply</a>
-              <?php /*<a href="send_message?id=<?php echo $idd?>" class="">Message(<?php echo mysqli_num_rows($count);?>)</a><div class=""></div> */ ?>
+              <?php  ?>
             </div>
           </div>
         </div>

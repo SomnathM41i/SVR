@@ -1,9 +1,9 @@
 <?php require_once('../sys_dbconnection.php');  
 require_once(dirname(__FILE__).'/protect.php');
-    /*include'../dbconnectadmin.php';*/
+    
     $id = $_POST['rowid'];
-	//echo $id;
-	//exit;
+	
+	
 ?>
  <style>
     .btcs

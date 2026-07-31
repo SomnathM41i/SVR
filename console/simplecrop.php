@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 $strid=$_GET['id']; 
 $row=mysqli_query($con,"select * from register where MatriID='$strid'");
 $fetch=mysqli_fetch_array($row);
@@ -38,11 +38,7 @@ $img=$fetch['Photo1'];
   
 
 <SCRIPT language=JavaScript>
-<!-- 
-function win(){
-window.opener.location.href="photo_approve?success=yes";
-self.close();	
-//-->
+
 }
 </SCRIPT>
   <br />

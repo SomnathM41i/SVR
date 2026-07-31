@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
   error_reporting(0);
   $q="select * from e_country";
 $country_rec=mysqli_query($con,$q);

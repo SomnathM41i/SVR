@@ -1,9 +1,9 @@
 <?php  require_once('../sys_dbconnection.php'); 
 include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 
  $strid=$_GET['matid']; 
-// echo $strid;
+
 
 
 if (isset($_FILES['croppedImage']['tmp_name']) && !empty($_FILES['croppedImage']['tmp_name'])){
@@ -22,12 +22,12 @@ $targetfile="../gallary/$save_path";
  move_uploaded_file($_FILES["croppedImage"]["tmp_name"], $targetfile);
 
 $photoid=$_GET['photoid']; 
-//echo $photoid;	
+
 
 mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path' where photo_id='$photoid1'");
-//echo "update gallary set photo_approve='Yes',photo_name='$sav' where photo_id='$photoid1'";
+
 $update1 = mysqli_query($con,"update register set Photo1 ='$save_path' ,Photo1Approve= 'Yes' where MatriID='$strid1'") or die("Could not update data because ".mysqli_error());
-//  echo "update register set Photo1 ='$sav' ,Photo1Approve= 'Yes' where MatriID='$strid1'";	
+
 
 }
 ?>

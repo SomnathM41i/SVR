@@ -1,6 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*session_start(); 
-include('dbconnectadmin.php');*/
+
 
 
 $qry="select * from cms where link='contact us'";
@@ -11,8 +10,7 @@ $mid=$_GET['id'];
 $rowf=mysqli_query($con,"select *from register where MatriID='$mid'");
 $rowfe=mysqli_fetch_array($rowf);
 $datev=date('d-m-Y');
-/*echo $datev;
-exit; */
+
 $name=$rowfe['Name'];
 $verifye= $_SESSION['otpe'];
 $mememail=$rowfe['ConfirmEmail'];
@@ -111,7 +109,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

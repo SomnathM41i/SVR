@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php'); 
-	/*include('dbconnectadmin.php');*/ ?>
+	 ?>
 <!DOCTYPE html>
  <html lang="en">
 <head>
@@ -54,34 +54,7 @@ window.location='uploadidproof.php';}
 
 
 
-/*function dp(id)
-{   
-	var xmlhttp;
-if (id=="")
-  {
-  
-  return;
-  }
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-   document.getElementById("dpchange"+id).innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","setdp.php?id="+id,true);
-xmlhttp.send();
-window.location='gallary.php';
- 
-}*/
+
 </script>
 </head>
 <style>
@@ -134,7 +107,7 @@ $id=$_SESSION['matriid'];
 $sqlgal = mysqli_query($con,"select * from register where MatriID='$id' AND adhar!='' ");
 $check = mysqli_query($con,"select * from register where MatriID='$id'");
 
-//echo "select * from gallary where matri_id='$id'";
+
 $sqlreg=mysqli_query($con,"select * from register where MatriId='$id'");
 $rowreg=mysqli_fetch_array($sqlreg);
 ?>
@@ -197,8 +170,8 @@ $rowreg=mysqli_fetch_array($sqlreg);
 									return false;
 									} 
 									If(endsWith($row['adhar'], ".pdf")){ //executes if return is true
-										//echo $row['adhar'];
-										//echo '<img src="http://example.com/image.png" /></a><p>';?>
+										
+										
 										<iframe src="adhar/<?php echo $row['adhar']?>"></iframe><p>
 									<?php }
 									else
@@ -206,13 +179,12 @@ $rowreg=mysqli_fetch_array($sqlreg);
 										echo '<figure class="image"> <a href="adhar/'.$row['adhar'].'"> <img src="adhar/'.$row['adhar'].'" ;/></a></figure>';
 
 										} ?>
-										<!--<figure class="image"> <a href="adhar/<?php //echo $row['photo_id'];?>" data-sub-html="Demo Description">
-											   <img src="adhar/<?php //echo $row['adhar'];?>"></a> </figure>-->
+										
 											   
 											   
 									</div>
 									 <?php
-			  //if($row['photo_name']!=$rowreg['Photo1'])
+			  
 			  //{
 					?>
            <div class="row">
@@ -222,32 +194,32 @@ $rowreg=mysqli_fetch_array($sqlreg);
                 </div>
 				 </div>
                 <?php 
-						//$is_protected =$row['photo_protect'];
-						//if($is_protected=="No")
+						
+						
 						//{
 					?>
                
                 <?php
 						//}
-						//else if($is_protected=="Yes")
+						
 						//{?>
                
                 <?php //}?>
                 <?php //}
-						//else
+						
 						//{ 
 							?>
 							
 							<?php 
-									//$is_protected =$row['photo_protect'];
-									//$reg_photo = $rowreg['PhotoProtect'];
 									
-									//if($is_protected=="No"&&$reg_photo=="No"||$reg_photo=="")
+									
+									
+									
 									//{?>
 						   
 							<?php
 									//}
-									//else if($is_protected=="Yes"||$reg_photo=="Yes")
+									
 									//{?>
 						   
 							<?php //}?>

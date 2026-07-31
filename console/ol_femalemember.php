@@ -1,11 +1,11 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
   error_reporting(0);
   
 				
 				  $result=mysqli_query($con,"select * from register where Gender='Female' and TIMESTAMPDIFF(minute,LastLogin,NOW())<5   order by ID desc");
-				//echo "select * from register where TIMESTAMPDIFF(minute, last_seen,now() ) < 5 and Gender='Female'";
+				
 ?>
 
 

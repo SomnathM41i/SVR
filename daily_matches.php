@@ -10,8 +10,7 @@ function getHeightValue($h) {
 }
 ?>
 <?php// include_once('memprotect.php');
-/*include_once('dbconnectadmin.php');
-session_start();*/
+
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
 	else
@@ -78,13 +77,13 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $match_qry.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$match_qry.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $match_qry.=" Gender='$match_sex' AND ";
 $match_qry.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $match_qry.="
 Age BETWEEN '$pe_fromage' AND '$pe_toage'";
 
-//$match_qry.= " and '$mother_a[0]' FIND_IN_SET ('$mother','$mother[1]','$mother[2]','$mother[3]','$mother[4]')";
+
 if($me['PE_MotherTongue']!="" && $me['PE_MotherTongue']!="Any")
 {
 $PE_mother=explode(",", $me['PE_MotherTongue']);
@@ -266,7 +265,7 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $count.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$count.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $count.=" Gender='$match_sex' AND ";
 $count.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $count.="
@@ -558,7 +557,7 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $count.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$count.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $count.=" Gender='$match_sex' AND ";
 $count.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $count.="
@@ -776,7 +775,7 @@ $sqlmatch=mysqli_query($con,$match_qry)or svr_db_fail($con);
     <div class="alert alert-info" align="center" role="alert">
   
     <?php 
-      // echo "You have not any Daily Matches.";?> <a href="smart_search">Search Here</a>
+      
      </div>
       </div></div>
 	  </div>

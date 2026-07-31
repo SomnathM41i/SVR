@@ -1,4 +1,4 @@
-<?php //include('dbconnectadmin.php');
+<?php 
 //error_reporting(0);
 require_once('sys_dbconnection.php');
 /*include_once('memprotect.php');*/
@@ -154,7 +154,7 @@ function displayPaginationBelow($con,$per_page,$page){
         return $setPaginate;
     }
 	
-//echo $sql;
+
 
 ?>
 <!DOCTYPE html>

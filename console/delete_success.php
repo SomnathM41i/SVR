@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');   
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 	$id=$_GET['id'];  
     echo $id;
 	$q="delete from successstory where ID='$id'";

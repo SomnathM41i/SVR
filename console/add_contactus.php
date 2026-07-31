@@ -1,26 +1,22 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-  //include '../dbconnectadmin.php';
+  
   error_reporting(0);
 ?>
 
 <?php if(isset($_POST['submit']))
                   {
-                    /*$content = mysqli_real_escape_string($con,$_POST["add"]);
-                    $mail=mysqli_real_escape_string($con,$_POST["mail"]);
-                    $mob=mysqli_real_escape_string($con,$_POST["mob"]);
-                    $mob2=mysqli_real_escape_string($con,$_POST["mob2"]);
-                    $offtim=mysqli_real_escape_string($con,$_POST["offtim"]);*/
+                    
                     $content = $db->setfilter($_POST["add"]);
                     $mail=$db->setfilter($_POST["mail"]);
                     $mob=$db->setfilter($_POST["mob"]);
                     $mob2=$db->setfilter($_POST["mob2"]);
                     $offtim=$db->setfilter($_POST["offtim"]);
                     $upd_about ="update cms set content = '$content',email='$mail', mobile='$mob',whatsapp='$mob2',officetime='$offtim' where cms_id='9'";
-                      //echo "update cms set content = '$content',email='$mail',mobile='$mob',whatsapp='$mob2',officetime='$offtim' where cms_id='9'";
+                      
                     
                     mysqli_query($con,$upd_about);
-                    //header('location:add_contactus.php?msg=conus');
+                    
           } ?>
 
 
@@ -157,7 +153,7 @@ xmlhttp.send();
                             <div class="form-group">
                             <?php  $qry="select * from cms where cms_id='9'";
                                   $result=mysqli_query($con,$qry);
-                                      //echo $qry;
+                                      
                                    $res=mysqli_fetch_array($result);
                                       ?>
                                      <nav aria-label="breadcrumb">

@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 require_once('sys_dbconnection.php');
-//include('dbconnectadmin.php');
+
 include('register_submit.php');
 
 ?>
@@ -348,8 +348,8 @@ function getage()
 					   
 				   <div class="row ">
 					 <div class="col-lg-12 alert alert-info " id="doberror" style="display:none"><?php echo "Select valid Birth Date"; ?></div>
-                          <div class="col-lg-12 alert alert-info" id="doberror1" style="display:none"><?php //echo "You must be over 21 to register"; ?></div>
-                            <div class="col-lg-12 alert alert-info " id="doberror2" style="display:none"><?php //echo "You must be over 18 to register"; ?></div> 
+                          <div class="col-lg-12 alert alert-info" id="doberror1" style="display:none"><?php 
+                            <div class="col-lg-12 alert alert-info " id="doberror2" style="display:none"><?php 
 				   <div class="col-lg-2 col-md-4 col-sm-4">
 			         </div>
 					  <div class="form-column col-lg-8 col-md-12 col-sm-12">

@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
  
             $msg="";
             if(isset($_POST['submit']))
@@ -10,17 +10,17 @@ require_once(dirname(__FILE__).'/protect.php');
                 {
                     $id=$_POST['id'];
                     $content=$_POST['Name'];
-                    //$q="Select * from register where MatriID='$id'";
-                    //echo $id;
-                    //echo $content;
+                    
+                    
+                    
                     $q="update register set PartnerExpectations='$content' , PartnerExpectations_new='$content' , PartnerExpectations_approve='Yes' where MatriID='$id'";
-                    //echo "update register set PartnerExpectations='$content' , PartnerExpectations_new='$content' , PartnerExpectations_approve='Yes' where MatriID='$id'";
+                    
                     $rs=mysqli_query($con,$q);
                       if($rs>0)
                         {
                                 $msg="Approve Successfully!!";
-                                //echo $msg;
-                                //exit;
+                                
+                                
 
                         }
                 }
@@ -34,22 +34,22 @@ require_once(dirname(__FILE__).'/protect.php');
                 {
                     $id=$_POST['id'];
                     $content=$_POST['Name'];
-                     //$q="Select * from register where MatriID='$id'";
-                    //echo $id;
-                    //echo $content;
+                     
+                    
+                    
                      $q="update register set PartnerExpectations='',PartnerExpectations_approve='Rejected' where MatriID='$id'";
-                    //echo "update register set  PartnerExpectations_new='$content' , PartnerExpectations_approve='Yes' where MatriID='$id'";
+                    
                     $rs=mysqli_query($con,$q);
                     if($rs>0)
                     {
                         $msg="Declined Successfully!!";
-                                //echo $msg;
-                                //exit;
+                                
+                                
 
                     }
                 }
             }
-   //$profile_approve =mysqli_query($con,"SELECT * FROM register where  PartnerExpectations_approve='No'  and  PartnerExpectations!=''");
+   
 ?>
 
 <!DOCTYPE html>
@@ -233,7 +233,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'viewpart_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

@@ -1,6 +1,6 @@
 <?php 
 	require_once('sys_dbconnection.php');
-	/*include('dbconnectadmin.php');*/
+	
 	include('memprotect.php');
 ?>
 <!doctype html>
@@ -166,30 +166,7 @@
   </div>
 <?php } ?>
 <?php
-  /*
-  if( $me['facebook_id'] == '')
-  {
-?>
-<div class="text mt-3">
-  <label>Connect Your Account With Facebook </label>
-</div>
-<div class="form-group option-box">
-  <div class="product-form">
-    <?php
-      include ('log_in.php');
-    ?>
-  </div>
-</div>
-<?php
-  }
-  else
-  {
-?>
-<div class="text mt-3">
-  <label>Successfully connected to Facebook</label>
-</div>
-<?php
-  }*/
+  
 ?>
 
       </div>

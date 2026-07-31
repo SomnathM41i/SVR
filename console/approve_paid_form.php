@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php'); 
 include('protect.php');
 include_once('agent_common.php');
-/*include('../dbconnectadmin.php');*/
+
 
 $matriid=$_GET['matriid']; 
 $presult = $con->query("SELECT * FROM register where MatriID='$matriid'");
@@ -102,7 +102,7 @@ $strorderid = $strinv.orderid();
 		}
 		
 		
-// 		 function updateInput(){
+
 //     //get the current amount from the 'discount' field
 //     var discountcode = document.getElementsByName("discountcode")[0].value;
 //     //get the current amount from the 'price' field

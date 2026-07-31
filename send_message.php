@@ -311,7 +311,7 @@ body {
 					
 					$sqlblk=mysqli_query($con,"select * from block_member where matriid='$strid' and profile_id='$sender'") ;
                   	$sqlblk1=mysqli_query($con,"select * from block_member where matriid='$sender' and profile_id='$strid'") ;
-					//echo "select * from block_member where matriid='$strid' and profile_id='$sender'";
+					
 					if(mysqli_num_rows($sqlblk)==0 && mysqli_num_rows($sqlblk1)==0)
 					{
 					if($mem_info['Status']=='Paid')

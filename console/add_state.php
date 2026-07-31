@@ -1,18 +1,18 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
 $msg="";
 	if(isset($_POST['submit']))
 	{
 		
 		$state=mysqli_real_escape_string($con,$_POST['Name']);  
-		//echo $state;
+		
 	
 		$country=mysqli_real_escape_string($con,$_POST['country']);
-		//echo $country;
+		
 		$q="select * from e_state where state='$state'";
-		//echo "select * from e_state where state='$state'";
-		//exit;
+		
+		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
 		if($num>0)
@@ -32,16 +32,16 @@ $msg="";
        if(isset($_POST['Update']))
 	{
 		$id=$_POST['id'];
-			//echo $id;
+			
 		$state=$_POST['Name'];
-		//echo $state;
-		//exit;
+		
+		
 		$q="select * from e_state where state='$state'";
-		//echo "select * from e_state where state='$state'";
+		
 		$rs=mysqli_query($con,$q);
 	
 		$num=mysqli_num_rows($rs);
-		//echo $num;
+		
 		if($num>0)
 		{
 			$msg="State already Exist!!";
@@ -49,12 +49,12 @@ $msg="";
 		else
 		{
 				$q="update  e_state set state='$state' where id='$id'";
-			    //echo "update  e_state set state='$state' where id='$id'";
+			    
 				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="State Updated Successfully!!";
-								//echo $msg;
+								
 				}
 		}
 }
@@ -289,7 +289,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addstate_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -312,7 +312,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editstate_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

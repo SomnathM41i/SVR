@@ -1,14 +1,13 @@
-<?php require_once('../sys_dbconnection.php');/*include'../dbconnectadmin.php';*/
+<?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
 $id = $_POST['rowid'];
-/*echo $id;*/
+
 $note = mysqli_query($con,"SELECT * FROM notes where MatriID='$id' ");
 $total=mysqli_num_rows($note);
 $i=0;
-/*echo $total;*/
-//echo "SELECT * FROM notes where MatriID='$id'";
-/*$fetch_note = mysqli_fetch_array($note);
-$notes = $fetch_note['note'];*/
+
+
+
 
 ?>
  <style>

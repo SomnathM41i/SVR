@@ -1,17 +1,17 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-/*include'../dbconnectadmin.php';*/
+
 $msg="";
 if(isset($_POST['submit']))
 {
     $caste=mysqli_real_escape_string($con,$_POST['Name']);
-    //echo $caste;
+    
     
     $Religion=mysqli_real_escape_string($con,$_POST['religion']);
-    //echo $Religion;
+    
     
     $q="select * from caste where Caste='$caste'";
-    //echo "select * from caste where Caste='$caste'";
+    
     
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
@@ -33,30 +33,30 @@ if(isset($_POST['submit']))
 if(isset($_POST['Update']))
 {
     $id=$_POST['id'];
-    //echo $id;
+    
     $caste=$_POST['Name'];
-    //echo $caste;
-        //exit;
+    
+        
     $q="select * from caste where Caste='$caste' ";
-    //echo "select * from caste where Caste='$caste'";
+    
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
-    //echo $num;
+    
     if($num>0)
     {
          $msg="Caste already Exist!!";
-        //echo $msg;
+        
     }
     else
     {
-        //echo "ERROR.";
+        
         $q="update caste set Caste='$caste' where id='$id'";
-        //echo "update  caste set caste='$caste' where id='$id'";
+        
         $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
              $msg="Caste Updated Successfully!!";
-           //echo $msg;
+           
         }
     }
 }
@@ -260,7 +260,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_caste_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -283,7 +283,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'edit_caste_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

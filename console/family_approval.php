@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
  
 			$msg="";
 			if(isset($_POST['submit']))
@@ -10,17 +10,17 @@ require_once(dirname(__FILE__).'/protect.php');
 				{
 					$id=$_POST['id'];
 					$content=$_POST['Name'];
-					//$q="Select * from register where MatriID='$id'";
-					//echo $id;
-					//echo $content;
+					
+					
+					
 				    $q="update register set FamilyDetails='$content',FamilyDetails_new='$content' , FamilyDetails_approve='Yes' where MatriID='$id'";
-					//echo "update register set FamilyDetails='$content',FamilyDetails_new='$content' , FamilyDetails_approve='Yes' where MatriID='$id'";
+					
 					$rs1=mysqli_query($con,$q);
 				      if($rs1>0)
 				        {
 								$msg="approve Successfully!!";
-								//echo $msg;
-								//exit;
+								
+								
 
 				        }
 				}
@@ -34,18 +34,18 @@ require_once(dirname(__FILE__).'/protect.php');
 				{
 					$id=$_POST['id'];
 					$content=$_POST['Name'];
-				     //$q="Select * from register where MatriID='$id'";
-					//echo $id;
-					//echo $content;
+				     
+					
+					
 					
 					 $q2="update register set FamilyDetails='',FamilyDetails_approve='Rejected' where MatriID='$id'";
-					 //echo "update register set FamilyDetails='',FamilyDetails_approve='No' where MatriID='$id'";
+					 
 					$rs2=mysqli_query($con,$q2);
 				      if($rs2>0)
 				        {
 								$msg="Declined Successfully!!";
-								//echo $msg;
-								//exit;
+								
+								
 
 				        }
 				}
@@ -231,7 +231,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'viewfam_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

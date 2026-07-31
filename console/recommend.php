@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-/*echo $_REQUEST['flag'];*/
-  /*include '../dbconnectadmin.php';*/
+
+  
   //TO CHANGE LANDING PAGE VIA .HTACCESS :- (DirectoryIndex index1.html index.php)
 ?>
 <!DOCTYPE html>

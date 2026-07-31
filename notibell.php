@@ -2,9 +2,9 @@
 $matri=$_SESSION['MatriID'];
 
 $s1=mysqli_query($con,"select * from usernote where MatriID='$matri'");
-//echo "select * from usernote where MatriID='$matri'";
+
 $s2=mysqli_num_rows($s1);
-//echo $s2;
+
 
 if($s2 > 0){ ?>
 	<a href="user_notification"> <i class="fas fa-bell blink" style="color: darkorange; font-size: 21px;"></i></a>

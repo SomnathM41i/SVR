@@ -1,13 +1,13 @@
 <?php require_once('../sys_dbconnection.php');   
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 $id = $_POST['rowid'];
 
-//exit;
+
 $sqldata=mysqli_query($con,"select * from interest where id='$id'");
-//echo "select * from caste where id ='$id'";
+
 $rowdata=mysqli_fetch_array($sqldata);
-//echo $rowdata['Caste'];?>
+
 <style>
  .btcs
  {

@@ -1,6 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*session_start(); 
-include('dbconnectadmin.php');*/
+
 
 
 $qry="select * from cms where link='contact us'";
@@ -13,8 +12,7 @@ $rowfe=mysqli_fetch_array($rowf);
 $check_u=mysqli_query($con,"select COUNT(id) from emailverify where MatriID='$mid'");
 ECHO "select COUNT(id) from emailverify where MatriID='$mid'";
 $fetch_u=mysqli_fetch_array($check_u);
-/*echo $fetch_u;
-exit;*/
+
 $check = $fetch_u['COUNT(id)'];
 echo $check.'<br>';
 $datev=date('d-m-Y');
@@ -123,7 +121,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

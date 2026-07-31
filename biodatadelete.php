@@ -1,6 +1,6 @@
 <?php require_once('sys_dbconnection.php');
 include_once('memprotect.php');
-/*include('dbconnect.php');*/
+
 /* SECURITY: member login required (memprotect); a member may only delete
    their OWN biodata (previously any MatriID passed via GET was accepted -
    IDOR), legacy mysql_query() call replaced (fatal on modern PHP), and the

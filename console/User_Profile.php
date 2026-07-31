@@ -200,7 +200,7 @@ require_once(dirname(__FILE__).'/protect.php');
                                 echo $id; ?>'>
 								
                                 <img src ="http://localhost/SVR/css3/assets/shivraj-logo.png"  />
-                                <!-- <b><?php echo $me['Name']; ?> | <?php echo $me['MatriID']; ?></b> -->
+                                
                             </div>
                             <div class="card-body pb-0">
                                 <div class="gallery-item1  wow fadeIn">
@@ -231,10 +231,8 @@ require_once(dirname(__FILE__).'/protect.php');
         </div>
         <script src="plugins/node-waves/waves.js"></script>
         <script>  
-        //user-defined function to open and share web content on WhatsApp  
-        /*function openWhatsApp() {  
-            window.open('whatsapp://send?text= https://www.youtube.com/watch?v=ohpCMpderow');  
-            }  */
+        
+        
         </script>  
         <?php 
             if( isset($_SESSION['admin_id']) )
@@ -378,6 +376,6 @@ require_once(dirname(__FILE__).'/protect.php');
           gtag('config', 'G-Q8H86P6FK7');
         </script>
         <script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
-        <?php //include('footer.php')?>
+        <?php 
     </body>
 </html>

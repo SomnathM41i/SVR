@@ -1,7 +1,6 @@
 <?php require_once('sys_dbconnection.php');
 require_once('includes/partner_match.php');
-/*include('dbconnectadmin.php');
-session_start();*/
+
 
 //error_reporting(0);
 $data_config = $db->get_siteconfig();

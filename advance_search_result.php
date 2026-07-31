@@ -1,8 +1,8 @@
 <?php require_once('sys_dbconnection.php');
 include_once('memprotect.php'); 
-//include('dbconnectadmin.php');
+
 //error_reporting(0);
-//session_start();
+
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
 function getHeightValue($h) {

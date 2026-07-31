@@ -1,4 +1,4 @@
- <?php  require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+ <?php  require_once('sys_dbconnection.php');
 error_reporting(0);
 $MatriID = $_SESSION['MatriID'];
 $checkquery="SELECT * FROM register WHERE MatriID='$MatriID'";
@@ -6,8 +6,8 @@ $checkdata=mysqli_query($con,$checkquery);
 $checkresult=mysqli_fetch_array($checkdata);
 $Status=$checkresult['Status'];
 $deletestatus=$checkresult['deletestatus'];
-//unset($_SESSION['MatriID']);
-//unset($_SESSION['matri_login']);
+
+
 $data_config = $db->get_siteconfig();
 $contact_email = $data_config-> ContactEmail;
 ?>

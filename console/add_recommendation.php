@@ -1,13 +1,13 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-/*include '../dbconnectadmin.php';*/
+
 	$q  = $_POST['search'] ? $_POST['search'] : $_GET['id'];
 	$matriid = $q;
 	$flag = 0;
-	/*$result = mysqli_query($con,"SELECT * FROM register where MatriID LIKE '%$q%'");*/
+	
 	$check = mysqli_query($con, "SELECT * FROM register WHERE MatriID = '$q'");
 	$count = mysqli_num_rows($check );
-	//echo $count;
+	
 
 	if( $count == 0)
 	{

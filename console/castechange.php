@@ -1,13 +1,13 @@
 <?php require_once('../sys_dbconnection.php');  
 require_once(dirname(__FILE__).'/protect.php');
-/*include('dbconnectadmin.php');*/
+
 
 if(isset($_POST['country'])) {
       $id =$_POST["country"]; 
 	  echo $id;
-	  //exit;
+	  
 	$query12 ="SELECT * FROM caste WHERE Religion IN ('".$id."')";
-	//echo "SELECT * FROM caste WHERE Religion IN ('".$id."')";
+	
 
 	$results =mysqli_query($con,$query);
 ?>
@@ -15,7 +15,7 @@ if(isset($_POST['country'])) {
 	<option value="">Select Caste</option>
 	<option value="">Any</option>
 <?php
-	//foreach($results as $state) {
+	
 		 while($row1 = mysqli_fetch_array($results)) {
 ?>
 	<option value="<?php echo $row1["Caste"]; ?>"><?php echo $row1["Caste"]; ?></option>
@@ -30,14 +30,14 @@ if(isset($_POST['country'])) {
 <?php
 include('dbconnectadmin.php');
 //require_once("DBController.php");
-//$db_handle = new DBController();
+
 if(isset($_GET['country_id'])) {
         $coun_id =  $_GET["country_id"];  
-		//echo $coun_id;
+		
 	 $query ="SELECT * FROM caste WHERE Religion IN ($coun_id)";
 	 $results = $con->runQuery($query);
-	//exit;
-	//$results = mysqli_query($con,$query);
+	
+	
 
      while($row12 = mysqli_fetch_array($results)) { ?>
 	

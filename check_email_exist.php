@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 require_once('includes/security.php');
 // check if the username is taken
 /* SECURITY: prepared statement (H1 SQLi) + escaped output (H2 XSS).

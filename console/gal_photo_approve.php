@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-//include('../dbconnectadmin.php');
+
 
 
  if(isset($_GET["page"]))
@@ -15,7 +15,7 @@ $result=mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b where a.matr
 function displayPaginationBelow($con,$per_page,$page){
 $page_url="?";
 $sql1 = mysqli_query($con,"SELECT COUNT(*)  as totalCount FROM register a,gallary b where a.matriid=b.matri_id and a.Photo1<>b.photo_name  and b.photo_approve='Pending'");
-    //echo "SELECT COUNT(*)  as totalCount FROM register a,gallary b where a.matriid=b.matri_id and a.Photo1<>b.photo_name  and b.photo_approve='Pending'";
+    
         
         $rec = mysqli_fetch_array($sql1);
         $total = $rec['totalCount'];

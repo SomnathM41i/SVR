@@ -14,7 +14,7 @@ require_once(dirname(__FILE__).'/protect.php');
 		$matching_fet_exp=explode(",", $me['Looking']);
 		$matching_fet_term = array();
 		foreach($matching_fet_exp as $row => $value){
-			$matching_fet_term[] ="'".trim($value)."'"; //"'$value'";
+			$matching_fet_term[] ="'".trim($value)."'"; 
 		}
 		$matching_fet_re = implode(',', $matching_fet_term);
 		$looking.=" and Looking IN($matching_fet_re) ";//full profile marital status
@@ -195,8 +195,8 @@ require_once(dirname(__FILE__).'/protect.php');
 	if($tot_count_state=mysqli_num_rows($lokingcheck)>=1) { 
 ?>
 <?php  
-	//echo $looking;
-	//echo mysqli_num_rows($lokingcheck)
+	
+	
 ?>
 <?php  } else { 
 ?>

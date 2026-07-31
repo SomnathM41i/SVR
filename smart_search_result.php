@@ -1,9 +1,9 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
 require_once('sys_dbconnection.php');
 require_once('includes/partner_match.php');
 require_once('includes/annual_income.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
 
@@ -57,8 +57,8 @@ $working_taluka_sql = mysqli_real_escape_string($con, $working_taluka);
 $working_city_sql = mysqli_real_escape_string($con, $working_city);
 $native_taluka_sql = mysqli_real_escape_string($con, $native_taluka);
 $native_city_sql = mysqli_real_escape_string($con, $native_city);
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))

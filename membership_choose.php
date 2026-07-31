@@ -22,7 +22,7 @@ $plan_row = mysqli_fetch_array($plan);
 
 // Check payment gateway status
 $data_config = $db->get_siteconfig();
-//$pay_on_off  = $data_config->is_pay_gateway_set;
+
 $pay_on_off = 1;
 // Razorpay Keys — now resolve from env/config with legacy fallbacks (SECURITY)
 define('RZP_KEY_ID',     svr_config('SVR_RZP_KEY_ID', 'rzp_live_SjeGNwfy1DxQuC'));

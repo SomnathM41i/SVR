@@ -3,7 +3,7 @@
 include_once('memprotect.php');
 /*include_once('dbconnectadmin.php');*/
 error_reporting(0);
-/*session_start();*/
+
 
 ?>
 <!DOCTYPE html>
@@ -108,7 +108,7 @@ $total_pages = ceil($total_records / $limit);
 				$cnt++;
 				$path="";
 				$is_block = mysqli_query($con,"select *from block_member where matriid ='$login' AND profile_id = '".$rowview['profile_id']."'");
-				//echo "select *from block_member where matriid ='$login' AND profile_id = '".$rowview['eireceiver']."'";
+				
 				if(mysqli_num_rows($is_block)==1)
 				continue;
 					?>

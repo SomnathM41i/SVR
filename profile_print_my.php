@@ -120,9 +120,7 @@ function print_report()
             <td bgcolor="#DFDFDF">About Us</td>
             <td bgcolor="#DFDFDF" colspan="3"> <?php echo $fetch['aboutus'] ?></td>
           </tr>
-         <!-- <tr>
-            <td height="101" colspan="4" valign="top"><?php echo $fetch['aboutus'] ?> </td>
-          </tr>-->
+         
           </table></td>
       </tr>
       </table></td>
@@ -192,7 +190,7 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
 											echo $fetch['Weight']." kg";
 										}
 	
-	//echo $fetch['Weight'] ?></td>
+	
     <td>&nbsp;</td>
     <td>Occupation</td>
     <td><?php echo $fetch['Occupation'] ?></td>
@@ -342,16 +340,12 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
           <tr bgcolor="#DFDFDF">
     <td>Looking For</td>
     <td><?php echo $fetch['Looking'] ?> </td>
-   <?php /*?> <td>&nbsp;</td>
-    <td>Hobby</td>
-    <td><? echo $fetch['Hobbies'] ?></td><?php */?>
+   <?php ?>
   </tr>
   <tr>
     <td>Age</td>
     <td><?php echo $fetch['PE_FromAge']." To ".$fetch['PE_ToAge']; ?></td>
-    <?php /*?><td>&nbsp;</td>
-    <td>Other Hobby</td>
-    <td><? echo $fetch['OtherHobbies'] ?></td><?php */?>
+    <?php ?>
   </tr>
           <tr bgcolor="#DFDFDF">
     <td>Height</td>
@@ -438,16 +432,12 @@ else if($strheight =="36") { echo "6Ft 11 inch "; }
 else if($strheight =="37") { echo "7Ft "; }
 else if($strheight =="Does not Matter") { echo "Does not Matter"; }
 ?></td>
-    <?php /*?><td>&nbsp;</td>
-    <td>Interests</td>
-    <td><? echo $fetch['Interests'] ?></td><?php */?>
+    <?php ?>
   </tr>
     <tr>
             <td>Complexion</td>
             <td><?php echo $fetch['PE_Complexion'] ?></td>
-            <?php /*?><td>&nbsp;</td>
-            <td>Other Interests</td>
-            <td><? echo $fetch['OtherInterests'] ?></td><?php */?>
+            <?php ?>
     </tr>
           <tr >
             <td bgcolor="#DFDFDF">Education</td>

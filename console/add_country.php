@@ -1,13 +1,13 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
 $msg="";
 	if(isset($_POST['submit']))
 	{
 		$country=$_POST['Name'];
 		
 		$q="select * from e_country where country='$country'";
-		//echo "select * from e_country where country='$country'";
+		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
 		if($num>0)
@@ -17,7 +17,7 @@ $msg="";
 		else
 		{
 				$q="insert into e_country(country,status) values('$country','enable')";
-                //echo "insert into e_country(country) values('$country')";
+                
 		
 				$rs=mysqli_query($con,$q);
 				if($rs>0)
@@ -37,7 +37,7 @@ else if(isset($_POST['Update']))
 		
 		
 		$q="select * from e_country where country='$country'";
-		//echo "select * from e_country where country='$country'";
+		
 		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
@@ -50,8 +50,8 @@ else if(isset($_POST['Update']))
 		{
 			$id=$_POST['id'];
 				$q="update  e_country set country='$country' where id='$id' ";
-				//echo "update  e_country set country='$country' where id='$id' ";
-				//exit;
+				
+				
  				$rs=mysqli_query($con,$q);
 				if($rs>0)
 				{
@@ -184,7 +184,7 @@ else if(isset($_POST['Update']))
 										  {
 										   ?>
 											<tr>
-											  <!--<td ><?php  echo $i+1;?></td>-->
+											  
 											    <td><?php  echo $data['country'];?></td>
 											    <td >
                                                     <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-report2" data-id="<?php echo $data['id'];?>">Edit </a>
@@ -258,7 +258,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -281,7 +281,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

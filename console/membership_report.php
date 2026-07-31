@@ -1,7 +1,7 @@
 <?php require_once('../sys_dbconnection.php'); 
 error_reporting(0);
 include('protect.php');
-/*include('../dbconnectadmin.php');*/
+
 
 ?>
 <?php

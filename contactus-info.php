@@ -1,6 +1,6 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
-//session_start();
+
+
   $result=mysqli_query($con,"SELECT * FROM cms where cms_id='9'");
 $rowdata=mysqli_fetch_array($result);?>
 

@@ -1,4 +1,4 @@
-<?php  require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/ ?>
+<?php  require_once('sys_dbconnection.php'); ?>
 <!DOCTYPE html>
  <html lang="en">
 <head>

@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+<?php require_once('sys_dbconnection.php');
 include('memprotect.php');
 $ry=mysqli_query($con,"select * from basic_saveandsearch where id='".$_GET['id']."'");             
 $fethc=mysqli_fetch_array($ry);

@@ -189,7 +189,7 @@ while($profiles=mysqli_fetch_array($login_profile)){
 				<?php }
 			   // echo "-----";		
 				$totcount=$tot1+$tot2+$tot3+$tot4+$tot5+$tot6+$tot7+$tot8+$tot9+$tot10;				
-			  //  echo $totcount;
+			  
                  
 				if($totcount>=5)
 				{
@@ -213,13 +213,13 @@ while($profiles=mysqli_fetch_array($login_profile)){
                 $item=implode("','",$items);
 				}
 }
-//print_r($matid);
+
 				
 				$limit = 8; 
 				 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 				$start_from = ($page-1) * $limit;
 				
-//echo $item;
+
 				
 				
                 $matriid=$_SESSION['MatriID'];
@@ -331,9 +331,9 @@ while($profiles=mysqli_fetch_array($login_profile)){
      
 		
 	 $total = $row['totalCount'];
-	//echo  $total;
-//echo $final;
-//echo $count;	
+	
+
+
 ?>
 
 <!doctype html>

@@ -1,7 +1,7 @@
 <?php  require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-/*session_start();*/
-/*include('../dbconnectadmin.php');*/
+
+
 include('../smtp.php');
 $query="SELECT * FROM siteconfig where ID='1'";
 $configdata=mysqli_query($con,$query) or svr_db_fail($con); 
@@ -22,7 +22,7 @@ if($forpass1>0)
 		
 		$id=$forpass1['MatriID'];
 		$name=$forpass1['Name'];
-		//$strmem= $_POST['emailto'];
+		
 		$subject =$_POST['subject'];
 		$strbody =$_POST['Message'];
 		$strbody=str_replace("\"","'",$strbody);
@@ -92,7 +92,7 @@ if($forpass1>0)
 			$msg="Your E-mail is Send Successfuly!";
         echo $msg;
 		$insert=mysqli_query($con,"insert into group_mail(MatriID,name,email,memtype,gender,marital_status,subject,mail_send,mail_type,date) values('$id','$name','$mememail','NULL','NULL','NULL','$subject','$strbody','Personal',NOW())");
-	 //   echo "insert into group_mail(MatriID,name,email,memtype,gender,marital_status,subject,mail_send,mail_type,date) values('$id','$name','$mememail','NULL','NULL','NULL','$subject','$strbody','Personal',NOW())"; 
+	 
 		
         
 
@@ -113,7 +113,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

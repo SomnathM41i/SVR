@@ -1,12 +1,12 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-  //include '../dbconnectadmin.php';
+  
   //error_reporting(0);
   date_default_timezone_set('Asia/Kolkata');
   $date = date('Y-m-d');
  
 $result=mysqli_query($con,"SELECT *  FROM register where Regdate='".$date."' order by ID DESC");
-//echo "SELECT *  FROM register where Regdate='".$date."'";
+
 ?>
 
 

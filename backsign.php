@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 include('register_submit.php');
 error_reporting(0);
 ?>

@@ -1,6 +1,6 @@
 <?php  
  include_once('siteconfig.php');
- /*include('dbconnectadmin.php');*/
+ 
  require_once('sys_dbconnection.php');?>
 <?php  include_once('memprotect.php');
 
@@ -10,7 +10,7 @@ $qry1=mysqli_query($con,"select * from notification where noti_sender='$strid' A
 $row2=mysqli_fetch_array($qry1);
 $type=$row2['notification_type']; 
 $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
 $on_off = $data_config-> is_smtp_set;
 if(mysqli_num_rows($qry1)==0)
 {
@@ -40,15 +40,15 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
 	 $sendernm=explode(" ",$row1['Name']);
 	$photo1=$row1['Photo1'];
 	$age=$row1['Age'];
-	//$height=$row1['Height'];
+	
 	$city=$row1['City'];
-	//$reli=$row1['Religion'];
+	
 	$mother_tongue=$row1['mother_tounge'];
 	$edu=$row1['Education'];
 	$occu=$row1['Occupation'];
 	$send=$row1['ConfirmEmail'];
-	//$encrypt_sender=$searchid;
-	//$encrypt_sender=base64_encode($strid);	
+	
+	
     $age=$row1['Age'];
 	$emailsql=mysqli_query($con,"select * from  email_sending WHERE id='1' ");
 	$mailinfo =mysqli_fetch_array($emailsql);
@@ -104,8 +104,7 @@ $shortview=mysqli_query($con,"INSERT INTO shortlist_profile(mat_id,profile_id,wh
 									else if($strheight =="36") { $height= "6Ft 11 inch"; }
 									else if($strheight =="37") { $height= "7Ft"; }
 	$check_email = mysqli_query($con,"SELECT * FROM emailverify where MatriID='$searchid'");	
-		/*echo "SELECT * FROM emailverify where MatriID='$searchid";
-		exit;*/
+		
 		$fetch_email = mysqli_fetch_array($check_email);
 	if( (int)$on_off === 1 && $fetch_email['verification'] == 'Yes' )
 	{
@@ -164,12 +163,12 @@ if(!$mail->Send())
   echo "Mailer Error: " . $mail->ErrorInfo;
 } else
 {
-//  echo "Message sent!";
+
 }
 }
 
 					
-//	$encrypt=base64_encode($searchid);
+
 $encrypt = urlencode( base64_encode( $searchid ) );
 
 header("location:full_profile?msg=success&id=$encrypt");  ?>

@@ -59,7 +59,7 @@ padding: 36px 0 90px
   </section>
 
 <?php
-	//$strid = $_SESSION['matri_login'];
+	
 $check=mysqli_query($con,"select matriid from block_member where profile_id='$login'"); 
 $data1=array();
 while($check1=mysqli_fetch_array($check))
@@ -95,15 +95,15 @@ $total_pages = ceil($total_records / $limit);
                	<?php
 				while($recs = mysqli_fetch_array($result1)) {
 				
-                //echo $recs['date'];
+                
 				  $s=mysqli_query($con,"select * from  register where MatriID='".$recs['whom']."'");
-				// echo "select * from  register where MatriID='".$recs['whom']."'";
+				
 				   while($rec=mysqli_fetch_array($s))
 					{
 				$cnt++;
 				$path="";
 				$is_block = mysqli_query($con,"select *from block_member where matriid ='$login' AND profile_id = '".$recs['whom']."'");
-				//echo "select *from block_member where matriid ='$login' AND profile_id = '".$recs['whom']."'";
+				
 				if(mysqli_num_rows($is_block)==1)
 				continue;
 				?>  

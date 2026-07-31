@@ -1,7 +1,7 @@
 <?php  require_once('../sys_dbconnection.php');
 include('protect.php');
-//include('../dbconnectadmin.php');
-//$sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and b.photo_approve='Pending' order by id desc"); 
+
+
 
 
 if(isset($_GET["page"]))
@@ -16,7 +16,7 @@ $profile_approve = mysqli_query($con,"SELECT * FROM register where idproof_appro
 function displayPaginationBelow($con,$per_page,$page){
 $page_url="?";
 $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where idproof_approve='No' and  adhar!=''order by id desc");
-    //  echo "SELECT COUNT(*) as totalCount FROM register where idproof_approve='No' and  adhar!=''order by id desc";
+    
         
         $rec = mysqli_fetch_array($sql1);
         $total = $rec['totalCount'];
@@ -167,58 +167,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where idp
 
 
     <script type="text/javascript">
-        /*function approve(id,matri)
-        {
-                //alert(id);
-            var xmlhttp;    
-            if (window.XMLHttpRequest) 
-            {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-            } 
-            else 
-            {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    document.getElementById("data").innerHTML = xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","dp_approve.php?id="+id+"&matri="+matri,true);
-            xmlhttp.send();
-        }
-        function unapprove(id,matri,gend)
-        {
-            var xmlhttp;    
-            if (window.XMLHttpRequest) 
-            {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } 
-            else 
-            {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    document.getElementById("data").innerHTML = xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","dp_unapprove.php?id="+id+"&matri="+matri+"&gend="+gend,true);
-            xmlhttp.send();
-        }
-        function MM_openBrWindow(theURL,winName,features) 
-        { //v2.0
-            window.open(theURL,winName,features);
-        }   
-        */
+        
         function MM_openBrWindow(theURL,winName,features) 
             { //v2.0
                 window.open(theURL,winName,features);
@@ -265,9 +214,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where idp
                     <div class="card-body">
 					
                         <div class="grid row">
-                           <?php /* $det=mysqli_query($con,"select * from staff_activity where activity='idproof approve'");
-					         $det1=mysqli_num_rows($det);
-							 echo $det1; */?>
+                           <?php ?>
                             <?php  
                                 if(mysqli_num_rows($profile_approve))
                                 {
@@ -293,9 +240,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM register where idp
 
                                 <a href="approve_idproof?matriid=<?php  echo $profile_approve_row['MatriID'];?>" class="btn btn-icon btn-outline-success"><i class="fa fa-check" aria-hidden="true"></i></a> &nbsp;&nbsp;
                                 
-                               <?php /* ?>
-                                <a class="btn btn-icon btn-outline-secondary" onClick="MM_openBrWindow('view_id.php?matid=<?php   echo $profile_approve_row['MatriID']?>&Choice=1&op=<?php  echo $profile_approve_row['adhar'] ?>&photoid=<?php  echo $profile_approve_row['adhar'] ?>','editphotosize','scrollbars=yes,resizable=yes,width=550,height=600')"><i class="fa fa-crop" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                <?php */ ?>
+                               <?php  ?>
                                     
                                 <a href="delete_idproof_?matriid=<?php  echo $profile_approve_row['MatriID'];?>" onclick="return confirm('Are You Really Want To Delete This ID Proof..?  Click OK To Confirm...?')"  class="btn btn-icon btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;
 								<?php  if($fileextension=="pdf") { ?>

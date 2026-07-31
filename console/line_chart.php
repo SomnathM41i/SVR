@@ -1,13 +1,13 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
 
-      /*include '../dbconnectadmin.php';*/
+      
       //FOR Paid
       $query = "SELECT Status,COUNT(Name) FROM register where Status='Paid' "; 
       $result = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($result))
       {
-        //echo $row['COUNT(Name)'];  
+        
       }  
 
       //FOR UnPaid
@@ -15,7 +15,7 @@ require_once(dirname(__FILE__).'/protect.php');
       $result1 = mysqli_query($con,$query1);
       while ($row1 = mysqli_fetch_array($result1))
       {
-        //echo $row1['COUNT(Name)'];  
+        
       }
       
   ?>

@@ -1,11 +1,10 @@
 <?php  
-/*session_start();
-include("dbconnectadmin.php");*/
+
 require_once('sys_dbconnection.php');
 $login=$_SESSION['MatriID']; //or sender id
 $searchid=$_GET['id'];
-//$idurl=base64_decode($_GET['id']);
-//$searchid = $idurl;
+
+
 
 $expressinterestquery=mysqli_query($con,"select * from  expressinterest  where eisender='$login' and eireceiver='$searchid'")or svr_db_fail($con);
 $fetch=mysqli_query($con,"Select * from register");
@@ -13,7 +12,7 @@ if(mysqli_num_rows($expressinterestquery)==0)
 {
 $eisentdt=date('d-m-Y');
 $shortview=mysqli_query($con,"insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')")or svr_db_fail($con);
-//echo "insert  into  expressinterest(eisender,eireceiver,name,eisentdt,status) value('$login','$searchid','$searchid','$eisentdt','Pending')";
+
 
 }
 
@@ -25,11 +24,10 @@ mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notificati
 }
 // for checking on/off of SMTP
 $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
 $on_off = $data_config-> is_smtp_set;
 $check_email = mysqli_query($con,"SELECT * FROM emailverify where MatriID='$searchid'");	
-		/*echo "SELECT * FROM emailverify where MatriID='$searchid";
-		exit;*/
+		
 $fetch_email = mysqli_fetch_array($check_email);
 //END
 
@@ -50,16 +48,16 @@ $fetch_email = mysqli_fetch_array($check_email);
 	$sql2=mysqli_query($con,"select * from  register WHERE MatriID='$login'");
 	$row1=mysqli_fetch_array($sql2);
 	$photo=$row1['photo1'];
-	//$sendernm=$row1['Name'];
+	
 	$photo1=$row1['Photo1'];
 	$age=$row1['Age'];
-	//$height=$row1['Height'];
+	
 	$reli=$row1['Religion'];
 	$mother_tongue=$row1['mother_tounge'];
 	$edu=$row1['Education'];
 	$occu=$row1['Occupation'];
 	$send=$row1['ConfirmEmail'];
-	//$encrypt_sender=$login;
+	
 	$encrypt_sender=base64_encode($login);	
 
 	$age=$row1['Age'];
@@ -177,7 +175,7 @@ if(!$mail->Send())
   echo "Mailer Error: " . $mail->ErrorInfo;
 } else
 {
-//  echo "Message sent!";
+
 }
 }
 

@@ -1,4 +1,4 @@
-<?php //include('dbconnectadmin.php');
+<?php 
 require_once('sys_dbconnection.php');
 $qry="select * from cms where cms_id='21'";
 $result=mysqli_query($con,$qry);

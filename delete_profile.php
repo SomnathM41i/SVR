@@ -1,9 +1,9 @@
 <?php //include_once('siteconfig.php');
 require_once('sys_dbconnection.php');?>
 <?php //include_once('memprotect.php');
-/*include('dbconnectadmin.php');*/
+
 error_reporting(0);
-/*session_start();*/
+
 
 ?>
 <!DOCTYPE html>

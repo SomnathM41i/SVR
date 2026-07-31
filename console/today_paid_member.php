@@ -1,17 +1,17 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  //include '../dbconnectadmin.php';
+  
   //error_reporting(0);
 		date_default_timezone_set('Asia/Kolkata');
 		$date = date('Y-m-d');
         $datefrom = $_POST["datefrom"];
 		$dateto = $_POST["dateto"];
-		//$fromfetch = explode('-',$_POST["datefrom"]);
-		//$datefrom = $fromfetch[2].'-'.$fromfetch[1].'-'.$fromfetch[0];
-		//$tofetch = explode('-',$_POST["dateto"]);
-		//$dateto = $tofetch[2].'-'.$tofetch[1].'-'.$tofetch[0];
+		
+		
+		
+		
 		$result=mysqli_query($con,"select a.*,b.* from register a,paiddetails b where b.Pactivedate Between '".$datefrom."' and '".$dateto."' and a.MatriID=b.Pmatriid");
-	    //echo "select a.*,b.* from register a,paiddetails b where b.Pactivedate Between '".$datefrom."' and '".$dateto."' and a.MatriID=b.Pmatriid";
+	    
 ?>
 
 

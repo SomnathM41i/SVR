@@ -1,6 +1,6 @@
 <?php  
 
-/*include("dbconnectadmin.php");*/
+
 require_once('sys_dbconnection.php');
  //include_once('memprotect.php');?>
 <?php  //include_once('siteconfig.php');

@@ -327,43 +327,14 @@ $fetch=mysqli_fetch_array($check);
               
               <div class="col-lg-5 col-md-5 col-sm-12 form-group">							
                 <select   id="cbostate" title='select State'   name="cbostate[]"  id="cbostate" multiple size="5">
-                  <?php /*
-                    $rrs=mysqli_query($con,"select * from e_state where cid='India'");
-                    while($rrow=mysqli_fetch_array($rrs))
-                    {
-                      if($rrow['state']==$row['state'])
-                      {
-                        ?>
-                      <option value="<?php echo $rrow['state'];?>" selected><?php echo $rrow['state'];?></option>
-                      <?php
-                      }
-                      else
-                      {?>
-                      <option value="<?php echo $rrow['state'];?>"><?php echo $rrow['state'];?></option>
-                      <?php			}
-                    } */
+                  <?php 
                   ?>
                 </select>
               </div>
               
               <div class="col-lg-5 col-md-5 col-sm-12 form-group mr-4">								
                 <select    title='Select District'   id="dist" multiple name="dist[]">
-                  <?php /*
-                    $rrs=mysqli_query($con,"select * from e_dist");
-                    while($rrow=mysqli_fetch_array($rrs))
-                    {
-                      if($rrow['dist']==$row['dist'])
-                      {
-                        ?>
-                    <option value="<?php  echo $rrow['dist']; ?>" ><?php echo $rrow['dist'];?></option>
-                    <?php
-                      }
-                      else
-                      {?>
-                    <option value="<?php echo $rrow['dist'];?>"><?php echo $rrow['dist'];?></option>
-                    <?php			}
-                    }
-                  */?>
+                  <?php ?>
                 </select>
               </div> 
               

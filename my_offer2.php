@@ -1,4 +1,4 @@
-<?php //include('dbconnectadmin.php');
+<?php 
 require_once('sys_dbconnection.php');
 $strid = $_SESSION['MatriID'];
 $result = mysqli_query($con,"SELECT * from register where MatriID = '$strid'")or svr_db_fail($con);
@@ -19,7 +19,7 @@ function orderid() {
 }
 $strinv     = "MP";
 $strorderid = $strinv . orderid();
-//echo $strorderid;
+
 $strplanid =  "1";
 $plan = mysqli_query($con,"SELECT * from membershipplan where planid = '$strplanid' ")or svr_db_fail($con);
 
@@ -129,7 +129,7 @@ button, input, optgroup, select, textarea
 				
 				  <?php 
 				$qry_plan = mysqli_query($con,"select * from membershipplan where plan_status='Active' ORDER BY planid ASC") or svr_db_fail($con);
-				//echo "select * from membershipplan where plan_status='Active' ORDER BY planid ASC";
+				
 				while($plan = mysqli_fetch_array($qry_plan))
 					
 				{?> 
@@ -251,7 +251,7 @@ button, input, optgroup, select, textarea
 			    <div class="pricing-block col-lg-12 col-md-12 col-sm-12 wow fadeInUp">
 				<?php $qry="select * from cms where cms_id='22'";
 						$result=mysqli_query($con,$qry);
-						//echo $qry;
+						
 					$res=mysqli_fetch_array($result);?>
 					<div class="col-sm-12 ">
 					<div class="contact-grid1 text-center">

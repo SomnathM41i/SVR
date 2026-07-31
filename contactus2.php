@@ -1,5 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include 'dbconnectadmin.php';*/
+
   //error_reporting(0);
   $seo=mysqli_query($con,"Select * from seo where catagory='contact'");
   $seof=mysqli_fetch_array($seo);
@@ -277,7 +277,7 @@ iframe
         <div class="auto-container mb-4">
 		 <?php   $result1=mysqli_query($con,"SELECT * FROM cms where cms_id='18'");
 				 $rowdata1=mysqli_fetch_array($result1);
-			//echo $rowdata1['content'];?> 
+			
 			<iframe src=<?php echo $rowdata1['content'];?>> </iframe>
 			
         </div>

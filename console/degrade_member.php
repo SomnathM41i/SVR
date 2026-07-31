@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-/*include('../dbconnectadmin.php'); */
+
 $id=$_GET['matriid'];
 
 $con->query("update register set Status='Active' , memtype='Free', Noofcontacts='0',  MemshipExpiryDate='' where MatriID='$id' ")

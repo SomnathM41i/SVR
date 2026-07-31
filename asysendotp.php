@@ -7,7 +7,7 @@
 require_once('sys_dbconnection.php');
 require_once('includes/security.php');
 $siteinfo = $db->get_siteconfig();
-//print_r($siteinfo);
+
 $sms = $siteinfo -> otp_on_off;
 if( $sms != 1)
 {
@@ -25,7 +25,7 @@ if (!svr_throttle($otpBucket, 3, 600)) {
 $_SESSION['otp']=rand(111111,999999);
 $msg="";
 $matriid=$_SESSION['tempid'];
-//echo $_SESSION['mobile'];
+
 $opt = $_SESSION['otp'];
  $msg = "Welcome To Jaipur Your OTP: $opt. Thank You Team weddingsparampara.com A unit of Mahadi Group";
     $numbers = $_SESSION['mobile']; // Multiple numbers separated by comma

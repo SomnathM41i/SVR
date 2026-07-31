@@ -1,9 +1,9 @@
 <?php require_once('../sys_dbconnection.php');   
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 $id = $_POST['rowid'];
 $sqldata=mysqli_query($con,"SELECT * FROM register where MatriID='$id'");
-//echo "select * from e_dist where id ='$id'";
+
 $rowdata=mysqli_fetch_array($sqldata);
 ?>
  <style>
@@ -30,7 +30,7 @@ $rowdata=mysqli_fetch_array($sqldata);
                             <div class="form-group">
                                 <!--<label class="form-label" for="Name">Enter Country</label>-->
                                 <textarea type="text" class="form-control" id="Name" name="Name" rows="5"><?php echo $rowdata['aboutus']?></textarea>
-                                <input type="hidden" name="id" value="<?php echo $id; ?>"><?php //echo $id ?>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>"><?php 
                             </div>
                        </div>
                        

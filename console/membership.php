@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-//include('memprotect.php');
+
 
 $result = mysqli_query($con,"SELECT * from membershipplan order by planid");
 	if(isset($_POST['submit']))
@@ -52,7 +52,7 @@ if(isset($_POST['Update']))
 		
 		
 		$q="SELECT * from membershipplan where planid='$id'";
-		//echo "select * from e_country where country='$country'";
+		
 		
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
@@ -60,8 +60,8 @@ if(isset($_POST['Update']))
 		
 			$id=$_POST['id'];
 				$q="update  membershipplan set plandisplayname='$name',plannoofcontacts='$contact',planduration='$duration',planamount='$amount',description1='$description1',description2='$description2',description3='$description3',description4='$description4',description5='$description5',description6='$description6',description7='$description7' where planid='$id' ";
-				//echo "update  membershipplan set plandisplayname='$name',plannoofcontacts='$contact',planduration='$duration',planamount='$amount',description1='$description1',description2='$description2',description3='$description3',description4='$description4',description5='$description5',description6='description6',description7='$description7' where planid='$id' ";
-				//exit;
+				
+				
  				$rs=mysqli_query($con,$q);
 				if($rs>0)
 				{
@@ -215,7 +215,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'get_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -240,7 +240,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

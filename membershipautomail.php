@@ -2,7 +2,7 @@
 svr_cron_guard(); /* SECURITY (H6): cron endpoint now guarded (CLI always allowed; web requires SVR_CRON_KEY when configured). */ ?>
 <title>Birthday wish</title>
 <?php 
-/*include('dbconnectadmin.php');*/
+
 require_once('sys_dbconnection.php');
 include('smtp2.php'); 
 
@@ -131,7 +131,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

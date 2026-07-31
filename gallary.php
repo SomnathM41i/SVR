@@ -1,6 +1,6 @@
 <?php 
 	require_once('sys_dbconnection.php');
-	/*include('dbconnectadmin.php');*/
+	
 	
 ?>
 <!DOCTYPE html>
@@ -126,7 +126,7 @@ window.location='gallary.php';
 	        <?php 
 $id=$_SESSION['matriid'];
 $sqlgal=mysqli_query($con,"select * from gallary where matri_id='$id'");
-//echo "select * from gallary where matri_id='$id'";
+
 $sqlreg=mysqli_query($con,"select * from register where MatriId='$id'");
 $rowreg=mysqli_fetch_array($sqlreg);
 ?>

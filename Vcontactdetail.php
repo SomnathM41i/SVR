@@ -1,10 +1,10 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');*/
+
 $login=$_SESSION['MatriID']; //or sender id	
- // echo $login;					
+ 
 $searchid=base64_decode( urldecode($_GET['id']) );
-//echo $searchid;
-//echo $login;
+
+
 
 
 ?>
@@ -347,12 +347,12 @@ z
 							<span class="title"> Received <?php echo $refamt1['contactamount']?> Rupees Successfully
 </span><br>
 							<div class="btn-box">
-							 <?php //echo "hello";
-							// $adview = mysqli_query($con,"SELECT MatriID,Noofcontacts,Status FROM register WHERE DATEDIFF( CURRENT_DATE, Memshipexpirydate ) <1 AND Status <> 'InActive' AND Status <> 'Active' AND Noofcontacts >0 AND MatriID ='$login' ");
+							 <?php 
+							
 						 
-										 //if($row1=mysqli_fetch_array($adview))
+										 
 										 //{
-											//$strviewdate =  date('d-m-Y');
+											
                              $sqlview=mysqli_query($con,"select * from viewedaddress where who1='$login' and whom1='$searchid' ");
 							
 							 if(mysqli_num_rows($sqlview)>0)
@@ -372,7 +372,7 @@ z
 								{
 								mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notification_type,notification_desc,seen,date_time)values('$login','$searchid','Viewed Contact','Viewed Contact','unseen',NOW())");
 								} 							
-								//$update = mysqli_query($con,"UPDATE register SET Noofcontacts = (Noofcontacts-1) WHERE MatriID ='$login' "); 
+								
 								$viewedmem=  mysqli_query($con,"select * from register where MatriID ='$searchid'"); 
 								$viewedmem_rec=mysqli_fetch_array($viewedmem);
 							 } 
@@ -380,7 +380,7 @@ z
 					
 							<?php
 							$viewedmem=  mysqli_query($con,"select * from register where MatriID ='$searchid'");
-                           //echo "select * from register where MatriID ='$searchid'";							
+                           
 							$viewedmem_rec=mysqli_fetch_array($viewedmem);
 							$email2=mysqli_query($con,"select * from emailverify where MatriID ='$searchid' ");
 							$emailver=mysqli_fetch_array($email2);
@@ -396,7 +396,7 @@ z
 						<div class="pricing-block-three " data-wow-delay="400ms">
 							<div class="inner-box">
 								<div class="title"><?php echo $viewedmem_rec['MatriID']; ?></div>
-								   <!--  <p> Received <?php echo $refamt1['contactamount']?> Rupees Successfully</p> -->
+								   
 								<ul class="features">
 								    <li>Name: <?php echo $viewedmem_rec['Name'];?></li>
 									  <li>Father Name: <?php echo $viewedmem_rec['Fathername']; ?></li>

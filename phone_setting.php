@@ -1,6 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');
-session_start();
-error_reporting(0);*/
+<?php require_once('sys_dbconnection.php');
  ?>
 	<!-- //header -->
     <!-- navigation -->
@@ -20,13 +18,13 @@ $strid = $_SESSION['matriid'];
 if(isset($login)&& $regvar=='9')
 {
 $hide_rs = mysqli_query($con,"update register set phone_visibility ='$phone' where MatriID='$strid'");
-//echo "update register set phone_visibility ='$phone' where MatriID='$strid'";
+
 
 }
 else
 {
 	$hide_rs = mysqli_query($con,"update register set phone_visibility ='$phone' where MatriID='$strid'");
-   // echo "update register set phone_visibility ='$phone' where MatriID='$strid'";
+   
 }
 header('location:settings?message=phonesucc');
 
@@ -42,13 +40,13 @@ $strid = $_SESSION['matriid'];
 if(isset($login)&& $regvar=='9')
 {
 $hide_rs = mysqli_query($con,"update register set phone_visibility ='$phone' where MatriID='$strid'");
-//echo "update register set phone_visibility ='$phone' where MatriID='$strid'";
+
 
 }
 else
 {
 	$hide_rs = mysqli_query($con,"update register set phone_visibility ='$phone' where MatriID='$strid'");
-	//echo "update register set phone_visibility ='$phone' where MatriID='$strid'";
+	
 }
 }
 header('location:settings?message=default3');

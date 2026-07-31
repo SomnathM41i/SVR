@@ -9,7 +9,7 @@ function getHeightValue($h) {
 }
 /*include_once('dbconnectadmin.php');*/
 error_reporting(0);
-/*session_start();*/
+
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
 	else
@@ -23,10 +23,10 @@ if(isset($_GET["page"]))
 $login=$_SESSION['MatriID'];
 
 $my_profile = mysqli_query($con,"SELECT * from register where matriid='$login'");
-//echo "SELECT * from register where matriid='$login'";
+
 $me = mysqli_fetch_array($my_profile);
 $hobbies=explode(",",$me['Looking']);
-//$mother=implode(",",$me['PE_MotherTongue']);
+
 $pe_from_height = $me['PE_from_Height'];
 $pe_to_height = $me['PE_to_Height'];
 $pe_toage = $me['PE_ToAge'];
@@ -85,7 +85,7 @@ $match_qry.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $match_qry.="
 Age BETWEEN '$pe_fromage' AND '$pe_toage'";
 
-//$match_qry.= " and '$mother_a[0]' FIND_IN_SET ('$mother','$mother[1]','$mother[2]','$mother[3]','$mother[4]')";
+
 if($me['PE_MotherTongue']!="" && $me['PE_MotherTongue']!="Any")
 {
 $PE_mother=explode(",", $me['PE_MotherTongue']);
@@ -209,7 +209,7 @@ $match_qry.=" and Education IN($PE_Education_re)";
 
 $match_qry.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 
-//echo $match_qry;
+
  function displayPaginationBelow($con,$per_page,$page){
 $login=$_SESSION['MatriID'];
 $page_url="?";
@@ -269,7 +269,7 @@ if($me['Looking']!="" && $me['Looking']!="Any")
 $PE_Religion_look12 = implode(',', $PE_Religion_look1);
 $count.="Maritalstatus IN($PE_Religion_look12) AND";
 }
-//$count.= "Maritalstatus IN('$hobbies[0]','$hobbies[1]','$hobbies[2]','$hobbies[3]','$hobbies[4]') AND";
+
 $count.=" Gender='$match_sex' AND ";
 $count.=" Height BETWEEN '$pe_from_height'AND'$pe_to_height' AND ";
 $count.="

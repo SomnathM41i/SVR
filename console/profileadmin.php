@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
   $result=mysqli_query($con,"select * from siteconfig where ID='1'");
   $fetch1=mysqli_fetch_array($result);
   //error_reporting(0);

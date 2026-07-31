@@ -1,7 +1,6 @@
 <?php require_once('sys_dbconnection.php');
-/*session_start(); 
-error_reporting(0);*/
-//include('mail1.php');
+
+
 include('memprotect1.php');
 
 
@@ -107,12 +106,7 @@ unset($_SESSION['matri_login']);
                         </div>
 						
 						 <!-- Image Column -->
-						<!--<div class="col-lg-8 col-md-12 col-sm-12 order-2">
-				          
-                        <?php //include('contactinfo.php');?>
-                            
-                        
-						 </div>-->
+						
 
                        
                         

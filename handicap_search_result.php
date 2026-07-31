@@ -1,7 +1,7 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
  require_once('sys_dbconnection.php');
 error_reporting(0);
-/*session_start();*/
+
 include('memprotect.php');
 
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
@@ -19,9 +19,9 @@ $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $hadnicap_status = $_POST['handicap'] ? $_POST['handicap'] : $_GET['handicap'];
 
 
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 $matriid=mysqli_real_escape_string($con,$_POST['matriid'] ? $_POST['matriid'] : $_GET['matriid']);
 
 if(isset($_GET["page"]))
@@ -59,23 +59,7 @@ if(isset($_GET["page"]))
 	 $looking=$looking1 ? $looking1 : $rtrim_looking;
 	 $looking123=array($looking);
 	 
-	/*if(isset($_POST['edu']))
-	 $stredu1 =implode("','",$_POST['edu']);
-	 $explode_edu=explode("a:1:{i:0;s:",$_GET['edu']);
-	 $explode_edu1=explode(":",$explode_edu[1]);
-	 $trim_edu=trim($explode_edu1[1],'"');
-	 $rtrim_edu=rtrim($trim_edu,'";}');
-     $stredu=$stredu1 ?$stredu1 : $rtrim_edu;
-	 $stredu123=array($stredu);	 
 	
-	 if(isset($_POST['occu']))
-	 $stroccu1 = implode("','",$_POST['occu']);
-	 $explode_occu=explode("a:1:{i:0;s:",$_GET['occu']);
-	 $explode_occu1=explode(":",$explode_occu[1]);
-	 $trim_occu=trim($explode_occu1[1],'"');
-	 $rtrim_occu=rtrim($trim_occu,'";}');
-	 $stroccu=$stroccu1 ? $stroccu1 : $rtrim_occu;
-	 $stroccu123=array($stroccu);*/
 	
 $check=mysqli_query($con,"select matriid from block_member where profile_id='".$_SESSION['matriid']."'"); 
 $data1=array();
@@ -116,15 +100,7 @@ if($hadnicap_status!="Any" and $hadnicap_status!="")
 $sql1 = $sql." and spe_cases NOT IN('None','')";
 
 
-/*if($stredu!="Any" and $stredu!="")
-{
-$sql=$sql." and Education IN('".$stredu."')";
-}
 
-if($stroccu!="Any" and $stroccu!="")
-{
-$sql=$sql." and Occupation IN('".$stroccu."')";
-}*/
 
 if($looking!="Any" and $looking!="")
 {
@@ -132,12 +108,7 @@ if($looking!="Any" and $looking!="")
 $sql=$sql." and Maritalstatus IN('".$looking."')";
 }
 
-/*if($with_photo!='withoutphoto')
-{
-$sql=$sql." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-}else{
-$sql=$sql." and Photo1  LIKE 'nophoto.jpg' ";
-}*/
+
 $sql=$sql." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive'  AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql.=" ORDER BY Regdate DESC LIMIT ".$pageLimit." , ".$setLimit;
 $rs_result = mysqli_query($con,$sql);
@@ -152,9 +123,9 @@ $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
 $hadnicap_status=$_POST['handicap'] ? $_POST['handicap'] : $_GET['handicap'];
 
 
-//$with_photo=$_POST['with_photo'] ? $_POST['with_photo'] : $_GET['with_photo'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
+
 
 if(isset($_POST['religion']))
 	 $religion1=implode("','",$_POST['religion']);
@@ -249,27 +220,14 @@ $profile=implode("','", $data);
 
 		
 		
-		/*if($stredu!="Any" and $stredu!="")
-		{
-		$sql1=$sql1." and Education IN('".$stredu."')";
-		}
 		
-		if($stroccu!="Any" and $stroccu!="")
-		{
-		$sql1=$sql1." and Occupation IN('".$stroccu."')";
-		}*/
 		
 		if($looking!="Any" and $looking!="")
 		{
 		$sql1=$sql1." and Maritalstatus IN('".$looking."')";
 		}
 
-		/*if($with_photo!='withoutphoto')
-		{
-		$sql1=$sql1." and Photo1 NOT LIKE 'nophoto.jpg' AND Photo1Approve='Yes'";
-		}else{
-		$sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
-		}*/		 
+				 
 		$sql1=$sql1." and visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 		$sql1.=" ORDER BY ID DESC ";
 		$rec = mysqli_fetch_array(mysqli_query($con,$sql1));

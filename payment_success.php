@@ -125,7 +125,7 @@ $bank_safe        = mysqli_real_escape_string($con, $bank_details);
 $discountcode     = '';
 $strstatus        = 'Clear';
 
-// ── Insert into paiddetails ───────────────────────────────────────────────────
+
 $insert = mysqli_query($con, "
     INSERT INTO paiddetails 
         (Poid, Pmatriid, Pname, Pemail, Paddress, Ppaymode, Pactivedate,
@@ -201,7 +201,7 @@ $webfriendly = $siteinfo['WebFriendlyname'] ?? '';
 
 // ── SMS (uncomment sendsms() when ready) ─────────────────────────────────────
 $smsMessage = "Hello $nm,\nYou Have Selected '$plan'\nYour Plan Has Been Successfully Activated\n\nThank You\nTeam- $Webname";
-// sendsms($mobile, $smsMessage);
+
 
 // ── Email (uncomment mailer when ready) ──────────────────────────────────────
 $date1    = date('d/m/Y');
@@ -243,15 +243,7 @@ $message1 = "<!DOCTYPE html>
 </body></html>";
 
 $subject = "Payment Details — $plan Plan Activated";
-/*
-// Uncomment and configure your mailer:
-include('Mailer/smtp1.php');
-$mail->Subject  = $subject;
-$mail->MsgHTML($message1);
-$mail->ClearAddresses();
-$mail->AddAddress($email, $nm);
-$mail->Send();
-*/
+
 
 // ── Set session data for thank-you page ───────────────────────────────────────
 $_SESSION['payment_success'] = [

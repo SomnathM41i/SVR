@@ -1,8 +1,8 @@
 <?php  require_once('../sys_dbconnection.php');
 
 include('protect.php');
-//include('../dbconnectadmin.php');
-//$sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and b.photo_approve='Pending' order by id desc"); 
+
+
 
 $profile_approve = mysqli_query($con,"SELECT * FROM document where docapprove='No' and  Name!='' order by doc_id desc");
 
@@ -18,7 +18,7 @@ $profile_approve = mysqli_query($con,"SELECT * FROM document where docapprove='N
 function displayPaginationBelow($con,$per_page,$page){
 $page_url="?";
 $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where docapprove='No' and  Name!='' order by doc_id desc");
-    //  echo "SELECT COUNT(*) as totalCount FROM register where idproof_approve='No' and  adhar!=''order by id desc";
+    
         
         $rec = mysqli_fetch_array($sql1);
         $total = $rec['totalCount'];

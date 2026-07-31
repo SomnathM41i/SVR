@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-/*include '../dbconnectadmin.php';*/
+
 $q  = $_POST['search'];
 $result = mysqli_query($con,"SELECT * FROM register where MatriID LIKE '%$q%' OR Name LIKE '%$q%' OR Mobile LIKE '%$q%' OR ConfirmEmail LIKE '%$q%' "); ?>
 

@@ -1,8 +1,8 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-//include'../dbconnectadmin.php';
+
 $msg="";
-//include'../dbconnectadmin.php';
+
 	if(isset($_POST['submit']))
 	{
 		$city=mysqli_real_escape_string($con,$_POST['Name']);
@@ -12,28 +12,28 @@ $msg="";
 		$country=mysqli_real_escape_string($con,$_POST['country']);
 			
 		$q="select * from e_city where city='$city' and dist_ref='$dist' and taluka_ref='$taluka'";
-	        //echo "select * from e_city where city='$city'";
-			//exit;
+	        
+			
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
-		//echo $num;
+		
 		if($num>0)
 		{
 			$msg="City already Exist!!";
-			//echo $msg;
-			//exit;
+			
+			
 		}
 		else
 		{		
-				//if($state==""){echo "State empty";}else{ echo $state;}
+				
 				$q="insert into e_city(city,dist_ref,taluka_ref,status) values('$city','$dist','$taluka','enable')";
-				//echo "insert into e_city(city,dist_ref,status) values('$city','$dist','1')";
+				
 				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="City added Successfully!!";
-								//echo $msg;
-								//exit;
+								
+								
 				}
 		}
 		
@@ -53,20 +53,20 @@ if(isset($_POST['Update']))
 		if($num>0)
 		{
 			$msg="City already Exist!!";
-			//echo $msg;
-			//exit;
+			
+			
 		}
 		else
 		{		
-				//if($state==""){echo "State empty";}else{ echo $state;}
+				
 				$q="update e_city set city='$city',dist_ref='$dist',taluka_ref='$taluka' where id='$id'";
-				//echo "update  e_city set city='$city' where id='$id'";
+				
 				$rs=mysqli_query($con,$q) or svr_db_fail($con);
 				if($rs>0)
 				{
 								$msg="City Updated Successfully!!";
-								//echo $msg;
-								//exit;
+								
+								
 				}
 		}
 		
@@ -245,7 +245,7 @@ xmlhttp.send();
 		  <?php include('header.php');?>
 		<!-- [ navigation menu ] end -->
 		<!-- Modal -->
-		<?php //include('notification.php');?>
+		<?php 
 		
 		<!-- [ Header ] end -->
 
@@ -413,7 +413,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcity_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -436,7 +436,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcity_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

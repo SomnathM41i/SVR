@@ -3,7 +3,7 @@ require_once(dirname(__FILE__).'/protect.php');
 require_once('../includes/annual_income.php');
 include('siteconfig.php');
  $id=$_GET['ID'];
- //echo  $id;
+ 
 $profile=mysqli_query($con,"select * from register where MatriID='$id'");
 $fetch=mysqli_fetch_array($profile);
 $photo_approve = mysqli_fetch_array(mysqli_query($con,"select a.PhotoProtect,b.photo_approve from register a,gallary b where b.matri_id='".$id."' AND a.Photo1=b.photo_name;"));?>
@@ -76,14 +76,7 @@ document.body.innerHTML = oldPage;
               </tr>
               <tr>
                 <td colspan="4" class="maincontent"><strong>BASIC INFORMATION</strong>
-				<?php /*
-				<?php if($fetch['memtype']=="Renew Member")
-                { ?><?php $sqlpaid=mysqli_query($con,"select * from paiddetails where Pmatriid='".$fetch['MatriID']."' order by Paidid desc limit 1");
-                $sqlfetch=mysqli_fetch_array($sqlpaid);
-                ?>&nbsp; Registration Date:
-				<?php $gtactivedate=explode("-",$sqlfetch['Pactivedate']); echo $gtactivedate[2]."-".$gtactivedate[1]."-".$gtactivedate[0]?><?php }else{?>&nbsp; Registration Date:<?php $gt=explode("-",$fetch['Regdate']); echo $gt[2]."-".$gt[1]."-".$gt[0]; }?>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-				<?php if($fetch['MemshipExpiryDate']!=""){ ?>
-				Expiry Date:<?php $gt=explode("-",$fetch['MemshipExpiryDate']); echo $gt[2]."-".$gt[1]."-".$gt[0]?> <?php } ?> */?></td>
+				<?php ?></td>
                 <td width="206" colspan="2" rowspan="9" align="center" valign="top">
 				  <?php if($fetch['Photo1']=="no-photo.gif") { ?>
                   <img src="../gallary/no-photo.gif" width="200" height="250"  alt=""/>
@@ -97,29 +90,13 @@ document.body.innerHTML = oldPage;
                 <td valign="top">Registration Date: </td><td><u><strong><?php $gt=explode("-",$fetch['Regdate']); echo $gt[2]."-".$gt[1]."-".$gt[0];?></strong></u></td>
                 </tr>
                 <tr>
-                 <?php /* 
-				 <td>Marital Status: </td>
-                <td><?php echo $fetch['Maritalstatus'] ?>
-				  </td>
-				  
-               <td width="201"><?php if($fetch['Maritalstatus']!='Unmarried') {  ?>Children's Living Status: <?php }?></td>
-                <td width="178"><?php if($fetch['Maritalstatus']!='Unmarried') {  ?><?php echo $fetch['childrenlivingstatus'] ?><?php }?></td>
-				
-  function age($birthday){
- list($day, $month, $year) = explode("-", $birthday);
- $year_diff  = date("Y") - $year;
- $month_diff = date("m") - $month;
- $day_diff   = date("d") - $day;
- if ($day_diff < 0 && $month_diff==0) $year_diff--;
- if ($day_diff < 0 && $month_diff < 0) $year_diff--;
- return $year_diff;
-} */
+                 <?php 
 ?>
                  <td valign="top">Name:</td>
 				 <td valign="top"><?php echo $fetch['Name']; ?> </td>
                 
-                    <?php // $dob=$date[2]."-".$date[1]."-".$date[0] ?>
-               <!-- <td colspan="2">Age:<?php //echo age($dob);?></td> -->
+                    <?php 
+               
 			    <td valign="top">Expiry Date: <u><strong></td>
 				<td valign="top"><?php if($fetch['MemshipExpiryDate']!=""){
 					$gt=explode("-",$fetch['MemshipExpiryDate']); echo $gt[2]."-".$gt[1]."-".$gt[0];?>
@@ -522,16 +499,7 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
       <td><?php echo $fetch['parents_stay'] ?></td>
 							<?php } ?>
     </tr>
-   <!-- <tr>
-      <td>Mother's Profession</td>
-      <td><?php echo $fetch['Mothersoccupation'] ?></td>
-      <td>&nbsp;</td>
-      <td >Mobile</td>
-      <td ><?php echo $fetch['mother_mobilenumber'] ?></td>
-    </tr>
-     <tr bgcolor="#DFDFDF">
-      <td colspan="5">Mosal Name (Maternal Name):<? echo $fetch['maternalname'] ?></td>
-    </tr>-->
+   
      <tr>
        <td colspan="5" class="maincontent"><strong>PARTNER PREFERENCE</strong></td>
      </tr>
@@ -667,7 +635,7 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
 <input type="button"  id="printPageButton" onClick="print_report()" value="Print Full Profile">
 &nbsp; 
  <input type="button" id="btnExport" value="Export" onclick="Export()" />
-<!-- <a href="print_img1.php?id=<?php echo $_GET['MatriID']?>"><input type="button" value="Download Word File"></a>-->
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script type="text/javascript">

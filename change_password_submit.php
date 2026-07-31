@@ -1,5 +1,5 @@
 <?php
-/*include 'dbconnectadmin.php';*/
+
 require_once('sys_dbconnection.php');
 require_once('includes/security.php');
 /* SECURITY (H3): CSRF token check. */
@@ -28,30 +28,30 @@ if(isset($_POST['submit']))
             if($_POST['txtcp'] == $_POST['txtp'])
             {
                 $strcp = $_POST['txtcp'];
-                    //ECHO $strcp;
+                    
                 $confirm_pass=$strcp;
                 $nb=$confirm_pass;
-                    //echo $nb;
+                    
                 $query="UPDATE register set ConfirmPassword='$nb' WHERE MatriID='$strid'";
                 $update1 = mysqli_query($con,$query) or svr_db_fail($con);
-                  //  echo "SUCCESS";
+                  
                 header('location:change_pswd?message=success');
             }
             else
             {
-                //   echo "NOT MATCH";
+                
                 header('location:change_pswd?message=invalid'); 
             }
         }
         else
         {
-            //echo "wrong";
+            
             header('location:change_pswd?message=error');
         }
     }
     else
     {
-        //    echo "Incorrect Password";
+        
         header('location:change_pswd?message=invalid1');
     }
 

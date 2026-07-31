@@ -1,6 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*include('dbconnectadmin.php');
-session_start();*/
+
 error_reporting(0);
 ?>
 <!DOCTYPE html>

@@ -1,16 +1,16 @@
 <?php require_once('../sys_dbconnection.php');
 include('protect.php');
-//include('memprotect.php');
+
 if(isset($_POST['submit2']))
 	{
 		echo "hello";
 		echo $_GET['ID'];
-		//exit;
+		
 		if(isset($_GET['ID']))
 		{
 			$id= $_GET['ID'];
-			//echo $id;
-			//exit;
+			
+			
 			$amount=$_POST['camount'];
 			echo $amount;
 			$amot1=mysqli_query($con,"update contactpaidamount set contactamount='$amount' where cid='$id'");
@@ -18,7 +18,7 @@ if(isset($_POST['submit2']))
 			{
 				$msg="Amount updated successfully";
 			}
-			//exit;
+			
 		}
 			header('location:add_contactamount?msg=success');
 	}
@@ -120,18 +120,14 @@ if(isset($_POST['submit2']))
                     <div class="card-body text-center">
                         <?php  $row1=mysqli_query($con,"select * from contactpaidamount where cid='1'");
 						       $row12=mysqli_fetch_array($row1);?>
-                        <h4 class="mt-3"><?php  //echo $row['plandisplayname'];?></h4>
+                        <h4 class="mt-3"><?php  
 						 <h5 class="mt-3">Amount :<?php  echo $row12['contactamount'];?></h5>
-                       <!-- <p><span class="badge bg-primary">No of Contacts:<?php // echo $row['plannoofcontacts'];?></span> </p>-->
+                       
                         <hr>
 					
 
                        <button type="button" class="btn btn-icon btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#modal-report12" data-id="<?php echo $row12['cid'];?>"><i class="feather icon-edit-2"></i></button>
-                      <?php /* <?php if($row['plan_status']=='Active'){?>                     
-					   <a href="membership_active?id=<?php  echo $row['cid'];?>&status=Inactive"><button type="button" class="btn btn-icon btn-outline-success"><i data-feather="check-circle"></i></button></a>
-					   <?php } else { ?>
-					   <a href="membership_active?id=<?php  echo $row['cid'];?>&status=Active"><button type="button" class="btn btn-icon btn-outline-danger"><i data-feather="slash"></i></button></a>
-                       <?php } ?> */ ?>
+                      <?php  ?>
 					</div>
                 </div>
             </div> <br><br>
@@ -155,7 +151,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'get_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -180,7 +176,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -204,7 +200,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'ContactAmount.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

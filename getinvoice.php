@@ -1,4 +1,4 @@
-<?php //include('dbconnectadmin.php');
+<?php 
 require_once('sys_dbconnection.php');
 error_reporting(0);
 $id = $_POST['rowid'];
@@ -213,7 +213,7 @@ for (i = 0; i < closebtns.length; i++) {
 	  "<html><head><title></title></head><body>" + 
 	  divElements + "</body></html>";
 	
-	//Print Page
+	
 	window.print();
 	
 	//Restore orignal HTML

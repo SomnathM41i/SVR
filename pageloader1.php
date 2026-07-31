@@ -1,9 +1,9 @@
 <?php require_once('sys_dbconnection.php');
-/*session_start();*/
-//include('siteconfig.php');
 
-/*include('dbconnectadmin.php');*/
-//include('smtp2.php');
+
+
+
+
 $strid=$_SESSION['matriid'] ?? ($_SESSION['MatriID'] ?? '');
 $login=$_SESSION['MatriID'] ?? $strid;
 if($strid == '') {
@@ -15,7 +15,7 @@ $_SESSION['MatriID'] = $login;
 $matriid=$_SESSION['tempid'] ?? $strid;
 $mobile=$_SESSION['mobile'] ?? '';
 $password=isset($_SESSION['pwd']) ? base64_decode($_SESSION['pwd']) : '';
-//echo $_SESSION['tempid'];
+
 
 	$sql=mysqli_query($con,"select * from  register WHERE MatriID='$matriid' ");
 	$row=mysqli_fetch_array($sql);
@@ -42,7 +42,7 @@ $password=isset($_SESSION['pwd']) ? base64_decode($_SESSION['pwd']) : '';
 	?>
 
 <?php
-//mysql_query("update register set welcome_mail='yes'");
+
 
 ?>
 <!doctype html>
@@ -173,8 +173,7 @@ $authent = mysqli_query($con,"SELECT * FROM register where MatriID='".$safeMatri
 					print "<script>";
 					print " setTimeout(function(){ self.location='approval_wait?id=$login '; }, 700);"; // Comment this line if you don't want to redirect
 					print "</script>";
-					/*echo "1";
-					EXIT;*/
+					
 				}
 				else{
 					print "<script>";

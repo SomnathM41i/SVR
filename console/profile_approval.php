@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
  
             $msg="";
             if(isset($_POST['submit']))
@@ -11,16 +11,16 @@ require_once(dirname(__FILE__).'/protect.php');
                     $id=$_POST['id'];
                     $content=addslashes($_POST['Name']);
                     $q="Select * from register where MatriID='$id'";
-                    //echo $id;
-                    //echo $content;
+                    
+                    
                     $q="update register set aboutus='$content',profile_approve='Yes' where MatriID='$id'";
-                    //echo "update register set aboutus='$content',profile_approve='Yes' where MatriID='$id'";
+                    
                     $rs=mysqli_query($con,$q);
                       if($rs>0)
                         {
                                 $msg="Approve Successfully!!";
-                                //echo $msg;
-                                //exit;
+                                
+                                
 
                         }
                 }
@@ -35,17 +35,17 @@ require_once(dirname(__FILE__).'/protect.php');
                     $id=$_POST['id'];
                     $content=$_POST['Name'];
                      $q="Select * from register where MatriID='$id'";
-                     //echo "Select * from register where MatriID='$id'";
-                    //echo $id;
-                    //echo $content;
+                     
+                    
+                    
                      $q="update register set aboutus='' , profile_approve='Rejected'  where MatriID='$id'";
-                    //echo "update register set Profile='' , profile_approve='No'  where MatriID='$id'";
+                    
                     $rs=mysqli_query($con,$q);
                       if($rs>0)
                         {
                                 $msg="Decline Successfully!!";
-                                //echo $msg;
-                                //exit;
+                                
+                                
 
                         }
                 }
@@ -231,7 +231,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'approv_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

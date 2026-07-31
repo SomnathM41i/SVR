@@ -209,10 +209,10 @@ include 'get_count.php';
 		<!-- [ Mobile header ] start -->
 	
 		
-		<?php //include('topheader.php');?>
-		<?php //include('header.php');?>
+		<?php 
+		<?php 
 		
-		<?php //include('notification.php');?>
+		<?php 
 
 
 <!-- [ Main Content ] start -->
@@ -278,29 +278,14 @@ include 'get_count.php';
 </div>
 <script src="plugins/node-waves/waves.js"></script>
 <script>  
-//user-defined function to open and share web content on WhatsApp  
-/*function openWhatsApp() {  
-    window.open('whatsapp://send?text= https://www.youtube.com/watch?v=ohpCMpderow');  
-    }  */
+
+
 </script>  
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-604b0dafb173c8ba"></script>
 <script>
 
-    /*function submit_id()
-    {
-        var id = jQuery('#search').val();
-        //alert(id);
-        jQuery.ajax({
-            url:'show_matches.php',
-            type: 'POST',
-            data: 'ID='+id,
-            success:
-                window.location.href = "show_matches.php?ID="+id;
-
-        })
-
-    }*/
+    
     
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -371,7 +356,7 @@ else if($strheight =="37") { echo "7Ft "; }
 
 
 
-<!-- Include Twitter Bootstrap and jQuery: -->
+
 <!-- Latest compiled and minified CSS -->
 
 <script src="../js/jquery.fancybox.js"></script>
@@ -446,7 +431,7 @@ else if($strheight =="37") { echo "7Ft "; }
   gtag('config', 'G-Q8H86P6FK7');
 </script>
 <script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
-<?php //include('footer.php')?>
+<?php 
 
 
 </body>

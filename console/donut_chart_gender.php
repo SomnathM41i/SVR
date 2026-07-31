@@ -1,7 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-	/*include '../dbconnectadmin.php';
-	*/
+	
   //MALE MEMBER
   $relsql=$con->query("select * from caste")or svr_db_fail($con);
   
@@ -24,7 +23,7 @@ require_once(dirname(__FILE__).'/protect.php');
             {
               $caste=$relrow['Caste'];
               $groomsql=$con->query("select IFNULL(Count(*),0) as num  from register where Caste='$caste'") or svr_db_fail($con);
-              //$groom=0;
+              
               if($groomrow=$groomsql->fetch_assoc())
               {
                 $groom= $groomrow['num'];

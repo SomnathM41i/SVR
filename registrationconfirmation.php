@@ -1,6 +1,5 @@
 <?php require_once('sys_dbconnection.php');
-/*session_start(); 
-include('dbconnectadmin.php');*/
+
 $strid=$_SESSION['matriid'];
 $matriid=$_SESSION['tempid'];
 
@@ -19,7 +18,7 @@ $info=mysqli_fetch_array($configdata);
   //     msg starts //
  
  // Welcome To Jaipur Your Registration Created. Successfully. Your Login ID: {#var#}. Best of Luck Team - weddingsparampara.com A unit of Mahadi Group
-  //"Welcome+To+Jaipur+Your+Registration+Created.+Successfully.+Your+Login+ID:+".$matriid.".+Best+of+Luck+Team+-+".$info['Webname']."+A+unit+of+Mahadi+Group"
+  
 
 $message="Welcome+To+Jaipur+Your+Registration+Created.+Successfully.+Your+Login+ID:+".$matriid.".+Best+of+Luck+Team+-+".$info['Webname']."+A+unit+of+Mahadi+Group";
 $sms=mysqli_query($con,"select * from smsgetway where id=1");
@@ -38,32 +37,13 @@ $templateid='1207162937026617360';
 $format='json';
 $apiRoute='TRANS';
 $apiRequest = 'Text';
-//$url = 'http://www.alots.in/sms-panel/api/http/index.php?username='.$username.'&apikey='.$apiKey.'&apirequest='.$apiRequest.'&route='.$apiRoute.'&mobile='.$to.'&format='.$format.'&sender='.$sender.'&TemplateID='.$templateid.'&message='.$message;
-//$url ='https://api.mavyah.com/api/v2/SendSMS?ApiKey='.$apiKey.'&ClientId='.$client_id.'&SenderId='.$username.'&Message='.$message.'&MobileNumbers='.+$country.$numbers;
-//echo $to.":".$mystring.'<br/></br>'; // REMOVE THIS line if not display response
+
+
+
 $url = preg_replace("/ /", "%20", $url);
 $response = file_get_contents($url);
 
-/*$route = "default";
-//Prepare you post parameters
-$postData = array(
-    'mobiles' => $to,
-    'message' => $message,
-    'sender' => $sender,
-    'route' => $route
-);
-// init the resource
-$ch = curl_init();
-curl_setopt_array($ch, array(
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $postData
-    //,CURLOPT_FOLLOWLOCATION => true
-));
-//get response.
-$output = curl_exec($ch);
-curl_close($ch);*/
+
 //end msg // */
 
 
@@ -152,7 +132,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-//	$tmpString = str_replace("\"", "\"", $tmpString);
+
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

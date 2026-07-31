@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-	/*include ('../dbconnectadmin.php');*/
+	
 	
 	//FOR PROFILE PHOTO APPROVAL COUNT
 	$query = "SELECT COUNT(Name) FROM register where Photo1Approve='No' AND Photo1!='nophoto.jpg' "; 
@@ -51,7 +51,7 @@ require_once(dirname(__FILE__).'/protect.php');
 	$cnt7 = $row7['COUNT(Name)'];
 
 
-	//echo $_SERVER['REMOTE_ADDR']; 
+	
 	
 
 ?>

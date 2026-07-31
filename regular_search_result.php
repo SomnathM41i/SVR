@@ -10,8 +10,7 @@ function getHeightValue($h) {
     return $map[(int)$h] ?? '';
 }
 
-/*include('dbconnectadmin.php'); 
-session_start();*/
+
 $login=$_SESSION['matriid'];
 //error_reporting(0);
 if(isset($_POST['basicsaveandsearch']))
@@ -125,7 +124,7 @@ $PE_occu_re=implode(',',$PE_occu_term);
 $sql.=" and Occupation IN ($PE_occu_re)";
 }
 //Looking
-//echo $edu_search_fetch['Maritial_status'];
+
 if($edu_search_fetch['Maritial_status']!="" && $edu_search_fetch['Maritial_status']!="Any")
 {
 $PE_Maritial_status_exp=explode(",",$edu_search_fetch['Maritial_status']);
@@ -264,7 +263,7 @@ $PE_occu_re=implode(',',$PE_occu_term);
 $sql1.=" and Occupation IN ($PE_occu_re)";
 }
 //Looking
-//echo $edu_search_fetch['Maritial_status'];
+
 if($edu_search_fetch['Maritial_status']!="" && $edu_search_fetch['Maritial_status']!="Any")
 {
 $PE_Maritial_status_exp=explode(",",$edu_search_fetch['Maritial_status']);
@@ -285,7 +284,7 @@ $sql1=$sql1." and Photo1  LIKE 'nophoto.jpg' ";
 $sql1=$sql1." AND visibility NOT LIKE 'hidden' and Status<>'Banned' AND Status NOT LIKE 'InActive' AND MatriID NOT LIKE '".$_SESSION['matri_login']."'";
 $sql1.=" ORDER BY Regdate DESC ";
 
-//echo $sql1;
+
 
     	$rec = mysqli_fetch_array(mysqli_query($con,$sql1));
     	$total = $rec['totalCount'];
@@ -360,18 +359,17 @@ $sql1.=" ORDER BY Regdate DESC ";
     		}
     		
     		if ($page < $counter - 1){ 
-    			/*$setPaginate.= "<li><a href='{$page_url}page=$next&id=$id'>Next</a></li>";*/
+    			
                 $setPaginate.= "<li><a href='{$page_url}page=$next&id=$id'><b>></b></a></li>";
     		}else{
-    			/*$setPaginate.= "<li><a class='active'>Next</a></li>";
-                */$setPaginate.= "<li><a class='active'><b>></b></a></li>";
+    			$setPaginate.= "<li><a class='active'><b>></b></a></li>";
             }
 
     		$setPaginate.= "</ul>\n";		
     	}
         return $setPaginate;
     }
-//echo $sql;
+
 ?>
 <!DOCTYPE html>
  <html lang="en">

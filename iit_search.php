@@ -1,4 +1,4 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
 require_once('sys_dbconnection.php');
 include('memprotect.php');
 error_reporting(0); 

@@ -1,18 +1,18 @@
 <?php  require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
   error_reporting(0);
-//include'../dbconnectadmin.php';
+
 $msg="";
 if(isset($_POST['submit']))
 {
     $moon_sign=mysqli_real_escape_string($con,$_POST['Name']);
-    //echo $caste;
     
-    //$Religion=mysqli_real_escape_string($con,$_POST['religion']);
-    //echo $Religion;
+    
+    
+    
     
     $q="select * from moon_sign where Moon_Sign='$moon_sign'";
-    //echo "select * from caste where Caste='$caste'";
+    
     
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
@@ -34,31 +34,31 @@ if(isset($_POST['submit']))
 if(isset($_POST['Update']))
 {
     $id=$_POST['id'];
-    //echo $id;
+    
     $moon_sign=$_POST['Name'];
-    //echo $education;
-    //echo $caste;
-        //exit;
+    
+    
+        
     $q="select * from moon_sign where Moon_Sign='$moon_sign' ";
-    //echo "select * from caste where Caste='$caste'";
+    
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
-    //echo $num;
+    
     if($num>0)
     {
          $msg="Moonsign Field already Exist!!";
-        //echo $msg;
+        
     }
     else
     {
-        //echo "ERROR.";
+        
         $q="update moon_sign set Moon_Sign='$moon_sign' where id='$id'";
-        //echo "update  caste set caste='$caste' where id='$id'";
+        
         $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
             $msg="Moonsign Field Updated Successfully!!";
-           //echo $msg;
+           
         }
     }
 }
@@ -168,31 +168,7 @@ if(isset($_POST['Update']))
                                 <button class="btn btn-success btn-sm mb-3 btn-round" data-bs-toggle="modal" data-bs-target="#modal-report" data-id="1"><i class="feather icon-plus"></i> Add Moon Sign</button>
                             </div>
                             <div class="col-sm-6 offset-sm-3">
-                             <?php /*<form  name="Religion" id="Religion" method="post" action="add_caste.php">
-                             ?><select  class="mb-3 form-control"  name="Religion" type="select" id="Religion"  required="required" onChange="get_state(this.value);">
-                                    <div align="center" class="smalltextgrey"> <?php  echo $msg; 
-                                    $_SESSION['Religion']=$_POST['Religion']; ?> </div>
-                              <?php   if($_POST['Religion']==""){ ?>
-                                 <option value=""> Select  Religion</option>
-                              <?php   } else { ?>
-                                <!--<label class="form-label" for="Name">Enter Religion</label>-->
-                                      <option value="<?php echo $_SESSION['Religion']; ?>"><?php echo $_SESSION['Religion']; ?></option>
-                                <?php   } ?>
-                                <?php  
-               
-                               $i=0;
-                                                        while($data=mysqli_fetch_assoc($rs) and $i< $num)
-                                                      {
-                                         
-                                                                          
-                                                          ?>
-                                                              <option value="<?php  echo $data['Religion']; ?>"><?php  echo $data['Religion']; ?></option>
-                                                              <?php  
-                                                          $i++;
-                                                      }
-                                                      ?>
-                                  </select>
-                                 </form><?php */ ?>
+                             <?php  ?>
                             </div>
                         </div>
                         <div class="table-responsive"  id="content">
@@ -212,17 +188,17 @@ if(isset($_POST['Update']))
                                            $id=$_GET['id'];
                                            
 
-                                           //echo $id;
-                                          //$coun1=$_POST['country1'];
+                                           
+                                          
                                           $allrec=mysqli_query($con,"select * from moon_sign");
-                                          //echo "select * from caste where Religion='$id' ORDER BY Caste ASC";
+                                          
                                           $total=mysqli_num_rows($allrec);
                                           $i=0;
                                           while($data=mysqli_fetch_assoc($allrec) and $i<$total)
                                           {
                                            ?>
                                             <tr>
-                                              <!--<td ><?php  echo $i+1;?></td>-->
+                                              
                                               <td><?php  echo $data['Moon_Sign'];?></td>
                                               <td ><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-report2" data-id="<?php echo $data['ID'];?>">Edit </a>
                                               <?php
@@ -298,7 +274,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_moonsign_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -321,7 +297,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'edit_moonsign_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

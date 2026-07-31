@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-//include'../dbconnectadmin.php';
+
 $result=$con->query("select *,date_format(Date,'%d-%m-%Y') as Date from feedback  ORDER BY Date DESC");
 
 ?>
@@ -121,7 +121,7 @@ $result=$con->query("select *,date_format(Date,'%d-%m-%Y') as Date from feedback
                                                 $Subject=$row['Subject'];
                                                 $Message=$row['Message'];
                                                 $date=$row['Date'];
-                                                //$new_date=date("d-m-Y",$date);
+                                                
 
                                             ?>
                                             <tr>

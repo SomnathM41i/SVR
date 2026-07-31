@@ -1,11 +1,11 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  //include '../dbconnectadmin.php';
+  
   error_reporting(0);
   $datefrom=$_POST['datefrom'];
-  //echo $datefrom;
+  
 $dateto=$_POST['dateto'];
-//echo $dateto;
+
   $memtype=$_POST['memtype'];?>
 
 
@@ -169,12 +169,7 @@ function print_report()
                            <!--<input type="submit" value="Submit" class="btn btn-default">
 						   <input type="button" value="Print"  style="float:right; margin-right:10px; color:#FFF" onClick="print_report();" class="btn btn-primary"/>-->
 						   </form> </div> <br>
-						   <?php /* 
-									   $a = explode('-',$_POST["datefrom"]);
-										$fromdate = $a[2].'-'.$a[1].'-'.$a[0];
-										 $a = explode('-',$_POST["dateto"]);
-										$todate = $a[2].'-'.$a[1].'-'.$a[0];
-							*/ ?>
+						   <?php  ?>
 							 <div class="dt-responsive table-responsive" id="print"> 
                             <table id="simpletable" class="table table-striped table-bordered nowrap">
 							
@@ -209,8 +204,8 @@ function print_report()
 				$da3=explode("-",$dateto);
 				$da4=$da3[2]."-".$da3[1]."-".$da3[0];
 			$queryString=$queryString." Pactivedate Between '$da2' and '$da4'";
-			//echo $queryString;
-			//exit;
+			
+			
 			}
 			if($memtype!="")
 			{

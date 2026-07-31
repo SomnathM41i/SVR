@@ -16,7 +16,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'note_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

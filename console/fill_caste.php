@@ -1,6 +1,6 @@
  <?php require_once('../sys_dbconnection.php');   
 require_once(dirname(__FILE__).'/protect.php');
- 	/*include'../dbconnectadmin.php';*/
+ 	
  	$religion=$_GET['q'];
 	$q="select * from caste where Religion='$religion' and status='enable' ORDER BY Caste ASC";
 	$rs1=mysqli_query($con,$q);

@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
   error_reporting(0);
   $result=mysqli_query($con,"SELECT * FROM register where Status ='Expired' and Gender='Male' order by ID desc");
 ?>

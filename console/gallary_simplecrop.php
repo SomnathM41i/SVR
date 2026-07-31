@@ -1,9 +1,9 @@
 <?php require_once('../sys_dbconnection.php');
  include("protect.php"); 
-/*include '../dbconnectadmin.php'; */
+
 $strid=$_GET['id']; 
 $row=mysqli_query($con,"select * from gallary where photo_id='$strid'");
-//echo "select * from gallary where photo_id='$strid'";
+
 $fetch=mysqli_fetch_array($row);
 $img=$fetch['photo_name'];
 ?>
@@ -39,11 +39,7 @@ $img=$fetch['photo_name'];
   
 
 <SCRIPT language=JavaScript>
-<!-- 
-function win(){
-window.opener.location.href="gal_photo_approve?success=yes";
-self.close();	
-//-->
+
 }
 </SCRIPT>
   <br />

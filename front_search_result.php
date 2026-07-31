@@ -1,4 +1,4 @@
-<?php require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/
+<?php require_once('sys_dbconnection.php');
 error_reporting(0);
 
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
@@ -13,8 +13,8 @@ $txtgender=$_POST['gender'] ? $_POST['gender'] : $_GET['gender'];
 $from_age=$_POST['txtSAge'] ? $_POST['txtSAge'] : $_GET['txtSAge'];
 $to_age=$_POST['txtEAge'] ? $_POST['txtEAge'] : $_GET['txtEAge'];
 $religion=$_POST['religion'] ? $_POST['religion'] : $_GET['religion'];
-//$education=$_POST['education'] ? $_POST['education'] : $_GET['education'];
-//$occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
+
+
 
 if(isset($_GET["page"]))
 	$page = (int)$_GET["page"];
@@ -162,7 +162,7 @@ $occu=$_POST['occu'] ? $_POST['occu'] : $_GET['occu'];
            
     		}else{
     			$setPaginate.= "<li><a class='active'><b> > </b></a></li>";
-                //$setPaginate.= "<li><a class='current_page'>Last</a></li>";
+                
             }
 
     		$setPaginate.= "</ul>\n";		
@@ -288,7 +288,7 @@ padding: 36px 0 90px
 						<?php echo $fetch['MatriID']?></h4>
 						<span class="designation"><?php echo substr($fetch['Maritalstatus'],0,20) ?></span>
 						<span class="designation"><?php echo substr($fetch['Religion'],0,20) ?></span>
-						<span class="designation"><?php echo $fetch['Age'] ?> Yrs<?php //echo get_height($fetch['Height']);?></span>
+						<span class="designation"><?php echo $fetch['Age'] ?> Yrs<?php 
                       </div>
 					  </a>
                       <div class="social-box">                            

@@ -1,22 +1,22 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 $msg="";
   if(isset($_POST['submit']))
   {
           
     $subcaste=mysqli_real_escape_string($con,$_POST['Name']);
-    //echo $dist;
+    
     $caste=mysqli_real_escape_string($con,$_POST['caste']);
-    //echo $state;
+    
     $religion=mysqli_real_escape_string($con,$_POST['religion']);
-    //echo $country;
+    
     
 
   
     $q="select * from subcaste where subcast='$subcaste'";
-    //echo "select * from e_dist where dist='$dist'";
-    //exit;
+    
+    
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
    
@@ -28,10 +28,10 @@ $msg="";
     }
     else
     {   
-        //if($state==""){echo "State empty";}else{ echo $state;}
+        
         $q="insert into subcaste(subcast,caste,religion) values('$subcaste','$caste','$religion')";
-        //echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
-        //exit;
+        
+        
         $rs=mysqli_query($con,$q) or svr_db_fail($con);
         if($rs>0)
         {
@@ -59,7 +59,7 @@ if(isset($_POST['Update']))
   }
   else
   {   
-     //if($state==""){echo "State empty";}else{ echo $state;}
+     
     $q="update subcaste set subcast='$subcaste' where id='$id'";
     $rs=mysqli_query($con,$q) or svr_db_fail($con);
     if($rs>0)
@@ -79,8 +79,8 @@ if(isset($_POST['Update']))
     $num2=mysqli_num_rows($rs2);
 
     
-    //echo "select * from religion";
-    //echo"select * from caste";
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -280,8 +280,8 @@ xmlhttp.send();
 						                 <div ><?php echo $msg; $_SESSION['Religion']=$_POST['Religion'];
 									       $_SESSION['Caste']=$_POST['Caste']; ?> </div>
 										   <?php    $ry=mysqli_query($con,"select * from caste where Religion='".$_SESSION['Religion']."'");
-											//echo "select * from e_state where cid='".$_SESSION['country']."'";
-											//exit;
+											
+											
                
 										$i=0;
 										while($data2=mysqli_fetch_assoc($ry) and $i<$num2)
@@ -362,7 +362,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'adddist_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -385,7 +385,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editdistrict_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

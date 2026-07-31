@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
   error_reporting(0);
 ?>
 
@@ -124,7 +124,7 @@ require_once(dirname(__FILE__).'/protect.php');
                             <div class="form-group">
 							<?php  $qry="select * from cms where cms_id='1'";
 	                              $result=mysqli_query($con,$qry);
-	                                  //echo $qry;
+	                                  
                                    $res=mysqli_fetch_array($result);
                                       ?>
                                 <nav aria-label="breadcrumb">

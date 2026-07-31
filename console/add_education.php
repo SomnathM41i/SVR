@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php'); 
 require_once(dirname(__FILE__).'/protect.php');
-    /*include'../dbconnectadmin.php';*/
+    
     $msg=0;
     if(isset($_POST['submit']))
     {
@@ -11,7 +11,7 @@ require_once(dirname(__FILE__).'/protect.php');
         if($num>0)
         {
             $msg="Education field already Exist!!";
-            //$msg=0;
+            
         }
         else
         {
@@ -20,7 +20,7 @@ require_once(dirname(__FILE__).'/protect.php');
             if($rs>0)
             {
                 $msg="New Education field added Successfully!!";
-                //$msg=1;
+                
             }
         }
     }
@@ -32,11 +32,11 @@ require_once(dirname(__FILE__).'/protect.php');
         $q="select * from education where edu='$education' ";
         $rs=mysqli_query($con,$q);
         $num=mysqli_num_rows($rs);
-        //echo $num;
+        
         if($num>0)
         {
             $msg="Education field already Exist!!";
-            //$msg=0;
+            
         }
         else
         {
@@ -45,7 +45,7 @@ require_once(dirname(__FILE__).'/protect.php');
             if($rs>0)
             {
                 $msg="Education field Updated Successfully!!";
-                //$msg=1;
+                
             }
         }
     }
@@ -176,7 +176,7 @@ require_once(dirname(__FILE__).'/protect.php');
                                     {
                                 ?>
                                     <tr>
-                                        <!--<td ><?php  echo $i+1;?></td>-->
+                                        
                                         <td><?php echo $data['edu'];?></td>
                                         <td ><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modal-report2" data-id="<?php echo $data['id'];?>">
                                                 <?php /*<i class="feather icon-edit"></i>*/ ?>Edit </a>
@@ -257,7 +257,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_education_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -280,7 +280,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'edit_education_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

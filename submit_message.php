@@ -23,7 +23,7 @@ mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notificati
 $date = date('d-m-Y');
 $status=mysqli_query($con,"insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())")or svr_db_fail($con);
 
-//echo "insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())";
+
 
 $strid=$_SESSION['matriid'];
 

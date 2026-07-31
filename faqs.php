@@ -1,5 +1,5 @@
 ﻿<?php require_once('sys_dbconnection.php');
-/*include 'dbconnectadmin.php';*/
+
   //error_reporting(0);
   $seo=mysqli_query($con,"Select * from seo where catagory='faq'");
   $seof=mysqli_fetch_array($seo);

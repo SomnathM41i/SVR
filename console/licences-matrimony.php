@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-/*include '../dbconnectadmin.php';*/  error_reporting(0);
+  error_reporting(0);
 $data_config = $db->get_siteconfig();
 $domain_name = $data_config -> WebFriendlyname;
 
@@ -101,7 +101,7 @@ $domain_name = $data_config -> WebFriendlyname;
                             <div class="form-group">
 							<?php  $qry="select * from cms where cms_id='22'";
 	                              $result=mysqli_query($con,$qry);
-	                                  //echo $qry;
+	                                  
                                    $res=mysqli_fetch_array($result);
                                       ?>
                                

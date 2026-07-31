@@ -24,7 +24,7 @@ $my_profile = mysqli_query($con, "SELECT * from register where matriid='$id'");
 
 $me = mysqli_fetch_array($my_profile);
 $hobbies = explode(",", $me['Looking']);
-//$mother=implode(",",$me['PE_MotherTongue']);
+
 $pe_from_height = $me['PE_from_Height'];
 $pe_to_height = $me['PE_to_Height'];
 $pe_toage = $me['PE_ToAge'];
@@ -36,7 +36,7 @@ $Residencystatus = $me['Residencystatus'];
 $pe_religion = $me['PE_Religion'];
 $Country = $me['Country'];
 $pe_caste = $me['PE_Caste'];
-//echo $me['PE_Caste'];
+
 if ($me['Gender'] == 'Male') $match_sex = "Female";
 if ($me['Gender'] == 'Female') $match_sex = "Male";
 
@@ -751,7 +751,7 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
                                         <?php 
                                             $encrypt = urlencode( base64_encode( $rowC['MatriID'] ) );
                                         ?>
-                                        <!-- <a href="User_Profile.php?id=<?php echo $encrypt ?>"> -->
+                                        
                                             <div class="text-truncate w-100 h5"><?php echo $rowC['Name']; ?></div>
                                         <!-- </a> -->
                                         <div>
@@ -810,28 +810,13 @@ Age BETWEEN '$pe_fromage' AND '$pe_toage'";
   
 </div>
 <script>  
-//user-defined function to open and share web content on WhatsApp  
-/*function openWhatsApp() {  
-    window.open('whatsapp://send?text= https://www.youtube.com/watch?v=ohpCMpderow');  
-    }  */
+
+
 </script>  
 
 
 <script>
-    /*function submit_id()
-    {
-        var id = jQuery('#search').val();
-        //alert(id);
-        jQuery.ajax({
-            url:'show_matches.php',
-            type: 'POST',
-            data: 'ID='+id,
-            success:
-                window.location.href = "show_matches.php?ID="+id;
-
-        })
-
-    }*/
+    
     
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -903,7 +888,7 @@ else if($strheight =="37") { echo "7Ft "; }
 
 
 
-<!-- Include Twitter Bootstrap and jQuery: -->
+
 <!-- Latest compiled and minified CSS -->
 
 <script src="../js/jquery.fancybox.js"></script>

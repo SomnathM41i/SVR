@@ -1,10 +1,10 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  /*include '../dbconnectadmin.php';*/
+  
     $result=mysqli_query($con,"select * from siteconfig where ID='1'");
     $fetch1=mysqli_fetch_array($result);
     $domain_name = $fetch1['domain_name'];
-    /*echo $domain_name;*/
+    
     $sms=mysqli_query($con,"select * from smsgetway where id='1'");
     $sms_fetch1=mysqli_fetch_array($sms);
     $pay=mysqli_query($con,"select * from payment_getway where id='1'");
@@ -12,14 +12,14 @@ require_once(dirname(__FILE__).'/protect.php');
     $email=mysqli_query($con,"select * from email_sending where id='1'");
     $email_fetch1=mysqli_fetch_array($email);
     $data_config = $db->get_siteconfig();
-    //print_r($data_config); 
+    
     $on_off = $data_config-> is_smtp_set;
     $auto_on_off = $data_config-> auto_approve;
     $sms_on_off = $data_config-> is_sms_set;
     $pay_on_off = $data_config-> is_pay_gateway_set;
     $otp_on_off = $data_config-> otp_on_off;
 	$translator_on_off = $data_config-> translator_on_off;
-    /*echo $auto_on_off;*/
+    
   //error_reporting(0);<img src ="otpsystem/OTP-step-remove.jpg">
  ?>
 <!DOCTYPE html>
@@ -410,7 +410,7 @@ require_once(dirname(__FILE__).'/protect.php');
                             </div> -->
                             <div class="col-md-4" >
                                 <div class="form-group">
-                                    <!-- <h3 class="">Email/SMTP Gateway - <a href="<?php echo $domain_name ?>webmail/" target=_blank >Live Access</a></h3> -->
+                                    
                                 </div>
                             </div>
                             <div class="col-md-4" >

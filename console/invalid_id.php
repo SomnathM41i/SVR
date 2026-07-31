@@ -238,20 +238,7 @@ a {
 </div>
 
 <script>
-    /*function submit_id()
-    {
-        var id = jQuery('#search').val();
-        //alert(id);
-        jQuery.ajax({
-            url:'show_matches.php',
-            type: 'POST',
-            data: 'ID='+id,
-            success:
-                window.location.href = "show_matches.php?ID="+id;
-
-        })
-
-    }*/
+    
     
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

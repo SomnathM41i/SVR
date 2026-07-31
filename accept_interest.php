@@ -3,8 +3,8 @@
 <?php  include_once('siteconfig.php'); ?>
 <?php  
 
-//$me = $_GET['id'];
-//$sender = $_GET['id2'];
+
+
 $sender = $_GET['id'];//other person
 $login=$_SESSION['MatriID'];//receiver
 $res = mysqli_query($con,"update expressinterest set status='Accept' where eireceiver='$login' AND eisender='$sender'")or svr_db_fail($con);
@@ -18,11 +18,11 @@ $res = mysqli_query($con,"update expressinterest set status='Accept' where eirec
   $sql2=mysqli_query($con,"select * from  register WHERE MatriID='$login'");
   $row1=mysqli_fetch_array($sql2);
   $photo=$row1['photo1'];
-  //$sendernm=$row1['Name'];
+  
 
   $photo1=$row1['Photo1'];
   $age=$row1['Age'];
-  //$height=$row1['Height'];
+  
   $reli=$row1['Religion'];
   $mother_tongue=$row1['mother_tounge'];
   $edu=$row1['Education'];
@@ -47,11 +47,10 @@ $res = mysqli_query($con,"update expressinterest set status='Accept' where eirec
 
     // for checking on/off of SMTP
 		$data_config = $db->get_siteconfig();
-		    //print_r($data_config); 
+		    
 		$on_off = $data_config-> is_smtp_set;
 		$check_email = mysqli_query($con,"SELECT * FROM emailverify where MatriID='$sender'");	
-				/*echo "SELECT * FROM emailverify where MatriID='$searchid";
-				exit;*/
+				
 		$fetch_email = mysqli_fetch_array($check_email);
 		//END
 
@@ -153,12 +152,12 @@ if(!$mail->Send())
   echo "Mailer Error: " . $mail->ErrorInfo;
 } else
 {
-//  echo "Message sent!";
+
 }
 }
 
 /* end accept interest email sending */
-//$encrypt=base64_encode($sender);	
+
 $encrypt = urlencode( base64_encode( $sender ) );
 header("location:full_profile?id=$encrypt&msg=contacten"); 
 

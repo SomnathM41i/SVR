@@ -8,11 +8,10 @@
 					$compl = mysqli_query($con,"select* from register where MatriID='$login'");
 					$complfet=mysqli_fetch_array($compl);
 					$compid = mysqli_query($con,"select* from register where MatriID='$id_temp'");
-					//echo "select* from register where MatriID='$id_temp'";
+					
 					$complfetch=mysqli_fetch_array($compid);	
-					/*echo "select* from register where MatriID='$login'";
-					echo "select* from register where MatriID='$id_temp'";*/
-				/*	exit;		*/			
+					
+							
 			?>
 			
 		
@@ -24,13 +23,13 @@
 					$matching_fet_exp=explode(",", $me['Looking']);
 					$matching_fet_term = array();
 					foreach($matching_fet_exp as $row => $value){
-						$matching_fet_term[] ="'".trim($value)."'"; //"'$value'";
+						$matching_fet_term[] ="'".trim($value)."'"; 
 					}
 					$matching_fet_re = implode(',', $matching_fet_term);
 					$looking.=" and Looking IN($matching_fet_re) ";//full profile marital status
 				}
-				/*echo $matching_fet_re;*/
-					//echo $looking;
+				
+					
 					$lokingcheck=mysqli_query($con,$looking);
 					if($tot_count_lok=mysqli_num_rows($lokingcheck)>=1) { ?>
 				<?php  } else { ?>
@@ -199,8 +198,8 @@
 						}
 						$lokingcheck=mysqli_query($con,$looking);
 						if($tot_count_state=mysqli_num_rows($lokingcheck)>=1) { ?>
-					<?php  //echo $looking;
-					//echo mysqli_num_rows($lokingcheck)
+					<?php  
+					
 					
 					?>
 						<?php  } else { ?>

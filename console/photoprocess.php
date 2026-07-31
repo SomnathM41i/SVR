@@ -9,7 +9,7 @@
  */
 require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'security.php');
 
-/* Admin-only: require the console session like every other admin tool. */
+
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'protect.php');
 
 $filePath = svr_safe_image_path(isset($_GET['image']) ? $_GET['image'] : '', __DIR__);
@@ -22,7 +22,7 @@ $image = $filePath;
 $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 $type = isset($_GET['type']) ? strtolower($_GET['type']) : '';
 
-/* Content-Type handling (legacy: explicit ?type= wins, else by extension) */
+
 if ($type === 'jpg' || $type === 'jpeg') {
     header("Content-type: image/jpeg");
 } elseif ($type === 'gif') {

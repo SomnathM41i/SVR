@@ -1,4 +1,4 @@
-<?php /*include('dbconnectadmin.php');*/
+<?php 
 require_once('sys_dbconnection.php');
 require_once('includes/annual_income.php');
 include('memprotect.php');

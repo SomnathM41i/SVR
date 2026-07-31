@@ -1,6 +1,6 @@
 <?php 
     require_once('sys_dbconnection.php');
-	/*include('dbconnectadmin.php');*/
+	
 	$qry1 = "SELECT * FROM cms WHERE link ='return_policy'";
 	$result=mysqli_query($con,$qry1)or svr_db_fail($con);
 	$row = mysqli_fetch_array($result);

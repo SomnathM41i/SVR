@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-  //include '../dbconnectadmin.php';
+  
   error_reporting(0);
 ?>
 <?php if(isset($_POST['submit']))
@@ -8,7 +8,7 @@ require_once(dirname(__FILE__).'/protect.php');
                                        $content = mysqli_real_escape_string($con,$_POST["Message"]);
                                         $upd_about ="update cms set content = '$content' where cms_id='25'";
                                         mysqli_query($con,$upd_about);
-                                    //header('location:add_safematrimony.php?msg=safe');
+                                    
                  } ?>
 
 
@@ -99,7 +99,7 @@ require_once(dirname(__FILE__).'/protect.php');
                             <div class="form-group">
                             <?php  $qry="select * from cms where cms_id='25'";
                                   $result=mysqli_query($con,$qry);
-                                      //echo $qry;
+                                      
                                    $res=mysqli_fetch_array($result);
                                       ?>
                                <nav aria-label="breadcrumb">

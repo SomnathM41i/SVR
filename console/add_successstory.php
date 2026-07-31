@@ -2,7 +2,7 @@
 
     error_reporting(0);
     include('protect.php'); 
-    /*include'../dbconnectadmin.php';*/
+    
     if(isset($_POST['upload']))
     {
         
@@ -41,7 +41,7 @@
                 }
                 $newname1 =$filename;
                 $newname ='../success/'.$filename;
-                //$_SESSION['adhar']=$newname;
+                
                 //Check if the file with the same name is already exists on the server
                 if (!file_exists($newname)) 
                 { 
@@ -50,8 +50,8 @@
                     {
                         $sucess="insert into successstory (weddingphoto,bridename,groomname,successmessage,approve,marriagedate) values('$newname1','$bname','$gname','$success_msg','Yes','$date')";
                        mysqli_query($con,$sucess);
-                       //echo "insert into successstory (weddingphoto,bridename,groomname,successmessage,approve,marriagedate) values('$newname1','$bname','$gname','$success_msg','Yes','$date')";
-                       //exit;
+                       
+                       
                        header('location:add_successstory.php?msg=success');
                     } 
                     else 
@@ -70,7 +70,7 @@
             }
         }  
     }
-    //echo $error;
+    
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');
 require_once(dirname(__FILE__).'/protect.php');
-/*include'../dbconnectadmin.php';*/
+
 $from=$_POST['from']; 
 $to=$_POST['to']; 
 $country = $_POST['country'];
@@ -78,7 +78,7 @@ if($city!="")
 	}
 	$sql=$sql."City ='".$city."' or Address LIKE '$city%'";
 }
-//echo $sql;
+
 $result = mysqli_query($con,$sql);
 
 ?>
@@ -256,7 +256,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -279,7 +279,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcountry_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, //Pass $id
+            data :  'rowid='+ rowid, 
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
