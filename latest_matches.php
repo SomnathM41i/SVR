@@ -158,7 +158,7 @@ function displayPaginationBelow($con, $per_page, $page) {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Latest Matches — Shivraj Maratha</title>
+<title>Latest Matches — Manpasand Jodidar</title>
 <link href="css3/Style.css" rel="stylesheet" />
 <link href="css3/mvv-premium.css" rel="stylesheet" />
 <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon" />

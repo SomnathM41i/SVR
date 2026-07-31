@@ -263,7 +263,7 @@ if(isset($_POST['submit']))
 }
 ?>
 <?php
-$page_title = 'Basic Information - Shivraj Maratha';
+$page_title = 'Basic Information - Manpasand Jodidar';
 $defaultAboutText = 'I am a caring, responsible and family-oriented person who values honesty, respect and understanding. I believe in balancing family traditions with a positive and modern outlook. I am looking for a compatible life partner with similar values.';
 $aboutText = trim((string)($aboutus ?? '')) !== '' ? $aboutus : $defaultAboutText;
 $aboutExamples = [

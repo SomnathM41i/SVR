@@ -71,7 +71,7 @@ $heightMap = [
 ];
 
 $maskedName = $profile ? anonymizePublicName((string)($profile['Name'] ?? '')) : 'Profile Not Found';
-$page_title = $profile ? $maskedName.' - Shivraj Maratha' : 'Profile Not Found - Shivraj Maratha';
+$page_title = $profile ? $maskedName.' - Manpasand Jodidar' : 'Profile Not Found - Manpasand Jodidar';
 $backGender = $profile['Gender'] ?? 'Male';
 $backStatus = in_array($profile['Maritalstatus'] ?? '', ['Unmarried', 'Divorced'], true)
     ? $profile['Maritalstatus']
@@ -98,8 +98,8 @@ if ($profile) {
     }
     $ogBaseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
     $page_og_image = ($photoOG !== 'images/nophoto.jpg') ? $ogBaseUrl . $photoOG : '';
-    $page_og_title = $maskedName . ' - Shivraj Maratha';
-    $page_og_description = 'View ' . $maskedName . '\'s matrimony profile on Shivraj Maratha.';
+    $page_og_title = $maskedName . ' - Manpasand Jodidar';
+    $page_og_description = 'View ' . $maskedName . '\'s matrimony profile on Manpasand Jodidar.';
 }
 include('header3.php');
 ?>

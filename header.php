@@ -100,7 +100,7 @@ if ($id === '' && $login && $regvar != '9') {
 
 <style>
 /* =============================================
-   SHIVRAJ MARATHA DESIGN SYSTEM — Header (merged)
+   MANPASAND JODIDAR DESIGN SYSTEM — Header (merged)
    Inspired by both legacy & template
 ============================================= */
 :root {
@@ -1413,9 +1413,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index_dashboard" aria-label="Dashboard">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
+          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>
@@ -1594,9 +1594,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="#">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
+          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>
@@ -1628,9 +1628,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index" aria-label="Home">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">शिवराज मराठा</span>
+          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>

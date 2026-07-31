@@ -6,7 +6,7 @@ $my_profile=mysqli_query($con,"SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM 
 $me=mysqli_fetch_array($my_profile);
 $regvar=$me['reg_step'];
 ?>
-<?php $page_title = 'Basic Details - Shivraj Maratha'; ?>
+<?php $page_title = 'Basic Details - Manpasand Jodidar'; ?>
 <!doctype html>
 <html lang="en">
 <head>

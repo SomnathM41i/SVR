@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     }
 }
 
-$page_title = 'NRI Details - Shivraj Maratha';
+$page_title = 'NRI Details - Manpasand Jodidar';
 include('header3.php');
 ?>
 

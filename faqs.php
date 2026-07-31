@@ -71,7 +71,7 @@
                         <ul class="accordion-box">
                             <!--Block-->
                             <li class="accordion block active-block wow fadeInUp">
-                                <div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-angle-down"></span> </div>How can I register on Shivraj Maratha?</div>
+                                <div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-angle-down"></span> </div>How can I register on Manpasand Jodidar?</div>
                                 <div class="acc-content current">
                                     <div class="content">
                                         <div class="text">Registering in our matrimony site is a simple process, you can register by filling the online registration  that runs for 3 pages or use the Quick registration form, a shorter and simpler process available </div>
@@ -184,7 +184,7 @@
 
 																	10)Why should I choose your paid membership package?<br>
 
-														11)A paid membership have various packages and options to help you access advanced features of Shivraj Maratha.<br>
+														11)A paid membership have various packages and options to help you access advanced features of Manpasand Jodidar.<br>
 
 																			12)Search suitable profile through matrimonial Website<br>
 
@@ -196,7 +196,7 @@
 
 																							16)Paid Matrimonial Members get top services.<br>
 
-																17)Paid Matrimonial Members can express interest and write messages to other members of Shivraj Maratha.<br>
+																17)Paid Matrimonial Members can express interest and write messages to other members of Manpasand Jodidar.<br>
 
 																		18)Is my personal information safe?
 																		
@@ -216,7 +216,7 @@
                                 <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-angle-down"></span> </div>How do I contact customer care?</div>
                                 <div class="acc-content">
                                     <div class="content">
-                                        <div class="text">Shivraj Maratha is eager to help you find your partner at the earliest. Customer Support is top priority to us. You can contact our customer care team in any of the following ways listed here.</div>
+                                        <div class="text">Manpasand Jodidar is eager to help you find your partner at the earliest. Customer Support is top priority to us. You can contact our customer care team in any of the following ways listed here.</div>
                                     </div>
                                 </div>
                             </li>

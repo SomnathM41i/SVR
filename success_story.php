@@ -15,7 +15,7 @@ $seof = $seo ? mysqli_fetch_array($seo) : [];
     <div class="mvv-container">
       <div class="text-center mb-5">
         <div class="mvv-eyebrow">आनंदी जोडपी</div>
-        <h2 class="mvv-title">Shivraj Maratha families च्या खऱ्या stories</h2>
+        <h2 class="mvv-title">Manpasand Jodidar families च्या खऱ्या stories</h2>
         <p class="mvv-subtitle">First introduction पासून wedding blessings पर्यंत, या journeys नवीन families ना confidence सोबत पुढे जाण्यास inspire करतात.</p>
       </div>
 
@@ -72,7 +72,7 @@ $seof = $seo ? mysqli_fetch_array($seo) : [];
         <div>
           <div class="mvv-eyebrow">Family अनुभव</div>
           <h2 class="mvv-title">Meaningful introductions साठी trusted space</h2>
-          <p class="mvv-subtitle" style="margin:0; max-width:none;">Families Shivraj Maratha निवडतात कारण हा experience secure, graceful आणि serious marriage decisions शी well-aligned आहे.</p>
+          <p class="mvv-subtitle" style="margin:0; max-width:none;">Families Manpasand Jodidar निवडतात कारण हा experience secure, graceful आणि serious marriage decisions शी well-aligned आहे.</p>
         </div>
         <div class="mvv-card">
           <span class="mvv-icon"><i class="bi bi-chat-heart"></i></span>

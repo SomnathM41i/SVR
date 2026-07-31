@@ -38,7 +38,7 @@ $row = mysqli_fetch_array($res);
     <!--                <li>|</li>-->
     <!--                <li><a href="contactus">Contact Us</a></li>-->
     <!--            </ul>-->
-    <!--             <div class="copyright-text"> &copy; Copyright <?php echo date('Y');?> All Rights Reserved. BY: <a href="#" target="_blank">Shivraj Maratha</a></div>-->
+    <!--             <div class="copyright-text"> &copy; Copyright <?php echo date('Y');?> All Rights Reserved. BY: <a href="#" target="_blank">Manpasand Jodidar</a></div>-->
     <!--            <ul class="social-icon-one">-->
     
     
@@ -193,14 +193,14 @@ $row = mysqli_fetch_array($res);
 
       <!-- Brand Col -->
       <div class="col-lg-4 col-md-6">
-        <a class="footer-brand-logo" href="index" aria-label="Shivraj Maratha home">
-          <img src="branding/logos/emblem.png" alt="Shivraj Maratha Logo" width="86" height="86">
+        <a class="footer-brand-logo" href="index" aria-label="Manpasand Jodidar home">
+          <img src="branding/logos/emblem.png" alt="Manpasand Jodidar Logo" width="86" height="86">
         </a>
-        <div class="footer-brand-name">Shivraj Maratha</div>
+        <div class="footer-brand-name">Manpasand Jodidar</div>
         <div class="footer-brand-sub">शुभ विवाह • सुयोग्य जीवनसाथी</div>
         <p class="footer-desc">
-          Shivraj Maratha is Maharashtra's most trusted matrimonial platform — 
-          connecting verified Shivraj Maratha families with dignity, tradition, and modern convenience.
+          Manpasand Jodidar is Maharashtra's most trusted matrimonial platform — 
+          connecting verified Manpasand Jodidar families with dignity, tradition, and modern convenience.
         </p>
         <div class="footer-social">
           <a class="social-btn" href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -280,7 +280,7 @@ $row = mysqli_fetch_array($res);
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
           <span class="footer-bottom-text">
-            Copyright © 2025 <strong style="color:rgba(255,255,255,0.75)">Shivraj Maratha</strong> · All Rights Reserved
+            Copyright © 2025 <strong style="color:rgba(255,255,255,0.75)">Manpasand Jodidar</strong> · All Rights Reserved
           </span>
         </div>
         <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">

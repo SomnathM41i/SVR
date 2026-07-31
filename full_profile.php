@@ -36,7 +36,7 @@ $partnerScore=partner_match_score($me,$full_profile_fetch ?: []);
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Full Profile — Shivraj Maratha</title>
+<title>Full Profile — Manpasand Jodidar</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css?v=352421.2" rel="stylesheet">

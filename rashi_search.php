@@ -280,7 +280,7 @@ $heightLabels = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Horoscope Search - Shivraj Maratha</title>
+    <title>Horoscope Search - Manpasand Jodidar</title>
     <link rel="icon" href="branding/favicons/favicon.ico">
     <link rel="stylesheet" href="css3/Style.css">
     <link rel="stylesheet" href="css3/mvv-premium.css">

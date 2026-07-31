@@ -48,7 +48,7 @@ $country= $ret1['phonecode'];
 	$opt = $_SESSION['otp'];
 	//"Welcome To Jaipur Your OTP: {#var#}. Thank You Team weddingsparampara.com A unit of Mahadi Group";
 	 $msg = "Welcome To Jaipur Your OTP: $opt. Thank You Team weddingsparampara.com A unit of Mahadi Group";
-	//$msg = "Welcome To tathastu.in.net Your OTP: $opt. Thank You Team- Shivraj Maratha";
+	//$msg = "Welcome To tathastu.in.net Your OTP: $opt. Thank You Team- Manpasand Jodidar";
   
 	// Route details
     $apiRoute = 'TRANS';

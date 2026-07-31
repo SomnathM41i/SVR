@@ -51,7 +51,7 @@ if ($uploadOk == 0) {
 }
 }
 ?>
-<?php $page_title = 'Upload ID Proof - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'Upload ID Proof - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 function showMyImage12(fileInput) {

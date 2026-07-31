@@ -9,8 +9,8 @@ $siteinfo = $data_config -> Webname;
 <html class="no-js" lang="en"> 
 <head>
    <meta charset="utf-8">
-	<title>Page Not Found</title>
-	<meta name="description" content="">  
+	<title>Page Not Found — Manpasand Jodidar</title>
+	<meta name="description" content="Manpasand Jodidar - the page you are looking for could not be found.">  
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="404/base.css">  

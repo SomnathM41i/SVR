@@ -29,7 +29,7 @@ if (!$fetrow) {
     exit;
 }
 
-$page_title = 'Register Success - Shivraj Maratha';
+$page_title = 'Register Success - Manpasand Jodidar';
 include('header3.php');
 ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

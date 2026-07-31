@@ -13,7 +13,7 @@ if($login) {
 }
 $regvar = $me['reg_step'] ?? '';
 $row = $me;
-$page_title = 'Education & Career - Shivraj Maratha';
+$page_title = 'Education & Career - Manpasand Jodidar';
 include('header3.php'); ?>
 <style>
 .mvv-checkbox-label {

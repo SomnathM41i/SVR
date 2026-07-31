@@ -1,6 +1,6 @@
 ﻿<style>
 /* ══════════════════════════════════════════
-   SHIVRAJ MARATHA FOOTER — Template-inspired Design
+   MANPASAND JODIDAR FOOTER — Template-inspired Design
 ══════════════════════════════════════════ */
 .mvv-footer {
   background: #2a1117;
@@ -355,9 +355,9 @@
       <!-- Brand -->
       <div class="mvv-footer-col">
         <a class="mvv-footer-brand" href="index">
-          <img src="<?php echo htmlspecialchars($smLogo ?? 'branding/logos/emblem.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Shivraj Maratha Logo" width="86" height="86">
+          <img src="<?php echo htmlspecialchars($smLogo ?? 'branding/logos/emblem.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Manpasand Jodidar Logo" width="86" height="86">
           <span>
-            <b>शिवराज मराठा</b>
+            <b>मनपसंद जोडीदार</b>
             <small>वधू वर सूचक केंद्र ®</small>
           </span>
         </a>
@@ -410,7 +410,7 @@
 
     <div class="mvv-footer-bottom">
       <span>
-        Copyright &copy; <?php echo date('Y'); ?> by <strong>Shivraj Maratha</strong> &mdash; सर्व हक्क राखीव
+        Copyright &copy; <?php echo date('Y'); ?> by <strong>Manpasand Jodidar</strong> &mdash; सर्व हक्क राखीव
       </span>
       <div class="mvv-footer-bottom-links">
         <a href="privacy-policy">Privacy Policy</a>
@@ -431,7 +431,7 @@
 
 <script>
 /* ══════════════════════════════════════════
-   Shivraj Maratha Header & Footer JavaScript
+   Manpasand Jodidar Header & Footer JavaScript
 ══════════════════════════════════════════ */
 (function() {
   'use strict';

@@ -240,7 +240,7 @@ var rzpOptions = {
     key:         '<?php echo RZP_KEY_ID; ?>',
     amount:      '<?php echo $amountInPaise; ?>',
     currency:    'INR',
-    name:        'Weddings parampara',
+    name:        'Manpasand Jodidar',
     description: '<?php echo addslashes($plan_row["plandisplayname"]); ?> Plan',
     image:       'images/logo-2.png',   // checkout logo (file lives in images/)
     order_id:    '<?php echo $rzpOrderId; ?>',

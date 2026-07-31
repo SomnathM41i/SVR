@@ -16,7 +16,7 @@ if ($authenticatedMatriID !== '') {
     }
 }
 
-$page_title = 'Member Login - Shivraj Maratha';
+$page_title = 'Member Login - Manpasand Jodidar';
 ?>
 <?php include('header3.php'); ?>
 

@@ -55,7 +55,7 @@ $rzpKeyId = svr_config('SVR_RZP_KEY_ID', 'rzp_live_UCmasONfYX891y');
     "key": <?php echo json_encode($rzpKeyId) ?>,
     "amount": amt * 100,
     "currency": "INR",
-    "name": "Shivraj Maratha",
+    "name": "Manpasand Jodidar",
     "description": "",
     "image": "branding/logos/emblem.png",
     "handler": function (response){

@@ -234,7 +234,7 @@ function ap_start($title) {
 
 function ap_end() {
     global $con;
-    $footerText = 'Shivraj Maratha';
+    $footerText = 'Manpasand Jodidar';
     $result = $con->query("SELECT copyright_footer FROM siteconfig WHERE ID='1' LIMIT 1");
     if ($result && ($row = $result->fetch_assoc()) && trim((string)$row['copyright_footer']) !== '') {
         $footerText = $row['copyright_footer'];

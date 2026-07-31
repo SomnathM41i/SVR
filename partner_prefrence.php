@@ -118,7 +118,7 @@ if(isset($_POST['submit'])) {
   }
 }
 ?>
-<?php $page_title = 'जोडीदाराबद्दल अपेक्षा - Shivraj Maratha'; include('header3.php'); ?>
+<?php $page_title = 'जोडीदाराबद्दल अपेक्षा - Manpasand Jodidar'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <style>
 .mvv-page-hero h1 { text-transform:none; }

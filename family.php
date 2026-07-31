@@ -11,7 +11,7 @@ if($login) {
 }
 $regvar = $me['reg_step'] ?? '';
 $row = $me;
-$page_title = 'Family Details - Shivraj Maratha';
+$page_title = 'Family Details - Manpasand Jodidar';
 include('header3.php'); ?>
 <script>
 function ValidateAlpha(evt) {

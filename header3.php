@@ -8,7 +8,7 @@ $registrationHeaderPages = [
   'upload_idproof', 'verify_otp', 'register_success', 'partner_prefrence'
 ];
 $hideDashboardButton = in_array($currentHeaderPage, $registrationHeaderPages, true);
-if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सूचक केंद्र';
+if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर सूचक केंद्र';
 ?><!doctype html>
 <html lang="mr">
    <head>
@@ -37,7 +37,7 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
 
       <style>
       /* ══════════════════════════════════════════
-         SHIVRAJ MARATHA DESIGN SYSTEM — Header & Footer
+         MANPASAND JODIDAR DESIGN SYSTEM — Header & Footer
          Inspired by template's modern aesthetic
       ══════════════════════════════════════════ */
       :root {
@@ -733,10 +733,10 @@ if(!isset($page_title)) $page_title = 'Shivraj Maratha - वधू वर सू
       <!-- SITE HEADER -->
       <header class="mvv-header" id="mvvHeader">
          <div class="container mvv-header-wrap">
-            <a class="mvv-brand" href="index" aria-label="Shivraj Maratha Home">
-               <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha Logo">
+            <a class="mvv-brand" href="index" aria-label="Manpasand Jodidar Home">
+               <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar Logo">
                <span class="mvv-brand-text">
-                  <span class="mvv-brand-title">शिवराज मराठा</span>
+                  <span class="mvv-brand-title">मनपसंद जोडीदार</span>
                   <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
                </span>
             </a>
