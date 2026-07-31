@@ -20,6 +20,10 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 <link href="css3/mvv-premium.css?v=activities-ui" rel="stylesheet">
 <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
 <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 .mvv-page-hero h1 { text-transform:none; }

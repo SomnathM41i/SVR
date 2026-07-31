@@ -11,6 +11,12 @@ function active(string $name, string $current): string { return $name === $curre
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Manpasand Jodidar - trusted Maratha matrimonial service in Satara, Maharashtra. Rishta Dil Se, Saath Zindagi Bhar.">
   <title><?= htmlspecialchars($pageTitle) ?></title>
+  <!-- MPJ: brand icons & identity -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../branding/favicons/icon-32.png">
+  <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../branding/site.webmanifest">
+  <meta name="theme-color" content="#5E1426">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">

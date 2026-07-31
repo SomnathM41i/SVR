@@ -43,6 +43,10 @@ $update1 = mysqli_query($con,"update register set Photo1 ='$save_path' ,Photo1Ap
 
 <link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
 <link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 
 <!-- font css -->
 <link rel="stylesheet" href="assets/fonts/feather.css">

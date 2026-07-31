@@ -282,6 +282,10 @@ $heightLabels = [
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horoscope Search - Manpasand Jodidar</title>
     <link rel="icon" href="branding/favicons/favicon.ico">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="css3/Style.css">
     <link rel="stylesheet" href="css3/mvv-premium.css">
     <style>

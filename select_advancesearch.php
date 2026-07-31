@@ -37,6 +37,10 @@ mysqli_query($con,"update advance_saveandsearch set nameofsearch='$txt' where id
 
 <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
 <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="_so/js?//stackoverflow.com/questions/23729750/dont-allow-invalid-characters-to-be-pasted-on-textbox" id="so"></script>
 <!-- Responsive -->

@@ -163,6 +163,10 @@ function displayPaginationBelow($con, $per_page, $page) {
 <link href="css3/mvv-premium.css" rel="stylesheet" />
 <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon" />
+<!-- MPJ: brand icons -->
+<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+<link rel="manifest" href="branding/site.webmanifest">
+<meta name="theme-color" content="#5E1426">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <style>
 :root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}

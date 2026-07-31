@@ -39,6 +39,10 @@ if(isset($_POST['submit']))
     <!-- Favicon icon -->
     <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
     <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
      <!--<link href="ckeditor/samples/css/samples.css" rel="stylesheet" type="text/css"/>-->
     <!--<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">-->
      <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>

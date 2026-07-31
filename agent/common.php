@@ -178,6 +178,10 @@ function ap_start($title) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="../console/assets/fonts/feather.css">
     <link rel="stylesheet" href="../console/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="../console/assets/css/style.css">

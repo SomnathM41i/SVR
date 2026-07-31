@@ -37,6 +37,10 @@ require_once(dirname(__FILE__).'/inc/console_lib.php');
     <!-- Favicon icon -->
     <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
     <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
     <link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
      

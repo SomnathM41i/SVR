@@ -205,6 +205,10 @@ function agent_admin_start($title) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
+    <!-- MPJ: brand icons -->
+    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../branding/site.webmanifest">
+    <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">

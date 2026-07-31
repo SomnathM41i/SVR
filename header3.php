@@ -29,6 +29,12 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $smLogoLocal; ?>">
+      <!-- MPJ: brand icons & identity -->
+      <link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
+      <link rel="manifest" href="branding/site.webmanifest">
+      <meta name="theme-color" content="#5E1426">
+      <meta name="description" content="<?php echo htmlspecialchars(isset($page_description) ? $page_description : 'Manpasand Jodidar - trusted Maratha matrimonial service in Satara, Maharashtra. Rishta Dil Se, Saath Zindagi Bhar.', ENT_QUOTES, 'UTF-8'); ?>">
       <!-- Template Styles -->
       <link rel="stylesheet" href="template/assets/css/style.css" />
       <!-- Custom CSS -->
@@ -717,6 +723,13 @@ if(!isset($page_title)) $page_title = 'Manpasand Jodidar - वधू वर स�
       <?php if (!empty($page_og_description)): ?><meta property="og:description" content="<?php echo htmlspecialchars($page_og_description, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
       <meta property="og:type" content="website">
       <meta property="og:url" content="<?php echo htmlspecialchars((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'?'https':'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">
+      <!-- MPJ: social defaults (page-level $page_og_* always wins; no duplicate tags) -->
+      <meta property="og:site_name" content="Manpasand Jodidar">
+      <?php if (empty($page_og_image)): ?><meta property="og:image" content="<?php echo htmlspecialchars((defined('MPJ_BRAND_URL') ? MPJ_BRAND_URL : 'https://weddingsparampara.com') . '/branding/images/og-image.jpg', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (empty($page_og_title) && !empty($page_title)): ?><meta property="og:title" content="<?php echo htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <?php if (empty($page_og_description)): ?><meta property="og:description" content="<?php echo htmlspecialchars(isset($page_description) ? $page_description : 'Manpasand Jodidar - trusted Maratha matrimonial service in Satara, Maharashtra. Rishta Dil Se, Saath Zindagi Bhar.', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
+      <meta name="twitter:card" content="summary_large_image">
+      <?php if (empty($page_og_image)): ?><meta name="twitter:image" content="<?php echo htmlspecialchars((defined('MPJ_BRAND_URL') ? MPJ_BRAND_URL : 'https://weddingsparampara.com') . '/branding/images/og-image.jpg', ENT_QUOTES, 'UTF-8'); ?>"><?php endif; ?>
    </head>
    <body>
       <!-- TOP BAR -->
