@@ -6,11 +6,12 @@ $matriid=$_SESSION['matriid'];
 $otp=array($_POST['otp'],$_POST['otp1'],$_POST['otp2'],$_POST['otp3'],$_POST['otp4'],$_POST['otp5']);
 
 $ot=implode($otp);
-$code="000777";
 
 if($ot!=NULL && !empty($ot))
 {
-	if($_SESSION['otp']==$ot || $ot==$code)
+	/* Security fix (C8): removed hard-coded master OTP ("000777") bypass.
+	   Only the per-session OTP generated at send time is accepted. */
+	if(isset($_SESSION['otp']) && $_SESSION['otp'] !== '' && $_SESSION['otp']==$ot)
 	{
 		$sql = mysqli_query($con,"SELECT ConfirmEmail FROM register where ConfirmEmail='".$_SESSION['emailtemp']."'");
 		if(mysqli_num_rows($sql)==0)
