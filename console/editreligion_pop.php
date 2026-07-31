@@ -1,9 +1,8 @@
-<?php require_once('../includes/bootstrap.php');  
-require_once(dirname(__FILE__).'/protect.php');
-
+<?php require_once('../sys_dbconnection.php');  
+/*include'../dbconnectadmin.php';*/
 $id = $_POST['rowid'];
 $sqldata=mysqli_query($con,"select * from religion where ID='$id'");
-
+//echo "select * from religion where ID='$id'";
 $rowdata=mysqli_fetch_array($sqldata);?>
 <style>
  .btcs
@@ -28,7 +27,7 @@ $rowdata=mysqli_fetch_array($sqldata);?>
 								<?php $mes=$rowdata['Religion']; 
 								   ?>
                                 <input type="text" class="form-control" id="Name" name="Name" value="<?php echo $mes ;?>" placeholder="Enter Religion" required>
-								<input type="hidden" name="id" value="<?php echo $rowdata['ID']; ?>"><?php 
+								<input type="hidden" name="id" value="<?php echo $rowdata['ID']; ?>"><?php //echo $id ?>
                             </div>
 					   </div>
                        

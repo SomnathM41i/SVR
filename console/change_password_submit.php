@@ -1,6 +1,6 @@
-<?php require_once('../includes/bootstrap.php'); 
-require_once(dirname(__FILE__).'/protect.php');
-
+<?php require_once('../sys_dbconnection.php'); 
+/*include('../dbconnectadmin.php');
+session_start();*/
 $user=$_SESSION['uid'];
 $cupass=mysqli_real_escape_string($con,$_POST['cupass']);
 $newpwd=mysqli_real_escape_string($con,$_POST['newpwd']);

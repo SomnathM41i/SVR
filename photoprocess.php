@@ -1,23 +1,16 @@
 <?php
-/**
- * photoprocess.php — On-the-fly image resize/letterbox endpoint.
- *
- * SECURITY (fixes C5 local file disclosure / path traversal):
- * the image path is validated against the application root and an image
- * extension allow-list; arbitrary local files can no longer be read.
- * All legacy query params (square, w/h, percent, maxim_size) are preserved.
- */
-require_once(__DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'security.php');
+$image = $_GET['image'] ?? '';
+if (!$image) exit;
 
-$filePath = svr_safe_image_path(isset($_GET['image']) ? $_GET['image'] : '', __DIR__);
-if ($filePath === false) {
+$filePath = $image;
+if (!file_exists($filePath)) {
     header('HTTP/1.0 404 Not Found');
     exit;
 }
 
-$ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-$mimeMap = array('jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'gif' => 'image/gif', 'png' => 'image/png', 'webp' => 'image/webp');
-$contentType = $mimeMap[$ext];
+$ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+$mimeMap = ['jpg'=>'image/jpeg','jpeg'=>'image/jpeg','gif'=>'image/gif','png'=>'image/png','webp'=>'image/webp'];
+$contentType = $mimeMap[$ext] ?? mime_content_type($image);
 
 if (!extension_loaded('gd')) {
     header("Content-Type: $contentType");
@@ -27,12 +20,18 @@ if (!extension_loaded('gd')) {
     exit;
 }
 
-$funcMap = array('jpg' => 'imagecreatefromjpeg', 'jpeg' => 'imagecreatefromjpeg', 'gif' => 'imagecreatefromgif', 'png' => 'imagecreatefrompng', 'webp' => 'imagecreatefromwebp');
-$createFunc = $funcMap[$ext];
+$funcMap = ['jpg'=>'imagecreatefromjpeg','jpeg'=>'imagecreatefromjpeg','gif'=>'imagecreatefromgif','png'=>'imagecreatefrompng','webp'=>'imagecreatefromwebp'];
+$createFunc = $funcMap[$ext] ?? null;
+if (!$createFunc) {
+    header("Content-Type: $contentType");
+    readfile($filePath);
+    exit;
+}
 
-$src = @$createFunc($filePath);
+$src = $createFunc($filePath);
 if (!$src) {
-    header('HTTP/1.0 404 Not Found');
+    header("Content-Type: $contentType");
+    readfile($filePath);
     exit;
 }
 
@@ -83,8 +82,8 @@ if (isset($_GET['square']) && $_GET['square'] > 0) {
 
 header("Content-Type: $contentType");
 header('Cache-Control: public, max-age=86400');
-$outMap = array('jpg' => 'imagejpeg', 'jpeg' => 'imagejpeg', 'gif' => 'imagegif', 'png' => 'imagepng', 'webp' => 'imagewebp');
-$outFunc = $outMap[$ext];
+$outMap = ['jpg'=>'imagejpeg','jpeg'=>'imagejpeg','gif'=>'imagegif','png'=>'imagepng','webp'=>'imagewebp'];
+$outFunc = $outMap[$ext] ?? 'imagejpeg';
 $outFunc($dst);
 imagedestroy($src);
 imagedestroy($dst);

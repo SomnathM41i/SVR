@@ -1,5 +1,5 @@
 <?php 
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 require_once('agent_commission_lib.php');
 
 $login=$_SESSION['MatriID'] ?? null;
@@ -263,7 +263,7 @@ if(isset($_POST['submit']))
 }
 ?>
 <?php
-$page_title = 'Basic Information - Manpasand Jodidar';
+$page_title = 'Basic Information - Shivraj Maratha';
 $defaultAboutText = 'I am a caring, responsible and family-oriented person who values honesty, respect and understanding. I believe in balancing family traditions with a positive and modern outlook. I am looking for a compatible life partner with similar values.';
 $aboutText = trim((string)($aboutus ?? '')) !== '' ? $aboutus : $defaultAboutText;
 $aboutExamples = [
@@ -278,9 +278,9 @@ include('header3.php');
 main.mvv-page > .mvv-page-hero.mvv-form-hero {
   min-height: auto !important;
   padding: clamp(50px, 6vw, 72px) 0 !important;
-  color: #3A2530 !important;
-  background: radial-gradient(circle at 80% 30%, rgba(201,85,106,.14), transparent 30%), #FFFDFB !important;
-  border-bottom: 1px solid rgba(94,20,38,.12) !important;
+  color: #3a2a22 !important;
+  background: radial-gradient(circle at 80% 30%, rgba(213,107,36,.14), transparent 30%), #fff9f0 !important;
+  border-bottom: 1px solid rgba(109,23,38,.12) !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero::before,
 main.mvv-page > .mvv-page-hero.mvv-form-hero::after {
@@ -291,28 +291,28 @@ main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-container {
   padding-right: 24px !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero h1 {
-  color: #5E1426 !important;
+  color: #7a0e1a !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero p {
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-breadcrumb {
   padding: 0 !important;
   background: transparent !important;
   border: 0 !important;
-  color: #7A6570 !important;
+  color: #7b6256 !important;
   backdrop-filter: none !important;
   font-weight: 500 !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-breadcrumb a {
-  color: #C9556A !important;
+  color: #d56b24 !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-breadcrumb span {
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-breadcrumb span::before {
   content: "›" !important;
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 .divorce-children-section {
   grid-column: 1/-1;
@@ -339,7 +339,7 @@ main.mvv-page > .mvv-page-hero.mvv-form-hero .mvv-breadcrumb span::before {
   gap: 12px;
 }
 .about-examples-button {
-  border: 1px solid rgba(94, 20, 38, .24);
+  border: 1px solid rgba(122, 14, 26, .24);
   border-radius: 999px;
   padding: 7px 13px;
   color: var(--mvv-maroon);

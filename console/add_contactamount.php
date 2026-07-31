@@ -1,16 +1,16 @@
-<?php require_once('../includes/bootstrap.php');
+<?php require_once('../sys_dbconnection.php');
 include('protect.php');
-
+//include('memprotect.php');
 if(isset($_POST['submit2']))
 	{
 		echo "hello";
 		echo $_GET['ID'];
-		
+		//exit;
 		if(isset($_GET['ID']))
 		{
 			$id= $_GET['ID'];
-			
-			
+			//echo $id;
+			//exit;
 			$amount=$_POST['camount'];
 			echo $amount;
 			$amot1=mysqli_query($con,"update contactpaidamount set contactamount='$amount' where cid='$id'");
@@ -18,7 +18,7 @@ if(isset($_POST['submit2']))
 			{
 				$msg="Amount updated successfully";
 			}
-			
+			//exit;
 		}
 			header('location:add_contactamount?msg=success');
 	}
@@ -37,17 +37,13 @@ if(isset($_POST['submit2']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -57,7 +53,6 @@ if(isset($_POST['submit2']))
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	  <link rel="stylesheet" href="assets/css/popup.css">
@@ -125,14 +120,18 @@ if(isset($_POST['submit2']))
                     <div class="card-body text-center">
                         <?php  $row1=mysqli_query($con,"select * from contactpaidamount where cid='1'");
 						       $row12=mysqli_fetch_array($row1);?>
-                        <h4 class="mt-3"><?php  
+                        <h4 class="mt-3"><?php  //echo $row['plandisplayname'];?></h4>
 						 <h5 class="mt-3">Amount :<?php  echo $row12['contactamount'];?></h5>
-                       
+                       <!-- <p><span class="badge bg-primary">No of Contacts:<?php // echo $row['plannoofcontacts'];?></span> </p>-->
                         <hr>
 					
 
                        <button type="button" class="btn btn-icon btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#modal-report12" data-id="<?php echo $row12['cid'];?>"><i class="feather icon-edit-2"></i></button>
-                      <?php  ?>
+                      <?php /* <?php if($row['plan_status']=='Active'){?>                     
+					   <a href="membership_active?id=<?php  echo $row['cid'];?>&status=Inactive"><button type="button" class="btn btn-icon btn-outline-success"><i data-feather="check-circle"></i></button></a>
+					   <?php } else { ?>
+					   <a href="membership_active?id=<?php  echo $row['cid'];?>&status=Active"><button type="button" class="btn btn-icon btn-outline-danger"><i data-feather="slash"></i></button></a>
+                       <?php } ?> */ ?>
 					</div>
                 </div>
             </div> <br><br>
@@ -156,7 +155,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'get_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -181,7 +180,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_membership.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -205,7 +204,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'ContactAmount.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -294,7 +293,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -304,7 +303,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

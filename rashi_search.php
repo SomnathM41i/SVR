@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include_once('memprotect.php');
 require_once('includes/partner_match.php');
 
@@ -280,12 +280,8 @@ $heightLabels = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Horoscope Search - Manpasand Jodidar</title>
-    <link rel="icon" href="branding/favicons/favicon.ico">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <title>Horoscope Search - Shivraj Maratha</title>
+    <link rel="icon" href="css3/assets/shivraj-logo.png">
     <link rel="stylesheet" href="css3/Style.css">
     <link rel="stylesheet" href="css3/mvv-premium.css">
     <style>

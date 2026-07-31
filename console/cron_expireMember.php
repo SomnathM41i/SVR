@@ -1,5 +1,4 @@
-<?php require_once('../includes/bootstrap.php'); 
-require_once(dirname(__FILE__).'/protect.php');
+<?php require_once('../sys_dbconnection.php'); 
 /*include 'dbconnectadmin.php';*/
 //error_reporting(E_ALL);
 date_default_timezone_set('Asia/Kolkata');

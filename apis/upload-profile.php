@@ -1,6 +1,6 @@
 <?php
-/* SECURITY: verbose error reporting disabled in production. */
-/* SECURITY: PHP error display disabled in production. */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once('../sys_dbconnection.php');
 // include('memprotect1.php');
@@ -62,7 +62,7 @@ if ($size > $max_size) {
 if (move_uploaded_file($tmp, $target_file)) {
     
     mysqli_query($con, "UPDATE register SET Photo1='$sav' WHERE MatriID='$matriId'");
-    mysqli_query($con, "INSERT INTO gallary(photo_name, matri_id) VALUES('$sav', '$matriId')") or svr_db_fail($con);
+    mysqli_query($con, "INSERT INTO gallary(photo_name, matri_id) VALUES('$sav', '$matriId')") or die(mysqli_error($con));
 
     echo json_encode([
         "status" => "success",

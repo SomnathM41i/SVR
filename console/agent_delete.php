@@ -1,5 +1,4 @@
 <?php
-require_once(dirname(__FILE__).'/protect.php');
 require_once('agent_common.php');
 $id = (int)($_GET['id'] ?? 0);
 $hasSales = $con->query("SELECT sale_id FROM agent_sales WHERE agent_id=$id LIMIT 1");

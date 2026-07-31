@@ -1,9 +1,9 @@
 ﻿<style>
 /* ══════════════════════════════════════════
-   MANPASAND JODIDAR FOOTER — Template-inspired Design
+   SHIVRAJ MARATHA FOOTER — Template-inspired Design
 ══════════════════════════════════════════ */
 .mvv-footer {
-  background: #3D0C19;
+  background: #2a1117;
   color: #d8c5c7;
   position: relative;
   overflow: hidden;
@@ -24,7 +24,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--mvv-gold, #BA9350), var(--mvv-gold-light, #DDB15F), var(--mvv-gold, #BA9350), transparent);
+  background: linear-gradient(90deg, transparent, var(--mvv-gold, #C9921A), var(--mvv-gold-light, #F0C04A), var(--mvv-gold, #C9921A), transparent);
 }
 
 .mvv-footer .container {
@@ -79,7 +79,7 @@
   display: inline-block;
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: var(--mvv-gold-light, #DDB15F);
+  color: var(--mvv-gold-light, #F0C04A);
   border: 1px solid rgba(240,192,74,0.3);
   padding: 5px 9px;
   border-radius: 6px;
@@ -108,8 +108,8 @@
   transition: all 0.25s;
 }
 .mvv-social-btn:hover {
-  background: var(--mvv-saffron, #C9556A);
-  border-color: var(--mvv-saffron, #C9556A);
+  background: var(--mvv-saffron, #E8612A);
+  border-color: var(--mvv-saffron, #E8612A);
   color: #fff;
   transform: translateY(-3px);
 }
@@ -130,7 +130,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: var(--mvv-gold, #BA9350);
+  background: var(--mvv-gold, #C9921A);
   border-radius: 2px;
 }
 
@@ -151,13 +151,13 @@
 }
 .mvv-footer-links a::before {
   content: '›';
-  color: var(--mvv-saffron, #C9556A);
+  color: var(--mvv-saffron, #E8612A);
   font-size: 16px;
   line-height: 1;
   font-weight: 700;
 }
 .mvv-footer-links a:hover {
-  color: var(--mvv-gold-light, #DDB15F);
+  color: var(--mvv-gold-light, #F0C04A);
   padding-left: 4px;
 }
 
@@ -172,12 +172,12 @@
   width: 34px;
   height: 34px;
   flex-shrink: 0;
-  background: rgba(201, 85, 106,0.15);
+  background: rgba(232,97,42,0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--mvv-saffron, #C9556A);
+  color: var(--mvv-saffron, #E8612A);
   font-size: 14px;
 }
 .mvv-footer-contact-text {
@@ -191,7 +191,7 @@
   transition: color 0.2s;
 }
 .mvv-footer-contact-text a:hover {
-  color: var(--mvv-gold-light, #DDB15F);
+  color: var(--mvv-gold-light, #F0C04A);
 }
 
 /* ─── Bottom Bar ─── */
@@ -216,7 +216,7 @@
   font-size: 12px;
 }
 .mvv-footer-bottom-links a:hover {
-  color: var(--mvv-gold-light, #DDB15F);
+  color: var(--mvv-gold-light, #F0C04A);
 }
 .mvv-footer-bottom strong {
   color: rgba(255,255,255,0.65);
@@ -254,7 +254,7 @@
 }
 .mvv-back-top {
   bottom: 24px;
-  background: var(--mvv-maroon, #5E1426);
+  background: var(--mvv-maroon, #6B1A1A);
   font-size: 20px;
 }
 .mvv-translate-widget {
@@ -275,8 +275,8 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
-  background: linear-gradient(135deg, var(--mvv-gold, #BA9350), #f0bd3d);
-  color: var(--mvv-maroon, #5E1426);
+  background: linear-gradient(135deg, var(--mvv-gold, #C9921A), #f0bd3d);
+  color: var(--mvv-maroon, #6B1A1A);
 }
 .mvv-translate-toggle i { font-size: 20px; line-height: 1; }
 .mvv-translate-label { font-size: 10px; line-height: 1.1; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
@@ -308,7 +308,7 @@
   font-size: 13px;
   cursor: pointer;
 }
-.mvv-translate-menu button:hover { background: var(--mvv-cream, #FFFDFB); color: var(--mvv-maroon, #5E1426); }
+.mvv-translate-menu button:hover { background: var(--mvv-cream, #FFF8F0); color: var(--mvv-maroon, #6B1A1A); }
 .mvv-translate-menu button span { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: #fff0e0; font-size: 11px; font-weight: 800; }
 #google_translate_element { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0 !important; pointer-events: none !important; }
 .goog-te-gadget, .goog-logo-link { display: none !important; }
@@ -355,16 +355,15 @@
       <!-- Brand -->
       <div class="mvv-footer-col">
         <a class="mvv-footer-brand" href="index">
-          <img src="<?php echo htmlspecialchars($smLogo ?? 'branding/logos/emblem.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Manpasand Jodidar Logo" width="86" height="86">
+          <img src="<?php echo htmlspecialchars($smLogo ?? 'css3/assets/shivraj-logo.png', ENT_QUOTES, 'UTF-8'); ?>" alt="Shivraj Maratha Logo" width="86" height="86">
           <span>
-            <b>मनपसंद जोडीदार</b>
+            <b>शिवराज मराठा</b>
             <small>वधू वर सूचक केंद्र ®</small>
           </span>
         </a>
         <p class="mvv-footer-desc">
           मराठा समाजासाठी एक विश्वसनीय विवाह माध्यम. योग्य नात्यांची सन्मानपूर्वक सुरुवात.
         </p>
-        <p class="mvv-footer-tagline">Rishta Dil Se, Saath Zindagi Bhar</p>
         <span class="mvv-footer-note"><i class="bi bi-shield-check"></i> THIS IS NOT A DATING WEBSITE</span>
         <div class="mvv-footer-social">
           <a class="mvv-social-btn" href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -411,7 +410,7 @@
 
     <div class="mvv-footer-bottom">
       <span>
-        Copyright &copy; <?php echo date('Y'); ?> by <strong>Manpasand Jodidar</strong> &mdash; सर्व हक्क राखीव
+        Copyright &copy; <?php echo date('Y'); ?> by <strong>Shivraj Maratha</strong> &mdash; सर्व हक्क राखीव
       </span>
       <div class="mvv-footer-bottom-links">
         <a href="privacy-policy">Privacy Policy</a>
@@ -432,7 +431,7 @@
 
 <script>
 /* ══════════════════════════════════════════
-   Manpasand Jodidar Header & Footer JavaScript
+   Shivraj Maratha Header & Footer JavaScript
 ══════════════════════════════════════════ */
 (function() {
   'use strict';

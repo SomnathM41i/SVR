@@ -1,7 +1,7 @@
-<?php require_once('includes/bootstrap.php');
-
-
-
+<?php require_once('sys_dbconnection.php');
+//include("memprotect.php");
+/*include("dbconnectadmin.php");*/
+//$searchid=$_REQUEST['searchid'];
 $idurl=$_GET['searchid'];
 $searchid = $idurl;
 $profileid=$_SESSION['matri_login'];

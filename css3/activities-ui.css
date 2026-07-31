@@ -14,7 +14,7 @@
 .mvv-match-card {
   height: 100%;
   background: rgba(255,255,255,0.96) !important;
-  border: 1px solid var(--mvv-border, rgba(94,20,38,0.14)) !important;
+  border: 1px solid var(--mvv-border, rgba(122,14,26,0.14)) !important;
   box-shadow: 0 12px 34px rgba(58,42,34,0.1) !important;
   overflow: hidden;
   display: flex !important;
@@ -24,13 +24,13 @@
 
 .mvv-match-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(186, 147, 80,0.42) !important;
+  border-color: rgba(212,164,55,0.42) !important;
   box-shadow: var(--mvv-shadow, 0 18px 44px rgba(58,42,34,0.12)) !important;
 }
 
 .mvv-match-card > a {
   display: block !important;
-  background: var(--mvv-accent, #F9E7DC);
+  background: var(--mvv-accent, #F4E7DA);
   text-decoration: none !important;
 }
 
@@ -40,7 +40,7 @@
   min-height: 260px;
   object-fit: cover;
   display: block !important;
-  background: var(--mvv-accent, #F9E7DC);
+  background: var(--mvv-accent, #F4E7DA);
 }
 
 .mvv-card-body {
@@ -56,17 +56,17 @@
 }
 
 .mvv-card-body h5 a {
-  color: var(--mvv-maroon, #5E1426) !important;
+  color: var(--mvv-maroon, #7A0E1A) !important;
   text-decoration: none !important;
   font-weight: 800;
 }
 
 .mvv-card-body h5 a:hover {
-  color: var(--mvv-gold, #BA9350) !important;
+  color: var(--mvv-gold, #D4A437) !important;
 }
 
 .mvv-card-meta {
-  color: var(--mvv-text, #3A2530);
+  color: var(--mvv-text, #3A2A22);
   font-size: 0.92rem;
   line-height: 1.65;
 }
@@ -74,7 +74,7 @@
 .mvv-card-actions {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--mvv-border, rgba(94,20,38,0.14));
+  border-top: 1px solid var(--mvv-border, rgba(122,14,26,0.14));
   background: linear-gradient(180deg, rgba(244,231,218,0.44), rgba(255,255,255,0.9));
 }
 
@@ -83,9 +83,9 @@
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  color: var(--mvv-maroon, #5E1426) !important;
+  color: var(--mvv-maroon, #7A0E1A) !important;
   text-decoration: none !important;
-  border-right: 1px solid var(--mvv-border, rgba(94,20,38,0.14));
+  border-right: 1px solid var(--mvv-border, rgba(122,14,26,0.14));
   transition: background 0.18s ease, color 0.18s ease;
 }
 
@@ -95,7 +95,7 @@
 
 .mvv-card-actions a:hover {
   color: #fff !important;
-  background: linear-gradient(135deg, var(--mvv-maroon, #5E1426), var(--mvv-maroon-2, #3D0C19));
+  background: linear-gradient(135deg, var(--mvv-maroon, #7A0E1A), var(--mvv-maroon-2, #4E0710));
 }
 
 .mvv-pagination {
@@ -122,9 +122,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--mvv-border, rgba(94,20,38,0.14));
+  border: 1px solid var(--mvv-border, rgba(122,14,26,0.14));
   background: #fff;
-  color: var(--mvv-maroon, #5E1426);
+  color: var(--mvv-maroon, #7A0E1A);
   text-decoration: none;
   font-weight: 800;
   font-size: 0.88rem;
@@ -132,13 +132,13 @@
 
 .mvv-pagination a:hover,
 .mvv-pagination .active span {
-  background: linear-gradient(135deg, var(--mvv-maroon, #5E1426), var(--mvv-maroon-2, #3D0C19));
+  background: linear-gradient(135deg, var(--mvv-maroon, #7A0E1A), var(--mvv-maroon-2, #4E0710));
   color: #fff;
-  border-color: var(--mvv-maroon, #5E1426);
+  border-color: var(--mvv-maroon, #7A0E1A);
 }
 
 .mvv-page-info {
-  color: var(--mvv-muted, #7A6570);
+  color: var(--mvv-muted, #7B6256);
   font-weight: 700;
 }
 

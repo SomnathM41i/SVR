@@ -1,4 +1,4 @@
-<?php require_once('includes/bootstrap.php');
+<?php require_once('sys_dbconnection.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 $limit = 8;
@@ -14,7 +14,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
 <title>Who Viewed My Contact Number</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css?v=activities-ui" rel="stylesheet">
-<link rel="icon" href="branding/favicons/icon-32.png" type="image/png">
+<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/png">
 <style>
 .mvv-page-hero h1 { text-transform:none; }
 </style>

@@ -1,8 +1,8 @@
-<?php require_once('../includes/bootstrap.php');
+<?php require_once('../sys_dbconnection.php');
 include('protect.php');
-
+//include'../dbconnectadmin.php';
 $msg="";
-
+//include'../dbconnectadmin.php';
 	if(isset($_POST['submit']))
 	{
 		$city=mysqli_real_escape_string($con,$_POST['Name']);
@@ -12,28 +12,28 @@ $msg="";
 		$country=mysqli_real_escape_string($con,$_POST['country']);
 			
 		$q="select * from e_city where city='$city' and dist_ref='$dist' and taluka_ref='$taluka'";
-	        
-			
+	        //echo "select * from e_city where city='$city'";
+			//exit;
 		$rs=mysqli_query($con,$q);
 		$num=mysqli_num_rows($rs);
-		
+		//echo $num;
 		if($num>0)
 		{
 			$msg="City already Exist!!";
-			
-			
+			//echo $msg;
+			//exit;
 		}
 		else
 		{		
-				
+				//if($state==""){echo "State empty";}else{ echo $state;}
 				$q="insert into e_city(city,dist_ref,taluka_ref,status) values('$city','$dist','$taluka','enable')";
-				
-				$rs=mysqli_query($con,$q) or svr_db_fail($con);
+				//echo "insert into e_city(city,dist_ref,status) values('$city','$dist','1')";
+				$rs=mysqli_query($con,$q) or die(mysqli_error());
 				if($rs>0)
 				{
 								$msg="City added Successfully!!";
-								
-								
+								//echo $msg;
+								//exit;
 				}
 		}
 		
@@ -53,20 +53,20 @@ if(isset($_POST['Update']))
 		if($num>0)
 		{
 			$msg="City already Exist!!";
-			
-			
+			//echo $msg;
+			//exit;
 		}
 		else
 		{		
-				
+				//if($state==""){echo "State empty";}else{ echo $state;}
 				$q="update e_city set city='$city',dist_ref='$dist',taluka_ref='$taluka' where id='$id'";
-				
-				$rs=mysqli_query($con,$q) or svr_db_fail($con);
+				//echo "update  e_city set city='$city' where id='$id'";
+				$rs=mysqli_query($con,$q) or die(mysqli_error());
 				if($rs>0)
 				{
 								$msg="City Updated Successfully!!";
-								
-								
+								//echo $msg;
+								//exit;
 				}
 		}
 		
@@ -105,17 +105,13 @@ $num3=mysqli_num_rows($rs3);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon"> ?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon"> ?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -125,7 +121,6 @@ $num3=mysqli_num_rows($rs3);
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
@@ -250,7 +245,7 @@ xmlhttp.send();
 		  <?php include('header.php');?>
 		<!-- [ navigation menu ] end -->
 		<!-- Modal -->
-		<?php 
+		<?php //include('notification.php');?>
 		
 		<!-- [ Header ] end -->
 
@@ -418,7 +413,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addcity_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -441,7 +436,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editcity_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -459,7 +454,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -469,7 +464,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

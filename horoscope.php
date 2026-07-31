@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect1.php');
 $login=$_SESSION['MatriID'] ?? null;
 $mid=$_GET['id'] ?? null;
@@ -14,7 +14,7 @@ if (!$me) {
   exit;
 }
 $regvar = $me['reg_step'] ?? '';
-$page_title = 'Horoscope - Manpasand Jodidar';
+$page_title = 'Horoscope - Shivraj Maratha';
 include('header3.php');
 ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -71,7 +71,7 @@ function blockSpecialChar(e){var k;document.all?k=e.keyCode:k=e.which;return((k>
       <?php } elseif($me['HorosApprove'] == 'Rejected'){ ?>
       <div style="background:#dc3545;color:#fff;border-radius:8px;padding:10px 16px;margin-bottom:20px;">Your Horoscope Is Rejected By Admin.</div>
       <?php } elseif($me['HorosApprove'] == "Yes"){ ?>
-      <div style="background:rgba(47, 125, 91,0.1);color:var(--mvv-green);border-radius:8px;padding:10px 16px;margin-bottom:20px;">Your Horoscope Is Approved By Admin.</div>
+      <div style="background:rgba(46,125,50,0.1);color:var(--mvv-green);border-radius:8px;padding:10px 16px;margin-bottom:20px;">Your Horoscope Is Approved By Admin.</div>
       <?php } ?>
 
 <?php

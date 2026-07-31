@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 require_once('includes/annual_income.php');
 
 function anonymizePublicName(string $name): string {
@@ -71,7 +71,7 @@ $heightMap = [
 ];
 
 $maskedName = $profile ? anonymizePublicName((string)($profile['Name'] ?? '')) : 'Profile Not Found';
-$page_title = $profile ? $maskedName.' - Manpasand Jodidar' : 'Profile Not Found - Manpasand Jodidar';
+$page_title = $profile ? $maskedName.' - Shivraj Maratha' : 'Profile Not Found - Shivraj Maratha';
 $backGender = $profile['Gender'] ?? 'Male';
 $backStatus = in_array($profile['Maritalstatus'] ?? '', ['Unmarried', 'Divorced'], true)
     ? $profile['Maritalstatus']
@@ -98,17 +98,17 @@ if ($profile) {
     }
     $ogBaseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
     $page_og_image = ($photoOG !== 'images/nophoto.jpg') ? $ogBaseUrl . $photoOG : '';
-    $page_og_title = $maskedName . ' - Manpasand Jodidar';
-    $page_og_description = 'View ' . $maskedName . '\'s matrimony profile on Manpasand Jodidar.';
+    $page_og_title = $maskedName . ' - Shivraj Maratha';
+    $page_og_description = 'View ' . $maskedName . '\'s matrimony profile on Shivraj Maratha.';
 }
 include('header3.php');
 ?>
 
 <style>
 .public-profile-page{min-height:65vh;padding-bottom:72px;background:linear-gradient(180deg,#fff9f2,#fff 420px)}
-.public-profile-hero{padding:54px 0;background:linear-gradient(135deg,#5E1426,#8b2520);color:#fff}
+.public-profile-hero{padding:54px 0;background:linear-gradient(135deg,#6b1a1a,#8b2520);color:#fff}
 .public-profile-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.public-profile-hero .eyebrow{display:block;margin-bottom:8px;color:#DDB15F;font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.public-profile-hero .eyebrow{display:block;margin-bottom:8px;color:#f0c04a;font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
 .public-profile-hero h1{margin:0 0 7px;color:#fff;font-family:var(--mvv-display);font-size:clamp(2rem,5vw,3.3rem)}
 .public-profile-hero p{margin:0;color:rgba(255,255,255,.75)}
 .public-profile-back{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-size:.85rem;font-weight:700;text-decoration:none}
@@ -182,7 +182,7 @@ include('header3.php');
     $waLines = [];
     $waLines[] = $profileUrl;
     $waLines[] = '';
-    $waLines[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
+    $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
     $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
     $waLines[] = "\u{1F3C3} Name: $maskedName";
     $waLines[] = "\u{1F382} Age: " . ($profile['Age'] ?? '') . ' years';
@@ -193,7 +193,7 @@ include('header3.php');
     if (!empty($profileLocation)) $waLines[] = "\u{1F4CD} Location: $profileLocation";
     if (!empty($profile['Maritalstatus'])) $waLines[] = "\u{1F48D} Marital Status: {$profile['Maritalstatus']}";
     $waLines[] = '';
-    $waLines[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
+    $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
     $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
 ?>
   <section class="public-profile-hero">

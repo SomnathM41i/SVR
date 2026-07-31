@@ -209,12 +209,12 @@ about_section_Policy
 
 .schedule-block .inner-box .innerFamily
 {
-	border: 1px solid #A63E52;
+	border: 1px solid #e6275a;
 }
 
 .schedule-block .innerFamily:after
 {
-   border-right: 20px solid #A63E52;
+   border-right: 20px solid #e6275a;
 }
 
 .schedule-block .inner-box .innerHoroscope
@@ -260,7 +260,7 @@ about_section_Policy
 
 .discaimer-section a:hover
 {
-    color:#A63E52;
+    color:#e6275a;
 }
 
 
@@ -318,7 +318,7 @@ about_section_Policy
 }
 .imgmiddle
 {
-	color: #C9556A;
+	color: #ec167f;
 	margin-top:-576px;
 }
     
@@ -700,7 +700,7 @@ about_section_Policy
 	font-size: 14px;
 	line-height: 20px;
 	color: #ffffff;
-	background-color: #773C47;
+	background-color: #1d95d2;
 	font-weight: 600;
 	cursor: pointer;
 	margin-right: 5px;
@@ -843,7 +843,7 @@ about_section_Policy
 	font-size: 14px;
 	line-height: 20px;
 	color: #ffffff;
-	background-color: #773C47;
+	background-color: #1d95d2;
 	font-weight: 600;
 	cursor: pointer;
 	/*border: 1px solid #dddddd;*/
@@ -926,7 +926,7 @@ about_section_Policy
 
 .educationalBlock3
 {
-	border-color: #BA9350;
+	border-color: #40cbb4;
 }*/
 
 @media screen and (max-width: 768px)

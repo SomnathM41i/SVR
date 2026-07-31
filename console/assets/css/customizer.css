@@ -113,7 +113,7 @@ File: style.css
       .theme-color > a span:before {
     width: 32%;
     left: 0;
-    background: #3D0C19;
+    background: #1c232f;
 }
 
 .doc-img > a span:after,
@@ -142,7 +142,7 @@ File: style.css
 
 .doc-img.header-color > a[data-value="bg-primary"] > span:nth-child(1):after,
   .theme-color.header-color > a[data-value="bg-primary"] > span:nth-child(1):after {
-    background: #7A1F39;
+    background: #7267EF;
 }
 
 .doc-img.header-color > a[data-value="bg-success"] > span:nth-child(1):after,
@@ -167,12 +167,12 @@ File: style.css
 
 .doc-img.header-color > a[data-value="bg-dark"] > span:nth-child(1):after,
   .theme-color.header-color > a[data-value="bg-dark"] > span:nth-child(1):after {
-    background: #3D0C19;
+    background: #1c232f;
 }
 
 .doc-img.brand-color > a[data-value="bg-primary"] > span:nth-child(1):before,
   .theme-color.brand-color > a[data-value="bg-primary"] > span:nth-child(1):before {
-    background: #7A1F39;
+    background: #7267EF;
 }
 
 .doc-img.brand-color > a[data-value="bg-success"] > span:nth-child(1):before,
@@ -197,7 +197,7 @@ File: style.css
 
 .doc-img.brand-color > a[data-value="bg-dark"] > span:nth-child(1):before,
   .theme-color.brand-color > a[data-value="bg-dark"] > span:nth-child(1):before {
-    background: #3D0C19;
+    background: #1c232f;
 }
 
 .doc-img > a {
@@ -207,7 +207,7 @@ File: style.css
 
 .pc-header[class*="bg-"], .pc-header.dark-header {
     box-shadow: none;
-    background: #3D0C19;
+    background: #1c232f;
     color: #fff;
 }
 
@@ -244,7 +244,7 @@ File: style.css
 }
 
 .pc-sidebar.light-sidebar .pc-caption {
-    color: #7A1F39;
+    color: #7267EF;
 }
 
 .pc-sidebar.light-sidebar .pc-navbar > .pc-item > .pc-link {
@@ -255,7 +255,7 @@ File: style.css
 }
 
 .pc-sidebar.light-sidebar .pc-link {
-    color: #3D0C19;
+    color: #1c232f;
     font-size: 14px;
 }
 
@@ -271,17 +271,17 @@ File: style.css
 }
 
 .pc-sidebar.light-sidebar .pc-link:active, .pc-sidebar.light-sidebar .pc-link:focus, .pc-sidebar.light-sidebar .pc-link:hover {
-    color: #7A1F39;
+    color: #7267EF;
 }
 
 .pc-sidebar.light-sidebar .pc-item.active > .pc-link,
   .pc-sidebar.light-sidebar .pc-item:hover > .pc-link {
-    color: #7A1F39;
+    color: #7267EF;
 }
 
 .pc-sidebar.light-sidebar .pc-navbar > .pc-item.active > .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:focus > .pc-link, .pc-sidebar.light-sidebar .pc-navbar > .pc-item:hover > .pc-link {
     background: #dfe7f1;
-    color: #3D0C19;
+    color: #1c232f;
 }
 
 .minimenu .pc-sidebar.light-sidebar .pc-navbar > .pc-item > .pc-link {
@@ -306,11 +306,11 @@ File: style.css
 }
 
 .pc-horizontal .topbar.light-sidebar .pc-link {
-    color: #3D0C19;
+    color: #1c232f;
 }
 
 .pc-horizontal .topbar.light-sidebar .pc-link:active, .pc-horizontal .topbar.light-sidebar .pc-link:focus, .pc-horizontal .topbar.light-sidebar .pc-link:hover {
-    color: #7A1F39;
+    color: #7267EF;
 }
 
 .creative-layout .pc-sidebar.light-sidebar .pc-navbar > .pc-item + .pc-item > .pc-link {

@@ -1,4 +1,4 @@
-<?php  require_once('includes/bootstrap.php'); ?>
+<?php  require_once('sys_dbconnection.php');/*include('dbconnectadmin.php');*/ ?>
 <!DOCTYPE html>
  <html lang="en">
 <head>
@@ -11,12 +11,8 @@
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -169,12 +165,11 @@ xmlhttp.send();
                             <div class="text">Please enter your email address to search for your account..</div>
                         </div>
                     </div>
-                    <?php if(isset($_GET['action']) && $_GET['action']=='throttled'){ ?>
-              <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Too many reset requests. Please try again later.</font></h5><br>
-                <?php } elseif(isset($_GET['action']) && $_GET['action']=='invalidlink'){ ?>
-              <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">This password reset link is invalid or has expired. Please request a new one.</font></h5><br>
-                <?php } elseif(isset($_GET['action'])){ ?>
+                    <?php if(isset($_GET['action'])){ ?>
               <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">You enter Wrong Username and Password </font></h5><br>
+				 	
+			        
+             
                 <?php } ?>
                 <?php if(isset($_GET['action1'])){ ?> 
               <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Your Password Change Successfully</font></h5>
@@ -183,7 +178,6 @@ xmlhttp.send();
               
             				  
              <form method="post" action="forgot_password_submit" id="contact-form">
-               <?php require_once('includes/security.php'); echo svr_csrf_field(); ?>
 					     <div class="row clearfix">
 						 <div class="col-lg-2 col-md-4 col-sm-4">
 			         </div>

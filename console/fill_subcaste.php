@@ -1,6 +1,5 @@
- <?php require_once('../includes/bootstrap.php');  
-require_once(dirname(__FILE__).'/protect.php');
- 	
+ <?php require_once('../sys_dbconnection.php');  
+ 	/*include'../dbconnectadmin.php';*/
  	$religion=$_GET['q'];
 	$q="select * from caste where Religion='$religion' ORDER BY state ASC";
 	$rs1=mysqli_query($con,$q);

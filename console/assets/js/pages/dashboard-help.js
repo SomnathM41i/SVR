@@ -57,7 +57,7 @@ $(document).ready(function() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             stroke: {
                 curve: 'smooth',
                 width: 2,
@@ -146,7 +146,7 @@ $(document).ready(function() {
             theme: {
                 monochrome: {
                     enabled: true,
-                    color: '#7A1F39',
+                    color: '#7267EF',
                 }
             },
             responsive: [{

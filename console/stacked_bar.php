@@ -1,6 +1,5 @@
-<?php require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-	
+<?php require_once('../sys_dbconnection.php');
+	/*include "../dbconnectadmin.php";*/
 	
 	//PAID MEMBER
 	$query = "SELECT Status,COUNT(MatriID) FROM register where Status='Paid' "; 
@@ -26,7 +25,45 @@ require_once(dirname(__FILE__).'/protect.php');
 	
 
 ?>
-<?PHP  ?>
+<?PHP /*
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() 
+	  {
+        var data = google.visualization.arrayToDataTable([
+          [' ', 'TOTAL', 'FREE', 'PAID' ],
+          ['<?php echo date('Y');?>', <?php echo $value?> , <?php echo $val1?>, <?php echo $val?> ],
+
+          
+          
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: '',
+
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          colors: ['#7267EF', '#EA4D4D', '#FFA21D','#76A7FA']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
+*/ ?>
 
 <html>
   <head>
@@ -48,7 +85,7 @@ require_once(dirname(__FILE__).'/protect.php');
             subtitle: '',
           },
           bars: 'horizontal',// Required for Material Bar Charts.
-			colors: ['#7A1F39', '#EA4D4D', '#FFA21D','#76A7FA']
+			colors: ['#7267EF', '#EA4D4D', '#FFA21D','#76A7FA']
         };
 
         var chart = new google.charts.Bar(document.getElementById('barchart_material'));

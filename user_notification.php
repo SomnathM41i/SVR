@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect.php');
 $id = $_SESSION['matriid'];
 $res12 = mysqli_query($con, "SELECT * FROM usernote where MatriID='$id' order by id DESC");
@@ -12,20 +12,16 @@ $total = mysqli_num_rows($res12);
 <title>User Notification</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-page{min-height:60vh;padding-top:0;padding-bottom:60px;}
 .mvv-container{max-width:1200px;margin:0 auto;padding:0 16px;}
-.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#7A1F39);padding:40px 0 30px;margin-bottom:32px;}
+.mvv-page-hero{background:linear-gradient(135deg,var(--mvv-maroon),#8B1A1A);padding:40px 0 30px;margin-bottom:32px;}
 .mvv-page-hero h1{color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin:4px 0;text-align:center;}
 .mvv-page-hero .mvv-eyebrow{text-align:center;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:600;}
 .mvv-page-hero p{text-align:center;color:rgba(255,255,255,.7);margin:0 0 8px;}
@@ -40,7 +36,7 @@ $total = mysqli_num_rows($res12);
 .mvv-notif-text{flex:1;font-size:0.95rem;color:#444;line-height:1.5;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#7A1F39;}
+.mvv-btn.primary:hover{background:#8B1A1A;}
 </style>
 </head>
 <body>

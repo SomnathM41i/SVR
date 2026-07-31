@@ -177,41 +177,32 @@ function ap_start($title) {
     <title><?php echo ap_h($title); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../console/assets/fonts/feather.css">
     <link rel="stylesheet" href="../console/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="../console/assets/css/style.css">
-    <link rel="stylesheet" href="../console/assets/css/mpj-brand.css">
-    <!-- MPJ: brand typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         html, body { min-height:100%; }
-        body { background:#FFFDFB; color:#43303A; display:flex; flex-direction:column; font-family:'Poppins',sans-serif; }
+        body { background:#FDFAF5; color:#2D1F3D; display:flex; flex-direction:column; }
         .ap-shell { width:100%; max-width:1180px; margin:0 auto; padding:24px 18px 48px; flex:1 0 auto; }
-        .ap-top { background:linear-gradient(135deg,#3D0C19,#5E1426); color:#fff; border-bottom:2px solid #BA9350; }
+        .ap-top { background:#1c232f; color:#fff; }
         .ap-top-inner { max-width:1180px; margin:0 auto; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-        .ap-brand { display:flex; align-items:center; gap:12px; font-weight:700; font-family:'Playfair Display',Georgia,serif; letter-spacing:.02em; font-size:18px; }
-        .ap-brand img { width:48px; height:48px; border-radius:50%; background:#fff; border:2px solid #BA9350; padding:2px; }
-        .ap-nav { background:#fff; border-bottom:1px solid rgba(186,147,80,0.25); box-shadow:0 2px 16px rgba(67,48,58,0.06); }
+        .ap-brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+        .ap-brand img { width:48px; height:48px; border-radius:50%; background:#fff; }
+        .ap-nav { background:#fff; border-bottom:1px solid rgba(201,168,76,0.25); box-shadow:0 2px 16px rgba(45,31,61,0.06); }
         .ap-nav-inner { max-width:1180px; margin:0 auto; padding:10px 18px; display:flex; gap:10px; flex-wrap:wrap; }
-        .ap-nav a { color:#43303A; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600; font-size:13px; }
-        .ap-nav a:hover, .ap-nav a.active { background:#F7E7EB; color:#5E1426; }
-        .ap-title { margin:0 0 18px; font-size:22px; font-weight:700; font-family:'Playfair Display',Georgia,serif; color:#5E1426; }
+        .ap-nav a { color:#2D1F3D; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600; font-size:13px; }
+        .ap-nav a:hover, .ap-nav a.active { background:#F5EAE9; color:#8B1A2F; }
+        .ap-title { margin:0 0 18px; font-size:22px; font-weight:700; }
         .ap-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-bottom:18px; }
         @media(max-width:992px){ .ap-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
         @media(max-width:560px){ .ap-grid { grid-template-columns:1fr; } .ap-top-inner { align-items:flex-start; flex-direction:column; } }
-        .ap-card { background:#fff; border:1px solid rgba(186,147,80,0.25); border-radius:14px; box-shadow:0 2px 20px rgba(67,48,58,0.08); padding:18px; }
-        .ap-stat-label { color:#8A7380; font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px; }
-        .ap-stat-value { color:#5E1426; font-size:30px; font-family:'Playfair Display',Georgia,'Times New Roman',serif; font-weight:700; line-height:1; }
-        .ap-footer { flex-shrink:0; background:linear-gradient(135deg,#3D0C19,#5E1426); color:#E3CBB2; border-top:2px solid #BA9350; margin-top:auto; }
+        .ap-card { background:#fff; border:1px solid rgba(201,168,76,0.25); border-radius:14px; box-shadow:0 2px 20px rgba(45,31,61,0.08); padding:18px; }
+        .ap-stat-label { color:#7A6E82; font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px; }
+        .ap-stat-value { color:#8B1A2F; font-size:30px; font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1; }
+        .ap-footer { flex-shrink:0; background:#1c232f; color:#b5bdca; border-top:1px solid rgba(201,168,76,0.28); margin-top:auto; }
         .ap-footer-inner { max-width:1180px; margin:0 auto; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:13px; }
-        .ap-footer a { color:#DDB15F; text-decoration:none; }
+        .ap-footer a { color:#e6d08a; text-decoration:none; }
         .ap-footer a:hover { color:#fff; }
         .ap-footer-links { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
         @media(max-width:560px){ .ap-footer-inner { align-items:flex-start; flex-direction:column; } }
@@ -221,7 +212,7 @@ function ap_start($title) {
 <body>
 <div class="ap-top">
     <div class="ap-top-inner">
-        <div class="ap-brand"><img src="../branding/logos/emblem.png" alt=""> <span>Agent Panel</span></div>
+        <div class="ap-brand"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt=""> <span>Agent Panel</span></div>
         <div><?php echo ap_h($agent['full_name'] ?? 'Agent'); ?></div>
     </div>
 </div>
@@ -243,7 +234,7 @@ function ap_start($title) {
 
 function ap_end() {
     global $con;
-    $footerText = 'Manpasand Jodidar';
+    $footerText = 'Shivraj Maratha';
     $result = $con->query("SELECT copyright_footer FROM siteconfig WHERE ID='1' LIMIT 1");
     if ($result && ($row = $result->fetch_assoc()) && trim((string)$row['copyright_footer']) !== '') {
         $footerText = $row['copyright_footer'];

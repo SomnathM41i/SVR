@@ -3,7 +3,7 @@
 // ini_set('display_errors', 1);
 // error_reporting(-1);
 
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect.php');
 
 $matriid = $_SESSION['MatriID'];
@@ -11,22 +11,22 @@ $matriid = $_SESSION['MatriID'];
 // Fetch member info
 $matriid_safe = mysqli_real_escape_string($con, $matriid);
 $result = mysqli_query($con, "SELECT * FROM register WHERE MatriID = '$matriid_safe'")
-    or svr_db_fail($con);
+    or die(mysqli_error($con));
 $record = mysqli_fetch_array($result);
 
 // Fetch plan info
 $strplanid = mysqli_real_escape_string($con, $_POST['choose'] ?? '');
 $plan = mysqli_query($con, "SELECT * FROM membershipplan WHERE planid = '$strplanid'")
-    or svr_db_fail($con);
+    or die(mysqli_error($con));
 $plan_row = mysqli_fetch_array($plan);
 
 // Check payment gateway status
 $data_config = $db->get_siteconfig();
-
+//$pay_on_off  = $data_config->is_pay_gateway_set;
 $pay_on_off = 1;
-// Razorpay Keys — now resolve from env/config with legacy fallbacks (SECURITY)
-define('RZP_KEY_ID',     svr_config('SVR_RZP_KEY_ID', 'rzp_live_SjeGNwfy1DxQuC'));
-define('RZP_KEY_SECRET', svr_config('SVR_RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1'));
+// Razorpay Keys
+define('RZP_KEY_ID',     'rzp_live_SjeGNwfy1DxQuC');  // ← Your Razorpay Key ID
+define('RZP_KEY_SECRET', 'WrbEZmhz7NlXIHiH58Qb9ux1');    // ← Your Razorpay Key Secret
 
 // Generate unique order/transaction ID
 $strinv     = "MAT";
@@ -100,11 +100,7 @@ if ($pay_on_off != 0 && $amount > 0) {
 <link href="css/responsive.css" rel="stylesheet">
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="card.css" rel="stylesheet">
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -244,9 +240,9 @@ var rzpOptions = {
     key:         '<?php echo RZP_KEY_ID; ?>',
     amount:      '<?php echo $amountInPaise; ?>',
     currency:    'INR',
-    name:        'Manpasand Jodidar',
+    name:        'Weddings parampara',
     description: '<?php echo addslashes($plan_row["plandisplayname"]); ?> Plan',
-    image:       'branding/logos/emblem.png',   // MPJ: checkout logo — was old-brand images/logo-2.png (1254px, 1.2 MB)
+    image:       'logo-2.png',   // ← your logo path
     order_id:    '<?php echo $rzpOrderId; ?>',
     prefill: {
         name:    '<?php echo addslashes($record["Name"] ?? $record["MatriID"]); ?>',

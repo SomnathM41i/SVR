@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 
 $ID=$_GET['id'] ?? '';
 $register=mysqli_query($con,"select * from register where MatriID='$ID'");
@@ -72,7 +72,7 @@ $profileLocationType = $row['profile_location_type']
   ?? ($me['profile_location_type'] ?? ($_SESSION['registration_profile_type'] ?? 'Indian Resident'));
 $isNriProfile = $profileLocationType === 'NRI';
 ?>
-<?php $page_title = 'Contact Details - Manpasand Jodidar'; include('header3.php'); ?>
+<?php $page_title = 'Contact Details - Shivraj Maratha'; include('header3.php'); ?>
 <style>
 .mvv-form .mvv-checkbox-label {
   width: 100%;
@@ -93,7 +93,7 @@ $isNriProfile = $profileLocationType === 'NRI';
 }
 
 .mvv-form .mvv-checkbox-label:hover {
-  border-color: rgba(186, 147, 80,0.58);
+  border-color: rgba(212,164,55,0.58);
   background: rgba(244,231,218,0.62);
   box-shadow: 0 8px 22px rgba(58,42,34,0.07);
 }

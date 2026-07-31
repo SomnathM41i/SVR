@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include_once('memprotect.php');?>
 $limit = 8; 
  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
@@ -13,7 +13,7 @@ $start_from = ($page-1) * $limit;
 <title>Who Viewed My Profile</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="icon" href="branding/favicons/icon-32.png" type="image/png">
+<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/png">
 <style>
 @media screen and (max-width: 568px){
 .speaker-block .inner-box {
@@ -42,7 +42,7 @@ $start_from = ($page-1) * $limit;
   </div>
 </section>
 <?php
-	
+	//$strid = $_SESSION['matri_login'];
 $check=mysqli_query($con,"select matriid from block_member where profile_id='$login'"); 
 $data1=array();
 while($check1=mysqli_fetch_array($check))
@@ -74,15 +74,15 @@ $total_pages = ceil($total_records / $limit);
                 	<?php
 				while($recs = mysqli_fetch_array($result1)) {
 				
-
+//echo $recs['date'];
 				  $s=mysqli_query($con,"select * from  register where MatriID='".$recs['who']."'");
-				
+				// echo "select * from  register where MatriID='".$recs['whom']."'";
 				   while($rec=mysqli_fetch_array($s))
 					{
 				$cnt++;
 				$path="";
 				$is_block = mysqli_query($con,"select *from block_member where matriid ='$login' AND profile_id = '".$recs['who']."'");
-				
+				//echo "select *from block_member where matriid ='$login' AND profile_id = '".$recs['whom']."'";
 				if(mysqli_num_rows($is_block)==1)
 				continue;
 				?>  

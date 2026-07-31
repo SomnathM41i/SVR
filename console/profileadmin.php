@@ -1,6 +1,5 @@
-<?php require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-  
+<?php require_once('../sys_dbconnection.php');
+  /*include '../dbconnectadmin.php';*/
   $result=mysqli_query($con,"select * from siteconfig where ID='1'");
   $fetch1=mysqli_fetch_array($result);
   //error_reporting(0);
@@ -15,18 +14,14 @@ require_once(dirname(__FILE__).'/protect.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit"/>
 
     <!-- Favicon icon -->
       <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="assets/css/plugins/select2.min.css">
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
     <!-- font css -->
@@ -36,7 +31,6 @@ require_once(dirname(__FILE__).'/protect.php');
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css"> 
 	<link rel="stylesheet" href="assets/css/popup.css">
@@ -44,7 +38,7 @@ require_once(dirname(__FILE__).'/protect.php');
 
 	<style>
 		body {
-			background: #FFFDFB;
+			background: #FDFAF5;
 		}
 		.admin-profileadmin-container {
 			padding-top: 36px;
@@ -55,14 +49,14 @@ require_once(dirname(__FILE__).'/protect.php');
 			padding-top: 0 !important;
 		}
 		.admin-profileadmin-container .card {
-			border: 1px solid rgba(186,147,80,0.25);
+			border: 1px solid rgba(201,168,76,0.25);
 			border-radius: 14px;
-			box-shadow: 0 2px 20px rgba(67,48,58,0.08);
+			box-shadow: 0 2px 20px rgba(45,31,61,0.08);
 			overflow: hidden;
 		}
 		.admin-profileadmin-container .card-header {
 			background: #fff;
-			border-bottom: 1px solid rgba(186,147,80,0.25);
+			border-bottom: 1px solid rgba(201,168,76,0.25);
 			padding: 18px 22px;
 		}
 		.admin-profileadmin-container .card-body {

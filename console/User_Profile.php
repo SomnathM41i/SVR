@@ -1,17 +1,8 @@
 <?php 
-    require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-    $id = base64_decode(urldecode(isset($_REQUEST['id']) ? $_REQUEST['id'] : '') );
-    /* SECURITY (H1): prepared statement instead of raw interpolation. */
-    $me = null;
-    $stmt = mysqli_prepare($con, "SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid=? LIMIT 1");
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "s", $id);
-        mysqli_stmt_execute($stmt);
-        $my_profile = mysqli_stmt_get_result($stmt);
-        $me = $my_profile ? mysqli_fetch_array($my_profile) : null;
-        mysqli_stmt_close($stmt);
-    }
+    require_once('../sys_dbconnection.php');
+    $id = base64_decode(urldecode($_REQUEST['id']) );
+    $my_profile = mysqli_query($con,"SELECT *,date_format(DOB,'%d-%M-%Y') as DOB FROM register where matriid='$id'");
+    $me = mysqli_fetch_array($my_profile);
 	$my_profile1 = mysqli_query($con,"SELECT * from siteconfig");
     $mydat = mysqli_fetch_array($my_profile1);
 ?>
@@ -26,28 +17,23 @@ require_once(dirname(__FILE__).'/protect.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
     
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
-	<!-- MPJ: removed 404 link 'assets/css/stylnew.css' (typo of stylenew.css; file never existed, page loads style.css below as before) -->
+	<link rel="stylesheet" href="assets/css/stylnew.css" id="main-style-link">
 	<link rel="stylesheet" href="assets/css/advance.css" id="main-style-link">
 
 	<!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link href="../css/style.css?v=505020.0" rel="stylesheet">
@@ -146,7 +132,7 @@ require_once(dirname(__FILE__).'/protect.php');
         }
 
         a {
-            color: #7A1F39;
+            color: #007bff;
             text-decoration: none;
             background-color: transparent;
             -webkit-text-decoration-skip: objects;
@@ -204,8 +190,8 @@ require_once(dirname(__FILE__).'/protect.php');
                                 <input type='hidden' id='test' value='<?php 
                                 echo $id; ?>'>
 								
-                                <img src ="../branding/logos/emblem.png"  />
-                                
+                                <img src ="http://localhost/SVR/css3/assets/shivraj-logo.png"  />
+                                <!-- <b><?php echo $me['Name']; ?> | <?php echo $me['MatriID']; ?></b> -->
                             </div>
                             <div class="card-body pb-0">
                                 <div class="gallery-item1  wow fadeIn">
@@ -236,8 +222,10 @@ require_once(dirname(__FILE__).'/protect.php');
         </div>
         <script src="plugins/node-waves/waves.js"></script>
         <script>  
-        
-        
+        //user-defined function to open and share web content on WhatsApp  
+        /*function openWhatsApp() {  
+            window.open('whatsapp://send?text= https://www.youtube.com/watch?v=ohpCMpderow');  
+            }  */
         </script>  
         <?php 
             if( isset($_SESSION['admin_id']) )
@@ -323,7 +311,7 @@ require_once(dirname(__FILE__).'/protect.php');
                     $('.m-header').addClass('bg-dark');
                 } else {
                     $('.m-header').removeClassPrefix('bg-');
-                    $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+                    $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
                     $('.theme-color.brand-color').addClass('d-none');
                 }
             });
@@ -333,7 +321,7 @@ require_once(dirname(__FILE__).'/protect.php');
                     $('.m-header').removeClassPrefix('bg-');
                 } else {
                     $('.m-header').removeClassPrefix('bg-');
-                    $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+                    $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
                     $('.m-header').addClass(temp);
                 }
             });
@@ -381,6 +369,6 @@ require_once(dirname(__FILE__).'/protect.php');
           gtag('config', 'G-Q8H86P6FK7');
         </script>
         <script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
-        <?php 
+        <?php //include('footer.php')?>
     </body>
 </html>

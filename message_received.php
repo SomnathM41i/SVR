@@ -1,12 +1,12 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include_once('memprotect.php');
  //include_once('siteconfig.php');
  //include_once('dbconnectadmin.php');
 $from = 0;
 $max_results = 10; 
 $sender=$_SESSION['matriid'];
-
+//print_r($_SESSION);
 $receiver=$_GET['id'];
 
 $sender_sql=mysqli_query($con,"select * from  register where MatriID='$receiver'");
@@ -17,7 +17,7 @@ $mem_info=mysqli_fetch_array($mem_sql);
 
 $strid = $_SESSION['matriid'];
 $chat = mysqli_query($con,"SELECT * FROM receivemessage WHERE ToID IN('$strid','$sender') order by rid DESC LIMIT $from, $max_results ");
-$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or svr_db_fail($con);	
+$sqlcnt=mysqli_query($con,"select * from receivemessage where FromID='$receiver' and ToID='$sender'") or die(mysqli_error($con));	
 date_default_timezone_set("Asia/Kolkata");
 $dt=date('Y-m-d');
 $hr=date('h');
@@ -34,19 +34,15 @@ $am=date('a');
 <title>Recieved Messages</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <style>
-:root{--mvv-maroon:#5E1426;--mvv-saffron:#C9556A;--mvv-gold:#BA9350;--mvv-cream:#FFFDFB;--mvv-border:#e0d5cb;--mvv-muted:#888;}
+:root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}
 .mvv-btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;transition:.2s;}
 .mvv-btn.primary{background:var(--mvv-maroon);color:#fff;}
-.mvv-btn.primary:hover{background:#7A1F39;}
+.mvv-btn.primary:hover{background:#8B1A1A;}
 .comments-area .comment-box{padding:12px 0;border-bottom:1px solid var(--mvv-border);}
 .comments-area .comment-box:last-child{border-bottom:none;}
 .comment{display:flex;flex-wrap:wrap;gap:12px;}
@@ -57,7 +53,7 @@ $am=date('a');
 .comment-info .name a{color:var(--mvv-maroon);text-decoration:none;}
 .comment-info .date{display:inline;color:var(--mvv-muted);font-size:.85rem;}
 .text{width:100%;margin-top:6px;color:#555;}
-.message{margin-right:5px;color:#773C47;font-size:18px;}
+.message{margin-right:5px;color:#1d95d2;font-size:18px;}
 @media screen and (max-width:768px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 @media screen and (max-width:568px){.error-section{padding:80px 0px;}.errtitle{display:none;}}
 </style>
@@ -101,10 +97,10 @@ $am=date('a');
       <?php
       foreach($idu as $idd)
       {			
-        $sender=mysqli_query($con,"select * from register where MatriID='$idd'  ")or svr_db_fail($con);
+        $sender=mysqli_query($con,"select * from register where MatriID='$idd'  ")or die(mysqli_error());
         $sender_rec=mysqli_fetch_array($sender);
         $count=mysqli_query($con,"select * from receivemessage where (ToID='".$_SESSION['matri_login']."' and FromID='$idd')");
-        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or svr_db_fail($con);
+        $lastmessage=mysqli_query($con,"select LEFT(Msg,100) as text from receivemessage where ToID='$idd' or FromID='$idd' ORDER BY rid DESC")or die(mysql_error());
         $recivems=mysqli_query($con,"select * from receivemessage where  FromID='$idd' and ToID='$strid' ORDER BY rid DESC");
         $receie=mysqli_fetch_array($recivems);
         ?>
@@ -123,7 +119,7 @@ $am=date('a');
               </div>
               <div class="text" style="margin-top:8px;"><?php echo $receie['Msg'];?></div>
               <a href="send_message?id=<?php echo $idd?>" class="mvv-btn primary" style="margin-top:10px;">Reply</a>
-              <?php  ?>
+              <?php /*<a href="send_message?id=<?php echo $idd?>" class="">Message(<?php echo mysqli_num_rows($count);?>)</a><div class=""></div> */ ?>
             </div>
           </div>
         </div>

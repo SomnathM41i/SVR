@@ -38,7 +38,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#F2CFD7","#7A1F39"],
+            colors: ["#c7d9ff","#7267EF"],
             stroke: {
                 show: true,
                 width: 2,
@@ -99,7 +99,7 @@ function floatchart() {
                     left: 0
                 },
             },
-            colors: ["#7A1F39", "#7A1F39"],
+            colors: ["#7267EF", "#7267EF"],
             fill: {
                 opacity: [1, 0.3]
             },

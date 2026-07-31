@@ -1,13 +1,14 @@
-<?php require_once('includes/bootstrap.php');
+<?php require_once('sys_dbconnection.php');
 require_once('includes/partner_match.php');
-
+/*include('dbconnectadmin.php');
+session_start();*/
 
 //error_reporting(0);
 $data_config = $db->get_siteconfig();
 $translator_on_off = $data_config-> translator_on_off;
-$mvvLogo = 'branding/logos/emblem.png';
-$smLogo = 'branding/logos/emblem.png';
-$smLogoLocal = 'branding/favicons/icon-32.png';
+$mvvLogo = 'css3/assets/shivraj-logo.png';
+$smLogo = 'css3/assets/shivraj-logo.png';
+$smLogoLocal = 'css3/assets/shivraj-logo.png';
 ?><style>
 /* ══════════════════════════════════════════
    CRITICAL RESET — applied first to prevent any gap above header
@@ -95,29 +96,27 @@ if ($id === '' && $login && $regvar != '9') {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- MPJ Brand Tokens & Utilities -->
-<link rel="stylesheet" href="branding/branding.css">
 
 <style>
 /* =============================================
-   MANPASAND JODIDAR DESIGN SYSTEM — Header (merged)
+   SHIVRAJ MARATHA DESIGN SYSTEM — Header (merged)
    Inspired by both legacy & template
 ============================================= */
 :root {
-  --mvv-saffron:      #C9556A;
-  --mvv-saffron-dark: #A63E52;
-  --mvv-maroon:       #5E1426;
-  --mvv-maroon-dark:  #3D0C19;
-  --mvv-gold:         #BA9350;
-  --mvv-gold-light:   #DDB15F;
-  --mvv-cream:        #FFFDFB;
-  --mvv-cream-2:      #F9E7DC;
-  --mvv-ink:          #3A2530;
-  --mvv-muted:        #7A6570;
+  --mvv-saffron:      #E8612A;
+  --mvv-saffron-dark: #C94D1A;
+  --mvv-maroon:       #6B1A1A;
+  --mvv-maroon-dark:  #4A0E0E;
+  --mvv-gold:         #C9921A;
+  --mvv-gold-light:   #F0C04A;
+  --mvv-cream:        #FFF8F0;
+  --mvv-cream-2:      #F7ECDD;
+  --mvv-ink:          #271A1B;
+  --mvv-muted:        #7A5C4A;
   --mvv-white:        #FFFFFF;
-  --mvv-line:         rgba(94,20,38,0.12);
+  --mvv-line:         rgba(107,26,26,0.12);
   --mvv-shadow:       0 20px 60px rgba(79,35,25,0.12);
   --mvv-radius:       22px;
   --mvv-radius-sm:    12px;
@@ -125,21 +124,21 @@ if ($id === '' && $login && $regvar != '9') {
   --mvv-display:      'Playfair Display', Georgia, serif;
   --mvv-deva:         'Noto Sans Devanagari', sans-serif;
 
-  --saffron:        #C9556A;
-  --saffron-light:  #DB7F94;
-  --saffron-glow:   #E3CBB2;
-  --deep-maroon:    #5E1426;
-  --maroon:         #7A1F39;
-  --cream:          #FFFDFB;
-  --gold:           #BA9350;
-  --gold-light:     #DDB15F;
+  --saffron:        #E8612A;
+  --saffron-light:  #F4834A;
+  --saffron-glow:   #FFB347;
+  --deep-maroon:    #6B1A1A;
+  --maroon:         #8B2230;
+  --cream:          #FFF8F0;
+  --gold:           #C9921A;
+  --gold-light:     #F0C04A;
   --dark:           #1A0A00;
   --text-main:      #2C1810;
-  --text-muted:     #7A6570;
+  --text-muted:     #7A5C4A;
   --border-warm:    rgba(200,130,50,0.25);
-  --gradient-hero:  linear-gradient(135deg, #5E1426 0%, #7A1F39 40%, #C9556A 100%);
-  --gradient-card:  linear-gradient(145deg, #FFFDFB 0%, #FDEBD0 100%);
-  --shadow-warm:    0 8px 40px rgba(94,20,38,0.18);
+  --gradient-hero:  linear-gradient(135deg, #6B1A1A 0%, #8B2230 40%, #E8612A 100%);
+  --gradient-card:  linear-gradient(145deg, #FFF8F0 0%, #FDEBD0 100%);
+  --shadow-warm:    0 8px 40px rgba(107,26,26,0.18);
   --shadow-card:    0 4px 24px rgba(200,100,30,0.12);
 }
 
@@ -169,7 +168,7 @@ button { font: inherit; cursor: pointer; }
 /* ─── TOP BAR ─── */
 .mvv-topbar {
   background: var(--mvv-maroon-dark);
-  color: #E3CBB2;
+  color: #f8e8d0;
   font-size: 13px;
 }
 .mvv-topbar-inner {
@@ -183,7 +182,7 @@ button { font: inherit; cursor: pointer; }
   gap: 24px;
 }
 .mvv-topbar a {
-  color: #E3CBB2;
+  color: #f8e8d0;
   transition: color 0.2s;
   display: inline-flex;
   align-items: center;
@@ -380,10 +379,10 @@ button { font: inherit; cursor: pointer; }
 .mvv-nav-btn-outline {
   background: transparent;
   color: var(--mvv-maroon) !important;
-  border: 1.5px solid rgba(94,20,38,0.3);
+  border: 1.5px solid rgba(107,26,26,0.3);
 }
 .mvv-nav-btn-outline:hover {
-  background: rgba(94,20,38,0.06);
+  background: rgba(107,26,26,0.06);
   border-color: var(--mvv-maroon);
 }
 
@@ -412,7 +411,7 @@ button { font: inherit; cursor: pointer; }
   width: 36px;
   height: 36px;
   border: none;
-  background: rgba(94,20,38,0.08);
+  background: rgba(107,26,26,0.08);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
@@ -442,7 +441,7 @@ button { font: inherit; cursor: pointer; }
   font-weight: 600;
   color: var(--mvv-maroon);
   padding: 4px 12px;
-  background: rgba(94,20,38,0.06);
+  background: rgba(107,26,26,0.06);
   border-radius: 999px;
 }
 
@@ -618,15 +617,15 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   padding: 0 14px;
   font-size: 0.94rem;
   background: #fff;
-  color: var(--mvv-text, #3A2530);
+  color: var(--mvv-text, #3A2A22);
   appearance: auto;
   -webkit-appearance: auto;
 }
 .contact-form select:focus,
 .contact-form .form-group select:focus {
-  border-color: var(--mvv-gold, #BA9350);
+  border-color: var(--mvv-gold, #D4A437);
   outline: none;
-  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.13);
+  box-shadow: 0 0 0 4px rgba(212,164,55,0.13);
 }
 
 /* ─── RESPONSIVE ─── */
@@ -703,7 +702,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   .mvv-nav > a:not(.mvv-nav-btn)::after,
   .mvv-nav-dropdown > button::after { display: none; }
   .mvv-nav > a:not(.mvv-nav-btn).active {
-    background: rgba(201, 85, 106,0.08);
+    background: rgba(232,97,42,0.08);
     border-radius: 8px;
     color: var(--mvv-saffron);
   }
@@ -833,7 +832,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
 .mvv-navbar-outer .mvv-nav > a:not(.mvv-nav-btn)::after,
 .mvv-navbar-outer .mvv-nav-dropdown > button::after { background: var(--mvv-saffron) !important; }
 .mvv-navbar-outer .mvv-menu-toggle {
-  background: rgba(94, 20, 38, 0.08) !important;
+  background: rgba(107, 26, 26, 0.08) !important;
 }
 .mvv-navbar-outer .mvv-menu-toggle span { background: var(--mvv-maroon) !important; }
 .mvv-navbar-outer .welcome-strip .welcome-label { color: var(--mvv-saffron) !important; }
@@ -841,10 +840,10 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
 .mvv-navbar-outer .mvv-nav-btn-light {
   background: transparent;
   color: var(--mvv-maroon) !important;
-  border-color: rgba(94, 20, 38, 0.30);
+  border-color: rgba(107, 26, 26, 0.30);
 }
 .mvv-navbar-outer .mvv-nav-btn-light:hover {
-  background: rgba(94, 20, 38, 0.06);
+  background: rgba(107, 26, 26, 0.06);
   border-color: var(--mvv-maroon);
 }
 @media (max-width: 1000px) {
@@ -855,7 +854,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
     border-bottom-color: var(--mvv-line) !important;
   }
   .mvv-navbar-outer .mvv-nav > a:not(.mvv-nav-btn).active {
-    background: rgba(201, 85, 106, 0.08) !important;
+    background: rgba(232, 97, 42, 0.08) !important;
     color: var(--mvv-saffron) !important;
   }
   .mvv-navbar-outer .mvv-nav-actions { border-top-color: var(--mvv-line) !important; }
@@ -955,7 +954,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   .mvv-dropdown-menu::-webkit-scrollbar { width: 5px; }
   .mvv-dropdown-menu::-webkit-scrollbar-track { background: transparent; }
   .mvv-dropdown-menu::-webkit-scrollbar-thumb {
-    background: rgba(94,20,38,0.25);
+    background: rgba(107,26,26,0.25);
     border-radius: 999px;
   }
 }
@@ -970,7 +969,7 @@ main.mvv-page > .mvv-section:first-child { padding-top: 0 !important; }
   overflow: hidden;
   color: var(--mvv-ink) !important;
   background:
-    radial-gradient(circle at 80% 30%, rgba(201, 85, 106, 0.14), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(232, 97, 42, 0.14), transparent 30%),
     var(--mvv-cream) !important;
   border-bottom: 1px solid var(--mvv-line);
 }
@@ -1415,9 +1414,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index_dashboard" aria-label="Dashboard">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
+          <span class="mvv-brand-title">शिवराज मराठा</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>
@@ -1571,7 +1570,7 @@ $query_compfetch=mysqli_fetch_array($query_comp);
           <div class="mvv-dropdown-menu">
             <a href="my_offer"><i class="fas fa-tag"></i> My Offer</a>
             <a href="invoice"><i class="fas fa-file-invoice"></i> Invoice</a>
-            <a href="#"><i class="fas fa-circle" style="color:<?php echo ($me['Status']=='Paid')?'#4CAF50':'#E3CBB2';?>;font-size:0.6rem;"></i> Status: <?php echo $me['Status']; ?></a>
+            <a href="#"><i class="fas fa-circle" style="color:<?php echo ($me['Status']=='Paid')?'#4CAF50':'#FFB347';?>;font-size:0.6rem;"></i> Status: <?php echo $me['Status']; ?></a>
           </div>
         </div>
 
@@ -1596,9 +1595,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="#">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
+          <span class="mvv-brand-title">शिवराज मराठा</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>
@@ -1630,9 +1629,9 @@ $query_compfetch=mysqli_fetch_array($query_comp);
     <div class="container mvv-header-wrap">
       <!-- Brand -->
       <a class="mvv-brand" href="index" aria-label="Home">
-        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Manpasand Jodidar">
+        <img class="mvv-brand-img" src="<?php echo $smLogo; ?>" alt="Shivraj Maratha">
         <span class="mvv-brand-text">
-          <span class="mvv-brand-title">मनपसंद जोडीदार</span>
+          <span class="mvv-brand-title">शिवराज मराठा</span>
           <span class="mvv-brand-subtitle">वधू वर सूचक केंद्र ®</span>
         </span>
       </a>

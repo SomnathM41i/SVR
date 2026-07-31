@@ -1,6 +1,6 @@
 <?php
 if (!isset($con)) {
-    require_once('../includes/bootstrap.php');
+    require_once('../sys_dbconnection.php');
 }
 include_once('protect.php');
 require_once(__DIR__ . '/../agent_commission_lib.php');
@@ -204,16 +204,11 @@ function agent_admin_start($title) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/stylenew.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css">
     <link rel="stylesheet" href="assets/css/customizer.css">
@@ -223,17 +218,17 @@ function agent_admin_start($title) {
     <link href="css/responsive.css" rel="stylesheet">
     <style>
         :root {
-            --gold: #BA9350;
-            --gold-light: #E3CBB2;
-            --gold-dark: #94753F;
-            --crimson: #5E1426;
-            --deep: #3D0C19;
-            --surface: #FFFDFB;
-            --text-main: #43303A;
-            --text-muted: #8A7380;
-            --border: rgba(186,147,80,0.25);
-            --shadow-card: 0 2px 20px rgba(67,48,58,0.08);
-            --shadow-gold: 0 4px 24px rgba(186,147,80,0.15);
+            --gold: #C9A84C;
+            --gold-light: #E8D5A3;
+            --gold-dark: #9A7230;
+            --crimson: #8B1A2F;
+            --deep: #1A1025;
+            --surface: #FDFAF5;
+            --text-main: #2D1F3D;
+            --text-muted: #7A6E82;
+            --border: rgba(201,168,76,0.25);
+            --shadow-card: 0 2px 20px rgba(45,31,61,0.08);
+            --shadow-gold: 0 4px 24px rgba(201,168,76,0.15);
             --radius: 14px;
         }
         body {
@@ -254,7 +249,7 @@ function agent_admin_start($title) {
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.04em;
-            background: rgba(94,20,38,0.1);
+            background: rgba(139,26,47,0.1);
             color: var(--crimson);
         }
         .agent-stat-grid {
@@ -316,14 +311,14 @@ function agent_admin_start($title) {
             opacity: 0.12;
             color: var(--accent, var(--gold-dark));
         }
-        .sc--total { --accent: #5E1426; }
+        .sc--total { --accent: #8B1A2F; }
         .sc--active { --accent: #3CB87A; }
         .sc--inactive { --accent: #4AABB8; }
-        .sc--sales { --accent: #BA9350; }
+        .sc--sales { --accent: #C9A84C; }
         .sc--today { --accent: #6C63FF; }
         .sc--hold { --accent: #E05C6A; }
-        .sc--paid { --accent: #94753F; }
-        .sc--withdrawal { --accent: #43303A; }
+        .sc--paid { --accent: #9A7230; }
+        .sc--withdrawal { --accent: #2D1F3D; }
         .agent-table th, .agent-table td { vertical-align: middle; }
         .agent-actions .btn { margin: 2px; }
 

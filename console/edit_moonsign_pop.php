@@ -1,13 +1,12 @@
-<?php  require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-
+<?php  require_once('../sys_dbconnection.php');
+//include'../dbconnectadmin.php';
 $id = $_POST['rowid'];
 
-
+//exit;
 $sqldata=mysqli_query($con,"select * from moon_sign where ID='$id'");
-
+//echo "select * from caste where id ='$id'";
 $rowdata=mysqli_fetch_array($sqldata);
-
+//echo $rowdata['Caste'];?>
 <style>
  .btcs
  {

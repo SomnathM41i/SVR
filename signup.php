@@ -1,9 +1,9 @@
 <?php 
 ob_start();
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('register_submit.php');
 ?>
-<?php $page_title = 'Free Register - Manpasand Jodidar'; include('header3.php'); ?>
+<?php $page_title = 'Free Register - Shivraj Maratha'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 function checkdiv(str) {
@@ -113,15 +113,15 @@ alert("<?php echo $_GET['mobile']; ?>");
 </script>
 <style>
 :root {
-  --mvv-maroon: var(--maroon, #7A1F39);
-  --mvv-gold: var(--gold, #BA9350);
+  --mvv-maroon: var(--maroon, #8B2230);
+  --mvv-gold: var(--gold, #C9921A);
 }
 </style>
 <style>
 main.mvv-signup-page {
   background:
     radial-gradient(circle at top left, rgba(240,192,74,0.16), transparent 28%),
-    linear-gradient(180deg, #FFFDFB 0%, #fff 48%, #FFFDFB 100%);
+    linear-gradient(180deg, #fff8f0 0%, #fff 48%, #fff8f0 100%);
   color: var(--text-main, #2C1810);
 }
 main.mvv-signup-page .mvv-container {
@@ -132,7 +132,7 @@ main.mvv-signup-page .mvv-page-hero {
   padding: 58px 0 42px !important;
   min-height: auto !important;
   background:
-    linear-gradient(135deg, rgba(94,20,38,0.92), rgba(139,34,48,0.88), rgba(201, 85, 106,0.86)),
+    linear-gradient(135deg, rgba(107,26,26,0.92), rgba(139,34,48,0.88), rgba(232,97,42,0.86)),
     radial-gradient(circle at top right, rgba(240,192,74,0.35), transparent 30%);
   color: #fff;
   position: relative;
@@ -154,7 +154,7 @@ main.mvv-signup-page .mvv-eyebrow {
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
-  color: var(--gold-light, #DDB15F);
+  color: var(--gold-light, #F0C04A);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -196,14 +196,14 @@ main.mvv-signup-page .mvv-form {
   max-width: 880px;
   margin: 0 auto;
   padding: 34px;
-  border: 1px solid rgba(186,147,80,0.22);
+  border: 1px solid rgba(201,146,26,0.22);
   border-radius: 24px;
   background: rgba(255,255,255,0.92);
-  box-shadow: 0 20px 60px rgba(94,20,38,0.13);
+  box-shadow: 0 20px 60px rgba(107,26,26,0.13);
 }
 main.mvv-signup-page .mvv-title {
   margin: 0 0 24px;
-  color: var(--deep-maroon, #5E1426);
+  color: var(--deep-maroon, #6B1A1A);
   font-family: 'Noto Sans Devanagari', 'Raleway', sans-serif;
   font-weight: 700;
   line-height: 1.2;
@@ -225,8 +225,8 @@ main.mvv-signup-page .mvv-field {
   padding: 16px;
   border: 1px solid rgba(200,130,50,0.22);
   border-radius: 16px;
-  background: #FFFDFB;
-  box-shadow: 0 5px 22px rgba(94,20,38,0.05);
+  background: #fffdf9;
+  box-shadow: 0 5px 22px rgba(107,26,26,0.05);
 }
 main.mvv-signup-page .mvv-terms-field {
   padding: 18px 20px;
@@ -236,7 +236,7 @@ main.mvv-signup-page .mvv-terms-label {
   align-items: flex-start !important;
   gap: 10px !important;
   margin: 0 !important;
-  color: var(--text-muted, #7A6570);
+  color: var(--text-muted, #7A5C4A);
   font-weight: 500 !important;
   line-height: 1.5;
   cursor: pointer;
@@ -258,7 +258,7 @@ main.mvv-signup-page .mvv-terms-text a {
 main.mvv-signup-page .mvv-field label {
   display: block;
   margin: 0 0 7px;
-  color: var(--text-muted, #7A6570);
+  color: var(--text-muted, #7A5C4A);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -277,12 +277,12 @@ main.mvv-signup-page .mvv-field select {
 }
 main.mvv-signup-page .mvv-field input:focus,
 main.mvv-signup-page .mvv-field select:focus {
-  border-color: var(--gold, #BA9350);
-  box-shadow: 0 0 0 4px rgba(186,147,80,0.14);
+  border-color: var(--gold, #C9921A);
+  box-shadow: 0 0 0 4px rgba(201,146,26,0.14);
 }
 main.mvv-signup-page input[type="radio"],
 main.mvv-signup-page input[type="checkbox"] {
-  accent-color: var(--gold, #BA9350);
+  accent-color: var(--gold, #C9921A);
 }
 main.mvv-signup-page .mvv-btn.primary {
   display: inline-flex;
@@ -293,15 +293,15 @@ main.mvv-signup-page .mvv-btn.primary {
   min-height: 52px;
   border: 0;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--gold, #BA9350), var(--saffron, #C9556A));
+  background: linear-gradient(135deg, var(--gold, #C9921A), var(--saffron, #E8612A));
   color: #fff;
   font-weight: 800;
   font-size: 1rem;
-  box-shadow: 0 12px 30px rgba(201, 85, 106,0.25);
+  box-shadow: 0 12px 30px rgba(232,97,42,0.25);
 }
 main.mvv-signup-page .mvv-btn.primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 36px rgba(201, 85, 106,0.32);
+  box-shadow: 0 16px 36px rgba(232,97,42,0.32);
 }
 @media (max-width: 767px) {
   main.mvv-signup-page .mvv-page-hero {
@@ -326,9 +326,9 @@ main.mvv-signup-page .mvv-btn.primary:hover {
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero {
   min-height: auto !important;
   padding: clamp(50px, 6vw, 72px) 0 !important;
-  color: #3A2530 !important;
-  background: radial-gradient(circle at 80% 30%, rgba(201,85,106,.14), transparent 30%), #FFFDFB !important;
-  border-bottom: 1px solid rgba(94,20,38,.12) !important;
+  color: #3a2a22 !important;
+  background: radial-gradient(circle at 80% 30%, rgba(213,107,36,.14), transparent 30%), #fff9f0 !important;
+  border-bottom: 1px solid rgba(109,23,38,.12) !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero::before,
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero::after {
@@ -339,29 +339,29 @@ main.mvv-signup-page .mvv-page-hero.mvv-form-hero .mvv-container {
   padding-right: 24px !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero h1 {
-  color: #5E1426 !important;
+  color: #7a0e1a !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero p {
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero .mvv-breadcrumb {
   padding: 0 !important;
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
-  color: #7A6570 !important;
+  color: #7b6256 !important;
   backdrop-filter: none !important;
   font-weight: 500 !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero .mvv-breadcrumb a {
-  color: #C9556A !important;
+  color: #d56b24 !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero .mvv-breadcrumb span {
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 main.mvv-signup-page .mvv-page-hero.mvv-form-hero .mvv-breadcrumb span::before {
   content: "›" !important;
-  color: #7A6570 !important;
+  color: #7b6256 !important;
 }
 
 main.mvv-signup-page .mvv-section.mvv-auth-visual {

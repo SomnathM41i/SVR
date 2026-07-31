@@ -11,12 +11,8 @@
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="_so/js?//stackoverflow.com/questions/23729750/dont-allow-invalid-characters-to-be-pasted-on-textbox" id="so"></script>
 <!-- Responsive -->
@@ -446,8 +442,8 @@ header('location:education?id='.$ID);
                                <option value="">District</option>
                             <?php if($row['State']!=""){ ?>
                     <?php 
-			  $rrs=mysqli_query($con,"select * from e_dist where sid2='".$db->setfilter($row['State'])."'"); /* SECURITY: legacy mysql_* -> mysqli + escaping */
-						while($rrow=mysqli_fetch_array($rrs))
+			  $rrs=mysql_query("select * from e_dist where sid2='".$row['State']."'");
+						while($rrow=mysql_fetch_array($rrs))
 						{
 							$_SESSION['dis']=$rrow['dist'];
 							if($rrow['dist']==$row['dist'])

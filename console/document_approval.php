@@ -1,8 +1,8 @@
-<?php  require_once('../includes/bootstrap.php');
+<?php  require_once('../sys_dbconnection.php');
 
 include('protect.php');
-
-
+//include('../dbconnectadmin.php');
+//$sql = mysqli_query($con,"SELECT a.*,b.* FROM register a,gallary b WHERE a.photo1=b.photo_name and b.photo_approve='Pending' order by id desc"); 
 
 $profile_approve = mysqli_query($con,"SELECT * FROM document where docapprove='No' and  Name!='' order by doc_id desc");
 
@@ -18,7 +18,7 @@ $profile_approve = mysqli_query($con,"SELECT * FROM document where docapprove='N
 function displayPaginationBelow($con,$per_page,$page){
 $page_url="?";
 $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where docapprove='No' and  Name!='' order by doc_id desc");
-    
+    //  echo "SELECT COUNT(*) as totalCount FROM register where idproof_approve='No' and  adhar!=''order by id desc";
         
         $rec = mysqli_fetch_array($sql1);
         $total = $rec['totalCount'];
@@ -131,17 +131,13 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where doc
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
@@ -150,7 +146,6 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where doc
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -542,7 +537,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where doc
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -552,7 +547,7 @@ $sql1 = mysqli_query($con,"SELECT COUNT(*) as totalCount FROM document where doc
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

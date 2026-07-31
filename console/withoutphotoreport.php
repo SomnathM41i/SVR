@@ -1,7 +1,8 @@
-<?php require_once('../includes/bootstrap.php'); 
+<?php require_once('../sys_dbconnection.php'); 
 error_reporting(0);
 include('protect.php');
-
+/*include('../dbconnectadmin.php');
+*/
 ?>
 <?php
 @header("Cache-Control: ");// leave blank to avoid IE errors

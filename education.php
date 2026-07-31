@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect1.php');
 require_once('includes/annual_income.php');
 
@@ -13,7 +13,7 @@ if($login) {
 }
 $regvar = $me['reg_step'] ?? '';
 $row = $me;
-$page_title = 'Education & Career - Manpasand Jodidar';
+$page_title = 'Education & Career - Shivraj Maratha';
 include('header3.php'); ?>
 <style>
 .mvv-checkbox-label {
@@ -114,7 +114,7 @@ include('header3.php'); ?>
 }
 .mvv-multiselect.open .mvv-multiselect-toggle {
   border-color: var(--mvv-gold);
-  box-shadow: 0 0 0 4px rgba(186, 147, 80,0.14);
+  box-shadow: 0 0 0 4px rgba(212,164,55,0.14);
 }
 .mvv-multiselect.open .mvv-multiselect-toggle::after {
   transform: rotate(225deg) translate(-2px, -2px);
@@ -156,7 +156,7 @@ include('header3.php'); ?>
 .mvv-multiselect-search:focus {
   outline: none;
   border-color: var(--mvv-gold) !important;
-  box-shadow: 0 0 0 3px rgba(186, 147, 80,0.14);
+  box-shadow: 0 0 0 3px rgba(212,164,55,0.14);
 }
 .mvv-multiselect-empty {
   display: none;

@@ -1,9 +1,9 @@
 <?php //include_once('siteconfig.php');
-require_once('includes/bootstrap.php');?>
+require_once('sys_dbconnection.php');?>
 <?php //include_once('memprotect.php');
-
+/*include('dbconnectadmin.php');*/
 error_reporting(0);
-
+/*session_start();*/
 
 ?>
 <!DOCTYPE html>
@@ -18,12 +18,8 @@ error_reporting(0);
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

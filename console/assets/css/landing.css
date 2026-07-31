@@ -28,7 +28,7 @@ section {
 }
 
 .bg-dark {
-    background: #3D0C19 !important;
+    background: #1c232f !important;
     color: #fff;
 }
 
@@ -113,7 +113,7 @@ section {
         position: absolute;
         height: 3px;
         bottom: 0;
-        background: #7A1F39;
+        background: #7267EF;
         left: 50%;
         right: 50%;
     }
@@ -160,7 +160,7 @@ header:before {
 }
 
 header:after {
-    background-color: #7A1F39;
+    background-color: #7267ef;
     z-index: 2;
 }
 
@@ -199,7 +199,7 @@ header:after {
 }
 
 .feature-block:hover .feature-icon {
-    background-color: #7A1F39;
+    background-color: #7267EF;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.07);
 }
 
@@ -236,7 +236,7 @@ header:after {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(122, 31, 57, 0.8);
+    background: rgba(114, 103, 239, 0.8);
     opacity: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -279,7 +279,7 @@ header:after {
 }
 
 .call-to-action:after {
-    background-color: rgba(122, 31, 57, 0.8);
+    background-color: rgba(114, 103, 239, 0.8);
     z-index: 2;
 }
 
@@ -307,9 +307,9 @@ header:after {
     position: absolute;
     top: -30px;
     left: 20px;
-    background: #7A1F39;
+    background: #7267EF;
     color: #fff;
-    box-shadow: 0 5px 25px rgba(122, 31, 57, 0.5);
+    box-shadow: 0 5px 25px rgba(114, 103, 239, 0.5);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -351,8 +351,8 @@ header:after {
 }
 
 .test-indicators li.active {
-    background-color: #7A1F39;
-    box-shadow: 0 5px 25px rgba(122, 31, 57, 0.5);
+    background-color: #7267EF;
+    box-shadow: 0 5px 25px rgba(114, 103, 239, 0.5);
     width: 35px;
 }
 
@@ -396,8 +396,8 @@ header:after {
     position: absolute;
     top: 1px;
     left: 0;
-    stroke: #7A1F39;
-    fill: rgba(122, 31, 57, 0.3);
+    stroke: #7267EF;
+    fill: rgba(114, 103, 239, 0.3);
 }
 
 .price-block .price-badge {
@@ -414,8 +414,8 @@ header:after {
 }
 
 .price-block.active {
-    background: #7A1F39;
-    box-shadow: 0 5px 25px rgba(122, 31, 57, 0.5);
+    background: #7267EF;
+    box-shadow: 0 5px 25px rgba(114, 103, 239, 0.5);
     color: #fff;
 }
 
@@ -431,7 +431,7 @@ header:after {
 .footer-top {
     position: relative;
     padding: 90px 0;
-    background: #3D0C19;
+    background: #1c232f;
     transform-origin: right;
     border-radius: 90px 0 0 0;
 }

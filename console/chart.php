@@ -1,8 +1,7 @@
-<?php require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-  
+<?php require_once('../sys_dbconnection.php');
+  /*include '../dbconnectadmin.php';*/
   $date = date('Y');
-  
+  //echo $date; 
   for($i=1;$i<=12;$i++)
   {
 

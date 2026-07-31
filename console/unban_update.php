@@ -1,6 +1,6 @@
-<?php require_once('../includes/bootstrap.php');   
-require_once(dirname(__FILE__).'/protect.php'); /* SECURITY: was commented out - admin guard restored */
-
+<?php require_once('../sys_dbconnection.php');   
+//include('protect.php');
+/*include('../dbconnectadmin.php');*/
 
   $strmid=$_GET['matriid']; 
   $date = date('Y-m-d'); 

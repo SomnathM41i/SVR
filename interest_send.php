@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 error_reporting(0);
@@ -14,7 +14,7 @@ $heightMap = [1=>'4Ft',2=>'4Ft 1 inch',3=>'4Ft 2 inch',4=>'4Ft 3 inch',5=>'4Ft 4
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Request Pending</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css?v=activities-ui" />
   <style>

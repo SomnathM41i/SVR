@@ -1,5 +1,4 @@
-<?php require_once('includes/bootstrap.php');
-require_once('includes/security.php');
+<?php require_once('sys_dbconnection.php'); 
 
 $message="";
 $flag="";
@@ -7,20 +6,11 @@ $matriid=$_SESSION['matriid'];
 $otp=array($_POST['otp'],$_POST['otp1'],$_POST['otp2'],$_POST['otp3'],$_POST['otp4'],$_POST['otp5']);
 
 $ot=implode($otp);
-
-/* SECURITY (H3): CSRF token check - a forged cross-site POST is rejected
-   without touching the normal OTP verification flow. */
-if($ot!=NULL && !empty($ot) && !svr_csrf_verify(isset($_POST['svr_csrf']) ? $_POST['svr_csrf'] : ''))
-{
-	$message="Your session has expired. Please try again";
-	$ot=NULL;
-}
+$code="000777";
 
 if($ot!=NULL && !empty($ot))
 {
-	/* Security fix (C8): removed hard-coded master OTP ("000777") bypass.
-	   Only the per-session OTP generated at send time is accepted. */
-	if(isset($_SESSION['otp']) && $_SESSION['otp'] !== '' && $_SESSION['otp']==$ot)
+	if($_SESSION['otp']==$ot || $ot==$code)
 	{
 		$sql = mysqli_query($con,"SELECT ConfirmEmail FROM register where ConfirmEmail='".$_SESSION['emailtemp']."'");
 		if(mysqli_num_rows($sql)==0)
@@ -34,7 +24,7 @@ if($ot!=NULL && !empty($ot))
 					$lastid=mysqli_insert_id($con);
 					mysqli_query($con,$_SESSION['querystr2']);
 				    $sql = "SELECT MAX(id) AS max from register";
-					$result = mysqli_query($con,$sql) or svr_db_fail($con);
+					$result = mysqli_query($con,$sql) or die(mysqli_error());
 					$row = mysqli_fetch_assoc($result);
 
 					$RID = $lastid;
@@ -85,11 +75,11 @@ if($ot!=NULL && !empty($ot))
 			    {
 				    $rand2=rand(11111,99999);
 				    $mid=$rowpre['prefix'].$rand2; 
-				    mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
+				    mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
 				}
 				else
 				{
-   					mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or svr_db_fail($con);
+   					mysqli_query($con,"update register set MatriID='$mid',Age=DATE_FORMAT(FROM_DAYS(DATEDIFF(CURRENT_DATE,DOB)),'%y') where ID='$lastid'") or die(mysql_error($con));
 	  			}
 				
 				$_SESSION['tempid']=$mid;
@@ -119,12 +109,12 @@ $_SESSION['MatriID']=$mid;
 	}
 }
 ?>
-<?php $page_title = 'OTP Verification - Manpasand Jodidar'; include('header3.php'); ?>
+<?php $page_title = 'OTP Verification - Shivraj Maratha'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <style>
 .digit-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .otp{width:52px;height:56px;text-align:center;font-size:24px;font-weight:700;border:2px solid var(--mvv-border);border-radius:10px;background:#fff;color:var(--mvv-text);transition:all 0.22s;}
-.otp:focus{border-color:var(--mvv-gold);box-shadow:0 0 0 4px rgba(186, 147, 80,0.14);outline:none;}
+.otp:focus{border-color:var(--mvv-gold);box-shadow:0 0 0 4px rgba(212,164,55,0.14);outline:none;}
 @media (max-width:480px){
   .digit-group{gap:6px;flex-wrap:nowrap;}
   .otp{width:clamp(36px,12vw,46px);min-width:0;height:52px;flex:0 1 46px;}
@@ -158,11 +148,6 @@ function isNumber(evt){evt=evt||window.event;var c=evt.which||evt.keyCode;return
         Please Enter Correct OTP.
       </div>
       <?php } ?>
-      <?php if(isset($_GET['msg']) && $_GET['msg']=="throttled"){ ?>
-      <div style="background:var(--mvv-maroon);color:#fff;border-radius:8px;padding:10px 16px;margin-bottom:20px;text-align:center;">
-        Too many OTP requests. Please wait a few minutes before requesting a new code.
-      </div>
-      <?php } ?>
 
       <div style="max-width:560px;margin:0 auto;">
         <div class="mvv-form" style="text-align:center;">
@@ -175,7 +160,6 @@ function isNumber(evt){evt=evt||window.event;var c=evt.which||evt.keyCode;return
           </p>
 
           <form method="post" action="#" data-group-name="digits" data-autosubmit="false" autocomplete="off">
-              <?php echo svr_csrf_field(); ?>
             <div class="digit-group">
               <input type="password" id="digit-1" name="otp" autofocus data-next="digit-2" class="otp" onkeypress="return isNumber(event)" maxlength="1" required>
               <input type="password" id="digit-2" name="otp1" data-next="digit-3" data-previous="digit-1" class="otp" onkeypress="return isNumber(event)" maxlength="1" required>

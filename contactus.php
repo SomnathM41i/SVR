@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 $seo = mysqli_query($con, "SELECT * FROM seo WHERE catagory='contact'");
 $seof = $seo ? mysqli_fetch_array($seo) : [];
 ?>

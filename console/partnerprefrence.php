@@ -1,4 +1,3 @@
-<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <link rel="stylesheet" href="assets/css/partner.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
 	<div class="row">

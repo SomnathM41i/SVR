@@ -67,10 +67,10 @@
 	$login=$_SESSION['MatriID'];
 	
 	$compl=mysqli_query($con,"select* from compatibility where MatriID='$login'");
-	
+	//echo "select* from compatibility where MatriID='$login'";
 	$complfet=mysqli_fetch_array($compl);
 	$compid=mysqli_query($con,"select* from compatibility where MatriID='$id'");
-	
+	//echo "select* from compatibility where MatriID='$id'";
 	$complfetch=mysqli_fetch_array($compid);								
 	?>			 
 			<div class="speaker-info">

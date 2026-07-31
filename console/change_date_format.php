@@ -1,6 +1,5 @@
 <?php 
-	require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
+	require_once('../sys_dbconnection.php');
 	$query = mysqli_query($con,"SELECT * FROM `paiddetails` WHERE 1");
 	$count = mysqli_num_rows($query);
 	/*echo $count;*/

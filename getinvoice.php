@@ -1,8 +1,8 @@
-<?php 
-require_once('includes/bootstrap.php');
+<?php //include('dbconnectadmin.php');
+require_once('sys_dbconnection.php');
 error_reporting(0);
 $id = $_POST['rowid'];
-$configdata1 = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or svr_db_fail($con); 
+$configdata1 = mysqli_query($con,"SELECT * FROM siteconfig where id='1'") or die(mysql_error()); 
 $siteinfo1= mysqli_fetch_array($configdata1); 
 $mid=$_SESSION['matriid'];
 $sqldata=mysqli_query($con,"select * from paiddetails where Pmatriid='$mid' and Paidid='$id'");
@@ -17,13 +17,12 @@ $rowdata=mysqli_fetch_array($sqldata); ?>
 		   <div class="container py-xl-2 py-lg-2">
 			 <div class="col-lg-12 agile-course-main text-left">
 					
-					<div class="w3ls-cource-first" id="print" style="position:relative;background:#FFFDFB;">
-					<img src="branding/images/watermark.png" alt="" style="position:absolute;left:50%;top:40%;width:430px;margin-left:-215px;z-index:0;pointer-events:none;"/>
+					<div class="w3ls-cource-first" id="print">
 						<div class="col-md-12 col-sm-12 col-lg-12 design">
 							<div class="col-md-12">
-                            <div class="row" style="position:relative;z-index:1;border-bottom:3px double #BA9350;padding-bottom:10px;">
+                            <div class="row">
                             <div class="col-md-7">
-						  <img class="img-responsive thumbnail img1" src="branding/logos/logo-horizontal.png" style="margin-top:-8px;">
+						  <img class="img-responsive thumbnail img1" src="http://localhost/SVR/css3/assets/shivraj-logo.png" style="margin-top:-8px;">
                          <br>
                                   <?php echo $siteinfo1['address'];?>
                                   
@@ -214,7 +213,7 @@ for (i = 0; i < closebtns.length; i++) {
 	  "<html><head><title></title></head><body>" + 
 	  divElements + "</body></html>";
 	
-	
+	//Print Page
 	window.print();
 	
 	//Restore orignal HTML

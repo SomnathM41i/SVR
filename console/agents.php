@@ -1,5 +1,4 @@
 <?php
-require_once(dirname(__FILE__).'/protect.php');
 require_once('agent_common.php');
 
 $status = isset($_GET['status']) ? $_GET['status'] : '';

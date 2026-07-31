@@ -1,26 +1,22 @@
-<?php require_once('../includes/bootstrap.php'); 
-
+﻿<?php require_once('../sys_dbconnection.php'); 
+//include('../dbconnectadmin.php');
 $query=mysqli_query($con,"select * from siteconfig  where ID='1'");
 $fetch=mysqli_fetch_array($query);
 $name=$fetch['Webname'];
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>  
-	<title>Manpasand Jodidar — Admin Login</title>
+	<title>Manager Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="Manpasand Jodidar"/>
-	<meta name="keywords" content="Manpasand Jodidar"/>
-	<meta name="author" content="Manpasand Jodidar" />
+	<meta name="description" content="Shivraj Maratha"/>
+	<meta name="keywords" content="Shivraj Maratha"/>
+	<meta name="author" content="Shivraj Maratha" />
 
 	<!-- Favicon icon -->
-	<?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+	<?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
 	<!-- font css -->
 	<link rel="stylesheet" href="assets/fonts/feather.css">
@@ -29,13 +25,8 @@ $name=$fetch['Webname'];
 
 	<!-- vendor css -->
 	<link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-	<link rel="stylesheet" href="assets/css/mpj-brand.css">
 	<link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 	<link rel="stylesheet" href="assets/css/customizer.css">
-	<!-- MPJ: brand typography -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html, body { height:100%; margin:0; }
 body { background:url('../images/main-slider/2.jpg') no-repeat center center fixed !important; background-size:cover !important; }
@@ -48,15 +39,14 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 }
 .auth-wrapper.auth-v3 .auth-content .card { background:#fff !important; box-shadow:0 15px 50px rgba(0,0,0,0.2); border:none; border-radius:12px; width:100%; overflow:hidden; }
 .auth-wrapper.auth-v3 .auth-content .card-body { padding:40px 36px !important; }
-.auth-wrapper.auth-v3 .auth-content .card .text-primary { color:#5E1426 !important; }
-.auth-wrapper.auth-v3 .auth-content .card .btn-primary { background:linear-gradient(135deg, #5E1426, #BA9350); border:none; border-radius:6px; padding:10px 30px; font-weight:600; letter-spacing:0.3px; transition:all 0.3s; }
-.auth-wrapper.auth-v3 .auth-content .card .btn-primary:hover { background:linear-gradient(135deg, #3D0C19, #b8922e); transform:translateY(-1px); box-shadow:0 4px 12px rgba(94,20,38,0.3); }
+.auth-wrapper.auth-v3 .auth-content .card .text-primary { color:#8B1A2B !important; }
+.auth-wrapper.auth-v3 .auth-content .card .btn-primary { background:linear-gradient(135deg, #8B1A2B, #C9A84C); border:none; border-radius:6px; padding:10px 30px; font-weight:600; letter-spacing:0.3px; transition:all 0.3s; }
+.auth-wrapper.auth-v3 .auth-content .card .btn-primary:hover { background:linear-gradient(135deg, #6e1422, #b8922e); transform:translateY(-1px); box-shadow:0 4px 12px rgba(139,26,43,0.3); }
 .auth-wrapper.auth-v3 .auth-content .card .btn-light-primary { border-radius:6px; padding:10px 30px; font-weight:500; }
-.auth-wrapper.auth-v3 .auth-content .card .input-group-text { background:#F9E7DC; border-color:#E3CBB2; color:#5E1426; border-radius:6px 0 0 6px; }
-.auth-wrapper.auth-v3 .auth-content .card .form-control { border-color:#E3CBB2; border-radius:0 6px 6px 0; padding:10px 16px; font-size:14px; }
-.auth-wrapper.auth-v3 .auth-content .card .form-control:focus { border-color:#BA9350; box-shadow:0 0 0 0.2rem rgba(186,147,80,0.25); }
-.auth-wrapper.auth-v3 .auth-content .card h4 { font-size:1.25rem; color:#3D0C19; font-family:'Playfair Display',Georgia,serif; }
-.auth-wrapper.auth-v3 .auth-content .card h4 .text-primary { font-style:italic; }
+.auth-wrapper.auth-v3 .auth-content .card .input-group-text { background:#f8f0e6; border-color:#e0d0b8; color:#8B1A2B; border-radius:6px 0 0 6px; }
+.auth-wrapper.auth-v3 .auth-content .card .form-control { border-color:#e0d0b8; border-radius:0 6px 6px 0; padding:10px 16px; font-size:14px; }
+.auth-wrapper.auth-v3 .auth-content .card .form-control:focus { border-color:#C9A84C; box-shadow:0 0 0 0.2rem rgba(201,168,76,0.25); }
+.auth-wrapper.auth-v3 .auth-content .card h4 { font-size:1.15rem; color:#333; }
 .auth-wrapper.auth-v3 .auth-content .card .row { justify-content:flex-end; }
 .auth-wrapper.auth-v3 .auth-content .card .col-md-6.img-card-side { display:none; }
 .auth-wrapper.auth-v3 .auth-content .card .col-md-6 { flex:0 0 100%; max-width:100%; }
@@ -95,7 +85,6 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 	<div class="auth-content">
 		<div class="card">
 		<form action="login_submit.php" method="post">
-			<?php require_once('../includes/security.php'); echo svr_csrf_field(); ?>
 			<div class="row align-items-stretch text-center">
 				<div class="col-md-6 img-card-side">
 				</div>
@@ -103,7 +92,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
 				<div class="col-md-6">
 					<div class="card-body">
 						<div class="">
-							<img src="../branding/logos/emblem.png" alt="" style="max-width:100px;border-radius:50%;margin-bottom:10px;">
+							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" style="max-width:100px;border-radius:50%;margin-bottom:10px;">
 							<h4 class="mb-3 f-w-600">Welcome to <span class="text-primary"><br><?php echo  $name;?></span></h4>
 							<p class="text-muted mb-3">Welcome Back, Please Login <br>Into a Secure Console.</p>
 							<font color="#EA4D4D"> <?php echo $_GET['err'];?>
@@ -218,7 +207,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -228,7 +217,7 @@ body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.4); 
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

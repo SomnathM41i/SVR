@@ -1,7 +1,7 @@
 <?php 
 ob_start();
-require_once('includes/bootstrap.php');
-
+require_once('sys_dbconnection.php');
+//include('dbconnectadmin.php');
 include('register_submit.php');
 
 ?>
@@ -19,12 +19,8 @@ include('register_submit.php');
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -352,8 +348,8 @@ function getage()
 					   
 				   <div class="row ">
 					 <div class="col-lg-12 alert alert-info " id="doberror" style="display:none"><?php echo "Select valid Birth Date"; ?></div>
-                          <div class="col-lg-12 alert alert-info" id="doberror1" style="display:none"><?php 
-                            <div class="col-lg-12 alert alert-info " id="doberror2" style="display:none"><?php 
+                          <div class="col-lg-12 alert alert-info" id="doberror1" style="display:none"><?php //echo "You must be over 21 to register"; ?></div>
+                            <div class="col-lg-12 alert alert-info " id="doberror2" style="display:none"><?php //echo "You must be over 18 to register"; ?></div> 
 				   <div class="col-lg-2 col-md-4 col-sm-4">
 			         </div>
 					  <div class="form-column col-lg-8 col-md-12 col-sm-12">

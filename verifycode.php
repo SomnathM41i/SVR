@@ -1,5 +1,5 @@
-<?php require_once('includes/bootstrap.php');
-
+<?php require_once('sys_dbconnection.php');
+/*include('dbconnectadmin.php');*/
  include('memprotect.php');
 
 ?>
@@ -18,8 +18,9 @@ $check = $fetch['verification'];
 	
 
 
-
-
+/*echo $check;
+exit;*/
+//echo "select * from emailverify where MatriID='login'";
 $code=$fetch['code'];
 $verify=$_POST['verify'];
 echo $code;
@@ -28,7 +29,7 @@ echo $verify;
 if($code==$verify)
 {
 	$verifymail=mysqli_query($con,"update  emailverify  set verification='Yes' where MatriID='$login'");
-	
+	//echo "update  emailverify  set verification='Yes' where MatriID='$login'";
 	header('location:verifycode?msg=success');
 	
 	
@@ -36,7 +37,7 @@ if($code==$verify)
 else
 {
 	$verifymail=mysqli_query($con,"update  emailverify  set verification='no' where MatriID='$login'");
-	
+	//echo "update  emailverify  set verification='no' where MatriID='$login'";
 	header('location:verifycode?msg=fail');
 
 }
@@ -54,12 +55,8 @@ else
 <!--Color Switcher Mockup-->
 <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -232,7 +229,7 @@ function isNumber(evt) {
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group"> 
 						   <input type="text" name="verify" placeholder="Enter Verification Code" maxlength="6" onkeypress="return isNumber(event)"  required  >
                           <?Php 
-                            
+                            /*if( ($fetch['date'] != $today) && ($fetch['verification'] != 'Yes') )*/
                             if( ( $fetch['date'] != $today ) )
                             {
                           ?>

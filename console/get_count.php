@@ -1,7 +1,6 @@
 <?php 
-require_once(dirname(__FILE__).'/protect.php');
 $hobbies=explode(",",$me['Looking']);
-
+//$mother=implode(",",$me['PE_MotherTongue']);
 $pe_from_height = $me['PE_from_Height'];
 $pe_to_height = $me['PE_to_Height'];
 $pe_toage = $me['PE_ToAge'];
@@ -14,9 +13,9 @@ $pe_religion=$me['PE_Religion'];
 $Country=$me['Country'];	
 $pe_caste = $me['PE_Caste'];
 $PE_subcaste=$me['PE_subcaste'];
-
-
-
+//$religion=$me['Religion'];
+//$caste=$me['Caste'];
+//$Subcaste=$me['Subcaste'];
 if($me['Gender']=='Male')
 	$match_sex = "Female";
 if($me['Gender']=='Female')
@@ -101,7 +100,20 @@ if($me['PE_Complexion']!="" && $me['PE_Complexion']!="Any")
 $PE_Complexion_re = implode(',', $PE_Complexion_term);
 $match_qry_count.=" and Complexion IN($PE_Complexion_re) ";
 }
-
+/*
+if($religion!="")
+{
+	$match_qry_count.=" and  Religion='$religion' AND ";  
+}
+if($caste!="")
+{
+	$match_qry_count.=" Caste='$caste' and ";  
+}
+if($Subcaste!="")
+{
+	$match_qry_count.=" Subcaste='$Subcaste' ";  
+}
+*/
 
 
 if($me['PE_Residentstatus']!="" && $me['PE_Residentstatus']!="Any")

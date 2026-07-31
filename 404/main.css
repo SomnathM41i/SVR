@@ -47,7 +47,7 @@ a, a:visited {
 	transition: all 0.3s ease-in-out;
 }
 a:hover, a:focus {
-	color: #C9556A;
+	color: #c25d02;
 }
 
 /** 
@@ -259,7 +259,7 @@ ul.disc li::before {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: #C9556A;
+	background: #c25d02;
 	position: absolute;
 	left: -17px;
 	top: 11px;
@@ -267,7 +267,7 @@ ul.disc li::before {
 }
 dt {
 	margin: 0;
-	color: #C9556A;
+	color: #c25d02;
 }
 dd {
 	margin: 0 0 0 2rem;
@@ -578,7 +578,7 @@ header .logo a {
 	border: none;
 	width: 168px;
 	height: 50px;
-	background: url("../branding/logos/emblem.png") no-repeat center;
+	background: url("http://localhost/SVR/css3/assets/shivraj-logo.png") no-repeat center;
 	background-size: 168px 50px;
 
 	font: 0/0 a;
@@ -916,7 +916,7 @@ header .logo a {
 .main-content h1::before {
 	content: "";
 	display: block;
-	background: #C9556A;
+	background: #c25d02;
 	width: 120px;
 	height: 3px;
 	position: absolute;

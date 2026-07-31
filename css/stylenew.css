@@ -457,12 +457,12 @@ vertical-align: text-top;
 
 
 ::-moz-selection {
-background:#C9556A;
+background:#ec167f;
 color:#ffffff;
 }
 
 ::-webkit-selection {
-background:#C9556A;
+background:#ec167f;
 color:#ffffff;
 }
 
@@ -489,7 +489,7 @@ color:#ffffff;
 	color:#ffffff;
 	font-weight:700;
 	text-align:center;
-	background-color: #C9556A;
+	background-color: #ec167f;
 	overflow: hidden;
 	border-radius: 10px;
 }
@@ -499,7 +499,7 @@ color:#ffffff;
 }
 
 /*.btn-style-five:hover{
-	 color:#C9556A;
+	 color:#ec167f;
 	 background-color:#ffffff;
 	-webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 	-moz-box-shadow: 0 10px 30px rgba(0,0,0,0.10);
@@ -630,7 +630,7 @@ font-size: 14px;
 	 color: #777777;
 }
 .coltex{
-	color: #6C5A78;
+	color: #4c35a9;
 }
 .gretxt{
 color: #0fb31c;
@@ -639,7 +639,7 @@ color: #0fb31c;
    
     
     font-size: 10px;
-   color: #A63E52;
+   color: #e1137b;
   vertical-align:middle;
   
 }

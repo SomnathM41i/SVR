@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 
 $allowedGenders = ['Male', 'Female'];
 $allowedStatuses = ['Unmarried', 'Divorced'];
@@ -91,7 +91,7 @@ $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : '
 
 $groupTitle = $isNri ? 'NRI' : ($maritalStatus === 'Divorced' ? 'Divorcee' : 'Unmarried');
 $groupTitle .= $gender === 'Male' ? ' Grooms' : ' Brides';
-$page_title = $groupTitle.' - Manpasand Jodidar';
+$page_title = $groupTitle.' - Shivraj Maratha';
 
 function publicProfilesUrl(string $gender, string $status = 'Unmarried', int $page = 1, string $profileType = ''): string {
     $query = ['gender' => $gender];
@@ -111,8 +111,8 @@ include('header3.php');
 
 <style>
 .public-profiles-page{min-height:65vh;padding-bottom:70px;background:linear-gradient(180deg,#fffaf5 0,#fff 46%)}
-.public-profiles-hero{padding:62px 0 48px;background:linear-gradient(135deg,#5E1426,#8b2520);color:#fff}
-.public-profiles-hero .eyebrow{display:block;margin-bottom:10px;color:#DDB15F;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.public-profiles-hero{padding:62px 0 48px;background:linear-gradient(135deg,#6b1a1a,#8b2520);color:#fff}
+.public-profiles-hero .eyebrow{display:block;margin-bottom:10px;color:#f0c04a;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .public-profiles-hero h1{margin:0 0 10px;color:#fff;font-family:var(--mvv-display);font-size:clamp(2rem,5vw,3.6rem)}
 .public-profiles-hero p{max-width:620px;margin:0;color:rgba(255,255,255,.78)}
 .public-profiles-section{padding:42px 0}
@@ -149,7 +149,7 @@ include('header3.php');
     <div class="container">
       <span class="eyebrow">Discover Profiles</span>
       <h1><?php echo htmlspecialchars($groupTitle); ?></h1>
-      <p>Browse matching Manpasand Jodidar profiles. Log in or register to view complete profile details and connect.</p>
+      <p>Browse matching Shivraj Maratha profiles. Log in or register to view complete profile details and connect.</p>
     </div>
   </section>
 
@@ -202,7 +202,7 @@ include('header3.php');
             $waLines = [];
             $waLines[] = $baseUrl . $profileLink;
             $waLines[] = '';
-            $waLines[] = "\u{1F496} Check out this profile on Manpasand Jodidar!";
+            $waLines[] = "\u{1F496} Check out this Matrimony Profile!";
             $waLines[] = "\u{1F194} Profile ID: {$profile['MatriID']}";
             $waLines[] = "\u{1F382} Age: " . (int)$profile['Age'] . ' years';
             if (!empty($profile['Education']) && $profile['Education'] !== 'Education not specified') $waLines[] = "\u{1F393} Education: {$profile['Education']}";
@@ -211,7 +211,7 @@ include('header3.php');
             if (!empty($location)) $waLines[] = "\u{1F4CD} Location: $location";
             $waLines[] = "\u{1F48D} Marital Status: $maritalStatus";
             $waLines[] = '';
-            $waLines[] = "Find your perfect match on Manpasand Jodidar — Rishta Dil Se, Saath Zindagi Bhar \u{2764}\u{FE0F}";
+            $waLines[] = "Find your perfect life partner today \u{2764}\u{FE0F}";
             $waUrl = 'https://api.whatsapp.com/send?text=' . rawurlencode(implode("\n", $waLines));
         ?>
         <article class="public-match-card">

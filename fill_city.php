@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 
 $taluka = trim((string)($_GET['taluka'] ?? $_GET['q'] ?? ''));
 $district = trim((string)($_GET['district'] ?? $_GET['q'] ?? ''));

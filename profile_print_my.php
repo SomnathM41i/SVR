@@ -50,9 +50,7 @@ function print_report()
 </head>
 
 <body bgcolor="#000000">
-<div id="print" style="position:relative;background:#FFFDFB;">
-<img src="branding/images/watermark.png" alt="" style="position:absolute;left:50%;top:40%;width:430px;margin-left:-215px;z-index:0;pointer-events:none;"/>
-<table width="1000" border="0" cellpadding="0" cellspacing="0" style="position:relative;z-index:1;"><tr><td align="center" style="padding:14px 0 10px;border-bottom:3px double #BA9350;"><img src="branding/images/print-logo.png" alt="Manpasand Jodidar" style="width:170px;"/><div style="font-family:Georgia,serif;font-size:12px;letter-spacing:2px;color:#A63E52;margin-top:6px;">RISHTA DIL SE, SAATH ZINDAGI BHAR</div></td></tr></table>
+<div id="print">
 <table width="1000" height="398" border="0" class="maincontent1" cellpadding="4"  bgcolor="#FFFFFF">
   <tr>
     <td colspan="5"><table width="989" border="0">
@@ -122,7 +120,9 @@ function print_report()
             <td bgcolor="#DFDFDF">About Us</td>
             <td bgcolor="#DFDFDF" colspan="3"> <?php echo $fetch['aboutus'] ?></td>
           </tr>
-         
+         <!-- <tr>
+            <td height="101" colspan="4" valign="top"><?php echo $fetch['aboutus'] ?> </td>
+          </tr>-->
           </table></td>
       </tr>
       </table></td>
@@ -192,7 +192,7 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
 											echo $fetch['Weight']." kg";
 										}
 	
-	
+	//echo $fetch['Weight'] ?></td>
     <td>&nbsp;</td>
     <td>Occupation</td>
     <td><?php echo $fetch['Occupation'] ?></td>
@@ -342,12 +342,16 @@ else if($strheight =="Does not Matter") { echo "Does not Matter"; }
           <tr bgcolor="#DFDFDF">
     <td>Looking For</td>
     <td><?php echo $fetch['Looking'] ?> </td>
-   <?php ?>
+   <?php /*?> <td>&nbsp;</td>
+    <td>Hobby</td>
+    <td><? echo $fetch['Hobbies'] ?></td><?php */?>
   </tr>
   <tr>
     <td>Age</td>
     <td><?php echo $fetch['PE_FromAge']." To ".$fetch['PE_ToAge']; ?></td>
-    <?php ?>
+    <?php /*?><td>&nbsp;</td>
+    <td>Other Hobby</td>
+    <td><? echo $fetch['OtherHobbies'] ?></td><?php */?>
   </tr>
           <tr bgcolor="#DFDFDF">
     <td>Height</td>
@@ -434,18 +438,22 @@ else if($strheight =="36") { echo "6Ft 11 inch "; }
 else if($strheight =="37") { echo "7Ft "; }
 else if($strheight =="Does not Matter") { echo "Does not Matter"; }
 ?></td>
-    <?php ?>
+    <?php /*?><td>&nbsp;</td>
+    <td>Interests</td>
+    <td><? echo $fetch['Interests'] ?></td><?php */?>
   </tr>
     <tr>
             <td>Complexion</td>
             <td><?php echo $fetch['PE_Complexion'] ?></td>
-            <?php ?>
+            <?php /*?><td>&nbsp;</td>
+            <td>Other Interests</td>
+            <td><? echo $fetch['OtherInterests'] ?></td><?php */?>
     </tr>
           <tr >
             <td bgcolor="#DFDFDF">Education</td>
             <td bgcolor="#DFDFDF"><?php echo $fetch['PE_Education'] ?></td>
             <td>&nbsp;</td>
-            <td colspan="2" rowspan="3" align="center"><img src="branding/logos/logo-horizontal.png" alt="Manpasand Jodidar Logo"/></td>
+            <td colspan="2" rowspan="3" align="center"><img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="Shivraj Maratha Logo"/></td>
     </tr>
     <tr>
             <td>Country</td>

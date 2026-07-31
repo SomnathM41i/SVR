@@ -1,6 +1,5 @@
-<?php require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
-  
+<?php require_once('../sys_dbconnection.php');
+  /*include '../dbconnectadmin.php';*/
   include 'pie_chart.php';
 
   $query = "SELECT * FROM pie_chart";

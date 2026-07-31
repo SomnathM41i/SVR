@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect.php');
 //session_start();
 $id = $_SESSION['matriid'];
@@ -12,7 +12,7 @@ $id = $_SESSION['matriid'];
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Upload Document</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>

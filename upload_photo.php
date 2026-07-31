@@ -1,5 +1,5 @@
 <?php ob_start();
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect1.php');
 
 $profile_id=$_GET['id'];
@@ -54,7 +54,7 @@ if ($uploadOk == 0) {
 
 $siteconfig = $db->get_siteconfig();
 ?>
-<?php $page_title = 'Upload Photo - Manpasand Jodidar'; include('header3.php'); ?>
+<?php $page_title = 'Upload Photo - Shivraj Maratha'; include('header3.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 function showMyImage(fileInput) {

@@ -1,12 +1,13 @@
-<?php require_once('includes/bootstrap.php');
-
+<?php require_once('sys_dbconnection.php');
+/*include('dbconnectadmin.php');
+session_start();*/
 error_reporting(0);
  ?>
 	<!-- //header -->
     <!-- navigation -->
     <?php if(isset($login))
        {
-/* removed dead include: include('menu.php'); - include target never existed in this tree */
+		include('menu.php');
 	   } 
 	   else
 	   {
@@ -20,12 +21,12 @@ $strid = $_SESSION['matriid'];
 if(isset($login)&& $regvar=='9')
 {
 $hide_rs = mysqli_query($con,"update register set photo_visibility ='$photo' where MatriID='$strid'");
-
+//echo "update register set photo_visibility ='$photo' where MatriID='$strid'";
 }
 else
 {
   $hide_rs = mysqli_query($con,"update register set photo_visibility ='$photo' where MatriID='$strid'");
-	
+	//echo "update register set photo_visibility ='$photo' where MatriID='$strid'";
 }
 header('location:settings?message=photosucc');
 }
@@ -39,13 +40,13 @@ $strid = $_SESSION['matriid'];
 if(isset($login)&& $regvar=='9')
 {
 $hide_rs = mysqli_query($con,"update register set photo_visibility ='$photo' where MatriID='$strid'");
-
+//echo "update register set photo_visibility ='$photo' where MatriID='$strid'";
 
 }
 else
 {
 	$hide_rs = mysqli_query($con,"update register set photo_visibility ='$photo' where MatriID='$strid'");
-	
+	//echo "update register set photo_visibility ='$photo' where MatriID='$strid'";
 }
 }
 header('location:settings?message=default2');

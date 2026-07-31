@@ -1,14 +1,13 @@
-<?php require_once('../includes/bootstrap.php'); 
-require_once(dirname(__FILE__).'/protect.php');
-
+<?php require_once('../sys_dbconnection.php'); 
+/*include'../dbconnectadmin.php';*/
 
 $msg="";
 	if(isset($_POST['submit']))
 	{
 		$id=mysqli_real_escape_string($con,$_POST['Name']);
-        
+        //echo $id;
 		$upate=mysqli_query($con,"update register set featured_user='yes' where MatriID='$id'");
-        
+        //echo "update register set featured_user='yes' where MatriID='$id'";
 	if($upate>0)
 	{
 		$msg="Featured User Set Successfully";
@@ -34,16 +33,12 @@ $msg="";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -53,7 +48,6 @@ $msg="";
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="stylesheet" href="assets/css/popup.css">
@@ -203,7 +197,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'addfeatureduser_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -226,7 +220,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'editreligion_pop.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -244,7 +238,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -254,7 +248,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });
@@ -298,7 +292,9 @@ $(document).ready(function(){
     {
         $ID=$_POST['Name'];
 
-        
+        /*$allrec=mysqli_query($con,"select * from register ");
+        $data = mysqli_fetch_assoc($allrec);
+     */
      ?>
 
 <div id="myModal" class="modal " role="dialog" style="margin-top: 100px;">
@@ -343,7 +339,7 @@ $(document).ready(function(){
     <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
     <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
   </div><?php  $id=$_GET['ID'];
-          
+          //echo $id; ?>
 
   <h2 class="swal2-title" id="swal2-title" style="display: flex;"> <?php echo $id ?> Demoted From Featured User to User.</h2>
   </div>

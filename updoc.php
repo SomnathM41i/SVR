@@ -1,6 +1,6 @@
                     
-<?php require_once('includes/bootstrap.php'); 
-
+<?php require_once('sys_dbconnection.php'); 
+/*include('../dbconnectadmin.php');*/
 $matriid=$_POST['matid'];
 
 if(isset($_POST['submit']))
@@ -21,7 +21,7 @@ if(isset($_FILES['uploaded_file1']['name']) && !empty($_FILES['uploaded_file1'][
 $target_dir = "../document/";
 $target_file = $target_dir .date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['uploaded_file1']["name"][$i]));
 $sav=date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i", '', basename($_FILES['uploaded_file1']["name"][$i]));
-
+//$target_file = $target_dir.time()."-".rand(1000, 9999)."-".$_FILES["uploaded_file1"]["name"];
 $UploadedImageName = time()."-".rand(1000, 9999)."-".$_FILES["uploaded_file1"]["name"][$i];
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -32,7 +32,7 @@ if(isset($_POST["submit"]))
 		
 $check = getimagesize($_FILES["uploaded_file1"]["tmp_name"][$i]);
 if($check !== false) {
-
+//print_r($_FILES["uploaded_file1"]);	
 define("success8","File is an image - " . $check["mime"] . ".");
 header('location:profile_view.php?msg1=suc1&ID='. $matriid );
 $uploadOk = 1;
@@ -68,7 +68,7 @@ if (move_uploaded_file($_FILES["uploaded_file1"]["tmp_name"][$i], $target_file))
 $date=date('Y-m-d');
 
 mysqli_query($con,"insert into document(Name,MatriID,Date,type,docapprove) values('$sav','$matriid','$date','$i','Yes')");
-
+//echo "insert into document(Name,MatriID,Date,type) values('$sav','$matriid','$date','$i')";
 
 header('location:profile_view.php?ID='. $matriid );
 header('location:profile_view.php?msg1=suc5&ID='. $matriid );

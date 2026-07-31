@@ -1,11 +1,11 @@
-<?php require_once('includes/bootstrap.php');
-
+<?php require_once('sys_dbconnection.php');
+/*include('dbconnectadmin.php');*/
 error_reporting(0);
 $id = $_POST['rowid'];
+//echo $id;
 
-
-
-
+//$sqldata=mysqli_query($con,"select * from successstory where ID='$id' ");
+//$rowdata=mysqli_fetch_array($sqldata);?>
 
     <div class="modal-header">
           <h4 class="modal-title">Example Of About Me</h4>

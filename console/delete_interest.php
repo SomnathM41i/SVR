@@ -1,6 +1,6 @@
-<?php require_once('../includes/bootstrap.php');   
-
-/* removed dead include: include('memprotect.php'); - target never existed */
+<?php require_once('../sys_dbconnection.php');   
+/*include'../dbconnectadmin.php';*/
+include('memprotect.php');
 $id=$_GET['id'];
 $check=$_GET['flag'];
 if($check==1)
@@ -19,5 +19,5 @@ else
     header("location:add_interest?flag=0&ID='$id'&msg=delete");
     
 }
-
+//exit;
 ?>

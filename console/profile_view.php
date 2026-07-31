@@ -1,4 +1,4 @@
-<?php require_once('../includes/bootstrap.php'); 
+<?php require_once('../sys_dbconnection.php'); 
 require_once('../includes/annual_income.php');
 include('protect.php');
 /*include('../dbconnectadmin.php');*/
@@ -19,16 +19,12 @@ $row = mysqli_fetch_assoc($result);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit"/>
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
     <link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<!--<link rel="stylesheet" href="assets/css/plugins/select2.min.css">-->
     <!-- font css -->
@@ -38,7 +34,6 @@ $row = mysqli_fetch_assoc($result);
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link rel="stylesheet" href="assets/css/newcss.css">
@@ -57,7 +52,7 @@ $row = mysqli_fetch_assoc($result);
     
 
 <style>
-:root { --gold: #BA9350; --crimson: #5E1426; --surface: #FFFDFB; }
+:root { --gold: #C9A84C; --crimson: #8B1A2B; --surface: #FDFAF5; }
 body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .admin-profile-container { padding-top:36px; }
 .admin-profile-container .pc-container { max-width:100%; width:100%; margin-left:auto !important; margin-right:auto !important; padding-left:0; padding-right:0; }
@@ -70,7 +65,7 @@ body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .card-header h5 { font-size:15px; font-weight:600; color:#333; margin:0; }
 .card-body { padding:16px 22px; }
 .form-control { border-radius:6px; border:1px solid #ddd; padding:8px 14px; font-size:13px; }
-.form-control:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(186,147,80,0.15); }
+.form-control:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,168,76,0.15); }
 .form-label { font-size:12px; font-weight:600; color:#555; margin-bottom:4px; }
 .table-borderless td { padding:6px 8px; font-size:13px; border:none; }
 .table-borderless td:first-child { font-weight:600; color:#555; min-width:120px; }
@@ -86,15 +81,15 @@ body { background:var(--surface); font-family:'DM Sans',sans-serif; }
 .btn-secondary { background:linear-gradient(135deg,#6c757d,#545b62); border:none; color:#fff; }
 .btn-success { background:linear-gradient(135deg,#28a745,#1e7e34); border:none; color:#fff; }
 .btn-danger { background:linear-gradient(135deg,#dc3545,#b02a37); border:none; color:#fff; }
-.btn-primary { background:linear-gradient(135deg,var(--crimson),#3D0C19); border:none; }
+.btn-primary { background:linear-gradient(135deg,var(--crimson),#6e1422); border:none; }
 .dropdown-menu { border:none; box-shadow:0 4px 16px rgba(0,0,0,0.12); border-radius:8px; }
 .dropdown-item { font-size:13px; padding:8px 18px; }
-.dropdown-menu-dark { background:#43303A; }
+.dropdown-menu-dark { background:#2D1F3D; }
 .dropdown-menu-dark .dropdown-item { color:rgba(255,255,255,0.85); }
-.dropdown-menu-dark .dropdown-item:hover { background:rgba(186,147,80,0.15); color:#fff; }
+.dropdown-menu-dark .dropdown-item:hover { background:rgba(201,168,76,0.15); color:#fff; }
 .list-pills .nav-link { border-radius:0; padding:12px 18px; font-size:13px; border-left:3px solid transparent; transition:all 0.2s; }
-.list-pills .nav-link.active { background:#F9E7DC; border-left-color:var(--gold); color:var(--crimson); font-weight:600; }
-.list-pills .nav-link:hover { background:#FFFDFB; }
+.list-pills .nav-link.active { background:#f5efe6; border-left-color:var(--gold); color:var(--crimson); font-weight:600; }
+.list-pills .nav-link:hover { background:#faf5ee; }
 .personal-result { font-weight:500; }
 .alert { border:none; border-radius:8px; padding:14px 18px; }
 .alert h5 { font-size:13px; }
@@ -1206,7 +1201,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                <img src="https://img.icons8.com/material/24/7A1F39/student-center.png"/>
+                                <img src="https://img.icons8.com/material/24/7267EF/student-center.png"/>
                                 <span class="p-l-5">Education Details</span></h5>
                             </div>
                             <div class="card-body">
@@ -1660,7 +1655,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/date.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/date.png"/>
                                     <span class="p-l-5">Partner Preference</span></h5>
                             </div>
                             <div class="card-body">
@@ -1695,7 +1690,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/windows/24/7A1F39/defend-family--v3.png"/>
+                                    <img src="https://img.icons8.com/windows/24/7267EF/defend-family--v3.png"/>
                                     <span class="p-l-5">Family Details</span></h5>
                             </div>
                             <div class="card-body">
@@ -2151,7 +2146,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-glyphs/24/7A1F39/contact-card.png"/>
+                                    <img src="https://img.icons8.com/ios-glyphs/24/7267EF/contact-card.png"/>
                                     <span class="p-l-5">Contact Information</span></h5>
                             </div>
                             <div class="card-body">
@@ -2844,7 +2839,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7A1F39/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
+                                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7267EF/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
                                     <span class="p-l-5">Horoscope Information</span></h5>
                             </div>
                             <div class="card-body">
@@ -3315,7 +3310,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/camera--v2.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/camera--v2.png"/>
                                     <span class="p-l-5">Upload Photo</span></h5>
                             </div>
                             <div class="card-body">
@@ -3436,7 +3431,7 @@ function checkworkstate(str)
 										 mysqli_query($con,"update register set Photo1='$sav3',Photo1Approve='Yes' where MatriID='$strmid'");
 										 
 										}
-                                         mysqli_query($con,"insert into gallary(photo_name,matri_id,photo_approve) values('$sav3','$strmid','Yes')")or svr_db_fail($con);
+                                         mysqli_query($con,"insert into gallary(photo_name,matri_id,photo_approve) values('$sav3','$strmid','Yes')")or die(mysqli_error());
 										
 										
 										define("success3","Your Photo Uploaded Successfully.");
@@ -3472,7 +3467,7 @@ function checkworkstate(str)
 											<br><br>
 											
 										 <br>
-											<h4 align="center"><label for="upload_photo" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
+											<h4 align="center"><label for="upload_photo" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">  
               			                <input name="fileToUpload3" style="visibility:hidden;" id="upload_photo" type="file" onchange="showMyImage2(this);" />
 									<?php } ?>
@@ -3518,7 +3513,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/28/7A1F39/name-tag-woman.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/28/7267EF/name-tag-woman.png"/>
                                     <span class="p-l-5">Upload ID Proof</span></h5>
                             </div>
                             <div class="card-body">
@@ -3652,7 +3647,7 @@ function checkworkstate(str)
 												<option value="Driving License">Driving License</option>
 												<option value="Passport" >Passport</option>
 											</select>--> <br>
-											<h4 align="center"><label for="upload1" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
+											<h4 align="center"><label for="upload1" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php echo $_GET['ID'];?>">  
               			                <input name="fileToUpload1" style="visibility:hidden;" id="upload1" type="file" onchange="showMyImage(this);" />
 									<?php } ?>
@@ -3698,7 +3693,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                     <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7A1F39/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
+                                     <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7267EF/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
                                      <span class="p-l-5">Upload Horoscope</span></h5>
                             </div>
                             <div class="card-body">
@@ -3791,7 +3786,7 @@ function checkworkstate(str)
 											<br><br>
 											
 										 <br>
-											<h4 align="center"><label for="horoscope" class="btn btn-primary" style="background:#7A1F39">Browse</label></h4>
+											<h4 align="center"><label for="horoscope" class="btn btn-primary" style="background:#007bff">Browse</label></h4>
                                             <input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">  
               			                <input name="fileToUpload4" style="visibility:hidden;" id="horoscope" type="file" onchange="showMyImage3(this);" />
 									<?php } ?>
@@ -3837,7 +3832,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/upload-document.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/upload-document.png"/>
                                     <span class="p-l-5">Upload Document</span></h5>
                             </div>
 						<div class="card-body">
@@ -4012,7 +4007,7 @@ function checkworkstate(str)
 						<div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="at-sign" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/7A1F39/external-setting-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"/>
+                                    <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/7267EF/external-setting-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"/>
                                     <span class="p-l-5"> Profile Settings</span></h5>
                             </div>
 							<input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">
@@ -4412,7 +4407,7 @@ function isNumber(evt)
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -4422,7 +4417,7 @@ function isNumber(evt)
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

@@ -4,7 +4,7 @@
 					<div class="m-header">
 						<a href="index" class="b-brand">
 							<!-- ========   change your logo hear   ============ -->
-							<img src="branding/logos/emblem.png" alt="" class="logo logo-lg">
+							<img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
 						</a>
 					</div>
 					<div class="me-auto pc-mob-drp">

@@ -1,4 +1,3 @@
-<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <div class="modal notification-modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">

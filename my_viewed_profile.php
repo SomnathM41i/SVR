@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include_once('memprotect.php');
 include_once('siteconfig.php');
 error_reporting(0);
@@ -17,12 +17,8 @@ $start_from = ($page-1) * $limit;
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 @media screen and (max-width: 568px){
@@ -63,7 +59,7 @@ padding: 36px 0 90px
   </section>
 
 <?php
-	
+	//$strid = $_SESSION['matri_login'];
 $check=mysqli_query($con,"select matriid from block_member where profile_id='$login'"); 
 $data1=array();
 while($check1=mysqli_fetch_array($check))
@@ -99,15 +95,15 @@ $total_pages = ceil($total_records / $limit);
                	<?php
 				while($recs = mysqli_fetch_array($result1)) {
 				
-                
+                //echo $recs['date'];
 				  $s=mysqli_query($con,"select * from  register where MatriID='".$recs['whom']."'");
-				
+				// echo "select * from  register where MatriID='".$recs['whom']."'";
 				   while($rec=mysqli_fetch_array($s))
 					{
 				$cnt++;
 				$path="";
 				$is_block = mysqli_query($con,"select *from block_member where matriid ='$login' AND profile_id = '".$recs['whom']."'");
-				
+				//echo "select *from block_member where matriid ='$login' AND profile_id = '".$recs['whom']."'";
 				if(mysqli_num_rows($is_block)==1)
 				continue;
 				?>  
@@ -259,7 +255,7 @@ $total_pages = ceil($total_records / $limit);
 			<section class="mvv-section">
 					<div class="mvv-container">
 						<div style="text-align:center;padding:60px 20px;">
-							<div style="font-size:3rem;font-weight:800;color:#5E1426;">OOP'S</div>
+							<div style="font-size:3rem;font-weight:800;color:#6B1A1A;">OOP'S</div>
 							<h4>Sorry Result Not Found</h4>
 							<div style="color:#888;margin:10px 0;">Not yet viewed any profiles.</div>
 							<a href="smart_search" class="mvv-btn primary">Search</a>

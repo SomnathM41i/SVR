@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');/*include_once('dbconnectadmin.php');*/
+require_once('sys_dbconnection.php');/*include_once('dbconnectadmin.php');*/
 // include_once('memprotect.php');
 // include_once('siteconfig.php');
 $from = 0;
@@ -21,9 +21,9 @@ if(mysqli_num_rows($qry1)==0)
 mysqli_query($con,"insert into notification(noti_sender,noti_receiver,notification_type,notification_desc,seen,date_time)values('$sender','$receiver','Message','Send Message','unseen',NOW())");
 }
 $date = date('d-m-Y');
-$status=mysqli_query($con,"insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())")or svr_db_fail($con);
+$status=mysqli_query($con,"insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())")or die(mysqli_error($con));
 
-
+//echo "insert into receivemessage(ToID,FromID,Msg,SendDate,Date) values('$receiver','$sender','$mess','$date',now())";
 
 $strid=$_SESSION['matriid'];
 

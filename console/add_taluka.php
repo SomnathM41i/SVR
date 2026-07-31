@@ -1,5 +1,5 @@
 <?php
-require_once'../includes/bootstrap.php';
+require_once '../sys_dbconnection.php';
 include 'protect.php';
 
 mysqli_set_charset($con, 'utf8mb4');
@@ -134,16 +134,11 @@ function talukaAdminEscape($value): string
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Taluka</title>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <link rel="shortcut icon" href="../css3/assets/shivraj-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css">
     <link rel="stylesheet" href="assets/css/customizer.css">
 </head>

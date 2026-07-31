@@ -1,0 +1,17 @@
+ALTER TABLE register
+  ADD COLUMN profile_location_type VARCHAR(20) NOT NULL DEFAULT 'Indian Resident',
+  ADD COLUMN nri_type VARCHAR(30) NULL,
+  ADD COLUMN nri_citizenship VARCHAR(100) NULL,
+  ADD COLUMN nri_current_country VARCHAR(100) NULL,
+  ADD COLUMN nri_current_state VARCHAR(100) NULL,
+  ADD COLUMN nri_current_city VARCHAR(100) NULL,
+  ADD COLUMN nri_residency_status VARCHAR(100) NULL,
+  ADD COLUMN nri_visa_type VARCHAR(80) NULL,
+  ADD COLUMN nri_visa_expiry DATE NULL,
+  ADD COLUMN nri_years_abroad TINYINT UNSIGNED NULL,
+  ADD COLUMN nri_overseas_mobile VARCHAR(25) NULL,
+  ADD COLUMN nri_income_currency VARCHAR(10) NULL,
+  ADD COLUMN nri_willing_to_relocate VARCHAR(20) NULL,
+  ADD COLUMN nri_settlement_preference VARCHAR(20) NULL,
+  ADD COLUMN nri_native_place VARCHAR(150) NULL,
+  ADD COLUMN nri_preferred_country VARCHAR(100) NULL;

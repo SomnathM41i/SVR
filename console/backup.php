@@ -1,10 +1,15 @@
-<?php require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
+<?php require_once('../sys_dbconnection.php');
 // Database configuration
+/*$host = "localhost";
+$username = "root";
+$password = "";
+$database_name = "7.0";
+
+// Get connection object and set the charset
+$con = mysqli_connect($host, $username, $password, $database_name);*/
 
 
-
-
+//$con->set_charset("utf8"); 
 
 // Get All Table Names From the Database
 $tables = array();  
@@ -28,7 +33,7 @@ foreach ($tables as $table) {
 	else{
 		
     $row = mysqli_fetch_row($result);
-   
+   // print_r($row);
     $sqlScript .= "\n\n" . $row[1] . ";\n\n";
     $query = "SELECT * FROM $table";
     $result = mysqli_query($con, $query);

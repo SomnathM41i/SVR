@@ -1,10 +1,9 @@
 <?php
-/* SECURITY: verbose error reporting disabled in production. */
-/* SECURITY: PHP error display disabled in production. */
-/* SECURITY: PHP startup error display disabled in production. */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 require_once('../sys_dbconnection.php');
-require_once '../includes/security.php'; svr_api_key_guard(); /* SECURITY (H6): broadcast endpoint - optional X-API-Key guard (active once SVR_API_ADMIN_KEY is configured). */
 require_once('../firebase/fcm_functions.php'); // contains getAccessToken() and sendFCMNotification()
 
 header("Content-Type: application/json");
@@ -56,7 +55,7 @@ while ($row = $result->fetch_assoc()) {
             'notification' => [
                 'title' => $title,
                 'body' => $personalMessage,
-                'image' => 'https://weddingsparampara.com/branding/logos/logo-horizontal.png'
+                'image' => 'http://localhost/SVR/css3/assets/shivraj-logo.png'
             ]
         ]
     ];

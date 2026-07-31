@@ -1,22 +1,22 @@
-<?php require_once('../includes/bootstrap.php');
+<?php require_once('../sys_dbconnection.php');
 include('protect.php'); 
-
+/*include'../dbconnectadmin.php';*/
 $msg="";
   if(isset($_POST['submit']))
   {
           
     $subcaste=mysqli_real_escape_string($con,$_POST['Name']);
-    
+    //echo $dist;
     $caste=mysqli_real_escape_string($con,$_POST['caste']);
-    
+    //echo $state;
     $religion=mysqli_real_escape_string($con,$_POST['religion']);
-    
+    //echo $country;
     
 
   
     $q="select * from subcaste where subcast='$subcaste'";
-    
-    
+    //echo "select * from e_dist where dist='$dist'";
+    //exit;
     $rs=mysqli_query($con,$q);
     $num=mysqli_num_rows($rs);
    
@@ -28,11 +28,11 @@ $msg="";
     }
     else
     {   
-        
+        //if($state==""){echo "State empty";}else{ echo $state;}
         $q="insert into subcaste(subcast,caste,religion,status) values('$subcaste','$caste','$religion','enable')";
-        
-        
-        $rs=mysqli_query($con,$q) or svr_db_fail($con);
+        //echo "insert into e_dist(dist,sid2,status) values('$dist','$state','1')";
+        //exit;
+        $rs=mysqli_query($con,$q) or die(mysqli_error());
         if($rs>0)
         {
                 $msg="Subcaste added Successfully!!";
@@ -59,9 +59,9 @@ if(isset($_POST['Update']))
   }
   else
   {   
-     
+     //if($state==""){echo "State empty";}else{ echo $state;}
     $q="update subcaste set subcast='$subcaste' where id='$id'";
-    $rs=mysqli_query($con,$q) or svr_db_fail($con);
+    $rs=mysqli_query($con,$q) or die(mysqli_error());
     if($rs>0)
     {
       $msg="Subcaste Updated Successfully!!";
@@ -79,8 +79,8 @@ if(isset($_POST['Update']))
     $num2=mysqli_num_rows($rs2);
 
     
-    
-    
+    //echo "select * from religion";
+    //echo"select * from caste";
 ?>
 
 <!DOCTYPE html>
@@ -100,17 +100,13 @@ if(isset($_POST['Update']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/plugins/dataTables.bootstrap4.min.css">
     <!-- font css -->
@@ -120,7 +116,6 @@ if(isset($_POST['Update']))
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
@@ -211,7 +206,7 @@ xmlhttp.send();
     <!-- [ Mobile header ] start -->
     <div class="pc-mob-header pc-header">
       <div class="pcm-logo">
-        <img src="../branding/logos/emblem.png" alt="" class="logo logo-lg">
+        <img src="http://localhost/SVR/css3/assets/shivraj-logo.png" alt="" class="logo logo-lg">
       </div>
       <div class="pcm-toolbar">
         <a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -238,7 +233,7 @@ xmlhttp.send();
       <?php include('header.php');?>
     <!-- [ navigation menu ] end -->
     <!-- Modal -->
-    <?php 
+    <?php //include('notification.php');?>
     
     <!-- [ Header ] end -->
 
@@ -299,8 +294,8 @@ xmlhttp.send();
                       
                       <?php    
                         $ry=mysqli_query($con,"select * from caste where Religion='".$_SESSION['religion']."'");
-                     
-                      
+                     // echo "select * from caste where Religion='".$_SESSION['religion']."'";
+                      //exit;
                         $i=0;
                         while($data2=mysqli_fetch_assoc($ry) and $i<$num2)
                         { ?>
@@ -372,7 +367,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'add_subcaste_pop', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -395,7 +390,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'edit_subcaste', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }
@@ -413,7 +408,7 @@ $(document).ready(function(){
             $('.m-header').addClass('bg-dark');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
             $('.theme-color.brand-color').addClass('d-none');
         }
     });
@@ -423,7 +418,7 @@ $(document).ready(function(){
             $('.m-header').removeClassPrefix('bg-');
         } else {
             $('.m-header').removeClassPrefix('bg-');
-            $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
+            $('.m-header > .b-brand > .logo-lg').attr('src', 'http://localhost/SVR/css3/assets/shivraj-logo.png');
             $('.m-header').addClass(temp);
         }
     });

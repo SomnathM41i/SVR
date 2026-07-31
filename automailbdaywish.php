@@ -1,5 +1,3 @@
-<?php require_once(dirname(__FILE__).'/includes/security.php');
-svr_cron_guard(); /* SECURITY (H6): cron endpoint now guarded (CLI always allowed; web requires SVR_CRON_KEY when configured). */ ?>
 <title>Birthday wish</title>
 <?php 
 include('dbconnectadmin.php');
@@ -37,7 +35,7 @@ while($row=mysqli_fetch_array($sql))
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Manpasand Jodidar</title>
+<title>weddingsparampara.com</title>
 <meta name='description' content='' />
 <meta name='keywords' content='' />
 <meta name='rating' content='general' />
@@ -50,9 +48,7 @@ while($row=mysqli_fetch_array($sql))
 <body style='margin: 0 auto;
 	width: 100%;
 	background: #ccc;
-	text-align: left;'><!--MPJ-EMAILWRAP-->
-<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
-
+	text-align: left;'>
 <div class='wrapper' style='margin: 0 auto;	width: 590px;background: #333;'>
 <div class='wrapper-float' style='float: left;margin: 0;width: 590px;background: #fff;'>
 <div class='logo' style='float: left;
@@ -62,7 +58,7 @@ while($row=mysqli_fetch_array($sql))
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
-	text-decoration: none;'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png'></a></div>
+	text-decoration: none;'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png'></a></div>
 <div class='cont-wrapper' style='margin:-128px 10px 15px 10px;; background:none;float: left;width: 549px;margin: -128px 10px 15px 10px;'>
 <p class='content' style='font-family: 'AvantGardeBkBTBook';font-weight: bold;font-size: 14px;color: #000;text-align: left;line-height: 23px;text-align: left;'><br><br><br><br><br><br><br><br>
 Dear User,<br><br>
@@ -107,8 +103,6 @@ Warm Regards,<br>
 </div>
 </div>
 </div>
-<!--MPJ-EMAILWRAP-->
-</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
 </body>
 </html>";
 	
@@ -143,7 +137,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-
+//	$tmpString = str_replace("\"", "\"", $tmpString);
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

@@ -19,7 +19,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.3,
@@ -28,7 +28,7 @@ function floatchart() {
                 size: 3,
                 opacity: 0.9,
                 colors: "#fff",
-                strokeColor: "#7A1F39",
+                strokeColor: "#7267EF",
                 strokeWidth: 2,
                 hover: {
                     size: 7,
@@ -299,10 +299,10 @@ function floatchart() {
             dataLabels: {
                 enabled: false,
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
-                    color: '#7A1F39',
+                    color: '#7267EF',
                     columnWidth: '60%',
                 }
             },
@@ -362,7 +362,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.3,
@@ -371,7 +371,7 @@ function floatchart() {
                 size: 0,
                 opacity: 0.9,
                 colors: "#fff",
-                strokeColor: "#7A1F39",
+                strokeColor: "#7267EF",
                 strokeWidth: 2,
                 hover: {
                     size: 7,
@@ -536,7 +536,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
                     columnWidth: '60%'
@@ -932,7 +932,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             stroke: {
                 curve: 'smooth',
                 width: 3,
@@ -1047,13 +1047,13 @@ function floatchart() {
                 type: 'datetime',
                 categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000'],
             },
-            colors: ['#DDB15F', '#17C666'],
+            colors: ['#448aff', '#17C666'],
             fill: {
                 type: 'solid',
             },
             markers: {
                 size: 5,
-                colors: ['#DDB15F', '#17C666'],
+                colors: ['#448aff', '#17C666'],
                 opacity: 0.9,
                 strokeWidth: 2,
                 hover: {
@@ -1271,7 +1271,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0,
@@ -1285,8 +1285,8 @@ function floatchart() {
             markers: {
                 size: 3,
                 opacity: 0.9,
-                colors: "#7A1F39",
-                strokeColor: "#7A1F39",
+                colors: "#7267EF",
+                strokeColor: "#7267EF",
                 strokeWidth: 1,
                 hover: {
                     size: 4,
@@ -1747,7 +1747,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.3,
@@ -1755,8 +1755,8 @@ function floatchart() {
             markers: {
                 size: 2,
                 opacity: 0.9,
-                colors: "#7A1F39",
-                strokeColor: "#7A1F39",
+                colors: "#7267EF",
+                strokeColor: "#7267EF",
                 strokeWidth: 2,
                 hover: {
                     size: 4,
@@ -1924,7 +1924,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.3,
@@ -1932,8 +1932,8 @@ function floatchart() {
             markers: {
                 size: 2,
                 opacity: 0.9,
-                colors: "#7A1F39",
-                strokeColor: "#7A1F39",
+                colors: "#7267EF",
+                strokeColor: "#7267EF",
                 strokeWidth: 2,
                 hover: {
                     size: 4,
@@ -2092,7 +2092,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.4,
@@ -2255,7 +2255,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'solid',
                 opacity: 0.3,
@@ -2395,13 +2395,13 @@ function floatchart() {
     // [ peity-chart ] start
     $(function() {
         $("span.pie_1").peity("pie", {
-            fill: ["#7A1F39", "#eff3f6"]
+            fill: ["#7267EF", "#eff3f6"]
         });
         $("span.pie_2").peity("pie", {
-            fill: ["#eff3f6", "#7A1F39"]
+            fill: ["#eff3f6", "#7267EF"]
         });
         $("span.pie_3").peity("pie", {
-            fill: ["#eff3f6", "#7A1F39"]
+            fill: ["#eff3f6", "#7267EF"]
         });
         $(".data-attributes").peity("donut");
     });
@@ -2456,7 +2456,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39", "#0e9e4a", "#EA4D4D"],
+            colors: ["#7267EF", "#0e9e4a", "#EA4D4D"],
             stroke: {
                 curve: 'smooth',
                 width: 2,
@@ -2500,7 +2500,7 @@ function floatchart() {
                     enabled: true
                 },
             },
-            colors: ["#7A1F39", "#0e9e4a", "#EA4D4D"],
+            colors: ["#7267EF", "#0e9e4a", "#EA4D4D"],
             plotOptions: {
                 bar: {
                     columnWidth: '55%',
@@ -2538,7 +2538,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39", "#3ec9d6"],
+            colors: ["#7267EF", "#3ec9d6"],
             stroke: {
                 curve: 'smooth',
                 width: 2,
@@ -2575,7 +2575,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
                     columnWidth: '80%'
@@ -2851,7 +2851,7 @@ function floatchart() {
                     show: false
                 }
             },
-            colors: ['#A63E52'],
+            colors: ['#7759de'],
         }
         var chart = new ApexCharts(document.querySelector("#real5-chart"), spark4);
         chart.render()
@@ -2892,7 +2892,7 @@ function floatchart() {
                     show: false
                 }
             },
-            colors: ['#7A1F39'],
+            colors: ['#7267EF'],
         }
         var chart = new ApexCharts(document.querySelector("#real2-chart"), spark5);
         chart.render()
@@ -2964,7 +2964,7 @@ function floatchart() {
             dataLabels: {
                 enabled: false
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             series: [{
                     name: 'Metric1',
                     data: generateDatasehratheat(12, {
@@ -3087,7 +3087,7 @@ function floatchart() {
                     },
                 }
             },
-            colors: ["#7A1F39", "#0e9e4a", "#EA4D4D"],
+            colors: ["#7267EF", "#0e9e4a", "#EA4D4D"],
             dataLabels: {
                 enabled: true,
                 offsetX: -6,
@@ -3132,7 +3132,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
                     columnWidth: '80%'
@@ -3188,7 +3188,7 @@ function floatchart() {
             yaxis: {
                 min: 100
             },
-            colors: ['#7A1F39'],
+            colors: ['#7267EF'],
         }
         var chart = new ApexCharts(document.querySelector("#site-chart"), optionst);
         chart.render()
@@ -3216,7 +3216,7 @@ function floatchart() {
             theme: {
                 monochrome: {
                     enabled: true,
-                    color: '#7A1F39',
+                    color: '#7267EF',
                 }
             },
             responsive: [{
@@ -3251,7 +3251,7 @@ function floatchart() {
                 }
             },
             series: [85.7, 77.56, 20.9, 10.9, 15.8, 86.7],
-            colors: ["#7A1F39", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D", "#A63E52"],
+            colors: ["#7267EF", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D", "#7759de"],
             labels: ["Facebook ads", "Amazon ads", "Youtube videos", "Google adsense", "Twitter ads", "News ads"],
             legend: {
                 show: true,
@@ -3393,7 +3393,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
                     columnWidth: '80%'
@@ -3490,7 +3490,7 @@ function floatchart() {
             legend: {
                 show: false
             },
-            colors: ["#3ec9d6", "#ffa21d", "#7A1F39"],
+            colors: ["#3ec9d6", "#ffa21d", "#7267EF"],
         }
         var chart = new ApexCharts(document.querySelector("#revenue-chart"), options);
         chart.render();
@@ -3602,7 +3602,7 @@ function floatchart() {
                     left: 0
                 },
             },
-            colors: ["#7A1F39", "#0e9e4a", "#EA4D4D"],
+            colors: ["#7267EF", "#0e9e4a", "#EA4D4D"],
         }
         var chart = new ApexCharts(document.querySelector("#customer-chart"), options);
         chart.render();
@@ -3732,7 +3732,7 @@ function floatchart() {
                     enabled: false
                 },
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             plotOptions: {
                 bar: {
                     colors: {
@@ -3747,7 +3747,7 @@ function floatchart() {
                         }, {
                             from: 31,
                             to: 50,
-                            color: '#7A1F39'
+                            color: '#7267EF'
                         }, {
                             from: 51,
                             to: 100,
@@ -3797,7 +3797,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             stroke: {
                 curve: 'smooth',
                 width: 2,
@@ -3838,7 +3838,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             fill: {
                 type: 'gradient',
                 gradient: {
@@ -4059,7 +4059,7 @@ function floatchart() {
                         text: 'Rally',
                         style: {
                             color: "#fff",
-                            background: '#A63E52'
+                            background: '#775DD0'
                         }
                     }
                 }]
@@ -4359,7 +4359,7 @@ function floatchart() {
                 size: 0,
                 style: 'hollow',
             },
-            colors: ["#7A1F39"],
+            colors: ["#7267EF"],
             xaxis: {
                 type: 'datetime',
                 min: new Date('01 Mar 2012').getTime(),

@@ -1,5 +1,5 @@
-<?php require_once('includes/bootstrap.php');
-
+<?php require_once('sys_dbconnection.php');
+/*include('dbconnectadmin.php');*/
 error_reporting(0);
 $id = $_POST['rowid'];
 $sqldata=mysqli_query($con,"select * from successstory where ID='$id' ");

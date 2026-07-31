@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 $strid = isset($_SESSION['MatriID']) ? $_SESSION['MatriID'] : '';
 $record = [];
 if (!empty($strid)) {

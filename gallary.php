@@ -1,6 +1,6 @@
 <?php 
-	require_once('includes/bootstrap.php');
-	
+	require_once('sys_dbconnection.php');
+	/*include('dbconnectadmin.php');*/
 	
 ?>
 <!DOCTYPE html>
@@ -18,12 +18,8 @@
 <link href="css/color-switcher-design.css" rel="stylesheet">
 <link href="css/stylenew.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-<!-- MPJ: brand icons -->
-<link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-<link rel="manifest" href="branding/site.webmanifest">
-<meta name="theme-color" content="#5E1426">
+<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -130,7 +126,7 @@ window.location='gallary.php';
 	        <?php 
 $id=$_SESSION['matriid'];
 $sqlgal=mysqli_query($con,"select * from gallary where matri_id='$id'");
-
+//echo "select * from gallary where matri_id='$id'";
 $sqlreg=mysqli_query($con,"select * from register where MatriId='$id'");
 $rowreg=mysqli_fetch_array($sqlreg);
 ?>

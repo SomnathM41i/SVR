@@ -1,8 +1,8 @@
 
-<?php require_once('includes/bootstrap.php');
+<?php require_once('sys_dbconnection.php');
 //include_once('memprotect');
 //include_once('siteconfig');
-
+/*include('dbconnectadmin.php');*/
 $from = 0;
 $max_results = 50; 
 $sender=$_SESSION['matriid'];

@@ -4,28 +4,19 @@
 // ini_set('display_startup_errors', 1);
 
 
-require_once('includes/bootstrap.php');
-require_once('includes/security.php');
+require_once('sys_dbconnection.php');
 $siteinfo = $db->get_siteconfig();
-
+//print_r($siteinfo);
 $sms = $siteinfo -> otp_on_off;
 if( $sms != 1)
 {
     header("Location:cancel_otp_step?flag=test");
     exit;
-}
-/* SECURITY (H5): throttle OTP generation/SMS-email sends - 3 per 10 min per
-   mobile+IP. When throttled, keep any previously issued OTP and skip sending.
-   (Placed after the otp_on_off check so disabled flows are unaffected.) */
-$otpBucket = 'otp:' . (isset($_SESSION['mobile']) ? $_SESSION['mobile'] : 'unknown') . ':' . svr_client_ip();
-if (!svr_throttle($otpBucket, 3, 600)) {
-    header('Location: verify_otp?msg=throttled');
-    exit;
-}
+} 
 $_SESSION['otp']=rand(111111,999999);
 $msg="";
 $matriid=$_SESSION['tempid'];
-
+//echo $_SESSION['mobile'];
 $opt = $_SESSION['otp'];
  $msg = "Welcome To Jaipur Your OTP: $opt. Thank You Team weddingsparampara.com A unit of Mahadi Group";
     $numbers = $_SESSION['mobile']; // Multiple numbers separated by comma
@@ -48,7 +39,7 @@ $country= $ret1['phonecode'];
 	$opt = $_SESSION['otp'];
 	//"Welcome To Jaipur Your OTP: {#var#}. Thank You Team weddingsparampara.com A unit of Mahadi Group";
 	 $msg = "Welcome To Jaipur Your OTP: $opt. Thank You Team weddingsparampara.com A unit of Mahadi Group";
-	//$msg = "Welcome To tathastu.in.net Your OTP: $opt. Thank You Team- Manpasand Jodidar";
+	//$msg = "Welcome To tathastu.in.net Your OTP: $opt. Thank You Team- Shivraj Maratha";
   
 	// Route details
     $apiRoute = 'TRANS';

@@ -84,11 +84,11 @@ File: style.css
 
 .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link.active, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:active, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:focus, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:hover, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link.active, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:active, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:focus, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:hover {
     background: transparent;
-    color: #7A1F39;
+    color: #7267EF;
 }
 
 .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link.active .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:active .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:focus .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header[class*="bg-"] .pc-head-link:hover .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link.active .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:active .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:focus .material-icons-two-tone, .pc-horizontal.layout-topbar .pc-header.dark-header .pc-head-link:hover .material-icons-two-tone {
-    background-color: #7A1F39;
+    background-color: #7267EF;
 }
 
 .pc-horizontal.layout-topbar .pc-header .pc-h-item .arrow-icon {
@@ -114,7 +114,7 @@ File: style.css
 }
 
 .pc-horizontal .topbar {
-    background: #3D0C19;
+    background: #1c232f;
     top: 70px;
     left: 0;
     width: 100%;
@@ -210,7 +210,7 @@ File: style.css
 }
 
 .pc-horizontal .topbar .pc-submenu .pc-link {
-    color: #3D0C19;
+    color: #1c232f;
     position: relative;
     padding: 12px 10px 12px 20px;
 }
@@ -235,7 +235,7 @@ File: style.css
 }
 
 .pc-horizontal.layout-horizontal-v2 .topbar .pc-item .pc-link {
-    color: #3D0C19;
+    color: #1c232f;
 }
 
 .pc-horizontal.layout-horizontal-v2 .topbar .pc-item .pc-link .material-icons-two-tone {
@@ -247,7 +247,7 @@ File: style.css
 }
 
 .pc-horizontal.layout-horizontal-v2 .topbar .pc-submenu .pc-link {
-    color: #3D0C19;
+    color: #1c232f;
 }
 
 .pc-horizontal.layout-horizontal-v2 .topbar .pc-hasmenu:hover > .pc-link .pc-arrow {
@@ -265,8 +265,8 @@ File: style.css
     }
 
     .pc-horizontal .topbar .pc-submenu .pc-item:active > .pc-link, .pc-horizontal .topbar .pc-submenu .pc-item:focus > .pc-link, .pc-horizontal .topbar .pc-submenu .pc-item:hover > .pc-link {
-        color: #7A1F39;
-        background: #F4DEE4;
+        color: #7267EF;
+        background: #e3e1fc;
     }
 
     .pc-horizontal .topbar .pc-item .pc-submenu {
@@ -296,12 +296,12 @@ File: style.css
 
     .pc-horizontal .topbar .pc-navbar > .pc-hasmenu:hover > .pc-link {
         z-index: 1001;
-        color: #3D0C19;
+        color: #1c232f;
         position: relative;
     }
 
     .pc-horizontal .topbar .pc-navbar > .pc-hasmenu:hover > .pc-link .material-icons-two-tone {
-        background-color: #3D0C19;
+        background-color: #1c232f;
     }
 
     .pc-horizontal .topbar .pc-navbar > .pc-hasmenu:hover > .pc-submenu {
@@ -316,11 +316,11 @@ File: style.css
     }
 
     .layout-horizontal-v2 .topbar .pc-navbar .pc-item.active > .pc-link, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:active > .pc-link, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:focus > .pc-link, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:hover > .pc-link {
-        color: #7A1F39;
+        color: #7267EF;
     }
 
     .layout-horizontal-v2 .topbar .pc-navbar .pc-item.active > .pc-link .material-icons-two-tone, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:active > .pc-link .material-icons-two-tone, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:focus > .pc-link .material-icons-two-tone, .layout-horizontal-v2 .topbar .pc-navbar .pc-item:hover > .pc-link .material-icons-two-tone {
-        background-color: #7A1F39;
+        background-color: #7267EF;
     }
 
     .layout-horizontal-v2 .topbar .pc-navbar > .pc-hasmenu:hover > .pc-submenu {

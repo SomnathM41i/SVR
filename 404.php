@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 $data_config = $db->get_siteconfig();
 $domain_name = $data_config -> WebFriendlyname;
 $siteinfo = $data_config -> Webname;
@@ -9,19 +9,15 @@ $siteinfo = $data_config -> Webname;
 <html class="no-js" lang="en"> 
 <head>
    <meta charset="utf-8">
-	<title>Page Not Found — Manpasand Jodidar</title>
-	<meta name="description" content="Manpasand Jodidar - the page you are looking for could not be found.">  
+	<title>Page Not Found</title>
+	<meta name="description" content="">  
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="404/base.css">  
     <link rel="stylesheet" href="404/main.css"> 
 	<script src="js/modernizr.js"></script>
-	<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+	<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 </head>
 <body>
    <header class="main-header">

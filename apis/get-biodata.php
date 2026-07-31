@@ -1,6 +1,6 @@
 <?php
-/* SECURITY: verbose error reporting disabled in production. */
-/* SECURITY: PHP error display disabled in production. */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once('../sys_dbconnection.php');
 header("Content-Type: application/json");

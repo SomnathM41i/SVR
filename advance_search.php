@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 include('memprotect.php');
 $strid = $_SESSION['matriid'];
 $check=mysqli_query($con,"select * from register where MatriID='$strid'");
@@ -13,7 +13,7 @@ $fetch=mysqli_fetch_array($check);
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Advance Search</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="branding/favicons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="css3/assets/shivraj-logo.png">
   <link rel="stylesheet" href="css3/Style.css" />
   <link rel="stylesheet" href="css3/mvv-premium.css" />
   <style>
@@ -327,14 +327,43 @@ $fetch=mysqli_fetch_array($check);
               
               <div class="col-lg-5 col-md-5 col-sm-12 form-group">							
                 <select   id="cbostate" title='select State'   name="cbostate[]"  id="cbostate" multiple size="5">
-                  <?php 
+                  <?php /*
+                    $rrs=mysqli_query($con,"select * from e_state where cid='India'");
+                    while($rrow=mysqli_fetch_array($rrs))
+                    {
+                      if($rrow['state']==$row['state'])
+                      {
+                        ?>
+                      <option value="<?php echo $rrow['state'];?>" selected><?php echo $rrow['state'];?></option>
+                      <?php
+                      }
+                      else
+                      {?>
+                      <option value="<?php echo $rrow['state'];?>"><?php echo $rrow['state'];?></option>
+                      <?php			}
+                    } */
                   ?>
                 </select>
               </div>
               
               <div class="col-lg-5 col-md-5 col-sm-12 form-group mr-4">								
                 <select    title='Select District'   id="dist" multiple name="dist[]">
-                  <?php ?>
+                  <?php /*
+                    $rrs=mysqli_query($con,"select * from e_dist");
+                    while($rrow=mysqli_fetch_array($rrs))
+                    {
+                      if($rrow['dist']==$row['dist'])
+                      {
+                        ?>
+                    <option value="<?php  echo $rrow['dist']; ?>" ><?php echo $rrow['dist'];?></option>
+                    <?php
+                      }
+                      else
+                      {?>
+                    <option value="<?php echo $rrow['dist'];?>"><?php echo $rrow['dist'];?></option>
+                    <?php			}
+                    }
+                  */?>
                 </select>
               </div> 
               

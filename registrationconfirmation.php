@@ -1,5 +1,6 @@
-<?php require_once('includes/bootstrap.php');
-
+<?php require_once('sys_dbconnection.php');
+/*session_start(); 
+include('dbconnectadmin.php');*/
 $strid=$_SESSION['matriid'];
 $matriid=$_SESSION['tempid'];
 
@@ -13,12 +14,12 @@ $row=mysqli_fetch_array($qry1);
 include('smtp2.php');
 
 $query="SELECT * FROM siteconfig where ID='1'";
-$configdata=mysqli_query($con,$query) or svr_db_fail($con); 
+$configdata=mysqli_query($con,$query) or die(mysqli_error()); 
 $info=mysqli_fetch_array($configdata);
   //     msg starts //
  
  // Welcome To Jaipur Your Registration Created. Successfully. Your Login ID: {#var#}. Best of Luck Team - weddingsparampara.com A unit of Mahadi Group
-  
+  //"Welcome+To+Jaipur+Your+Registration+Created.+Successfully.+Your+Login+ID:+".$matriid.".+Best+of+Luck+Team+-+".$info['Webname']."+A+unit+of+Mahadi+Group"
 
 $message="Welcome+To+Jaipur+Your+Registration+Created.+Successfully.+Your+Login+ID:+".$matriid.".+Best+of+Luck+Team+-+".$info['Webname']."+A+unit+of+Mahadi+Group";
 $sms=mysqli_query($con,"select * from smsgetway where id=1");
@@ -37,13 +38,32 @@ $templateid='1207162937026617360';
 $format='json';
 $apiRoute='TRANS';
 $apiRequest = 'Text';
-
-
-
+//$url = 'http://www.alots.in/sms-panel/api/http/index.php?username='.$username.'&apikey='.$apiKey.'&apirequest='.$apiRequest.'&route='.$apiRoute.'&mobile='.$to.'&format='.$format.'&sender='.$sender.'&TemplateID='.$templateid.'&message='.$message;
+//$url ='https://api.mavyah.com/api/v2/SendSMS?ApiKey='.$apiKey.'&ClientId='.$client_id.'&SenderId='.$username.'&Message='.$message.'&MobileNumbers='.+$country.$numbers;
+//echo $to.":".$mystring.'<br/></br>'; // REMOVE THIS line if not display response
 $url = preg_replace("/ /", "%20", $url);
 $response = file_get_contents($url);
 
-
+/*$route = "default";
+//Prepare you post parameters
+$postData = array(
+    'mobiles' => $to,
+    'message' => $message,
+    'sender' => $sender,
+    'route' => $route
+);
+// init the resource
+$ch = curl_init();
+curl_setopt_array($ch, array(
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $postData
+    //,CURLOPT_FOLLOWLOCATION => true
+));
+//get response.
+$output = curl_exec($ch);
+curl_close($ch);*/
 //end msg // */
 
 
@@ -62,12 +82,10 @@ $response = file_get_contents($url);
 
 			</head>
 
-			<body><!--MPJ-EMAILWRAP-->
-<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
-
+			<body>
 			<table width='467' border='0' style='font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif' cellpadding='0' cellspacing='0'>
 			  <tr>
-				<td width='222'><img src='https://weddingsparampara.com/branding/logos/logo-horizontal.png' width='168' height='50'  alt=''/></td>
+				<td width='222'><img src='http://localhost/SVR/css3/assets/shivraj-logo.png' width='168' height='50'  alt=''/></td>
 				<td colspan='2' align='center' valign='middle'>Date: $dates</td>
 			  </tr>
 			  <tr>
@@ -96,9 +114,7 @@ $response = file_get_contents($url);
 				<td>&nbsp;</td>
 			  </tr>
 			</table>
-			<!--MPJ-EMAILWRAP-->
-</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
-</body>
+			</body>
 			</html>
 			";
 	$subject="Registration Confirmation";
@@ -136,7 +152,7 @@ function rteSafe($strText) {
 	//convert all types of double quotes
 	$tmpString = str_replace(chr(147), chr(34), $tmpString);
 	$tmpString = str_replace(chr(148), chr(34), $tmpString);
-
+//	$tmpString = str_replace("\"", "\"", $tmpString);
 	
 	//replace carriage returns & line feeds
 	$tmpString = str_replace(chr(10), " ", $tmpString);

@@ -1,5 +1,5 @@
 <?php
-require_once('includes/bootstrap.php');
+require_once('sys_dbconnection.php');
 
 $state = trim((string)($_GET['q'] ?? ''));
 echo '<option value="">Select District</option>';

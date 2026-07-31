@@ -20,15 +20,16 @@ a{
 </style>
 <div class="tab" id="tab-3">
 	      <?php   
-				        
-                        require_once('includes/bootstrap.php'); 
+				        /*session_start();
+                        include('dbconnectadmin.php');*/
+                        require_once('sys_dbconnection.php'); 
 					    $login=$_SESSION['MatriID']; //or sender id	
 						$searchid=base64_decode( urldecode($_GET['id']) );
 						$searchid=base64_decode( urldecode($_GET['id']) );
 		                $full_profile=mysqli_query($con,"select * from register where MatriID='$searchid'");	 
                         $full_fetch=mysqli_fetch_array($full_profile);
 
-						
+						//echo $searchid;
 						$viewed=mysqli_query($con,"select * from viewedaddress where who1='$login' AND whom1='$searchid'");
 					
 						if($view=mysqli_fetch_array($viewed))
@@ -53,7 +54,7 @@ a{
 						
 							<?php
                             $planname=$row['memtype'];
-							
+							//echo $planname;
 							$memty=mysqli_query($con,"select * from membershipplan where plandisplayname='$planname'");
                             $plannm=mysqli_fetch_array($memty)
 							?>
@@ -205,7 +206,7 @@ a{
       <?php }  elseif($full_fetch['phone_visibility']=='freephone'){?>
 	
 	  <?php $viewedit=mysqli_query($con,"select * from viewcontact_details where who='$login' AND whom='$searchid'");
-	 
+	 // echo "select * from viewcontact_details where who='$login' AND whom='$searchid'";
 	  
 		$viewedit_ft=mysqli_fetch_array($viewedit);
 		if($viewedit_ft['status']=='Pending') { ?>
@@ -377,7 +378,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             url : 'contactpopup.php', //Here you will fetch records 
-            data :  'rowid='+ rowid, 
+            data :  'rowid='+ rowid, //Pass $id
             success : function(data){
             $('.modal-content').html(data);//Show fetched data from database
             }

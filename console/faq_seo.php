@@ -1,7 +1,6 @@
 <?php
-  
-  require_once('../includes/bootstrap.php');
-require_once(dirname(__FILE__).'/protect.php');
+  /*include '../dbconnectadmin.php';*/
+  require_once('../sys_dbconnection.php');
   error_reporting(0);
 ?>
 <?php  
@@ -12,11 +11,11 @@ require_once(dirname(__FILE__).'/protect.php');
         $title = $db->setfilter(trim($_POST["title"]));
         $descript = $db->setfilter(trim($_POST["descript"]));
         $keyword = $db->setfilter(trim($_POST["keyword"]));
-        
+        //$catagory=mysqli_real_escape_string($con,$_POST["catagory"]);
         $upd_about ="update seo set title = '$title',description='$descript',keyword='$keyword' where catagory='$catagory'";
-        
+        // echo "update seo set title = '$title',description='$descript',keyword='$keyword' where catagory='$catagory'";;
         mysqli_query($con,$upd_about);
-                                
+                                //header('location:contactusseo.php?catagory=contact&msg=success2');
     } 
 ?>
 
@@ -33,17 +32,13 @@ require_once(dirname(__FILE__).'/protect.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Manpasand Jodidar - Admin Panel"/>
+    <meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
     <meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">?>
-    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
-    <!-- MPJ: brand icons -->
-    <link rel="apple-touch-icon" href="../branding/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="../branding/site.webmanifest">
-    <meta name="theme-color" content="#5E1426">
+    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">?>
+    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
     <link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
     <link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
      
@@ -54,7 +49,6 @@ require_once(dirname(__FILE__).'/protect.php');
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/mpj-brand.css">
       <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
