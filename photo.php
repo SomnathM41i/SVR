@@ -34,7 +34,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$sav' wher
 <script src="console/assets/crop/cropper.js"></script>
 
 <link rel="stylesheet" type="text/css" href="console/assets/crop/cropper.css">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
 
 <!-- font css -->
 <link rel="stylesheet" href="console/assets/fonts/feather.css">

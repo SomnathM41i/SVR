@@ -161,8 +161,8 @@ function displayPaginationBelow($con, $per_page, $page) {
 <title>Latest Matches — Shivraj Maratha</title>
 <link href="css3/Style.css" rel="stylesheet" />
 <link href="css3/mvv-premium.css" rel="stylesheet" />
-<link rel="shortcut icon" href="css3/assets/shivraj-logo.png" type="image/x-icon" />
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <style>
 :root{--mvv-maroon:#6B1A1A;--mvv-saffron:#E8612A;--mvv-gold:#C9921A;--mvv-cream:#FFF8F0;--mvv-border:#e0d5cb;--mvv-muted:#888;}

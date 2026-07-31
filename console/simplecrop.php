@@ -12,7 +12,7 @@ $img=$fetch['Photo1'];
 <script src="assets/crop/cropper.js"></script>
 
 <link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 
 <!-- font css -->
 <link rel="stylesheet" href="assets/fonts/feather.css">

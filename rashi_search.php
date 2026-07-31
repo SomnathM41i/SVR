@@ -281,7 +281,7 @@ $heightLabels = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horoscope Search - Shivraj Maratha</title>
-    <link rel="icon" href="css3/assets/shivraj-logo.png">
+    <link rel="icon" href="branding/favicons/favicon.ico">
     <link rel="stylesheet" href="css3/Style.css">
     <link rel="stylesheet" href="css3/mvv-premium.css">
     <style>

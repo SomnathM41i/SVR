@@ -28,7 +28,7 @@ require_once(dirname(__FILE__).'/protect.php');
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 	<link href="ckeditor/sample.css" rel="stylesheet" type="text/css" />
 	<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
 	 

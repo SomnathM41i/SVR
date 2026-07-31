@@ -21,7 +21,7 @@
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">

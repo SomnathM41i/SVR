@@ -134,7 +134,7 @@ function talukaAdminEscape($value): string
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Taluka</title>
-    <link rel="shortcut icon" href="../css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts/feather.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">

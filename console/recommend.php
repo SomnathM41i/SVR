@@ -19,8 +19,8 @@ include('protect.php');
     <meta name="author" content="DashboardKit" />
 
     <!-- Favicon icon -->
-    <?php //<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon"> ?>
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <?php //<link rel="icon" href="../branding/favicons/favicon.ico" type="image/x-icon"> ?>
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="assets/fonts/feather.css">

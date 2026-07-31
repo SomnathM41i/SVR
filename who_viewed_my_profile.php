@@ -13,7 +13,7 @@ $start_from = ($page-1) * $limit;
 <title>Who Viewed My Profile</title>
 <link href="css3/Style.css" rel="stylesheet">
 <link href="css3/mvv-premium.css" rel="stylesheet">
-<link rel="icon" href="css3/assets/shivraj-logo.png" type="image/png">
+<link rel="icon" href="branding/favicons/icon-32.png" type="image/png">
 <style>
 @media screen and (max-width: 568px){
 .speaker-block .inner-box {
