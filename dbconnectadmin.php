@@ -18,10 +18,10 @@
 	if (!isset($_SESSION)) { session_start(); }
 	
 	ob_start();
-	$DB ["host"] = "localhost";
-	$DB ["dbName"] = "tathastu.in.net";
-	$DB ["user"] = "root";
-	$DB ["pass"] = "";
+	$DB ["host"] = "82.25.121.160";
+	$DB ["dbName"] = "u320743426_MJ";
+	$DB ["user"] = "u320743426_MJ";
+	$DB ["pass"] = "&fw0f=HBv6";
 	$con=new mysqli($DB["host"],$DB["user"],$DB["pass"],$DB["dbName"]);
 		
 ?>

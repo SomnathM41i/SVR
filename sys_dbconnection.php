@@ -11,9 +11,9 @@ class Database{
 	private $_connection;
 	private static $_instance; //The single instance
 	private $_host = "82.25.121.160";
-	private $_database = "u320743426_SVR";
-	private $_username = "u320743426_SVR";
-	private $_password = "ez?Zcc4X9$";
+	private $_database = "u320743426_MJ";
+	private $_username = "u320743426_MJ";
+	private $_password = "&fw0f=HBv6";
 	
 	//this function is called everytime this class is instantiated		
 	/*
