@@ -2553,7 +2553,7 @@ textarea.form-control-lg {
 }
 
 .form-switch .form-check-input:focus {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%237267EF'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%237A1F39'/%3e%3c/svg%3e");
 }
 
 .form-switch .form-check-input:checked {
@@ -18363,11 +18363,11 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
 }
 
 .form-check .form-check-input.input-light-primary:checked[type="checkbox"] {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%237267EF' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%237A1F39' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
 .form-check .form-check-input.input-light-primary:checked[type="radio"] {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%237267EF'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%237A1F39'/%3e%3c/svg%3e");
 }
 
 .form-check .form-check-input.input-primary:focus[type="checkbox"], .form-check .form-check-input.input-primary:focus[type="radio"], .form-check .form-check-input.input-light-primary:focus[type="checkbox"], .form-check .form-check-input.input-light-primary:focus[type="radio"] {
@@ -18375,7 +18375,7 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
 }
 
 .form-check.form-switch .form-check-input.input-light-primary:checked {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%237267EF'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%237A1F39'/%3e%3c/svg%3e");
 }
 
 .form-check .form-check-input.input-secondary:checked {
@@ -19285,7 +19285,7 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
 }
 
 .custom-switch-v1.form-switch .form-check-input.input-light-primary:checked {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4.1' fill='%237267EF'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4.1' fill='%237A1F39'/%3e%3c/svg%3e");
 }
 
 .custom-switch-v1.form-switch .form-check-input.input-light-secondary:checked {

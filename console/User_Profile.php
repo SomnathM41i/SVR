@@ -323,7 +323,7 @@ require_once(dirname(__FILE__).'/protect.php');
                     $('.m-header').addClass('bg-dark');
                 } else {
                     $('.m-header').removeClassPrefix('bg-');
-                    $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+                    $('.m-header > .b-brand > .logo-lg').attr('src', '../branding/logos/emblem.png');
                     $('.theme-color.brand-color').addClass('d-none');
                 }
             });
