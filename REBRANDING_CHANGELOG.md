@@ -152,3 +152,11 @@ staging checklist in REBRAND_PHASE5_FINAL.md §8.**
   replacements) in the validation report §7–§8.
 
 **Still open, owner-decision only; PR #1 NOT merged, awaiting final approval.**
+
+## Release verification pack ✅
+
+**Docs:** `VISUAL_VERIFICATION_REPORT.md` · `FINAL_DEPLOYMENT_CHECKLIST.md` ·
+`FINAL_ROLLBACK_CHECKLIST.md` · `FINAL_RELEASE_NOTES.md` · evidence boards in
+`verification/visual/` (composited from shipped assets/hexes; no browser in
+sandbox — staging screenshot matrix provided). No code changed. PR #1 unmerged,
+awaiting final owner approval.
