@@ -2,6 +2,8 @@
 /*
 session_start();
 include'dbconnectadmin.php';
+require_once(dirname(__FILE__).'/config.php'); /* provides svr_db_fail() */
+
 //$fname=mysqli_real_escape_string($con,$_POST['fname']);
 //$lname=mysqli_real_escape_string($con,$_POST['lname']);
 $email=mysqli_real_escape_string($con,$_POST['email']);
