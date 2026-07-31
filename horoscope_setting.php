@@ -6,7 +6,7 @@ error_reporting(0);
     <!-- navigation -->
     <?php if(isset($login))
        {
-		include('menu.php');
+/* removed dead include: include('menu.php'); - include target never existed in this tree */
 	   } 
 	   else
 	   {

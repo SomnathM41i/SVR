@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');  
 
-include('memprotect.php');
+/* removed dead include: include('memprotect.php'); - target never existed */
 $msg="";
 if(isset($_POST['submit']))
 {

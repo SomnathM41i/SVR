@@ -1,6 +1,6 @@
 <?php require_once('../sys_dbconnection.php');  
 require_once(dirname(__FILE__).'/protect.php');
-include('protect1.php');
+/* removed dead include: include('protect1.php'); - include target never existed in this tree */
 
 
 $id=$_GET['ID'];
