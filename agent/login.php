@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="manifest" href="../branding/site.webmanifest">
     <meta name="theme-color" content="#5E1426">
     <link rel="stylesheet" href="../console/assets/css/style.css">
+    <link rel="stylesheet" href="../console/assets/css/mpj-brand.css">
     <style>
         html, body { min-height:100%; margin:0; }
         body { background:url('../images/main-slider/2.jpg') no-repeat center center fixed; background-size:cover; }

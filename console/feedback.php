@@ -37,6 +37,7 @@ $result=$con->query("select *,date_format(Date,'%d-%m-%Y') as Date from feedback
 
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

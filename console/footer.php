@@ -12,6 +12,7 @@ color:#b5bdca;
 $result=mysqli_query($con,"select * from siteconfig where ID='1'");
 $fetch1=mysqli_fetch_array($result);?>
 <link rel="stylesheet" href="assets/css/stylenew.css">
+<link rel="stylesheet" href="assets/css/mpj-brand.css">
 
 <nav class="topbar1 mt-5 ">
   <div class="container">

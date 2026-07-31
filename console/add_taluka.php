@@ -143,6 +143,7 @@ function talukaAdminEscape($value): string
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/fonts/material.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css">
     <link rel="stylesheet" href="assets/css/customizer.css">
 </head>

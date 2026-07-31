@@ -54,6 +54,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$save_path
 
 <!-- vendor css -->
 <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+<link rel="stylesheet" href="assets/css/mpj-brand.css">
 <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
 <link rel="stylesheet" href="assets/css/customizer.css">

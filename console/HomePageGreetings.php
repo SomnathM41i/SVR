@@ -180,6 +180,7 @@ while ($r = $result->fetch_assoc()) {
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/stylenew.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css">
     <link rel="stylesheet" href="assets/css/customizer.css">

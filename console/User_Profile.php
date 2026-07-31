@@ -47,6 +47,7 @@ require_once(dirname(__FILE__).'/protect.php');
 
 	<!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="assets/css/mpj-brand.css">
     <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
     <link rel="stylesheet" href="assets/css/customizer.css">
 	<link href="../css/style.css?v=505020.0" rel="stylesheet">

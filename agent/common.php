@@ -185,6 +185,7 @@ function ap_start($title) {
     <link rel="stylesheet" href="../console/assets/fonts/feather.css">
     <link rel="stylesheet" href="../console/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="../console/assets/css/style.css">
+    <link rel="stylesheet" href="../console/assets/css/mpj-brand.css">
     <style>
         html, body { min-height:100%; }
         body { background:#FDFAF5; color:#2D1F3D; display:flex; flex-direction:column; }
