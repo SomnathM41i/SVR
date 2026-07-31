@@ -37,7 +37,7 @@ while($row=mysqli_fetch_array($sql))
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>weddingsparampara.com</title>
+<title>Manpasand Jodidar</title>
 <meta name='description' content='' />
 <meta name='keywords' content='' />
 <meta name='rating' content='general' />

@@ -246,7 +246,7 @@ var rzpOptions = {
     currency:    'INR',
     name:        'Manpasand Jodidar',
     description: '<?php echo addslashes($plan_row["plandisplayname"]); ?> Plan',
-    image:       'images/logo-2.png',   // checkout logo (file lives in images/)
+    image:       'branding/logos/emblem.png',   // MPJ: checkout logo — was old-brand images/logo-2.png (1254px, 1.2 MB)
     order_id:    '<?php echo $rzpOrderId; ?>',
     prefill: {
         name:    '<?php echo addslashes($record["Name"] ?? $record["MatriID"]); ?>',
