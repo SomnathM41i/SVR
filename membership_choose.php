@@ -242,7 +242,7 @@ var rzpOptions = {
     currency:    'INR',
     name:        'Weddings parampara',
     description: '<?php echo addslashes($plan_row["plandisplayname"]); ?> Plan',
-    image:       'logo-2.png',   // ← your logo path
+    image:       'images/logo-2.png',   // checkout logo (file lives in images/)
     order_id:    '<?php echo $rzpOrderId; ?>',
     prefill: {
         name:    '<?php echo addslashes($record["Name"] ?? $record["MatriID"]); ?>',
