@@ -23,7 +23,8 @@ class Database{
 	private $_connection;
 	private static $_instance; //The single instance
 	/* Credentials now resolve from env var -> config.local.php -> legacy fallback (see config.php).
-	   TODO(security): remove the fallback defaults once env vars are configured on the server. */
+	   OPS NOTE: once env vars are configured on the server, the in-code fallback
+	   defaults should be removed (tracked in SECURITY_CHANGELOG.md deployment section). */
 	private $_host;
 	private $_database;
 	private $_username;

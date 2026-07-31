@@ -29,13 +29,9 @@ RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
   RewriteRule ^\.git - [F,L]
 </IfModule>
 
-# --- HTTPS enforcement ------------------------------------------------------------
-# Uncomment after confirming the production site serves HTTPS correctly:
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-# <IfModule mod_headers.c>
-#   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
-# </IfModule>
+# HTTPS enforcement snippet intentionally NOT shipped here (would break the site if
+# HTTPS is not fully configured). The ready-to-activate block is provided in the
+# deployment checklist section of QA_FINAL_REVIEW.md.
 
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml
