@@ -165,11 +165,12 @@ xmlhttp.send();
                             <div class="text">Please enter your email address to search for your account..</div>
                         </div>
                     </div>
-                    <?php if(isset($_GET['action'])){ ?>
+                    <?php if(isset($_GET['action']) && $_GET['action']=='throttled'){ ?>
+              <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Too many reset requests. Please try again later.</font></h5><br>
+                <?php } elseif(isset($_GET['action']) && $_GET['action']=='invalidlink'){ ?>
+              <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">This password reset link is invalid or has expired. Please request a new one.</font></h5><br>
+                <?php } elseif(isset($_GET['action'])){ ?>
               <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">You enter Wrong Username and Password </font></h5><br>
-				 	
-			        
-             
                 <?php } ?>
                 <?php if(isset($_GET['action1'])){ ?> 
               <h5 class="w3ls-title w3ls-title1" align="center"><font color="#FF0000">Your Password Change Successfully</font></h5>
