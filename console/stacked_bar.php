@@ -48,7 +48,7 @@ require_once(dirname(__FILE__).'/protect.php');
             subtitle: '',
           },
           bars: 'horizontal',// Required for Material Bar Charts.
-			colors: ['#7267EF', '#EA4D4D', '#FFA21D','#76A7FA']
+			colors: ['#7A1F39', '#EA4D4D', '#FFA21D','#76A7FA']
         };
 
         var chart = new google.charts.Bar(document.getElementById('barchart_material'));

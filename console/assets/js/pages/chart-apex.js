@@ -17,7 +17,7 @@ $(document).ready(function() {
                 stroke: {
                     curve: 'straight',
                 },
-                colors: ["#7267EF"],
+                colors: ["#7A1F39"],
                 series: [{
                     name: "Desktops",
                     data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
@@ -108,7 +108,7 @@ $(document).ready(function() {
                 series: [{
                     data: data
                 }],
-                colors: ["#7267EF"],
+                colors: ["#7A1F39"],
                 title: {
                     text: 'Dynamic Updating Chart',
                     align: 'left'
@@ -297,7 +297,7 @@ $(document).ready(function() {
                             text: 'Rally',
                             style: {
                                 color: "#fff",
-                                background: '#775DD0'
+                                background: '#A63E52'
                             }
                         }
                     }]
@@ -594,7 +594,7 @@ $(document).ready(function() {
                     size: 0,
                     style: 'hollow',
                 },
-                colors: ["#7267EF"],
+                colors: ["#7A1F39"],
                 xaxis: {
                     type: 'datetime',
                     min: new Date('01 Mar 2012').getTime(),
@@ -694,7 +694,7 @@ $(document).ready(function() {
                 dataLabels: {
                     enabled: false
                 },
-                colors: ["#0e9e4a", "#7267EF", "#EA4D4D"],
+                colors: ["#0e9e4a", "#7A1F39", "#EA4D4D"],
                 stroke: {
                     show: true,
                     width: 2,
@@ -749,7 +749,7 @@ $(document).ready(function() {
                         enabled: true
                     }
                 },
-                colors: ["#7267EF", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 responsive: [{
                     breakpoint: 480,
                     options: {
@@ -810,7 +810,7 @@ $(document).ready(function() {
                         },
                     }
                 },
-                colors: ["#7267EF", "#0e9e4a"],
+                colors: ["#7A1F39", "#0e9e4a"],
                 dataLabels: {
                     enabled: true,
                     offsetX: -6,
@@ -854,7 +854,7 @@ $(document).ready(function() {
                     },
 
                 },
-                colors: ["#7267EF", "#3ec9d6", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#3ec9d6", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 stroke: {
                     width: 1,
                     colors: ['#fff']
@@ -924,7 +924,7 @@ $(document).ready(function() {
                 stroke: {
                     width: [0, 4]
                 },
-                colors: ["#7267EF", "#EA4D4D"],
+                colors: ["#7A1F39", "#EA4D4D"],
                 title: {
                     text: 'Traffic Sources'
                 },
@@ -967,7 +967,7 @@ $(document).ready(function() {
                         columnWidth: '50%'
                     }
                 },
-                colors: ['#EA4D4D', '#7267EF', '#ffa21d'],
+                colors: ['#EA4D4D', '#7A1F39', '#ffa21d'],
                 series: [{
                     name: 'Facebook',
                     type: 'column',
@@ -1361,7 +1361,7 @@ $(document).ready(function() {
                         })
                     }
                 ],
-                colors: ["#7267EF", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 fill: {
                     opacity: 0.8
                 },
@@ -1436,7 +1436,7 @@ $(document).ready(function() {
                 fill: {
                     type: 'gradient',
                 },
-                colors: ["#7267EF", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 title: {
                     text: '3D Bubble Chart'
                 },
@@ -1471,7 +1471,7 @@ $(document).ready(function() {
                         type: 'xy'
                     }
                 },
-                colors: ["#7267EF", "#0e9e4a", "#EA4D4D", "#ffa21d", "#3ec9d6"],
+                colors: ["#7A1F39", "#0e9e4a", "#EA4D4D", "#ffa21d", "#3ec9d6"],
                 series: [{
                     name: "SAMPLE A",
                     data: [
@@ -1644,7 +1644,7 @@ $(document).ready(function() {
                 dataLabels: {
                     enabled: false
                 },
-                colors: ["#7267EF", "#0e9e4a", "#EA4D4D", "#ffa21d", "#3ec9d6"],
+                colors: ["#7A1F39", "#0e9e4a", "#EA4D4D", "#ffa21d", "#3ec9d6"],
                 grid: {
                     xaxis: {
                         showLines: true
@@ -1704,7 +1704,7 @@ $(document).ready(function() {
                 dataLabels: {
                     enabled: false
                 },
-                colors: ["#7267EF"],
+                colors: ["#7A1F39"],
                 series: [{
                         name: 'Metric1',
                         data: generateDatasehratheat(12, {
@@ -1893,7 +1893,7 @@ $(document).ready(function() {
                         })
                     }
                 ],
-                colors: ["#7267EF", "#3ec9d6", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#3ec9d6", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 xaxis: {
                     type: 'category',
                 },
@@ -1915,7 +1915,7 @@ $(document).ready(function() {
                 },
                 labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
                 series: [44, 55, 13, 43, 22],
-                colors: ["#7267EF", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D"],
                 legend: {
                     show: true,
                     position: 'bottom',
@@ -1948,7 +1948,7 @@ $(document).ready(function() {
                     type: 'donut',
                 },
                 series: [44, 55, 41, 17, 15],
-                colors: ["#7267EF", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D"],
                 legend: {
                     show: true,
                     position: 'bottom',
@@ -2002,7 +2002,7 @@ $(document).ready(function() {
                         }
                     },
                 },
-                colors: ["#7267EF"],
+                colors: ["#7A1F39"],
                 series: [70],
                 labels: ['Cricket'],
             }
@@ -2040,7 +2040,7 @@ $(document).ready(function() {
                         }
                     }
                 },
-                colors: ["#7267EF", "#0e9e4a", "#ffa21d", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#ffa21d", "#EA4D4D"],
                 series: [76, 67, 61, 90],
                 labels: ['Vimeo', 'Messenger', 'Facebook', 'LinkedIn'],
                 legend: {
@@ -2163,7 +2163,7 @@ $(document).ready(function() {
                 title: {
                     text: 'Radar Chart - Multi Series'
                 },
-                colors: ["#7267EF", "#0e9e4a", "#EA4D4D"],
+                colors: ["#7A1F39", "#0e9e4a", "#EA4D4D"],
                 stroke: {
                     width: 0
                 },

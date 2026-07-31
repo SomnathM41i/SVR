@@ -30,7 +30,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7267EF"],
+            colors: ["#7A1F39"],
             stroke: {
                 curve: 'smooth',
                 width: 2,
@@ -66,7 +66,7 @@ function floatchart() {
                     enabled: true
                 }
             },
-            colors: ["#7267EF"],
+            colors: ["#7A1F39"],
             plotOptions: {
                 bar: {
                     columnWidth: '70%'
@@ -120,7 +120,7 @@ function floatchart() {
                         columnWidth: '50%'
                     }
                 },
-                colors: ['#7267EF', '#c7d9ff'],
+                colors: ['#7A1F39', '#F2CFD7'],
                 series: [{
                     name: 'Total Sales',
                     type: 'column',
@@ -202,7 +202,7 @@ function floatchart() {
             theme: {
                 monochrome: {
                     enabled: true,
-                    color: '#7267EF',
+                    color: '#7A1F39',
                 }
             },
             responsive: [{

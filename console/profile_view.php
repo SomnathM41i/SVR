@@ -1206,7 +1206,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                <img src="https://img.icons8.com/material/24/7267EF/student-center.png"/>
+                                <img src="https://img.icons8.com/material/24/7A1F39/student-center.png"/>
                                 <span class="p-l-5">Education Details</span></h5>
                             </div>
                             <div class="card-body">
@@ -1660,7 +1660,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/date.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/date.png"/>
                                     <span class="p-l-5">Partner Preference</span></h5>
                             </div>
                             <div class="card-body">
@@ -1695,7 +1695,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/windows/24/7267EF/defend-family--v3.png"/>
+                                    <img src="https://img.icons8.com/windows/24/7A1F39/defend-family--v3.png"/>
                                     <span class="p-l-5">Family Details</span></h5>
                             </div>
                             <div class="card-body">
@@ -2151,7 +2151,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-glyphs/24/7267EF/contact-card.png"/>
+                                    <img src="https://img.icons8.com/ios-glyphs/24/7A1F39/contact-card.png"/>
                                     <span class="p-l-5">Contact Information</span></h5>
                             </div>
                             <div class="card-body">
@@ -2844,7 +2844,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7267EF/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
+                                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7A1F39/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
                                     <span class="p-l-5">Horoscope Information</span></h5>
                             </div>
                             <div class="card-body">
@@ -3315,7 +3315,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/camera--v2.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/camera--v2.png"/>
                                     <span class="p-l-5">Upload Photo</span></h5>
                             </div>
                             <div class="card-body">
@@ -3518,7 +3518,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/28/7267EF/name-tag-woman.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/28/7A1F39/name-tag-woman.png"/>
                                     <span class="p-l-5">Upload ID Proof</span></h5>
                             </div>
                             <div class="card-body">
@@ -3698,7 +3698,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                     <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7267EF/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
+                                     <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/24/7A1F39/external-horoscope-chinese-new-year-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
                                      <span class="p-l-5">Upload Horoscope</span></h5>
                             </div>
                             <div class="card-body">
@@ -3837,7 +3837,7 @@ function checkworkstate(str)
                         <div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="user" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/ios-filled/24/7267EF/upload-document.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/24/7A1F39/upload-document.png"/>
                                     <span class="p-l-5">Upload Document</span></h5>
                             </div>
 						<div class="card-body">
@@ -4012,7 +4012,7 @@ function checkworkstate(str)
 						<div class="card">
                             <div class="card-header">
                                 <h5><!-- <i data-feather="at-sign" class="icon-svg-primary wid-20"></i> -->
-                                    <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/7267EF/external-setting-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"/>
+                                    <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/7A1F39/external-setting-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"/>
                                     <span class="p-l-5"> Profile Settings</span></h5>
                             </div>
 							<input type="hidden" name="ID" value="<?php  echo $_GET['ID'];?>">
