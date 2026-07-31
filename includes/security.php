@@ -200,6 +200,44 @@ if (!function_exists('svr_reset_token_verify')) {
 }
 
 /* ---------------------------------------------------------------------------
+ * Path validation for image-serving endpoints (LFI/traversal prevention).
+ * ------------------------------------------------------------------------- */
+if (!function_exists('svr_safe_image_path')) {
+    /**
+     * Resolve a user-supplied relative image path against $baseDir.
+     * Returns the absolute path, or false when the value is unsafe/not found.
+     * Blocks: stream wrappers/URLs, null bytes, directory traversal outside
+     * $baseDir, and non-image extensions.
+     */
+    function svr_safe_image_path($requested, $baseDir) {
+        if (!is_string($requested) || $requested === '') {
+            return false;
+        }
+        if (strpos($requested, "\0") !== false) {
+            return false;
+        }
+        if (preg_match('#^[a-z][a-z0-9+.-]*://#i', $requested)) {
+            return false; // php://, phar://, http(s):// etc.
+        }
+        $requested = str_replace('\\', '/', $requested);
+        $requested = ltrim($requested, '/');
+        $base = realpath($baseDir);
+        if ($base === false) {
+            return false;
+        }
+        $full = realpath($base . DIRECTORY_SEPARATOR . $requested);
+        if ($full === false || strpos($full, $base) !== 0 || !is_file($full)) {
+            return false;
+        }
+        $ext = strtolower(pathinfo($full, PATHINFO_EXTENSION));
+        if (!in_array($ext, array('jpg', 'jpeg', 'gif', 'png', 'webp'), true)) {
+            return false;
+        }
+        return $full;
+    }
+}
+
+/* ---------------------------------------------------------------------------
  * Cron endpoint guard.
  * - CLI usage (crontab: php cronfile.php) is always allowed.
  * - If SVR_CRON_KEY is configured, web hits must pass ?key=<value>.

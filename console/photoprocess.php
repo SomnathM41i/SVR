@@ -1,119 +1,121 @@
-<?php   
-if( $_GET['image'] )
-{  
-//$image = $_GET['image']; 
-$image = str_replace('','%20',$_GET['image']); 
+<?php
+/**
+ * console/photoprocess.php — Admin-side on-the-fly image resizer.
+ *
+ * SECURITY (fixes C5 local file disclosure / path traversal):
+ * the image path is validated against the console base directory and an
+ * image extension allow-list. Legacy params (type, percent, w/h,
+ * maxim_size, square) are preserved, including the original square offsets.
+ */
+require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'security.php');
 
+/* Admin-only: require the console session like every other admin tool. */
+require_once(__DIR__ . DIRECTORY_SEPARATOR . 'protect.php');
 
-if($_GET['type']=="jpg"){  
-header("Content-type: image/jpg");
-}elseif($_GET['type']=="gif"){  
-header("Content-type: image/gif");  
-}elseif($_GET['type']=="png"){  
-header("Content-type: image/png");  
-}elseif($_GET['type']=="JPEG"){  
-header("Content-type: image/jpeg");  
-} else {  
-if(substr($image, -3)=="jpg" || substr($image, -3)=="JPG" ){header("Content-type: image/jpeg");}
-elseif(substr($image, -4)=="jpeg" || substr($image, -4)=="JPEG"){header("Content-type: image/jpeg");}   
-elseif(substr($image, -3)=="gif" || substr($image, -3)=="GIF"){header("Content-type: image/gif");}  
-elseif(substr($image, -3)=="png" || substr($image, -3)=="PNG"){header("Content-type: image/png");}  
+$filePath = svr_safe_image_path(isset($_GET['image']) ? $_GET['image'] : '', __DIR__);
+if ($filePath === false) {
+    header('HTTP/1.0 404 Not Found');
+    exit;
 }
 
-if(substr($image, -3)=="jpg" || substr($image, -3)=="JPG"){$im = imagecreatefromjpeg($image);} 
-elseif(substr($image, -4)=="jpeg" || substr($image, -4)=="JPEG"){$im = imagecreatefromjpeg($image);} 
-elseif(substr($image, -3)=="gif" || substr($image, -3)=="GIF"){$im = imagecreatefromgif($image);}  
-elseif(substr($image, -3)=="png" || substr($image, -3)=="PNG"){$im = imagecreatefrompng($image);}  
+$image = $filePath;
+$ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+$type = isset($_GET['type']) ? strtolower($_GET['type']) : '';
 
-if($_GET['percent']){  
-$x = round((imagesx($im)*$_GET['percent'])/100);  
-$y = round((imagesy($im)*$_GET['percent'])/100);  
-$yyy=0;  
-$xxx=0;  
-$imw = imagecreatetruecolor($x,$y);  
-}elseif($_GET['w'] and $_GET['h']){   
-$x = $_GET['w'];  
-$y = $_GET['h'];  
-$yyy=0;  
-$xxx=0;  
-$imw = imagecreatetruecolor($x,$y);  
-}elseif($_GET['maxim_size']){  
-if(imagesy($im)>=$_GET['maxim_size'] || imagesx($im)>=$_GET['maxim_size']){  
-if(imagesy($im)>=imagesx($im)){  
-$y = $_GET['maxim_size'];  
-$x = ($y*imagesx($im))/imagesy($im);  
-}else{  
-$x = $_GET['maxim_size'];  
-$y = ($x*imagesy($im))/imagesx($im);  
-}  
-}else{  
-$x = imagesx($im);  
-$y = imagesy($im);  
-}  
-$yyy=0;  
-$xxx=0;  
-$imw = imagecreatetruecolor($x,$y);  
-}elseif($_GET['square']){  
-if(imagesy($im)>=$_GET['square'] || imagesx($im)>=$_GET['square']){  
-if(imagesy($im)>=imagesx($im)){  
-$x = $_GET['square'];  
-$y = ($x*imagesy($im))/imagesx($im);  
-$yyy=-($y-$x)/12;  
-$xxx=0;  
-}else{  
-$y = $_GET['square'];  
-$x = ($y*imagesx($im))/imagesy($im);  
-$xxx=-($x-$y)/2;  
-$yyy=0;  
-}  
-}else{  
-$x = imagesx($im);  
-$y = imagesy($im);  
-$yyy=0;  
-$xxx=0;  
-}  
-$imw = imagecreatetruecolor($_GET['square'],$_GET['square']);  
-}else{  
-$x = imagesx($im);  
-$y = imagesy($im);  
-$yyy=0;  
-$xxx=0;   
-$imw = imagecreatetruecolor($x,$y);  
-}  
+/* Content-Type handling (legacy: explicit ?type= wins, else by extension) */
+if ($type === 'jpg' || $type === 'jpeg') {
+    header("Content-type: image/jpeg");
+} elseif ($type === 'gif') {
+    header("Content-type: image/gif");
+} elseif ($type === 'png') {
+    header("Content-type: image/png");
+} else {
+    if ($ext === 'jpg' || $ext === 'jpeg') { header("Content-type: image/jpeg"); }
+    elseif ($ext === 'gif') { header("Content-type: image/gif"); }
+    elseif ($ext === 'png') { header("Content-type: image/png"); }
+    elseif ($ext === 'webp') { header("Content-type: image/webp"); }
+}
 
-imagecopyresampled($imw, $im, $xxx,$yyy,0,0,$x,$y,imagesx($im), imagesy($im));  
+$im = false;
+if ($ext === 'jpg' || $ext === 'jpeg') { $im = @imagecreatefromjpeg($image); }
+elseif ($ext === 'gif') { $im = @imagecreatefromgif($image); }
+elseif ($ext === 'png') { $im = @imagecreatefrompng($image); }
+elseif ($ext === 'webp' && function_exists('imagecreatefromwebp')) { $im = @imagecreatefromwebp($image); }
 
-/*if($_GET['watermark_text']){  
-if($_GET['watermark_color']){$watermark_color=$_GET['watermark_color'];  
-}else{  
-$watermark_color="FFFFFF";  
-}  
-$red=hexdec(substr($watermark_color,0,2));  
-$green=hexdec(substr($watermark_color,2,2));  
-$blue=hexdec(substr($watermark_color,4,2));  
+if (!$im) {
+    header('HTTP/1.0 404 Not Found');
+    exit;
+}
 
-$text_col = imagecolorallocate($imw, $red,$green,$blue);  
-$font = "SFOldRepublicSCBold.ttf"; //this font(georgia.ttf) heave to be in the same directory as this script  
-$font_size = 11;  
-$angle = -90;  
-$box = imagettfbbox($font_size, $angle, $font, $_GET['watermark_text']);  
-$x = 5;  
-$y = 17;  
-imagettftext($imw, $font_size, $angle, $x, $y, $text_col, $font, $_GET['watermark_text']);  
+if (!empty($_GET['percent'])) {
+    $x = round((imagesx($im) * (int)$_GET['percent']) / 100);
+    $y = round((imagesy($im) * (int)$_GET['percent']) / 100);
+    $yyy = 0;
+    $xxx = 0;
+    $imw = imagecreatetruecolor($x, $y);
+} elseif (!empty($_GET['w']) && !empty($_GET['h'])) {
+    $x = (int)$_GET['w'];
+    $y = (int)$_GET['h'];
+    $yyy = 0;
+    $xxx = 0;
+    $imw = imagecreatetruecolor($x, $y);
+} elseif (!empty($_GET['maxim_size'])) {
+    $maxim = (int)$_GET['maxim_size'];
+    if (imagesy($im) >= $maxim || imagesx($im) >= $maxim) {
+        if (imagesy($im) >= imagesx($im)) {
+            $y = $maxim;
+            $x = ($y * imagesx($im)) / imagesy($im);
+        } else {
+            $x = $maxim;
+            $y = ($x * imagesy($im)) / imagesx($im);
+        }
+    } else {
+        $x = imagesx($im);
+        $y = imagesy($im);
+    }
+    $yyy = 0;
+    $xxx = 0;
+    $imw = imagecreatetruecolor($x, $y);
+} elseif (!empty($_GET['square'])) {
+    $square = (int)$_GET['square'];
+    if (imagesy($im) >= $square || imagesx($im) >= $square) {
+        if (imagesy($im) >= imagesx($im)) {
+            $x = $square;
+            $y = ($x * imagesy($im)) / imagesx($im);
+            $yyy = -($y - $x) / 12;
+            $xxx = 0;
+        } else {
+            $y = $square;
+            $x = ($y * imagesx($im)) / imagesy($im);
+            $xxx = -($x - $y) / 2;
+            $yyy = 0;
+        }
+    } else {
+        $x = imagesx($im);
+        $y = imagesy($im);
+        $yyy = 0;
+        $xxx = 0;
+    }
+    $imw = imagecreatetruecolor($square, $square);
+} else {
+    $x = imagesx($im);
+    $y = imagesy($im);
+    $yyy = 0;
+    $xxx = 0;
+    $imw = imagecreatetruecolor($x, $y);
+}
 
-} */ 
+imagecopyresampled($imw, $im, $xxx, $yyy, 0, 0, $x, $y, imagesx($im), imagesy($im));
 
-if($_GET['type']=="jpg"){imagejpeg($imw);}  
-elseif($_GET['type']=="jpeg"){imagejpeg($imw);} 
-elseif($_GET['type']=="gif"){imagegif($imw);}  
-elseif($_GET['type']=="png"){imagepng($imw);}  
-else{  
-if(substr($image, -3)=="jpg" || substr($image, -3)=="JPG"){imagejpeg($imw);}  
-elseif(substr($image, -4)=="jpeg" || substr($image, -4)=="JPEG"){imagejpeg($imw);}  
-elseif(substr($image, -3)=="gif" || substr($image, -3)=="GIF"){imagegif($imw);}  
-elseif(substr($image, -3)=="png" || substr($image, -3)=="PNG"){imagepng($imw);}  
-}  
+if ($type === 'jpg' || $type === 'jpeg') { imagejpeg($imw); }
+elseif ($type === 'gif') { imagegif($imw); }
+elseif ($type === 'png') { imagepng($imw); }
+else {
+    if ($ext === 'jpg' || $ext === 'jpeg') { imagejpeg($imw); }
+    elseif ($ext === 'gif') { imagegif($imw); }
+    elseif ($ext === 'png') { imagepng($imw); }
+    elseif ($ext === 'webp' && function_exists('imagewebp')) { imagewebp($imw); }
+}
 
-imagedestroy($imw);  
-}  
-?> 
+imagedestroy($im);
+imagedestroy($imw);
