@@ -1,0 +1,10 @@
+# Credentials / secrets (never commit)
+firebase/firebase-service-account.json
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+.idea/
