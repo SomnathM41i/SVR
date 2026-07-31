@@ -200,6 +200,35 @@ if (!function_exists('svr_reset_token_verify')) {
 }
 
 /* ---------------------------------------------------------------------------
+ * Optional shared-key guard for sensitive API endpoints (broadcast/test push
+ * notification senders). Backward compatible: until SVR_API_ADMIN_KEY is
+ * configured on the server, behavior is unchanged; once set, requests must
+ * pass the key via the X-API-Key header or a 'api_key' parameter.
+ * ------------------------------------------------------------------------- */
+if (!function_exists('svr_api_key_guard')) {
+    function svr_api_key_guard() {
+        if (PHP_SAPI === 'cli') {
+            return;
+        }
+        $key = svr_config('SVR_API_ADMIN_KEY', '');
+        if ($key === '') {
+            return; // legacy behavior until ops configures the key
+        }
+        $provided = '';
+        if (!empty($_SERVER['HTTP_X_API_KEY'])) {
+            $provided = (string)$_SERVER['HTTP_X_API_KEY'];
+        } elseif (isset($_REQUEST['api_key'])) {
+            $provided = (string)$_REQUEST['api_key'];
+        }
+        if (!hash_equals($key, $provided)) {
+            http_response_code(403);
+            header('Content-Type: application/json');
+            exit(json_encode(array('status' => 'error', 'message' => 'Forbidden')));
+        }
+    }
+}
+
+/* ---------------------------------------------------------------------------
  * Path validation for image-serving endpoints (LFI/traversal prevention).
  * ------------------------------------------------------------------------- */
 if (!function_exists('svr_safe_image_path')) {

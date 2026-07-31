@@ -1,5 +1,6 @@
 <?php
 require_once('../sys_dbconnection.php');
+require_once '../includes/security.php'; svr_api_key_guard(); /* SECURITY (H6): broadcast endpoint - optional X-API-Key guard (active once SVR_API_ADMIN_KEY is configured). */
 require_once('../firebase/fcm_functions.php');
 
 header("Content-Type: application/json");

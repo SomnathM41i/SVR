@@ -1,9 +1,10 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+/* SECURITY: debug output disabled in production - error_reporting(E_ALL); */
+/* SECURITY: debug output disabled in production - ini_set('display_errors', 1); */
+/* SECURITY: debug output disabled in production - ini_set('display_startup_errors', 1); */
 
 require_once('../sys_dbconnection.php');
+require_once '../includes/security.php'; svr_api_key_guard(); /* SECURITY (H6): broadcast endpoint - optional X-API-Key guard (active once SVR_API_ADMIN_KEY is configured). */
 require_once('../firebase/fcm_functions.php'); // contains getAccessToken() and sendFCMNotification()
 
 header("Content-Type: application/json");
