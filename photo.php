@@ -1,4 +1,4 @@
-<?php  include("protect.php"); 
+<?php  require_once(dirname(__FILE__).'/console/protect.php'); /* admin-only (orphan console copy; was a silently-failing include) */ 
 
 require_once('includes/bootstrap.php'); 
 $photoid=$_GET['photoid']; 
@@ -7,7 +7,7 @@ $photoid=$_GET['photoid'];
 if (isset($_FILES['croppedImage']['tmp_name']) && !empty($_FILES['croppedImage']['tmp_name'])){
  $strid1=$_POST['matid'];
  
- $photoid1=$_POST['photoid'];
+ $photoid1=mysqli_real_escape_string($con, $_POST['photoid']); /* escaped (was raw POST -> UPDATE) */
  
 $sav=date('Y_m_d_h_i_s'). preg_replace("/[^a-z0-9\_\-\.]/i",'',"$strid1.jpg");
 
@@ -29,23 +29,23 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$sav' wher
 
 
 
-<LINK href="style.css" rel="stylesheet" type="text/css">
-<script src="assets/crop/jquery-3.3.1.min.js"></script>
-<script src="assets/crop/cropper.js"></script>
+<LINK href="css/style.css" rel="stylesheet" type="text/css">
+<script src="console/assets/crop/jquery-3.3.1.min.js"></script>
+<script src="console/assets/crop/cropper.js"></script>
 
-<link rel="stylesheet" type="text/css" href="assets/crop/cropper.css">
+<link rel="stylesheet" type="text/css" href="console/assets/crop/cropper.css">
 <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
 
 <!-- font css -->
-<link rel="stylesheet" href="assets/fonts/feather.css">
-<link rel="stylesheet" href="assets/fonts/fontawesome.css">
-<link rel="stylesheet" href="assets/fonts/material.css">
+<link rel="stylesheet" href="console/assets/fonts/feather.css">
+<link rel="stylesheet" href="console/assets/fonts/fontawesome.css">
+<link rel="stylesheet" href="console/assets/fonts/material.css">
 
 <!-- vendor css -->
-<link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-<link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
-<link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
-<link rel="stylesheet" href="assets/css/customizer.css">
+<link rel="stylesheet" href="console/assets/css/style.css" id="main-style-link">
+<link rel="stylesheet" href="console/assets/css/stylenew.css" id="main-style-link">
+<link rel="stylesheet" href="console/assets/css/layout-horizontal.css" id="main-style-link">
+<link rel="stylesheet" href="console/assets/css/customizer.css">
 <!-- STYLESHEETS-->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">    
@@ -115,7 +115,7 @@ mysqli_query($con,"update gallary set photo_approve='Yes',photo_name='$sav' wher
   <div align="center">
     <div id="testWrap"> 
 	<img src="../gallary/<?php  echo $img; ?>" class="border" name="image" id="image" /> 
-	 <!-- <img src="../images/bannermobile.jpg" style="width: 200px;" name="croppedImage" id="image">-->
+	 <!-- <img src="images/bannermobile.jpg" style="width: 200px;" name="croppedImage" id="image">-->
        <?php 
       <input name="op" type="hidden" id="op" value="<?php  echo $img; ?>" />
       <input type="hidden" name="photoid" value="<?php  echo $_GET['photoid'] ?>" />

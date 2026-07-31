@@ -1,8 +1,8 @@
 <?php
 
     error_reporting(0);
-    include('protect.php'); 
-    require_once('includes/bootstrap.php');
+        require_once('includes/bootstrap.php');
+    include('memprotect.php'); /* member-only: success stories are submitted by logged-in members */
     
     if(isset($_POST['upload']))
     {
@@ -109,16 +109,16 @@
 	<link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
 	 
     <!-- font css -->
-    <link rel="stylesheet" href="assets/fonts/feather.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-    <link rel="stylesheet" href="assets/fonts/material.css">
+    <link rel="stylesheet" href="console/assets/fonts/feather.css">
+    <link rel="stylesheet" href="console/assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="console/assets/fonts/material.css">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/stylenew.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/layout-horizontal.css" id="main-style-link">
-    <link rel="stylesheet" href="assets/css/customizer.css">
-	 <link rel="stylesheet" href="assets/css/popup.css">
+    <link rel="stylesheet" href="console/assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/stylenew.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/layout-horizontal.css" id="main-style-link">
+    <link rel="stylesheet" href="console/assets/css/customizer.css">
+	 <link rel="stylesheet" href="console/assets/css/popup.css">
 <script>
 
     function ValidateAlpha(evt)
@@ -268,7 +268,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
-                                                    <?php include('heart1.php'); ?>
+                                                    <?php ?>
                                                 </div>
                                                 <div class="col-md-5 pt-3">
                                                     <div class="box-body">
@@ -305,17 +305,17 @@
 
     <!-- Warning Section Ends -->
     <!-- Required Js -->
-    <script src="assets/js/vendor-all.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/feather.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
+    <script src="console/assets/js/vendor-all.min.js"></script>
+    <script src="console/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="console/assets/js/plugins/feather.min.js"></script>
+    <script src="console/assets/js/pcoded.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
-    <!-- <script src="assets/js/uikit.min.js"></script> -->
+    <!-- <script src="console/assets/js/plugins/clipboard.min.js"></script> -->
+    <!-- <script src="console/assets/js/uikit.min.js"></script> -->
 
 <!-- Apex Chart -->
 <!-- trumbowyg editor -->
-<script src="assets/js/plugins/trumbowyg.min.js"></script>
+<script src="console/assets/js/plugins/trumbowyg.min.js"></script>
 
 <script type="text/javascript">
     // tinymce editor
@@ -341,29 +341,29 @@
     
 
     <!-- Required Js -->
-    <script src="assets/js/vendor-all.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/feather.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
+    <script src="console/assets/js/vendor-all.min.js"></script>
+    <script src="console/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="console/assets/js/plugins/feather.min.js"></script>
+    <script src="console/assets/js/pcoded.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/clipboard.min.js"></script> -->
-    <!-- <script src="assets/js/uikit.min.js"></script> -->
+    <!-- <script src="console/assets/js/plugins/clipboard.min.js"></script> -->
+    <!-- <script src="console/assets/js/uikit.min.js"></script> -->
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
 <script src="ckeditor/sample.js" type="text/javascript"></script>
 <!-- Apex Chart -->
-<script src="assets/js/plugins/apexcharts.min.js"></script>
+<script src="console/assets/js/plugins/apexcharts.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8H86P6FK7"></script>
 
-<script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
+<script src="console/assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
 
 <!-- custom-chart js -->
-<script src="assets/js/pages/dashboard-sale.js"></script>
+<script src="console/assets/js/pages/dashboard-sale.js"></script>
 
-<script src="assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
+<script src="console/assets/js/%c3%a1%c2%b9%c2%adrack.html"></script>
     
-<?php include('footersection.php');?>
+<?php?>
 <?php include('footer.php');?>
 </body>
 
