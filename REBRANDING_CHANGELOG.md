@@ -39,11 +39,25 @@ Changed/removed: nothing user-visible; no deletions.
 
 ---
 
-## Phase R2 — Brand text & asset wiring (planned)
+## Phase R2 — Brand text & asset wiring ✅ (awaiting approval)
 
-Titles, meta/OG/Twitter, copyright footers, console+agent titles; swap
-`shivraj-logo.png` refs (260 files incl. e-mail/API e-mail templates) to
-`branding/` assets; fix `localhost`-broken logo URLs; sitemap/robots branding.
+**Report:** `REBRAND_PHASE2_WIRING.md` · **Commits:** `b3e2a0d` lockup asset ·
+`c5c22a1`+`e20740c` favicons (166) · `5ecf53c` page logos (72) · `522fa05`
+e-mail/push URLs (21) · `5abfeb1` brand strings (172) · `8842b9f` head wiring (205)
+· path-fix commit (25).
+
+- 502 `shivraj-logo.png` refs → `branding/` assets (favicons 396, e-mail/push 22,
+  page-chrome 71, letterheads 4, vars 6, css 2, loader 1) — **0 remain**.
+- “Shivraj Maratha” visible/uppercase strings ×86, Devanagari wordmark ×13,
+  monograms ×2, DashboardKit vendor metas ×122, razorpay merchant name/logo, 4 titles.
+- Head wiring: apple-touch+manifest+theme-color on 202 legacy pages + template dir;
+  `header3.php`: description default + og:site_name/image/title/description +
+  twitter card (page-level `$page_og_*` still win).
+- **Fixed live bugs:** e-mail logos + FCM images pointed to `localhost` (broken today).
+- **Protected (verified):** operations mailbox, testimonials, proprietor name,
+  webhook token, production domain, DB `$seof` content. Old asset **files** retire in R5.
+
+---
 
 ## Phase R3 — Public UI skin (planned)
 
