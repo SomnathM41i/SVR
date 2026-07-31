@@ -1,5 +1,5 @@
 <?php //pink:#ed07b1 ?>
-require_once(dirname(__FILE__).'/protect.php');
+<?php require_once(dirname(__FILE__).'/protect.php'); ?>
 <!DOCTYPE html>
 
 <html>
