@@ -50,7 +50,9 @@ while($row=mysqli_fetch_array($sql))
 <body style='margin: 0 auto;
 	width: 100%;
 	background: #ccc;
-	text-align: left;'>
+	text-align: left;'><!--MPJ-EMAILWRAP-->
+<table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#F9E7DC;margin:0;padding:0;'><tr><td align='center' style='padding:16px 8px;'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='background:#FFFDFB;border:1px solid #E3CBB2;border-collapse:collapse;'><tr><td align='center' style='background:#F9E7DC;padding:16px 24px;'><img src='https://weddingsparampara.com/branding/images/email-logo.png' width='150' alt='Manpasand Jodidar' style='display:block;border:0;'/></td></tr><tr><td style='height:3px;background:#BA9350;font-size:0;line-height:0;'>&nbsp;</td></tr><tr><td style='padding:24px 28px;color:#43303A;font-size:14px;line-height:1.6;font-family:Georgia,serif;'>
+
 <div class='wrapper' style='margin: 0 auto;	width: 590px;background: #333;'>
 <div class='wrapper-float' style='float: left;margin: 0;width: 590px;background: #fff;'>
 <div class='logo' style='float: left;
@@ -105,6 +107,8 @@ Warm Regards,<br>
 </div>
 </div>
 </div>
+<!--MPJ-EMAILWRAP-->
+</td></tr><tr><td align='center' style='background:#3D0C19;color:#E3CBB2;padding:14px 24px;font-family:Georgia,serif;font-size:12px;'>Manpasand Jodidar &middot; <span style='color:#DDB15F;'>Rishta Dil Se, Saath Zindagi Bhar</span></td></tr></table></td></tr></table>
 </body>
 </html>";
 	
