@@ -65,6 +65,7 @@ function mpj_brand_assets() {
         'logo_badge'        => 'branding/logos/logo-badge.png',             // rounded cream card (for dark bgs)
         'emblem'            => 'branding/logos/emblem.png',                 // heart/couple mark only
         'emblem_transparent'=> 'branding/logos/emblem-transparent.png',
+        'logo_horizontal'   => 'branding/logos/logo-horizontal.png',        // 3.36:1 lockup: email slots & letterheads
         'favicon_ico'       => 'branding/favicons/favicon.ico',
         'favicon_32'        => 'branding/favicons/icon-32.png',
         'apple_touch'       => 'branding/favicons/apple-touch-icon.png',

@@ -13,7 +13,8 @@ branding/
 │   ├── logo-full-transparent.png      673×840   301 KB  Transparent outside; interior intact
 │   ├── logo-badge.png                 675×842   686 KB  Logo on rounded cream card — for dark bgs
 │   ├── emblem.png                     458×488   264 KB  Heart/couple/ring/ornament only
-│   └── emblem-transparent.png         458×487   167 KB  Emblem, transparent outside
+│   ├── emblem-transparent.png         458×487   167 KB  Emblem, transparent outside
+│   └── logo-horizontal.png           1008×300    72 KB  Landscape lockup (emblem+wordmark) — 168×50 e-mail slots, letterheads
 ├── favicons/
 │   ├── favicon.ico                      multi    15 KB  16+32+48 multi-size ICO
 │   ├── icon-16.png / icon-32.png / icon-48.png / icon-64.png

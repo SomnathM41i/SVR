@@ -100,6 +100,16 @@ convert "$LOGOS/logo-full.png" -background "$WARMWHITE" -gravity center \
   -strip "$IMGS/print-logo.png"
 
 # --- 12. Manifest assets note (icons already in favicons/) -------------------
+# --- 13. Horizontal lockup (emblem + wordmark), 3.36:1 canvas.
+#     For legacy 168x50 e-mail slots and print letterheads; brand typography
+#     is cropped from the master itself (never re-typeset).
+convert "$MASTER" -crop 700x317+162+588 +repage -fuzz 3% -trim +repage /tmp/.mpj-wordmark.png
+convert -size 1008x300 "xc:$CREAM" \
+  \( "$LOGOS/emblem.png" -resize x250 \) -gravity West -geometry +66+0 -composite \
+  \( /tmp/.mpj-wordmark.png -resize x230 \) -gravity West -geometry +346+0 -composite \
+  -strip -colors 128 "PNG8:$LOGOS/logo-horizontal.png"
+rm -f /tmp/.mpj-wordmark.png
+
 rm -f /tmp/.mpj-logo-alpha.png /tmp/.mpj-badge-step.png
 
 echo "Brand assets rebuilt from: $MASTER"
