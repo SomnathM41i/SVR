@@ -1,0 +1,2 @@
+# SECURITY: session storage must never be web-accessible (H11)
+Require all denied

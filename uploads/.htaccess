@@ -1,0 +1,4 @@
+# SECURITY: never execute scripts from user-upload directories (H9)
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps|pht|pl|py|cgi|sh|asp|aspx|jsp)$">
+  Require all denied
+</FilesMatch>

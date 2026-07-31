@@ -11,13 +11,20 @@ error_log
 *.bak2
 *.zip
 
-# User-uploaded content & runtime session files (PII — must not be versioned)
-/adhar/
-/kundli/
-/gallary/
-/success/
-/uploads/
-/sessions/
+# User-uploaded content & runtime session files (PII — must not be versioned).
+# Contents are ignored, but each directory's protective .htaccess stays tracked.
+/adhar/*
+!/adhar/.htaccess
+/kundli/*
+!/kundli/.htaccess
+/gallary/*
+!/gallary/.htaccess
+/success/*
+!/success/.htaccess
+/uploads/*
+!/uploads/.htaccess
+/sessions/*
+!/sessions/.htaccess
 
 # OS files
 Thumbs.db
