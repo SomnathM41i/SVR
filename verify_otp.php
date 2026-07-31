@@ -158,6 +158,11 @@ function isNumber(evt){evt=evt||window.event;var c=evt.which||evt.keyCode;return
         Please Enter Correct OTP.
       </div>
       <?php } ?>
+      <?php if(isset($_GET['msg']) && $_GET['msg']=="throttled"){ ?>
+      <div style="background:var(--mvv-maroon);color:#fff;border-radius:8px;padding:10px 16px;margin-bottom:20px;text-align:center;">
+        Too many OTP requests. Please wait a few minutes before requesting a new code.
+      </div>
+      <?php } ?>
 
       <div style="max-width:560px;margin:0 auto;">
         <div class="mvv-form" style="text-align:center;">

@@ -5,6 +5,7 @@
 
 
 require_once('sys_dbconnection.php');
+require_once('includes/security.php');
 $siteinfo = $db->get_siteconfig();
 //print_r($siteinfo);
 $sms = $siteinfo -> otp_on_off;
@@ -12,7 +13,15 @@ if( $sms != 1)
 {
     header("Location:cancel_otp_step?flag=test");
     exit;
-} 
+}
+/* SECURITY (H5): throttle OTP generation/SMS-email sends - 3 per 10 min per
+   mobile+IP. When throttled, keep any previously issued OTP and skip sending.
+   (Placed after the otp_on_off check so disabled flows are unaffected.) */
+$otpBucket = 'otp:' . (isset($_SESSION['mobile']) ? $_SESSION['mobile'] : 'unknown') . ':' . svr_client_ip();
+if (!svr_throttle($otpBucket, 3, 600)) {
+    header('Location: verify_otp?msg=throttled');
+    exit;
+}
 $_SESSION['otp']=rand(111111,999999);
 $msg="";
 $matriid=$_SESSION['tempid'];
