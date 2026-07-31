@@ -16,8 +16,8 @@ $siteinfo = $data_config -> Webname;
     <link rel="stylesheet" href="404/base.css">  
     <link rel="stylesheet" href="404/main.css"> 
 	<script src="js/modernizr.js"></script>
-	<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-    <link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+	<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
 </head>
 <body>
    <header class="main-header">

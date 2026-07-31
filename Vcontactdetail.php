@@ -20,8 +20,8 @@ $searchid=base64_decode( urldecode($_GET['id']) );
 <!--Color Switcher Mockup-->
 <link href="css/regcss.css" rel="stylesheet">
 <link href="css/color-switcher-design.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
-<link rel="icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="branding/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="branding/favicons/favicon.ico" type="image/x-icon">
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <!--<script src="_so/js?//stackoverflow.com/questions/23729750/dont-allow-invalid-characters-to-be-pasted-on-textbox" id="so"></script>-->
 <!-- Responsive -->

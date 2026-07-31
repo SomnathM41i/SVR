@@ -167,7 +167,7 @@ while ($r = $result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="shortcut icon" href="http://localhost/SVR/css3/assets/shivraj-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../branding/favicons/favicon.ico" type="image/x-icon">
 
     <!-- Font CSS -->
     <link rel="stylesheet" href="assets/fonts/feather.css">
